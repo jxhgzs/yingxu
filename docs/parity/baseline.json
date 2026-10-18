@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-19",
+  "target": {
+    "path": "/Applications/VideoFusion-macOS.app",
+    "version": "5.9.0",
+    "bundleId": "com.lemon.lvpro"
+  },
+  "approval": {
+    "architecture": "confirmed",
+    "ui": "Vue 3 + TypeScript + Ant Design Vue",
+    "host": "existing React host, mount/dispose adapter",
+    "implementation": "not-started"
+  },
+  "baselineRoot": "../剪映5.9.0复刻分析_20261018",
+  "snapshotDirectory": "../剪映5.9.0复刻分析_20261018/evidence/drafts",
+  "snapshots": [
+    "00-empty.json",
+    "01-single-video.json",
+    "02-split-at-3s.json",
+    "03-second-clip-2x.json",
+    "04-undo-speed.json",
+    "05-scale-keyframes.json"
+  ],
+  "files": [
+    {
+      "path": "analysis-summary.json",
+      "bytes": 4212,
+      "sha256": "bac9e2a09d975957f1dd24236a6161601e6a54c6199d04c3cd5a1ca2a4fbc018"
+    },
+    {
+      "path": "分析报告.html",
+      "bytes": 9075,
+      "sha256": "fe3c97ac09dda67802435e934a0efd0b557b84f7e79aa16ec93a7b15d0729bce"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 458,
+      "sha256": "87009ff650622a50a95ee93dd878a5ae11114fd68152d3069a0972a7aa8b0f41"
+    },
+    {
+      "path": "evidence/export-verification.json",
+      "bytes": 8965,
+      "sha256": "dad996d459f4873a8477e40869fc2ff640d7a3bb8cc4450f87f238deacc44725"
+    },
+    {
+      "path": "evidence/libvesdk.dylib.symbols.json",
+      "bytes": 4101,
+      "sha256": "dac0b353fe88dd51419b0d1565ba364c4f8653c1fbf7029212a9ad40543376cc"
+    },
+    {
+      "path": "evidence/native-interfaces.json",
+      "bytes": 7761,
+      "sha256": "a36bdccaf78ca713e8b0a9ff07e1df9bc8003c0bac65a38c22741a5a59c0246f"
+    },
+    {
+      "path": "evidence/disassembly-01.txt",
+      "bytes": 3287,
+      "sha256": "e67bafef2739d07562605c500498f12d0b5e4c9f7be272eecbd14ab0ea460154"
+    },
+    {
+      "path": "evidence/disassembly-00.txt",
+      "bytes": 5724,
+      "sha256": "e253087220b304cc31ab9a3c462e703fdbc5175408ae145cbda38767fc5bc4bf"
+    },
+    {
+      "path": "evidence/binary-baseline.json",
+      "bytes": 21877,
+      "sha256": "834dc1ac56ec8efbcfa85481694b292a17004f99b5063450b8c08686531c1b5a"
+    },
+    {
+      "path": "evidence/disassembly-02.txt",
+      "bytes": 9414,
+      "sha256": "3cdfd9cf92244b2612f46e81b2d247083bc2625693a8b889b02b110b93b93268"
+    },
+    {
+      "path": "evidence/split-symbols.json",
+      "bytes": 31114,
+      "sha256": "220290498070db7271dff4772f0c4b707eab6a43aae888373d89e848e2faf063"
+    },
+    {
+      "path": "evidence/resource-inventory.json",
+      "bytes": 3911,
+      "sha256": "b137086a832deee2eb20cdfce97a7c59b3f10bf66e5186cd89c1bcf12dba7a82"
+    },
+    {
+      "path": "evidence/native-capability-symbols.json",
+      "bytes": 19139,
+      "sha256": "67e3c4b3a26008ea8a0e36c54c22fa5caefb3a04bd8ca52acb851e2502a2feb1"
+    },
+    {
+      "path": "evidence/libVECreator.dylib.symbols.json",
+      "bytes": 544,
+      "sha256": "03fb01c45a8fdb5a8d85d8727bb5f98eff84218da47be0c2d91f9a12b3f6fd19"
+    },
+    {
+      "path": "evidence/libvideoeditor.dylib.symbols.json",
+      "bytes": 4686,
+      "sha256": "94f751e6716940503e9674a5f55c26a500397919075b4115e6bda54c3457581a"
+    },
+    {
+      "path": "evidence/export-frame-4s.png",
+      "bytes": 305536,
+      "sha256": "accb943074f9158f53b19630efda6f67924363f67e439733a930efaddce548af"
+    },
+    {
+      "path": "evidence/drafts/01-single-video.json",
+      "bytes": 8622,
+      "sha256": "275885cd4d74698cd2291efafef0e974df71abcbe54e5b7d618be5e5100c065e"
+    },
+    {
+      "path": "evidence/drafts/04-undo-speed.json",
+      "bytes": 14087,
+      "sha256": "1d2b30beeedbfd6084beb9b6319f466c7f1a23f9cc5d9ea4de0c655cbed79764"
+    },
+    {
+      "path": "evidence/drafts/00-empty.json",
+      "bytes": 2939,
+      "sha256": "3786430d5e34bf7ebc57983556251d7bfe6cca705d44aee407805647b628787f"
+    },
+    {
+      "path": "evidence/drafts/03-second-clip-2x.json",
+      "bytes": 14087,
+      "sha256": "0dc65d42d384ab4a3e7cb561b7e83c83afe26c16de6372d96aba005ab21a2c10"
+    },
+    {
+      "path": "evidence/drafts/05-scale-keyframes.json",
+      "bytes": 15403,
+      "sha256": "17444b5dd9904bb7b2925ba0902990795ba0574f73a44ecd587b20398832ab5e"
+    },
+    {
+      "path": "evidence/drafts/02-split-at-3s.json",
+      "bytes": 14087,
+      "sha256": "1d2b30beeedbfd6084beb9b6319f466c7f1a23f9cc5d9ea4de0c655cbed79764"
+    },
+    {
+      "path": "golden/jianying-5.9.0-scale-keyframes.gif",
+      "bytes": 946596,
+      "sha256": "f0be4673d429697f84baa0171fdf5ab4ebfe535f6a4587c4b2791eafa66ca257"
+    },
+    {
+      "path": "golden/jianying-5.9.0-scale-keyframes.mov",
+      "bytes": 4930794,
+      "sha256": "832a15446efdd7db312ce587251b5878c010db8a3030508c0e7cd08b935adee6"
+    },
+    {
+      "path": "golden/jianying-5.9.0-scale-keyframes.mp3",
+      "bytes": 96598,
+      "sha256": "bb36b8b72bd246bf81aefe19680f28e57e08a9e52ead66d795a0d18d848299ac"
+    },
+    {
+      "path": "fixtures/timeline-probe.mp4",
+      "bytes": 865229,
+      "sha256": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0"
+    }
+  ]
+}

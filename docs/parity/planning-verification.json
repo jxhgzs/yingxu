@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-19",
+  "scope": "design and planning only; no product code or product tests executed",
+  "checks": {
+    "baseline_files_match_original_manifest": true,
+    "baseline_file_count": 26,
+    "snapshot_count": 6,
+    "document_links_exist": true,
+    "checked_document_link_count": 6,
+    "parity_ids_unique": true,
+    "parity_item_count": 68,
+    "implementation_plan_task_count": 5,
+    "placeholder_scan_passed": true,
+    "json_parse_passed": true
+  },
+  "implementation": "not-started",
+  "limitations": [
+    "Function inventory is an initial registry, not an exhaustive survey.",
+    "Detailed plan covers package A; media, UI and host plans require the listed prerequisite experiments.",
+    "The legacy analysis report is an immutable historical artifact; current UI choice is Vue 3 + TypeScript + Ant Design Vue."
+  ]
+}
