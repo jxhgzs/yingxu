@@ -26,3 +26,8 @@ test('failed edits leave history unchanged and a new branch clears redo', () => 
   const snapshot = s.snapshot(); snapshot.document.tracks.length = 0;
   assert.equal(s.snapshot().document.tracks.length, 1);
 });
+test('reapplying an unchanged value does not consume undo history', () => {
+  const doc = importJianying(readSnapshot('01-single-video.json')).document,s=createSession(doc);
+  const before=s.snapshot();s.execute(0,{type:'speed',clipId:doc.tracks[0].clips[0].id,value:rational(1),shiftFollowing:false});
+  assert.deepEqual(s.snapshot(),before);
+});

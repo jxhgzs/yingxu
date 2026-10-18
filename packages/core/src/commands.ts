@@ -2,16 +2,21 @@ import {check, validateDocument, validRational} from './document.ts';
 import type {Document} from './document.ts';
 import {rational, add, sub, mul, div, compare, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
+import {applyEdit, assertNoVideoOverlap} from './edits.ts';
+import type {EditingCommand} from './edits.ts';
 
 export type Command =
   | {type: 'split'; clipId: string; at: Rational; rightId: string}
-  | {type: 'speed'; clipId: string; value: Rational; shiftFollowing: boolean};
+  | {type: 'speed'; clipId: string; value: Rational; shiftFollowing: boolean}
+  | EditingCommand;
 
 export function applyCommand(doc: Document, command: Command): Document {
   validateDocument(doc); check(command && typeof command === 'object', 'INVALID_COMMAND');
+  if (command.type !== 'split' && command.type !== 'speed') return applyEdit(doc, command);
   const next = structuredClone(doc);
   const track = next.tracks.find(t => t.clips.some(c => c.id === command.clipId)); check(track, 'CLIP_NOT_FOUND');
   const index = track.clips.findIndex(c => c.id === command.clipId), clip = track.clips[index];
+  check(!track.locked, 'TRACK_LOCKED', track.id);
   check(clip.editableTiming, 'TIMING_NOT_INTERPRETED', clip.id);
   if (command.type === 'split') {
     validRational(command.at, 'split.at');
@@ -39,12 +44,6 @@ export function applyCommand(doc: Document, command: Command): Document {
     }
   } else throw Error('UNKNOWN_COMMAND');
   validateDocument(next);
-  for (const t of next.tracks) {
-    let end = rational(0);
-    for (const c of [...t.clips].sort((a, b) => compare(a.target.start, b.target.start))) {
-      check(compare(c.target.start, end) >= 0, 'OVERLAP_POLICY_UNRESOLVED', c.id);
-      end = add(c.target.start, c.target.duration);
-    }
-  }
+  assertNoVideoOverlap(next);
   return next;
 }

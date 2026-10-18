@@ -3,9 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=24"},
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "test": "node --test test/*.test.ts",
-    "replay": "node scripts/replay-baseline.ts"
+    "replay": "node scripts/replay-baseline.ts",
+    "start": "node apps/service/server.ts",
+    "dev": "vite --config apps/editor/vite.config.ts",
+    "build": "vue-tsc --noEmit && vite build --config apps/editor/vite.config.ts",
+    "typecheck": "vue-tsc --noEmit",
+    "build:desktop": "npm run build && vite build --config apps/desktop/service.config.ts",
+    "desktop": "electron apps/desktop/main.mjs",
+    "package:mac": "npm run build:desktop && node scripts/package-desktop.ts"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "7.0.1",
+    "ant-design-vue": "4.2.6",
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@vitejs/plugin-vue": "6.0.10",
+    "electron": "44.6.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.4",
+    "vue-tsc": "3.3.13"
   }
 }

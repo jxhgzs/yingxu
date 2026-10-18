@@ -1,0 +1,144 @@
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath, pathToFileURL} from 'node:url';
+import {randomBytes, randomUUID} from 'node:crypto';
+import {Store} from './store.ts';
+import {Jobs} from './jobs.ts';
+import {json, body, serveFile} from './http.ts';
+import {probeAsset, ffmpeg} from '../../packages/media/src/probe.ts';
+import {runProcess} from '../../packages/media/src/process.ts';
+import {importJianying} from '../../packages/jianying/src/import.ts';
+import {check, emptyDocument, validateDocument} from '../../packages/core/src/document.ts';
+import {rational} from '../../packages/core/src/time.ts';
+
+const repo = fileURLToPath(new URL('../../', import.meta.url));
+const mime: Record<string, string> = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json'};
+export async function startServer(options: {root?: string; port?: number; dist?: string} = {}) {
+  const store = new Store(options.root || process.env.YINGXU_EDITOR_DATA || path.join(repo, '.local'));
+  await store.initialize(); const jobs = new Jobs(store); await jobs.initialize();
+  const token = randomBytes(24).toString('hex');
+  async function registerFile(file: string, name: string) {
+    const asset = await probeAsset(file, name);
+    const extension = path.extname(name).toLowerCase().replace(/[^a-z0-9.]/g, '').slice(0, 12) || '.media';
+    const destination = path.join(store.root, 'media', asset.id + extension);
+    if (!store.assets.has(asset.id)) {await fs.copyFile(file, destination); asset.path = destination;}
+    return await store.addAsset(asset);
+  }
+  const server = http.createServer(async (request, response) => {
+    try {
+      const url = new URL(request.url || '/', 'http://127.0.0.1'); const route = url.pathname;
+      const origin = request.headers.origin;
+      if (origin) {
+        let parsed: URL; try {parsed = new URL(origin);} catch {throw Error('ORIGIN_REJECTED');}
+        check(['127.0.0.1', 'localhost'].includes(parsed.hostname) && (parsed.port === String((server.address() as any)?.port) || parsed.port === '8816'), 'ORIGIN_REJECTED');
+      }
+      check(['127.0.0.1', 'localhost'].includes(new URL('http://' + request.headers.host).hostname), 'HOST_REJECTED');
+      if (!['GET', 'HEAD'].includes(request.method || '')) check(request.headers['x-editor-token'] === token, 'INVALID_SESSION_TOKEN');
+      const respond = (v: unknown, status = 200) => json(response, status, v);
+      let match: RegExpExecArray | null;
+      if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version: '0.1.0', projects: store.list(), assets: [...store.assets.values()],
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'transform', 'multitrack', 'history', 'preview', 'export'],
+        limitations: ['不支持未解析的剪映特效与关键帧渲染', '预览当前使用后台渲染，尚未实现GPU实时预览']});
+      if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
+      if (route === '/api/projects' && request.method === 'POST') {
+        const input = await body(request), doc = emptyDocument(); if (typeof input.title === 'string') doc.title = input.title.slice(0, 200);
+        return respond(await store.create(doc), 201);
+      }
+      if (route === '/api/demo' && request.method === 'POST') {
+        let fixture = path.join(repo,'fixtures/timeline-probe.mp4');
+        try {await fs.access(fixture);} catch {fixture=path.resolve(repo, '../剪映5.9.0复刻分析_20261018/fixtures/timeline-probe.mp4');}
+        const asset = await registerFile(fixture, '动态测试素材.mp4'), doc = emptyDocument(); doc.title = '剪辑练习';
+        doc.canvas = {width: 1280, height: 720}; doc.assets.push(asset);
+        doc.tracks[0].clips.push({id: randomUUID(), materialId: asset.id, source: {start: rational(0), duration: rational(6)},
+          target: {start: rational(0), duration: rational(6)}, speed: rational(1), editableTiming: true});
+        return respond({project: await store.create(doc), asset}, 201);
+      }
+      if (route === '/api/open-document' && request.method === 'POST') {
+        const input = await body(request), doc = input.document;
+        validateDocument(doc);
+        // Relink only to registered immutable uploads; never follow arbitrary paths in an imported JSON.
+        for (const a of doc.assets) if (a.kind !== 'text') {
+          const registered = store.assets.get(a.id);
+          if (registered && registered.sha256 === a.sha256) Object.assign(a, registered);
+        }
+        check(!input.diagnostics?.length && !input.provenance, 'SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT');
+        return respond(await store.create(doc), 201);
+      }
+      if (route === '/api/import-draft' && request.method === 'POST') {
+        const input = await body(request), imported = importJianying(input);
+        imported.document.title = typeof input.name === 'string' ? input.name : '导入的剪映草稿';
+        return respond(await store.create(imported.document, {diagnostics: imported.diagnostics, provenance: imported.provenance}), 201);
+      }
+      if (route === '/api/assets' && request.method === 'GET') return respond([...store.assets.values()]);
+      if (route === '/api/assets' && request.method === 'POST') {
+        const rawName = request.headers['x-filename']; check(typeof rawName === 'string', 'FILENAME_REQUIRED');
+        const name = path.basename(decodeURIComponent(rawName)).slice(0, 200);
+        const temp = path.join(store.root, 'media', randomUUID() + '.upload'); let total = 0;
+        const handle = await fs.open(temp, 'wx', 0o600);
+        try {
+          for await (const chunk of request) {total += chunk.length; check(total <= 512 * 1024 * 1024, 'UPLOAD_TOO_LARGE'); await handle.write(chunk);}
+          await handle.close(); return respond(await registerFile(temp, name), 201);
+        } finally {await handle.close().catch(() => {}); await fs.rm(temp, {force: true});}
+      }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)$/.exec(route)) && request.method === 'GET') return respond({...store.state(match[1]), jobs: jobs.list(match[1])});
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/commands$/.exec(route)) && request.method === 'POST') {
+        const input = await body(request), project = store.get(match[1]);
+        check(project.diagnostics.length === 0, 'SOURCE_DRAFT_READ_ONLY');
+        if (input.command?.type === 'asset.add' && input.command.asset?.kind !== 'text') {
+          const registered = store.assets.get(input.command.asset?.id); check(registered, 'MEDIA_NOT_LINKED');
+          input.command.asset = registered;
+        }
+        return respond(await store.edit(match[1], input));
+      }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/download$/.exec(route)) && request.method === 'GET') {
+        const p = store.get(match[1]); response.writeHead(200, {'Content-Type': 'application/json', 'Content-Disposition': `attachment; filename*=UTF-8''${encodeURIComponent((p.document.title || '工程') + '.yingxu.json')}`});
+        response.end(JSON.stringify({format: 'yingxu-editor', version: 1, document: p.document, diagnostics: p.diagnostics, provenance: p.provenance}, null, 2)); return;
+      }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/jobs$/.exec(route))) {
+        if (request.method === 'GET') return respond(jobs.list(match[1]));
+        if (request.method === 'POST') return respond(await jobs.submit(match[1], await body(request)), 202);
+      }
+      if ((match = /^\/api\/jobs\/([a-f0-9-]+)$/.exec(route)) && request.method === 'GET') return respond(jobs.public(jobs.get(match[1])));
+      if ((match = /^\/api\/jobs\/([a-f0-9-]+)\/cancel$/.exec(route)) && request.method === 'POST') return respond(await jobs.cancel(match[1]));
+      if ((match = /^\/media\/([a-zA-Z0-9_-]+)(\/thumb)?$/.exec(route)) && ['GET', 'HEAD'].includes(request.method || '')) {
+        const asset = store.assets.get(match[1]); check(asset, 'MEDIA_NOT_FOUND');
+        if (match[2]) {
+          const thumb = path.join(store.root, 'media', asset.id + '.thumb.png');
+          try {await fs.access(thumb);} catch {
+            const filter = asset.kind === 'audio' ? 'showwavespic=s=320x100:colors=0x54cbb2' : 'scale=320:180:force_original_aspect_ratio=decrease';
+            const args = ['-hide_banner', '-loglevel', 'error', '-y', '-i', asset.path, ...(asset.kind === 'audio' ? ['-filter_complex', filter] : ['-vf', filter]), '-frames:v', '1', thumb];
+            await runProcess(ffmpeg(), args, {timeout: 30000});
+          }
+          return await serveFile(request, response, thumb, 'image/png');
+        }
+        const extension = path.extname(asset.path).toLowerCase();
+        const mediaMime: Record<string, string> = {'.mp4': 'video/mp4', '.mov': 'video/quicktime', '.webm': 'video/webm', '.mp3': 'audio/mpeg', '.wav': 'audio/wav', '.m4a': 'audio/mp4', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.gif': 'image/gif'};
+        return await serveFile(request, response, asset.path, mediaMime[extension] || 'application/octet-stream');
+      }
+      if ((match = /^\/renders\/([a-f0-9-]+)\/(video|download)$/.exec(route)) && ['GET', 'HEAD'].includes(request.method || '')) {
+        const job = jobs.get(match[1]); check(job.status === 'completed' && job.result, 'JOB_NOT_COMPLETED');
+        const name = path.basename(url.searchParams.get('name') || '映序导出.mp4').slice(0, 200);
+        return await serveFile(request, response, job.result.path, 'video/mp4', match[2] === 'download' ? name : undefined);
+      }
+      check(request.method === 'GET' || request.method === 'HEAD', 'ROUTE_NOT_FOUND');
+      const dist = options.dist || path.join(repo, 'dist');
+      const relative = route === '/' ? 'index.html' : decodeURIComponent(route).slice(1), file = path.resolve(dist, relative);
+      check(file.startsWith(path.resolve(dist) + path.sep), 'ROUTE_NOT_FOUND');
+      return await serveFile(request, response, file, mime[path.extname(file)] || 'application/octet-stream');
+    } catch (error: any) {
+      if (response.headersSent) {response.destroy(); return;}
+      const message = error instanceof Error ? error.message : String(error);
+      const status = /CONFLICT/.test(message) ? 409 : /NOT_FOUND|ENOENT/.test(message) ? 404 : /REJECTED|TOKEN/.test(message) ? 403 : 400;
+      json(response, status, {error: message});
+    }
+  });
+  await new Promise<void>((resolve, reject) => {server.once('error', reject); server.listen(options.port ?? Number(process.env.PORT || 8815), '127.0.0.1', resolve);});
+  const close = async () => {await jobs.shutdown(); await new Promise<void>(resolve=>server.close(()=>resolve()));};
+  return {server, store, jobs, token, close, origin: `http://127.0.0.1:${(server.address() as any).port}`};
+}
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const instance = await startServer(); process.stdout.write(`映序编辑器 ${instance.origin}\n`);
+  const stop = () => {void instance.close().finally(()=>process.exit(0));};
+  process.once('SIGINT',stop);process.once('SIGTERM',stop);
+}

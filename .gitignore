@@ -1,5 +1,7 @@
 node_modules/
 dist/
+dist-desktop/
+dist-library/
 .DS_Store
 .local/
 artifacts/

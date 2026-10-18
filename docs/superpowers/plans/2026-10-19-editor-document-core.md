@@ -73,7 +73,7 @@ export type Imported = {
 
 **Interfaces:** Produces `rational(n,d=1)`, `decimal(text)`, `micros(integer)`, `add/sub/mul/div(a,b)`, `compare(a,b)`；均返回规范化Rational，compare返回-1/0/1。JSON不含BigInt。
 
-- [ ] Step 1: 创建入口与失败用例，运行 `node --test test/time.test.ts`，确认因模块缺失失败。
+- [x] Step 1: 创建入口与失败用例，运行 `node --test test/time.test.ts`，确认因模块缺失失败。
 
 ```json
 {
@@ -108,7 +108,7 @@ test('decimal speed is exact and invalid values fail', () => {
 });
 ```
 
-- [ ] Step 2: 实现精确运算；对number入参先检查安全整数，禁止在丢失精度后才转BigInt。
+- [x] Step 2: 实现精确运算；对number入参先检查安全整数，禁止在丢失精度后才转BigInt。
 
 ```ts
 export type Rational = {numerator: string; denominator: string};
@@ -149,7 +149,7 @@ export function compare(a: Rational, b: Rational): -1 | 0 | 1 {
 }
 ```
 
-- [ ] Step 3: 运行本文件测试，检查约分、零和负分母；成功后提交 `feat: add exact editor time arithmetic`。
+- [x] Step 3: 运行本文件测试，检查约分、零和负分母；成功后提交 `feat: add exact editor time arithmetic`。
 
 ## Task 2: 文档、只读导入与诊断
 
@@ -157,7 +157,7 @@ export function compare(a: Rational, b: Rational): -1 | 0 | 1 {
 
 **Interfaces:** Consumes Task 1；produces `importJianying(raw): Imported`, `validateDocument(doc): void`, `projectTiming(doc): unknown[]`。
 
-- [ ] Step 1: 为六份快照建立只读集成用例。读取路径从 `docs/parity/baseline.json` 获取，不从用户草稿目录扫描。
+- [x] Step 1: 为六份快照建立只读集成用例。读取路径从 `docs/parity/baseline.json` 获取，不从用户草稿目录扫描。
 
 ```ts
 test('two-times speed keeps source range while shortening target', () => {
@@ -178,7 +178,7 @@ test('unknown keyframe clocks stay raw and cannot be edited as known timing', ()
 
 `readSnapshot(name)`在test/import.test.ts中定义：读取baseline.json的 `snapshotDirectory`，用仓库根解析后再读取指定basename；只允许登记的六个文件名。测试前后对实际文件做SHA256比对，确认导入没有写回。
 
-- [ ] Step 2: 在document.ts定义上面的数据契约与校验。严格检查：schemaVersion为1；画布为正安全整数；fps大于0；资产/轨道/片段ID全局各自唯一；轨道kind为video；素材引用存在；时间有理数规范化；起点非负、时长正；speed正；恒速片段满足 `target.duration * speed === source.duration`；源结束不超过素材时长。空工程允许零轨零素材。
+- [x] Step 2: 在document.ts定义上面的数据契约与校验。严格检查：schemaVersion为1；画布为正安全整数；fps大于0；资产/轨道/片段ID全局各自唯一；轨道kind为video；素材引用存在；时间有理数规范化；起点非负、时长正；speed正；恒速片段满足 `target.duration * speed === source.duration`；源结束不超过素材时长。空工程允许零轨零素材。
 
 区间投影实现如下，用轨道顺序和片段顺序比较；刻意去掉随机ID和目标冗余素材表，但不省略速度、源时间或目标时间：
 
@@ -191,7 +191,7 @@ export function projectTiming(doc: Document): unknown[] {
 }
 ```
 
-- [ ] Step 3: 在import.ts将JSON按如下精确映射读取。数字检查使用 `typeof value === 'number' && Number.isFinite(value)`；微秒另要求安全整数。对象和数组均先检查类型，不通过强制类型断言跳过运行时检查。
+- [x] Step 3: 在import.ts将JSON按如下精确映射读取。数字检查使用 `typeof value === 'number' && Number.isFinite(value)`；微秒另要求安全整数。对象和数组均先检查类型，不通过强制类型断言跳过运行时检查。
 
 ```ts
 const mapping = {
@@ -214,7 +214,7 @@ const mapping = {
 
 稳定拒绝码：`INVALID_JSON_STRUCTURE`、`INVALID_TIME`、`DUPLICATE_ID`、`MISSING_MATERIAL`、`SOURCE_RANGE_EXCEEDED`、`UNSUPPORTED_CORE_STRUCTURE`。错误包含对象ID或字段路径，不输出完整用户草稿。
 
-- [ ] Step 4: 增加负时长、重复ID、缺素材、0速度、非有限fps、未知轨道拒绝用例；增加原始未知字段和两组关键帧深比较。运行import/time测试，通过后提交 `feat: import verified draft timing without losing provenance`。
+- [x] Step 4: 增加负时长、重复ID、缺素材、0速度、非有限fps、未知轨道拒绝用例；增加原始未知字段和两组关键帧深比较。运行import/time测试，通过后提交 `feat: import verified draft timing without losing provenance`。
 
 ## Task 3: 分割与恒速纯命令
 
@@ -228,7 +228,7 @@ export type Command =
   | {type: 'speed'; clipId: string; value: Rational; shiftFollowing: boolean};
 ```
 
-- [ ] Step 1: 添加目标快照对照测试，先确认缺模块失败。
+- [x] Step 1: 添加目标快照对照测试，先确认缺模块失败。
 
 ```ts
 const one = importJianying(readSnapshot('01-single-video.json')).document;
@@ -246,7 +246,7 @@ assert.deepEqual(projectTiming(fast), projectTiming(
 assert.deepEqual(one, importJianying(readSnapshot('01-single-video.json')).document);
 ```
 
-- [ ] Step 2: 输入先validate，structuredClone后修改，最后再validate再返回。找不到片段拒绝 `CLIP_NOT_FOUND`；editableTiming=false拒绝 `TIMING_NOT_INTERPRETED`；右ID已存在拒绝 `DUPLICATE_ID`；边界分割拒绝 `SPLIT_OUTSIDE_CLIP`。所有失败不改变调用方对象。
+- [x] Step 2: 输入先validate，structuredClone后修改，最后再validate再返回。找不到片段拒绝 `CLIP_NOT_FOUND`；editableTiming=false拒绝 `TIMING_NOT_INTERPRETED`；右ID已存在拒绝 `DUPLICATE_ID`；边界分割拒绝 `SPLIT_OUTSIDE_CLIP`。所有失败不改变调用方对象。
 
 分割计算必须使用以下精确等式：
 
@@ -280,7 +280,7 @@ if (command.shiftFollowing) {
 
 shiftFollowing是内核显式策略，尚未证明哪一种对应剪映默认。发生交叠时不猜测删除/覆盖行为；首包拒绝 `OVERLAP_POLICY_UNRESOLVED`，保持输入不变。
 
-- [ ] Step 3: 增加源入点10秒、源长6秒、二倍速片段的中点分割测试，预期源左10—13秒、右13—16秒；增加1.3倍精确时长、三段显式涟漪与不联动、边界分割和ID重复失败测试。通过后提交 `feat: add exact split and constant-speed commands`。
+- [x] Step 3: 增加源入点10秒、源长6秒、二倍速片段的中点分割测试，预期源左10—13秒、右13—16秒；增加1.3倍精确时长、三段显式涟漪与不联动、边界分割和ID重复失败测试。通过后提交 `feat: add exact split and constant-speed commands`。
 
 ## Task 4: 修订号、撤销与重做
 
@@ -288,7 +288,7 @@ shiftFollowing是内核显式策略，尚未证明哪一种对应剪映默认。
 
 **Interfaces:** Produces `createSession(doc): Session`；session提供 `snapshot()`, `execute(expectedRevision, command)`, `undo(expectedRevision)`, `redo(expectedRevision)`。snapshot返回 `{revision, document, canUndo, canRedo}` 的深副本。
 
-- [ ] Step 1: 编写历史测试：从分割快照开始，变速、撤销、重做，分别与02/04/03快照的projectTiming对照；撤销后Document必须深等于变速前。旧revision、修改snapshot对象及失败命令不得改变当前状态。
+- [x] Step 1: 编写历史测试：从分割快照开始，变速、撤销、重做，分别与02/04/03快照的projectTiming对照；撤销后Document必须深等于变速前。旧revision、修改snapshot对象及失败命令不得改变当前状态。
 
 ```ts
 const session = createSession(split);
@@ -301,7 +301,7 @@ session.redo(2);
 assert.deepEqual(projectTiming(session.snapshot().document), projectTiming(fast));
 ```
 
-- [ ] Step 2: 实现事务：先核对revision再计算候选；候选validate通过后，才将旧文档入past、清future并递增revision。undo/redo先检查栈非空，成功后也递增revision；不回退revision。snapshot每次structuredClone，不能暴露栈引用。
+- [x] Step 2: 实现事务：先核对revision再计算候选；候选validate通过后，才将旧文档入past、清future并递增revision。undo/redo先检查栈非空，成功后也递增revision；不回退revision。snapshot每次structuredClone，不能暴露栈引用。
 
 ```ts
 function requireRevision(expected: number, actual: number): void {
@@ -315,7 +315,7 @@ function requireRevision(expected: number, actual: number): void {
 
 首包只实现内存会话，不承诺自动保存或崩溃恢复；持久日志由后续工程任务实现并单独验证。历史容量不沿用映序旧实现的30次上限；首包测试有界输入，不虚报无限历史的性能。
 
-- [ ] Step 3: 增加撤销后新分支清空redo、连续两次undo、空历史拒绝和失败后的栈完整性。运行core/import测试，通过后提交 `feat: add revision-checked editing history`。
+- [x] Step 3: 增加撤销后新分支清空redo、连续两次undo、空历史拒绝和失败后的栈完整性。运行core/import测试，通过后提交 `feat: add revision-checked editing history`。
 
 ## Task 5: 真实基线回放与机器报告
 
@@ -323,7 +323,7 @@ function requireRevision(expected: number, actual: number): void {
 
 **Interfaces:** 消费上述全部模块，读取baseline.json；输出JSON `{baselineVersion, checks, diagnostics, limitations}`。默认写stdout；`--output <path>`仅写调用方指定的新报告文件，已存在则拒绝。退出0表示本包测试通过，2表示输入/参数拒绝，3表示对照失败。
 
-- [ ] Step 1: 进程集成测试使用 `spawnSync(process.execPath, ['scripts/replay-baseline.ts'])`。检查stdout为JSON，且包含以下真实比较项；篡改一份临时快照后使用 `--baseline-root <temporaryDirectory>`，必须因哈希不匹配退出2。默认路径从脚本URL定位仓库根，不依赖shell当前目录。
+- [x] Step 1: 进程集成测试使用 `spawnSync(process.execPath, ['scripts/replay-baseline.ts'])`。检查stdout为JSON，且包含以下真实比较项；篡改一份临时快照后使用 `--baseline-root <temporaryDirectory>`，必须因哈希不匹配退出2。默认路径从脚本URL定位仓库根，不依赖shell当前目录。
 
 ```ts
 const requiredChecks = [
@@ -333,7 +333,7 @@ const requiredChecks = [
 ];
 ```
 
-- [ ] Step 2: 按下列顺序实现回放。使用 `createHash('sha256').update(bytes).digest('hex')` 校验，不在脚本中更新期望哈希。
+- [x] Step 2: 按下列顺序实现回放。使用 `createHash('sha256').update(bytes).digest('hex')` 校验，不在脚本中更新期望哈希。
 
 ```ts
 // 1. 校验baseline.json登记的六份快照哈希，读取为原始bytes+JSON。
@@ -345,7 +345,7 @@ const requiredChecks = [
 // 7. 报告明确不包含视觉、声音、实时性能、曲线或关键帧渲染的通过结论。
 ```
 
-- [ ] Step 3: 运行 `node --test test/*.test.ts` 与 `node scripts/replay-baseline.ts --output artifacts/core-baseline.json`。README记录实际Node命令、通过范围和仍未实现项。提交 `test: replay verified Jianying timing baseline`。
+- [x] Step 3: 运行 `node --test test/*.test.ts` 与 `node scripts/replay-baseline.ts --output artifacts/core-baseline.json`。README记录实际Node命令、通过范围和仍未实现项。提交 `test: replay verified Jianying timing baseline`。
 
 ## 自审与首包交付
 
@@ -356,4 +356,4 @@ const requiredChecks = [
 - [ ] 基线文件哈希不变；`git -C ../../视频生产平台 status --short`确认没有本次产品改动。
 - [ ] 全部首包检查通过后更新功能登记册中对应行的实现证据，其余行保留未开始。
 
-当前文件是实施计划，以上复选项均未执行。后续按本计划逐任务实施，不将计划中的示例代码或预期结果当作实际测试输出。
+2026-10-19：上述五个任务已实现并实际运行。核心回放九项通过；界面、持久化与媒体引擎在独立后续包中继续扩展，具体测试范围以QA记录为准。
