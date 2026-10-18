@@ -1,6 +1,6 @@
 # Editor Document Core Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> 执行方式：用户已明确授权开始实现，在当前会话逐任务执行、验证并记录结果。原计划模板引用的superpowers执行技能未安装；执行本项目不以该插件为前提，不派发子代理。
 
 **Goal:** 实现可独立运行的精确时间、六份剪映草稿只读导入、分割/恒速/历史与语义回归工具。
 
