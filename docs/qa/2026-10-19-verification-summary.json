@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-19",
+  "status": "first-working-build-verified-full-parity-incomplete",
+  "sourceCommit": "22ba3a3dc47930064d7548581db841febfd3c86c",
+  "build": {
+    "version": "0.1.0",
+    "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261019062737/映序剪辑.app",
+    "sourceCommit": "22ba3a3dc47930064d7548581db841febfd3c86c",
+    "backendHash": "823af4f1f608e6f2b5715381ad5342f2d7f099956d6b886cc997d1db0a5261b8",
+    "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+    "runtime": "Electron 44.6.0",
+    "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe",
+    "signing": "local ad-hoc; not a notarized installer"
+  },
+  "automatedTests": {
+    "observedPassed": 29,
+    "failed": 0,
+    "command": "node --test test/*.test.ts",
+    "scope": "unit, draft integration, native pixels/process cancellation, persistence and HTTP"
+  },
+  "typecheckAndBuildPassed": true,
+  "realDraftComparisonsPassed": 9,
+  "immutableBaselineFilesVerified": 26,
+  "originalTargetBinariesUnchanged": 6,
+  "browserProjectFileReopenedExactly": true,
+  "browserExportDownloadedBytesMatch": true,
+  "desktop": {
+    "launched": true,
+    "playbackTimeAdvanced": true,
+    "cmdBsplit": true,
+    "cmdZundo": true,
+    "shiftCmdZredo": true,
+    "normalQuitExitedProcess": true,
+    "unblurredTitleSavedAcrossQuit": true,
+    "projectId": "8420144c-ce2e-45dc-ad85-b593279ea822",
+    "revision": 4,
+    "exportAfterRestartPassed": true
+  },
+  "lifecycle": {
+    "cycles": 20,
+    "domChildren": 0,
+    "lateChanges": 0,
+    "requestsAfterDispose": 0,
+    "disposedOpenRejected": 20,
+    "method": "actual browser validation page; screenshot preserved"
+  },
+  "media": [
+    {
+      "label": "browser-download",
+      "path": "/Users/tal/Downloads/剪辑练习.mp4",
+      "sha256": "3e4a9ea8533380ae6084a095ac7ecc2da8912e948ef1dc47bee425b9f500ae23",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "4.500000",
+        "nb_frames": "135"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "duration": "4.500000"
+      },
+      "fullDecodePassed": true
+    },
+    {
+      "label": "desktop-export",
+      "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/jobs/19eb1f55-ddcd-4b31-bdb9-3689e003fb7c/render.mp4",
+      "sha256": "6c1aa52f2e688d48b9db428c0896b9c7fa2afb7fe55df68dffe91f1499b6a987",
+      "video": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "6.000000",
+        "nb_frames": "180"
+      },
+      "audio": {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "duration": "6.000000"
+      },
+      "fullDecodePassed": true
+    }
+  ],
+  "signalMeasurement": {
+    "method": "positive zero crossings in decoded mono PCM; not listening verification",
+    "frequencies": [
+      {
+        "start": 1,
+        "end": 2,
+        "positiveCrossingHz": 440.0
+      },
+      {
+        "start": 3.1,
+        "end": 4.1,
+        "positiveCrossingHz": 440.0
+      }
+    ]
+  },
+  "limits": [
+    "Full Jianying 5.9 parity is not complete.",
+    "Native preview is an offline CPU render, not a GPU realtime engine.",
+    "Curve/keyframe rendering and full effects/fonts/color/audio comparisons remain incomplete.",
+    "The export is MP4/H264/AAC 48kHz; the target sample used MOV/AAC44.1kHz.",
+    "No cloud/paid AI services or existing Yingxu product integrations were changed.",
+    "The desktop application currently depends on the local FFmpeg installation.",
+    "Actual listening review was not performed."
+  ]
+}
