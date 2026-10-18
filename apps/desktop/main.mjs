@@ -16,7 +16,7 @@ async function createWindow(){
   window.webContents.on('will-navigate',(event,url)=>{if(new URL(url).origin!==service.origin)event.preventDefault();});
   await window.loadURL(service.origin);
 }
-await app.whenReady();
+void app.whenReady().then(async()=>{
 try{
   // Desktop and browser development deliberately use separate application data.
   service=await startServer({root:process.env.YINGXU_EDITOR_DATA||path.join(app.getPath('userData'),'editor-data'),port:0,dist:path.join(root,'dist')});
@@ -34,3 +34,4 @@ try{
     void service.close().finally(()=>{stopped=true;app.quit();});
   });
 }catch(error){dialog.showErrorBox('编辑器启动失败',String(error));app.quit();}
+});
