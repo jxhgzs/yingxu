@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+interface Window {yingxuDesktop?: {onPrepareClose(handler:()=>Promise<void>):()=>void};}
 declare module '*.vue' {
   import type {DefineComponent} from 'vue';
   const component: DefineComponent<any, any, any>;

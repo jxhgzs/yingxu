@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import http from 'node:http';
 import {startServer} from '../apps/service/server.ts';
 
 test('real HTTP workflow persists commands, renders media and serves valid byte ranges', {timeout: 120000}, async () => {
@@ -38,4 +39,13 @@ test('real HTTP workflow persists commands, renders media and serves valid byte 
     const head = await fetch(app.origin + result.result.url, {method: 'HEAD'}); assert.equal(head.status, 200); assert(Number(head.headers.get('content-length')) > 100);
     assert.equal((await fetch(app.origin + '/api/projects', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: '{}'})).status, 403);
   } finally {await app.close(); await fs.rm(root, {recursive: true, force: true});}
+});
+test('service shutdown finishes even if a paused media client still holds a connection', {timeout:10000},async()=>{
+  const root=await fs.mkdtemp(path.join(os.tmpdir(),'yingxu-close-'));let socket:http.IncomingMessage|undefined;
+  const large=await fs.open(path.join(root,'large.bin'),'w');await large.truncate(64*1024*1024);await large.close();
+  const app=await startServer({root:path.join(root,'data'),port:0,dist:root});
+  try{
+    socket=await new Promise<http.IncomingMessage>((resolve,reject)=>{const req=http.get(app.origin+'/large.bin',response=>{response.pause();resolve(response);});req.on('error',reject);});
+    const started=Date.now();await app.close();assert(Date.now()-started<2000,'shutdown waited for a paused video connection');
+  }finally{socket?.destroy();await app.close();await fs.rm(root,{recursive:true,force:true});}
 });

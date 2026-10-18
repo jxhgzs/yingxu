@@ -134,7 +134,12 @@ export async function startServer(options: {root?: string; port?: number; dist?:
     }
   });
   await new Promise<void>((resolve, reject) => {server.once('error', reject); server.listen(options.port ?? Number(process.env.PORT || 8815), '127.0.0.1', resolve);});
-  const close = async () => {await jobs.shutdown(); await new Promise<void>(resolve=>server.close(()=>resolve()));};
+  let closing: Promise<void> | undefined;
+  const close = () => closing ||= (async () => {
+    await jobs.shutdown();
+    const closed = new Promise<void>(resolve=>server.close(()=>resolve()));
+    server.closeAllConnections(); await closed;
+  })();
   return {server, store, jobs, token, close, origin: `http://127.0.0.1:${(server.address() as any).port}`};
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

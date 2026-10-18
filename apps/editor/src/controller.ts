@@ -155,7 +155,8 @@ export function createEditorController(options: EditorOptions = {}) {
   }
   function seek(time: number) {playhead.value = Math.min(Math.max(0, time), total.value);}
   function dispose() {disposed = true; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
+  async function flush() {await queue;}
   return {api, state, doc, assets, projects, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, zoom, snap, total, readOnly,
-    initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, dispose};
+    initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;

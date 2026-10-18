@@ -31,3 +31,10 @@ test('reapplying an unchanged value does not consume undo history', () => {
   const before=s.snapshot();s.execute(0,{type:'speed',clipId:doc.tracks[0].clips[0].id,value:rational(1),shiftFollowing:false});
   assert.deepEqual(s.snapshot(),before);
 });
+test('two consecutive undo/redo operations preserve ordering and increasing revisions',()=>{
+  const doc=importJianying(readSnapshot('01-single-video.json')).document,s=createSession(doc),id=doc.tracks[0].clips[0].id;
+  s.execute(0,{type:'speed',clipId:id,value:rational(2),shiftFollowing:false});
+  const last=s.execute(1,{type:'speed',clipId:id,value:rational(3),shiftFollowing:false});
+  s.undo(2);s.undo(3);assert.deepEqual(s.snapshot().document,doc);
+  s.redo(4);s.redo(5);assert.deepEqual(s.snapshot().document,last.document);assert.equal(s.snapshot().revision,6);
+});

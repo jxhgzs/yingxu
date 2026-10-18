@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, watch} from 'vue';
+import {ref, watch, onMounted, onBeforeUnmount, nextTick} from 'vue';
 import {theme} from 'ant-design-vue';
 import type {EditorController} from './controller.ts';
 import Icon from './components/Icon.vue';
@@ -40,6 +40,12 @@ function keyboard(event:KeyboardEvent){
 }
 async function openSaved(id:string){await props.c.guard(()=>props.c.loadProject(id));projectsOpen.value=false;}
 function nativeDrop(event:DragEvent){if(event.dataTransfer?.files.length){event.preventDefault();files(Array.from(event.dataTransfer.files));}}
+let detachClose:(()=>void)|undefined;
+onMounted(()=>{detachClose=window.yingxuDesktop?.onPrepareClose(async()=>{
+  const focused=document.activeElement;if(focused instanceof HTMLElement&&root.value?.contains(focused))focused.blur();
+  await nextTick();await props.c.flush();
+});});
+onBeforeUnmount(()=>detachClose?.());
 </script>
 <template>
   <div ref="root" class="yx-editor" tabindex="0" @keydown="keyboard" @pointerdown.capture="focusEditor" @dragover.prevent @drop="nativeDrop">
