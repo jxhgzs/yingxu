@@ -8,8 +8,10 @@ import {applyContrastChannel,contrastParameters} from './color-contrast.ts';
 import type {ContrastParameters} from './color-contrast.ts';
 import {temperatureTintMatrix} from './color-temperature.ts';
 import type {TemperatureMatrix} from './color-temperature.ts';
+import {blackWhiteParameters,applyFadeChannel} from './color-tones.ts';
+import type {BlackWhiteParameters} from './color-tones.ts';
 export type ColorAdjustments={
-  version:'combine-adjust-v2';brightness?:number;contrast?:number;saturation?:number;highlight?:number;shadow?:number;temperature?:number;tint?:number;
+  version:'combine-adjust-v2';brightness?:number;contrast?:number;saturation?:number;highlight?:number;shadow?:number;temperature?:number;tint?:number;black?:number;white?:number;fade?:number;
 };
 export type RGB=readonly [number,number,number];
 export type ColorAdjustmentStage=
@@ -17,21 +19,23 @@ export type ColorAdjustmentStage=
   | {kind:'contrast';intensity:number;parameters:ContrastParameters}
   | {kind:'saturation';factor:number}
   | {kind:'highlight'|'shadow';exponent:number}
-  | {kind:'temperatureTint';matrix:TemperatureMatrix};
+  | {kind:'blackWhite';parameters:BlackWhiteParameters}
+  | {kind:'temperatureTint';matrix:TemperatureMatrix}
+  | {kind:'fade';amount:number};
 export const COLOR_EFFECT_EPSILON=1e-5;
 export const COLOR_LUMINANCE=[.208540,.702086,.089374] as const;
-const fields=['brightness','contrast','saturation','highlight','shadow','temperature','tint'] as const;
+const fields=['brightness','contrast','saturation','highlight','shadow','temperature','tint','black','white','fade'] as const;
 const clamp=(v:number)=>Math.min(1,Math.max(0,v));
 
 export function validateColorAdjustments(value:unknown):asserts value is ColorAdjustments{
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('INVALID_COLOR_ADJUSTMENTS');
   const v=value as Record<string,unknown>;
   if(v.version!=='combine-adjust-v2'||Object.keys(v).some(k=>k!=='version'&&!fields.includes(k as typeof fields[number])))throw Error('INVALID_COLOR_ADJUSTMENTS: version or field');
-  for(const field of fields)if(v[field]!==undefined&&(typeof v[field]!=='number'||!Number.isFinite(v[field])||Math.abs(v[field])>1))throw Error(`INVALID_COLOR_ADJUSTMENTS: ${field}`);
+  for(const field of fields)if(v[field]!==undefined&&(typeof v[field]!=='number'||!Number.isFinite(v[field])||Math.abs(v[field])>1||field==='fade'&&v[field]<0))throw Error(`INVALID_COLOR_ADJUSTMENTS: ${field}`);
 }
 export function normalizeColorAdjustments(value?:ColorAdjustments):Required<ColorAdjustments>{
   if(value!==undefined)validateColorAdjustments(value);
-  return {version:'combine-adjust-v2',brightness:value?.brightness??0,contrast:value?.contrast??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0,temperature:value?.temperature??0,tint:value?.tint??0};
+  return {version:'combine-adjust-v2',brightness:value?.brightness??0,contrast:value?.contrast??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0,temperature:value?.temperature??0,tint:value?.tint??0,black:value?.black??0,white:value?.white??0,fade:value?.fade??0};
 }
 /** Computes each intensity mapping once for CPU, geq and shader consumers. */
 export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentStage[]{
@@ -49,7 +53,9 @@ export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentSt
       stages.push({kind,exponent:1+sign*.503*i+.183*i*i+sign*.147*i*i*i+.067*i*i*i*i});
     }
   }
+  if(Math.abs(v.black)>COLOR_EFFECT_EPSILON||Math.abs(v.white)>COLOR_EFFECT_EPSILON)stages.push({kind:'blackWhite',parameters:blackWhiteParameters(v.black,v.white)});
   if(Math.abs(v.temperature)>COLOR_EFFECT_EPSILON||Math.abs(v.tint)>COLOR_EFFECT_EPSILON)stages.push({kind:'temperatureTint',matrix:temperatureTintMatrix(v.temperature,v.tint)});
+  if(v.fade>COLOR_EFFECT_EPSILON)stages.push({kind:'fade',amount:v.fade});
   return stages;
 }
 export function hasColorAdjustments(value?:ColorAdjustments):boolean{return colorAdjustmentStages(value).length>0;}
@@ -62,6 +68,10 @@ export function applyColorAdjustments(rgb:RGB,value?:ColorAdjustments):[number,n
     if(stage.kind==='saturation'){
       const grey=result.reduce((sum,c,i)=>sum+c*COLOR_LUMINANCE[i],0);
       result=result.map(c=>clamp(c*stage.factor+grey*(1-stage.factor))) as [number,number,number];
+    }else if(stage.kind==='blackWhite'){
+      result=result.map(c=>clamp(c*stage.parameters.slope+stage.parameters.offset)) as [number,number,number];
+    }else if(stage.kind==='fade'){
+      result=result.map(c=>applyFadeChannel(c,stage.amount)) as [number,number,number];
     }else if(stage.kind==='temperatureTint'){
       const input=result;
       result=stage.matrix.map(row=>clamp(row[0]*input[0]+row[1]*input[1]+row[2]*input[2])) as [number,number,number];

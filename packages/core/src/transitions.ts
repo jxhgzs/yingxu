@@ -4,6 +4,9 @@ import {add, sub, mul, div, compare, rational, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 export type {Transition} from './document.ts';
 
+export function isSpatialTransition(kind:Transition['kind']):boolean{return kind==='wipeLeft'||kind==='circleOpen';}
+export function transitionUsesSourceHandles(kind:Transition['kind']):boolean{return kind==='crossfade'||isSpatialTransition(kind);}
+
 /** Sequence time and source time stay exact; decoder frame selection is a separate boundary. */
 export function transitionWindow(transition:Transition,outgoing:Clip):Range {
   validRational(transition.duration,'transition.duration');
@@ -58,8 +61,8 @@ export function validateTransitions(doc:Document):void {
     check(transition&&id(transition.id)&&id(transition.trackId)&&id(transition.outgoingClipId)&&id(transition.incomingClipId),'INVALID_TRANSITION');
     check(Object.keys(transition).every(key=>['id','trackId','outgoingClipId','incomingClipId','kind','alignment','overlap','duration'].includes(key)),'UNSUPPORTED_TRANSITION_FIELD',transition.id);
     check(!ids.has(transition.id),'DUPLICATE_TRANSITION_ID',transition.id);ids.add(transition.id);
-    check(['crossfade','dipToBlack'].includes(transition.kind),'TRANSITION_KIND_UNVERIFIED',transition.id);
-    check(transition.alignment==='center'&&transition.overlap===(transition.kind==='crossfade'),'TRANSITION_ALIGNMENT_UNSUPPORTED',transition.id);
+    check(['crossfade','dipToBlack','dipToWhite','wipeLeft','circleOpen'].includes(transition.kind),'TRANSITION_KIND_UNVERIFIED',transition.id);
+    check(transition.alignment==='center'&&transition.overlap===transitionUsesSourceHandles(transition.kind),'TRANSITION_ALIGNMENT_UNSUPPORTED',transition.id);
     const track=tracks.get(transition.trackId);check(track&&track.kind==='video','TRANSITION_TRACK_UNSUPPORTED',transition.id);
     let ordered=orderedTracks.get(track.id);
     if(!ordered){const clips=[...track.clips].sort((a,b)=>compare(a.target.start,b.target.start));ordered={clips,indices:new Map(clips.map((c,i)=>[c.id,i]))};orderedTracks.set(track.id,ordered);}
@@ -71,12 +74,13 @@ export function validateTransitions(doc:Document):void {
       check(clip.editableTiming&&!clip.speedCurve,'TRANSITION_TIME_MAPPING_UNSUPPORTED',clip.id);
       check((assets.get(clip.materialId)?.kind||'video')==='video','TRANSITION_MEDIA_UNSUPPORTED',clip.id);
     }
+    if(isSpatialTransition(transition.kind))check(doc.canvas.width===1280&&doc.canvas.height===720&&compare(doc.fps,rational(30))===0&&[outgoing,incoming].every(c=>compare(c.speed,rational(1))===0),'SPATIAL_TRANSITION_GEOMETRY_UNVERIFIED',transition.id);
     validRational(transition.duration,'transition.duration');
     check(compare(transition.duration,ZERO)>0&&[outgoing,incoming].every(c=>compare(mul(transition.duration,rational(2)),c.target.duration)<=0),'INVALID_TRANSITION_DURATION',transition.id);
     // Product boundary: require a nonempty output frame window; native UI minimum is unverified.
     check(compare(transition.duration,div(rational(1),doc.fps))>=0,'TRANSITION_DURATION_BELOW_ONE_FRAME',transition.id);
     const handles=transitionHandles(transition,outgoing,incoming),outAsset=assets.get(outgoing.materialId)!;
-    if(transition.kind==='crossfade')transitionBoundaryPolicy(doc.fps,transition,outgoing,incoming,outAsset,assets.get(incoming.materialId)!);
+    if(transitionUsesSourceHandles(transition.kind))transitionBoundaryPolicy(doc.fps,transition,outgoing,incoming,outAsset,assets.get(incoming.materialId)!);
     const ranges=windows.get(track.id)||[];ranges.push({id:transition.id,range:handles.window});windows.set(track.id,ranges);
   }
   for(const ranges of windows.values()){
@@ -103,7 +107,7 @@ export function applyTransitionCommand(doc:Document,command:TransitionCommand):D
     if(command.type==='transition.remove')next.transitions!.splice(index,1);
     else{
       check(command.changes&&typeof command.changes==='object'&&Object.keys(command.changes).every(k=>['kind','duration'].includes(k)),'INVALID_TRANSITION_UPDATE');
-      Object.assign(transition,structuredClone(command.changes));if(command.changes.kind)transition.overlap=command.changes.kind==='crossfade';
+      Object.assign(transition,structuredClone(command.changes));if(command.changes.kind)transition.overlap=transitionUsesSourceHandles(command.changes.kind);
     }
   }
   validateTransitions(next);return next;

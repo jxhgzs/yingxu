@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {captionScript} from './captions.ts';
+import {subtitleClock} from './subtitle-clock.ts';
 import {prepareFonts} from './fonts.ts';
 import {ffmpeg} from './probe.ts';
 import {runProcess} from './process.ts';
@@ -29,8 +30,7 @@ export async function rasterText(layer:Layer,canvas:{width:number;height:number}
  // libass' alpha-plane blending is not the same coverage used by its RGB planes.
  // Two opaque backgrounds recover the actual composite operator, including overlapping
  // glyph/outline/shadow components. This avoids dark antialiasing from double premultiply.
- const shift=options.mode==='frame'?`settb=expr=${fps.denominator}/${fps.numerator},setpts=PTS+${options.frame},`:'';
- const filter=`${shift}subtitles=filename=caption.ass${fonts?':fontsdir=fonts':''}`;
+ const clock=subtitleClock(fps,options.mode==='frame'?options.frame!:0),filter=`${clock.before},subtitles=filename=caption.ass${fonts?':fontsdir=fonts':''},${clock.after}`;
  const args=['-hide_banner','-loglevel','warning','-nostdin','-y','-threads','1','-filter_complex_threads','1'];
  for(const background of ['black','white'])args.push('-f','lavfi','-i',`color=c=${background}:s=${canvas.width}x${canvas.height}:r=${fps.numerator}/${fps.denominator},format=rgba`);
  args.push('-filter_complex',`[0:v]${filter}[black];[1:v]${filter}[white]`);

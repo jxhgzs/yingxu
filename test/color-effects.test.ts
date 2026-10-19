@@ -6,7 +6,7 @@ const adjust=(fields:Omit<ColorAdjustments,'version'>):ColorAdjustments=>({versi
 const near=(actual:RGB,expected:RGB,tolerance=2e-14)=>actual.forEach((value,i)=>assert.ok(Math.abs(value-expected[i])<=tolerance,`${value} != ${expected[i]}`));
 
 test('versioned adjustments validate strictly and normalize without mutating callers',()=>{
-  assert.deepEqual(normalizeColorAdjustments(),{version:'combine-adjust-v2',brightness:0,contrast:0,saturation:0,highlight:0,shadow:0,temperature:0,tint:0});
+  assert.deepEqual(normalizeColorAdjustments(),{version:'combine-adjust-v2',brightness:0,contrast:0,saturation:0,highlight:0,shadow:0,temperature:0,tint:0,black:0,white:0,fade:0});
   const input=Object.freeze(adjust({brightness:.5}));
   assert.equal(normalizeColorAdjustments(input).saturation,0);assert.deepEqual(input,adjust({brightness:.5}));
   assert.equal(hasColorAdjustments(input),true);assert.equal(hasColorAdjustments(adjust({brightness:1e-5,shadow:-1e-5})),false);

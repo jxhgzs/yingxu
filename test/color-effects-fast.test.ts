@@ -80,3 +80,22 @@ test('fast colour benchmark processes sixty 720p frames without per-pixel expres
     t.diagnostic(`720p × 60 frames: preparation ${preparationMs.toFixed(2)} ms; FFmpeg ${seconds.toFixed(3)} s; ${(60/seconds).toFixed(1)} fps; ${prepared.metadata.luts.reduce((s,l)=>s+l.bytes,0)} LUT bytes.`);
   }finally{await fs.rm(directory,{recursive:true,force:true});}
 });
+
+test('new BW uses isolated nearest RGB8 source sampling without altering float alpha or old seven-control paths',{timeout:60000},async t=>{
+ const directory=await fs.mkdtemp(path.join(os.tmpdir(),'color-tones-fast-'));
+ try{
+  const width=1024,height=2,count=width*height,input=Buffer.alloc(count*16),edges=[.49700039625167847,.5,0,1,.00001,.9954337477684021,.5022830963134766,.123456];
+  for(let i=0;i<count;i++){for(let c=0;c<3;c++)input.writeFloatLE(i<8?edges[(i+c)%8]:((i*977+c*317)%4096+.25)/4096,(c*count+i)*4);input.writeFloatLE((i%997+.12345)/998,(3*count+i)*4);}
+  const cases=[adjust({black:-1,white:1}),adjust({black:1,white:-1}),adjust({black:-.5,white:.8,temperature:1,fade:1}),adjust({brightness:-.2,contrast:.7,saturation:.5,highlight:.8,shadow:-.7,black:.3,white:-.2,temperature:-1,tint:1,fade:.5})];let worst=0;
+  for(const value of cases){
+   const prepared=await prepareColorEffects(value,directory);assert.equal(prepared.metadata.inputQuantization,'rgb8-nearest');assert(prepared.filter.includes(':interp=nearest'));const output=runFloat(input,width,height,prepared.filter,directory);
+   for(let i=0;i<count;i++){
+    const source=[input.readFloatLE((2*count+i)*4),input.readFloatLE(i*4),input.readFloatLE((count+i)*4)].map(v=>Math.round(v*255)/255) as unknown as RGB,expected=applyColorAdjustments(source,value),offsets=[2*count,0,count];
+    for(let c=0;c<3;c++){const error=Math.abs(output.readFloatLE((offsets[c]+i)*4)-expected[c])*255;worst=Math.max(worst,error);assert(error<=1,`${JSON.stringify(value)} pixel ${i} channel ${c}: ${error}`);}
+    assert.equal(output.readUInt32LE((3*count+i)*4),input.readUInt32LE((3*count+i)*4));
+   }
+  }
+  const prior=await prepareColorEffects(adjust({brightness:.4,temperature:.5,tint:-.2}),directory);assert.equal(prior.metadata.inputQuantization,undefined);assert(!prior.filter.includes(':interp=nearest'));
+  t.diagnostic(`BW source-contract dense comparison ${cases.length} × ${count}: max ${worst.toFixed(6)} LSB; alpha bits unchanged.`);
+ }finally{await fs.rm(directory,{recursive:true,force:true});}
+});

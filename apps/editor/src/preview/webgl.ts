@@ -12,9 +12,11 @@ precision highp float;uniform sampler2D u_image;uniform float u_opacity;in vec2 
 ${colorShader}
 void main(){vec4 sampleColor=texture(u_image,v_uv);float alpha=sampleColor.a*u_opacity;color=vec4(previewColorAdjustments(sampleColor.rgb)*alpha,alpha);}`;
 const mixFragment=`#version 300 es
-precision highp float;uniform sampler2D u_outgoing;uniform sampler2D u_incoming;uniform float u_progress;uniform bool u_dipToBlack;in vec2 v_uv;out vec4 color;
+precision highp float;uniform sampler2D u_outgoing;uniform sampler2D u_incoming;uniform float u_progress;uniform bool u_dipToBlack;uniform bool u_dipToWhite;uniform int u_spatialKind;uniform float u_aspectRatio;in vec2 v_uv;out vec4 color;
 void main(){vec4 outgoing=texture(u_outgoing,v_uv);vec4 incoming=texture(u_incoming,v_uv);
- if(u_dipToBlack){float wOut=max(1.0-2.0*u_progress,0.0);float wIn=max(2.0*u_progress-1.0,0.0);color=outgoing*wOut+incoming*wIn+vec4(0.0,0.0,0.0,1.0-wOut-wIn);}
+ if(u_spatialKind==1)color=v_uv.x<=1.0-u_progress?outgoing:incoming;
+ else if(u_spatialKind==2)color=length((v_uv-vec2(0.5))*vec2(u_aspectRatio,1.0))<u_progress*sqrt(u_aspectRatio*u_aspectRatio+1.0)*0.5?incoming:outgoing;
+ else if(u_dipToBlack||u_dipToWhite){float wOut=max(1.0-2.0*u_progress,0.0);float wIn=max(2.0*u_progress-1.0,0.0);color=outgoing*wOut+incoming*wIn+vec4(vec3(u_dipToWhite?1.0-wOut-wIn:0.0),1.0-wOut-wIn);}
  else color=mix(outgoing,incoming,u_progress);}`;
 const screenVertices=new Float32Array([-1,1,0,1,1,1,1,1,-1,-1,0,0,-1,-1,0,0,1,1,1,1,1,-1,1,0]);
 type Framebuffer={texture:WebGLTexture;framebuffer:WebGLFramebuffer};
@@ -26,16 +28,17 @@ function compileProgram(gl:WebGL2RenderingContext,pixelSource:string):WebGLProgr
 }
 type TimerExtension={TIME_ELAPSED_EXT:number;GPU_DISJOINT_EXT:number};
 export type GLInfo={renderer:string;vendor:string;softwareRenderer:boolean;maxTextureSize:number;timerAvailable:boolean};
-type Texture={texture:WebGLTexture;width:number;height:number;uploaded:boolean};
+type Texture={texture:WebGLTexture;width:number;height:number;uploaded:boolean;url?:string};
 export class WebGLCompositor {
  readonly canvas:HTMLCanvasElement;
  readonly gl:WebGL2RenderingContext;readonly info:GLInfo;lastGpuMs?:number;
  private program:WebGLProgram;private buffer:WebGLBuffer;private vao:WebGLVertexArrayObject;
  private opacity:WebGLUniformLocation;private textures=new Map<string,Texture>();private timer?:TimerExtension;private queries:WebGLQuery[]=[];private disposed=false;
- private mixProgram?:WebGLProgram;private mixProgress?:WebGLUniformLocation;private mixDip?:WebGLUniformLocation;private targets:Framebuffer[]=[];framebufferAllocations=0;
+ private mixProgram?:WebGLProgram;private mixProgress?:WebGLUniformLocation;private mixDip?:WebGLUniformLocation;private mixWhite?:WebGLUniformLocation;private mixSpatial?:WebGLUniformLocation;private mixAspect?:WebGLUniformLocation;private targets:Framebuffer[]=[];framebufferAllocations=0;
  private fxEnabled:WebGLUniformLocation;private fxParameters:WebGLUniformLocation;private fxOffset:WebGLUniformLocation;
  private fxContrastEnabled:WebGLUniformLocation;private fxContrastA:WebGLUniformLocation;private fxContrastB:WebGLUniformLocation;
  private fxTemperatureEnabled:WebGLUniformLocation;private fxTemperatureMatrix:WebGLUniformLocation;
+ private fxBlackWhiteEnabled:WebGLUniformLocation;private fxBlackWhite:WebGLUniformLocation;private fxFadeEnabled:WebGLUniformLocation;private fxFadeAmount:WebGLUniformLocation;
  private capture?:{points:PixelPoint[];readback:ColorReadback};
  get colorState(){return previewColorState(this.gl as ColorGL);}
  get framebufferCount(){return this.targets.length;}
@@ -55,6 +58,8 @@ export class WebGLCompositor {
   if(contrastEnabled===null||contrastA===null||contrastB===null)throw Error('GPU_UNIFORM_MISSING');this.fxContrastEnabled=contrastEnabled;this.fxContrastA=contrastA;this.fxContrastB=contrastB;
   const temperatureEnabled=gl.getUniformLocation(program,'u_fxTemperatureEnabled'),temperatureMatrix=gl.getUniformLocation(program,'u_fxTemperatureMatrix');
   if(temperatureEnabled===null||temperatureMatrix===null)throw Error('GPU_UNIFORM_MISSING');this.fxTemperatureEnabled=temperatureEnabled;this.fxTemperatureMatrix=temperatureMatrix;
+  const blackWhiteEnabled=gl.getUniformLocation(program,'u_fxBlackWhiteEnabled'),blackWhite=gl.getUniformLocation(program,'u_fxBlackWhite'),fadeEnabled=gl.getUniformLocation(program,'u_fxFadeEnabled'),fadeAmount=gl.getUniformLocation(program,'u_fxFadeAmount');
+  if(blackWhiteEnabled===null||blackWhite===null||fadeEnabled===null||fadeAmount===null)throw Error('GPU_UNIFORM_MISSING');this.fxBlackWhiteEnabled=blackWhiteEnabled;this.fxBlackWhite=blackWhite;this.fxFadeEnabled=fadeEnabled;this.fxFadeAmount=fadeAmount;
   gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);gl.disable(gl.DEPTH_TEST);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);
   const colorGL=gl as ColorGL;if('drawingBufferColorSpace' in gl)colorGL.drawingBufferColorSpace='srgb';if('unpackColorSpace' in gl)colorGL.unpackColorSpace='srgb';gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL,gl.BROWSER_DEFAULT_WEBGL);
   const debug=gl.getExtension('WEBGL_debug_renderer_info'),renderer=String(gl.getParameter(debug?debug.UNMASKED_RENDERER_WEBGL:gl.RENDERER)),vendor=String(gl.getParameter(debug?debug.UNMASKED_VENDOR_WEBGL:gl.VENDOR));
@@ -66,8 +71,8 @@ export class WebGLCompositor {
  private releaseTargets(){for(const target of this.targets){this.gl.deleteFramebuffer(target.framebuffer);this.gl.deleteTexture(target.texture);}this.targets=[];}
  private ensureTargets(){
   const gl=this.gl;if(!this.mixProgram){const program=compileProgram(gl,mixFragment);try{
-    const out=gl.getUniformLocation(program,'u_outgoing'),incoming=gl.getUniformLocation(program,'u_incoming'),progress=gl.getUniformLocation(program,'u_progress'),dip=gl.getUniformLocation(program,'u_dipToBlack');
-    if(out===null||incoming===null||progress===null||dip===null)throw Error('GPU_UNIFORM_MISSING');gl.useProgram(program);gl.uniform1i(out,0);gl.uniform1i(incoming,1);this.mixProgress=progress;this.mixDip=dip;this.mixProgram=program;
+    const out=gl.getUniformLocation(program,'u_outgoing'),incoming=gl.getUniformLocation(program,'u_incoming'),progress=gl.getUniformLocation(program,'u_progress'),dip=gl.getUniformLocation(program,'u_dipToBlack'),white=gl.getUniformLocation(program,'u_dipToWhite'),spatial=gl.getUniformLocation(program,'u_spatialKind'),aspect=gl.getUniformLocation(program,'u_aspectRatio');
+    if(out===null||incoming===null||progress===null||dip===null||white===null||spatial===null||aspect===null)throw Error('GPU_UNIFORM_MISSING');gl.useProgram(program);gl.uniform1i(out,0);gl.uniform1i(incoming,1);this.mixProgress=progress;this.mixDip=dip;this.mixWhite=white;this.mixSpatial=spatial;this.mixAspect=aspect;this.mixProgram=program;
    }catch(e){gl.deleteProgram(program);throw e;}}
   if(this.targets.length)return;
   try{for(let i=0;i<2;i++){
@@ -84,16 +89,17 @@ export class WebGLCompositor {
   if(!w||!h||w>this.info.maxTextureSize||h>this.info.maxTextureSize)throw Error('GPU_TEXTURE_SIZE_LIMIT');
   let record=this.textures.get(id);if(!record){const texture=gl.createTexture();if(!texture)throw Error('GPU_TEXTURE_ALLOCATION_FAILED');record={texture,width:w,height:h,uploaded:false};this.textures.set(id,record);gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);}
   gl.bindTexture(gl.TEXTURE_2D,record.texture);
-  if((media.asset.kind!=='image'&&media.asset.kind!=='text')||!record.uploaded){
-   gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,pixels);record.uploaded=true;
+  if((media.asset.kind!=='image'&&media.asset.kind!=='text')||!record.uploaded||record.url!==media.url){
+   gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,pixels);record.uploaded=true;record.url=media.url;
    const error=gl.getError();if(error!==gl.NO_ERROR)throw Error('GPU_TEXTURE_UPLOAD_FAILED: '+error);
   }return record.texture;
  }
  private drawLayer(layer:PlannedVisual,media:Map<string,DecodedMedia>,canvas:{width:number;height:number}):number{
   const gl=this.gl,source=media.get(layer.clip.id);if(!source||source.state!=='ready')throw Error('GPU_MEDIA_NOT_READY');
-  gl.useProgram(this.program);gl.activeTexture(gl.TEXTURE0);const previous=this.textures.get(layer.clip.id)?.uploaded;this.texture(layer.clip.id,source);
+  gl.useProgram(this.program);gl.activeTexture(gl.TEXTURE0);const oldTexture=this.textures.get(layer.clip.id),previous=oldTexture?.uploaded&&oldTexture.url===source.url;this.texture(layer.clip.id,source);
   const fx=colorUniforms(layer.clip.colorAdjustments);gl.uniform4iv(this.fxEnabled,fx.mask);gl.uniform4fv(this.fxParameters,fx.parameters);gl.uniform1f(this.fxOffset,fx.brightnessOffset);gl.uniform1i(this.fxContrastEnabled,fx.contrastEnabled?1:0);gl.uniform4fv(this.fxContrastA,fx.contrastA);gl.uniform4fv(this.fxContrastB,fx.contrastB);
   gl.uniform1i(this.fxTemperatureEnabled,fx.temperatureEnabled?1:0);gl.uniformMatrix3fv(this.fxTemperatureMatrix,false,fx.temperatureMatrix);
+  gl.uniform1i(this.fxBlackWhiteEnabled,fx.blackWhiteEnabled?1:0);gl.uniform2fv(this.fxBlackWhite,fx.blackWhite);gl.uniform1i(this.fxFadeEnabled,fx.fadeEnabled?1:0);gl.uniform1f(this.fxFadeAmount,fx.fadeAmount);
   const bakedText=layer.asset.kind==='text'&&layer.textRasterMode!=='neutral',opacity=layer.asset.kind==='text'&&layer.textRasterMode==='neutral'?1-Math.round((1-layer.transform.opacity)*255)/255:layer.transform.opacity;
   gl.bufferData(gl.ARRAY_BUFFER,layerVertices(layer.asset.kind==='text'?source.asset:layer.asset,bakedText?{x:0,y:0,scale:1,rotation:0,opacity:1,flipX:false,flipY:false}:layer.transform,canvas),gl.DYNAMIC_DRAW);gl.uniform1f(this.opacity,bakedText?1:opacity);gl.drawArrays(gl.TRIANGLES,0,6);
   return (source.asset.kind!=='image'&&source.asset.kind!=='text')||!previous?1:0;
@@ -116,7 +122,7 @@ export class WebGLCompositor {
     }
     gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.useProgram(this.mixProgram!);
     for(let i=0;i<2;i++){gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,this.targets[i].texture);}
-    gl.bufferData(gl.ARRAY_BUFFER,screenVertices,gl.DYNAMIC_DRAW);gl.uniform1f(this.mixProgress!,Math.max(0,Math.min(1,layer.transition.progress)));gl.uniform1i(this.mixDip!,layer.transition.kind==='dipToBlack'?1:0);gl.drawArrays(gl.TRIANGLES,0,6);drawCalls++;transitionDraws++;
+    gl.bufferData(gl.ARRAY_BUFFER,screenVertices,gl.DYNAMIC_DRAW);gl.uniform1f(this.mixProgress!,Math.max(0,Math.min(1,layer.transition.progress)));gl.uniform1i(this.mixDip!,layer.transition.kind==='dipToBlack'?1:0);gl.uniform1i(this.mixWhite!,layer.transition.kind==='dipToWhite'?1:0);gl.uniform1i(this.mixSpatial!,layer.transition.kind==='wipeLeft'?1:layer.transition.kind==='circleOpen'?2:0);gl.uniform1f(this.mixAspect!,canvas.width/canvas.height);gl.drawArrays(gl.TRIANGLES,0,6);drawCalls++;transitionDraws++;
     if(this.capture)this.capture.readback.transitions.push({id:layer.transition.id,progress:layer.transition.progress,...captured});
    }
   }finally{if(this.targets.length){gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,this.canvas.width,this.canvas.height);}if(query){gl.endQuery(this.timer!.TIME_ELAPSED_EXT);this.queries.push(query);}}

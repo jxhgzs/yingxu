@@ -46,7 +46,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       let match: RegExpExecArray | null;
       if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, engine:jobs.engine, projects: store.list(), assets: [...store.assets.values()],
         capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'text-animation', 'gpu-text-animation', 'temperature-tint', 'gpu-silent-curve', 'gpu-curve-audio', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
-        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU支持七项调节、已验证叠化/闪黑及文字动画；部分文字使用精确逐帧纹理，冷帧需等待；曲线声音需先准备音轨，超缓存限制或未知样式回退后台预览；零余量转场只支持逐帧验证的30fps恒速素材']});
+        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU支持已验证的基础调节、转场与文字动画；精确文字使用有界缓存，冷准备需等待；曲线声音需先准备音轨，超缓存限制或未知样式回退后台预览；零余量转场只支持逐帧验证的30fps恒速素材，空间转场另有限定画布与输出条件']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
         const input = await body(request), doc = emptyDocument(); if (typeof input.title === 'string') doc.title = input.title.slice(0, 200);

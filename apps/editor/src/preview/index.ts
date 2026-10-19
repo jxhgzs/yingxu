@@ -1,9 +1,13 @@
-import type {Document,Asset,Diagnostic} from '../../../../packages/core/src/document.ts';
+import type {Document,Asset,Clip,Diagnostic} from '../../../../packages/core/src/document.ts';
 import type {Rational} from '../../../../packages/core/src/time.ts';
 import {toNumber,frameTime} from '../../../../packages/core/src/time.ts';
 import {createPreviewPlan,outputTime,previewFrame,sourceSeekTime,textRasterMode,sourceBoundaryHeld} from './plan.ts';
 import type {PreviewPlan,PreviewSupport,PreviewReason,PlannedFrame} from './plan.ts';
 import {DecodedMedia} from './decode.ts';
+import {TextFrameCache} from './text-cache.ts';
+import type {TextFrameRequest,TextCacheMetrics} from './text-cache.ts';
+export type {TextContext,TextTexture} from './text-cache.ts';
+import type {TextContext,TextTexture} from './text-cache.ts';
 import {createCurveClock} from './curve-clock.ts';
 import type {CurveClock} from './curve-clock.ts';
 import {PreviewAudio} from './audio.ts';
@@ -19,11 +23,9 @@ export {createPreviewPlan,outputTime,previewFrame,layerVertices} from './plan.ts
 export type PreviewState='idle'|'loading'|'ready'|'playing'|'paused'|'buffering'|'fallback'|'context-lost'|'disposed';
 export type PreviewMetrics={displayedFrames:number;droppedOutputFrames:number;decoderDroppedFrames:number;drawCalls:number;textureUploads:number;
  framebufferPasses:number;transitionDraws:number;framebufferCount:number;framebufferBytes:number;framebufferAllocations:number;
- lastCpuMs:number;meanCpuMs:number;lastGpuMs?:number;lastDecodeWaitMs:number;maxSourceDriftMs:number;lastPresentedFrame:number;activeMedia:number;cachedMedia:number;contextLosses:number};
-export type PreviewManifest={backend:'webgl2';state:PreviewState;support:PreviewSupport;renderer:GLInfo;color:PreviewColorState;time:number;frameRasters:number;previewQuality:'realtime'|'exact-frames';audioState:AudioContextState|'uninitialized';metrics:PreviewMetrics;curveAudio:{cachedClips:number;pcmBytes:number;routes:PreviewAudio['curveRoutes']};
+ lastCpuMs:number;meanCpuMs:number;lastGpuMs?:number;lastDecodeWaitMs:number;maxSourceDriftMs:number;lastPresentedFrame:number;activeMedia:number;cachedMedia:number;contextLosses:number;bufferEvents:number;coldTextPrepareMs:number};
+export type PreviewManifest={backend:'webgl2';state:PreviewState;support:PreviewSupport;renderer:GLInfo;color:PreviewColorState;time:number;frameRasters:number;previewQuality:'realtime'|'exact-frames';audioState:AudioContextState|'uninitialized';metrics:PreviewMetrics;textCache?:TextCacheMetrics;curveAudio:{cachedClips:number;pcmBytes:number;routes:PreviewAudio['curveRoutes']};
  decoders:{clipId:string;state:string;currentTime?:number;decodedMediaTime?:number;readyState?:number;presentedFrames:number;error?:string}[];error?:PreviewReason};
-export type TextContext={projectId:string;revision:number;mode?:'neutral'|'frame';frame?:number};
-export type TextTexture={url:string;width:number;height:number;mode?:'neutral'|'frame';frame?:number;clipId?:string;revision?:number};
 export type GpuPreviewOptions={curveAudio?:CurveAudioProvider;textTexture?:(clipId:string,context:TextContext,signal:AbortSignal)=>Promise<TextTexture>;mediaUrl:(asset:Asset)=>string;maxDimension?:number;maxConcurrentMedia?:number;maxCachedMedia?:number;
  onState?:(manifest:PreviewManifest)=>void;onTime?:(seconds:number)=>void;onMetrics?:(manifest:PreviewManifest)=>void};
 const unsupported:PreviewSupport={supported:false,reasons:[],visualLayers:0,audioLayers:0,maxConcurrentMedia:0};
@@ -34,14 +36,14 @@ export class GpuPreview {
  readonly canvas:HTMLCanvasElement;private options:GpuPreviewOptions;
  private compositor:WebGLCompositor;private audio=new PreviewAudio();private plan?:PreviewPlan;
  private sounds?:CurveSounds;private textContext?:TextContext;private curveClocks=new Map<string,CurveClock>();
- private resources=new Map<string,DecodedMedia>();private textResourceFrames=new Map<string,number>();private support:PreviewSupport=unsupported;private error?:PreviewReason;
+ private textCache?:TextFrameCache;private resources=new Map<string,DecodedMedia>();private textResourceFrames=new Map<string,number>();private support:PreviewSupport=unsupported;private error?:PreviewReason;
  private status:PreviewState='idle';private disposed=false;private playing=false;private buffering=false;private operation=new AbortController();private epoch=0;
  private raf?:number;private position=0;private anchorPosition=0;private anchorWall=0;private anchorAudio=0;private metricsAt=0;
- private stats:PreviewMetrics={displayedFrames:0,droppedOutputFrames:0,decoderDroppedFrames:0,drawCalls:0,textureUploads:0,framebufferPasses:0,transitionDraws:0,framebufferCount:0,framebufferBytes:0,framebufferAllocations:0,lastCpuMs:0,meanCpuMs:0,lastDecodeWaitMs:0,maxSourceDriftMs:0,lastPresentedFrame:-1,activeMedia:0,cachedMedia:0,contextLosses:0};
+ private stats:PreviewMetrics={displayedFrames:0,droppedOutputFrames:0,decoderDroppedFrames:0,drawCalls:0,textureUploads:0,framebufferPasses:0,transitionDraws:0,framebufferCount:0,framebufferBytes:0,framebufferAllocations:0,lastCpuMs:0,meanCpuMs:0,lastDecodeWaitMs:0,maxSourceDriftMs:0,lastPresentedFrame:-1,activeMedia:0,cachedMedia:0,contextLosses:0,bufferEvents:0,coldTextPrepareMs:0};
  private lost=(event:Event)=>{event.preventDefault();if(this.disposed)return;this.stats.contextLosses++;this.stopTransport();this.epoch++;this.operation.abort();this.compositor.abandon();this.setState('context-lost');};
  private restored=()=>{if(this.disposed)return;try{this.compositor.dispose();this.compositor=new WebGLCompositor(this.canvas);this.resize();this.error=undefined;this.setState('paused');void this.seek(this.position).catch(e=>this.fail(e));}catch(e){this.fail(e);}};
  constructor(canvas:HTMLCanvasElement,options:GpuPreviewOptions){
-  this.canvas=canvas;this.options=options;this.sounds=options.curveAudio?new CurveSounds(options.curveAudio,id=>this.audio.release(id)):undefined;
+  this.canvas=canvas;this.options=options;this.textCache=options.textTexture?new TextFrameCache(options.textTexture):undefined;this.sounds=options.curveAudio?new CurveSounds(options.curveAudio,id=>this.audio.release(id)):undefined;
   this.compositor=new WebGLCompositor(canvas);this.resize();canvas.addEventListener('webglcontextlost',this.lost);canvas.addEventListener('webglcontextrestored',this.restored);
  }
  get manifest():PreviewManifest{
@@ -50,8 +52,8 @@ export class GpuPreview {
   const support=unavailable?{...this.support,supported:false,reasons:[...this.support.reasons,unavailable]}:this.support;
   const frameRasters=this.plan?.media.filter(l=>l.asset.kind==='text'&&textRasterMode(l.clip)==='frame').length??0;
   return {backend:'webgl2',frameRasters,previewQuality:frameRasters?'exact-frames':'realtime',state:this.status,support:{...support,reasons:support.reasons.map(r=>({...r}))},renderer:{...this.compositor.info},color:this.compositor.colorState,time:this.currentTime,
-   audioState:this.audio.state,curveAudio:{cachedClips:this.sounds?.size??0,pcmBytes:this.sounds?.bytes??0,routes:this.audio.curveRoutes},metrics:{...this.stats,decoderDroppedFrames:dropped,lastGpuMs:this.compositor.lastGpuMs,cachedMedia:this.resources.size,framebufferCount:this.compositor.framebufferCount,framebufferBytes:this.compositor.framebufferBytes,framebufferAllocations:this.compositor.framebufferAllocations},
-   decoders:[...this.resources.values()].map(r=>({clipId:r.id,state:r.state,currentTime:r.media?.currentTime,decodedMediaTime:r.decodedTime,readyState:r.media?.readyState,presentedFrames:r.presentedFrames,...(r.error?{error:r.error}:{})})),...(this.error?{error:{...this.error}}:{})};
+   textCache:this.textCache?.metrics,audioState:this.audio.state,curveAudio:{cachedClips:this.sounds?.size??0,pcmBytes:this.sounds?.bytes??0,routes:this.audio.curveRoutes},metrics:{...this.stats,decoderDroppedFrames:dropped,lastGpuMs:this.compositor.lastGpuMs,cachedMedia:this.resources.size,framebufferCount:this.compositor.framebufferCount,framebufferBytes:this.compositor.framebufferBytes,framebufferAllocations:this.compositor.framebufferAllocations},
+   decoders:[...this.resources].map(([clipId,r])=>({clipId,state:r.state,currentTime:r.media?.currentTime,decodedMediaTime:r.decodedTime,readyState:r.media?.readyState,presentedFrames:r.presentedFrames,...(r.error?{error:r.error}:{})})),...(this.error?{error:{...this.error}}:{})};
  }
  get currentTime(){return this.playing?Math.min(this.plan?.duration??0,this.clockTime()):this.position;}
  private clockTime(){return this.buffering?this.position:this.anchorPosition+(this.audio.state==='running'?this.audio.currentTime-this.anchorAudio:(performance.now()-this.anchorWall)/1000);}
@@ -60,13 +62,13 @@ export class GpuPreview {
  private resize(){const c=this.plan?.document.canvas||{width:1280,height:720},factor=Math.min(1,(this.options.maxDimension??1280)/Math.max(c.width,c.height),this.compositor.info.maxTextureSize/Math.max(c.width,c.height));
   this.compositor.resize(Math.max(2,Math.round(c.width*factor/2)*2),Math.max(2,Math.round(c.height*factor/2)*2));}
  private clearResources(){for(const id of [...this.resources.keys()])this.release(id);this.sounds?.clear();}
- private release(id:string){const r=this.resources.get(id);if(!r)return;this.stats.decoderDroppedFrames+=r.quality()?.droppedVideoFrames||0;this.audio.release(id);r.dispose();this.resources.delete(id);this.textResourceFrames.delete(id);this.compositor.release(id);}
+ private release(id:string){const r=this.resources.get(id);if(!r)return;this.stats.decoderDroppedFrames+=r.quality()?.droppedVideoFrames||0;this.audio.release(id);if(!this.textCache?.owns(r))r.dispose();this.resources.delete(id);this.textResourceFrames.delete(id);this.compositor.release(id);}
  private beginOperation(){this.operation.abort();this.operation=new AbortController();return {epoch:++this.epoch,signal:this.operation.signal};}
  private current(epoch:number){return !this.disposed&&epoch===this.epoch&&!this.operation.signal.aborted;}
  private ensure(){if(this.disposed)throw Error('PREVIEW_DISPOSED');if(this.status==='context-lost')throw Error('GPU_CONTEXT_LOST');}
  async setDocument(document:Document,options:{diagnostics?:Diagnostic[];time?:number;textContext?:TextContext}={}):Promise<PreviewManifest>{
   this.ensure();this.stopTransport();this.beginOperation();this.clearResources();this.plan=undefined;this.error=undefined;
-  this.textContext=options.textContext?{projectId:options.textContext.projectId,revision:options.textContext.revision}:undefined;this.curveClocks.clear();
+  this.textContext=options.textContext?{projectId:options.textContext.projectId,revision:options.textContext.revision}:undefined;this.textCache?.reset(this.textContext,document.canvas.width,document.canvas.height);this.curveClocks.clear();
   const result=createPreviewPlan(document,{diagnostics:options.diagnostics,maxConcurrentMedia:this.options.maxConcurrentMedia,texturesAvailable:!!this.options.textTexture&&!!this.textContext,curveAudioAvailable:!!this.sounds&&!!this.textContext});this.support=result.support;this.plan=result.plan;
   this.stats.lastPresentedFrame=-1;this.position=Math.min(Math.max(0,options.time??this.position),this.plan?.duration??0);this.resize();
   if(!this.plan){this.compositor.draw([],this.resources,document.canvas);this.setState('fallback');return this.manifest;}
@@ -84,7 +86,7 @@ export class GpuPreview {
   try{await this.prepare(frame,true,false,op.signal);if(!this.current(op.epoch))return this.manifest;
    // Let the browser finish the paused decoded frame before uploading it as a texture.
    await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(!this.current(op.epoch))return this.manifest;
-   this.paint(frame,false);this.setState('ready');return this.manifest;
+   this.paint(frame,false);this.setState('ready');void this.prepareTextFrames().catch(()=>{});return this.manifest;
   }catch(e){if(!aborted(e)&&this.current(op.epoch))this.fail(e);return this.manifest;}
  }
  /** Call from the actual transport-button gesture so audio resume is authorized by browser policy. */
@@ -94,6 +96,7 @@ export class GpuPreview {
   this.position=toNumber(frame.time);this.setState('buffering');
   try{
    if(this.plan.audio.length)await this.audio.start();if(!this.current(op.epoch))return;
+   const textStarted=performance.now();await this.prepareTextFrames(op.signal);this.stats.coldTextPrepareMs=performance.now()-textStarted;if(!this.current(op.epoch))return;
    await this.prepare(frame,true,true,op.signal);if(!this.current(op.epoch))return;
    this.anchor(toNumber(frame.time));this.playing=true;this.syncAudio(frame,this.position);this.paint(frame,false);this.setState('playing');this.raf=requestAnimationFrame(()=>{void this.tick(op.epoch);});
   }catch(e){if(!aborted(e)&&this.current(op.epoch))this.fail(e);}
@@ -115,13 +118,13 @@ export class GpuPreview {
   for(const r of this.resources.values())r.pause();this.audio.silence();if(suspendAudio)void this.audio.suspend().catch(()=>{});
  }
  private holdForBuffer(frame:PlannedFrame){
-  if(!this.playing||this.buffering)return;this.position=toNumber(frame.time);this.buffering=true;
+  if(!this.playing||this.buffering)return;this.position=toNumber(frame.time);this.buffering=true;this.stats.bufferEvents++;
   for(const r of this.resources.values())r.pause();this.audio.silence();this.setState('buffering');
  }
  private async prepare(frame:PlannedFrame,seekAll:boolean,play:boolean,signal:AbortSignal):Promise<boolean>{
   const started=performance.now(),plan=this.plan!,activeIds=new Set(frame.media.map(l=>l.clip.id));let synchronized=seekAll;
   const curves=frame.audio.filter(l=>l.clip.speedCurve),curveIds=new Set(curves.map(l=>l.clip.id));
-  if(frame.media.some(l=>l.asset.kind==='text'&&(!this.resources.has(l.clip.id)||textRasterMode(l.clip)==='frame'&&this.textResourceFrames.get(l.clip.id)!==frame.frame)))synchronized=true;
+  if(frame.media.some(l=>l.asset.kind==='text'&&!this.textCache?.get(this.textRequest(l,frame.frame))))synchronized=true;
   if(curves.some(l=>!this.sounds?.get(l.clip.id)))synchronized=true;
   if(play&&synchronized)this.holdForBuffer(frame);
   for(const [id,r] of this.resources)if(!activeIds.has(id))r.pause();
@@ -129,17 +132,15 @@ export class GpuPreview {
   const originalMedia=frame.media.filter(l=>!(l.asset.kind==='audio'&&l.clip.speedCurve)),heldIds=new Set(originalMedia.filter(l=>l.asset.kind==='video'&&sourceBoundaryHeld(l.clip,l.asset,frame.time)).map(l=>l.clip.id));
   const [requested]=await Promise.all([Promise.all(originalMedia.map(async layer=>{
    let r=this.resources.get(layer.clip.id);let url=layer.asset.kind==='text'?r?.url:this.options.mediaUrl(layer.asset),asset=layer.asset;
-   if(layer.asset.kind==='text'&&(!r||textRasterMode(layer.clip)==='frame'&&this.textResourceFrames.get(layer.clip.id)!==frame.frame)){
-    if(!this.options.textTexture||!this.textContext)throw Error('GPU_TEXT_TEXTURE_SERVICE_REQUIRED');
-    const mode=textRasterMode(layer.clip),context={...this.textContext,...(mode?{mode}:{}),...(mode==='frame'?{frame:frame.frame}:{})};
-    const texture=await this.options.textTexture(layer.clip.id,context,signal);if(signal.aborted)throw new DOMException('Aborted','AbortError');
-    if(mode&&(texture.clipId!==layer.clip.id||texture.revision!==this.textContext.revision))throw Error('GPU_TEXT_TEXTURE_IDENTITY_INVALID');
-    if(texture.mode!==mode||texture.frame!==(mode==='frame'?frame.frame:undefined))throw Error('GPU_TEXT_TEXTURE_MODE_INVALID');
-    if(texture.width!==plan.document.canvas.width||texture.height!==plan.document.canvas.height)throw Error('GPU_TEXT_TEXTURE_DIMENSIONS_INVALID');
-    asset={...asset,width:texture.width,height:texture.height};url=texture.url;if(mode==='frame'&&r?.url===url)this.textResourceFrames.set(layer.clip.id,frame.frame);
+   if(layer.asset.kind==='text'){
+    if(!this.textCache)throw Error('GPU_TEXT_TEXTURE_SERVICE_REQUIRED');
+    const cached=await this.textCache.prepare(this.textRequest(layer,frame.frame),signal,new Set([...this.resources.values()].filter(x=>x.asset.kind==='text').map(x=>x.url)));
+    if(signal.aborted)throw new DOMException('Aborted','AbortError');
+    if(r!==cached){if(r&&!this.textCache.owns(r))this.release(layer.clip.id);this.resources.set(layer.clip.id,cached);r=cached;}
+    this.textResourceFrames.set(layer.clip.id,frame.frame);asset=cached.asset;url=cached.url;
    }
    if(!url)throw Error('GPU_REGISTERED_MEDIA_URL_REQUIRED');
-   if(r&&(r.asset.id!==layer.asset.id||r.url!==url)){this.release(r.id);r=undefined;}
+   if(r&&layer.asset.kind!=='text'&&(r.asset.id!==layer.asset.id||r.url!==url)){this.release(r.id);r=undefined;}
    if(signal.aborted)throw new DOMException('Aborted','AbortError');
    if(!r){r=new DecodedMedia(layer.clip.id,asset,url,10000,{textRaster:asset.kind==='text'});this.resources.set(r.id,r);if(asset.kind==='text'&&textRasterMode(layer.clip)==='frame')this.textResourceFrames.set(r.id,frame.frame);synchronized=true;}
    r.lastUsed=performance.now();if(r.state==='loading')synchronized=true;return {layer,resource:r};
@@ -165,9 +166,24 @@ export class GpuPreview {
   if(signal.aborted)throw new DOMException('Aborted','AbortError');
   if(play)await Promise.all(requested.map(({layer,resource})=>!layer.clip.speedCurve&&!heldIds.has(layer.clip.id)&&resource.media?.paused?resource.media.play():undefined));
   this.stats.lastDecodeWaitMs=performance.now()-started;this.stats.activeMedia=activeIds.size;
-  const inactive=[...this.resources.values()].filter(r=>!activeIds.has(r.id)).sort((a,b)=>a.lastUsed-b.lastUsed);
-  while(this.resources.size>(this.options.maxCachedMedia??24)&&inactive.length)this.release(inactive.shift()!.id);
+  const inactive=[...this.resources].filter(([id])=>!activeIds.has(id)).sort((a,b)=>a[1].lastUsed-b[1].lastUsed);
+  while(this.resources.size>(this.options.maxCachedMedia??24)&&inactive.length)this.release(inactive.shift()![0]);
   return synchronized;
+ }
+ private textRequest(layer:{clip:Clip;asset:Asset},frame:number):TextFrameRequest{
+  const mode=textRasterMode(layer.clip);
+  return {clipId:layer.clip.id,asset:layer.asset,...(mode?{mode}:{}),...(mode==='frame'?{frame}:{})};
+ }
+ /** Bounded silent preparation. Never starts/resumes WebAudio or changes transport. */
+ async prepareTextFrames(signal?:AbortSignal):Promise<void>{
+  if(!this.textCache||!this.plan||!this.textContext||this.disposed||!this.plan.media.some(l=>l.asset.kind==='text'))return;
+  const plan=this.plan,start=this.displayFrame(this.position).frame,self=this;
+  function* requests(){const counts=new Map<string,number>();for(let f=start;f<Math.min(plan.frameCount,start+300);f++){
+   const frame=previewFrame(plan,frameTime(f,plan.document.fps));for(const layer of frame.media)if(layer.asset.kind==='text'){
+    const mode=textRasterMode(layer.clip),n=counts.get(layer.clip.id)??0;if(n>=(mode==='frame'?300:1))continue;counts.set(layer.clip.id,n+1);yield self.textRequest(layer,f);
+   }
+  }}
+  await this.textCache.warm(requests(),signal);
  }
  private syncAudio(frame:PlannedFrame,time:number){
   const elements=frame.audio.filter(l=>!l.clip.speedCurve).map(({clip})=>({id:clip.id,clip,element:this.resources.get(clip.id)!.media!}));
@@ -199,6 +215,6 @@ export class GpuPreview {
  }
  dispose(options:{releaseContext?:boolean}={}){
   if(this.disposed)return;this.stopTransport();this.operation.abort();this.epoch++;this.canvas.removeEventListener('webglcontextlost',this.lost);this.canvas.removeEventListener('webglcontextrestored',this.restored);
-  this.clearResources();this.audio.dispose();this.compositor.dispose(options.releaseContext);this.disposed=true;this.setState('disposed');
+  this.clearResources();this.textCache?.dispose();this.audio.dispose();this.compositor.dispose(options.releaseContext);this.disposed=true;this.setState('disposed');
  }
 }

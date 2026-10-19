@@ -1,5 +1,6 @@
 import {COLOR_LUMINANCE,colorAdjustmentStages} from '../../core/src/color-effects.ts';
 import type {ColorAdjustments} from '../../core/src/color-effects.ts';
+import {FADE_NODES} from '../../core/src/color-tones.ts';
 
 export type GeqColorExpressions={r:string;g:string;b:string;a:string};
 /**
@@ -21,7 +22,9 @@ export function colorEffectsGeqExpressions(value?:ColorAdjustments):GeqColorExpr
     }else for(let i=0;i<3;i++){
       const x=`ld(${i})`;
       let expression:string;
-      if(stage.kind==='brightness')expression=`1-pow(1-${x}-(${stage.inputOffset}),${stage.exponent})`;
+      if(stage.kind==='blackWhite')expression=`${stage.parameters.slope}*${x}+(${stage.parameters.offset})`;
+      else if(stage.kind==='fade')expression=`(1-${stage.amount})*${x}+${stage.amount}*(${FADE_NODES.map((v,n)=>`${v/255}*max(0,1-abs(16*${x}-${n}))`).join('+')})`;
+      else if(stage.kind==='brightness')expression=`1-pow(1-${x}-(${stage.inputOffset}),${stage.exponent})`;
       else if(stage.kind==='contrast'){
         const p=stage.parameters;
         if(p.factor<=1)expression=`${p.factor}*(${x}-${p.pivot})+${p.pivot}`;
@@ -65,6 +68,12 @@ export function colorEffectsShader(value?:ColorAdjustments,functionName='applyCo
     if(stage.kind==='saturation'){
       lines.push(`  float fxLuma = dot(adjusted,vec3(${COLOR_LUMINANCE.map(glFloat).join(',')}));`);
       expression=`adjusted*${glFloat(stage.factor)}+vec3(fxLuma*${glFloat(1-stage.factor)})`;
+    }else if(stage.kind==='blackWhite'){
+      expression=`adjusted*${glFloat(stage.parameters.slope)}+vec3(${glFloat(stage.parameters.offset)})`;
+    }else if(stage.kind==='fade'){
+      lines.push(`  const float fxFadeNodes[17] = float[17](${FADE_NODES.map(v=>glFloat(v/255)).join(',')});`);
+      lines.push('  vec3 fxFadePosition = adjusted*16.0;','  ivec3 fxFadeCell = ivec3(min(vec3(15.0),floor(fxFadePosition)));','  vec3 fxFadeFraction = fxFadePosition-vec3(fxFadeCell);');
+      expression=`mix(adjusted,vec3(${['r','g','b'].map(c=>`mix(fxFadeNodes[fxFadeCell.${c}],fxFadeNodes[fxFadeCell.${c}+1],fxFadeFraction.${c})`).join(',')}),${glFloat(stage.amount)})`;
     }else if(stage.kind==='temperatureTint'){
       expression=`vec3(${stage.matrix.map(row=>`dot(adjusted,vec3(${row.map(glFloat).join(',')}))`).join(',')})`;
     }else if(stage.kind==='brightness'){

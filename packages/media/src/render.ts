@@ -6,12 +6,13 @@ import {runProcess} from './process.ts';
 import type {Document,Clip} from '../../core/src/document.ts';
 import type {Layer} from './graph.ts';
 import {detectCfr30} from './frame-timing.ts';
-import {transitionWindow,transitionSourceAt,transitionBoundaryPolicy} from '../../core/src/transitions.ts';
+import {transitionWindow,transitionSourceAt,transitionBoundaryPolicy,transitionUsesSourceHandles,isSpatialTransition} from '../../core/src/transitions.ts';
 import {toNumber, add,sub,mul,frameTime,compare,div,rational} from '../../core/src/time.ts';
 import {animationExpression,animatedValue,maxAnimatedValue,fraction} from './animation.ts';
 import {resolveExportSettings} from '../../core/src/export.ts';
 import type {ExportSettings} from '../../core/src/export.ts';
 import {frameEdge,groupTextLayers,captionScript} from './captions.ts';
+import {subtitleClock} from './subtitle-clock.ts';
 import {curveSourceExpression,curveTargetExpression,curveMediaRange} from './curve-speed.ts';
 import {renderCurveAudio} from './curve-audio.ts';
 import {prepareFonts} from './fonts.ts';
@@ -31,8 +32,10 @@ export async function render(doc: Document, directory: string, options: {
 } = {}) {
   let reportedProgress=0;
   const report=(value:number)=>{if(!Number.isFinite(value))return;reportedProgress=Math.max(reportedProgress,Math.min(1,Math.max(0,value)));options.onProgress?.(reportedProgress);};
-  const previewScale=Math.min(1,640/Math.max(doc.canvas.width,doc.canvas.height));
+  const hasSpatialTransition=doc.transitions?.some(t=>isSpatialTransition(t.kind));
+  const previewScale=hasSpatialTransition?1:Math.min(1,640/Math.max(doc.canvas.width,doc.canvas.height));
   const outputSettings=resolveExportSettings(doc,options.preview?{format:'mp4',size:{width:even(doc.canvas.width*previewScale),height:even(doc.canvas.height*previewScale)}}:options.exportSettings);
+  if(hasSpatialTransition&&!outputSettings.audioOnly&&(outputSettings.width!==doc.canvas.width||outputSettings.height!==doc.canvas.height))throw Error('SPATIAL_TRANSITION_OUTPUT_SIZE_UNVERIFIED');
   doc={...doc,fps:outputSettings.fps};
   const graph = renderGraph(doc);
   directory = path.resolve(directory);
@@ -43,7 +46,7 @@ export async function render(doc: Document, directory: string, options: {
   const inputIndexes = new Map<string, number>();
   const layers=outputSettings.audioOnly?[]:graph.layers,audio=outputSettings.hasAudio?graph.audio:[];
   const checkedBoundaryAssets=new Set<string>();
-  for(const transition of doc.transitions||[])if(transition.kind==='crossfade'){
+  for(const transition of doc.transitions||[])if(transitionUsesSourceHandles(transition.kind)){
     const outgoing=layers.find(l=>l.clip.id===transition.outgoingClipId),incoming=layers.find(l=>l.clip.id===transition.incomingClipId);if(!outgoing||!incoming)continue;
     if(transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30')for(const {asset}of [outgoing,incoming])if(!checkedBoundaryAssets.has(asset.id)){if(await detectCfr30(asset,{signal:options.signal})!=='cfr30')throw Error('TRANSITION_SOURCE_FRAME_TIMING_UNVERIFIED: '+asset.id);checkedBoundaryAssets.add(asset.id);}
   }
@@ -121,7 +124,8 @@ export async function render(doc: Document, directory: string, options: {
       const file=`captions-${i}.ass`,content=captionScript(layer,doc.canvas,doc.fps);
       if(!content)continue;
       await fs.writeFile(path.join(directory,file),content);
-      filters.push(`[${composite}]subtitles=filename=${file}${bundledFonts?':fontsdir=fonts':''}[${next}]`);
+      const clock=subtitleClock(doc.fps);
+      filters.push(`[${composite}]${clock.before},subtitles=filename=${file}${bundledFonts?':fontsdir=fonts':''},${clock.after}[${next}]`);
     }else{
       const visual=buildVisual(layer,String(i));if(!visual)continue;
       const excluded=(doc.transitions||[]).filter(t=>t.outgoingClipId===layer.clip.id||t.incomingClipId===layer.clip.id).map(t=>{const outgoing=layers.find(l=>l.clip.id===t.outgoingClipId)!.clip,w=transitionWindow(t,outgoing);return {first:frameEdge(w.start,doc.fps).frame,last:frameEdge(add(w.start,w.duration),doc.fps).frame};});
@@ -135,17 +139,19 @@ export async function render(doc: Document, directory: string, options: {
       const actualStart=frameTime(first,doc.fps),actualDuration=frameTime(last-first,doc.fps),prefix=`transition${index++}`;
       for(const [side,original] of [['a',outgoing],['b',incoming]] as const){
         const key=prefix+side,actualEnd=add(actualStart,actualDuration),originalEnd=add(original.clip.target.start,original.clip.target.duration);
-        const activeStart=transition.kind==='dipToBlack'&&compare(actualStart,original.clip.target.start)<0?original.clip.target.start:actualStart;
-        const activeEnd=transition.kind==='dipToBlack'&&compare(actualEnd,originalEnd)>0?originalEnd:actualEnd;
+        const activeStart=!transitionUsesSourceHandles(transition.kind)&&compare(actualStart,original.clip.target.start)<0?original.clip.target.start:actualStart;
+        const activeEnd=!transitionUsesSourceHandles(transition.kind)&&compare(actualEnd,originalEnd)>0?originalEnd:actualEnd;
         const activeDuration=sub(activeEnd,activeStart),clip:Clip={...original.clip,source:{start:transitionSourceAt(original.clip,activeStart),duration:mul(activeDuration,original.clip.speed)},target:{start:sub(activeStart,actualStart),duration:activeDuration}};
-        const cloneBoundary=transition.kind==='crossfade'&&transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30';
+        const cloneBoundary=transitionUsesSourceHandles(transition.kind)&&transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30';
         const v=buildVisual({...original,clip},key,cloneBoundary);if(!v)throw Error('TRANSITION_DURATION_EMPTY');
         filters.push(`color=c=black@0:s=${width}x${height}:r=${fps}:d=${seconds(toNumber(actualDuration))},format=rgba[${key}base]`);
         filters.push(`[${key}base][visual${key}]overlay=format=rgb:x='${v.position('x','W-w',scale)}':y='${v.position('y','H-h',yScale)}':eof_action=pass:repeatlast=0,format=gbrap,premultiply=inplace=1[${key}premult]`);
       }
       const progress=`min(1,max(0,(T+${fraction(sub(actualStart,window.start))})/${fraction(window.duration)}))`;
       const mixed=prefix+'mixed',next=prefix+'out';
-      const blend=transition.kind==='crossfade'?`blend=all_expr='A*(1-(${progress}))+B*(${progress})'`:`blend=c0_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c1_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c2_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c3_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)+255*(1-max(1-2*(${progress}),0)-max(2*(${progress})-1,0))'`;
+      const peak=`255*(1-max(1-2*(${progress}),0)-max(2*(${progress})-1,0))`,solid=transition.kind==='dipToWhite'?`+${peak}`:'';
+      const mask=transition.kind==='wipeLeft'?`lte(X+0.5,W*(1-(${progress})))`:transition.kind==='circleOpen'?`gte(hypot(X+0.5-W/2,Y+0.5-H/2),(${progress})*hypot(W,H)/2)`:undefined;
+      const blend=mask?`blend=all_expr='if(${mask},A,B)'`:transition.kind==='crossfade'?`blend=all_expr='A*(1-(${progress}))+B*(${progress})'`:'blend='+[0,1,2,3].map(channel=>`c${channel}_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)${channel===3?`+${peak}`:solid}'`).join(':');
       filters.push(`[${prefix}apremult][${prefix}bpremult]${blend},unpremultiply=inplace=1,format=rgba,setpts=PTS+(${fraction(actualStart)})/TB[${mixed}]`);
       filters.push(`[${composite}][${mixed}]overlay=format=rgb:eof_action=pass:repeatlast=0:enable='gte(n,${first})*lt(n,${last})'[${next}]`);
       composite=next;

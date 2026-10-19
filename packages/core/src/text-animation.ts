@@ -1,13 +1,14 @@
 /**
  * Target-clock interpretation of the individually verified Jianying 5.9 text
- * presets: 1644304 (appear), 1644600 (disappear), 1644275 (typewriter I).
+ * presets: 1644304 (appear), 1644600 (disappear), 1644275 (typewriter I),
+ * 1644514 (loop flash).
  * Resource source stays outside the product. Evidence and remaining glyph and
  * encoded-pixel differences: docs/qa/2026-10-19-rea-text-animation.md.
  */
 import {add,compare,div,mul,rational,sub,toNumber,ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 
-export type TextAnimation={phase:'in'|'out';kind:'fade'|'typewriter';duration:Rational};
+export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'flash';duration:Rational};
 
 function time(value:unknown):asserts value is Rational{
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -22,20 +23,23 @@ function time(value:unknown):asserts value is Rational{
 export function validateTextAnimations(value:unknown,clipDuration:Rational):asserts value is TextAnimation[]{
   time(clipDuration);
   if(compare(clipDuration,ZERO)<=0)throw Error('INVALID_TEXT_ANIMATION_CLIP_DURATION');
-  if(!Array.isArray(value)||value.length>2)throw Error('INVALID_TEXT_ANIMATIONS');
-  const phases=new Set<string>();let total=ZERO;
+  if(!Array.isArray(value)||value.length>3)throw Error('INVALID_TEXT_ANIMATIONS');
+  const phases=new Set<string>();let total=ZERO;let loopDuration:Rational|undefined;
   for(const item of value){
     if(!item||typeof item!=='object'||Array.isArray(item))throw Error('INVALID_TEXT_ANIMATION');
     const v=item as Record<string,unknown>;
     if(Object.keys(v).some(key=>!['phase','kind','duration'].includes(key)))throw Error('UNSUPPORTED_TEXT_ANIMATION_FIELD');
-    if(v.phase!=='in'&&v.phase!=='out')throw Error('TEXT_ANIMATION_PHASE_UNVERIFIED');
-    if(v.kind!=='fade'&&(v.kind!=='typewriter'||v.phase!=='in'))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
+    if(v.phase!=='in'&&v.phase!=='out'&&v.phase!=='loop')throw Error('TEXT_ANIMATION_PHASE_UNVERIFIED');
+    if(v.phase==='loop'?v.kind!=='flash':v.kind!=='fade'&&(v.kind!=='typewriter'||v.phase!=='in'))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
     if(phases.has(v.phase))throw Error('DUPLICATE_TEXT_ANIMATION_PHASE');
     phases.add(v.phase);time(v.duration);
     if(compare(v.duration,ZERO)<=0||compare(v.duration,clipDuration)>0)throw Error('INVALID_TEXT_ANIMATION_DURATION');
-    total=add(total,v.duration);
+    if(v.phase==='loop')loopDuration=v.duration;else total=add(total,v.duration);
   }
   if(compare(total,clipDuration)>0)throw Error('TEXT_ANIMATION_OVERLAP_UNVERIFIED');
+  // Period is independent of the in/out windows. Unsupported overlap is rejected,
+  // rather than applying the native repairer's unverified short-clip branches.
+  if(loopDuration&&(compare(loopDuration,rational(1,10))<0||compare(loopDuration,sub(clipDuration,total))>0))throw Error('INVALID_TEXT_ANIMATION_DURATION');
 }
 
 const progress=(elapsed:Rational,duration:Rational):number=>
@@ -43,6 +47,27 @@ const progress=(elapsed:Rational,duration:Rational):number=>
 
 /** Relative alpha. Caller retains the clip's own half-open active interval. */
 export function textAnimationOpacity(animations:readonly TextAnimation[]|undefined,targetElapsed:Rational,targetDuration:Rational):number{
+  const loop=animations?.find(animation=>animation.phase==='loop');
+  if(loop){
+    const entrance=animations?.find(animation=>animation.phase==='in');
+    const exit=animations?.find(animation=>animation.phase==='out');
+    // Actual native .3/.4/.5s probe: each stage replaces, rather than multiplies,
+    // alpha. The exact entrance endpoint still belongs to the entrance stage.
+    if(entrance&&compare(targetElapsed,entrance.duration)<=0){
+      const p=progress(targetElapsed,entrance.duration);
+      return entrance.kind==='fade'?p*(2-p):1;
+    }
+    if(exit&&compare(targetElapsed,sub(targetDuration,exit.duration))>=0){
+      const p=progress(sub(targetElapsed,sub(targetDuration,exit.duration)),exit.duration);
+      return (1-p)*(1-p);
+    }
+    const elapsed=sub(targetElapsed,entrance?.duration??ZERO);
+    const cycles=div(elapsed,loop.duration);
+    const denominator=BigInt(cycles.denominator);
+    const remainder=((BigInt(cycles.numerator)%denominator)+denominator)%denominator;
+    const r=toNumber(rational(remainder,denominator));
+    return r<=.5?4*r*(1-r):1-(2*r-1)*(2*r-1);
+  }
   let opacity=1;
   for(const animation of animations??[]){
     if(animation.kind!=='fade')continue;

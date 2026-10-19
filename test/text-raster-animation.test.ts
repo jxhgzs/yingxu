@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {rasterText} from '../packages/media/src/text-raster.ts';
 import {captionScript} from '../packages/media/src/captions.ts';
+import {subtitleClock} from '../packages/media/src/subtitle-clock.ts';
 import {runProcess} from '../packages/media/src/process.ts';
 import {ffmpeg} from '../packages/media/src/probe.ts';
 import {emptyDocument,defaultTransform} from '../packages/core/src/document.ts';
@@ -15,7 +16,7 @@ import {TextRasters} from '../apps/service/text-raster.ts';
 import {createPreviewPlan,previewFrame,textRasterMode} from '../apps/editor/src/preview/plan.ts';
 function doc(){const d=emptyDocument();d.canvas={width:320,height:180};d.assets.push({id:'txt',kind:'text',path:'',duration:rational(3600)});d.tracks[2].clips.push({id:'caption',materialId:'txt',source:{start:rational(1),duration:rational(4)},target:{start:rational(2),duration:rational(2)},speed:rational(2),editableTiming:true,transform:defaultTransform(),text:{content:'中文 Alpha\n第二行',font:'Source Han Sans SC Medium',color:'#f1b874',size:25,outline:0,shadow:0,lineHeight:40},animations:[{property:'opacity',points:[{id:'a',time:rational(1),value:.25,interpolation:'linear'},{id:'b',time:rational(5),value:.75,interpolation:'linear'}]}]});return d;}
 async function pngPixels(file:string,root:string){await runProcess(ffmpeg(),['-v','error','-y','-i',file,'-frames:v','1','-pix_fmt','rgba','-f','rawvideo','decoded.rgba'],{cwd:root});return fs.readFile(path.join(root,'decoded.rgba'));}
-async function direct(layer:any,root:string,background:string,frame:number,fps=rational(30)){await fs.writeFile(path.join(root,'direct.ass'),captionScript([layer],{width:320,height:180},fps));await runProcess(ffmpeg(),['-v','error','-y','-f','lavfi','-i',`color=c=${background}:s=320x180:r=${fps.numerator}/${fps.denominator},format=rgba`,'-vf',`subtitles=filename=direct.ass:fontsdir=fonts,select=eq(n\\,${frame})`,'-frames:v','1','-fps_mode','passthrough','-pix_fmt','rgba','-f','rawvideo','direct.rgba'],{cwd:root});return fs.readFile(path.join(root,'direct.rgba'));}
+async function direct(layer:any,root:string,background:string,frame:number,fps=rational(30)){const clock=subtitleClock(fps);await fs.writeFile(path.join(root,'direct.ass'),captionScript([layer],{width:320,height:180},fps));await runProcess(ffmpeg(),['-v','error','-y','-f','lavfi','-i',`color=c=${background}:s=320x180:r=${fps.numerator}/${fps.denominator},format=rgba`,'-vf',`${clock.before},subtitles=filename=direct.ass:fontsdir=fonts,${clock.after},select=eq(n\\,${frame})`,'-frames:v','1','-fps_mode','passthrough','-pix_fmt','rgba','-f','rawvideo','direct.rgba'],{cwd:root});return fs.readFile(path.join(root,'direct.rgba'));}
 function difference(rgba:Buffer,actual:Buffer,opacity=1){let max=0,total=0;for(let i=0;i<rgba.length;i+=4)for(let c=0;c<3;c++){const a=rgba[i+3]/255*opacity,expected=Math.round(rgba[i+c]*a+actual[c]*(1-a)),delta=Math.abs(expected-actual[i+c]);max=Math.max(max,delta);total+=delta;}return {max,mean:total/(rgba.length/4*3)};}
 
 test('neutral unadorned glyph uses one quantized source-clock alpha across three backgrounds',{timeout:60000},async()=>{
@@ -85,4 +86,22 @@ test('HTTP animation texture modes preserve metadata and reject invalid or inact
   const response=await post({revision:0,clipId:'caption',mode:'frame',frame:75});assert.equal(response.status,200);const frame=await response.json();assert.equal(frame.clipId,'caption');assert.equal(frame.revision,0);assert.equal(frame.mode,'frame');assert.equal(frame.frame,75);const png=await fetch(app.origin+frame.url);assert.equal(png.status,200);assert.equal(png.headers.get('content-type'),'image/png');
   const neutral=await post({revision:0,clipId:'caption',mode:'neutral'});assert.equal(neutral.status,200);const texture=await neutral.json();assert.equal(texture.mode,'neutral');assert.equal(texture.frame,undefined);assert.notEqual(texture.key,frame.key);
  }finally{await app.close();await fs.rm(root,{recursive:true,force:true});}
+});
+
+test('flash and combined phases use one neutral glyph with shared quantized alpha on three backgrounds',{timeout:60000},async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'text-loop-raster-'));
+ try{
+  const d=doc(),clip=d.tracks[2].clips[0];delete clip.animations;
+  clip.textAnimations=[{phase:'in',kind:'fade',duration:rational(3,10)},{phase:'out',kind:'fade',duration:rational(2,5)},{phase:'loop',kind:'flash',duration:rational(1,2)}];
+  assert.equal(textRasterMode(clip),'neutral');const plan=createPreviewPlan(d,{texturesAvailable:true}).plan!,layer=renderGraph(d).layers[0];
+  const raster=await rasterText(layer,d.canvas,root,{mode:'neutral'}),rgba=await pngPixels(raster.path,root);
+  assert(rgba.some((x,i)=>i%4===3&&x>100),'neutral glyph must not bake the zero-alpha entrance');
+  for(const frame of [60,65,69,70,75,84,108,111,114])for(const bg of ['0x2577b9','0xf5e0a3','0x190d24']){
+   const actual=await direct(layer,root,bg,frame),opacity=previewFrame(plan,rational(frame,30)).layers[0].transform.opacity,error=difference(rgba,actual,opacity);
+   assert(error.max<=2,JSON.stringify({frame,bg,error}));assert(error.mean<.08);
+  }
+  clip.text!.outline=1;assert.equal(textRasterMode(clip),'frame');clip.text!.outline=0;clip.text!.font='Arial';assert.equal(textRasterMode(clip),'frame');
+  clip.text!.font='Source Han Sans SC Medium';clip.textAnimations=[{phase:'loop',kind:'flash',duration:rational(1,2)}];clip.source.duration=rational(60);clip.target.duration=rational(30);
+  assert.equal(textRasterMode(clip),'neutral');assert(createPreviewPlan(d,{texturesAvailable:true}).support.supported,'neutral looping text should not inherit the 300 exact-frame limit');
+ }finally{await fs.rm(root,{recursive:true,force:true});}
 });

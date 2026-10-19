@@ -28,7 +28,7 @@ export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]
 export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
 export type Transition = {
   id:string;trackId:string;outgoingClipId:string;incomingClipId:string;
-  kind:'crossfade'|'dipToBlack';alignment:'center';overlap:boolean;duration:Rational;
+  kind:'crossfade'|'dipToBlack'|'dipToWhite'|'wipeLeft'|'circleOpen';alignment:'center';overlap:boolean;duration:Rational;
 };
 export type Document = {
   schemaVersion: 1; title?: string; canvas: {width: number; height: number};

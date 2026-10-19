@@ -4,7 +4,7 @@ import {renderGraph} from '../../../../packages/media/src/graph.ts';
 import type {RenderGraph,Layer} from '../../../../packages/media/src/graph.ts';
 import {textAnimationOpacity,canRenderTextAnimationText} from '../../../../packages/core/src/text-animation.ts';
 import {sourceTimeAt,evaluateAnimation} from '../../../../packages/core/src/animation.ts';
-import {transitionWindow,transitionSourceAt,transitionDecodedSourceTime} from '../../../../packages/core/src/transitions.ts';
+import {transitionWindow,transitionSourceAt,transitionDecodedSourceTime,transitionUsesSourceHandles} from '../../../../packages/core/src/transitions.ts';
 import {defaultTransform} from '../../../../packages/core/src/document.ts';
 import type {Document,Asset,Clip,Transform,Diagnostic,Transition,Range} from '../../../../packages/core/src/document.ts';
 import {add,sub,compare,decimal,div,frameTime,mul,nearestFrame,toNumber,ZERO} from '../../../../packages/core/src/time.ts';
@@ -14,14 +14,14 @@ export type PreviewReason={code:string;message:string;clipId?:string};
 export type PreviewSupport={supported:boolean;reasons:PreviewReason[];visualLayers:number;audioLayers:number;maxConcurrentMedia:number};
 type PreviewTransition={transition:Transition;outgoing:Layer;incoming:Layer;window:Range};
 export type PreviewPlan=RenderGraph&{media:Layer[];previewTransitions:PreviewTransition[];decodeRanges:Map<string,Range>};
-export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;textRasterMode?:'neutral'|'frame';transition?:{id:string;kind:'crossfade'|'dipToBlack';progress:number;incoming:PlannedVisual}};
+export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;textRasterMode?:'neutral'|'frame';transition?:{id:string;kind:Transition['kind'];progress:number;incoming:PlannedVisual}};
 export type PlannedFrame={time:Rational;frame:number;layers:PlannedVisual[];audio:Layer[];media:Layer[]};
 export type PlanOptions={diagnostics?:Diagnostic[];maxConcurrentMedia?:number;texturesAvailable?:boolean;curveAudioAvailable?:boolean};
 const knownClipKeys=new Set(['id','materialId','source','target','speed','editableTiming','transform','volume','muted','text','animations','textAnimations','speedCurve','audioFade','colorAdjustments']);
 const knownTransitionKeys=new Set(['id','trackId','outgoingClipId','incomingClipId','kind','alignment','overlap','duration']);
 function edge(time:Rational,fps:Rational):number{const v=mul(time,fps),n=BigInt(v.numerator),d=BigInt(v.denominator);return Number((n+d-1n)/d);}
-export function transitionWeights(kind:'crossfade'|'dipToBlack',progress:number):[number,number,number]{
- const p=Math.max(0,Math.min(1,progress));if(kind==='crossfade')return [1-p,p,0];
+export function transitionWeights(kind:Transition['kind'],progress:number):[number,number,number]{
+ const p=Math.max(0,Math.min(1,progress));if(kind==='wipeLeft'||kind==='circleOpen')return [1,1,0];if(kind==='crossfade')return [1-p,p,0];
  const outgoing=Math.max(1-2*p,0),incoming=Math.max(2*p-1,0);return [outgoing,incoming,1-outgoing-incoming];
 }
 export function outputTime(value:number|Rational,fps:Rational,mode:'nearest'|'floor'='nearest'):Rational{
@@ -33,7 +33,7 @@ export function outputTime(value:number|Rational,fps:Rational,mode:'nearest'|'fl
 export function textRasterMode(clip:Clip):'neutral'|'frame'|undefined{
  if(!clip.animations?.some(a=>a.property!=='volume')&&!clip.textAnimations?.length)return undefined;
  const t=clip.transform||defaultTransform(),style=clip.text!;
- return !clip.textAnimations?.some(a=>a.kind!=='fade')&&(clip.animations||[]).every(a=>a.property==='opacity'||a.property==='volume')&&style.font==='Source Han Sans SC Medium'&&canRenderTextAnimationText(style.content)&&t.x===0&&t.y===0&&t.scale===1&&t.rotation===0&&(style.outline??1)===0&&(style.shadow??1)===0&&(style.lineHeight===undefined||style.lineHeight>=style.size*1.5)?'neutral':'frame';
+ return !clip.textAnimations?.some(a=>a.kind!=='fade'&&a.kind!=='flash')&&(clip.animations||[]).every(a=>a.property==='opacity'||a.property==='volume')&&style.font==='Source Han Sans SC Medium'&&canRenderTextAnimationText(style.content)&&t.x===0&&t.y===0&&t.scale===1&&t.rotation===0&&(style.outline??1)===0&&(style.shadow??1)===0&&(style.lineHeight===undefined||style.lineHeight>=style.size*1.5)?'neutral':'frame';
 }
 export const TEXT_FRAME_RASTER_MAX_FRAMES=300;
 export function createPreviewPlan(document:Document,options:PlanOptions={}):{support:PreviewSupport;plan?:PreviewPlan}{
@@ -60,9 +60,9 @@ export function createPreviewPlan(document:Document,options:PlanOptions={}):{sup
  for(const transition of graph.document.transitions||[]){
   const outgoing=visuals.get(transition.outgoingClipId),incoming=visuals.get(transition.incomingClipId);if(!outgoing||!incoming)continue;
   if(Object.keys(transition).some(k=>!knownTransitionKeys.has(k)))reason('UNKNOWN_TRANSITION_EFFECT','转场含实时预览尚未识别的属性。',outgoing.clip.id);
-  if(transition.kind!=='crossfade'&&transition.kind!=='dipToBlack'){reason('TRANSITION_KIND_UNSUPPORTED','此转场需要后台预览。',outgoing.clip.id);continue;}
+  if(!['crossfade','dipToBlack','dipToWhite','wipeLeft','circleOpen'].includes(transition.kind)){reason('TRANSITION_KIND_UNSUPPORTED','此转场需要后台预览。',outgoing.clip.id);continue;}
   const window=transitionWindow(transition,outgoing.clip);previewTransitions.push({transition,outgoing,incoming,window});
-  if(transition.kind==='crossfade')for(const layer of [outgoing,incoming]){const current=decodeRanges.get(layer.clip.id)!,end=add(current.start,current.duration),windowEnd=add(window.start,window.duration),start=compare(current.start,window.start)<0?current.start:window.start;
+  if(transitionUsesSourceHandles(transition.kind))for(const layer of [outgoing,incoming]){const current=decodeRanges.get(layer.clip.id)!,end=add(current.start,current.duration),windowEnd=add(window.start,window.duration),start=compare(current.start,window.start)<0?current.start:window.start;
    decodeRanges.set(layer.clip.id,{start,duration:sub(compare(end,windowEnd)>0?end:windowEnd,start)});}
  }
  const events=[...decodeRanges.values()].flatMap(range=>[{at:edge(range.start,graph.document.fps),delta:1},{at:edge(add(range.start,range.duration),graph.document.fps),delta:-1}])
@@ -86,7 +86,7 @@ export function previewFrame(plan:PreviewPlan,time:Rational):PlannedFrame{
  const pairs=new Map<string,PreviewTransition>();for(const t of plan.previewTransitions)if(inRange(t.window)){pairs.set(t.outgoing.clip.id,t);pairs.set(t.incoming.clip.id,t);}
  const emitted=new Set<string>(),layers:PlannedVisual[]=[];
  for(const layer of plan.layers){const pair=pairs.get(layer.clip.id);if(pair){if(emitted.has(pair.transition.id))continue;emitted.add(pair.transition.id);
-   const mode=pair.transition.kind==='crossfade'?'handles':'clamp';
+   const mode=transitionUsesSourceHandles(pair.transition.kind)?'handles':'clamp';
    layers.push({...visual(pair.outgoing,mode),transition:{id:pair.transition.id,kind:pair.transition.kind,progress:toNumber(div(sub(at,pair.window.start),pair.window.duration)),incoming:visual(pair.incoming,mode)}});
   }else if(active(layer))layers.push(visual(layer));}
  return {time:at,frame,layers,audio:plan.audio.filter(active),media:plan.media.filter(l=>inRange(plan.decodeRanges.get(l.clip.id)!))};

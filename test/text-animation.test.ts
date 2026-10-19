@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {add,mul,rational,sub} from '../packages/core/src/time.ts';
 import {canRenderTextAnimationText,textAnimationOpacity,textAnimationVisibleCount,validateTextAnimations,type TextAnimation} from '../packages/core/src/text-animation.ts';
 const half=rational(1,2),two=rational(2);
@@ -63,14 +64,15 @@ test('animation validation rejects unsupported fields, phases, duplicates and un
   for(const value of [[],[fadeIn],[fadeOut],[printer,fadeOut]])assert.doesNotThrow(()=>validateTextAnimations(value,two));
   const rejects:[unknown,RegExp][]=[
     [null,/INVALID_TEXT_ANIMATIONS/],[{},/INVALID_TEXT_ANIMATIONS/],[[null],/INVALID_TEXT_ANIMATION/],
-    [[{...fadeIn,start:rational(0)}],/FIELD/],[[{...fadeIn,phase:'loop'}],/PHASE/],
+    [[{...fadeIn,start:rational(0)}],/FIELD/],[[{...fadeIn,phase:'loop'}],/KIND/],
     [[{...fadeOut,kind:'typewriter'}],/KIND/],[[{...fadeIn,kind:'slide'}],/KIND/],
     [[fadeIn,fadeIn],/DUPLICATE/],[[{...fadeIn,duration:rational(0)}],/DURATION/],
     [[{...fadeIn,duration:rational(-1)}],/DURATION/],[[{...fadeIn,duration:rational(3)}],/DURATION/],
     [[{...fadeIn,duration:{numerator:'2',denominator:'4'}}],/DURATION/],
     [[{...fadeIn,duration:{numerator:'1',denominator:'2',unit:'s'}}],/DURATION/],
     [[{...fadeIn,duration:rational(3,2)},{...fadeOut,duration:rational(1)}],/OVERLAP/],
-    [[fadeIn,fadeOut,printer],/INVALID_TEXT_ANIMATIONS/],
+    [[fadeIn,fadeOut,printer],/DUPLICATE/],
+    [[fadeIn,fadeOut,printer,fadeIn],/INVALID_TEXT_ANIMATIONS/],
   ];
   for(const [value,error] of rejects)assert.throws(()=>validateTextAnimations(value,two),error);
   assert.throws(()=>validateTextAnimations([],rational(0)),/CLIP_DURATION/);
@@ -85,4 +87,66 @@ test('native mixed text counts ASCII space and LF as character-clock entries',()
     assert.equal(textAnimationVisibleCount(printer,text,rational(frames[i],30)),glyphIndices[i]);
   }
   assert.equal(textAnimationVisibleCount(printer,text,half),7);
+});
+
+test('native flash uses one exact rational period and quadOut then quadIn halves',()=>{
+  const flash:TextAnimation={phase:'loop',kind:'flash',duration:half};
+  validateTextAnimations([flash],rational(4));
+  const expected=[0,.75,1,.75,0];
+  for(let cycle=0;cycle<8;cycle++)for(let quarter=0;quarter<=4;quarter++){
+    assert.equal(textAnimationOpacity([flash],add(rational(cycle,2),rational(quarter,8)),rational(4)),expected[quarter]);
+  }
+  // Large exact clock must not lose the cycle boundary through Number modulo.
+  assert.equal(textAnimationOpacity([flash],rational(10n**30n),rational(10n**31n)),0);
+  assert.equal(textAnimationOpacity([flash],add(rational(10n**30n),rational(1,8)),rational(10n**31n)),.75);
+});
+
+test('native three-phase combination switches exclusively at measured target boundaries',()=>{
+  const incoming:TextAnimation={phase:'in',kind:'fade',duration:rational(3,10)};
+  const outgoing:TextAnimation={phase:'out',kind:'fade',duration:rational(2,5)};
+  const flash:TextAnimation={phase:'loop',kind:'flash',duration:half};
+  const sequence=[outgoing,incoming,flash];
+  validateTextAnimations(sequence,rational(4));
+  assert.equal(textAnimationOpacity(sequence,rational(0),rational(4)),0);
+  assert.equal(textAnimationOpacity(sequence,rational(3,20),rational(4)),.75);
+  assert.equal(textAnimationOpacity(sequence,rational(3,10),rational(4)),1);
+  assert.ok(Math.abs(textAnimationOpacity(sequence,rational(1,3),rational(4))-(.24888888888888888))<1e-14);
+  for(const frame of [24,39,54,69,84,99])assert.equal(textAnimationOpacity(sequence,rational(frame,30),rational(4)),0);
+  assert.equal(textAnimationOpacity(sequence,rational(18,5),rational(4)),1);
+  assert.equal(textAnimationOpacity(sequence,rational(19,5),rational(4)),.25);
+  assert.equal(textAnimationOpacity(sequence,rational(4),rational(4)),0);
+  // Typewriter owns visibility during its entrance; its alpha is not multiplied.
+  assert.equal(textAnimationOpacity([printer,flash],rational(1,4),rational(4)),1);
+  assert.equal(textAnimationOpacity([printer,flash],half,rational(4)),1);
+  assert.equal(textAnimationOpacity([printer,flash],rational(5,8),rational(4)),.75);
+});
+
+test('loop validation separates period from stage durations and rejects unknown combinations',()=>{
+  const flash:TextAnimation={phase:'loop',kind:'flash',duration:half};
+  validateTextAnimations([fadeIn,fadeOut,flash],rational(3,2));
+  validateTextAnimations([{...flash,duration:rational(1,10)}],rational(1,10));
+  for(const animations of [
+    [{...flash,duration:rational(9,100)}],
+    [fadeIn,fadeOut,flash],
+    [flash,flash],
+    [{...flash,kind:'fade'}],
+    [{...fadeIn,kind:'flash'}],
+    [{...flash,phase:'caption'}],
+    [{...flash,phase:'group'}],
+    [{...flash,period:half}],
+  ])assert.throws(()=>validateTextAnimations(animations,rational(1)),/TEXT_ANIMATION/);
+});
+
+
+test('flash and combined alpha stay within frozen native 5.9 H264 observations',()=>{
+  const flash:TextAnimation={phase:'loop',kind:'flash',duration:half};
+  const combination:TextAnimation[]=[{phase:'in',kind:'fade',duration:rational(3,10)},{phase:'out',kind:'fade',duration:rational(2,5)},flash];
+  for(const [name,animations] of [['native-loop-measurements',[flash]],['native-combo-measurements',combination]] as const){
+    const capture=JSON.parse(fs.readFileSync(new URL(`../evidence/2026-10-19-loop-combo-v8/${name}.json`,import.meta.url),'utf8')) as {rows:{frame:number;observedAlpha:number}[]};
+    assert.equal(capture.rows.length,120);
+    for(const row of capture.rows){
+      const predicted=textAnimationOpacity(animations,rational(row.frame,30),rational(4));
+      assert.ok(Math.abs(predicted-row.observedAlpha)<.021,`${name} frame ${row.frame}: ${predicted} vs native ${row.observedAlpha}`);
+    }
+  }
 });
