@@ -1,0 +1,141 @@
+{
+  "method": "minRGB>200, ROI x400..799,y570..714, >3 white pixels per row",
+  "text": "中文与 English\n两行保持换行",
+  "results": [
+    {
+      "name": "native",
+      "file": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/subtitles-native/at-2.0s.png",
+      "bands": [
+        {
+          "start": 614,
+          "end": 683,
+          "height": 70,
+          "center": 648.5
+        }
+      ],
+      "inkGap": null,
+      "inkCenterDistance": null,
+      "cjkLineBands": [
+        {
+          "roi": {
+            "x0": 520,
+            "x1": 620,
+            "y0": 580,
+            "y1": 650
+          },
+          "start": 614,
+          "end": 645,
+          "height": 32,
+          "center": 629.5
+        },
+        {
+          "roi": {
+            "x0": 540,
+            "x1": 620,
+            "y0": 650,
+            "y1": 710
+          },
+          "start": 652,
+          "end": 683,
+          "height": 32,
+          "center": 667.5
+        }
+      ],
+      "cjkCenterDistance": 38
+    },
+    {
+      "name": "official-ass51.5",
+      "file": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/font-parity/multiline-02.png",
+      "bands": [
+        {
+          "start": 606,
+          "end": 644,
+          "height": 39,
+          "center": 625
+        },
+        {
+          "start": 658,
+          "end": 690,
+          "height": 33,
+          "center": 674
+        }
+      ],
+      "inkGap": 13,
+      "inkCenterDistance": 49,
+      "cjkLineBands": [
+        {
+          "roi": {
+            "x0": 520,
+            "x1": 620,
+            "y0": 580,
+            "y1": 650
+          },
+          "start": 606,
+          "end": 638,
+          "height": 33,
+          "center": 622
+        },
+        {
+          "roi": {
+            "x0": 540,
+            "x1": 620,
+            "y0": 650,
+            "y1": 710
+          },
+          "start": 658,
+          "end": 690,
+          "height": 33,
+          "center": 674
+        }
+      ],
+      "cjkCenterDistance": 52
+    },
+    {
+      "name": "official-ass54",
+      "file": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/font-parity/multiline-07.png",
+      "bands": [
+        {
+          "start": 604,
+          "end": 644,
+          "height": 41,
+          "center": 624
+        },
+        {
+          "start": 659,
+          "end": 692,
+          "height": 34,
+          "center": 675.5
+        }
+      ],
+      "inkGap": 14,
+      "inkCenterDistance": 51.5,
+      "cjkLineBands": [
+        {
+          "roi": {
+            "x0": 520,
+            "x1": 620,
+            "y0": 580,
+            "y1": 650
+          },
+          "start": 604,
+          "end": 638,
+          "height": 35,
+          "center": 621
+        },
+        {
+          "roi": {
+            "x0": 540,
+            "x1": 620,
+            "y0": 650,
+            "y1": 710
+          },
+          "start": 659,
+          "end": 692,
+          "height": 34,
+          "center": 675.5
+        }
+      ],
+      "cjkCenterDistance": 54.5
+    }
+  ]
+}

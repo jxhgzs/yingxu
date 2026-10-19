@@ -8,9 +8,12 @@ import Preview from './components/Preview.vue';
 import Timeline from './components/Timeline.vue';
 import Inspector from './components/Inspector.vue';
 import ExportDialog from './components/ExportDialog.vue';
+import SubtitleImportDialog from './components/SubtitleImportDialog.vue';
+import RelinkDialog from './components/RelinkDialog.vue';
 const props=defineProps<{c:EditorController}>();
 const root=ref<HTMLElement>(),mediaInput=ref<HTMLInputElement>(),projectInput=ref<HTMLInputElement>();
 const exportOpen=ref(false),projectsOpen=ref(false),helpOpen=ref(false),tasksOpen=ref(false),draftMode=ref(false),uploading=ref(false),title=ref('');
+const subtitlesOpen=ref(false),relinkOpen=ref(false);
 watch(()=>props.c.doc.value?.title,value=>{title.value=value||'未命名工程';},{immediate:true});
 const uiTheme={algorithm:theme.darkAlgorithm,token:{colorPrimary:'#5bbdc7',colorBgContainer:'#303034',colorBgElevated:'#303034',colorText:'#e6e6e9',colorBorder:'#45454c',borderRadius:4,fontSize:12,controlHeight:30,controlHeightSM:26},components:{Slider:{trackBg:'#5bbdc7',trackHoverBg:'#79d6dc'},Modal:{contentBg:'#252528',headerBg:'#252528'}}};
 function popupContainer(trigger?:HTMLElement){return trigger?.closest<HTMLElement>('.yx-editor')||root.value||document.body;}
@@ -24,6 +27,8 @@ function menu({key}:{key:string|number}){
   else if(key==='projects')projectsOpen.value=true;
   else if(key==='open')chooseProjectFile(false);
   else if(key==='draft')chooseProjectFile(true);
+  else if(key==='subtitles')subtitlesOpen.value=true;
+  else if(key==='relink')relinkOpen.value=true;
   else if(key==='demo')props.c.guard(props.c.demo);
 }
 function saveTitle(){if(title.value.trim()&&title.value!==props.c.doc.value?.title)props.c.guard(()=>props.c.edit({type:'project.settings',title:title.value.trim()}));}
@@ -50,7 +55,7 @@ onBeforeUnmount(()=>detachClose?.());
 <template>
   <div ref="root" class="yx-editor" tabindex="0" @keydown="keyboard" @pointerdown.capture="focusEditor" @dragover.prevent @drop="nativeDrop">
     <a-config-provider :theme="uiTheme" :get-popup-container="popupContainer" component-size="small">
-      <header class="app-titlebar"><div class="app-brand"><span class="brand-mark"><i></i><i></i><i></i></span><strong>映序</strong><a-dropdown><button class="project-menu">文件 <Icon name="down" /></button><template #overlay><a-menu @click="menu"><a-menu-item key="new">新建工程</a-menu-item><a-menu-item key="projects">打开最近工程</a-menu-item><a-menu-item key="open">打开工程文件…</a-menu-item><a-menu-item key="draft">导入剪映草稿…</a-menu-item><a-menu-divider /><a-menu-item key="demo">使用练习素材</a-menu-item></a-menu></template></a-dropdown><span class="save-indicator"><Icon :name="c.busy.value?'cloud':'saved'" />{{c.busy.value?'正在保存':'已自动保存'}}</span></div>
+      <header class="app-titlebar"><div class="app-brand"><span class="brand-mark"><i></i><i></i><i></i></span><strong>映序</strong><a-dropdown><button class="project-menu">文件 <Icon name="down" /></button><template #overlay><a-menu @click="menu"><a-menu-item key="new">新建工程</a-menu-item><a-menu-item key="projects">打开最近工程</a-menu-item><a-menu-item key="open">打开工程文件…</a-menu-item><a-menu-item key="draft">导入剪映草稿…</a-menu-item><a-menu-item key="subtitles" :disabled="c.readOnly.value">导入字幕…</a-menu-item><a-menu-item key="relink" :disabled="c.readOnly.value">重新链接素材…</a-menu-item><a-menu-divider /><a-menu-item key="demo">使用练习素材</a-menu-item></a-menu></template></a-dropdown><span class="save-indicator"><Icon :name="c.busy.value?'cloud':'saved'" />{{c.busy.value?'正在保存':'已自动保存'}}</span></div>
         <a-input v-model:value="title" class="project-title-input" aria-label="工程名称" :bordered="false" :disabled="c.readOnly.value" @blur="saveTitle" @press-enter="($event:any)=>$event.target.blur()" />
         <div class="titlebar-actions"><a-tooltip title="快捷键"><button class="icon-button" aria-label="快捷键" @click="helpOpen=true"><Icon name="help" /></button></a-tooltip><a-tooltip title="导出任务"><button class="icon-button" aria-label="导出任务" @click="tasksOpen=true"><Icon name="cloud" /></button></a-tooltip><a-button v-if="c.state.value" :href="c.api.url('/api/projects/'+c.state.value.id+'/download')" class="save-project"><Icon name="folder" />下载工程</a-button><a-button type="primary" class="export-main" :disabled="!c.total.value||c.readOnly.value" @click="exportOpen=true"><Icon name="export" />导出</a-button></div>
       </header>
@@ -62,6 +67,8 @@ onBeforeUnmount(()=>detachClose?.());
       <input ref="mediaInput" type="file" multiple accept="video/*,audio/*,image/*" hidden @change="mediaChanged" />
       <input ref="projectInput" type="file" accept=".json" hidden @change="projectChanged" />
       <ExportDialog :c="c" v-model:open="exportOpen" />
+      <SubtitleImportDialog :c="c" v-model:open="subtitlesOpen" />
+      <RelinkDialog :c="c" v-model:open="relinkOpen" />
       <a-modal v-model:open="projectsOpen" title="最近工程" :footer="null" :get-container="false"><div class="project-list"><button v-for="project in c.projects.value" :key="project.id" @click="openSaved(project.id)"><Icon name="file" /><span><strong>{{project.title}}</strong><small>{{new Date(project.updatedAt).toLocaleString('zh-CN')}}</small></span><Icon name="folder" /></button><p v-if="!c.projects.value.length" class="quiet">还没有工程</p></div></a-modal>
       <a-modal v-model:open="helpOpen" title="快捷键" :footer="null" :get-container="false"><dl class="shortcut-list"><dt>播放 / 暂停</dt><dd><kbd>Space</kbd></dd><dt>分割所选片段</dt><dd><kbd>⌘ / Ctrl B</kbd></dd><dt>撤销</dt><dd><kbd>⌘ / Ctrl Z</kbd></dd><dt>重做</dt><dd><kbd>⇧ ⌘ / Ctrl Z</kbd></dd><dt>删除片段</dt><dd><kbd>Delete</kbd></dd><dt>涟漪删除</dt><dd><kbd>⇧ Delete</kbd></dd><dt>取消选择</dt><dd><kbd>Esc</kbd></dd></dl><p class="quiet">输入文字时不会触发剪辑快捷键</p></a-modal>
       <a-modal v-model:open="tasksOpen" title="导出任务" :footer="null" :get-container="false"><div class="task-list"><article v-for="job in c.jobs.value.filter(j=>j.kind==='export')" :key="job.id"><div><strong>{{{queued:'等待导出',running:'正在导出',completed:'导出完成',failed:'导出失败',cancelled:'已取消',cancelling:'正在取消',interrupted:'已中断'}[job.status]}}</strong><small>{{new Date(job.createdAt).toLocaleString('zh-CN')}}</small></div><a-progress v-if="['queued','running'].includes(job.status)" :percent="Math.round(job.progress*100)" size="small" /><a v-if="job.result" :href="c.api.url(job.result.downloadUrl)">下载成果</a><a-button v-if="['running','queued'].includes(job.status)" @click="c.guard(()=>c.api.post('/api/jobs/'+job.id+'/cancel'))">取消任务</a-button><p v-if="job.error" class="export-error">{{job.error.slice(0,200)}}</p></article><p v-if="!c.jobs.value.some(j=>j.kind==='export')" class="quiet">还没有导出任务</p></div></a-modal>

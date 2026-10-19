@@ -1,0 +1,13 @@
+本文件由映序项目编写，用于记录字体来源；不是伪造的上游NOTICE。
+
+Asset: SourceHanSansSC-Medium.otf
+Upstream: Adobe Source Han Sans, version 1.000
+Repository: https://github.com/adobe-fonts/source-han-sans
+Commit: f25136e6c310c99be8354d447b7e17404075415f
+Original path: Medium/OTC/SourceHanSansSC-Medium.otf
+Copyright: Copyright © 2014 Adobe Systems Incorporated. All Rights Reserved.
+License: Apache License, Version 2.0 (see LICENSE.txt)
+
+字体文件未修改。文件从Adobe官方仓库下载，没有从剪映应用复制。
+该上游tag的文件树未发现独立NOTICE文件；原始许可和字体内部署名保留。
+此资产是SC全量CFF，与对照软件CN子集TrueType存在文件结构、覆盖范围及栅格差异，不声称完全相同。

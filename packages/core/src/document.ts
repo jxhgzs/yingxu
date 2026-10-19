@@ -2,6 +2,8 @@ import {rational, compare, add, mul, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 import {validateAnimations} from './animation.ts';
 import type {Animation} from './animation.ts';
+import {validateSpeedCurve} from './curve-speed.ts';
+import type {SpeedCurve} from './curve-speed.ts';
 
 export type Range = {start: Rational; duration: Rational};
 export type Asset = {
@@ -10,15 +12,16 @@ export type Asset = {
   sha256?: string; mime?: string;
 };
 export type Transform = {x: number; y: number; scale: number; rotation: number; opacity: number; flipX: boolean; flipY: boolean};
-export type TextStyle = {content: string; size: number; color: string; font: string};
+export type TextStyle = {content: string; size: number; color: string; font: string;outline?:number;shadow?:number;lineHeight?:number};
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];
+  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];speedCurve?:SpeedCurve;
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
+export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
 export type Document = {
   schemaVersion: 1; title?: string; canvas: {width: number; height: number};
-  fps: Rational; assets: Asset[]; tracks: Track[];
+  fps: Rational; assets: Asset[]; tracks: Track[];subtitleSources?:SubtitleSource[];
 };
 export type Diagnostic = {code: string; trackId?: string; clipId?: string};
 export type Imported = {document: Document; provenance: {raw: unknown; sha256: string}; diagnostics: Diagnostic[]};
@@ -54,6 +57,16 @@ export function validateDocument(doc: Document): void {
     check(a.name === undefined || typeof a.name === 'string' && a.name.length <= 1000, 'INVALID_MEDIA_NAME');
     assets.set(a.id, a);
   }
+  if(doc.subtitleSources!==undefined){
+    check(Array.isArray(doc.subtitleSources)&&doc.subtitleSources.length<=100,'SUBTITLE_SOURCE_LIMIT');
+    const sourceIds=new Set<string>();let bytes=0;
+    for(const s of doc.subtitleSources){
+      check(s&&id(s.id)&&!sourceIds.has(s.id)&&assets.get(s.assetId)?.kind==='text','INVALID_SUBTITLE_SOURCE');sourceIds.add(s.id);
+      check(['srt','vtt'].includes(s.format)&&typeof s.name==='string'&&s.name.length>0&&s.name.length<=90&&typeof s.text==='string'&&s.text.length<=4*1024*1024,'INVALID_SUBTITLE_SOURCE');
+      const size=new TextEncoder().encode(s.text).length;bytes+=size;
+      check(size>0&&size<=4*1024*1024&&bytes<=16*1024*1024,'SUBTITLE_SOURCE_LIMIT');
+    }
+  }
   for (const t of doc.tracks) {
     check(t && id(t.id) && ['video', 'audio', 'text'].includes(t.kind) && Array.isArray(t.clips) && t.clips.length <= 10000, 'UNSUPPORTED_CORE_STRUCTURE');
     for (const key of ['locked', 'hidden', 'muted'] as const) check(t[key] === undefined || typeof t[key] === 'boolean', 'INVALID_TRACK_SWITCH');
@@ -69,6 +82,7 @@ export function validateDocument(doc: Document): void {
         check(compare(r.start, ZERO) >= 0 && compare(r.duration, ZERO) > 0, 'INVALID_TIME', c.id);
       }
       validRational(c.speed, c.id); check(compare(c.speed, ZERO) > 0, 'INVALID_SPEED', c.id);
+      if(c.speedCurve!==undefined)validateSpeedCurve(c.speedCurve);
       check(compare(mul(c.target.duration, c.speed), c.source.duration) === 0, 'UNSUPPORTED_TIME_MAPPING', c.id);
       check(compare(add(c.source.start, c.source.duration), asset.duration) <= 0, 'SOURCE_RANGE_EXCEEDED', c.id);
       check(c.volume === undefined || Number.isFinite(c.volume) && c.volume >= 0 && c.volume <= 4, 'INVALID_VOLUME');
@@ -84,6 +98,8 @@ export function validateDocument(doc: Document): void {
         check(c.text && typeof c.text.content === 'string' && c.text.content.length > 0 && c.text.content.length <= 2000, 'INVALID_TEXT');
         check(Number.isFinite(c.text.size) && c.text.size >= 8 && c.text.size <= 500 && /^#[0-9a-f]{6}$/i.test(c.text.color), 'INVALID_TEXT_STYLE');
         check(typeof c.text.font === 'string' && c.text.font.length <= 100 && !/[\r\n,{}\\]/.test(c.text.font), 'INVALID_FONT');
+        for(const value of [c.text.outline,c.text.shadow])check(value===undefined||Number.isFinite(value)&&value>=0&&value<=100,'INVALID_TEXT_STYLE');
+        check(c.text.lineHeight===undefined||Number.isFinite(c.text.lineHeight)&&c.text.lineHeight>0&&c.text.lineHeight<=2000,'INVALID_TEXT_STYLE');
       }
     }
   }

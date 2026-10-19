@@ -49,9 +49,10 @@ try {
   check('undo-equals-split', () => { assert.deepEqual(undone.document, split.document); assert.deepEqual(projectTiming(undone.document), projectTiming(get('04-undo-speed.json').document)); });
   check('redo-equals-speed', () => assert.deepEqual(session.redo(3).document, fast.document));
   const keyframes = get('05-scale-keyframes.json');
-  check('keyframes-preserved-uninterpreted', () => {
-    assert.equal(keyframes.document.tracks[0].clips[1].editableTiming, false);
-    assert(keyframes.diagnostics.some(d => d.code === 'KEYFRAME_CLOCK_UNRESOLVED'));
+  check('keyframes-source-clock-preserved', () => {
+    const clip=keyframes.document.tracks[0].clips[1];
+    assert.equal(clip.editableTiming, true);assert.deepEqual(keyframes.diagnostics,[]);
+    assert.deepEqual(clip.animations?.[0].points.map(p=>p.time),[rational(3),rational(5)]);
     assert.deepEqual(keyframes.provenance.raw, JSON.parse(fs.readFileSync(path.join(baselineRoot, 'evidence/drafts/05-scale-keyframes.json'), 'utf8')));
   });
   check('input-files-unchanged', verify);

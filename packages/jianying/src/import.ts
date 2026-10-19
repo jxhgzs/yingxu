@@ -1,7 +1,10 @@
 import {createHash} from 'node:crypto';
 import {check, validateDocument} from '../../core/src/document.ts';
 import type {Document, Diagnostic, Imported} from '../../core/src/document.ts';
-import {decimal, micros} from '../../core/src/time.ts';
+import {decimal, micros,div} from '../../core/src/time.ts';
+import {importScaleAnimations} from './animation.ts';
+import {importKnownVideoVisual} from './visual.ts';
+import {importKnownSpeedCurve} from './curve.ts';
 
 function object(v: unknown, field: string): Record<string, any> {
   check(v && typeof v === 'object' && !Array.isArray(v), 'INVALID_JSON_STRUCTURE', field);
@@ -23,31 +26,37 @@ export function importJianying(raw: unknown, sourceText?: string): Imported {
   const input = object(raw, 'root'), materials = object(input.materials, 'materials'), canvas = object(input.canvas_config, 'canvas_config');
   const videos = array(materials.videos, 'materials.videos');
   const diagnostics: Diagnostic[] = [];
+  const rawAssetById = new Map(videos.map(v=>{const a=object(v,'material');return [a.id,a];}));
+  const assets = videos.map((v: unknown) => {
+    const a = object(v, 'material'); return {id: a.id, path: a.path, duration: time(a.duration, 'material.duration'),kind:'video' as const,
+      ...(a.material_name!==undefined?{name:a.material_name}:{}),...(a.width!==undefined?{width:a.width}:{}),
+      ...(a.height!==undefined?{height:a.height}:{}),...(a.has_audio!==undefined?{hasAudio:a.has_audio}:{})};
+  });
+  const assetById = new Map(assets.map(a=>[a.id,a]));
   const doc: Document = {
     schemaVersion: 1, canvas: {width: canvas.width, height: canvas.height}, fps: decimal(String(number(input.fps, 'fps'))),
-    assets: videos.map((v: unknown) => {
-      const a = object(v, 'material'); return {id: a.id, path: a.path, duration: time(a.duration, 'material.duration')};
-    }),
+    assets,
     tracks: array(input.tracks, 'tracks').map((v: unknown) => {
       const t = object(v, 'track'); check(t.type === 'video', 'UNSUPPORTED_CORE_STRUCTURE', String(t.id));
       return {id: t.id, kind: 'video', clips: array(t.segments, 'segments').map((v: unknown) => {
         const s = object(v, 'segment');
         let editableTiming = true;
-        if (s.common_keyframes != null) {
-          check(Array.isArray(s.common_keyframes), 'INVALID_JSON_STRUCTURE', 'common_keyframes');
-          if (s.common_keyframes.length) {
-            editableTiming = false; diagnostics.push({code: 'KEYFRAME_CLOCK_UNRESOLVED', clipId: s.id});
-          }
+        const asset = assetById.get(s.material_id); check(asset, 'MISSING_MATERIAL', s.id);
+        const animation = importScaleAnimations(s, asset.duration);
+        if (animation.diagnostic) {
+          editableTiming = false; diagnostics.push({code: animation.diagnostic, clipId: s.id});
         }
         const refs = new Set(s.extra_material_refs || []);
         const speeds = materials.speeds || [];
         check(Array.isArray(speeds), 'INVALID_JSON_STRUCTURE', 'materials.speeds');
-        for (const speed of speeds) if (refs.has(speed.id) && speed.curve_speed != null) {
-          editableTiming = false; diagnostics.push({code: 'CURVE_SPEED_UNSUPPORTED', clipId: s.id});
-        }
-        diagnostics.push({code: 'VISUAL_SEMANTICS_NOT_INTERPRETED', trackId: t.id, clipId: s.id});
-        return {id: s.id, materialId: s.material_id, source: range(s.source_timerange, 'source_timerange'),
-          target: range(s.target_timerange, 'target_timerange'), speed: decimal(String(number(s.speed, 'speed'))), editableTiming};
+        const curve=importKnownSpeedCurve(s,materials),hasCurve=speeds.some((speed:any)=>speed&&refs.has(speed.id)&&speed.curve_speed!=null);
+        if(curve.diagnostic){editableTiming=false;diagnostics.push({code:curve.diagnostic,clipId:s.id});}
+        const visual=importKnownVideoVisual(s,rawAssetById.get(s.material_id)!,materials,!!curve.curve);
+        if(!visual)diagnostics.push({code: 'VISUAL_SEMANTICS_NOT_INTERPRETED', trackId: t.id, clipId: s.id});
+        const source=range(s.source_timerange,'source_timerange'),target=range(s.target_timerange,'target_timerange');
+        const nativeSpeed=decimal(String(number(s.speed,'speed')));
+        return {id:s.id,materialId:s.material_id,source,target,speed:hasCurve?div(source.duration,target.duration):nativeSpeed,editableTiming,
+          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{})};
       })};
     })
   };

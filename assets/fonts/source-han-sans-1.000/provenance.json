@@ -1,0 +1,53 @@
+{
+  "asset": "SourceHanSansSC-Medium.otf",
+  "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/f25136e6c310c99be8354d447b7e17404075415f/Medium/OTC/SourceHanSansSC-Medium.otf",
+  "repository": "https://github.com/adobe-fonts/source-han-sans",
+  "tag": "1.000",
+  "commit": "f25136e6c310c99be8354d447b7e17404075415f",
+  "upstreamPath": "Medium/OTC/SourceHanSansSC-Medium.otf",
+  "retrieved": "2026-10-19",
+  "bytes": 17886896,
+  "sha256": "d0124d3b7dbdb2b97a003b0999a217ddbdc408517c1edb76872d958ebfb08f1a",
+  "gitBlobSha1": "f8e1debe90de0b34d5e34bd1e46527d8cc3750e6",
+  "verifiedAgainstOfficialTree": true,
+  "fontFileModified": false,
+  "license": "Apache-2.0",
+  "licenseSource": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/f25136e6c310c99be8354d447b7e17404075415f/LICENSE.txt",
+  "licenseSha256": "2ca6fada369794fb76573c242ce196441a6c967a44f786124e00114361e2fc31",
+  "upstreamNoticeFound": false,
+  "noticeAuthoredBy": "this project, provenance only",
+  "family": "Source Han Sans SC",
+  "style": "Medium",
+  "version": "1.000",
+  "outlines": "CFF",
+  "glyphs": 65535,
+  "unitsPerEm": 1000,
+  "hhea": {
+    "ascender": 880,
+    "descender": -120,
+    "lineGap": 500
+  },
+  "os2": {
+    "weightClass": 500,
+    "typo": [
+      880,
+      -120,
+      500
+    ],
+    "win": [
+      1104,
+      308
+    ],
+    "fsSelection": "0x180"
+  },
+  "comparison": {
+    "targetFamily": "Source Han Sans CN Medium",
+    "targetVersion": "1.000",
+    "targetOutlines": "TrueType",
+    "targetGlyphs": 30888,
+    "sameBinary": false,
+    "sameRecordedMetrics": true,
+    "fullRasterParity": false,
+    "description": "同版SC全量CFF替代；CN子集TTF栅格和多行排版仍有差异。"
+  }
+}

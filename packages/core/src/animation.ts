@@ -2,6 +2,7 @@ import {add, sub, mul, div, compare, toNumber, nearestFrame, ZERO} from './time.
 import type {Rational} from './time.ts';
 import {check, validRational} from './document.ts';
 import type {Clip} from './document.ts';
+import {curveSourceDelta,curveTargetDelta} from './curve-speed.ts';
 
 export type AnimatedProperty = 'x'|'y'|'scale'|'rotation'|'opacity'|'volume';
 export type Keyframe = {id:string; time:Rational; value:number; interpolation:'linear'|'hold'};
@@ -25,9 +26,17 @@ export function validateAnimations(animations:Animation[], sourceDuration:Ration
   }
 }
 export function sourceTimeAt(clip:Clip, targetTime:Rational):Rational{
+  if(clip.speedCurve){
+    let delta=sub(targetTime,clip.target.start);if(compare(delta,ZERO)<0)delta=ZERO;if(compare(delta,clip.target.duration)>0)delta=clip.target.duration;
+    return add(clip.source.start,curveSourceDelta(clip.speedCurve,clip.source.duration,clip.target.duration,delta));
+  }
   return add(clip.source.start,mul(sub(targetTime,clip.target.start),clip.speed));
 }
 export function targetTimeAt(clip:Clip, sourceTime:Rational):Rational{
+  if(clip.speedCurve){
+    let delta=sub(sourceTime,clip.source.start);if(compare(delta,ZERO)<0)delta=ZERO;if(compare(delta,clip.source.duration)>0)delta=clip.source.duration;
+    return add(clip.target.start,curveTargetDelta(clip.speedCurve,clip.source.duration,clip.target.duration,delta));
+  }
   return add(clip.target.start,div(sub(sourceTime,clip.source.start),clip.speed));
 }
 /** UI hit testing only. Editing an existing off-grid source point retains its exact time. */

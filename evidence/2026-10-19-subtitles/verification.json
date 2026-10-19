@@ -1,0 +1,229 @@
+{
+  "target": {
+    "version": "5.9.0",
+    "draft": "Yingxu-REA-20261018",
+    "canvas": {
+      "height": 1080,
+      "ratio": "original",
+      "width": 1920
+    },
+    "fps": 30
+  },
+  "import": {
+    "source": "artifacts/qa/continuation/字幕导入样例.srt",
+    "cueCount": 4,
+    "assetImportAloneAddsTimeline": false,
+    "addingVia": "thumbnail lower-right add control",
+    "headAtAdd": "00:00:00:00",
+    "literalTagsPreserved": true,
+    "multilinePreserved": true,
+    "tracks": [
+      {
+        "id": "393AB1E8-E0CE-4133-A432-12B61D68EFBE",
+        "flag": 1,
+        "segments": [
+          {
+            "id": "C96ED358-1ADE-4D64-97D2-6CE984869D4E",
+            "range": {
+              "duration": 1000000,
+              "start": 500000
+            },
+            "source": null,
+            "y": -0.8,
+            "material": "58037CB7-5A54-4352-9FEA-219F3315D117"
+          },
+          {
+            "id": "F7BE8476-19FB-4192-8BA5-6EB90EACF2AB",
+            "range": {
+              "duration": 1000000,
+              "start": 1500000
+            },
+            "source": null,
+            "y": -0.8,
+            "material": "2B076937-5902-49CB-A4FC-90FA4AC5427A"
+          },
+          {
+            "id": "57A8CDDF-FE82-48A0-AC4A-569B72CAFF47",
+            "range": {
+              "duration": 1500000,
+              "start": 2500000
+            },
+            "source": null,
+            "y": -0.8,
+            "material": "144D12BE-CCE7-4A61-963F-51B214F5197B"
+          }
+        ]
+      },
+      {
+        "id": "EE0D4734-C862-421D-9810-C0BEAC0606A6",
+        "flag": 1,
+        "segments": [
+          {
+            "id": "5FFD1A96-28FA-4D4A-BE9B-B48D6858CDEC",
+            "range": {
+              "duration": 1000000,
+              "start": 3000000
+            },
+            "source": null,
+            "y": -0.6000000000000001,
+            "material": "F80B57DD-ED15-452D-973F-8BA4F91949F1"
+          }
+        ]
+      }
+    ]
+  },
+  "default": {
+    "fontUI": "系统",
+    "fontSizeUI": 5,
+    "font_size": 5,
+    "text_size": 30,
+    "font_name": "",
+    "font_title": "none",
+    "font_path": "/Applications/VideoFusion-macOS.app/Contents/Resources/Font/SystemFont/zh-hans.ttf",
+    "contentStyleFont": {
+      "id": "",
+      "path": "/Applications/VideoFusion-macOS.app/Contents/Resources/Font/SystemFont/zh-hans.ttf"
+    },
+    "contentStyleSize": 5,
+    "color": "#FFFFFF",
+    "has_shadow": false,
+    "alignment": 1,
+    "letter_spacing": 0,
+    "line_spacing": 0.02
+  },
+  "nativeExport": {
+    "path": "artifacts/qa/subtitles-native/REA-subtitles-20261019.mov",
+    "sha256": "c98a7cc22674ac54a0a87c5adc08a2b41de5989733c7e7b5a6b7b7144907c96d",
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 284,
+    "duration": 9.466667,
+    "video": "h264",
+    "audio": "aac 44100Hz stereo",
+    "standaloneAudioExport": false,
+    "gifExport": false,
+    "fullDecode": true
+  },
+  "firstCaptionPixels": {
+    "time": 0.7,
+    "sourceFrame": 21,
+    "bbox": {
+      "x": 552,
+      "y": 631,
+      "width": 178,
+      "height": 35,
+      "inclusiveEnd": {
+        "x": 729,
+        "y": 665
+      },
+      "center": {
+        "x": 640.5,
+        "y": 648
+      },
+      "pixels": 1631
+    },
+    "method": "1280x720 actual vs fixture frame21 scaled to1280x720; ROI x300..999/y610..699, all actual RGB channels>200 and max per-channel difference>80",
+    "limitation": "thresholded white glyph bbox only; not font identity or exact text-layout equivalence"
+  },
+  "reference": {
+    "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/剪映5.9.0复刻分析_20261018/fixtures/timeline-probe.mp4",
+    "sha256": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0"
+  },
+  "literalSemantics": {
+    "fixture": "artifacts/qa/continuation/字幕字面语义样例.srt",
+    "expected": "&lt;中文&gt; &amp; &#13; <i>斜体</i> <script>x</script>",
+    "actual": "&lt;中文&gt; &amp; &#13; <i>斜体</i> <script>x</script>",
+    "previewAt": "00:00:04:24",
+    "screenshot": "evidence/2026-10-19-subtitles/09-literal-entities-selected.png",
+    "nativeExportIncludesThisExtraCue": false
+  },
+  "originalVideoTracksUnchanged": true,
+  "files": [
+    {
+      "path": "00-before-import.json",
+      "bytes": 28711,
+      "sha256": "0893678ec6f7b8001eb74451da48935dc2e3e811588640fcd93309135b09312b"
+    },
+    {
+      "path": "00-before-import.png",
+      "bytes": 185039,
+      "sha256": "2f0caf3f0e91b97c77b8c3ce4d2049d4e7d9ae85f201253f1e9e5f68e2b08053"
+    },
+    {
+      "path": "01-import-entry.png",
+      "bytes": 176602,
+      "sha256": "2b5fb6693eb0f77d036ab8a1efd8de0c8e0970a83f28db3f208a8ab1c1c9424b"
+    },
+    {
+      "path": "01-material-imported.json",
+      "bytes": 28711,
+      "sha256": "0893678ec6f7b8001eb74451da48935dc2e3e811588640fcd93309135b09312b"
+    },
+    {
+      "path": "02-added-to-timeline.json",
+      "bytes": 43794,
+      "sha256": "fcea837d1c9f21734d07dfd370d43c969ccb9ce0f22e8a8b2379ef9191d4128f"
+    },
+    {
+      "path": "02-imported-material.png",
+      "bytes": 175326,
+      "sha256": "2c70b5572ea22635024f90f3bebb7b781180bad673bc653df7f4d5dda06112d1"
+    },
+    {
+      "path": "03-added-at-zero.png",
+      "bytes": 177215,
+      "sha256": "5b292cc0eaa3bcfc5f8525e7d57e76dfbde1e29a798ebeb3f8c18c975ee84dfe"
+    },
+    {
+      "path": "03-after-export.json",
+      "bytes": 43794,
+      "sha256": "fcea837d1c9f21734d07dfd370d43c969ccb9ce0f22e8a8b2379ef9191d4128f"
+    },
+    {
+      "path": "04-first-caption-selected.png",
+      "bytes": 174931,
+      "sha256": "830322173057bb15afbc19e4869fab712e40c225beab4768cea9b97edcf10275"
+    },
+    {
+      "path": "04-literal-entities-added.json",
+      "bytes": 47395,
+      "sha256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82"
+    },
+    {
+      "path": "05-multiline-at-2s.png",
+      "bytes": 171616,
+      "sha256": "424b82dbb5705f00aca133b9e266b5151692523285b51982ef28b99d8de70aca"
+    },
+    {
+      "path": "06-overlap-literal-tags.png",
+      "bytes": 173182,
+      "sha256": "bc4b14e56c59f7e417067436128ac30a48bb745d245891affd094f6f5a97c730"
+    },
+    {
+      "path": "07-export-settings.png",
+      "bytes": 44509,
+      "sha256": "2d93ac5667d1b5022c7628cfc489944c932014878889fead8c224fa609a5c2ed"
+    },
+    {
+      "path": "08-export-complete.png",
+      "bytes": 41383,
+      "sha256": "e6f780325b1c7a5bbb6de4fe22751716dd3ab21e79e6d28b4101bb4614c6193f"
+    },
+    {
+      "path": "09-literal-entities-selected.png",
+      "bytes": 183667,
+      "sha256": "16bae79b37458e06857cb5ac7e4b8cbfc7b7fc7f3c4bd2ce7aec540f2bf4f41d"
+    },
+    {
+      "path": "source-literal.srt",
+      "bytes": 92,
+      "sha256": "600e68bed5964e9247ab29bb27f5f5de9f6f367ac82fd224a24534e9d6f8d5b8"
+    },
+    {
+      "path": "source-sample.srt",
+      "bytes": 244,
+      "sha256": "3f8e69c7356fb821862611f22ce4fc626597815adbefd40d445c4710864eee6b"
+    }
+  ]
+}

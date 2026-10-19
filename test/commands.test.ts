@@ -44,6 +44,7 @@ test('invalid commands and unknown timing do not mutate the input', () => {
   assert.throws(() => applyCommand(d, {type: 'split', clipId: id, at: rational(3), rightId: id}), /DUPLICATE_ID/);
   assert.throws(() => applyCommand(d, {type: 'speed', clipId: id, value: rational(0), shiftFollowing: true}));
   assert.deepEqual(d, before);
-  const k = importJianying(readSnapshot('05-scale-keyframes.json')).document;
+  const raw=readSnapshot('05-scale-keyframes.json');raw.tracks[0].segments[1].common_keyframes[0].property_type='KFTypeUnverified';
+  const k = importJianying(raw).document;
   assert.throws(() => applyCommand(k, {type: 'speed', clipId: k.tracks[0].clips[1].id, value: rational(2), shiftFollowing: false}), /TIMING_NOT_INTERPRETED/);
 });

@@ -11,7 +11,9 @@ import {rational} from '../packages/core/src/time.ts';
 test('all six registered snapshots import without writes', () => {
   for (const name of baseline.snapshots) {
     const raw = readSnapshot(name), before = structuredClone(raw);
-    assert.deepEqual(importJianying(raw).provenance.raw, before);
+    const imported=importJianying(raw);
+    assert.deepEqual(imported.provenance.raw, before);
+    assert.deepEqual(imported.diagnostics, []);
     assert.deepEqual(raw, before);
   }
   for (const f of baseline.files.filter((f: any) => f.path.includes('/drafts/'))) {
@@ -27,11 +29,12 @@ test('speed retains source range while shortening target', () => {
   assert.deepEqual(projectTiming(importJianying(readSnapshot('02-split-at-3s.json')).document),
     projectTiming(importJianying(readSnapshot('04-undo-speed.json')).document));
 });
-test('unknown fields and keyframe clocks remain intact and timing is read only', () => {
+test('unknown fields and keyframe properties remain intact and timing is read only', () => {
   const raw = readSnapshot('05-scale-keyframes.json'); raw.customOpaque = {version: 25, arbitrary: ['保留', 3]};
+  raw.tracks[0].segments[1].common_keyframes[0].property_type='KFTypeUnknown';
   const result = importJianying(raw);
   assert.deepEqual(result.provenance.raw, raw);
-  assert(result.diagnostics.some(d => d.code === 'KEYFRAME_CLOCK_UNRESOLVED'));
+  assert(result.diagnostics.some(d => d.code === 'KEYFRAME_PROPERTY_UNSUPPORTED'));
   assert.equal(result.document.tracks[0].clips[1].editableTiming, false);
   raw.customOpaque.arbitrary.push('mutation');
   assert.notDeepEqual(result.provenance.raw, raw);

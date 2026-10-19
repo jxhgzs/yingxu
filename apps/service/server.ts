@@ -15,6 +15,7 @@ import {rational} from '../../packages/core/src/time.ts';
 const repo = fileURLToPath(new URL('../../', import.meta.url));
 const mime: Record<string, string> = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json'};
 export async function startServer(options: {root?: string; port?: number; dist?: string} = {}) {
+  const version=JSON.parse(await fs.readFile(path.join(repo,'package.json'),'utf8')).version;
   const store = new Store(options.root || process.env.YINGXU_EDITOR_DATA || path.join(repo, '.local'));
   await store.initialize(); const jobs = new Jobs(store); await jobs.initialize();
   const token = randomBytes(24).toString('hex');
@@ -37,8 +38,8 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       if (!['GET', 'HEAD'].includes(request.method || '')) check(request.headers['x-editor-token'] === token, 'INVALID_SESSION_TOKEN');
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
-      if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version: '0.2.0', projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'transform', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
+      if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, projects: store.list(), assets: [...store.assets.values()],
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
         limitations: ['不支持未解析的剪映特效与关键帧渲染', '预览当前使用后台渲染，尚未实现GPU实时预览']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
@@ -62,7 +63,13 @@ export async function startServer(options: {root?: string; port?: number; dist?:
           const registered = store.assets.get(a.id);
           if (registered && registered.sha256 === a.sha256) Object.assign(a, registered);
         }
-        check(!input.diagnostics?.length && !input.provenance, 'SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT');
+        if(input.provenance){
+          check(input.provenance&&typeof input.provenance==='object'&&input.provenance.raw&&typeof input.provenance.sha256==='string','INVALID_SOURCE_PROVENANCE');
+          const source=importJianying(input.provenance.raw);
+          check(source.provenance.sha256===input.provenance.sha256,'SOURCE_HASH_MISMATCH');
+          return respond(await store.create(doc,{diagnostics:source.diagnostics,provenance:source.provenance}),201);
+        }
+        check(!input.diagnostics?.length, 'SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT');
         return respond(await store.create(doc), 201);
       }
       if (route === '/api/import-draft' && request.method === 'POST') {
@@ -86,9 +93,12 @@ export async function startServer(options: {root?: string; port?: number; dist?:
         const input = await body(request), project = store.get(match[1]);
         check(project.diagnostics.length === 0, 'SOURCE_DRAFT_READ_ONLY');
         const edits=input.command?.type==='batch'?input.command.commands:[input.command];
-        if(Array.isArray(edits))for(const edit of edits)if (edit?.type === 'asset.add' && edit.asset?.kind !== 'text') {
-          const registered = store.assets.get(edit.asset?.id); check(registered, 'MEDIA_NOT_LINKED');
-          edit.asset = registered;
+        if(Array.isArray(edits))for(const edit of edits){
+          if (edit?.type === 'asset.add' && edit.asset?.kind !== 'text') {
+            const registered = store.assets.get(edit.asset?.id); check(registered, 'MEDIA_NOT_LINKED');edit.asset = registered;
+          }else if(edit?.type==='asset.relink'){
+            const registered=store.assets.get(edit.replacement?.id);check(registered,'MEDIA_NOT_LINKED');edit.replacement=registered;
+          }
         }
         return respond(await store.edit(match[1], input));
       }

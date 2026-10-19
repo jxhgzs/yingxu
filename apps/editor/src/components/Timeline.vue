@@ -35,7 +35,7 @@ function seek(event: PointerEvent) {
 }
 function begin(event: PointerEvent, clip: Clip, track: Track, mode: 'move'|'left'|'right') {
   props.c.selectedId.value=clip.id;
-  if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value)return;
+  if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value||clip.speedCurve&&mode!=='move')return;
   (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
   drag.value={id:clip.id,mode,originX:event.clientX,delta:0,trackId:track.id,destination:track.id,original:structuredClone(clip)};
 }
@@ -96,9 +96,9 @@ function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({t
             <button v-else class="mini-icon" :class="{off:track.muted}" :aria-label="(track.muted?'取消静音':'静音')+(track.name||track.kind)" @click="c.guard(()=>c.edit({type:'track.update',trackId:track.id,changes:{muted:!track.muted}}))"><Icon name="sound" /></button>
           </div></header>
           <button v-for="clip in track.clips.filter(visible)" :key="clip.id" class="timeline-clip" :class="[{selected:c.selectedId.value===clip.id,dragging:drag?.id===clip.id},'clip-'+track.kind]" :style="clipStyle(clip)" :aria-label="'片段 '+name(clip)" :data-clip-id="clip.id" @pointerdown.stop="begin($event,clip,track,'move')" @pointermove="moving" @pointerup="finish" @pointercancel="drag=null" @click.stop="c.selectedId.value=clip.id">
-            <span class="clip-title"><Icon :name="track.kind" />{{name(clip)}}<small>{{toNumber(clip.speed)!==1?toNumber(clip.speed)+'×':''}}</small></span><span v-if="track.kind==='text'" class="clip-text-body">{{clip.text?.content}}</span>
+            <span class="clip-title"><Icon :name="track.kind" />{{name(clip)}}<small>{{clip.speedCurve?'曲线':toNumber(clip.speed)!==1?toNumber(clip.speed)+'×':''}}</small></span><span v-if="track.kind==='text'" class="clip-text-body">{{clip.text?.content}}</span>
             <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
-            <span class="trim-handle left" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span>
+            <template v-if="!clip.speedCurve"><span class="trim-handle left" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>
           </button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
         </div>

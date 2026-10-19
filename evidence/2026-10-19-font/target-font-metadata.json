@@ -1,0 +1,381 @@
+{
+  "path": "/Applications/VideoFusion-macOS.app/Contents/Resources/Font/SystemFont/zh-hans.ttf",
+  "bytes": 10227544,
+  "sha256": "23c4c2392431725af8a8cf23b8e355c181ead687a43e79e842c9ae1647b293b2",
+  "sfnt": "00010000",
+  "tables": {
+    "BASE": {
+      "offset": 10051296,
+      "length": 228,
+      "checksum": "0x1b8e18d8"
+    },
+    "DSIG": {
+      "offset": 10227536,
+      "length": 8,
+      "checksum": "0x1"
+    },
+    "GPOS": {
+      "offset": 10051524,
+      "length": 42372,
+      "checksum": "0x12cfc187"
+    },
+    "GSUB": {
+      "offset": 10093896,
+      "length": 9730,
+      "checksum": "0x7bbe1e93"
+    },
+    "OS/2": {
+      "offset": 408,
+      "length": 96,
+      "checksum": "0x94b602cd"
+    },
+    "VORG": {
+      "offset": 10103628,
+      "length": 956,
+      "checksum": "0x9fdb0510"
+    },
+    "cmap": {
+      "offset": 123420,
+      "length": 33090,
+      "checksum": "0xf0c11521"
+    },
+    "glyf": {
+      "offset": 280068,
+      "length": 9426902,
+      "checksum": "0xf5f9520d"
+    },
+    "head": {
+      "offset": 284,
+      "length": 54,
+      "checksum": "0x16bee82c"
+    },
+    "hhea": {
+      "offset": 340,
+      "length": 36,
+      "checksum": "0xce77e07"
+    },
+    "hmtx": {
+      "offset": 504,
+      "length": 122916,
+      "checksum": "0xb0b63709"
+    },
+    "loca": {
+      "offset": 156512,
+      "length": 123556,
+      "checksum": "0x66d3680b"
+    },
+    "maxp": {
+      "offset": 376,
+      "length": 32,
+      "checksum": "0x78d20152"
+    },
+    "name": {
+      "offset": 9706972,
+      "length": 4526,
+      "checksum": "0x114e42d5"
+    },
+    "post": {
+      "offset": 9711500,
+      "length": 339793,
+      "checksum": "0x9863ca04"
+    },
+    "vhea": {
+      "offset": 10104584,
+      "length": 36,
+      "checksum": "0xb6c9072"
+    },
+    "vmtx": {
+      "offset": 10104620,
+      "length": 122916,
+      "checksum": "0xad4eb1e1"
+    }
+  },
+  "unitsPerEm": 1000,
+  "headBBox": [
+    -1007,
+    -1047,
+    2927,
+    1807
+  ],
+  "hhea": {
+    "ascender": 880,
+    "descender": -120,
+    "lineGap": 500
+  },
+  "os2": {
+    "version": 4,
+    "weightClass": 500,
+    "typo": [
+      880,
+      -120,
+      500
+    ],
+    "win": [
+      1104,
+      308
+    ],
+    "fsSelection": "0x180"
+  },
+  "names": [
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 0,
+      "value": "Copyright © 2014 Adobe Systems Incorporated. All Rights Reserved."
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 1,
+      "value": "Source Han Sans CN Medium"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 2,
+      "value": "Regular"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 3,
+      "value": "1.000;ADBE;SourceHanSansCN-Medium;ADOBE"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 4,
+      "value": "Source Han Sans CN Medium"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 5,
+      "value": "Version 1.000;PS 1;hotconv 1.0.78;makeotf.lib2.5.61930"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 6,
+      "value": "SourceHanSansCN-Medium"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 7,
+      "value": "Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries."
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 8,
+      "value": "Adobe Systems Incorporated"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 9,
+      "value": "Ryoko NISHIZUKA (kana & ideographs); Paul D. Hunt (Latin, Greek & Cyrillic); Wenlong ZHANG (bopomofo); Sandoll Communication, Soo-young JANG & Joo-yeon KANG (hangul elements, letters & syllables)"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 10,
+      "value": "Dr. Ken Lunde (project architect, glyph set definition & overall production); Masataka HATTORI (production & ideograph elements)"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 11,
+      "value": "http://www.adobe.com/type/"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 13,
+      "value": "Copyright © 2014 Adobe Systems Incorporated\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.html\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 14,
+      "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 16,
+      "value": "Source Han Sans CN"
+    },
+    {
+      "platform": 1,
+      "encoding": 0,
+      "language": "0x0",
+      "id": 17,
+      "value": "Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 0,
+      "value": "Copyright © 2014 Adobe Systems Incorporated. All Rights Reserved."
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 1,
+      "value": "Source Han Sans CN Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 2,
+      "value": "Regular"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 3,
+      "value": "1.000;ADBE;SourceHanSansCN-Medium;ADOBE"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 4,
+      "value": "Source Han Sans CN Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 5,
+      "value": "Version 1.000;PS 1;hotconv 1.0.78;makeotf.lib2.5.61930"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 6,
+      "value": "SourceHanSansCN-Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 7,
+      "value": "Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries."
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 8,
+      "value": "Adobe Systems Incorporated"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 9,
+      "value": "Ryoko NISHIZUKA 西塚涼子 (kana & ideographs); Paul D. Hunt (Latin, Greek & Cyrillic); Wenlong ZHANG 张文龙 (bopomofo); Sandoll Communication 산돌커뮤니케이션, Soo-young JANG 장수영 & Joo-yeon KANG 강주연 (hangul elements, letters & syllables)"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 10,
+      "value": "Dr. Ken Lunde (project architect, glyph set definition & overall production); Masataka HATTORI 服部正貴 (production & ideograph elements)"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 11,
+      "value": "http://www.adobe.com/type/"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 13,
+      "value": "Copyright © 2014 Adobe Systems Incorporated\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.html\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 14,
+      "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 16,
+      "value": "Source Han Sans CN"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x409",
+      "id": 17,
+      "value": "Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x804",
+      "id": 1,
+      "value": "思源黑体 CN Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x804",
+      "id": 2,
+      "value": "Regular"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x804",
+      "id": 4,
+      "value": "思源黑体 CN Medium"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x804",
+      "id": 16,
+      "value": "思源黑体 CN"
+    },
+    {
+      "platform": 3,
+      "encoding": 1,
+      "language": "0x804",
+      "id": 17,
+      "value": "Medium"
+    }
+  ],
+  "glyphs": 30888
+}

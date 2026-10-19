@@ -37,7 +37,17 @@ export function explainError(error: unknown): string {
     INVALID_TEXT: '文字不能为空，且最多2000个字符。', NO_MEDIA_STREAM: '未能在此文件中读取视频、声音或图片。',
     TEXT_FLIP_UNSUPPORTED: '当前还不支持文字翻转，请先关闭该属性。',
     JOB_CANCELLED: '任务已取消。', INVALID_SESSION_TOKEN: '服务已重新启动，请刷新编辑器。', INVALID_TRANSFORM: '位置、缩放或透明度超出允许范围。',
-    SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT: '这份工程含尚未解析的剪映内容，请通过“导入剪映草稿”打开原始草稿。'
+    SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT: '这份工程含尚未解析的剪映内容，请通过“导入剪映草稿”打开原始草稿。',
+    CURVE_TRIM_UNSUPPORTED:'曲线片段暂不支持直接裁切，可先分割后删除多余片段，或恢复常速。',
+    INVALID_CURVE_SPEED:'曲线端点必须位于0和1，横坐标递增，速度为0.1至10倍。',
+    CURVE_AUDIO_ENGINE_UNAVAILABLE:'曲线音频引擎不可用，请检查桌面安装的音频组件。',
+    CURVE_AUDIO_ENGINE_FAILED:'曲线音频处理失败，请查看任务详情。',
+    CURVE_AUDIO_ENGINE_WARNING:'曲线音频处理出现异常，已停止导出，请查看任务详情。',
+    CURVE_AUDIO_LENGTH_MISMATCH:'曲线音频时长检查未通过，请查看任务详情。',
+    CURVE_AUDIO_NONFINITE:'曲线音频采样检查未通过，已停止导出。',
+    RELINK_KIND_MISMATCH:'所选素材类型与工程素材不一致。',
+    SUBTITLE_LAYOUT_OVERFLOW:'重叠字幕超出画布，请减少重叠或调整字幕内容。',
+    SUBTITLE_NEGATIVE_START:'字幕整体偏移后出现负时间，请调整偏移量。',FONT_UNAVAILABLE:'工程所需字体未能加载，请检查桌面安装的字体组件。'
   };
   if (translations[code]) return translations[code];
   if (/Failed to fetch|fetch failed|NetworkError/i.test(raw)) return '无法连接本地编辑服务，请确认服务正在运行。';

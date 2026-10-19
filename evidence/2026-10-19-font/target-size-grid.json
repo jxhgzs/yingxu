@@ -1,0 +1,141 @@
+{
+  "font": "analysis-only local target copy",
+  "text": "第一条字幕",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "position": {
+    "x": 640,
+    "y": 648
+  },
+  "threshold": "minRGB>200",
+  "results": [
+    {
+      "size": 30,
+      "bbox": {
+        "x": 588,
+        "y": 639,
+        "width": 104,
+        "height": 19,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 499
+    },
+    {
+      "size": 34,
+      "bbox": {
+        "x": 582,
+        "y": 638,
+        "width": 116,
+        "height": 21,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 623
+    },
+    {
+      "size": 36,
+      "bbox": {
+        "x": 578,
+        "y": 637,
+        "width": 124,
+        "height": 23,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 735
+    },
+    {
+      "size": 38,
+      "bbox": {
+        "x": 575,
+        "y": 636,
+        "width": 130,
+        "height": 25,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 835
+    },
+    {
+      "size": 40,
+      "bbox": {
+        "x": 571,
+        "y": 636,
+        "width": 138,
+        "height": 25,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 961
+    },
+    {
+      "size": 42,
+      "bbox": {
+        "x": 568,
+        "y": 635,
+        "width": 144,
+        "height": 27,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 1022
+    },
+    {
+      "size": 48,
+      "bbox": {
+        "x": 557,
+        "y": 633,
+        "width": 166,
+        "height": 31,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 1414
+    },
+    {
+      "size": 50,
+      "bbox": {
+        "x": 554,
+        "y": 633,
+        "width": 172,
+        "height": 32,
+        "center": {
+          "x": 639.5,
+          "y": 648.5
+        }
+      },
+      "pixels": 1561
+    },
+    {
+      "size": 54,
+      "bbox": {
+        "x": 547,
+        "y": 631,
+        "width": 186,
+        "height": 35,
+        "center": {
+          "x": 639.5,
+          "y": 648
+        }
+      },
+      "pixels": 1802
+    }
+  ]
+}

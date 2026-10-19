@@ -71,6 +71,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
       const target = track(command.trackId); unlocked(target); check(target.kind === t.kind, 'TRACK_KIND_MISMATCH');
       c.target.start = structuredClone(command.start); if (target !== t) {t.clips.splice(i, 1); target.clips.push(c);}
     } else if (command.type === 'clip.trim') {
+      check(!c.speedCurve,'CURVE_TRIM_UNSUPPORTED');
       c.source = {start: structuredClone(command.sourceStart), duration: structuredClone(command.sourceDuration)};
       c.target.duration = div(command.sourceDuration, c.speed);
       if (command.targetStart !== undefined) c.target.start = structuredClone(command.targetStart);
