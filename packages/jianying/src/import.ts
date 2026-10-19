@@ -6,6 +6,8 @@ import {importAudioFade} from './audio-fade.ts';
 import {importScaleAnimations} from './animation.ts';
 import {importKnownVideoVisual} from './visual.ts';
 import {importKnownSpeedCurve} from './curve.ts';
+import {importNativeTransitions} from './transitions.ts';
+import {importColorAdjustments} from './color-effects.ts';
 
 function object(v: unknown, field: string): Record<string, any> {
   check(v && typeof v === 'object' && !Array.isArray(v), 'INVALID_JSON_STRUCTURE', field);
@@ -53,15 +55,21 @@ export function importJianying(raw: unknown, sourceText?: string): Imported {
         const curve=importKnownSpeedCurve(s,materials),hasCurve=speeds.some((speed:any)=>speed&&refs.has(speed.id)&&speed.curve_speed!=null);
         if(curve.diagnostic){editableTiming=false;diagnostics.push({code:curve.diagnostic,clipId:s.id});}
         const fade=importAudioFade(s,materials);if(fade.diagnostic)diagnostics.push({code:fade.diagnostic,clipId:s.id});
+        const color=importColorAdjustments(s,materials);if(color.diagnostic)diagnostics.push({code:color.diagnostic,clipId:s.id});
         const visual=importKnownVideoVisual(s,rawAssetById.get(s.material_id)!,materials,!!curve.curve,!!fade.fade);
         if(!visual)diagnostics.push({code: 'VISUAL_SEMANTICS_NOT_INTERPRETED', trackId: t.id, clipId: s.id});
         const source=range(s.source_timerange,'source_timerange'),target=range(s.target_timerange,'target_timerange');
         const nativeSpeed=decimal(String(number(s.speed,'speed')));
         return {id:s.id,materialId:s.material_id,source,target,speed:hasCurve?div(source.duration,target.duration):nativeSpeed,editableTiming,
-          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{}),...(fade.fade?{audioFade:fade.fade}:{})};
+          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{}),...(color.colorAdjustments?{colorAdjustments:color.colorAdjustments}:{}),...(fade.fade?{audioFade:fade.fade}:{})};
       })};
     })
   };
+  validateDocument(doc);
+  const transitions=importNativeTransitions(input,doc);
+  if(transitions.transitions.length)doc.transitions=transitions.transitions;
+  diagnostics.push(...transitions.diagnostics);
+  for(const track of doc.tracks)for(const clip of track.clips)if(transitions.blockedClipIds.has(clip.id))clip.editableTiming=false;
   validateDocument(doc);
   if (sourceText !== undefined) check(JSON.stringify(JSON.parse(sourceText)) === JSON.stringify(raw), 'SOURCE_TEXT_MISMATCH');
   return {document: doc, provenance: {raw: structuredClone(raw), sha256: createHash('sha256').update(sourceText ?? JSON.stringify(raw)).digest('hex')}, diagnostics};

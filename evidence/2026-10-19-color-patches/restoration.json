@@ -1,0 +1,9 @@
+{
+  "backupSHA256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82",
+  "byteExactRestoredAfterQuit": true,
+  "nativeReopenedTracksEqual": true,
+  "nativeReopenedDurationEqual": true,
+  "allMaterialsExceptNativeSoundMappingNormalizationEqual": true,
+  "nativeSoundMappingNormalizedEmptyTypeToNone": true,
+  "finalByteExactAfterNativeReopenAndQuit": true
+}

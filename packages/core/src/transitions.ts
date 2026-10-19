@@ -1,0 +1,94 @@
+import {check, validRational} from './document.ts';
+import type {Clip, Document, Range, Transition} from './document.ts';
+import {add, sub, mul, div, compare, rational, ZERO} from './time.ts';
+import type {Rational} from './time.ts';
+export type {Transition} from './document.ts';
+
+/** Sequence time and source time stay exact; decoder frame selection is a separate boundary. */
+export function transitionWindow(transition:Transition,outgoing:Clip):Range {
+  validRational(transition.duration,'transition.duration');
+  check(compare(transition.duration,ZERO)>0,'INVALID_TRANSITION_DURATION',transition.id);
+  return {start:sub(add(outgoing.target.start,outgoing.target.duration),div(transition.duration,rational(2))),duration:transition.duration};
+}
+
+/** Includes source handles outside the clip's declared range; never clamps them. */
+export function transitionSourceAt(clip:Clip,targetTime:Rational):Rational {
+  check(clip.editableTiming&&!clip.speedCurve,'TRANSITION_TIME_MAPPING_UNSUPPORTED',clip.id);
+  validRational(targetTime,'transition.time');
+  return add(clip.source.start,mul(sub(targetTime,clip.target.start),clip.speed));
+}
+
+export function transitionHandles(transition:Transition,outgoing:Clip,incoming:Clip):{
+  window:Range;outgoingSourceEnd:Rational;incomingSourceStart:Rational;
+} {
+  const window=transitionWindow(transition,outgoing);
+  return {window,outgoingSourceEnd:transitionSourceAt(outgoing,add(window.start,window.duration)),incomingSourceStart:transitionSourceAt(incoming,window.start)};
+}
+
+export function assertNoClipTransitions(doc:Document,clipId:string):void {
+  check(!doc.transitions?.some(t=>t.outgoingClipId===clipId||t.incomingClipId===clipId),'TRANSITION_EDIT_REQUIRES_REMOVAL',clipId);
+}
+
+/** Used by document validation, including graph and renderer entry points. */
+export function validateTransitions(doc:Document):void {
+  if(doc.transitions===undefined)return;
+  check(Array.isArray(doc.transitions)&&doc.transitions.length<=10000,'INVALID_TRANSITIONS');
+  const ids=new Set<string>(),pairs=new Set<string>();
+  const assets=new Map(doc.assets.map(a=>[a.id,a])),tracks=new Map(doc.tracks.map(t=>[t.id,t]));
+  const orderedTracks=new Map<string,{clips:Clip[];indices:Map<string,number>}>();
+  const windows=new Map<string,{id:string;range:Range}[]>();
+  for(const transition of doc.transitions){
+    const id=(v:unknown)=>typeof v==='string'&&v.length>0&&v.length<=200;
+    check(transition&&id(transition.id)&&id(transition.trackId)&&id(transition.outgoingClipId)&&id(transition.incomingClipId),'INVALID_TRANSITION');
+    check(Object.keys(transition).every(key=>['id','trackId','outgoingClipId','incomingClipId','kind','alignment','overlap','duration'].includes(key)),'UNSUPPORTED_TRANSITION_FIELD',transition.id);
+    check(!ids.has(transition.id),'DUPLICATE_TRANSITION_ID',transition.id);ids.add(transition.id);
+    check(['crossfade','dipToBlack'].includes(transition.kind),'TRANSITION_KIND_UNVERIFIED',transition.id);
+    check(transition.alignment==='center'&&transition.overlap===(transition.kind==='crossfade'),'TRANSITION_ALIGNMENT_UNSUPPORTED',transition.id);
+    const track=tracks.get(transition.trackId);check(track&&track.kind==='video','TRANSITION_TRACK_UNSUPPORTED',transition.id);
+    let ordered=orderedTracks.get(track.id);
+    if(!ordered){const clips=[...track.clips].sort((a,b)=>compare(a.target.start,b.target.start));ordered={clips,indices:new Map(clips.map((c,i)=>[c.id,i]))};orderedTracks.set(track.id,ordered);}
+    const index=ordered.indices.get(transition.outgoingClipId)??-1,outgoing=ordered.clips[index],incoming=ordered.clips[index+1];
+    check(outgoing&&incoming&&incoming.id===transition.incomingClipId,'TRANSITION_PAIR_NOT_ADJACENT',transition.id);
+    check(compare(add(outgoing.target.start,outgoing.target.duration),incoming.target.start)===0,'TRANSITION_PAIR_NOT_ADJACENT',transition.id);
+    const pair=JSON.stringify([outgoing.id,incoming.id]);check(!pairs.has(pair),'DUPLICATE_TRANSITION_PAIR',transition.id);pairs.add(pair);
+    for(const clip of [outgoing,incoming]){
+      check(clip.editableTiming&&!clip.speedCurve,'TRANSITION_TIME_MAPPING_UNSUPPORTED',clip.id);
+      check((assets.get(clip.materialId)?.kind||'video')==='video','TRANSITION_MEDIA_UNSUPPORTED',clip.id);
+    }
+    validRational(transition.duration,'transition.duration');
+    check(compare(transition.duration,ZERO)>0&&[outgoing,incoming].every(c=>compare(mul(transition.duration,rational(2)),c.target.duration)<=0),'INVALID_TRANSITION_DURATION',transition.id);
+    // Product boundary: require a nonempty output frame window; native UI minimum is unverified.
+    check(compare(transition.duration,div(rational(1),doc.fps))>=0,'TRANSITION_DURATION_BELOW_ONE_FRAME',transition.id);
+    const handles=transitionHandles(transition,outgoing,incoming),outAsset=assets.get(outgoing.materialId)!;
+    if(transition.kind==='crossfade')check(compare(handles.outgoingSourceEnd,outAsset.duration)<=0&&compare(handles.incomingSourceStart,ZERO)>=0,'TRANSITION_SOURCE_HANDLES_MISSING',transition.id);
+    const ranges=windows.get(track.id)||[];ranges.push({id:transition.id,range:handles.window});windows.set(track.id,ranges);
+  }
+  for(const ranges of windows.values()){
+    ranges.sort((a,b)=>compare(a.range.start,b.range.start));
+    for(let i=1;i<ranges.length;i++)check(compare(ranges[i].range.start,add(ranges[i-1].range.start,ranges[i-1].range.duration))>=0,'TRANSITION_WINDOWS_OVERLAP',ranges[i].id);
+  }
+}
+
+export type TransitionCommand =
+  | {type:'transition.add';transition:Transition}
+  | {type:'transition.update';transitionId:string;changes:{kind?:Transition['kind'];duration?:Rational}}
+  | {type:'transition.remove';transitionId:string};
+
+export function applyTransitionCommand(doc:Document,command:TransitionCommand):Document {
+  const next=structuredClone(doc);
+  if(command.type==='transition.add'){
+    check(command.transition&&typeof command.transition==='object','INVALID_TRANSITION');
+    const track=next.tracks.find(t=>t.id===command.transition.trackId);check(track,'TRACK_NOT_FOUND');check(!track.locked,'TRACK_LOCKED',track.id);
+    (next.transitions||=[]).push(structuredClone(command.transition));
+  }else{
+    const index=next.transitions?.findIndex(t=>t.id===command.transitionId)??-1;
+    check(index>=0,'TRANSITION_NOT_FOUND',command.transitionId);
+    const transition=next.transitions![index],track=next.tracks.find(t=>t.id===transition.trackId)!;check(!track.locked,'TRACK_LOCKED',track.id);
+    if(command.type==='transition.remove')next.transitions!.splice(index,1);
+    else{
+      check(command.changes&&typeof command.changes==='object'&&Object.keys(command.changes).every(k=>['kind','duration'].includes(k)),'INVALID_TRANSITION_UPDATE');
+      Object.assign(transition,structuredClone(command.changes));if(command.changes.kind)transition.overlap=command.changes.kind==='crossfade';
+    }
+  }
+  validateTransitions(next);return next;
+}

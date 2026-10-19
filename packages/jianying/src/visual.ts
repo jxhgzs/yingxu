@@ -1,5 +1,7 @@
 import {defaultTransform} from '../../core/src/document.ts';
 import type {Transform} from '../../core/src/document.ts';
+import {isKnownTransitionMaterial} from './transitions.ts';
+import {isKnownColorAdjustment} from './color-effects.ts';
 
 type Raw=Record<string,any>;
 const blank=(v:unknown)=>v==null||v==='';
@@ -8,9 +10,9 @@ const empty=(v:unknown)=>v==null||Array.isArray(v)&&v.length===0;
 /** A deliberately narrow allowlist of default video state present in the real snapshots. */
 export function importKnownVideoVisual(segment:Raw,material:Raw,materials:Raw,knownCurve=false,knownFade=false):{transform:Transform;volume:number}|undefined {
   const clip=segment.clip,scale=clip?.scale;
-  if(!clip||clip.alpha!==1||clip.rotation!==0||clip.transform?.x!==0||clip.transform?.y!==0||
+  if(!clip||!Number.isFinite(clip.alpha)||clip.alpha<0||clip.alpha>1||clip.rotation!==0||clip.transform?.x!==0||clip.transform?.y!==0||
     clip.flip?.horizontal!==false||clip.flip?.vertical!==false||segment.uniform_scale?.on!==true||segment.uniform_scale.value!==1||
-    !scale||!Number.isFinite(scale.x)||scale.x!==scale.y||scale.x<.01||scale.x>10||segment.volume!==1)return;
+    !scale||!Number.isFinite(scale.x)||scale.x!==scale.y||scale.x<.01||scale.x>10||!Number.isFinite(segment.volume)||segment.volume<0||segment.volume>4)return;
   if(segment.reverse!==false||segment.visible!==true||segment.responsive_layout?.enable!==false||
     segment.is_placeholder!==false||segment.is_tone_modify!==false||segment.intensifies_audio!==false||
     segment.cartoon!==false||!empty(segment.keyframe_refs)||!blank(segment.template_id))return;
@@ -34,14 +36,17 @@ export function importKnownVideoVisual(segment:Raw,material:Raw,materials:Raw,kn
   const known:Record<string,(v:Raw)=>boolean>={
     speeds:v=>v.type==='speed'&&v.speed===segment.speed&&(v.curve_speed===null&&v.mode===0||knownCurve&&v.mode===1&&v.curve_speed!=null),
     canvases:v=>v.type==='canvas_color'&&v.blur===0&&blank(v.color)&&blank(v.image)&&blank(v.image_id)&&blank(v.album_image),
-    sound_channel_mappings:v=>v.audio_channel_mapping===0&&v.is_config_open===false&&blank(v.type),
+    sound_channel_mappings:v=>v.audio_channel_mapping===0&&v.is_config_open===false&&(blank(v.type)||v.type==='none'),
     vocal_separations:v=>v.type==='vocal_separation'&&v.choice===0&&blank(v.production_path)&&v.time_range===null,
     audio_fades:v=>knownFade&&v.type==='audio_fade'&&v.fade_type===0,
+    loudnesses:v=>Object.keys(v).every(k=>['id','enable','file_id','loudness_param','target_loudness','time_range'].includes(k))&&v.enable===false&&v.file_id===''&&v.loudness_param===null&&v.target_loudness===0&&v.time_range===null,
+    transitions:isKnownTransitionMaterial,
+    effects:isKnownColorAdjustment,
     material_animations:v=>v.type==='sticker_animation'&&Array.isArray(v.animations)&&v.animations.length===0&&v.multi_language_current==='none',
   };
   for(const ref of segment.extra_material_refs){
     const matches=Object.entries(materials).flatMap(([kind,values])=>Array.isArray(values)?values.filter(v=>v&&v.id===ref).map(v=>({kind,value:v})):[]);
     if(matches.length!==1||!known[matches[0].kind]?.(matches[0].value))return;
   }
-  return {transform:{...defaultTransform(),scale:scale.x},volume:1};
+  return {transform:{...defaultTransform(),scale:scale.x,opacity:clip.alpha},volume:segment.volume};
 }

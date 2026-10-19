@@ -25,7 +25,8 @@ export async function probeAsset(file: string, name = path.basename(file)): Prom
   const sha256 = await fileHash(file);
   const fpsString = video?.avg_frame_rate && video.avg_frame_rate !== '0/0' ? video.avg_frame_rate : video?.r_frame_rate;
   const rate = fpsString?.match(/^(\d+)\/(\d+)$/);
+  const colorSpace=kind==='video'?Object.fromEntries([['matrix',video?.color_space],['primaries',video?.color_primaries],['transfer',video?.color_transfer],['range',video?.color_range]].filter(([,v])=>v&&v!=='unknown'&&v!=='unspecified')):undefined;
   return {id: 'a_' + sha256.slice(0, 24), path: file, name, kind, duration, width: video?.width, height: video?.height,
-    hasAudio: !!audio, sha256, fps: rate && rate[2] !== '0' && rate[1] !== '0' ? rational(rate[1], rate[2]) : undefined,
+    hasAudio: !!audio, sha256,...(colorSpace&&Object.keys(colorSpace).length?{colorSpace}:{}), fps: rate && rate[2] !== '0' && rate[1] !== '0' ? rational(rate[1], rate[2]) : undefined,
     mime: kind === 'image' ? `image/${video.codec_name === 'mjpeg' ? 'jpeg' : video.codec_name}` : kind === 'audio' ? 'audio/mp4' : 'video/mp4'};
 }

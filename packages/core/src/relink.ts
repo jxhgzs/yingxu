@@ -6,6 +6,7 @@ export type AssetRelinkInput={assetId:string;replacement:Asset};
 function sameIdentity(a:Asset,b:Asset):boolean{
   return a.id===b.id&&a.path===b.path&&a.sha256===b.sha256&&(a.kind||'video')===(b.kind||'video')&&
     compare(a.duration,b.duration)===0&&a.width===b.width&&a.height===b.height&&a.hasAudio===b.hasAudio&&a.mime===b.mime&&
+    (['matrix','primaries','transfer','range'] as const).every(k=>a.colorSpace?.[k]===b.colorSpace?.[k])&&
     (a.fps===undefined&&b.fps===undefined||a.fps!==undefined&&b.fps!==undefined&&compare(a.fps,b.fps)===0);
 }
 /** Pure document edit: paths are data only; the service must supply canonical registered replacement data. */

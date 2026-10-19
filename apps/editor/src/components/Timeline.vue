@@ -7,6 +7,7 @@ import {toNumber, add, mul, sub, compare, rational} from '../../../../packages/c
 import Icon from './Icon.vue';
 import {curveTrimSourceDelta,curveNearestFrame} from '../../../../packages/core/src/curve-speed.ts';
 import {targetTimeAt} from '../../../../packages/core/src/animation.ts';
+import {transitionWindow} from '../../../../packages/core/src/transitions.ts';
 const props = defineProps<{c: EditorController}>();
 const scroller = ref<HTMLElement>(), scrollLeft = ref(0), viewport = ref(1400);
 const drag = ref<{id: string; mode: 'move'|'left'|'right'; originX: number; delta: number; trackId: string; destination: string; original: Clip} | null>(null);
@@ -101,6 +102,7 @@ function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({t
             <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
             <template v-if="!clip.speedCurve||!clip.animations?.length"><span class="trim-handle left" :aria-label="'裁切左边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" :aria-label="'裁切右边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>
           </button>
+          <button v-for="transition in (c.doc.value?.transitions||[]).filter(t=>t.trackId===track.id)" :key="transition.id" class="timeline-transition" :aria-label="(transition.kind==='crossfade'?'叠化':'闪黑')+'转场 '+toNumber(transition.duration).toFixed(3)+' 秒'" :style="{left:144+toNumber(transitionWindow(transition,track.clips.find(x=>x.id===transition.outgoingClipId)!).start)*c.zoom.value+'px',width:Math.max(16,toNumber(transition.duration)*c.zoom.value)+'px'}" @click.stop="c.selectedId.value=transition.outgoingClipId;c.inspectorTab.value='transition'">{{transition.kind==='crossfade'?'⋈':'◼'}}</button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
         </div>
         <div class="playhead" :style="{left:144+c.playhead.value*c.zoom.value+'px'}"><span></span></div>

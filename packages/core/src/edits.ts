@@ -6,7 +6,9 @@ import {trimAnimations,animationBounds} from './animation.ts';
 import type {Keyframe,AnimatedProperty} from './animation.ts';
 import {clampAudioFade} from './audio-fade.ts';
 import type {AudioFade} from './audio-fade.ts';
+import type {ColorAdjustments} from './color-effects.ts';
 import {curveTrimDuration,alignCurveTrimTime} from './curve-speed.ts';
+import {assertNoClipTransitions} from './transitions.ts';
 
 export type EditingCommand =
   | {type: 'asset.add'; asset: Asset}
@@ -14,7 +16,7 @@ export type EditingCommand =
   | {type: 'clip.remove'; clipId: string; ripple: boolean}
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
   | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational;pushFollowing?:boolean}
-  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade}}
+  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments}}
   | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
   | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
   | {type: 'track.add'; track: Track}
@@ -65,6 +67,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
     const t = next.tracks.find(t => t.clips.some(c => c.id === command.clipId)); check(t, 'CLIP_NOT_FOUND'); unlocked(t);
     const i = t.clips.findIndex(c => c.id === command.clipId), c = t.clips[i];
     check(c.editableTiming, 'TIMING_NOT_INTERPRETED');
+    if(command.type==='clip.remove'||command.type==='clip.move'||command.type==='clip.trim')assertNoClipTransitions(doc,c.id);
     if (command.type === 'clip.remove') {
       check(typeof command.ripple === 'boolean', 'INVALID_RIPPLE'); t.clips.splice(i, 1);
       if (command.ripple) for (const later of t.clips) if (compare(later.target.start, add(c.target.start, c.target.duration)) >= 0) {
@@ -96,13 +99,14 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
         let end=add(c.target.start,c.target.duration);
         for(const later of t.clips.filter(other=>other.id!==c.id&&compare(other.target.start,oldStart)>=0).sort((a,b)=>compare(a.target.start,b.target.start))){
           check(later.editableTiming,'TIMING_NOT_INTERPRETED');
+          assertNoClipTransitions(doc,later.id);
           const start=compare(later.target.start,end)>0?later.target.start:end;
           const alignedStart=alignCurveTrimTime(start,next.fps),alignedEnd=alignCurveTrimTime(add(start,later.target.duration),next.fps);
           later.target.start=alignedStart;later.target.duration=sub(alignedEnd,alignedStart);later.speed=div(later.source.duration,later.target.duration);end=alignedEnd;
         }
       }
     } else if (command.type === 'clip.update') {
-      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade'].includes(k)), 'INVALID_CLIP_UPDATE');
+      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade','colorAdjustments'].includes(k)), 'INVALID_CLIP_UPDATE');
       Object.assign(c, structuredClone(command.changes));
     } else if(command.type==='keyframe.set'){
       check(Object.hasOwn(animationBounds,command.property),'INVALID_ANIMATION_PROPERTY');

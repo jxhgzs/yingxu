@@ -1,0 +1,431 @@
+{
+  "frame": 0,
+  "sourceCoordinates": {
+    "red": [
+      50,
+      200
+    ],
+    "green": [
+      160,
+      200
+    ],
+    "yellow": [
+      260,
+      200
+    ],
+    "blue": [
+      370,
+      200
+    ],
+    "magenta": [
+      470,
+      200
+    ],
+    "cyan": [
+      580,
+      200
+    ],
+    "small_neutral_marker": [
+      158,
+      271
+    ]
+  },
+  "method": "FFmpeg decode using native MOV bt709 tags, 2x2 RGB mean at scaled source point; neutral marker is tiny 2x4 source pixels, not a uniform large chart patch",
+  "samples": {
+    "zero": {
+      "red": {
+        "outputPixel": [
+          100,
+          400
+        ],
+        "rgb2x2Mean": [
+          252.0,
+          0.0,
+          0.0
+        ]
+      },
+      "green": {
+        "outputPixel": [
+          320,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          254.0,
+          0.0
+        ]
+      },
+      "yellow": {
+        "outputPixel": [
+          520,
+          400
+        ],
+        "rgb2x2Mean": [
+          252.0,
+          253.0,
+          0.0
+        ]
+      },
+      "blue": {
+        "outputPixel": [
+          740,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          0.0,
+          255.0
+        ]
+      },
+      "magenta": {
+        "outputPixel": [
+          940,
+          400
+        ],
+        "rgb2x2Mean": [
+          253.0,
+          0.0,
+          252.0
+        ]
+      },
+      "cyan": {
+        "outputPixel": [
+          1160,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          253.0,
+          254.0
+        ]
+      },
+      "small_neutral_marker": {
+        "outputPixel": [
+          316,
+          542
+        ],
+        "rgb2x2Mean": [
+          124.0,
+          131.0,
+          118.0
+        ]
+      }
+    },
+    "brightness-plus50": {
+      "red": {
+        "outputPixel": [
+          100,
+          400
+        ],
+        "rgb2x2Mean": [
+          255.0,
+          0.0,
+          0.0
+        ]
+      },
+      "green": {
+        "outputPixel": [
+          320,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          254.0,
+          2.0
+        ]
+      },
+      "yellow": {
+        "outputPixel": [
+          520,
+          400
+        ],
+        "rgb2x2Mean": [
+          252.0,
+          253.0,
+          0.0
+        ]
+      },
+      "blue": {
+        "outputPixel": [
+          740,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          0.0,
+          255.0
+        ]
+      },
+      "magenta": {
+        "outputPixel": [
+          940,
+          400
+        ],
+        "rgb2x2Mean": [
+          253.0,
+          0.0,
+          254.0
+        ]
+      },
+      "cyan": {
+        "outputPixel": [
+          1160,
+          400
+        ],
+        "rgb2x2Mean": [
+          1.0,
+          253.0,
+          254.0
+        ]
+      },
+      "small_neutral_marker": {
+        "outputPixel": [
+          316,
+          542
+        ],
+        "rgb2x2Mean": [
+          215.0,
+          225.0,
+          221.0
+        ]
+      }
+    },
+    "brightness-minus50": {
+      "red": {
+        "outputPixel": [
+          100,
+          400
+        ],
+        "rgb2x2Mean": [
+          178.0,
+          0.0,
+          0.0
+        ]
+      },
+      "green": {
+        "outputPixel": [
+          320,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          186.0,
+          0.0
+        ]
+      },
+      "yellow": {
+        "outputPixel": [
+          520,
+          400
+        ],
+        "rgb2x2Mean": [
+          186.0,
+          185.0,
+          0.0
+        ]
+      },
+      "blue": {
+        "outputPixel": [
+          740,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          0.0,
+          187.0
+        ]
+      },
+      "magenta": {
+        "outputPixel": [
+          940,
+          400
+        ],
+        "rgb2x2Mean": [
+          185.0,
+          0.0,
+          179.0
+        ]
+      },
+      "cyan": {
+        "outputPixel": [
+          1160,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          185.0,
+          185.0
+        ]
+      },
+      "small_neutral_marker": {
+        "outputPixel": [
+          316,
+          542
+        ],
+        "rgb2x2Mean": [
+          38.0,
+          44.0,
+          40.0
+        ]
+      }
+    },
+    "saturation-plus50": {
+      "red": {
+        "outputPixel": [
+          100,
+          400
+        ],
+        "rgb2x2Mean": [
+          255.0,
+          0.0,
+          0.0
+        ]
+      },
+      "green": {
+        "outputPixel": [
+          320,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          254.0,
+          0.0
+        ]
+      },
+      "yellow": {
+        "outputPixel": [
+          520,
+          400
+        ],
+        "rgb2x2Mean": [
+          252.0,
+          253.0,
+          0.0
+        ]
+      },
+      "blue": {
+        "outputPixel": [
+          740,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          0.0,
+          255.0
+        ]
+      },
+      "magenta": {
+        "outputPixel": [
+          940,
+          400
+        ],
+        "rgb2x2Mean": [
+          253.0,
+          0.0,
+          254.0
+        ]
+      },
+      "cyan": {
+        "outputPixel": [
+          1160,
+          400
+        ],
+        "rgb2x2Mean": [
+          0.0,
+          252.0,
+          253.0
+        ]
+      },
+      "small_neutral_marker": {
+        "outputPixel": [
+          316,
+          542
+        ],
+        "rgb2x2Mean": [
+          124.0,
+          130.0,
+          126.0
+        ]
+      }
+    },
+    "saturation-minus50": {
+      "red": {
+        "outputPixel": [
+          100,
+          400
+        ],
+        "rgb2x2Mean": [
+          52.0,
+          52.0,
+          52.0
+        ]
+      },
+      "green": {
+        "outputPixel": [
+          320,
+          400
+        ],
+        "rgb2x2Mean": [
+          178.0,
+          178.0,
+          178.0
+        ]
+      },
+      "yellow": {
+        "outputPixel": [
+          520,
+          400
+        ],
+        "rgb2x2Mean": [
+          230.0,
+          230.0,
+          230.0
+        ]
+      },
+      "blue": {
+        "outputPixel": [
+          740,
+          400
+        ],
+        "rgb2x2Mean": [
+          22.0,
+          22.0,
+          22.0
+        ]
+      },
+      "magenta": {
+        "outputPixel": [
+          940,
+          400
+        ],
+        "rgb2x2Mean": [
+          74.0,
+          74.0,
+          74.0
+        ]
+      },
+      "cyan": {
+        "outputPixel": [
+          1160,
+          400
+        ],
+        "rgb2x2Mean": [
+          200.0,
+          200.0,
+          200.0
+        ]
+      },
+      "small_neutral_marker": {
+        "outputPixel": [
+          316,
+          542
+        ],
+        "rgb2x2Mean": [
+          130.0,
+          130.0,
+          130.0
+        ]
+      }
+    }
+  }
+}

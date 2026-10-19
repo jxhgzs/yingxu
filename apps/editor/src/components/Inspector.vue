@@ -6,12 +6,14 @@ import {toNumber, decimal, rational, mul} from '../../../../packages/core/src/ti
 import Icon from './Icon.vue';
 import Keyframes from './Keyframes.vue';
 import CurveSpeed from './CurveSpeed.vue';
+import Transitions from './Transitions.vue';
+import ColorAdjustments from './ColorAdjustments.vue';
 import {evaluateAnimation,sourceTimeAt} from '../../../../packages/core/src/animation.ts';
 import type {AnimatedProperty} from '../../../../packages/core/src/animation.ts';
 import type {AtomicCommand} from '../../../../packages/core/src/commands.ts';
 import {atFrame} from '../controller.ts';
 const props = defineProps<{c: EditorController}>();
-const tab = ref('picture'), ripple = ref(true);
+const tab = props.c.inspectorTab, ripple = ref(true);
 const speedMode=ref<'constant'|'curve'>('constant');
 const draft = reactive({x:0,y:0,scale:100,rotation:0,opacity:100,flipX:false,flipY:false,volume:100,fadeIn:0,fadeOut:0,speed:1,sourceIn:0,sourceOut:0,textStart:0,textDuration:4,content:'',size:54,color:'#ffffff',font:'PingFang SC'});
 const selected = computed(()=>props.c.selected.value), clip = computed(()=>selected.value?.clip);
@@ -27,7 +29,7 @@ watch(()=>[props.c.state.value?.revision, props.c.selectedId.value,props.c.playh
   Object.assign(draft,{x:t.x,y:t.y,scale:t.scale*100,rotation:t.rotation,opacity:t.opacity*100,flipX:t.flipX,flipY:t.flipY,
     fadeIn:toNumber(c.audioFade?.inDuration||rational(0)),fadeOut:toNumber(c.audioFade?.outDuration||rational(0)),volume:volume*100,speed:toNumber(c.speed),sourceIn:toNumber(c.source.start),sourceOut:toNumber(c.source.start)+toNumber(c.source.duration),
     textStart:toNumber(c.target.start),textDuration:toNumber(c.target.duration),content:c.text?.content||'',size:c.text?.size||54,color:c.text?.color||'#ffffff',font:c.text?.font||'PingFang SC'});
-  if(selected.value?.track.kind==='text')tab.value='text';else if(selected.value?.track.kind==='audio')tab.value='audio';else if(!['picture','audio','speed'].includes(tab.value))tab.value='picture';
+  if(selected.value?.track.kind==='text')tab.value='text';else if(selected.value?.track.kind==='audio')tab.value='audio';else if(!['picture','audio','speed','transition','adjust'].includes(tab.value))tab.value='picture';
 },{immediate:true});
 function transform() {
   if(!clip.value)return;
@@ -54,7 +56,7 @@ function fps(value: string) {const [n,d='1']=value.split('/');props.c.guard(()=>
 <template>
   <aside class="inspector-panel panel">
     <template v-if="selected&&clip">
-      <div class="inspector-tabs"><button v-if="selected.track.kind!=='audio'" :class="{active:tab==='picture'}" @click="tab='picture'">画面</button><button v-if="selected.track.kind==='text'" :class="{active:tab==='text'}" @click="tab='text'">文本</button><button v-if="selected.asset.hasAudio||selected.track.kind==='audio'" :class="{active:tab==='audio'}" @click="tab='audio'">音频</button><button :class="{active:tab==='speed'}" @click="tab='speed'">变速</button></div>
+      <div class="inspector-tabs"><button v-if="selected.track.kind!=='audio'" :class="{active:tab==='picture'}" @click="tab='picture'">画面</button><button v-if="selected.track.kind==='text'" :class="{active:tab==='text'}" @click="tab='text'">文本</button><button v-if="selected.asset.hasAudio||selected.track.kind==='audio'" :class="{active:tab==='audio'}" @click="tab='audio'">音频</button><button v-if="selected.track.kind==='video'" :class="{active:tab==='adjust'}" @click="tab='adjust'">调节</button><button v-if="selected.track.kind==='video'" :class="{active:tab==='transition'}" @click="tab='transition'">转场</button><button :class="{active:tab==='speed'}" @click="tab='speed'">变速</button></div>
       <div class="inspector-scroll">
         <a-alert v-if="selected.track.locked" type="warning" message="轨道已锁定" show-icon class="compact-alert" />
         <template v-if="tab==='picture'">
@@ -72,7 +74,9 @@ function fps(value: string) {const [n,d='1']=value.split('/');props.c.guard(()=>
           <CurveSpeed v-else :c="c" v-model:shift-following="ripple"/>
         </div></template>
         <template v-if="tab==='text'"><div class="inspector-section"><header><strong>正文</strong></header><a-textarea v-model:value="draft.content" aria-label="文字内容" :rows="4" :maxlength="2000" :disabled="disabled" @blur="text" /><div class="control-row"><span>字体</span><a-select v-model:value="draft.font" aria-label="字体" :disabled="disabled" :options="[{value:'Source Han Sans SC Medium',label:'思源黑体 Medium'},{value:'PingFang SC',label:'苹方'},{value:'Heiti SC',label:'黑体'},{value:'Arial',label:'Arial'}]" @change="text" /></div><div class="control-row"><span>字号</span><a-input-number v-model:value="draft.size" aria-label="字号" :min="8" :max="500" :disabled="disabled" @blur="text" /><label class="color-picker" title="文字颜色"><input v-model="draft.color" aria-label="文字颜色" type="color" :disabled="disabled" @change="text" /><span>{{draft.color}}</span></label></div></div></template>
-        <Keyframes :c="c" />
+        <Transitions v-if="tab==='transition'" :c="c" />
+        <ColorAdjustments v-if="tab==='adjust'" :c="c" />
+        <Keyframes v-if="tab!=='transition'" :c="c" />
         <div v-if="selected.track.kind==='text'" class="inspector-section"><header><strong>显示时间</strong></header><div class="control-row"><span>开始</span><a-input-number v-model:value="draft.textStart" aria-label="文字开始秒" :min="0" :precision="3" :disabled="disabled||!!clip.speedCurve" /><small>秒</small></div><div class="control-row"><span>持续</span><a-input-number v-model:value="draft.textDuration" aria-label="文字时长秒" :min="0.001" :precision="3" :disabled="disabled||!!clip.speedCurve" /><small>秒</small><a-button size="small" :disabled="disabled||!!clip.speedCurve" @click="textRange">应用</a-button></div><p v-if="clip.speedCurve" class="quiet">请先在变速中取消曲线并恢复常速，再修改显示时间。</p></div>
         <template v-else><div class="inspector-section"><header><strong>采用区间</strong></header><div class="control-row"><span>源入点</span><a-input-number v-model:value="draft.sourceIn" aria-label="源入点秒" :min="0" :precision="6" :step="0.1" :disabled="trimDisabled" /><small>秒</small></div><div class="control-row"><span>源出点</span><a-input-number v-model:value="draft.sourceOut" aria-label="源出点秒" :min="0.001" :precision="6" :step="0.1" :disabled="trimDisabled" /><small>秒</small><a-button size="small" :disabled="trimDisabled" @click="trim">应用裁切</a-button></div><a-checkbox v-if="clip.speedCurve" v-model:checked="c.trimFollowing.value" :disabled="trimDisabled">裁切时推开后续片段</a-checkbox><p v-if="clip.speedCurve&&clip.animations?.length" class="quiet">含属性关键帧的曲线片段暂不支持直接裁切。</p><p class="quiet">目标时长 {{toNumber(clip.target.duration).toFixed(3)}} 秒</p></div>
         <div class="inspector-section source-details"><header><strong>素材信息</strong></header><p>{{selected.asset.name}}</p><dl><dt>开始</dt><dd>{{toNumber(clip.target.start).toFixed(3)}} 秒</dd><dt>源时长</dt><dd>{{toNumber(selected.asset.duration).toFixed(3)}} 秒</dd><template v-if="selected.asset.width"><dt>尺寸</dt><dd>{{selected.asset.width}} × {{selected.asset.height}}</dd></template></dl></div></template>

@@ -5,3 +5,7 @@ dist-library/
 .DS_Store
 .local/
 artifacts/
+
+evidence/**/*.mov
+evidence/**/*.mp4
+!evidence/2026-10-19-color-patches/source.mp4

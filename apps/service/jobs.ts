@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {Store, atomicJSON, contentHash} from './store.ts';
+import {rendererFingerprint} from './engine.ts';
 import {render} from '../../packages/media/src/render.ts';
 import {renderGraph} from '../../packages/media/src/graph.ts';
 import {fileHash, ffmpeg} from '../../packages/media/src/probe.ts';
@@ -27,7 +28,7 @@ export class Jobs {
   constructor(store: Store) {this.store = store;}
   directory(id: string) {check(/^[a-f0-9-]+$/.test(id), 'INVALID_JOB_ID'); return path.join(this.store.root, 'jobs', id);}
   async initialize() {
-    const version = await runProcess(ffmpeg(), ['-version']); this.engine = version.stdout.split('\n')[0] + '|yingxu-reference-v2';
+    const version = await runProcess(ffmpeg(), ['-version']); this.engine = version.stdout.split('\n')[0] + '|yingxu-reference-v4|' + await rendererFingerprint();
     for (const id of await fs.readdir(path.join(this.store.root, 'jobs'))) {
       if (!/^[a-f0-9-]+$/.test(id)) continue;
       let job: Job;

@@ -12,6 +12,8 @@ import {applyAssetRelink} from './relink.ts';
 import {clampAudioFade} from './audio-fade.ts';
 import {curveDuration,splitSpeedCurve} from './curve-speed.ts';
 import type {SpeedCurve} from './curve-speed.ts';
+import {applyTransitionCommand,assertNoClipTransitions} from './transitions.ts';
+import type {TransitionCommand} from './transitions.ts';
 
 export type AtomicCommand =
   | {type: 'split'; clipId: string; at: Rational; rightId: string}
@@ -19,7 +21,7 @@ export type AtomicCommand =
   | {type:'subtitles.import';input:string;format:'srt'|'vtt';options:SubtitleImportOptions}
   | {type:'asset.relink';assetId:string;replacement:Asset}
   | {type:'speed.curve';clipId:string;curve:SpeedCurve|null;shiftFollowing:boolean}
-  | EditingCommand;
+  | EditingCommand | TransitionCommand;
 export type Command = AtomicCommand | {type:'batch';commands:AtomicCommand[]};
 
 export function applyCommand(doc: Document, command: Command): Document {
@@ -34,6 +36,9 @@ export function applyCommand(doc: Document, command: Command): Document {
 }
 function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Document{
   validateDocument(doc); check(command && typeof command === 'object', 'INVALID_COMMAND');
+  if(command.type==='transition.add'||command.type==='transition.update'||command.type==='transition.remove'){
+    const next=applyTransitionCommand(doc,command);validateDocument(next);if(!deferOverlap)assertNoVideoOverlap(next);return next;
+  }
   if(command.type==='subtitles.import'){
     const next=applySubtitleImport(doc,parseSubtitles(command.input,command.format),command.options).document;
     if(!deferOverlap)assertNoVideoOverlap(next);return next;
@@ -47,6 +52,7 @@ function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Do
   const index = track.clips.findIndex(c => c.id === command.clipId), clip = track.clips[index];
   check(!track.locked, 'TRACK_LOCKED', track.id);
   check(clip.editableTiming, 'TIMING_NOT_INTERPRETED', clip.id);
+  assertNoClipTransitions(doc,clip.id);
   if (command.type === 'split') {
     validRational(command.at, 'split.at');
     check(typeof command.rightId === 'string' && command.rightId.length > 0, 'INVALID_CLIP_ID');

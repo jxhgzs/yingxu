@@ -4,25 +4,33 @@ import {validateAnimations} from './animation.ts';
 import type {Animation} from './animation.ts';
 import {validateSpeedCurve} from './curve-speed.ts';
 import type {SpeedCurve} from './curve-speed.ts';
+import {validateTransitions} from './transitions.ts';
 
 export type Range = {start: Rational; duration: Rational};
 export type Asset = {
   id: string; path: string; duration: Rational; kind?: 'video' | 'audio' | 'image' | 'text';
   name?: string; width?: number; height?: number; hasAudio?: boolean; fps?: Rational;
-  sha256?: string; mime?: string;
+  sha256?: string; mime?: string;colorSpace?:AssetColorSpace;
 };
 export type Transform = {x: number; y: number; scale: number; rotation: number; opacity: number; flipX: boolean; flipY: boolean};
 export type TextStyle = {content: string; size: number; color: string; font: string;outline?:number;shadow?:number;lineHeight?:number};
 import type {AudioFade} from './audio-fade.ts';
+import {validateColorAdjustments} from './color-effects.ts';
+import type {ColorAdjustments} from './color-effects.ts';
+import type {AssetColorSpace} from './color-space.ts';
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;
+  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
 export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
+export type Transition = {
+  id:string;trackId:string;outgoingClipId:string;incomingClipId:string;
+  kind:'crossfade'|'dipToBlack';alignment:'center';overlap:boolean;duration:Rational;
+};
 export type Document = {
   schemaVersion: 1; title?: string; canvas: {width: number; height: number};
-  fps: Rational; assets: Asset[]; tracks: Track[];subtitleSources?:SubtitleSource[];
+  fps: Rational; assets: Asset[]; tracks: Track[];subtitleSources?:SubtitleSource[];transitions?:Transition[];
 };
 export type Diagnostic = {code: string; trackId?: string; clipId?: string};
 export type Imported = {document: Document; provenance: {raw: unknown; sha256: string}; diagnostics: Diagnostic[]};
@@ -55,6 +63,7 @@ export function validateDocument(doc: Document): void {
     check(a.hasAudio === undefined || typeof a.hasAudio === 'boolean', 'INVALID_MEDIA_AUDIO');
     if (a.fps !== undefined) {validRational(a.fps); check(compare(a.fps, ZERO) > 0, 'INVALID_FPS');}
     check(a.sha256 === undefined || /^[a-f0-9]{64}$/.test(a.sha256), 'INVALID_MEDIA_HASH');
+    if(a.colorSpace!==undefined){check(a.colorSpace&&typeof a.colorSpace==='object'&&!Array.isArray(a.colorSpace),'INVALID_COLOR_SPACE');for(const [key,value]of Object.entries(a.colorSpace))check(['matrix','primaries','transfer','range'].includes(key)&&typeof value==='string'&&value.length>0&&value.length<=80,'INVALID_COLOR_SPACE');}
     check(a.name === undefined || typeof a.name === 'string' && a.name.length <= 1000, 'INVALID_MEDIA_NAME');
     assets.set(a.id, a);
   }
@@ -88,6 +97,7 @@ export function validateDocument(doc: Document): void {
       check(compare(add(c.source.start, c.source.duration), asset.duration) <= 0, 'SOURCE_RANGE_EXCEEDED', c.id);
       check(c.volume === undefined || Number.isFinite(c.volume) && c.volume >= 0 && c.volume <= 4, 'INVALID_VOLUME');
       check(c.muted === undefined || typeof c.muted === 'boolean', 'INVALID_MUTE');
+      if(c.colorAdjustments!==undefined){check(['video','image'].includes(kind),'COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED');validateColorAdjustments(c.colorAdjustments);}
       if(c.animations!==undefined)validateAnimations(c.animations,asset.duration);
       if(c.audioFade!==undefined){
         const fade=c.audioFade;check(fade&&fade.curve==='qsin'&&['video','audio'].includes(kind),'INVALID_AUDIO_FADE');
@@ -109,6 +119,7 @@ export function validateDocument(doc: Document): void {
       }
     }
   }
+  validateTransitions(doc);
 }
 export const defaultTransform = (): Transform => ({x: 0, y: 0, scale: 1, rotation: 0, opacity: 1, flipX: false, flipY: false});
 export function emptyDocument(): Document {

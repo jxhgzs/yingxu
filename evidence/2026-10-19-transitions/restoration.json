@@ -1,0 +1,13 @@
+{
+  "restoredDraft": "/Users/tal/Movies/JianyingPro/User Data/Projects/com.lveditor.draft/Yingxu-REA-20261018/draft_info.json",
+  "backupSHA256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82",
+  "restoredSHA256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82",
+  "byteExact": true,
+  "nativeReopenedTracksEqual": true,
+  "nativeReopenedMaterialsEqual": false,
+  "nativeReopenedDurationEqual": true,
+  "nativeReopenedTrackCount": 5,
+  "nativeReopenedSHA256": "a13b16e5006ff5f94829f4dab01883220886c05776ce61ca399338a24c8e9eff",
+  "nativeMaterialDifference": "Only sound_channel_mappings[].type normalized empty string to none by native reopen; all other materials and tracks unchanged.",
+  "finalByteExactAfterQuit": true
+}

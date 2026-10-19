@@ -1,0 +1,11 @@
+{
+  "file": "/tmp/yingxu-transition-probe-20261019.mp4",
+  "sha256": "a782b0011f5f663612c4d72fca7540a154231186ce9de4d5ee358634a78faf8e",
+  "frames": 180,
+  "fps": "30/1",
+  "size": [
+    1280,
+    720
+  ],
+  "regions": "frames0-89 red,90-179 blue; white counter in top corner; center flat; no audio"
+}

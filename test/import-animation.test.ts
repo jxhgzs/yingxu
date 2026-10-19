@@ -71,14 +71,14 @@ test('known video metadata and current uniform scale are mapped without unit gue
   assert.equal(asset.hasAudio,true);assert.equal(asset.name,'yingxu-jianying-probe-20261018.mp4');
 });
 
-test('only evidenced default visual state is editable without unresolved visual diagnostics', () => {
+test('unknown visual state remains diagnosed after alpha and gain support', () => {
   const edits=[
     (d:any)=>{segment(d).clip.transform.x=.1;},
     (d:any)=>{segment(d).clip.transform.y=.1;},
     (d:any)=>{segment(d).clip.rotation=90;},
-    (d:any)=>{segment(d).clip.alpha=.5;},
+    (d:any)=>{segment(d).clip.alpha=1.1;},
     (d:any)=>{segment(d).clip.flip.horizontal=true;},
-    (d:any)=>{segment(d).volume=.5;},
+    (d:any)=>{segment(d).volume=4.1;},
     (d:any)=>{segment(d).reverse=true;},
     (d:any)=>{segment(d).hdr_settings.mode=2;},
     (d:any)=>{segment(d).extra_material_refs.push('unknown-effect');},

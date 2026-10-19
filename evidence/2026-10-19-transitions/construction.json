@@ -1,0 +1,24 @@
+{
+  "method": "Offline construction after normal UI quit; only dedicated Yingxu-REA-20261018 draft_info.json modified. Baseline clips not claimed native UI created.",
+  "sourceRanges": [
+    [
+      0,
+      2000000
+    ],
+    [
+      4000000,
+      2000000
+    ]
+  ],
+  "targetRanges": [
+    [
+      0,
+      2000000
+    ],
+    [
+      2000000,
+      2000000
+    ]
+  ],
+  "asset": "/tmp/yingxu-transition-probe-20261019.mp4"
+}

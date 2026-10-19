@@ -17,8 +17,9 @@ export function timecode(seconds: number, fps = 30) {
 }
 export function createEditorController(options: EditorOptions = {}) {
   const api = new EditorAPI(options.apiBase), state = shallowRef<ProjectState | null>(null), assets = shallowRef<Asset[]>([]), projects = shallowRef<ProjectSummary[]>([]);
+  const inspectorTab=ref('picture');
   const selectedId = ref<string | null>(null), playhead = ref(0), playing = ref(false), error = ref(''), busy = ref(false), loading = ref(true);
-  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
+  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), realtimePreviewAvailable=ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
   let disposed = false, loadEpoch = 0, pollTimer: ReturnType<typeof setTimeout> | undefined, previewTimer: ReturnType<typeof setTimeout> | undefined;
   let activePreview: string | null = null, queue: Promise<unknown> = Promise.resolve(), pending = 0;
   const doc = computed(() => state.value?.document);
@@ -45,7 +46,7 @@ export function createEditorController(options: EditorOptions = {}) {
       const list = await api.get<JobView[]>(`/api/projects/${id}/jobs`);
       if (isCurrent(id)) {
         jobs.value = list;
-        const complete = list.find(j => j.kind === 'preview' && j.documentRevision === state.value!.revision && j.status === 'completed');
+        const complete = list.find(j => j.kind === 'preview' && j.engine===api.engine && j.documentRevision === state.value!.revision && j.status === 'completed');
         if (complete && preview.value?.id !== complete.id) preview.value = complete;
         const current = list.find(j => j.id === activePreview);
         if (current && ['completed', 'failed', 'cancelled', 'interrupted'].includes(current.status)) {
@@ -60,6 +61,7 @@ export function createEditorController(options: EditorOptions = {}) {
   function schedulePreview() {
     clearTimeout(previewTimer); playing.value = false;
     if (activePreview) {void api.post(`/api/jobs/${activePreview}/cancel`).catch(() => {}); activePreview = null;}
+    if (realtimePreviewAvailable.value) {previewPending.value=false;return;}
     if (!state.value || !total.value || readOnly.value) {preview.value = null; previewPending.value = false; return;}
     previewPending.value = true;
     const id = state.value.id, revision = state.value.revision;
@@ -72,6 +74,12 @@ export function createEditorController(options: EditorOptions = {}) {
       } catch (e) {if (isCurrent(id, revision)) {previewPending.value = false; report(e);}}
     }, 450);
   }
+  function setRealtimePreviewAvailable(available:boolean) {
+    if(disposed||realtimePreviewAvailable.value===available)return;
+    realtimePreviewAvailable.value=available;
+    if(available){clearTimeout(previewTimer);previewPending.value=false;if(activePreview){void api.post(`/api/jobs/${activePreview}/cancel`).catch(()=>{});activePreview=null;}}
+    else if(state.value&&!(preview.value?.result&&preview.value.documentRevision===state.value.revision))schedulePreview();
+  }
   async function loadProject(id: string) {
     await queue.catch(() => {}); const epoch = ++loadEpoch; loading.value = true;
     try {
@@ -79,7 +87,7 @@ export function createEditorController(options: EditorOptions = {}) {
       if (disposed || epoch !== loadEpoch) return;
       selectedId.value = null; playhead.value = 0; playing.value = false; preview.value = null; jobs.value = next.jobs || [];
       adopt(next); error.value = '';
-      const existing = jobs.value.find(j => j.kind === 'preview' && j.status === 'completed' && j.documentRevision === next.revision);
+      const existing = jobs.value.find(j => j.kind === 'preview' && j.engine===api.engine && j.status === 'completed' && j.documentRevision === next.revision);
       if (existing) {preview.value = existing; previewPending.value = false;} else schedulePreview();
     } finally {if (!disposed && epoch === loadEpoch) loading.value = false;}
   }
@@ -99,7 +107,7 @@ export function createEditorController(options: EditorOptions = {}) {
   async function initialize() {
     try {
       const bootstrap = await api.get('/api/bootstrap'); if (disposed) return;
-      api.token = bootstrap.token; projects.value = bootstrap.projects; assets.value = bootstrap.assets;
+      api.token = bootstrap.token;api.engine=bootstrap.engine; projects.value = bootstrap.projects; assets.value = bootstrap.assets;
       let remembered: string | null = null; try {remembered = localStorage.getItem('yingxu-editor-project');} catch {}
       const id = options.projectId || (projects.value.some(p => p.id === remembered) ? remembered : projects.value[0]?.id);
       if (id) await loadProject(id); else {const created = await api.post<ProjectState>('/api/projects'); adopt(created); await refreshLists();}
@@ -153,7 +161,7 @@ export function createEditorController(options: EditorOptions = {}) {
   }
   async function exportVideo(exportSettings:import('../../../packages/core/src/export.ts').ExportSettings={}) {
     await queue.catch(() => {}); if (!state.value) return;
-    const key = `yingxu-pending-export:${state.value.id}:${state.value.revision}:${JSON.stringify(exportSettings)}`;
+    const key = `yingxu-pending-export:${state.value.id}:${state.value.revision}:${JSON.stringify(exportSettings)}:${api.engine}`;
     let requestId: string | null = null; try {requestId = sessionStorage.getItem(key);} catch {}
     requestId ||= crypto.randomUUID(); try {sessionStorage.setItem(key, requestId);} catch {}
     const job = await api.post<JobView>(`/api/projects/${state.value.id}/jobs`, {revision: state.value.revision, kind: 'export', requestId,exportSettings});
@@ -163,7 +171,7 @@ export function createEditorController(options: EditorOptions = {}) {
   function seek(time: number) {playhead.value = Math.min(Math.max(0,doc.value?toNumber(atFrame(time,doc.value.fps)):time),total.value);}
   function dispose() {disposed = true; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
   async function flush() {await queue;}
-  return {api, state, doc, assets, projects, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, zoom, snap, trimFollowing, total, readOnly,
-    initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
+  return {api, state, doc, assets, projects, inspectorTab, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, realtimePreviewAvailable, zoom, snap, trimFollowing, total, readOnly,
+    initialize, loadProject, edit, guard, report, schedulePreview, setRealtimePreviewAvailable, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;

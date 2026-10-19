@@ -1,10 +1,10 @@
 import type {Document, Asset, Diagnostic} from '../../../packages/core/src/document.ts';
 export type ProjectState = {id: string; revision: number; document: Document; documentHash: string; updatedAt: string; canUndo: boolean; canRedo: boolean; diagnostics: Diagnostic[]};
-export type JobView = {id: string; projectId: string; kind: 'preview' | 'export'; status: string; progress: number; documentRevision: number; createdAt: string; error?: string;
+export type JobView = {engine?:string;id: string; projectId: string; kind: 'preview' | 'export'; status: string; progress: number; documentRevision: number; createdAt: string; error?: string;
   result?: {width: number; height: number; duration: number; frameCount: number; url: string; downloadUrl: string;format?:string;extension?:string;mime?:string}};
 export type ProjectSummary = {id: string; title: string; updatedAt: string; revision: number};
 export class EditorAPI {
-  base: string; token = ''; abort = new AbortController();
+  base: string; token = '';engine=''; abort = new AbortController();
   constructor(base = '') {this.base = base.replace(/\/$/, '');}
   url(path: string) {return this.base + path;}
   async get<T = any>(path: string): Promise<T> {return this.request(path);}
@@ -28,6 +28,21 @@ export class EditorAPI {
 export function explainError(error: unknown): string {
   const raw = error instanceof Error ? error.message : String(error), code = raw.split(':')[0];
   const translations: Record<string, string> = {
+    UNSUPPORTED_VIDEO_COLOR_SPACE:'此素材的色彩格式暂不支持，请先转换为标准动态范围视频。',
+    INVALID_COLOR_ADJUSTMENTS:'调节参数超出了有效范围。',
+    COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED:'此素材类型暂不支持调节。',
+    COLOR_EFFECT_LUT_CACHE_LIMIT:'本次导出的调节组合数量超过当前上限，请分段导出。',
+    COLOR_EFFECT_LUT_CORRUPT:'调节缓存校验失败，请重新生成预览或导出。',
+    COLOR_EFFECT_LUT_UNSAFE_FILE:'调节缓存无法安全读取，请重新生成预览或导出。',
+    TRANSITION_EDIT_REQUIRES_REMOVAL:'请先删除关联转场，再调整片段时间。',
+    TRANSITION_SOURCE_HANDLES_MISSING:'转场两侧的源素材余量不足，请调整采用区间。',
+    INVALID_TRANSITION_DURATION:'转场时长不能超过任一侧片段时长的一半。',
+    TRANSITION_DURATION_BELOW_ONE_FRAME:'转场时长至少需要一帧。',
+    TRANSITION_PAIR_NOT_ADJACENT:'转场两侧需要是同轨紧邻的视频片段。',
+    TRANSITION_WINDOWS_OVERLAP:'转场播放区间相互重叠，请缩短时长。',
+    TRANSITION_KIND_UNVERIFIED:'此转场目前尚未支持。',
+    UNSUPPORTED_TRANSITION_FIELD:'转场包含尚未支持的属性，请保留来源工程另行处理。',
+    TRANSITION_TIME_MAPPING_UNSUPPORTED:'曲线变速片段暂不支持此转场。',
     TRACK_LOCKED: '请先解锁轨道。', OVERLAP_POLICY_UNRESOLVED: '此位置与同轨片段重叠，请移到空白处或另一条轨道。',
     SOURCE_RANGE_EXCEEDED: '裁切区间超出了素材长度。', INVALID_TIME: '请输入有效的时间区间。', INVALID_SPEED: '请输入大于零的速度。',
     REVISION_CONFLICT: '工程已在其他窗口更新，请重新打开工程后继续。', SOURCE_DRAFT_READ_ONLY: '此剪映草稿包含尚未支持的内容，目前以只读方式打开。',
