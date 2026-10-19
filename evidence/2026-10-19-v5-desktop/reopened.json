@@ -1,0 +1,20 @@
+{
+  "normalExitMainProcessEnded": true,
+  "restartOrigin": "http://127.0.0.1:52349",
+  "version": "0.5.0",
+  "projects": {
+    "text": {
+      "id": "b4089012-0497-44de-a847-a02cb739058e",
+      "revision": 5,
+      "documentEqual": true,
+      "jobsEqual": true
+    },
+    "curve": {
+      "id": "47f97495-faa2-4e52-ac4e-7e77972ebbd8",
+      "revision": 0,
+      "documentEqual": true,
+      "jobsEqual": true
+    }
+  },
+  "nativeDraftStillRestored": true
+}

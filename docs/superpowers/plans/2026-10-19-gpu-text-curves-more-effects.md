@@ -18,7 +18,7 @@
 
 ## Task 1: 按需文字栅格与GPU合成
 
-**Files:** 新建 `packages/media/src/text-raster.ts`、`apps/service/text-raster.ts`、`apps/editor/src/preview/text.ts`及测试；修改preview index/plan/decode/webgl、Preview.vue与server.ts。
+**Files:** 新建 `packages/media/src/text-raster.ts`、`apps/service/text-raster.ts`及测试；静态TextMedia沿用decode.ts（未额外新建text.ts）；修改preview index/plan/decode/webgl、Preview.vue与server.ts。
 
 **Interfaces:** `TextRasters(store,{engine}).request(projectId,{revision,clipId},signal?) -> {url,key,width,height,revision,clipId}`；`file(key) -> PNG路径`；`shutdown()`。POST `/api/projects/:id/textures`绑定修订与已知文字；GET `/text-renders/:key.png`只服务哈希生成的PNG。
 
@@ -50,9 +50,11 @@
 
 ## Task 4: 集成与交付
 
-- [ ] Node24全量相关测试、构建、九项原生基线；真实浏览器与桌面文字/曲线/效果导出、暂停定位、保存退出重开及生命周期。
-- [ ] 包版本与实际源码/字体/后端哈希一致，说明受支持范围和剩余缺口。只在完整登记册满足时称1:1完成。
+- [x] Node24全量相关测试、构建、九项原生基线；真实浏览器与桌面文字/曲线/效果导出、暂停定位、保存退出重开及生命周期。
+- [x] 包版本与实际源码/字体/后端哈希一致，说明受支持范围和剩余缺口。只在完整登记册满足时称1:1完成。
 
 ## 原生差异记录
 
 对比度四单变量符合原有2/4容差；B+50+C+50实际灰3/彩3，单独记录而非冒称旧容差完全通过。其余调节候选没有充分原生证据，未加入产品。
+
+完成记录：171回归、九基线、最终160322桌面包、真实下载、20次生命周期与实际GPU丢失恢复均通过，详见 `docs/qa/2026-10-19-continuation-v5.md`。这是本计划有界范围的完成，不是完整1:1完成。
