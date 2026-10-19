@@ -151,12 +151,12 @@ export function createEditorController(options: EditorOptions = {}) {
     const next = await api.post<ProjectState>(draft ? '/api/import-draft' : '/api/open-document', draft ? raw : raw);
     await refreshLists(); await loadProject(next.id);
   }
-  async function exportVideo() {
+  async function exportVideo(exportSettings:import('../../../packages/core/src/export.ts').ExportSettings={}) {
     await queue.catch(() => {}); if (!state.value) return;
-    const key = `yingxu-pending-export:${state.value.id}:${state.value.revision}`;
+    const key = `yingxu-pending-export:${state.value.id}:${state.value.revision}:${JSON.stringify(exportSettings)}`;
     let requestId: string | null = null; try {requestId = sessionStorage.getItem(key);} catch {}
     requestId ||= crypto.randomUUID(); try {sessionStorage.setItem(key, requestId);} catch {}
-    const job = await api.post<JobView>(`/api/projects/${state.value.id}/jobs`, {revision: state.value.revision, kind: 'export', requestId});
+    const job = await api.post<JobView>(`/api/projects/${state.value.id}/jobs`, {revision: state.value.revision, kind: 'export', requestId,exportSettings});
     try {sessionStorage.removeItem(key);} catch {}
     jobs.value = [job, ...jobs.value]; return job;
   }

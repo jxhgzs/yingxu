@@ -1,7 +1,7 @@
 import type {Document, Asset, Diagnostic} from '../../../packages/core/src/document.ts';
 export type ProjectState = {id: string; revision: number; document: Document; documentHash: string; updatedAt: string; canUndo: boolean; canRedo: boolean; diagnostics: Diagnostic[]};
 export type JobView = {id: string; projectId: string; kind: 'preview' | 'export'; status: string; progress: number; documentRevision: number; createdAt: string; error?: string;
-  result?: {width: number; height: number; duration: number; frameCount: number; url: string; downloadUrl: string}};
+  result?: {width: number; height: number; duration: number; frameCount: number; url: string; downloadUrl: string;format?:string;extension?:string;mime?:string}};
 export type ProjectSummary = {id: string; title: string; updatedAt: string; revision: number};
 export class EditorAPI {
   base: string; token = ''; abort = new AbortController();

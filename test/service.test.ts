@@ -20,6 +20,8 @@ test('real HTTP workflow persists commands, renders media and serves valid byte 
     assert.equal(state.revision, 1);
     const job = await post(`/api/projects/${id}/jobs`, {revision: 1, requestId: 'export-one', kind: 'export'});
     const duplicate = await post(`/api/projects/${id}/jobs`, {revision: 1, requestId: 'export-one', kind: 'export'}); assert.equal(duplicate.id, job.id);
+    const conflict=await fetch(app.origin+`/api/projects/${id}/jobs`,{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':bootstrap.token},body:JSON.stringify({revision:1,requestId:'export-one',kind:'export',exportSettings:{format:'mp3'}})});
+    assert.equal(conflict.status,409);assert.equal((await conflict.json() as any).error,'REQUEST_ID_CONFLICT');
     const queued = await post(`/api/projects/${id}/jobs`, {revision: 1, requestId: 'export-cancelled', kind: 'export'});
     const cancelled = await post(`/api/jobs/${queued.id}/cancel`); assert.equal(cancelled.status,'cancelled');
     let result: any;
@@ -37,6 +39,20 @@ test('real HTTP workflow persists commands, renders media and serves valid byte 
     assert.equal(suffix.status, 206); assert.equal((await suffix.arrayBuffer()).byteLength, 50);
     const invalid = await fetch(app.origin + result.result.url, {headers: {Range: 'bytes=999999999999-'}}); assert.equal(invalid.status, 416);
     const head = await fetch(app.origin + result.result.url, {method: 'HEAD'}); assert.equal(head.status, 200); assert(Number(head.headers.get('content-length')) > 100);
+    for(const format of ['mp3','gif']){
+      const configuration={format,range:{start:{numerator:'1',denominator:'1'},duration:{numerator:'1',denominator:'1'}}};
+      const next=await post(`/api/projects/${id}/jobs`,{revision:1,requestId:'format-'+format,kind:'export',exportSettings:configuration});
+      assert.equal(next.exportSettings.format,format);assert.equal(next.resolvedExport.duration,1);
+      let output:any;const limit=Date.now()+30000;
+      do{output=await(await fetch(app.origin+'/api/jobs/'+next.id)).json();if(['completed','failed'].includes(output.status))break;await new Promise(r=>setTimeout(r,50));}while(Date.now()<limit);
+      assert.equal(output.status,'completed',JSON.stringify(output));assert.equal(output.result.extension,format);
+      const download=await fetch(app.origin+output.result.downloadUrl+'?name=真实成果');
+      assert.equal(download.headers.get('content-type'),format==='gif'?'image/gif':'audio/mpeg');
+      assert.match(download.headers.get('content-disposition')!,new RegExp('\\.'+format));
+      const bytes=new Uint8Array(await download.arrayBuffer());assert(bytes.length>100);
+      if(format==='gif'){assert.equal(new TextDecoder().decode(bytes.slice(0,6)),'GIF89a');assert.equal(output.result.duration,1);}
+      const stored=JSON.parse(await fs.readFile(path.join(root,'jobs',next.id,'job.json'),'utf8'));assert.equal(stored.exportSettings.format,format);assert.equal(stored.documentRevision,1);
+    }
     assert.equal((await fetch(app.origin + '/api/projects', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: '{}'})).status, 403);
   } finally {await app.close(); await fs.rm(root, {recursive: true, force: true});}
 });

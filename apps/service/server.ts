@@ -37,8 +37,8 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       if (!['GET', 'HEAD'].includes(request.method || '')) check(request.headers['x-editor-token'] === token, 'INVALID_SESSION_TOKEN');
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
-      if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version: '0.1.0', projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'transform', 'multitrack', 'history', 'preview', 'export'],
+      if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version: '0.2.0', projects: store.list(), assets: [...store.assets.values()],
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'transform', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
         limitations: ['不支持未解析的剪映特效与关键帧渲染', '预览当前使用后台渲染，尚未实现GPU实时预览']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
@@ -119,8 +119,9 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       }
       if ((match = /^\/renders\/([a-f0-9-]+)\/(video|download)$/.exec(route)) && ['GET', 'HEAD'].includes(request.method || '')) {
         const job = jobs.get(match[1]); check(job.status === 'completed' && job.result, 'JOB_NOT_COMPLETED');
-        const name = path.basename(url.searchParams.get('name') || '映序导出.mp4').slice(0, 200);
-        return await serveFile(request, response, job.result.path, 'video/mp4', match[2] === 'download' ? name : undefined);
+        const extension=job.result.extension||'mp4';let name=path.basename(url.searchParams.get('name')||'映序导出.'+extension).slice(0,200);
+        if(!name.toLowerCase().endsWith('.'+extension))name+='.'+extension;
+        return await serveFile(request, response, job.result.path, job.result.mime||'video/mp4', match[2] === 'download' ? name : undefined);
       }
       check(request.method === 'GET' || request.method === 'HEAD', 'ROUTE_NOT_FOUND');
       const dist = options.dist || path.join(repo, 'dist');

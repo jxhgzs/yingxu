@@ -7,6 +7,8 @@ import type {Document} from '../../core/src/document.ts';
 import {toNumber, add, mul, div, rational} from '../../core/src/time.ts';
 import type {Rational} from '../../core/src/time.ts';
 import {animationExpression,animatedValue,maxAnimatedValue,fraction} from './animation.ts';
+import {resolveExportSettings} from '../../core/src/export.ts';
+import type {ExportSettings} from '../../core/src/export.ts';
 
 const seconds = (v: number) => v.toFixed(9);
 const even = (v: number) => Math.max(2, Math.round(v / 2) * 2);
@@ -27,24 +29,27 @@ function tempo(speed: number): string {
   parts.push(v); return parts.map(n => `atempo=${n}`).join(',');
 }
 export async function render(doc: Document, directory: string, options: {
-  preview?: boolean; signal?: AbortSignal; onProgress?: (progress: number) => void
+  preview?: boolean; exportSettings?:ExportSettings; signal?: AbortSignal; onProgress?: (progress: number) => void
 } = {}) {
+  const previewScale=Math.min(1,640/Math.max(doc.canvas.width,doc.canvas.height));
+  const outputSettings=resolveExportSettings(doc,options.preview?{format:'mp4',size:{width:even(doc.canvas.width*previewScale),height:even(doc.canvas.height*previewScale)}}:options.exportSettings);
+  doc={...doc,fps:outputSettings.fps};
   const graph = renderGraph(doc);
   directory = path.resolve(directory);
   await fs.mkdir(directory, {recursive: true});
-  const scale = options.preview ? Math.min(1, 640 / Math.max(doc.canvas.width, doc.canvas.height)) : 1;
-  const width = even(doc.canvas.width * scale), height = even(doc.canvas.height * scale);
+  const {width,height}=outputSettings,scale=width/doc.canvas.width,yScale=height/doc.canvas.height;
   const fps = `${doc.fps.numerator}/${doc.fps.denominator}`;
   const args: string[] = ['-hide_banner', '-loglevel', 'warning', '-nostdin', '-y', '-threads', '2', '-filter_complex_threads', '1'];
   const inputIndexes = new Map<string, number>();
-  for (const {asset} of [...graph.layers, ...graph.audio]) if (asset.kind !== 'text' && !inputIndexes.has(asset.id)) {
+  const layers=outputSettings.audioOnly?[]:graph.layers,audio=outputSettings.hasAudio?graph.audio:[];
+  for (const {asset} of [...layers, ...audio]) if (asset.kind !== 'text' && !inputIndexes.has(asset.id)) {
     inputIndexes.set(asset.id, inputIndexes.size);
     if (asset.kind === 'image') args.push('-loop', '1', '-framerate', fps);
     args.push('-i', asset.path);
   }
-  const filters: string[] = [`color=c=black:s=${width}x${height}:r=${fps}:d=${seconds(graph.duration)},format=rgba[base]`];
+  const filters: string[] = outputSettings.audioOnly?[]:[`color=c=black:s=${width}x${height}:r=${fps}:d=${seconds(graph.duration)},format=rgba[base]`];
   let composite = 'base', index = 0;
-  for (const {clip, asset} of graph.layers) {
+  for (const {clip, asset} of layers) {
     const i = index++, next = `composite${i}`, t = clip.transform!;
     const start = toNumber(clip.target.start), length = toNumber(clip.target.duration);
     const first = frameEdge(clip.target.start,doc.fps), last=frameEdge(add(clip.target.start,clip.target.duration),doc.fps);
@@ -86,31 +91,58 @@ export async function render(doc: Document, directory: string, options: {
       else video.push(`colorchannelmixer=aa=${t.opacity}`);
       video.push(`setpts=PTS+(${clip.target.start.numerator}/${clip.target.start.denominator})/TB`);
       filters.push(`[${media}:v]${video.join(',')}[visual${i}]`);
-      filters.push(`[${composite}][visual${i}]overlay=x='(W-w)/2+(${animationExpression(clip,'x',globalClock,t.x)})*${scale}':y='(H-h)/2+(${animationExpression(clip,'y',globalClock,t.y)})*${scale}':eof_action=pass:repeatlast=0:enable='gte(n,${first.frame})*lt(n,${last.frame})'[${next}]`);
+      filters.push(`[${composite}][visual${i}]overlay=x='(W-w)/2+(${animationExpression(clip,'x',globalClock,t.x)})*${scale}':y='(H-h)/2+(${animationExpression(clip,'y',globalClock,t.y)})*${yScale}':eof_action=pass:repeatlast=0:enable='gte(n,${first.frame})*lt(n,${last.frame})'[${next}]`);
     }
     composite = next;
   }
-  filters.push(`[${composite}]format=yuv420p[outv]`);
-  filters.push(`anullsrc=r=48000:cl=stereo,atrim=duration=${seconds(graph.duration)}[silence]`);
+  if(!outputSettings.audioOnly){
+    filters.push(`[${composite}]trim=start_frame=${outputSettings.startFrame}:end_frame=${outputSettings.endFrame},setpts=PTS-STARTPTS,format=yuv420p[outv]`);
+    if(outputSettings.format==='gif')filters.push('[outv]split[palette-input][gif-input]','[palette-input]palettegen[palette]','[gif-input][palette]paletteuse=dither=sierra2_4a[outgif]');
+  }
+  if(outputSettings.hasAudio){
+  const sampleRate=outputSettings.audioSampleRate;
+  filters.push(`anullsrc=r=${sampleRate}:cl=stereo,atrim=duration=${seconds(graph.duration)}[silence]`);
   const audios = ['silence'];
-  for (const {asset, clip} of graph.audio) {
+  for (const {asset, clip} of audio) {
     const name = `audio${audios.length}`; audios.push(name);
     const clock=`(${fraction(clip.source.start)}+t*${fraction(clip.speed)})`,volume=animationExpression(clip,'volume',clock,clip.volume??1);
     const initial=animatedValue(clip,'volume',clip.target.start,clip.volume??1);
-    filters.push(`[${inputIndexes.get(asset.id)}:a]atrim=start=${seconds(toNumber(clip.source.start))}:duration=${seconds(toNumber(clip.source.duration))},asetpts=PTS-STARTPTS,aresample=48000,${tempo(toNumber(clip.speed))},volume='if(isnan(t),${initial},${volume})':eval=frame,apad,atrim=duration=${seconds(toNumber(clip.target.duration))},adelay=delays=${Math.round(toNumber(clip.target.start) * 48000)}S:all=1[${name}]`);
+    filters.push(`[${inputIndexes.get(asset.id)}:a]atrim=start=${seconds(toNumber(clip.source.start))}:duration=${seconds(toNumber(clip.source.duration))},asetpts=PTS-STARTPTS,aresample=${sampleRate},${tempo(toNumber(clip.speed))},volume='if(isnan(t),${initial},${volume})':eval=frame,apad,atrim=duration=${seconds(toNumber(clip.target.duration))},adelay=delays=${Math.round(toNumber(clip.target.start) * sampleRate)}S:all=1[${name}]`);
   }
-  filters.push(audios.map(n => `[${n}]`).join('') + `amix=inputs=${audios.length}:normalize=0:duration=first[outa]`);
+  filters.push(audios.map(n => `[${n}]`).join('') + `amix=inputs=${audios.length}:normalize=0:duration=first,atrim=start=${seconds(toNumber(outputSettings.actualStart))}:duration=${seconds(outputSettings.duration)},asetpts=PTS-STARTPTS[outa]`);
+  }
   const script = path.join(directory, 'filter.txt'); await fs.writeFile(script, filters.join(';\n'));
   await fs.writeFile(path.join(directory, 'graph.json'), JSON.stringify(graph, null, 2));
-  const partial = path.join(directory, 'render.partial.mp4'), output = path.join(directory, 'render.mp4');
-  args.push('-filter_complex_script', script, '-map', '[outv]', '-map', '[outa]', '-c:v', 'libx264', '-preset', 'veryfast',
-    '-crf', options.preview ? '27' : '18', '-r', fps, '-frames:v', String(graph.frameCount), '-pix_fmt', 'yuv420p',
-    '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', seconds(graph.duration), '-movflags', '+faststart', '-progress', 'pipe:1', '-nostats', partial);
+  await fs.writeFile(path.join(directory,'export-settings.json'),JSON.stringify(outputSettings,null,2));
+  const partial = path.join(directory, `render.partial.${outputSettings.extension}`), output = path.join(directory, `render.${outputSettings.extension}`);
+  args.push('-filter_complex_script', script);
+  if(!outputSettings.audioOnly){
+    args.push('-map',outputSettings.format==='gif'?'[outgif]':'[outv]');
+    if(outputSettings.format==='gif')args.push('-loop','0','-final_delay',String(100/toNumber(outputSettings.fps)));
+    else{
+      args.push('-c:v',outputSettings.videoCodec==='hevc'?'libx265':'libx264','-preset','veryfast');
+      if(outputSettings.videoCodec==='hevc')args.push('-x265-params','pools=2:frame-threads=2:log-level=error','-tag:v','hvc1');
+      if(outputSettings.videoBitrateKbps)args.push('-b:v',outputSettings.videoBitrateKbps+'k');else args.push('-crf',options.preview?'27':'18');
+      args.push('-pix_fmt','yuv420p','-r',fps);
+    }
+    args.push('-frames:v',String(outputSettings.frameCount));
+  }
+  if(outputSettings.hasAudio){
+    args.push('-map','[outa]','-c:a',outputSettings.format==='mp3'?'libmp3lame':outputSettings.format==='wav'?'pcm_s16le':'aac','-ar',String(outputSettings.audioSampleRate));
+    if(outputSettings.format!=='wav')args.push('-b:a',outputSettings.audioBitrateKbps+'k');
+  }
+  if(['mp4','mov','m4a'].includes(outputSettings.format))args.push('-movflags','+faststart');
+  args.push('-t',seconds(outputSettings.duration),'-progress','pipe:1','-nostats',partial);
   await runProcess(ffmpeg(), args, {signal: options.signal, timeout: 30 * 60 * 1000, cwd: directory,
-    onLine: line => {if (line.startsWith('out_time_us=')) options.onProgress?.(Math.min(0.99, Number(line.slice(12)) / (graph.duration * 1e6)));}});
+    onLine: line => {if (line.startsWith('out_time_us=')) options.onProgress?.(Math.min(0.99, Number(line.slice(12)) / (outputSettings.duration * 1e6)));}});
   if (options.signal?.aborted) throw Error('JOB_CANCELLED');
   const info = await probe(partial), video = info.streams.find((s: any) => s.codec_type === 'video');
-  if (!video || video.width !== width || video.height !== height || Number(video.nb_frames) !== graph.frameCount) throw Error('EXPORT_VERIFICATION_FAILED');
+  if (!outputSettings.audioOnly&&(!video || video.width !== width || video.height !== height || Number(video.nb_frames) !== outputSettings.frameCount)) throw Error('EXPORT_VERIFICATION_FAILED');
+  const sound=info.streams.find((s:any)=>s.codec_type==='audio');
+  if(outputSettings.hasAudio&&(!sound||Number(sound.sample_rate)!==outputSettings.audioSampleRate))throw Error('EXPORT_AUDIO_VERIFICATION_FAILED');
+  const actualDuration=Number(info.format.duration);
+  if(!Number.isFinite(actualDuration)||Math.abs(actualDuration-outputSettings.duration)>(outputSettings.format==='gif'?.001:.15))throw Error('EXPORT_DURATION_VERIFICATION_FAILED');
   await fs.rename(partial, output); options.onProgress?.(1);
-  return {path: output, width, height, frameCount: graph.frameCount, duration: graph.duration, info};
+  return {path: output, width:outputSettings.audioOnly?0:width,height:outputSettings.audioOnly?0:height, frameCount:outputSettings.audioOnly?0:outputSettings.frameCount,
+    duration:actualDuration,format:outputSettings.format,extension:outputSettings.extension,mime:outputSettings.mime,info};
 }
