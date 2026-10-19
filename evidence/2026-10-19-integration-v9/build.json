@@ -1,0 +1,18 @@
+{
+  "build": {
+    "version": "0.9.0",
+    "appPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/desktop/20261019214700/\u6620\u5e8f\u526a\u8f91.app",
+    "sourceCommit": "effc1f39893b06b2d87120e414932e9a06ac0419",
+    "backendHash": "ed29999555b3825fd0806c311add12fcc243486b09a1a0e11b7ecedc0d2926c2",
+    "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+    "runtime": "Electron 44.6.0",
+    "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+    "signing": "local ad-hoc; not a notarized installer"
+  },
+  "bootstrapVersion": "0.9.0",
+  "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|6b84885b8eba6351b4ea25bd387d78945f899b2a4e6d73e8418edaab70779018",
+  "backendHashActual": "ed29999555b3825fd0806c311add12fcc243486b09a1a0e11b7ecedc0d2926c2",
+  "frontendChunk": "/assets/editor-Pu9ocGn4.js",
+  "frontendSha256": "b9bc98d14e0d70358edff7a5f4119f37162573649168ced17a3f6ab1fc7e1b44",
+  "codesignStrictPassed": true
+}

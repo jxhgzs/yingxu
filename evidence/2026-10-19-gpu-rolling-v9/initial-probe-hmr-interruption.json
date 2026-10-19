@@ -1,0 +1,11 @@
+{
+  "outcome": "interrupted before a completed scalar baseline was saved",
+  "observer": "parent actual Cua click; disabled buttons first, then page returned to ready with no result file",
+  "viteLogLocalTime": [
+    "20:59:39 page reload packages/core/src/text-animation.ts",
+    "21:00:14 page reload artifacts/qa/gpu-rolling-v9/probe.ts",
+    "21:00:33 page reload packages/core/src/vignette.ts"
+  ],
+  "interpretation": "Source changes caused full-page reloads while the unsaved probe was running. This attempt is not counted as a successful performance run.",
+  "nextHarness": "After all product sources freeze, restart own Vite with hmr:false and watch:null. Save a started record before dependent work; pagehide attempts a keepalive interruption record. Product transport and pixels unchanged."
+}

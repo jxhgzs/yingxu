@@ -1,0 +1,849 @@
+{
+  "condition": "At v2 parent312 tests +9baselines +build ended before actual. All v2 mode start/completed process snapshots saw0 external FFmpeg; snapshots do not prove continuous whole-machine idleness.",
+  "interpretation": "All buffer events after play startup are at final output time179/30. Cache PNG requests were5–35ms, all180 textures decoded once; duplicated same-frame decoder prepare/seek/reanchor, rather than new cold rendering, is the identified remaining EOF loop. Raw slow runs are retained.",
+  "results": [
+    {
+      "file": "result-batch-cold-v2-1792416750212.json",
+      "mode": "batch-cold",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:32:45.700Z",
+          "finishedAt": "2026-10-19T13:32:52.181Z",
+          "prepareMs": 15262.900000035763,
+          "elapsedWallMs": 6480.699999988079,
+          "startPrepareMs": 185.69999998807907,
+          "requestsDuringPlay": 20,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 10
+        }
+      ],
+      "bufferStatePositions": [
+        {
+          "targetTime": 0,
+          "count": 1
+        },
+        {
+          "targetTime": 5.966667,
+          "count": 10
+        }
+      ],
+      "preparations": [
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 11774.492874999996
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 174.57345900000655
+        }
+      ]
+    },
+    {
+      "file": "result-batch-retained-v2-1792416858617.json",
+      "mode": "batch-retained",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:34:19.093Z",
+          "finishedAt": "2026-10-19T13:34:27.631Z",
+          "prepareMs": 432.4000000357628,
+          "elapsedWallMs": 8537.400000035763,
+          "startPrepareMs": 206.9000000357628,
+          "requestsDuringPlay": 21,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 83
+        },
+        {
+          "run": 2,
+          "startedAt": "2026-10-19T13:34:28.278Z",
+          "finishedAt": "2026-10-19T13:34:35.346Z",
+          "prepareMs": 360,
+          "elapsedWallMs": 7067.600000023842,
+          "startPrepareMs": 163.10000002384186,
+          "requestsDuringPlay": 23,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 32
+        },
+        {
+          "run": 3,
+          "startedAt": "2026-10-19T13:34:36.696Z",
+          "finishedAt": "2026-10-19T13:34:43.323Z",
+          "prepareMs": 365.69999998807907,
+          "elapsedWallMs": 6627.300000011921,
+          "startPrepareMs": 190.10000002384186,
+          "requestsDuringPlay": 21,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 13
+        }
+      ],
+      "bufferStatePositions": [
+        {
+          "targetTime": 0,
+          "count": 3
+        },
+        {
+          "targetTime": 5.966667,
+          "count": 128
+        }
+      ],
+      "preparations": [
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 197.13604100001976
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 200.71737500000745
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 169.61120899999514
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 157.19637499999953
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 176.0690829999512
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 184.13945900002727
+        }
+      ]
+    },
+    {
+      "file": "result-pixels-v2-1792417093839.json",
+      "mode": "pixels",
+      "completed": true,
+      "error": null,
+      "pass": true,
+      "runs": [],
+      "bufferStatePositions": [],
+      "pixelCount": 22,
+      "maxRGB": 2,
+      "context": {
+        "automatic": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        },
+        "confirmingSeek": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        }
+      },
+      "preparations": [
+        {
+          "projectId": "01c4e14a-e3e5-44c6-a495-1ff3cbd1a841",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 438.95845799997915
+        },
+        {
+          "projectId": "01c4e14a-e3e5-44c6-a495-1ff3cbd1a841",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 174.55708399997093
+        },
+        {
+          "projectId": "c342a6e4-85c0-4d38-9a4f-0e19e31f1b1a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 120,
+          "completed": 120,
+          "uniqueTextures": 2,
+          "bytes": 19902,
+          "elapsedMs": 28.096207999973558
+        },
+        {
+          "projectId": "675b243c-53b2-4d26-8c58-f8508a0c5ae0",
+          "revision": 0,
+          "status": "ready",
+          "requested": 120,
+          "completed": 120,
+          "uniqueTextures": 22,
+          "bytes": 201321,
+          "elapsedMs": 42.31766699999571
+        }
+      ]
+    },
+    {
+      "file": "result-scalar-cold-v2-1792416685272.json",
+      "mode": "scalar-cold",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:31:32.112Z",
+          "finishedAt": "2026-10-19T13:32:13.177Z",
+          "prepareMs": 6728.199999988079,
+          "elapsedWallMs": 41064.30000001192,
+          "startPrepareMs": 7.900000035762787,
+          "requestsDuringPlay": 148,
+          "outputDrops": 0,
+          "decoderDrops": 129,
+          "bufferEvents": 319
+        }
+      ],
+      "bufferStatePositions": [
+        {
+          "targetTime": 0,
+          "count": 1
+        },
+        {
+          "targetTime": 1.166667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.2,
+          "count": 1
+        },
+        {
+          "targetTime": 1.233333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.266667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.3,
+          "count": 1
+        },
+        {
+          "targetTime": 1.333333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.366667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.4,
+          "count": 1
+        },
+        {
+          "targetTime": 1.433333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.466667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.5,
+          "count": 1
+        },
+        {
+          "targetTime": 1.533333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.566667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.6,
+          "count": 1
+        },
+        {
+          "targetTime": 1.633333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.666667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.7,
+          "count": 1
+        },
+        {
+          "targetTime": 1.733333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.766667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.8,
+          "count": 1
+        },
+        {
+          "targetTime": 1.833333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.866667,
+          "count": 1
+        },
+        {
+          "targetTime": 1.9,
+          "count": 1
+        },
+        {
+          "targetTime": 1.933333,
+          "count": 1
+        },
+        {
+          "targetTime": 1.966667,
+          "count": 1
+        },
+        {
+          "targetTime": 2,
+          "count": 1
+        },
+        {
+          "targetTime": 2.033333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.066667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.1,
+          "count": 1
+        },
+        {
+          "targetTime": 2.133333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.166667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.2,
+          "count": 1
+        },
+        {
+          "targetTime": 2.233333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.266667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.3,
+          "count": 1
+        },
+        {
+          "targetTime": 2.333333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.366667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.4,
+          "count": 1
+        },
+        {
+          "targetTime": 2.433333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.466667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.5,
+          "count": 1
+        },
+        {
+          "targetTime": 2.533333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.566667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.6,
+          "count": 1
+        },
+        {
+          "targetTime": 2.633333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.666667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.7,
+          "count": 1
+        },
+        {
+          "targetTime": 2.733333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.766667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.8,
+          "count": 1
+        },
+        {
+          "targetTime": 2.833333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.866667,
+          "count": 1
+        },
+        {
+          "targetTime": 2.9,
+          "count": 1
+        },
+        {
+          "targetTime": 2.933333,
+          "count": 1
+        },
+        {
+          "targetTime": 2.966667,
+          "count": 1
+        },
+        {
+          "targetTime": 3,
+          "count": 1
+        },
+        {
+          "targetTime": 3.033333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.066667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.1,
+          "count": 1
+        },
+        {
+          "targetTime": 3.133333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.166667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.2,
+          "count": 1
+        },
+        {
+          "targetTime": 3.233333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.266667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.3,
+          "count": 1
+        },
+        {
+          "targetTime": 3.333333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.366667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.4,
+          "count": 1
+        },
+        {
+          "targetTime": 3.433333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.466667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.5,
+          "count": 1
+        },
+        {
+          "targetTime": 3.533333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.566667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.6,
+          "count": 1
+        },
+        {
+          "targetTime": 3.633333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.666667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.7,
+          "count": 1
+        },
+        {
+          "targetTime": 3.733333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.766667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.8,
+          "count": 1
+        },
+        {
+          "targetTime": 3.833333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.866667,
+          "count": 1
+        },
+        {
+          "targetTime": 3.9,
+          "count": 1
+        },
+        {
+          "targetTime": 3.933333,
+          "count": 1
+        },
+        {
+          "targetTime": 3.966667,
+          "count": 1
+        },
+        {
+          "targetTime": 4,
+          "count": 1
+        },
+        {
+          "targetTime": 4.033333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.066667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.1,
+          "count": 1
+        },
+        {
+          "targetTime": 4.133333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.166667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.2,
+          "count": 1
+        },
+        {
+          "targetTime": 4.233333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.266667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.3,
+          "count": 1
+        },
+        {
+          "targetTime": 4.333333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.366667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.4,
+          "count": 1
+        },
+        {
+          "targetTime": 4.433333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.466667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.5,
+          "count": 1
+        },
+        {
+          "targetTime": 4.533333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.566667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.6,
+          "count": 1
+        },
+        {
+          "targetTime": 4.633333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.666667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.7,
+          "count": 1
+        },
+        {
+          "targetTime": 4.733333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.766667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.8,
+          "count": 1
+        },
+        {
+          "targetTime": 4.833333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.866667,
+          "count": 1
+        },
+        {
+          "targetTime": 4.9,
+          "count": 1
+        },
+        {
+          "targetTime": 4.933333,
+          "count": 1
+        },
+        {
+          "targetTime": 4.966667,
+          "count": 1
+        },
+        {
+          "targetTime": 5,
+          "count": 1
+        },
+        {
+          "targetTime": 5.033333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.066667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.1,
+          "count": 1
+        },
+        {
+          "targetTime": 5.133333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.166667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.2,
+          "count": 1
+        },
+        {
+          "targetTime": 5.233333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.266667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.3,
+          "count": 1
+        },
+        {
+          "targetTime": 5.333333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.366667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.4,
+          "count": 1
+        },
+        {
+          "targetTime": 5.433333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.466667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.5,
+          "count": 1
+        },
+        {
+          "targetTime": 5.533333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.566667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.6,
+          "count": 1
+        },
+        {
+          "targetTime": 5.633333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.666667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.7,
+          "count": 1
+        },
+        {
+          "targetTime": 5.733333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.766667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.8,
+          "count": 1
+        },
+        {
+          "targetTime": 5.833333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.866667,
+          "count": 1
+        },
+        {
+          "targetTime": 5.9,
+          "count": 1
+        },
+        {
+          "targetTime": 5.933333,
+          "count": 1
+        },
+        {
+          "targetTime": 5.966667,
+          "count": 175
+        }
+      ],
+      "preparations": []
+    }
+  ]
+}

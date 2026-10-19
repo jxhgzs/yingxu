@@ -1,0 +1,18 @@
+{
+  "version": "0.9.0",
+  "checkedAt": "2026-10-19T21:44:13.183866",
+  "tests": 314,
+  "passed": 314,
+  "failed": 0,
+  "durationMs": 98106.436709,
+  "baselineComparisons": 9,
+  "buildDesktopPassed": true,
+  "typecheckIncluded": true,
+  "backendHashBeforePackaging": "ed29999555b3825fd0806c311add12fcc243486b09a1a0e11b7ecedc0d2926c2",
+  "limits": [
+    "These checks do not establish full Jianying 5.9.0 parity.",
+    "Actual GPU and packaged UI recorded separately."
+  ],
+  "finalTestLog": "artifacts/qa/integration-v9/final-tests.log",
+  "finalBuildLog": "artifacts/qa/integration-v9/final-build.log"
+}

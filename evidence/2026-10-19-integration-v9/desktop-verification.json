@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-19T21:55:48.614025+08:00",
+  "projectId": "bed03eb4-9f7a-4854-a91d-4341714cd3fb",
+  "revision": 6,
+  "title": "0.9 REA 组合与暗角 · 退出重开验收",
+  "vignette": {
+    "version": "v1",
+    "intensity": 0.5
+  },
+  "textAnimations": [
+    {
+      "phase": "in",
+      "kind": "zoom-in",
+      "duration": {
+        "numerator": "3",
+        "denominator": "10"
+      }
+    },
+    {
+      "phase": "out",
+      "kind": "fade",
+      "duration": {
+        "numerator": "2",
+        "denominator": "5"
+      }
+    },
+    {
+      "phase": "loop",
+      "kind": "sway",
+      "duration": {
+        "numerator": "7",
+        "denominator": "10"
+      }
+    }
+  ],
+  "undoVerifiedRevision": 3,
+  "redoVerifiedRevision": 4,
+  "unblurredTitleQuitReopenVerified": true,
+  "retainedJobs": 1,
+  "exportId": "44063eb3-5286-43d7-a4da-cd96af4db3d0",
+  "exportSha256": "b4deaa2484213de958687e337f1cccb530b5626aa7d0b1d7b5cd126a8bd44068",
+  "completeDecodePassed": true,
+  "actualUiFrames": [
+    9,
+    30,
+    31,
+    48,
+    51
+  ],
+  "nativeDraftRestored": {
+    "sha256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82",
+    "bytes": 47395
+  },
+  "anomaliesRetained": [
+    "First reload displayed blank while an older own 0.8 package was also running; no Console error. Closed both normally and clean single 0.9 restart worked. Cause not proved.",
+    "Native typeText dropped Chinese in first rename. Original AX retained; clipboard paste then unblurred quit/reopen preserved the full Chinese title."
+  ],
+  "limits": [
+    "No actual listening review",
+    "Not complete Jianying 5.9.0 parity",
+    "Local ad-hoc app needs existing FFmpeg/FFprobe/Rubber Band, not notarized installer"
+  ]
+}

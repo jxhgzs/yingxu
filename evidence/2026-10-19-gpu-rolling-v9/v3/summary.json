@@ -1,0 +1,734 @@
+{
+  "recordedAt": "2026-10-19T13:47:26.129794+00:00",
+  "conditions": "Team tests/FFmpeg stopped before actual Cua runs. Each mode start/completed ps boundary observed no external FFmpeg; boundaries do not establish whole-run or whole-machine idleness. New engines; service PNG cache cold where stated; browser/OS global caches not cleared.",
+  "outlier": "First retained3 third run had one633.3ms rAF gap,18 output/44 decoder drops,1 buffer at2.266667. Visible/focused, no LongTask entries. Parent confirms one mid-run large AX tree read during that triplet; time not instrumented against gap, so correlation not causal attribution. Additional triplet was explicitly run with no mid-run AX reads; all original runs remain.",
+  "results": [
+    {
+      "file": "result-scalar-cold-v3-1792417425150.json",
+      "mode": "scalar-cold",
+      "createdAt": "2026-10-19T13:43:45.150Z",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "pid": 63975,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T13:41:48.543Z"
+      },
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|ca91bb6d1e9102395e0cb6fe95cc19beea149d2eb8e1f0b768935465f20894c5",
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:43:54.399Z",
+          "finishedAt": "2026-10-19T13:44:38.627Z",
+          "prepareMs": 9115.899999976158,
+          "elapsedWallMs": 44226.5,
+          "transportWallMs": 44217.80000001192,
+          "startPrepareMs": 8.699999988079071,
+          "requestsDuringPlay": 148,
+          "outputDrops": 0,
+          "decoderDrops": 127,
+          "bufferEvents": 145,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 38.454999999999906,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 181,
+            "hits": 920,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 52251.39999997616,
+            "rollingWindows": 169,
+            "evictions": 148,
+            "supersededWindows": 168,
+            "batchCalls": 0,
+            "batchFrames": 0,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 2,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 13631.199999988079,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 57857.89999997616,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 5307,
+            "maxMs": 10.400000000001455,
+            "p95Ms": 9.900000000001455,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        }
+      ],
+      "preparations": []
+    },
+    {
+      "file": "result-batch-retained-v3-1792417524683.json",
+      "mode": "batch-retained",
+      "createdAt": "2026-10-19T13:45:24.683Z",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "pid": 63975,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T13:41:48.543Z"
+      },
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|ca91bb6d1e9102395e0cb6fe95cc19beea149d2eb8e1f0b768935465f20894c5",
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:45:25.159Z",
+          "finishedAt": "2026-10-19T13:45:31.326Z",
+          "prepareMs": 431.0999999642372,
+          "elapsedWallMs": 6166.700000047684,
+          "transportWallMs": 6016.900000035763,
+          "startPrepareMs": 149.80000001192093,
+          "requestsDuringPlay": 22,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 33.2256666666666,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5579,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1094.4000000357628,
+            "rollingWindows": 32,
+            "evictions": 148,
+            "supersededWindows": 24,
+            "batchCalls": 24,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 27,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 104389.79999995232,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 110556.5,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 740,
+            "maxMs": 10.30000000000291,
+            "p95Ms": 9.89999999999418,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        },
+        {
+          "run": 2,
+          "startedAt": "2026-10-19T13:45:31.867Z",
+          "finishedAt": "2026-10-19T13:45:38.047Z",
+          "prepareMs": 354.39999997615814,
+          "elapsedWallMs": 6179.899999976158,
+          "transportWallMs": 6017.5,
+          "startPrepareMs": 162.39999997615814,
+          "requestsDuringPlay": 22,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 24.852666666666856,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5383,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1632.5,
+            "rollingWindows": 48,
+            "evictions": 148,
+            "supersededWindows": 41,
+            "batchCalls": 24,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 25,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 111097.89999997616,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 117277.89999997616,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 741,
+            "maxMs": 10.39999999999418,
+            "p95Ms": 9.80000000000291,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        },
+        {
+          "run": 3,
+          "startedAt": "2026-10-19T13:45:39.256Z",
+          "finishedAt": "2026-10-19T13:45:45.555Z",
+          "prepareMs": 598.3000000119209,
+          "elapsedWallMs": 6298.399999976158,
+          "transportWallMs": 6146.099999964237,
+          "startPrepareMs": 152.30000001192093,
+          "requestsDuringPlay": 19,
+          "outputDrops": 18,
+          "decoderDrops": 44,
+          "bufferEvents": 1,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 39.645333333333085,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 4866,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1266.0000000596046,
+            "rollingWindows": 31,
+            "evictions": 148,
+            "supersededWindows": 24,
+            "batchCalls": 21,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 31,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 118486.89999997616,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 124785.39999997616,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 680,
+            "maxMs": 633.3000000000029,
+            "p95Ms": 9.80000000000291,
+            "over33_4ms": 1
+          },
+          "longTasks": []
+        }
+      ],
+      "preparations": [
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 281.28162500000326
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 144.51295800000662
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 201.9213330000057
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 156.71708400000352
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 309.7646669999813
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 144.8181250000198
+        }
+      ]
+    },
+    {
+      "file": "result-batch-cold-v3-1792417490409.json",
+      "mode": "batch-cold",
+      "createdAt": "2026-10-19T13:44:50.409Z",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "pid": 63975,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T13:41:48.543Z"
+      },
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|ca91bb6d1e9102395e0cb6fe95cc19beea149d2eb8e1f0b768935465f20894c5",
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:45:05.894Z",
+          "finishedAt": "2026-10-19T13:45:12.067Z",
+          "prepareMs": 15373,
+          "elapsedWallMs": 6172.100000023842,
+          "transportWallMs": 6017.800000011921,
+          "startPrepareMs": 154.30000001192093,
+          "requestsDuringPlay": 20,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 32.79166666666677,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5440,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 3879.5,
+            "rollingWindows": 30,
+            "evictions": 148,
+            "supersededWindows": 22,
+            "batchCalls": 22,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 30,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 85125.59999996424,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 91297.69999998808,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 741,
+            "maxMs": 10.39999999999418,
+            "p95Ms": 9.799999999988358,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        }
+      ],
+      "preparations": [
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 12053.750166999991
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 147.07204100000672
+        }
+      ]
+    },
+    {
+      "file": "result-batch-retained-v3-1792417578618.json",
+      "mode": "batch-retained",
+      "createdAt": "2026-10-19T13:46:18.618Z",
+      "completed": true,
+      "error": null,
+      "pass": null,
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "pid": 63975,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T13:41:48.543Z"
+      },
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|ca91bb6d1e9102395e0cb6fe95cc19beea149d2eb8e1f0b768935465f20894c5",
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T13:46:19.039Z",
+          "finishedAt": "2026-10-19T13:46:25.226Z",
+          "prepareMs": 378.30000001192093,
+          "elapsedWallMs": 6187.099999964237,
+          "transportWallMs": 6016.399999976158,
+          "startPrepareMs": 170.69999998807907,
+          "requestsDuringPlay": 21,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 27.98166666666635,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5402,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 907.4000000953674,
+            "rollingWindows": 28,
+            "evictions": 148,
+            "supersededWindows": 19,
+            "batchCalls": 23,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 3,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 158268.69999998808,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 164455.79999995232,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 743,
+            "maxMs": 10.39999999999418,
+            "p95Ms": 9.799999999988358,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        },
+        {
+          "run": 2,
+          "startedAt": "2026-10-19T13:46:25.704Z",
+          "finishedAt": "2026-10-19T13:46:31.894Z",
+          "prepareMs": 285.19999998807907,
+          "elapsedWallMs": 6188.899999976158,
+          "transportWallMs": 6032.5,
+          "startPrepareMs": 156.39999997615814,
+          "requestsDuringPlay": 21,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 28.889333333333322,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5394,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 866.4000001549721,
+            "rollingWindows": 28,
+            "evictions": 148,
+            "supersededWindows": 19,
+            "batchCalls": 23,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 3,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 164933.89999997616,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 171122.79999995232,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 743,
+            "maxMs": 10.400000000023283,
+            "p95Ms": 9.89999999999418,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        },
+        {
+          "run": 3,
+          "startedAt": "2026-10-19T13:46:32.797Z",
+          "finishedAt": "2026-10-19T13:46:38.965Z",
+          "prepareMs": 296.60000002384186,
+          "elapsedWallMs": 6168.199999988079,
+          "transportWallMs": 6012.300000011921,
+          "startPrepareMs": 155.89999997615814,
+          "requestsDuringPlay": 19,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "audioContextsDuringSilentPrepare": 0,
+          "maxSourceDriftMs": 27.109999999999967,
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5209,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1132.5000000596046,
+            "rollingWindows": 35,
+            "evictions": 148,
+            "supersededWindows": 27,
+            "batchCalls": 21,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 20,
+            "pendingBatches": 0
+          },
+          "visibility": [
+            {
+              "at": 172026.39999997616,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 178194.69999998808,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 741,
+            "maxMs": 10.400000000023283,
+            "p95Ms": 9.799999999988358,
+            "over33_4ms": 0
+          },
+          "longTasks": []
+        }
+      ],
+      "preparations": [
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 208.57245900004636
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 164.93754200002877
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 155.97487500001444
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 150.64345799997682
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 161.69737499998882
+        },
+        {
+          "projectId": "efbf0ef8-04ea-42b8-ac7f-2e99295c1e6a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 150.09033400000772
+        }
+      ]
+    },
+    {
+      "file": "result-pixels-v3-1792417557476.json",
+      "mode": "pixels",
+      "createdAt": "2026-10-19T13:45:57.476Z",
+      "completed": true,
+      "error": null,
+      "pass": true,
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "pid": 63975,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T13:41:48.543Z"
+      },
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|ca91bb6d1e9102395e0cb6fe95cc19beea149d2eb8e1f0b768935465f20894c5",
+      "audioParamErrors": [],
+      "runs": [],
+      "preparations": [
+        {
+          "projectId": "01c4e14a-e3e5-44c6-a495-1ff3cbd1a841",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 205.8660830000008
+        },
+        {
+          "projectId": "01c4e14a-e3e5-44c6-a495-1ff3cbd1a841",
+          "revision": 0,
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 169.9079999999958
+        },
+        {
+          "projectId": "c342a6e4-85c0-4d38-9a4f-0e19e31f1b1a",
+          "revision": 0,
+          "status": "ready",
+          "requested": 120,
+          "completed": 120,
+          "uniqueTextures": 2,
+          "bytes": 19902,
+          "elapsedMs": 24.05808300001081
+        },
+        {
+          "projectId": "675b243c-53b2-4d26-8c58-f8508a0c5ae0",
+          "revision": 0,
+          "status": "ready",
+          "requested": 120,
+          "completed": 120,
+          "uniqueTextures": 22,
+          "bytes": 201321,
+          "elapsedMs": 35.20199999999022
+        }
+      ],
+      "pixelCount": 22,
+      "maxRGB": 2,
+      "context": {
+        "automatic": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        },
+        "confirmingSeek": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        }
+      },
+      "silentAudioContexts": 0
+    }
+  ]
+}

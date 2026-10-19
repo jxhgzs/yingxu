@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-19T13:27:57.219684+00:00",
+  "condition": "Offline stage profiling while parent plane pixel page may overlap; not transport benchmark. Product code unchanged; instrumentation private ignored copy.",
+  "stages": [
+    {
+      "frames": 16,
+      "scriptMs": 88.229875,
+      "renderMs": 654.508792,
+      "recoverDiskMs": 322.906333,
+      "encodeMs": 181.759125,
+      "totalMs": 1247.611917
+    },
+    {
+      "frames": 32,
+      "scriptMs": 100.660292,
+      "renderMs": 993.401791,
+      "recoverDiskMs": 603.141042,
+      "encodeMs": 369.753583,
+      "totalMs": 2068.533958
+    }
+  ],
+  "decision": "Keep exact PNG encoding contract; use explicit bounded preparation, rather than pretending cold production sustains30fps."
+}

@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-19T12:59:24.660463+00:00",
+  "node": "24.18.0",
+  "unit": {
+    "cacheTransportGlCount": 36,
+    "frameWindowCount": 1,
+    "pass": true,
+    "latestPureTestTotal": 37,
+    "lateForegroundPinRace": "old deferred frame1 plus completed new current frame2 at capacity2; dynamic pin protects frame2"
+  },
+  "realBatch": {
+    "count": 4,
+    "pass": true,
+    "durationMs": 8573.295334,
+    "pngByteIdentityFrames": 10,
+    "frameRates": [
+      "30/1",
+      "30000/1001"
+    ],
+    "conditions": "Ordinary correctness FFmpeg window authorized by parent; not a performance result. Geometry+zoom+outline/shadow PNG bytes exactly equal scalar.",
+    "cases": [
+      "scalar vs batch exact PNG",
+      "bounds and content-key dedup",
+      "actual active cancellation and revision zero residual",
+      "HTTP strict body/disconnect zero residual"
+    ],
+    "fixtureCorrection": "An initial dedup test erroneously used flash for adjacent frames (different alpha, correctly three keys); changed test to an actual hold state. No product behavior was changed to force dedup."
+  },
+  "typecheck": {
+    "pass": true
+  },
+  "gpu": "awaiting actual parent Cua click; no simulated performance"
+}

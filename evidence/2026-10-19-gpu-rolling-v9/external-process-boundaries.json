@@ -1,0 +1,294 @@
+{
+  "method": "fs.watch result start/completed transitions; ps once per observed mode boundary. ps %cpu is process lifetime average, not instantaneous utilization. Already-running files on observer startup are midpoint samples, never reconstructed starts. Other tasks are observed only.",
+  "events": [
+    {
+      "at": "2026-10-19T13:07:57.575Z",
+      "id": "scalar-cold-1792415166653",
+      "boundary": "observer-attach-after-completion",
+      "probeCreatedAt": "2026-10-19T13:06:06.653Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:07:57.608Z",
+      "id": "scalar-cold-1792415166653",
+      "boundary": "completed-file-seen-after-run",
+      "probeCreatedAt": "2026-10-19T13:06:06.653Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:08:27.142Z",
+      "id": "batch-cold-1792415304789",
+      "boundary": "observer-attach-midpoint",
+      "probeCreatedAt": "2026-10-19T13:08:24.789Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 1,
+      "externalPsCpuPercent": 17.9,
+      "processes": [
+        {
+          "pid": 50729,
+          "ppid": 48979,
+          "stat": "R",
+          "psCpuPercent": 17.9,
+          "elapsed": "00:01",
+          "cpuTime": "0:00.18",
+          "command": "/opt/homebrew/bin/ffmpeg -hide_banner -loglevel warning -nostdin -y -f rawvideo -pix_fmt rgba -s 1280x720 -i straight.rgba -frames:v 30 -c:v png -threads 1 -start_number 0 -f image2 caption-%03d.png",
+          "ownProbe": false
+        }
+      ]
+    },
+    {
+      "at": "2026-10-19T13:08:41.294Z",
+      "id": "batch-cold-1792415304789",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:08:24.789Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:09:47.288Z",
+      "id": "batch-retained-1792415387195",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:09:47.195Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:10:38.556Z",
+      "id": "batch-retained-1792415387195",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:09:47.195Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:11:44.684Z",
+      "id": "pixels-1792415504578",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:11:44.578Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:12:03.033Z",
+      "id": "pixels-1792415504578",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:11:44.578Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:12:25.822Z",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:12:25.218Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:12:25.849Z",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:12:25.218Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:31:25.374Z",
+      "id": "scalar-cold-v2-1792416685272",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:31:25.272Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:32:14.959Z",
+      "id": "scalar-cold-v2-1792416685272",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:31:25.272Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:32:30.322Z",
+      "id": "batch-cold-v2-1792416750212",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:32:30.212Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:32:52.406Z",
+      "id": "batch-cold-v2-1792416750212",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:32:30.212Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:34:18.714Z",
+      "id": "batch-retained-v2-1792416858617",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:34:18.617Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:34:44.727Z",
+      "id": "batch-retained-v2-1792416858617",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:34:18.617Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:38:13.951Z",
+      "id": "pixels-v2-1792417093839",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:38:13.839Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:38:19.302Z",
+      "id": "pixels-v2-1792417093839",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:38:13.839Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:43:45.249Z",
+      "id": "scalar-cold-v3-1792417425150",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:43:45.150Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:44:40.351Z",
+      "id": "scalar-cold-v3-1792417425150",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:43:45.150Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:44:50.460Z",
+      "id": "batch-cold-v3-1792417490409",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:44:50.409Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:45:12.219Z",
+      "id": "batch-cold-v3-1792417490409",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:44:50.409Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:45:24.720Z",
+      "id": "batch-retained-v3-1792417524683",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:45:24.683Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:45:46.606Z",
+      "id": "batch-retained-v3-1792417524683",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:45:24.683Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:45:57.518Z",
+      "id": "pixels-v3-1792417557476",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:45:57.476Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:46:02.206Z",
+      "id": "pixels-v3-1792417557476",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:45:57.476Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:46:18.714Z",
+      "id": "batch-retained-v3-1792417578618",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T13:46:18.618Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T13:46:40.060Z",
+      "id": "batch-retained-v3-1792417578618",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T13:46:18.618Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    }
+  ]
+}

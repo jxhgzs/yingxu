@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-19T13:48:53.547065+00:00",
+  "ownedPids": {
+    "63975": "exited",
+    "64527": "exited"
+  },
+  "ownedPorts": {
+    "8838": "bind-free",
+    "8839": "[Errno 48] Address already in use"
+  },
+  "method": "SIGTERM exact owned server/observer; exec sessions completed (server143, observer0); signal0 PID checks plus independent socket bind; no external process stopped.",
+  "recheckedAt": "2026-10-19T13:49:11.323233+00:00",
+  "reuseAddressPorts": {
+    "8838": "bind-free-with-SO_REUSEADDR",
+    "8839": "bind-free-with-SO_REUSEADDR"
+  },
+  "listenerCheck": "lsof TCP8839 LISTEN returned exit1/no listeners; transient initial plain bind8839 failure, later SO_REUSEADDR and final plain binds both succeed; no listener/process remained",
+  "finalCheckedAt": "2026-10-19T13:49:27.038990+00:00",
+  "finalPorts": {
+    "8838": "plain-bind-free",
+    "8839": "plain-bind-free"
+  }
+}

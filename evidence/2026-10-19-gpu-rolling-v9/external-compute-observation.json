@@ -1,0 +1,9 @@
+{
+ "observedAt":"2026-10-19T13:06:49.677788+00:00",
+ "while":"scalar-cold-1792415166653 actual Cua baseline",
+ "ownTeam":"all REA editor workers reported no computation",
+ "externalObservedProcess":{"pid":49722,"ppid":49630,"status":"R","elapsed":"00:00","command":"ffmpeg -v error -y -ss 3.5 -i 达尔文蛙科普_20261019/镜头/V02.mp4 -an -vf scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,setpts=N/(24*TB) -frames:v 61 -c:v libx264 -crf 18 -preset fast -video_track_timescale 24000 达尔文蛙科普_20261019/镜头/S05-encoded.mp4"},
+ "action":"Observed and reported only; no external process stopped.",
+ "cacheProgress":{"pngFiles":128,"pngBytes":2865648,"newestPngAt":"2026-10-19T13:06:49.641468+00:00","temporaryDirectories":1},
+ "boundary":"This single process sample proves concurrent work at that instant; it does not establish overlap duration or causal share of stalls/drops. Do not call the run fully idle."
+}

@@ -1,0 +1,39 @@
+{
+  "createdAt": "2026-10-19T13:13:35.733Z",
+  "condition": "Offline correctness profiling; parent spatial pixel page may run concurrently; not actual transport benchmark.",
+  "cases": [
+    {
+      "count": 16,
+      "defaultMs": 1248.3471670000001,
+      "levelTimes": [
+        {
+          "level": 1,
+          "encodeMs": 156.35850000000005,
+          "totalPngBytes": 594573
+        },
+        {
+          "level": 0,
+          "encodeMs": 396.68775000000005,
+          "totalPngBytes": 59176384
+        }
+      ]
+    },
+    {
+      "count": 32,
+      "defaultMs": 2068.760625,
+      "levelTimes": [
+        {
+          "level": 1,
+          "encodeMs": 185.88108399999965,
+          "totalPngBytes": 1179805
+        },
+        {
+          "level": 0,
+          "encodeMs": 588.9590420000004,
+          "totalPngBytes": 118352768
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-19T13:13:40.380Z"
+}

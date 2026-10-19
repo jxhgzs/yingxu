@@ -1,0 +1,112 @@
+[
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-0.rgba",
+    "bytes": 3686400,
+    "sha256": "f6be22605ebaf4ac695872084bb9f97d01c1031a55fbf64efdc158fc47010b8c"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-127.rgba",
+    "bytes": 3686400,
+    "sha256": "491856e4503e2e12bc50a785e059c56cd5e35f11c4e0fc9c5656b01bd2babcaf"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-15.rgba",
+    "bytes": 3686400,
+    "sha256": "99c1c108589dc1f44fae688150739279454c5603725322d9b4d969a2d7f3bcf8"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-160.rgba",
+    "bytes": 3686400,
+    "sha256": "4065e50729c18517f63ce955c47461e362a41e0e18b607db581edc1d7ed041a0"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-179.rgba",
+    "bytes": 3686400,
+    "sha256": "aa4b9a3cfe438aa4cbca8f3570da509cdc469cc66faa429b8609a5cee5adf0ac"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-31.rgba",
+    "bytes": 3686400,
+    "sha256": "c33638545695969075fec28d6d71a9599127ece13ad239dde98dd8cf026e9ece"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-32.rgba",
+    "bytes": 3686400,
+    "sha256": "f04fbd6126ef8c1425ca5a3b40dafe71d759f04a9281acb13f765b30b0f53444"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-33.rgba",
+    "bytes": 3686400,
+    "sha256": "ea63fe1e7f432af4d444d1a3174c0f615d8c1962c7e4c55d0bfcd2d8f494dbcc"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-47.rgba",
+    "bytes": 3686400,
+    "sha256": "c515c4d17e7c5fb9498ac6fa4bdac5fae7676e392bd546e0009897adf743ea66"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-64.rgba",
+    "bytes": 3686400,
+    "sha256": "6b945381e505358890899cd777a588697a80dfba1d5286ec4438b75bd7756bd0"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-90.rgba",
+    "bytes": 3686400,
+    "sha256": "5b8b2594fc4bdbd713d54f5bd28e322058a90cb2128c876e999356f1f8b429bb"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-0.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-14.rgba",
+    "bytes": 3686400,
+    "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-15.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-7.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-8.rgba",
+    "bytes": 3686400,
+    "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-108.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-111.rgba",
+    "bytes": 3686400,
+    "sha256": "daba2e0ef9f56dab2a36d535358e78c3bb3dd082ded7a524f0d909e8273cdc46"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-20.rgba",
+    "bytes": 3686400,
+    "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-30.rgba",
+    "bytes": 3686400,
+    "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-31.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  },
+  {
+    "file": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-9.rgba",
+    "bytes": 3686400,
+    "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490"
+  }
+]
