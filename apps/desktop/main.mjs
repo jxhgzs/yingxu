@@ -28,7 +28,9 @@ function prepareClose(win){
 }
 async function createWindow(){
   window=new BrowserWindow({width:1500,height:920,minWidth:1000,minHeight:680,title:'映序剪辑',backgroundColor:'#111113',
-    webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,preload:path.join(root,'apps/desktop/preload.cjs')}});
+    // Keep the media clock and decoded-frame presentation alive when the
+    // editor is occluded by another window. Idle previews have no rAF loop.
+    webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,backgroundThrottling:false,preload:path.join(root,'apps/desktop/preload.cjs')}});
   const current=window;
   current.on('close',event=>{
     if(closing)return;event.preventDefault();
