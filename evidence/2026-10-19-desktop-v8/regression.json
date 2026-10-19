@@ -1,0 +1,93 @@
+{
+  "version": "0.8.0",
+  "tests": {
+    "passed": 268,
+    "failed": 0,
+    "skipped": 0
+  },
+  "baselineChecks": [
+    {
+      "name": "baseline-hashes",
+      "passed": true
+    },
+    {
+      "name": "empty-draft",
+      "passed": true
+    },
+    {
+      "name": "single-six-seconds",
+      "passed": true
+    },
+    {
+      "name": "split-at-three",
+      "passed": true
+    },
+    {
+      "name": "second-clip-two-times",
+      "passed": true
+    },
+    {
+      "name": "undo-equals-split",
+      "passed": true
+    },
+    {
+      "name": "redo-equals-speed",
+      "passed": true
+    },
+    {
+      "name": "keyframes-source-clock-preserved",
+      "passed": true
+    },
+    {
+      "name": "input-files-unchanged",
+      "passed": true
+    }
+  ],
+  "typecheck": true,
+  "desktopBuild": true,
+  "initialBuildFailure": "Type narrowing in test/gpu-preview-color.test.ts; fixed with explicit branch, then build passed.",
+  "logs": {
+    "v8-full-tests.log": {
+      "sha256": "5e51fa3a3ee306b353855e17c13926c544b2364d8190108a10c3aca8a560f787",
+      "bytes": 28603
+    },
+    "v8-replay.log": {
+      "sha256": "20919db1121d8897bf0b4873c660d2d61c196787450f3218936e9789c7977440",
+      "bytes": 904
+    },
+    "v8-build.log": {
+      "sha256": "b77b06a20c63cfd973b1d2671ad9670226dee5ffbce1bd75e1f53cba519ded99",
+      "bytes": 655
+    },
+    "v8-build-final.log": {
+      "sha256": "a06b5cfa18c6170487259139123a37decb63f1aea38aec2d1e6790666b01b19f",
+      "bytes": 1361
+    },
+    "v8-package.log": {
+      "sha256": "b45b931235b856f97c770f35653716f5ceeff4cec80e6c8791a97e86a94d2a65",
+      "bytes": 598
+    },
+    "v8-build-label-fix.log": {
+      "sha256": "9720596a85b4fb7e916e1a49fc8786988758b6f467234becb74dcaa0263eec02",
+      "bytes": 1361
+    },
+    "v8-build-selection-fix.log": {
+      "sha256": "645b95c9d282c854438d8323d5355e37cc548bd1df93f0319506557e80e2fa84",
+      "bytes": 1361
+    },
+    "v8-package-final.log": {
+      "sha256": "14c43735c76d905ffc2e9d22b7559d9680dbd6070611d066aab6bd7cda574379",
+      "bytes": 598
+    },
+    "v8-package-selection-final.log": {
+      "sha256": "3d1a7540082aff54a6fecc31758e87a97d12a84b8ad9e767def1e5be51709cc1",
+      "bytes": 598
+    }
+  },
+  "postRegressionChanges": {
+    "scope": "Vue transition labels/icons and inspector selection order only; media/GPU runtime unchanged",
+    "desktopBuildAndTypecheckPassed": true,
+    "actualFinalAppLabelsAndFirstSelectionPassed": true,
+    "sourceCommit": "2c0fddb11653243a74c3fb393f1b19f28da251b5"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "target": {
+    "version": "5.9.0",
+    "sha256": "be0dd5c522e2b0511202cfa2bd27dc7075b3e5ab7cea820bef4c2664d80afe81"
+  },
+  "provenance": "reused original REA complete records; no duplicate producer",
+  "facts": [
+    {
+      "id": "enum",
+      "evidence_id": "ev_b718e11faa65db1242e425fa3190455c3f088585c311f23b03c7c91953c362e7",
+      "values": {
+        "0": "none",
+        "1": "in",
+        "2": "out",
+        "3": "loop",
+        "4": "caption",
+        "5": "group"
+      }
+    },
+    {
+      "id": "exclusivity",
+      "evidence_id": "ev_3eb82d880d2e17aaf2ff35613d7c6f20abcd9661d9a0c8bd82a25d66803e5c8b",
+      "observation": "nonempty type4 replaces all existing animations; other types replace same type and remove type4 while retaining other types",
+      "unknown": "UI combination tab mapping, type5 semantics"
+    },
+    {
+      "id": "loop-duration-repair",
+      "evidence_id": "ev_76eeae95a19f24508d3602aa933e56a313b8bb118c4609ea9a3a0bcf3f2c94f3",
+      "observation": "repair considers in/out/loop/caption, not group; loop period is limited by remaining target time when in/out exists and clamped to min 100000us; loop-only branch preserves existing period except min100000us",
+      "unknown": "UI maximum and duration vs cycle mapping in actual resource"
+    },
+    {
+      "id": "resize",
+      "evidence_id": "ev_138a22815aa788df92db987f3f272628702e5ebc8282af566d7cd26e6491fa9e",
+      "observation": "linked resize scales animation duration by target new/old ratio, type3 cap5000000us",
+      "unknown": "when ordinary text UI invokes this path"
+    }
+  ]
+}

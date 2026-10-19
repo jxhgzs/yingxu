@@ -1,0 +1,31 @@
+✔ WebAudio stays lazy, replaces active envelopes and releases every route (3.116ms)
+✔ audio resume denial is observable and cannot unmute media (0.489292ms)
+✔ shader compilation/link/initialization errors free all partial allocations (1.287791ms)
+✔ dip midpoint emits opaque black without requiring either zero-weight decoder (1.370958ms)
+✔ crossfade renders two transparent isolated targets, reuses them and frees resize/failure allocations (2.2405ms)
+✔ context loss reports unsupported and restore redraws without resuming playback (6.030083ms)
+✔ registered decoder waits for seek and cancels load/frame callbacks on dispose (0.981083ms)
+✔ static text texture keeps asset identity, uploads once and does not apply its baked transform/opacity twice (0.210084ms)
+✔ neutral text applies the quantized authority alpha once while exact frames retain baked alpha (0.203833ms)
+✔ a cached PNG switch updates a retained GPU texture once and repeated content performs no upload (0.15225ms)
+✔ invalid public curve document reports fallback before constructing any curve clock (0.212041ms)
+✔ text frame providers warm bounded frames, validate mode/revision, and retain identical-content GPU textures (7.855458ms)
+✔ ready cached exact frame switches image without pausing or reseeking a playing media route (4.631583ms)
+✔ different frame aliases share one decoded PNG; ready hits make no provider/decode request (3.18525ms)
+✔ warm stops at unique-image budget and preserves opening frames; foreground evicts only unpinned images (1.873291ms)
+✔ byte budget is enforced independently and oversized warm creates no decoded resource (0.465834ms)
+✔ aliases are bounded per clip even for identical PNGs (0.694917ms)
+✔ strict mode/frame/revision/clip/dimensions are checked before decoding (1.087417ms)
+✔ reset isolates identical clip/frame across projects and ignores a provider that resolves after abort (0.619917ms)
+✔ dispose during deferred image decode releases image and cannot publish an alias (6.432625ms)
+✔ same frame concurrent requests share provider promise; caller cancellation cannot abort another consumer (0.249375ms)
+✔ already aborted foreground requests never start a provider and static textures also require identity (0.130708ms)
+✔ foreground joins a full-budget warm pending and then retries with safe foreground eviction (0.431958ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 126.971042

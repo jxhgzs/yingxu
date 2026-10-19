@@ -1,0 +1,182 @@
+Window: "映序 · 视频剪辑", App: 映序剪辑.
+0 标准窗口 映序 · 视频剪辑, Secondary Actions: Raise
+	1 container 映序 · 视频剪辑
+		2 container
+			3 HTML 内容 映序 · 视频剪辑, URL: 127.0.0.1:61564/
+				4 container 媒体 音频 文本 转场 调节 搜索素材名称 导入 全部 4 实时视频画面 正在准备画面与音轨 1280 × 720 00:00:06:00 / 00:00:12:00 上一帧 播放 下一帧 适应 撤销 重做 分割 删除片段 复制片段 轨道 时间线吸附 88 30 fps 00:00 00:01 00:02 00:03
+					5 container
+						6 文本 映序
+						7 按钮 文件
+						8 文本 已自动保存
+						9 文本栏 (settable) Description: 工程名称, Value: Desktop 0.8 零余量转场 · 重开验证
+						10 按钮 快捷键
+						11 按钮 导出任务
+						12 link Description: 下载工程, Value: 127.0.0.1:61564/api/projects/1adfeed6-7c2a-4ebb-902e-2af4560d9bd3/download
+						13 按钮 导出
+							14 文本 导出
+					15 container
+						16 按钮 媒体
+						17 按钮 音频
+						18 按钮 文本
+						19 按钮 转场
+						20 按钮 调节
+						21 按钮 本地
+						22 文本 导入
+						23 文本 素材库
+						24 文本栏 (settable) 搜索素材名称
+						25 按钮 导入
+							26 文本 导入
+						27 文本 全部 4
+						28 container
+							29 图像 动态测试素材.mp4
+							30 文本 00:06
+							31 按钮 添加 动态测试素材.mp4 到时间线
+						32 文本 动态测试素材.mp4
+						33 文本 640 × 360
+						34 container
+							35 图像 color-patches.mp4
+							36 文本 00:02
+							37 按钮 添加 color-patches.mp4 到时间线
+						38 文本 color-patches.mp4
+						39 文本 1280 × 720
+						40 container
+							41 图像 curve-numbered-hd.mp4
+							42 文本 00:06
+							43 按钮 添加 curve-numbered-hd.mp4 到时间线
+						44 文本 curve-numbered-hd.mp4
+						45 文本 1280 × 720
+						46 container
+							47 图像 audible-curve-probe.mp4
+							48 文本 00:06
+							49 按钮 添加 audible-curve-probe.mp4 到时间线
+						50 文本 audible-curve-probe.mp4
+						51 文本 1280 × 720
+					52 container
+						53 文本 播放器
+						54 按钮 预览性能详情
+						55 弹出式按钮 Description: 预览方式, Value: 自动实时
+							56 (selected) 自动实时
+						57 按钮 重新生成预览
+						58 图像 实时视频画面
+						59 文本 1280 × 720
+						60 文本 00:00:06:00
+						61 文本  / 00:00:12:00
+						62 按钮 上一帧
+						63 按钮 播放
+						64 按钮 下一帧
+						65 文本 适应 
+					66 container
+						67 按钮 画面
+						68 按钮 音频
+						69 按钮 调节
+						70 按钮 转场
+						71 按钮 变速
+						72 文本 转场
+						73 文本 转场在剪辑点两侧居中播放，工程总时长保持不变。
+						74 弹出式按钮 Description: 转场类型, Value: 圆形遮罩
+							75 (selected) 圆形遮罩
+						76 文本 持续时间
+						77 container
+							78 按钮 Increase Value
+								79 图像 up
+							80 按钮 Decrease Value
+								81 图像 down
+							82 步进器 (settable, float) Description: 转场秒 d9414721-bca5-4dca-87f6-b7385865f93c, Value: 0.4666667
+						83 文本 秒
+						84 按钮 应用时长
+						85 按钮 删除转场
+						86 文本 此剪辑点已有转场。
+						87 文本 采用区间
+						88 文本 源入点
+						89 container
+							90 按钮 Increase Value
+								91 图像 up
+							92 按钮 (disabled) Decrease Value
+								93 图像 down
+							94 步进器 (settable, float) Description: 源入点秒, Value: 0
+						95 文本 秒
+						96 文本 源出点
+						97 container
+							98 按钮 Increase Value
+								99 图像 up
+							100 按钮 Decrease Value
+								101 图像 down
+							102 步进器 (settable, float) Description: 源出点秒, Value: 6
+						103 文本 秒
+						104 按钮 应用裁切
+						105 文本 目标时长 6.000 秒
+						106 文本 素材信息
+						107 文本 audible-curve-probe.mp4
+						108 定义列表
+							109 container 开始
+								110 文本 开始
+							111 文本 0.000 秒
+							112 container 源时长
+								113 文本 源时长
+							114 文本 6.000 秒
+							115 container 尺寸
+								116 文本 尺寸
+							117 文本 1280 × 720
+					118 container
+						119 按钮 撤销
+						120 按钮 (disabled) 重做
+						121 按钮 分割
+						122 按钮 删除片段
+						123 按钮 复制片段
+						124 按钮 轨道
+							125 文本 轨道
+						126 切换按钮 Description: 时间线吸附, Value: 1
+						127 滑块 Value: 88, Secondary Actions: Increment, Decrement
+						128 container
+							129 文本 30 fps
+							130 文本 00:00
+							131 文本 00:01
+							132 文本 00:02
+							133 文本 00:03
+							134 文本 00:04
+							135 文本 00:05
+							136 文本 00:06
+							137 文本 00:07
+							138 文本 00:08
+							139 文本 00:09
+							140 文本 00:10
+							141 文本 00:11
+							142 文本 00:12
+							143 文本 00:13
+							144 文本 00:14
+							145 文本 00:15
+							146 文本 00:16
+							147 文本 00:17
+							148 文本 00:18
+							149 container
+								150 文本 文字
+								151 按钮 锁定文字
+								152 按钮 隐藏文字
+							153 按钮 片段 映序文字动画
+								154 文本 映序文字动画
+								155 container 裁切左边缘 映序文字动画
+								156 container 裁切右边缘 映序文字动画
+							157 container
+								158 文本 主轨道
+								159 按钮 锁定主轨道
+								160 按钮 隐藏主轨道
+							161 按钮 片段 audible-curve-probe.mp4
+								162 文本 audible-curve-probe.mp4
+								163 container 裁切左边缘 audible-curve-probe.mp4
+								164 container 裁切右边缘 audible-curve-probe.mp4
+							165 按钮 片段 audible-curve-probe.mp4
+								166 文本 audible-curve-probe.mp4
+								167 container 裁切左边缘 audible-curve-probe.mp4
+								168 container 裁切右边缘 audible-curve-probe.mp4
+							169 按钮 圆形遮罩转场 0.467 秒
+						170 text 3 个片段 已选中 audible-curve-probe.mp4 1280 × 720
+	171 关闭按钮
+	172 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	173 最小化按钮
+174 menu bar
+	175 映序剪辑
+	176 文件
+	177 编辑
+	178 视图
+
+The focused UI element is 4 container 媒体 音频 文本 转场 调节 搜索素材名称 导入 全部 4 实时视频画面 正在准备画面与音轨 1280 × 720 00:00:06:00 / 00:00:12:00 上一帧 播放 下一帧 适应 撤销 重做 分割 删除片段 复制片段 轨道 时间线吸附 88 30 fps 00:00 00:01 00:02 00:03

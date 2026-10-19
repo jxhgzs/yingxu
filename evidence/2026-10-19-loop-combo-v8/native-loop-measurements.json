@@ -1,0 +1,628 @@
+{
+  "movie": {
+    "path": "/Users/tal/Downloads/yingxu-native-loop-flash-v8-1906.mov",
+    "sha256": "10e4f0dbf1e6dd9206ad27b472dff0006113516bd7f8a5dea6510401327e249e",
+    "frames": 120,
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "reference": {
+    "path": "/Users/tal/Downloads/yingxu-native-text-zero-v7-1728.mov",
+    "sha256": "5831a677cc3621c7d916670dfdd402641d337b02573b33d073ba4b5b6958e0bf",
+    "frame": 17,
+    "solidMaskThreshold": 220,
+    "solidMaskPixels": 1929,
+    "sameTextStyleFieldsChecked": true
+  },
+  "rows": [
+    {
+      "frame": 0,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 1,
+      "observedAlpha": 0.22934267398470382,
+      "predictedAlpha": 0.24888888888888888
+    },
+    {
+      "frame": 2,
+      "observedAlpha": 0.44650618637889267,
+      "predictedAlpha": 0.4622222222222222
+    },
+    {
+      "frame": 3,
+      "observedAlpha": 0.6220546226198548,
+      "predictedAlpha": 0.64
+    },
+    {
+      "frame": 4,
+      "observedAlpha": 0.7790287464353676,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 5,
+      "observedAlpha": 0.8860821939275477,
+      "predictedAlpha": 0.8888888888888888
+    },
+    {
+      "frame": 6,
+      "observedAlpha": 0.9659274381483901,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 7,
+      "observedAlpha": 0.985640828172508,
+      "predictedAlpha": 0.9955555555555555
+    },
+    {
+      "frame": 8,
+      "observedAlpha": 0.9836420917673802,
+      "predictedAlpha": 0.9955555555555555
+    },
+    {
+      "frame": 9,
+      "observedAlpha": 0.9494644746069872,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 10,
+      "observedAlpha": 0.8932885492538154,
+      "predictedAlpha": 0.888888888888889
+    },
+    {
+      "frame": 11,
+      "observedAlpha": 0.7735589436549922,
+      "predictedAlpha": 0.7822222222222224
+    },
+    {
+      "frame": 12,
+      "observedAlpha": 0.6428997050124547,
+      "predictedAlpha": 0.6399999999999999
+    },
+    {
+      "frame": 13,
+      "observedAlpha": 0.44852576026830493,
+      "predictedAlpha": 0.4622222222222221
+    },
+    {
+      "frame": 14,
+      "observedAlpha": 0.24279188228925597,
+      "predictedAlpha": 0.24888888888888883
+    },
+    {
+      "frame": 15,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 16,
+      "observedAlpha": 0.24188805129116053,
+      "predictedAlpha": 0.24888888888888883
+    },
+    {
+      "frame": 17,
+      "observedAlpha": 0.4457978347274729,
+      "predictedAlpha": 0.46222222222222215
+    },
+    {
+      "frame": 18,
+      "observedAlpha": 0.6320131961454503,
+      "predictedAlpha": 0.6399999999999999
+    },
+    {
+      "frame": 19,
+      "observedAlpha": 0.7665534796899824,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 20,
+      "observedAlpha": 0.8857333850845287,
+      "predictedAlpha": 0.8888888888888888
+    },
+    {
+      "frame": 21,
+      "observedAlpha": 0.966440040261786,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 22,
+      "observedAlpha": 0.9870459869359208,
+      "predictedAlpha": 0.9955555555555555
+    },
+    {
+      "frame": 23,
+      "observedAlpha": 0.9872153559732122,
+      "predictedAlpha": 0.9955555555555555
+    },
+    {
+      "frame": 24,
+      "observedAlpha": 0.9515412963117694,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 25,
+      "observedAlpha": 0.8776528706827772,
+      "predictedAlpha": 0.8888888888888888
+    },
+    {
+      "frame": 26,
+      "observedAlpha": 0.7722301344165113,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 27,
+      "observedAlpha": 0.6244965301494858,
+      "predictedAlpha": 0.6399999999999999
+    },
+    {
+      "frame": 28,
+      "observedAlpha": 0.4575070762500045,
+      "predictedAlpha": 0.4622222222222221
+    },
+    {
+      "frame": 29,
+      "observedAlpha": 0.24468685702902587,
+      "predictedAlpha": 0.24888888888888883
+    },
+    {
+      "frame": 30,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 31,
+      "observedAlpha": 0.24518374710613808,
+      "predictedAlpha": 0.2488888888888896
+    },
+    {
+      "frame": 32,
+      "observedAlpha": 0.4480496176116943,
+      "predictedAlpha": 0.46222222222222215
+    },
+    {
+      "frame": 33,
+      "observedAlpha": 0.6359314865154253,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 34,
+      "observedAlpha": 0.7745738642353157,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 35,
+      "observedAlpha": 0.8938163721464979,
+      "predictedAlpha": 0.8888888888888891
+    },
+    {
+      "frame": 36,
+      "observedAlpha": 0.9523336938477389,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 37,
+      "observedAlpha": 0.991251523459589,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 38,
+      "observedAlpha": 0.9890471960012663,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 39,
+      "observedAlpha": 0.9671309441021998,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 40,
+      "observedAlpha": 0.8858057881782524,
+      "predictedAlpha": 0.8888888888888891
+    },
+    {
+      "frame": 41,
+      "observedAlpha": 0.791150758461912,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 42,
+      "observedAlpha": 0.6311717875364252,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 43,
+      "observedAlpha": 0.45520073927627935,
+      "predictedAlpha": 0.4622222222222221
+    },
+    {
+      "frame": 44,
+      "observedAlpha": 0.23745395744969333,
+      "predictedAlpha": 0.2488888888888896
+    },
+    {
+      "frame": 45,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 46,
+      "observedAlpha": 0.2382925331433697,
+      "predictedAlpha": 0.2488888888888896
+    },
+    {
+      "frame": 47,
+      "observedAlpha": 0.4554694404783402,
+      "predictedAlpha": 0.46222222222222215
+    },
+    {
+      "frame": 48,
+      "observedAlpha": 0.6288912333674197,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 49,
+      "observedAlpha": 0.7793779564716007,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 50,
+      "observedAlpha": 0.8825691660171499,
+      "predictedAlpha": 0.8888888888888891
+    },
+    {
+      "frame": 51,
+      "observedAlpha": 0.9669233470829344,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 52,
+      "observedAlpha": 0.9896828252419144,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 53,
+      "observedAlpha": 0.9892629970123796,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 54,
+      "observedAlpha": 0.9564685466771725,
+      "predictedAlpha": 0.96
+    },
+    {
+      "frame": 55,
+      "observedAlpha": 0.8912500374071735,
+      "predictedAlpha": 0.8888888888888891
+    },
+    {
+      "frame": 56,
+      "observedAlpha": 0.774237033875404,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 57,
+      "observedAlpha": 0.642759115447564,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 58,
+      "observedAlpha": 0.4604050504003069,
+      "predictedAlpha": 0.4622222222222221
+    },
+    {
+      "frame": 59,
+      "observedAlpha": 0.23790716659216618,
+      "predictedAlpha": 0.2488888888888896
+    },
+    {
+      "frame": 60,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 61,
+      "observedAlpha": 0.23816240735251248,
+      "predictedAlpha": 0.24888888888888808
+    },
+    {
+      "frame": 62,
+      "observedAlpha": 0.46071455868357536,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 63,
+      "observedAlpha": 0.6341666211912794,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 64,
+      "observedAlpha": 0.778031314604133,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 65,
+      "observedAlpha": 0.8858449904866036,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 66,
+      "observedAlpha": 0.9589417472775049,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 67,
+      "observedAlpha": 0.9933113967979788,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 68,
+      "observedAlpha": 0.9932265157765342,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 69,
+      "observedAlpha": 0.9561236678901286,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 70,
+      "observedAlpha": 0.8984673232016217,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 71,
+      "observedAlpha": 0.7766367997423194,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 72,
+      "observedAlpha": 0.6364827914925587,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 73,
+      "observedAlpha": 0.45511201826264264,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 74,
+      "observedAlpha": 0.2455652572899161,
+      "predictedAlpha": 0.24888888888888805
+    },
+    {
+      "frame": 75,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 76,
+      "observedAlpha": 0.24595165548081308,
+      "predictedAlpha": 0.24888888888888808
+    },
+    {
+      "frame": 77,
+      "observedAlpha": 0.4542585492943441,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 78,
+      "observedAlpha": 0.6389217351049753,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 79,
+      "observedAlpha": 0.7772650519403976,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 80,
+      "observedAlpha": 0.8907838590799829,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 81,
+      "observedAlpha": 0.9559340672521822,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 82,
+      "observedAlpha": 0.9939675442058632,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 83,
+      "observedAlpha": 0.9940939282559276,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 84,
+      "observedAlpha": 0.9673061509101375,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 85,
+      "observedAlpha": 0.8876697973519856,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 86,
+      "observedAlpha": 0.7890315904039987,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 87,
+      "observedAlpha": 0.6406096122700933,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 88,
+      "observedAlpha": 0.45400599407224745,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 89,
+      "observedAlpha": 0.24595559372440473,
+      "predictedAlpha": 0.24888888888888805
+    },
+    {
+      "frame": 90,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 91,
+      "observedAlpha": 0.24545152310752147,
+      "predictedAlpha": 0.24888888888888808
+    },
+    {
+      "frame": 92,
+      "observedAlpha": 0.45503629918419,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 93,
+      "observedAlpha": 0.6366281708131691,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 94,
+      "observedAlpha": 0.7767646493757577,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 95,
+      "observedAlpha": 0.8905877984125276,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 96,
+      "observedAlpha": 0.9603339696066665,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 97,
+      "observedAlpha": 0.9956924048352297,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 98,
+      "observedAlpha": 0.995825355353819,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 99,
+      "observedAlpha": 0.9588061357835158,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 100,
+      "observedAlpha": 0.887215712134535,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 101,
+      "observedAlpha": 0.7795917842671098,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 102,
+      "observedAlpha": 0.6355507705304589,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 103,
+      "observedAlpha": 0.4618097179067228,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 104,
+      "observedAlpha": 0.24316211812495556,
+      "predictedAlpha": 0.24888888888888805
+    },
+    {
+      "frame": 105,
+      "observedAlpha": 0.0,
+      "predictedAlpha": 0.0
+    },
+    {
+      "frame": 106,
+      "observedAlpha": 0.24145580244722128,
+      "predictedAlpha": 0.24888888888888808
+    },
+    {
+      "frame": 107,
+      "observedAlpha": 0.4619102290882847,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 108,
+      "observedAlpha": 0.631103134371111,
+      "predictedAlpha": 0.6400000000000005
+    },
+    {
+      "frame": 109,
+      "observedAlpha": 0.7769046739951021,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 110,
+      "observedAlpha": 0.8836328684172637,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 111,
+      "observedAlpha": 0.9575449071325726,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 112,
+      "observedAlpha": 0.9944413615793553,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 113,
+      "observedAlpha": 0.9943858904767907,
+      "predictedAlpha": 0.9955555555555556
+    },
+    {
+      "frame": 114,
+      "observedAlpha": 0.9574723975998329,
+      "predictedAlpha": 0.9600000000000003
+    },
+    {
+      "frame": 115,
+      "observedAlpha": 0.898185890255725,
+      "predictedAlpha": 0.8888888888888885
+    },
+    {
+      "frame": 116,
+      "observedAlpha": 0.7828981076084532,
+      "predictedAlpha": 0.7822222222222222
+    },
+    {
+      "frame": 117,
+      "observedAlpha": 0.6368414009126654,
+      "predictedAlpha": 0.6400000000000003
+    },
+    {
+      "frame": 118,
+      "observedAlpha": 0.46746931782784334,
+      "predictedAlpha": 0.4622222222222234
+    },
+    {
+      "frame": 119,
+      "observedAlpha": 0.24647148725967963,
+      "predictedAlpha": 0.24888888888888805
+    }
+  ],
+  "sparkModel": {
+    "maxAbsoluteAlpha": 0.019546214904185066,
+    "meanAbsoluteAlpha": 0.005472373664700423,
+    "rmseAlpha": 0.006945046544451174,
+    "maxAbsolutePixelOnSolidMask": 38.280000000000115,
+    "meanAbsolutePixelOnSolidMask": 2.4424130714436587
+  },
+  "scope": "Actual native H264 gray decode relative to independent same-style native no-animation export. Does not establish encoded pixel equality or every font."
+}

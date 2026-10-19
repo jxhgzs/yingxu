@@ -1,0 +1,1945 @@
+{
+  "scope": "Product full unencoded libass and real H264 output vs native real H264 normalized solid-glyph alpha. Each uses its own no-animation glyph mask. Raw alpha, product color/encoding-chain difference and final native comparison are separated; full glyph/pixel parity is not claimed. The initial .03 final-alpha bound failed at .032425; replaced by separated raw<.003, product encoding<.025 and native two-chain<.045 bounds after isolation.",
+  "metrics": [
+    {
+      "name": "native-loop-measurements",
+      "frames": 120,
+      "maxAbsoluteAlpha": 0.029795378889228563,
+      "meanAbsoluteAlpha": 0.009146452544213594,
+      "maxRawFromFormula": 0.0018819188965738254,
+      "maxEncodedFromRaw": 0.022983160080286225,
+      "rows": [
+        {
+          "frame": 0,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 1,
+          "productAlpha": 0.24688442903905,
+          "nativeAlpha": 0.22934267398470382,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.017541755054346186
+        },
+        {
+          "frame": 2,
+          "productAlpha": 0.44429520237599557,
+          "nativeAlpha": 0.44650618637889267,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.0022109840028970984
+        },
+        {
+          "frame": 3,
+          "productAlpha": 0.6267092931645638,
+          "nativeAlpha": 0.6220546226198548,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": 0.0046546705447090275
+        },
+        {
+          "frame": 4,
+          "productAlpha": 0.7626516650743346,
+          "nativeAlpha": 0.7790287464353676,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.016377081361032997
+        },
+        {
+          "frame": 5,
+          "productAlpha": 0.8896982755018038,
+          "nativeAlpha": 0.8860821939275477,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0036160815742560803
+        },
+        {
+          "frame": 6,
+          "productAlpha": 0.9600202319086689,
+          "nativeAlpha": 0.9659274381483901,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.0059072062397211855
+        },
+        {
+          "frame": 7,
+          "productAlpha": 0.9772435193931888,
+          "nativeAlpha": 0.985640828172508,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.008397308779319212
+        },
+        {
+          "frame": 8,
+          "productAlpha": 0.9871534409870376,
+          "nativeAlpha": 0.9836420917673802,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": 0.003511349219657456
+        },
+        {
+          "frame": 9,
+          "productAlpha": 0.9423059408505967,
+          "nativeAlpha": 0.9494644746069872,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.007158533756390528
+        },
+        {
+          "frame": 10,
+          "productAlpha": 0.8919199292593747,
+          "nativeAlpha": 0.8932885492538154,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.0013686199944407118
+        },
+        {
+          "frame": 11,
+          "productAlpha": 0.7614640841290441,
+          "nativeAlpha": 0.7735589436549922,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.012094859525948132
+        },
+        {
+          "frame": 12,
+          "productAlpha": 0.6292613692504317,
+          "nativeAlpha": 0.6428997050124547,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.013638335762023002
+        },
+        {
+          "frame": 13,
+          "productAlpha": 0.4441313437420893,
+          "nativeAlpha": 0.44852576026830493,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.004394416526215639
+        },
+        {
+          "frame": 14,
+          "productAlpha": 0.2460866521689823,
+          "nativeAlpha": 0.24279188228925597,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.0032947698797263225
+        },
+        {
+          "frame": 15,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 16,
+          "productAlpha": 0.2460866521689823,
+          "nativeAlpha": 0.24188805129116053,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.0041986008778217565
+        },
+        {
+          "frame": 17,
+          "productAlpha": 0.44297681744806994,
+          "nativeAlpha": 0.4457978347274729,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.002821017279402982
+        },
+        {
+          "frame": 18,
+          "productAlpha": 0.6267347563686465,
+          "nativeAlpha": 0.6320131961454503,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.005278439776803756
+        },
+        {
+          "frame": 19,
+          "productAlpha": 0.7606217952457326,
+          "nativeAlpha": 0.7665534796899824,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.005931684444249852
+        },
+        {
+          "frame": 20,
+          "productAlpha": 0.8861654395122883,
+          "nativeAlpha": 0.8857333850845287,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.00043205442775962055
+        },
+        {
+          "frame": 21,
+          "productAlpha": 0.9569129921020657,
+          "nativeAlpha": 0.966440040261786,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.009527048159720275
+        },
+        {
+          "frame": 22,
+          "productAlpha": 0.9763962847306279,
+          "nativeAlpha": 0.9870459869359208,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.010649702205292932
+        },
+        {
+          "frame": 23,
+          "productAlpha": 0.9871338576449663,
+          "nativeAlpha": 0.9872153559732122,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.0000814983282458881
+        },
+        {
+          "frame": 24,
+          "productAlpha": 0.9439928673224309,
+          "nativeAlpha": 0.9515412963117694,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.007548428989338496
+        },
+        {
+          "frame": 25,
+          "productAlpha": 0.8887407218855072,
+          "nativeAlpha": 0.8776528706827772,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.011087851202730037
+        },
+        {
+          "frame": 26,
+          "productAlpha": 0.7602616928426172,
+          "nativeAlpha": 0.7722301344165113,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.011968441573894095
+        },
+        {
+          "frame": 27,
+          "productAlpha": 0.6289616960627731,
+          "nativeAlpha": 0.6244965301494858,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": 0.004465165913287272
+        },
+        {
+          "frame": 28,
+          "productAlpha": 0.4430921253756335,
+          "nativeAlpha": 0.4575070762500045,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.014414950874370946
+        },
+        {
+          "frame": 29,
+          "productAlpha": 0.24542758928875527,
+          "nativeAlpha": 0.24468685702902587,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.0007407322597293986
+        },
+        {
+          "frame": 30,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 31,
+          "productAlpha": 0.24542758928875527,
+          "nativeAlpha": 0.24518374710613808,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.00024384218261719326
+        },
+        {
+          "frame": 32,
+          "productAlpha": 0.44388467570169104,
+          "nativeAlpha": 0.4480496176116943,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.0041649419100032725
+        },
+        {
+          "frame": 33,
+          "productAlpha": 0.6265591920039405,
+          "nativeAlpha": 0.6359314865154253,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.009372294511484802
+        },
+        {
+          "frame": 34,
+          "productAlpha": 0.7578384931813146,
+          "nativeAlpha": 0.7745738642353157,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.016735371054001136
+        },
+        {
+          "frame": 35,
+          "productAlpha": 0.8848299873264946,
+          "nativeAlpha": 0.8938163721464979,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.008986384820003246
+        },
+        {
+          "frame": 36,
+          "productAlpha": 0.9556504469656208,
+          "nativeAlpha": 0.9523336938477389,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": 0.003316753117881932
+        },
+        {
+          "frame": 37,
+          "productAlpha": 0.9749312542083668,
+          "nativeAlpha": 0.991251523459589,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.016320269251222208
+        },
+        {
+          "frame": 38,
+          "productAlpha": 0.9855988141101225,
+          "nativeAlpha": 0.9890471960012663,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.0034483818911438258
+        },
+        {
+          "frame": 39,
+          "productAlpha": 0.9431943453458824,
+          "nativeAlpha": 0.9671309441021998,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.023936598756317373
+        },
+        {
+          "frame": 40,
+          "productAlpha": 0.8877182360189354,
+          "nativeAlpha": 0.8858057881782524,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.001912447840683007
+        },
+        {
+          "frame": 41,
+          "productAlpha": 0.7613553795726834,
+          "nativeAlpha": 0.791150758461912,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.029795378889228563
+        },
+        {
+          "frame": 42,
+          "productAlpha": 0.6291463366883067,
+          "nativeAlpha": 0.6311717875364252,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.0020254508481185596
+        },
+        {
+          "frame": 43,
+          "productAlpha": 0.442175860377153,
+          "nativeAlpha": 0.45520073927627935,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.013024878899126346
+        },
+        {
+          "frame": 44,
+          "productAlpha": 0.24520165464608337,
+          "nativeAlpha": 0.23745395744969333,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.007747697196390041
+        },
+        {
+          "frame": 45,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 46,
+          "productAlpha": 0.24520165464608337,
+          "nativeAlpha": 0.2382925331433697,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.0069091215027136665
+        },
+        {
+          "frame": 47,
+          "productAlpha": 0.4425518691838365,
+          "nativeAlpha": 0.4554694404783402,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.012917571294503716
+        },
+        {
+          "frame": 48,
+          "productAlpha": 0.6269916615241721,
+          "nativeAlpha": 0.6288912333674197,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.0018995718432476272
+        },
+        {
+          "frame": 49,
+          "productAlpha": 0.7587923428624965,
+          "nativeAlpha": 0.7793779564716007,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.02058561360910416
+        },
+        {
+          "frame": 50,
+          "productAlpha": 0.8855009989070259,
+          "nativeAlpha": 0.8825691660171499,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.002931832889876085
+        },
+        {
+          "frame": 51,
+          "productAlpha": 0.9560936341406666,
+          "nativeAlpha": 0.9669233470829344,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.010829712942267755
+        },
+        {
+          "frame": 52,
+          "productAlpha": 0.9751821661161122,
+          "nativeAlpha": 0.9896828252419144,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.014500659125802229
+        },
+        {
+          "frame": 53,
+          "productAlpha": 0.9850946955826438,
+          "nativeAlpha": 0.9892629970123796,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.004168301429735788
+        },
+        {
+          "frame": 54,
+          "productAlpha": 0.9414569838042144,
+          "nativeAlpha": 0.9564685466771725,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.015011562872958129
+        },
+        {
+          "frame": 55,
+          "productAlpha": 0.8878931740622517,
+          "nativeAlpha": 0.8912500374071735,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.003356863344921801
+        },
+        {
+          "frame": 56,
+          "productAlpha": 0.7596071491951759,
+          "nativeAlpha": 0.774237033875404,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.014629884680228078
+        },
+        {
+          "frame": 57,
+          "productAlpha": 0.629773948515993,
+          "nativeAlpha": 0.642759115447564,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.012985166931571035
+        },
+        {
+          "frame": 58,
+          "productAlpha": 0.4433749526776395,
+          "nativeAlpha": 0.4604050504003069,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.017030097722667392
+        },
+        {
+          "frame": 59,
+          "productAlpha": 0.24527700218912285,
+          "nativeAlpha": 0.23790716659216618,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.00736983559695667
+        },
+        {
+          "frame": 60,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 61,
+          "productAlpha": 0.24527700218912285,
+          "nativeAlpha": 0.23816240735251248,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.007114594836610366
+        },
+        {
+          "frame": 62,
+          "productAlpha": 0.4437428463028691,
+          "nativeAlpha": 0.46071455868357536,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.016971712380706272
+        },
+        {
+          "frame": 63,
+          "productAlpha": 0.6269405947336263,
+          "nativeAlpha": 0.6341666211912794,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.007226026457653134
+        },
+        {
+          "frame": 64,
+          "productAlpha": 0.7579982861255105,
+          "nativeAlpha": 0.778031314604133,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.02003302847862254
+        },
+        {
+          "frame": 65,
+          "productAlpha": 0.8842825662339729,
+          "nativeAlpha": 0.8858449904866036,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.0015624242526306453
+        },
+        {
+          "frame": 66,
+          "productAlpha": 0.954632836687108,
+          "nativeAlpha": 0.9589417472775049,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.004308910590396953
+        },
+        {
+          "frame": 67,
+          "productAlpha": 0.974801038751865,
+          "nativeAlpha": 0.9933113967979788,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.018510358046113784
+        },
+        {
+          "frame": 68,
+          "productAlpha": 0.9851197160422959,
+          "nativeAlpha": 0.9932265157765342,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.008106799734238335
+        },
+        {
+          "frame": 69,
+          "productAlpha": 0.9390307551230876,
+          "nativeAlpha": 0.9561236678901286,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.017092912767040946
+        },
+        {
+          "frame": 70,
+          "productAlpha": 0.8865576570845901,
+          "nativeAlpha": 0.8984673232016217,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.011909666117031592
+        },
+        {
+          "frame": 71,
+          "productAlpha": 0.759603607239731,
+          "nativeAlpha": 0.7766367997423194,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.01703319250258839
+        },
+        {
+          "frame": 72,
+          "productAlpha": 0.6293421809076637,
+          "nativeAlpha": 0.6364827914925587,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.007140610584895013
+        },
+        {
+          "frame": 73,
+          "productAlpha": 0.44357559689454307,
+          "nativeAlpha": 0.45511201826264264,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.01153642136809957
+        },
+        {
+          "frame": 74,
+          "productAlpha": 0.24490935693272015,
+          "nativeAlpha": 0.2455652572899161,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": -0.0006559003571959543
+        },
+        {
+          "frame": 75,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 76,
+          "productAlpha": 0.24490935693272015,
+          "nativeAlpha": 0.24595165548081308,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": -0.0010422985480929292
+        },
+        {
+          "frame": 77,
+          "productAlpha": 0.44270937821468903,
+          "nativeAlpha": 0.4542585492943441,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.011549171079655085
+        },
+        {
+          "frame": 78,
+          "productAlpha": 0.6276743842348255,
+          "nativeAlpha": 0.6389217351049753,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.01124735087014983
+        },
+        {
+          "frame": 79,
+          "productAlpha": 0.7604293957940186,
+          "nativeAlpha": 0.7772650519403976,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.016835656146379052
+        },
+        {
+          "frame": 80,
+          "productAlpha": 0.8845497193032705,
+          "nativeAlpha": 0.8907838590799829,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.0062341397767123885
+        },
+        {
+          "frame": 81,
+          "productAlpha": 0.9550759482716413,
+          "nativeAlpha": 0.9559340672521822,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.0008581189805408895
+        },
+        {
+          "frame": 82,
+          "productAlpha": 0.9751098205962851,
+          "nativeAlpha": 0.9939675442058632,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.018857723609578048
+        },
+        {
+          "frame": 83,
+          "productAlpha": 0.9848088284621691,
+          "nativeAlpha": 0.9940939282559276,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.009285099793758467
+        },
+        {
+          "frame": 84,
+          "productAlpha": 0.9435018961448126,
+          "nativeAlpha": 0.9673061509101375,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.023804254765324884
+        },
+        {
+          "frame": 85,
+          "productAlpha": 0.8870916284652014,
+          "nativeAlpha": 0.8876697973519856,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.0005781688867841916
+        },
+        {
+          "frame": 86,
+          "productAlpha": 0.7597420566627778,
+          "nativeAlpha": 0.7890315904039987,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.029289533741220897
+        },
+        {
+          "frame": 87,
+          "productAlpha": 0.629375640508109,
+          "nativeAlpha": 0.6406096122700933,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.011233971761984263
+        },
+        {
+          "frame": 88,
+          "productAlpha": 0.4424963911469515,
+          "nativeAlpha": 0.45400599407224745,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.011509602925295959
+        },
+        {
+          "frame": 89,
+          "productAlpha": 0.24509006685160137,
+          "nativeAlpha": 0.24595559372440473,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": -0.0008655268728033627
+        },
+        {
+          "frame": 90,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 91,
+          "productAlpha": 0.24509006685160137,
+          "nativeAlpha": 0.24545152310752147,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": -0.00036145625592010067
+        },
+        {
+          "frame": 92,
+          "productAlpha": 0.44200799004675967,
+          "nativeAlpha": 0.45503629918419,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.013028309137430305
+        },
+        {
+          "frame": 93,
+          "productAlpha": 0.6270988758675712,
+          "nativeAlpha": 0.6366281708131691,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.009529294945597955
+        },
+        {
+          "frame": 94,
+          "productAlpha": 0.7578088131064964,
+          "nativeAlpha": 0.7767646493757577,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.01895583626926134
+        },
+        {
+          "frame": 95,
+          "productAlpha": 0.8837387788853756,
+          "nativeAlpha": 0.8905877984125276,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.0068490195271520005
+        },
+        {
+          "frame": 96,
+          "productAlpha": 0.9545131283118499,
+          "nativeAlpha": 0.9603339696066665,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.005820841294816637
+        },
+        {
+          "frame": 97,
+          "productAlpha": 0.9730739197246466,
+          "nativeAlpha": 0.9956924048352297,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.022618485110583064
+        },
+        {
+          "frame": 98,
+          "productAlpha": 0.984885995576832,
+          "nativeAlpha": 0.995825355353819,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.010939359776987012
+        },
+        {
+          "frame": 99,
+          "productAlpha": 0.9410055896592352,
+          "nativeAlpha": 0.9588061357835158,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.017800546124280614
+        },
+        {
+          "frame": 100,
+          "productAlpha": 0.8864616679323039,
+          "nativeAlpha": 0.887215712134535,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.00075404420223113
+        },
+        {
+          "frame": 101,
+          "productAlpha": 0.759096853842958,
+          "nativeAlpha": 0.7795917842671098,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.020494930424151847
+        },
+        {
+          "frame": 102,
+          "productAlpha": 0.6290076604937223,
+          "nativeAlpha": 0.6355507705304589,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.006543110036736688
+        },
+        {
+          "frame": 103,
+          "productAlpha": 0.4435170574419,
+          "nativeAlpha": 0.4618097179067228,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.018292660464822807
+        },
+        {
+          "frame": 104,
+          "productAlpha": 0.24491318505224827,
+          "nativeAlpha": 0.24316211812495556,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.0017510669272927104
+        },
+        {
+          "frame": 105,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 106,
+          "productAlpha": 0.24491318505224827,
+          "nativeAlpha": 0.24145580244722128,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.003457382605026982
+        },
+        {
+          "frame": 107,
+          "productAlpha": 0.44290547080287296,
+          "nativeAlpha": 0.4619102290882847,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.01900475828541176
+        },
+        {
+          "frame": 108,
+          "productAlpha": 0.6272031853755597,
+          "nativeAlpha": 0.631103134371111,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.003899948995551239
+        },
+        {
+          "frame": 109,
+          "productAlpha": 0.7578438439097382,
+          "nativeAlpha": 0.7769046739951021,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.019060830085363856
+        },
+        {
+          "frame": 110,
+          "productAlpha": 0.8850027386442695,
+          "nativeAlpha": 0.8836328684172637,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0013698702270057428
+        },
+        {
+          "frame": 111,
+          "productAlpha": 0.9554656551590622,
+          "nativeAlpha": 0.9575449071325726,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.002079251973510332
+        },
+        {
+          "frame": 112,
+          "productAlpha": 0.9738427076331537,
+          "nativeAlpha": 0.9944413615793553,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.02059865394620153
+        },
+        {
+          "frame": 113,
+          "productAlpha": 0.9842754510070135,
+          "nativeAlpha": 0.9943858904767907,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.010110439469777188
+        },
+        {
+          "frame": 114,
+          "productAlpha": 0.940753533095157,
+          "nativeAlpha": 0.9574723975998329,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.016718864504675968
+        },
+        {
+          "frame": 115,
+          "productAlpha": 0.8874884138641899,
+          "nativeAlpha": 0.898185890255725,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.010697476391535177
+        },
+        {
+          "frame": 116,
+          "productAlpha": 0.75960771612402,
+          "nativeAlpha": 0.7828981076084532,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.023290391484433237
+        },
+        {
+          "frame": 117,
+          "productAlpha": 0.6291494089027093,
+          "nativeAlpha": 0.6368414009126654,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.007691992009956072
+        },
+        {
+          "frame": 118,
+          "productAlpha": 0.4447080831548335,
+          "nativeAlpha": 0.46746931782784334,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.022761234673009834
+        },
+        {
+          "frame": 119,
+          "productAlpha": 0.24523848882298163,
+          "nativeAlpha": 0.24647148725967963,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": -0.0012329984366979962
+        }
+      ]
+    },
+    {
+      "name": "native-combo-measurements",
+      "frames": 120,
+      "maxAbsoluteAlpha": 0.032425089763052806,
+      "meanAbsoluteAlpha": 0.009278883937197474,
+      "maxRawFromFormula": 0.0018819188965738254,
+      "maxEncodedFromRaw": 0.02232163386085806,
+      "rows": [
+        {
+          "frame": 0,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 1,
+          "productAlpha": 0.21055526155645574,
+          "nativeAlpha": 0.1950390739674607,
+          "unencodedAlpha": 0.2116949266664284,
+          "formula": 0.20987654320987653,
+          "difference": 0.015516187588995034
+        },
+        {
+          "frame": 2,
+          "productAlpha": 0.380632797120874,
+          "nativeAlpha": 0.3824465032388369,
+          "unencodedAlpha": 0.3960344091583201,
+          "formula": 0.3950617283950617,
+          "difference": -0.0018137061179628877
+        },
+        {
+          "frame": 3,
+          "productAlpha": 0.5477504727808608,
+          "nativeAlpha": 0.5410062818260334,
+          "unencodedAlpha": 0.5568898003909535,
+          "formula": 0.5555555555555556,
+          "difference": 0.006744190954827367
+        },
+        {
+          "frame": 4,
+          "productAlpha": 0.6766244352551818,
+          "nativeAlpha": 0.6864927210246081,
+          "unencodedAlpha": 0.690228493506351,
+          "formula": 0.691358024691358,
+          "difference": -0.009868285769426333
+        },
+        {
+          "frame": 5,
+          "productAlpha": 0.80391523003478,
+          "nativeAlpha": 0.7973075104638764,
+          "unencodedAlpha": 0.8040065468586711,
+          "formula": 0.8024691358024691,
+          "difference": 0.00660771957090367
+        },
+        {
+          "frame": 6,
+          "productAlpha": 0.8867496137918734,
+          "nativeAlpha": 0.8851592284694237,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0015903853224497055
+        },
+        {
+          "frame": 7,
+          "productAlpha": 0.9668292632989682,
+          "nativeAlpha": 0.943635088080128,
+          "unencodedAlpha": 0.9491581193269003,
+          "formula": 0.9506172839506174,
+          "difference": 0.023194175218840263
+        },
+        {
+          "frame": 8,
+          "productAlpha": 0.9823653705435046,
+          "nativeAlpha": 0.9742086801590674,
+          "unencodedAlpha": 0.9884645174797299,
+          "formula": 0.9876543209876543,
+          "difference": 0.008156690384437226
+        },
+        {
+          "frame": 9,
+          "productAlpha": 0.9947340787320974,
+          "nativeAlpha": 0.9862758269666768,
+          "unencodedAlpha": 1,
+          "formula": 1,
+          "difference": 0.008458251765420588
+        },
+        {
+          "frame": 10,
+          "productAlpha": 0.24105891660610607,
+          "nativeAlpha": 0.2418019585024571,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": -0.000743041896351021
+        },
+        {
+          "frame": 11,
+          "productAlpha": 0.46967712506042114,
+          "nativeAlpha": 0.450004116324253,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": 0.01967300873616812
+        },
+        {
+          "frame": 12,
+          "productAlpha": 0.626505333763753,
+          "nativeAlpha": 0.6435618375680846,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.017056503804331657
+        },
+        {
+          "frame": 13,
+          "productAlpha": 0.77725959101602,
+          "nativeAlpha": 0.772316497396563,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": 0.004943093619456995
+        },
+        {
+          "frame": 14,
+          "productAlpha": 0.8807775691503629,
+          "nativeAlpha": 0.8884057903970966,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.00762822124673368
+        },
+        {
+          "frame": 15,
+          "productAlpha": 0.9804620878268023,
+          "nativeAlpha": 0.9541271667043365,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": 0.026334921122465826
+        },
+        {
+          "frame": 16,
+          "productAlpha": 0.9860509371636155,
+          "nativeAlpha": 0.9897762131970215,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.0037252760334059998
+        },
+        {
+          "frame": 17,
+          "productAlpha": 0.9893528711339206,
+          "nativeAlpha": 0.9889802458602079,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": 0.00037262527371262344
+        },
+        {
+          "frame": 18,
+          "productAlpha": 0.9469177504168439,
+          "nativeAlpha": 0.9684377040891373,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.021519953672293424
+        },
+        {
+          "frame": 19,
+          "productAlpha": 0.8825798791402732,
+          "nativeAlpha": 0.8866932275678853,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.004113348427612018
+        },
+        {
+          "frame": 20,
+          "productAlpha": 0.7608676965823608,
+          "nativeAlpha": 0.7932927863454136,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.032425089763052806
+        },
+        {
+          "frame": 21,
+          "productAlpha": 0.6361102368408418,
+          "nativeAlpha": 0.6292334511790638,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": 0.006876785661777962
+        },
+        {
+          "frame": 22,
+          "productAlpha": 0.44682621030615305,
+          "nativeAlpha": 0.45284450696690437,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.006018296660751321
+        },
+        {
+          "frame": 23,
+          "productAlpha": 0.24463609722987337,
+          "nativeAlpha": 0.23278487082376798,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.011851226406105392
+        },
+        {
+          "frame": 24,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 25,
+          "productAlpha": 0.24463609722987337,
+          "nativeAlpha": 0.23368075164613056,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.01095534558374281
+        },
+        {
+          "frame": 26,
+          "productAlpha": 0.443548897245648,
+          "nativeAlpha": 0.45228984506695896,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.008740947821310963
+        },
+        {
+          "frame": 27,
+          "productAlpha": 0.6271319953107102,
+          "nativeAlpha": 0.6238435840996976,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": 0.003288411211012532
+        },
+        {
+          "frame": 28,
+          "productAlpha": 0.7590149785192281,
+          "nativeAlpha": 0.77721532035708,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.018200341837851908
+        },
+        {
+          "frame": 29,
+          "productAlpha": 0.8857314635811282,
+          "nativeAlpha": 0.8905808225631718,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.004849358982043639
+        },
+        {
+          "frame": 30,
+          "productAlpha": 0.955987942406163,
+          "nativeAlpha": 0.9583305990105347,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.002342656604371718
+        },
+        {
+          "frame": 31,
+          "productAlpha": 0.9749437914348045,
+          "nativeAlpha": 0.988965606401701,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.014021814966896473
+        },
+        {
+          "frame": 32,
+          "productAlpha": 0.9867801696367727,
+          "nativeAlpha": 0.9890960842600726,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.0023159146232998307
+        },
+        {
+          "frame": 33,
+          "productAlpha": 0.941233851409829,
+          "nativeAlpha": 0.9514873481058952,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.010253496696066233
+        },
+        {
+          "frame": 34,
+          "productAlpha": 0.8878624303209355,
+          "nativeAlpha": 0.8818668813896416,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.005995548931293837
+        },
+        {
+          "frame": 35,
+          "productAlpha": 0.7597269439595913,
+          "nativeAlpha": 0.7751239165071071,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.01539697254751582
+        },
+        {
+          "frame": 36,
+          "productAlpha": 0.6294123882958501,
+          "nativeAlpha": 0.6295013581823131,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.00008896988646300841
+        },
+        {
+          "frame": 37,
+          "productAlpha": 0.4439156462145448,
+          "nativeAlpha": 0.4597938202571706,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.01587817404262576
+        },
+        {
+          "frame": 38,
+          "productAlpha": 0.2450834580810761,
+          "nativeAlpha": 0.23634775313173265,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.008735704949343448
+        },
+        {
+          "frame": 39,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 40,
+          "productAlpha": 0.2450834580810761,
+          "nativeAlpha": 0.23657640870093105,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.008507049380145043
+        },
+        {
+          "frame": 41,
+          "productAlpha": 0.44371690795842184,
+          "nativeAlpha": 0.4600566509381187,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.01633974297969687
+        },
+        {
+          "frame": 42,
+          "productAlpha": 0.6271486738173708,
+          "nativeAlpha": 0.6314486517922508,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.00429997797488002
+        },
+        {
+          "frame": 43,
+          "productAlpha": 0.7586315510436706,
+          "nativeAlpha": 0.7765243510157332,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.017892799972062612
+        },
+        {
+          "frame": 44,
+          "productAlpha": 0.8840842707222806,
+          "nativeAlpha": 0.8817799862145099,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0023042845077706486
+        },
+        {
+          "frame": 45,
+          "productAlpha": 0.9556123493472986,
+          "nativeAlpha": 0.9573618402126848,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.0017494908653862273
+        },
+        {
+          "frame": 46,
+          "productAlpha": 0.974470800000527,
+          "nativeAlpha": 0.9907377668922505,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.016266966891723467
+        },
+        {
+          "frame": 47,
+          "productAlpha": 0.9855017882879499,
+          "nativeAlpha": 0.9906418571512261,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.005140068863276226
+        },
+        {
+          "frame": 48,
+          "productAlpha": 0.9426133890624027,
+          "nativeAlpha": 0.9528004453080925,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.01018705624568983
+        },
+        {
+          "frame": 49,
+          "productAlpha": 0.8873081250924499,
+          "nativeAlpha": 0.9003460782728779,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.013037953180427997
+        },
+        {
+          "frame": 50,
+          "productAlpha": 0.7602235898249727,
+          "nativeAlpha": 0.7730895639697053,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.012865974144732562
+        },
+        {
+          "frame": 51,
+          "productAlpha": 0.6292418291029391,
+          "nativeAlpha": 0.6341180276866712,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.0048761985837321165
+        },
+        {
+          "frame": 52,
+          "productAlpha": 0.4440913995555321,
+          "nativeAlpha": 0.45078201359119796,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.006690614035665843
+        },
+        {
+          "frame": 53,
+          "productAlpha": 0.24506893390402298,
+          "nativeAlpha": 0.24463320357734983,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.00043573032667315603
+        },
+        {
+          "frame": 54,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 55,
+          "productAlpha": 0.24506893390402298,
+          "nativeAlpha": 0.24546752171038655,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": -0.00039858780636356506
+        },
+        {
+          "frame": 56,
+          "productAlpha": 0.44335192456792516,
+          "nativeAlpha": 0.44925789694599033,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.005905972378065172
+        },
+        {
+          "frame": 57,
+          "productAlpha": 0.6273656671822732,
+          "nativeAlpha": 0.6379271525643226,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.010561485382049485
+        },
+        {
+          "frame": 58,
+          "productAlpha": 0.7583966805225516,
+          "nativeAlpha": 0.7823230012298209,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.0239263207072693
+        },
+        {
+          "frame": 59,
+          "productAlpha": 0.8841916470453494,
+          "nativeAlpha": 0.8830570497159859,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0011345973293634959
+        },
+        {
+          "frame": 60,
+          "productAlpha": 0.9543410195134316,
+          "nativeAlpha": 0.967446642223629,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.013105622710197329
+        },
+        {
+          "frame": 61,
+          "productAlpha": 0.9749873639659637,
+          "nativeAlpha": 0.9903423623230774,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.015354998357113625
+        },
+        {
+          "frame": 62,
+          "productAlpha": 0.9861109236346415,
+          "nativeAlpha": 0.9899064044888117,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.0037954808541702523
+        },
+        {
+          "frame": 63,
+          "productAlpha": 0.946823980386033,
+          "nativeAlpha": 0.957194771895662,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.010370791509629051
+        },
+        {
+          "frame": 64,
+          "productAlpha": 0.8862541881733373,
+          "nativeAlpha": 0.8904026764008695,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.00414848822753211
+        },
+        {
+          "frame": 65,
+          "productAlpha": 0.7597648418029875,
+          "nativeAlpha": 0.7768865056738341,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.01712166387084657
+        },
+        {
+          "frame": 66,
+          "productAlpha": 0.6295798104824906,
+          "nativeAlpha": 0.6426072269717449,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.013027416489254318
+        },
+        {
+          "frame": 67,
+          "productAlpha": 0.4418375982328407,
+          "nativeAlpha": 0.455238123933742,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.013400525700901333
+        },
+        {
+          "frame": 68,
+          "productAlpha": 0.2447254614136674,
+          "nativeAlpha": 0.24605504870342337,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": -0.0013295872897559624
+        },
+        {
+          "frame": 69,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 70,
+          "productAlpha": 0.2447254614136674,
+          "nativeAlpha": 0.24538841295865543,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": -0.0006629515449880219
+        },
+        {
+          "frame": 71,
+          "productAlpha": 0.4434980032334166,
+          "nativeAlpha": 0.45523985970846437,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.011741856475047774
+        },
+        {
+          "frame": 72,
+          "productAlpha": 0.6272743430444753,
+          "nativeAlpha": 0.6368207026178635,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.00954635957338823
+        },
+        {
+          "frame": 73,
+          "productAlpha": 0.7601540357547876,
+          "nativeAlpha": 0.7759793423157765,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.015825306560988905
+        },
+        {
+          "frame": 74,
+          "productAlpha": 0.8843933009355276,
+          "nativeAlpha": 0.8905946186971676,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.006201317761640013
+        },
+        {
+          "frame": 75,
+          "productAlpha": 0.955202319410648,
+          "nativeAlpha": 0.9595895596916757,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.00438724028102766
+        },
+        {
+          "frame": 76,
+          "productAlpha": 0.9740783880526215,
+          "nativeAlpha": 0.9932683053717356,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.019189917319114125
+        },
+        {
+          "frame": 77,
+          "productAlpha": 0.9857009530905365,
+          "nativeAlpha": 0.9933506400444129,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.007649686953876356
+        },
+        {
+          "frame": 78,
+          "productAlpha": 0.9428772863403386,
+          "nativeAlpha": 0.9568261080823525,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.01394882174201384
+        },
+        {
+          "frame": 79,
+          "productAlpha": 0.8870167128679479,
+          "nativeAlpha": 0.8849507799380304,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": 0.0020659329299175244
+        },
+        {
+          "frame": 80,
+          "productAlpha": 0.7615492638380366,
+          "nativeAlpha": 0.7783604731672767,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.016811209329240184
+        },
+        {
+          "frame": 81,
+          "productAlpha": 0.628991802684055,
+          "nativeAlpha": 0.6342390734107027,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.005247270726647768
+        },
+        {
+          "frame": 82,
+          "productAlpha": 0.44477694611176116,
+          "nativeAlpha": 0.46048362695695805,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.015706680845196885
+        },
+        {
+          "frame": 83,
+          "productAlpha": 0.24503575506833847,
+          "nativeAlpha": 0.2413382528354842,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.003697502232854255
+        },
+        {
+          "frame": 84,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 85,
+          "productAlpha": 0.24503575506833847,
+          "nativeAlpha": 0.24133900609621275,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.003696748972125713
+        },
+        {
+          "frame": 86,
+          "productAlpha": 0.4430974761040572,
+          "nativeAlpha": 0.4612671900546004,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.018169713950543176
+        },
+        {
+          "frame": 87,
+          "productAlpha": 0.6269462640220671,
+          "nativeAlpha": 0.6401010957773882,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.013154831755321061
+        },
+        {
+          "frame": 88,
+          "productAlpha": 0.7581565834574223,
+          "nativeAlpha": 0.7773750689448492,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.019218485487426884
+        },
+        {
+          "frame": 89,
+          "productAlpha": 0.8832338612581928,
+          "nativeAlpha": 0.8884759009581681,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.005242039699975276
+        },
+        {
+          "frame": 90,
+          "productAlpha": 0.9534533169300481,
+          "nativeAlpha": 0.9570259596163004,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.0035726426862523475
+        },
+        {
+          "frame": 91,
+          "productAlpha": 0.9758106904292714,
+          "nativeAlpha": 0.9938075909276787,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.017996900498407298
+        },
+        {
+          "frame": 92,
+          "productAlpha": 0.9850901547525688,
+          "nativeAlpha": 0.9937977002868081,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.008707545534239358
+        },
+        {
+          "frame": 93,
+          "productAlpha": 0.9452919010791453,
+          "nativeAlpha": 0.9673848420934212,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.022092941014275946
+        },
+        {
+          "frame": 94,
+          "productAlpha": 0.8854359424723371,
+          "nativeAlpha": 0.8886269788599424,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.003191036387605206
+        },
+        {
+          "frame": 95,
+          "productAlpha": 0.7585982318256057,
+          "nativeAlpha": 0.7886899702883674,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222224,
+          "difference": -0.030091738462761697
+        },
+        {
+          "frame": 96,
+          "productAlpha": 0.6289221676240349,
+          "nativeAlpha": 0.6366194837519409,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6399999999999999,
+          "difference": -0.007697316127906029
+        },
+        {
+          "frame": 97,
+          "productAlpha": 0.44201474999831003,
+          "nativeAlpha": 0.4595561337468462,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.4622222222222221,
+          "difference": -0.017541383748536143
+        },
+        {
+          "frame": 98,
+          "productAlpha": 0.2446945502933592,
+          "nativeAlpha": 0.24270659188698077,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888883,
+          "difference": 0.001987958406378443
+        },
+        {
+          "frame": 99,
+          "productAlpha": 0,
+          "nativeAlpha": 0,
+          "unencodedAlpha": 0,
+          "formula": 0,
+          "difference": 0
+        },
+        {
+          "frame": 100,
+          "productAlpha": 0.2446945502933592,
+          "nativeAlpha": 0.24318132627353362,
+          "unencodedAlpha": 0.24700696999231506,
+          "formula": 0.24888888888888888,
+          "difference": 0.001513224019825593
+        },
+        {
+          "frame": 101,
+          "productAlpha": 0.4426205053692265,
+          "nativeAlpha": 0.45951201068090963,
+          "unencodedAlpha": 0.4627048935318916,
+          "formula": 0.46222222222222226,
+          "difference": -0.016891505311683153
+        },
+        {
+          "frame": 102,
+          "productAlpha": 0.6264173842024079,
+          "nativeAlpha": 0.6353431980740433,
+          "unencodedAlpha": 0.6392661328570034,
+          "formula": 0.6400000000000001,
+          "difference": -0.00892581387163538
+        },
+        {
+          "frame": 103,
+          "productAlpha": 0.7600389060048607,
+          "nativeAlpha": 0.7820624057682086,
+          "unencodedAlpha": 0.7804782173182804,
+          "formula": 0.7822222222222223,
+          "difference": -0.022023499763347942
+        },
+        {
+          "frame": 104,
+          "productAlpha": 0.8839950901154455,
+          "nativeAlpha": 0.8880897893338526,
+          "unencodedAlpha": 0.8902812185552871,
+          "formula": 0.888888888888889,
+          "difference": -0.004094699218407105
+        },
+        {
+          "frame": 105,
+          "productAlpha": 0.954696699871563,
+          "nativeAlpha": 0.9665930831915477,
+          "unencodedAlpha": 0.9608868324317147,
+          "formula": 0.96,
+          "difference": -0.01189638331998466
+        },
+        {
+          "frame": 106,
+          "productAlpha": 0.9749285761444938,
+          "nativeAlpha": 0.9951120665695806,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.020183490425086825
+        },
+        {
+          "frame": 107,
+          "productAlpha": 0.9847212730513538,
+          "nativeAlpha": 0.9950728151355298,
+          "unencodedAlpha": 0.9960570798049329,
+          "formula": 0.9955555555555555,
+          "difference": -0.01035154208417599
+        },
+        {
+          "frame": 108,
+          "productAlpha": 0.9847253927342875,
+          "nativeAlpha": 0.997459832883376,
+          "unencodedAlpha": 1,
+          "formula": 1,
+          "difference": -0.012734440149088533
+        },
+        {
+          "frame": 109,
+          "productAlpha": 0.8352673291951919,
+          "nativeAlpha": 0.838587213652949,
+          "unencodedAlpha": 0.8393113617072485,
+          "formula": 0.8402777777777777,
+          "difference": -0.003319884457757105
+        },
+        {
+          "frame": 110,
+          "productAlpha": 0.7066158673945443,
+          "nativeAlpha": 0.6985782080934345,
+          "unencodedAlpha": 0.694161518719146,
+          "formula": 0.6944444444444445,
+          "difference": 0.008037659301109779
+        },
+        {
+          "frame": 111,
+          "productAlpha": 0.5764235955828101,
+          "nativeAlpha": 0.5622044797479917,
+          "unencodedAlpha": 0.5608068212195432,
+          "formula": 0.5625,
+          "difference": 0.014219115834818385
+        },
+        {
+          "frame": 112,
+          "productAlpha": 0.4572051548323708,
+          "nativeAlpha": 0.4497552782800994,
+          "unencodedAlpha": 0.4430874058105981,
+          "formula": 0.44444444444444453,
+          "difference": 0.007449876552271362
+        },
+        {
+          "frame": 113,
+          "productAlpha": 0.3365964425765765,
+          "nativeAlpha": 0.3454465327551948,
+          "unencodedAlpha": 0.3411297547819389,
+          "formula": 0.3402777777777777,
+          "difference": -0.00885009017861832
+        },
+        {
+          "frame": 114,
+          "productAlpha": 0.2600109915084426,
+          "nativeAlpha": 0.2555064485054386,
+          "unencodedAlpha": 0.25086297711798733,
+          "formula": 0.25,
+          "difference": 0.0045045430030040134
+        },
+        {
+          "frame": 115,
+          "productAlpha": 0.18153630676029495,
+          "nativeAlpha": 0.1717346689846901,
+          "unencodedAlpha": 0.17244620105367103,
+          "formula": 0.17361111111111108,
+          "difference": 0.00980163777560486
+        },
+        {
+          "frame": 116,
+          "productAlpha": 0.12093245022305356,
+          "nativeAlpha": 0.10911826615100512,
+          "unencodedAlpha": 0.10967476804954131,
+          "formula": 0.11111111111111113,
+          "difference": 0.011814184072048442
+        },
+        {
+          "frame": 117,
+          "productAlpha": 0.06285828958064478,
+          "nativeAlpha": 0.06579248575753856,
+          "unencodedAlpha": 0.06261766455126618,
+          "formula": 0.0625,
+          "difference": -0.0029341961768937774
+        },
+        {
+          "frame": 118,
+          "productAlpha": 0.03143217111048532,
+          "nativeAlpha": 0.02447641317546353,
+          "unencodedAlpha": 0.027303083226679827,
+          "formula": 0.027777777777777766,
+          "difference": 0.006955757935021786
+        },
+        {
+          "frame": 119,
+          "productAlpha": 0.007922512036007346,
+          "nativeAlpha": 0.006471410296083458,
+          "unencodedAlpha": 0.007588482251344062,
+          "formula": 0.006944444444444451,
+          "difference": 0.0014511017399238884
+        }
+      ]
+    }
+  ]
+}

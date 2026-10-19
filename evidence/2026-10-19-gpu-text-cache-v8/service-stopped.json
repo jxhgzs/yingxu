@@ -1,0 +1,12 @@
+{
+  "pid": 26173,
+  "service": "http://127.0.0.1:8838",
+  "vite": "http://127.0.0.1:8839",
+  "startedAt": "2026-10-19T11:54:17.065Z",
+  "stoppedAt": "2026-10-19T11:57:49.404622+00:00",
+  "stopReason": "Parent closed all probe tabs; SIGTERM own PID 26173 after complete raw/hash archiving",
+  "portsVerifiedFree": [
+    8838,
+    8839
+  ]
+}

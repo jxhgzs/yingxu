@@ -1,0 +1,502 @@
+[
+  {
+    "kind": "circle",
+    "native": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+    "nativeSha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+    "product": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/transitions-v8/product-circle/render.mp4",
+    "productSha256": "84b709be92bc65642169e7ab9b811ed0599f6cb31747af75cee9a3ae4930c23b",
+    "encoding": "native H264 MOV vs product libx264 H264 MP4; both yuv420p/1280x720/30fps/120frames",
+    "windowFrames": [
+      45,
+      75
+    ],
+    "allWindowRGBMAE": 1.1926636821423238,
+    "allWindowRGBMax": 239.0,
+    "outsideEdge3pxMAE": 1.079675711008015,
+    "outsideEdge3pxMax": 67.0,
+    "baselineFirstRGBMAE": 1.2886932146990742,
+    "baselineLastRGBMAE": 0.9007490596064814,
+    "lumaMaskSideChecks": [
+      {
+        "output": "native",
+        "evaluatedSamplesWithEndpointLumaDeltaOver32": 20802581,
+        "maskSideMismatches": 0
+      },
+      {
+        "output": "product",
+        "evaluatedSamplesWithEndpointLumaDeltaOver32": 20793994,
+        "maskSideMismatches": 293
+      }
+    ],
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 1.1953345630787038,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.1950606647221547,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 46,
+        "mae": 1.2084074797453703,
+        "max": 239.0,
+        "outsideEdge3pxMAE": 1.19640783124504,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 47,
+        "mae": 1.2296553096064815,
+        "max": 215.0,
+        "outsideEdge3pxMAE": 1.1994943454542555,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 48,
+        "mae": 1.2464098668981483,
+        "max": 208.0,
+        "outsideEdge3pxMAE": 1.2035198503568392,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 49,
+        "mae": 1.260332392939815,
+        "max": 208.0,
+        "outsideEdge3pxMAE": 1.2010320434605775,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 50,
+        "mae": 1.262445023148148,
+        "max": 221.0,
+        "outsideEdge3pxMAE": 1.194943923154437,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 51,
+        "mae": 1.2856470630787038,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 1.1947373515088535,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 52,
+        "mae": 1.2952745225694444,
+        "max": 211.0,
+        "outsideEdge3pxMAE": 1.191425316094215,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 53,
+        "mae": 1.313919994212963,
+        "max": 223.0,
+        "outsideEdge3pxMAE": 1.1867334928878641,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 54,
+        "mae": 1.3067006655092592,
+        "max": 207.0,
+        "outsideEdge3pxMAE": 1.1815116438636137,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 55,
+        "mae": 1.3107718460648148,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 1.1603074463452203,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 56,
+        "mae": 1.325173972800926,
+        "max": 224.0,
+        "outsideEdge3pxMAE": 1.1643198617882968,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 57,
+        "mae": 1.319199580439815,
+        "max": 225.0,
+        "outsideEdge3pxMAE": 1.1407617290458618,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 58,
+        "mae": 1.310625361689815,
+        "max": 217.0,
+        "outsideEdge3pxMAE": 1.1222298935493422,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 59,
+        "mae": 1.3267353877314816,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 1.1180364191281125,
+        "outsideEdge3pxMax": 65.0
+      },
+      {
+        "frame": 60,
+        "mae": 1.2837669994212964,
+        "max": 218.0,
+        "outsideEdge3pxMAE": 1.1005009654250288,
+        "outsideEdge3pxMax": 65.0
+      },
+      {
+        "frame": 61,
+        "mae": 1.2473148148148148,
+        "max": 218.0,
+        "outsideEdge3pxMAE": 1.076028914590096,
+        "outsideEdge3pxMax": 65.0
+      },
+      {
+        "frame": 62,
+        "mae": 1.2172923900462962,
+        "max": 221.0,
+        "outsideEdge3pxMAE": 1.0613873158025666,
+        "outsideEdge3pxMax": 65.0
+      },
+      {
+        "frame": 63,
+        "mae": 1.1961986400462963,
+        "max": 218.0,
+        "outsideEdge3pxMAE": 1.0415031933972891,
+        "outsideEdge3pxMax": 65.0
+      },
+      {
+        "frame": 64,
+        "mae": 1.1777915219907407,
+        "max": 223.0,
+        "outsideEdge3pxMAE": 1.0319358956923064,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 65,
+        "mae": 1.164796730324074,
+        "max": 224.0,
+        "outsideEdge3pxMAE": 1.0092580001813072,
+        "outsideEdge3pxMax": 64.0
+      },
+      {
+        "frame": 66,
+        "mae": 1.1482085503472221,
+        "max": 227.0,
+        "outsideEdge3pxMAE": 1.003068592321648,
+        "outsideEdge3pxMax": 64.0
+      },
+      {
+        "frame": 67,
+        "mae": 1.1324775752314815,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 0.9931471606324258,
+        "outsideEdge3pxMax": 64.0
+      },
+      {
+        "frame": 68,
+        "mae": 1.119062138310185,
+        "max": 225.0,
+        "outsideEdge3pxMAE": 0.9806800990989015,
+        "outsideEdge3pxMax": 64.0
+      },
+      {
+        "frame": 69,
+        "mae": 1.1140223524305555,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 0.9678828959175502,
+        "outsideEdge3pxMax": 64.0
+      },
+      {
+        "frame": 70,
+        "mae": 1.0943326822916666,
+        "max": 222.0,
+        "outsideEdge3pxMAE": 0.9585103475690046,
+        "outsideEdge3pxMax": 63.0
+      },
+      {
+        "frame": 71,
+        "mae": 1.0851613136574074,
+        "max": 223.0,
+        "outsideEdge3pxMAE": 0.9454270658430621,
+        "outsideEdge3pxMax": 63.0
+      },
+      {
+        "frame": 72,
+        "mae": 1.0078993055555556,
+        "max": 224.0,
+        "outsideEdge3pxMAE": 0.9281879219040968,
+        "outsideEdge3pxMax": 63.0
+      },
+      {
+        "frame": 73,
+        "mae": 0.9589529079861111,
+        "max": 223.0,
+        "outsideEdge3pxMAE": 0.9141764395922153,
+        "outsideEdge3pxMax": 57.0
+      },
+      {
+        "frame": 74,
+        "mae": 0.9266670283564815,
+        "max": 214.0,
+        "outsideEdge3pxMAE": 0.9059012758927989,
+        "outsideEdge3pxMax": 57.0
+      },
+      {
+        "frame": 75,
+        "mae": 0.901996166087963,
+        "max": 52.0,
+        "outsideEdge3pxMAE": 0.9018291447834831,
+        "outsideEdge3pxMax": 52.0
+      }
+    ],
+    "limits": "All RGB maximum retained. Endpoint luma classification checks only samples with endpoint contrast >32 and reports its denominator; it does not replace full RGB comparison. Container bytes not compared."
+  },
+  {
+    "kind": "wipe",
+    "native": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+    "nativeSha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+    "product": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/transitions-v8/product-wipe/render.mp4",
+    "productSha256": "6241ef775d944a0c6e44e398473bab060ddb46d09aa35888c7e490ec1a29f13f",
+    "encoding": "native H264 MOV vs product libx264 H264 MP4; both yuv420p/1280x720/30fps/120frames",
+    "windowFrames": [
+      45,
+      75
+    ],
+    "allWindowRGBMAE": 1.1802613267249105,
+    "allWindowRGBMax": 150.0,
+    "outsideEdge3pxMAE": 1.1216579446473867,
+    "outsideEdge3pxMax": 67.0,
+    "baselineFirstRGBMAE": 1.2886932146990742,
+    "baselineLastRGBMAE": 0.9239691840277777,
+    "lumaMaskSideChecks": [
+      {
+        "output": "native",
+        "evaluatedSamplesWithEndpointLumaDeltaOver32": 20802581,
+        "maskSideMismatches": 0
+      },
+      {
+        "output": "product",
+        "evaluatedSamplesWithEndpointLumaDeltaOver32": 20799016,
+        "maskSideMismatches": 0
+      }
+    ],
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 1.1961675347222223,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.197866092404072,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 46,
+        "mae": 1.2917621527777778,
+        "max": 121.0,
+        "outsideEdge3pxMAE": 1.2073398162683877,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 47,
+        "mae": 1.2907024016203703,
+        "max": 121.0,
+        "outsideEdge3pxMAE": 1.2054912349555207,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 48,
+        "mae": 1.1954607928240741,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.1987684603756033,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 49,
+        "mae": 1.2891691984953704,
+        "max": 121.0,
+        "outsideEdge3pxMAE": 1.204572213500785,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 50,
+        "mae": 1.2854756221064816,
+        "max": 113.0,
+        "outsideEdge3pxMAE": 1.202492514099657,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 51,
+        "mae": 1.189761646412037,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.1931315047386475,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 52,
+        "mae": 1.2692578125,
+        "max": 104.0,
+        "outsideEdge3pxMAE": 1.1922150270364555,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 53,
+        "mae": 1.280849609375,
+        "max": 109.0,
+        "outsideEdge3pxMAE": 1.1987869934298505,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 54,
+        "mae": 1.188480179398148,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.1918432757718471,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 55,
+        "mae": 1.2671614583333333,
+        "max": 107.0,
+        "outsideEdge3pxMAE": 1.191927219605791,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 56,
+        "mae": 1.2655305989583334,
+        "max": 105.0,
+        "outsideEdge3pxMAE": 1.189337679516251,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 57,
+        "mae": 1.1858308015046297,
+        "max": 66.0,
+        "outsideEdge3pxMAE": 1.1882278766207337,
+        "outsideEdge3pxMax": 66.0
+      },
+      {
+        "frame": 58,
+        "mae": 1.2558785445601852,
+        "max": 107.0,
+        "outsideEdge3pxMAE": 1.1794770044770044,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 59,
+        "mae": 1.2656929976851852,
+        "max": 110.0,
+        "outsideEdge3pxMAE": 1.1841426100354673,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 60,
+        "mae": 1.1821397569444445,
+        "max": 67.0,
+        "outsideEdge3pxMAE": 1.1490311936740507,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 61,
+        "mae": 1.2805110677083333,
+        "max": 149.0,
+        "outsideEdge3pxMAE": 1.1774034827606257,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 62,
+        "mae": 1.2590292245370371,
+        "max": 149.0,
+        "outsideEdge3pxMAE": 1.155717265538694,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 63,
+        "mae": 1.1250227864583333,
+        "max": 67.0,
+        "outsideEdge3pxMAE": 1.126616736438165,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 64,
+        "mae": 1.2312456597222223,
+        "max": 146.0,
+        "outsideEdge3pxMAE": 1.1303502383859527,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 65,
+        "mae": 1.2091283275462963,
+        "max": 146.0,
+        "outsideEdge3pxMAE": 1.1074106779463921,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 66,
+        "mae": 1.0762926793981482,
+        "max": 67.0,
+        "outsideEdge3pxMAE": 1.0776822053607769,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 67,
+        "mae": 1.152250072337963,
+        "max": 142.0,
+        "outsideEdge3pxMAE": 1.0582770073841503,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 68,
+        "mae": 1.1598625578703703,
+        "max": 146.0,
+        "outsideEdge3pxMAE": 1.0579172480958194,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 69,
+        "mae": 1.0263031684027777,
+        "max": 67.0,
+        "outsideEdge3pxMAE": 1.027522312343741,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 70,
+        "mae": 1.1004235387731482,
+        "max": 143.0,
+        "outsideEdge3pxMAE": 1.0079379615093902,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 71,
+        "mae": 1.0884620949074073,
+        "max": 146.0,
+        "outsideEdge3pxMAE": 0.9892711785568928,
+        "outsideEdge3pxMax": 67.0
+      },
+      {
+        "frame": 72,
+        "mae": 0.9758966290509259,
+        "max": 62.0,
+        "outsideEdge3pxMAE": 0.9769452439095296,
+        "outsideEdge3pxMax": 62.0
+      },
+      {
+        "frame": 73,
+        "mae": 1.0524862557870371,
+        "max": 144.0,
+        "outsideEdge3pxMAE": 0.9582337635909064,
+        "outsideEdge3pxMax": 62.0
+      },
+      {
+        "frame": 74,
+        "mae": 1.0296911168981482,
+        "max": 150.0,
+        "outsideEdge3pxMAE": 0.9387199110413396,
+        "outsideEdge3pxMax": 62.0
+      },
+      {
+        "frame": 75,
+        "mae": 0.9221748408564815,
+        "max": 60.0,
+        "outsideEdge3pxMAE": 0.906740334696482,
+        "outsideEdge3pxMax": 60.0
+      }
+    ],
+    "limits": "All RGB maximum retained. Endpoint luma classification checks only samples with endpoint contrast >32 and reports its denominator; it does not replace full RGB comparison. Container bytes not compared."
+  }
+]

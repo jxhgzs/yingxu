@@ -92,3 +92,14 @@
 - 转场端帧延展需实际源时钟证据。平均30fps不等于CFR30；逐帧整数PTS、首PTS0、帧间隔、总长一致后才赋有界标记，正式render再次证明，不能信任导入JSON。实际采样钳制与属性时钟分开，不改原source/target。
 - FFmpeg overlay默认YUV可破坏已有彩色门槛；RGB效果栈叠加显式format=rgb。GPU对未编码参考、正式编码前、编码后与原生分别报误差；相同全时序重编码复现才可归因编码，PNG→float输入残差另列，不凭大边缘误差拟合gamma。
 - 本机Chromium的cancelAndHoldAtTime可保留短active curve，文字buffering同一AudioContext.currentTime重新setValueCurveAtTime会重叠。已有解析增益时清完整automation后setValueAtTime再排窗口；真实原生AudioParam压力验证不能只用理想mock。细节和240次实测见0.7 QA，未作听审。
+
+## 0.8循环、缓存与分层取证经验
+
+- 循环的duration是周期，不能计进入场/出场窗口总长。原生fade/flash/fade共存时阶段替换alpha，不能简单相乘；精确入场端点仍属入场。新循环种类和短片段修复分支须独立取证。
+- libass取整数毫秒可使3699.999ms选择前一事件。按原输出整数帧定位已经生成的ASS厘秒区间内部，随后恢复原帧PTS；动画/属性仍按原有理数时间评估。不能固定全时钟加1ms而跨入下一事件。
+- PNG解码按内容URL共用，合成槽仍按clip独立。预热达到预算应停止、不驱逐前段；前台加入返回undefined的warm pending后，应在同epoch、未取消且保留pinned约束下重试一次前台LRU路径。
+- 原生UI应用后先核对实际草稿的资源ID、is_overlap及参数，再导出。输入失焦可能触发全局快捷键，错误命名的中性导出必须保留为失败，不能据文件名认定参数生效。正常UI的false硬切与受控true效果分别记录。
+- GPU性能把首次服务端冷生成、浏览器预热、播放墙钟、请求/缓冲、输出与解码丢帧分别计量；重复测量保留所有轮次与并发条件，不能只选最好一轮，也不能将准备代价藏在点击前。
+- preserveDrawingBuffer=false时跨presentation读取可得到已清空RGB。恢复像素在自动ready回调内同步捕获，另用同帧确认seek立即读取；保留延迟读取失败，不为通过QA开启持久缓冲。0.8两种同步读取均与恢复前逐字节一致。
+- 极端黑白场斜率可将不到一个码值的输入差放大数十倍。核心连续数学与CPU输入量化分别建契约；新路径仅在实际BW激活时最近RGB8取样，alpha位保持，旧七项不变。未实测的前置组合位深继续待验。
+- 转场名称/图标须按完整kind共用映射，不能用crossfade/else黑的二分支。首次选择片段会触发默认属性页签，转场选择应等Vue更新后再设页签，并复核工程与选择未变；实际首次点击才可验证该顺序。

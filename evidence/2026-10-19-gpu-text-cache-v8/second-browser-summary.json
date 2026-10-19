@@ -1,0 +1,168 @@
+{
+  "createdAt": "2026-10-19T11:28:00.757Z",
+  "scope": "Actual Cua-clicked IAB using shared integer subtitle lookup clock. Preserves both dropped-output/decoder results; no claim of zero dropped frames.",
+  "casePreparations": [
+    {
+      "id": "original",
+      "prepareMs": 4928.5,
+      "cache": {
+        "textures": 21,
+        "bytes": 19353600,
+        "aliases": 60,
+        "requests": 60,
+        "hits": 0,
+        "decodes": 21,
+        "budgetStops": 0,
+        "warmMs": 4897.899999976158,
+        "warming": false
+      }
+    },
+    {
+      "id": "loop",
+      "prepareMs": 211,
+      "cache": {
+        "textures": 1,
+        "bytes": 921600,
+        "aliases": 1,
+        "requests": 61,
+        "hits": 375,
+        "decodes": 22,
+        "budgetStops": 0,
+        "warmMs": 4904.500000059605,
+        "warming": false
+      }
+    },
+    {
+      "id": "combo",
+      "prepareMs": 18.400000035762787,
+      "cache": {
+        "textures": 1,
+        "bytes": 921600,
+        "aliases": 1,
+        "requests": 62,
+        "hits": 410,
+        "decodes": 23,
+        "budgetStops": 0,
+        "warmMs": 4913.299999952316,
+        "warming": false
+      }
+    },
+    {
+      "id": "combo-exact",
+      "prepareMs": 4937.399999976158,
+      "cache": {
+        "textures": 27,
+        "bytes": 24883200,
+        "aliases": 120,
+        "requests": 182,
+        "hits": 447,
+        "decodes": 50,
+        "budgetStops": 0,
+        "warmMs": 9619.699999928474,
+        "warming": false
+      }
+    },
+    {
+      "id": "shared",
+      "prepareMs": 206.5,
+      "cache": {
+        "textures": 1,
+        "bytes": 921600,
+        "aliases": 2,
+        "requests": 184,
+        "hits": 1261,
+        "decodes": 51,
+        "budgetStops": 0,
+        "warmMs": 9628.999999940395,
+        "warming": false
+      }
+    }
+  ],
+  "pixelSummaries": [
+    {
+      "id": "original",
+      "frames": 10,
+      "maxRGB": 1,
+      "maxMeanRGB": 0.0044907407407407405,
+      "maxAlpha": 0
+    },
+    {
+      "id": "loop",
+      "frames": 11,
+      "maxRGB": 1,
+      "maxMeanRGB": 0.0069719328703703705,
+      "maxAlpha": 0
+    },
+    {
+      "id": "combo",
+      "frames": 12,
+      "maxRGB": 1,
+      "maxMeanRGB": 0.009280960648148148,
+      "maxAlpha": 0
+    },
+    {
+      "id": "combo-exact",
+      "frames": 12,
+      "maxRGB": 2,
+      "maxMeanRGB": 0.018851273148148148,
+      "maxAlpha": 0
+    },
+    {
+      "id": "shared",
+      "frames": 2,
+      "maxRGB": 2,
+      "maxMeanRGB": 0.002867476851851852,
+      "maxAlpha": 0
+    }
+  ],
+  "sensitiveFrame111": [
+    {
+      "id": "loop",
+      "maxRGB": 1,
+      "meanRGB": 0.006780960648148148
+    },
+    {
+      "id": "combo",
+      "maxRGB": 1,
+      "meanRGB": 0.006401909722222222
+    },
+    {
+      "id": "combo-exact",
+      "maxRGB": 2,
+      "meanRGB": 0.006342592592592592
+    }
+  ],
+  "sameV7PrepareMs": 166.10000002384186,
+  "audioContextsBeforePlay": 0,
+  "audioParamErrors": [],
+  "playback": {
+    "elapsedWallMs": 3068.800000011921,
+    "startPrepareMs": 45.10000002384186,
+    "transportWallMs": 3023.699999988079,
+    "requestsDuringPlay": 0,
+    "outputDrops": 19,
+    "decoderDrops": 30,
+    "bufferEvents": 0,
+    "completed": true
+  },
+  "maxSourceDriftMs": 51.47166666666658,
+  "cacheAfterDispose": {
+    "textures": 0,
+    "bytes": 0,
+    "aliases": 0,
+    "requests": 244,
+    "hits": 1537,
+    "decodes": 72,
+    "budgetStops": 0,
+    "warmMs": 9751.099999964237,
+    "warming": false
+  },
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "passScope": "pass checks pixel <=3, completion, no playback HTTP/buffer events, preparation audio context 0, no AudioParam errors. It does NOT gate or imply zero output/decoder drops."
+}

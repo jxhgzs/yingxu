@@ -1,0 +1,20 @@
+{
+  "commands": [
+    {
+      "command": "node --test test/transition-candidate.test.ts test/transitions.test.ts test/transition-clone.test.ts test/transitions-import.test.ts test/gpu-preview-transitions.test.ts",
+      "tests": 27,
+      "pass": 27,
+      "fail": 0,
+      "durationMs": 2698.498167,
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    }
+  ],
+  "newTests": 6,
+  "initialRed": "new helper module absent; ERR_MODULE_NOT_FOUND",
+  "corePolicyChanged": false,
+  "uiActualCheck": "Pending parent-owned actual UI; unit helper checks do not prove clicking or live preview."
+}

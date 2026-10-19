@@ -1,0 +1,148 @@
+{
+  "createdAt": "2026-10-19T11:51:44.806Z",
+  "scope": "Third real GPU preparation. Playback deliberately not started after context readback difference.",
+  "transitionFrames": [
+    {
+      "id": "diptowhite",
+      "frame": 45,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "diptowhite",
+      "frame": 52,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "diptowhite",
+      "frame": 60,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "diptowhite",
+      "frame": 67,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "diptowhite",
+      "frame": 74,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "wipeleft",
+      "frame": 45,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "wipeleft",
+      "frame": 52,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "wipeleft",
+      "frame": 60,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "wipeleft",
+      "frame": 67,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "wipeleft",
+      "frame": 74,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "circleopen",
+      "frame": 45,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "circleopen",
+      "frame": 52,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "circleopen",
+      "frame": 60,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "circleopen",
+      "frame": 67,
+      "maxRGB": 0,
+      "meanRGB": 0
+    },
+    {
+      "id": "circleopen",
+      "frame": 74,
+      "maxRGB": 0,
+      "meanRGB": 0
+    }
+  ],
+  "colorFrames": [
+    {
+      "id": "black-plus",
+      "maxLSB": 0.5000075697898865,
+      "meanLSB": 0.2539076382042064
+    },
+    {
+      "id": "black-minus",
+      "maxLSB": 7.510185241699219e-06,
+      "meanLSB": 1.2529328046184673e-06
+    },
+    {
+      "id": "white-plus",
+      "maxLSB": 7.569789886474609e-06,
+      "meanLSB": 1.2809758421402269e-06
+    },
+    {
+      "id": "white-minus",
+      "maxLSB": 0.5,
+      "meanLSB": 0.24609378498829906
+    },
+    {
+      "id": "fade-max",
+      "maxLSB": 0.4941145181655884,
+      "meanLSB": 0.2478539056816468
+    },
+    {
+      "id": "black-white-extreme",
+      "maxLSB": 5.9604644775390625e-06,
+      "meanLSB": 2.4010660126805305e-08
+    },
+    {
+      "id": "tones-temperature",
+      "maxLSB": 0.4847956895828247,
+      "meanLSB": 0.11465719043428635
+    },
+    {
+      "id": "tones-fade-combination",
+      "maxLSB": 0.5000064969062805,
+      "meanLSB": 0.2858460422758071
+    }
+  ],
+  "contextDifference": {
+    "maxRGB": 255,
+    "meanRGB": 62.08705295138889,
+    "alphaMax": 0
+  },
+  "contextRestoredState": "ready",
+  "sameSourceClock": true,
+  "contextRequests": 0,
+  "audioContextsBeforePlay": 0,
+  "suspectedMeasurementIssue": "The restore path was read only after a wait/timer, whereas preserveDrawingBuffer is false. Individual before/after buffers were not saved in this probe, so this result is preserved as failed and needs a synchronous ready callback plus explicit confirming seek/readback."
+}

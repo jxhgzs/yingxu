@@ -1,0 +1,19 @@
+{
+  "version": "0.8.0",
+  "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261019195107/映序剪辑.app",
+  "sourceCommit": "acabce781134c8d9c62ae589ef3ee3167188ad55",
+  "backendHash": "433fdb6df80fc11bebcc8fa36adefe1a98fc6245692dd02abca0840dfd8a2f06",
+  "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+  "runtime": "Electron 44.6.0",
+  "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+  "signing": "local ad-hoc; not a notarized installer",
+  "strictCodeSign": true,
+  "rendererFiles": {
+    "dist/assets/editor-CZn3ppAl.js": "1dc0ccba8a040f78cea2254134fd2015290cdf026cf527eb65d062e07bfd3d34",
+    "dist/assets/host-BfGTH1Th.js": "2364a5901073ab7c3aed764a06e307fed96d96117458a7af94e0042d8ae4ee12",
+    "dist/assets/host-C_bVy0s0.css": "6eb95db2bacca7410e59b19da36339cd62f4afdab506ad015f2e527cf3f112fa",
+    "dist/assets/lifecycle-BDBAyouq.js": "3f4b5d766b8d281bb56db15a9139e68065ed58ce39a9d689cb313493f1f1c83e",
+    "dist/index.html": "c15c2fc14b61d9d8445d05f47e6ff3d3eadc87081f2a65b9b36cadb4d16bc5b8",
+    "dist/lifecycle-test.html": "917f0be3b181c4dccfc24b52ea69e4ebcf0eb8cc4d5a53d2f264088edea1066e"
+  }
+}

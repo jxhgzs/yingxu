@@ -1,0 +1,2777 @@
+{
+  "scope": "18 center patches; static affine and separable17-node candidates vs native final encoded RGB; not yet product export or full-frame parity.",
+  "source": {
+    "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/evidence/2026-10-19-color-patches/source.mp4",
+    "sha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad",
+    "samples": {
+      "gray": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.06392693519592285,
+          0.06392693519592285,
+          0.06392693519592285
+        ],
+        [
+          0.12328766286373138,
+          0.12328766286373138,
+          0.12328766286373138
+        ],
+        [
+          0.2511415481567383,
+          0.2511415481567383,
+          0.2511415481567383
+        ],
+        [
+          0.37442919611930847,
+          0.37442919611930847,
+          0.37442919611930847
+        ],
+        [
+          0.5022830963134766,
+          0.5022830963134766,
+          0.5022830963134766
+        ],
+        [
+          0.6255707740783691,
+          0.6255707740783691,
+          0.6255707740783691
+        ],
+        [
+          0.7534246444702148,
+          0.7534246444702148,
+          0.7534246444702148
+        ],
+        [
+          0.8767123222351074,
+          0.8767123222351074,
+          0.8767123222351074
+        ],
+        [
+          0.9406392574310303,
+          0.9406392574310303,
+          0.9406392574310303
+        ],
+        [
+          0.9954337477684021,
+          0.9954337477684021,
+          0.9954337477684021
+        ],
+        [
+          0.9999999403953552,
+          0.9999999403953552,
+          0.9999999403953552
+        ]
+      ],
+      "color": [
+        [
+          0.8029189109802246,
+          0.29242414236068726,
+          0.11475818604230881
+        ],
+        [
+          0.21331427991390228,
+          0.6663729548454285,
+          0.10719999670982361
+        ],
+        [
+          0.1077081561088562,
+          0.2664602994918823,
+          0.7747260332107544
+        ],
+        [
+          0.7990768551826477,
+          0.2094515562057495,
+          0.5052750706672668
+        ],
+        [
+          0.3669663369655609,
+          0.49700039625167847,
+          0.6368467211723328
+        ],
+        [
+          0.23911245167255402,
+          0.36914652585983276,
+          0.5089928507804871
+        ]
+      ]
+    }
+  },
+  "cases": {
+    "20b-black-plus50-real": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/20b-black-plus50-real.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-black-plus50-v8-real-1951.mov",
+      "snapshotSHA256": "7b0adc04c61cea956e36f4322ae0048343206f8c8f3530ac14bbc3e15a07ea76",
+      "movieSHA256": "21427eed5cb1c9a1b3f1716675e26e40ba40f4e10d6069b273c79d57f952601a",
+      "parameters": {
+        "black": 1
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "669A232F-0934-42C7-A640-A7C2F028405A",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": 1,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              133,
+              133,
+              133
+            ],
+            [
+              141,
+              141,
+              141
+            ],
+            [
+              158,
+              158,
+              158
+            ],
+            [
+              173,
+              173,
+              173
+            ],
+            [
+              189,
+              189,
+              189
+            ],
+            [
+              205,
+              205,
+              205
+            ],
+            [
+              222,
+              222,
+              222
+            ],
+            [
+              237,
+              237,
+              237
+            ],
+            [
+              245,
+              245,
+              245
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              229,
+              162,
+              139
+            ],
+            [
+              152,
+              211,
+              139
+            ],
+            [
+              140,
+              159,
+              225
+            ],
+            [
+              228,
+              151,
+              189
+            ],
+            [
+              172,
+              189,
+              208
+            ],
+            [
+              155,
+              173,
+              192
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            127.5,
+            127.5,
+            127.5
+          ],
+          [
+            135.5,
+            135.5,
+            135.5
+          ],
+          [
+            143,
+            143,
+            143
+          ],
+          [
+            159.5,
+            159.5,
+            159.5
+          ],
+          [
+            175,
+            175,
+            175
+          ],
+          [
+            191.5,
+            191.5,
+            191.5
+          ],
+          [
+            207.5,
+            207.5,
+            207.5
+          ],
+          [
+            223.5,
+            223.5,
+            223.5
+          ],
+          [
+            239.5,
+            239.5,
+            239.5
+          ],
+          [
+            247.5,
+            247.5,
+            247.5
+          ],
+          [
+            254.5,
+            254.5,
+            254.5
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ],
+        "color": [
+          [
+            230,
+            165,
+            142
+          ],
+          [
+            154.5,
+            212.49999999999997,
+            141
+          ],
+          [
+            141,
+            161.5,
+            226.5
+          ],
+          [
+            229.5,
+            154,
+            192
+          ],
+          [
+            174.5,
+            191,
+            208.5
+          ],
+          [
+            158,
+            174.5,
+            192.5
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2.5,
+        "colorMax": 3,
+        "samples": {
+          "gray": [
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ],
+            [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ],
+            [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -2.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ]
+          ],
+          "color": [
+            [
+              -1,
+              -3,
+              -3
+            ],
+            [
+              -2.5,
+              -1.4999999999999716,
+              -2
+            ],
+            [
+              -1,
+              -2.5,
+              -1.5
+            ],
+            [
+              -1.5,
+              -3,
+              -3
+            ],
+            [
+              -2.5,
+              -2,
+              -0.5
+            ],
+            [
+              -3,
+              -1.5,
+              -0.5
+            ]
+          ]
+        }
+      }
+    },
+    "21-black-minus50": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/21-black-minus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-black-minus50-v8-1952.mov",
+      "snapshotSHA256": "4186057113e6af0b50bb22fc4dab2d7b1f21c0c4a86f8555bc513f83d95e65ac",
+      "movieSHA256": "304a03427a04e85e8ca9eba890349927c857d74fc6e827d5816941a4aa4eb3f2",
+      "parameters": {
+        "black": -0.9946380697050938
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "957E25A2-4FD9-4E36-8A34-5E335A1CC0C8",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "manual_zoom",
+          "time_range": null,
+          "type": "black",
+          "value": -0.9946380697050938,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              65,
+              65,
+              65
+            ],
+            [
+              129,
+              129,
+              129
+            ],
+            [
+              192,
+              192,
+              192
+            ],
+            [
+              223,
+              223,
+              223
+            ],
+            [
+              251,
+              251,
+              251
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              154,
+              0,
+              0
+            ],
+            [
+              0,
+              83,
+              0
+            ],
+            [
+              0,
+              0,
+              141
+            ],
+            [
+              152,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              68
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            2.35466666666665,
+            2.35466666666665,
+            2.35466666666665
+          ],
+          [
+            66.0133333333333,
+            66.0133333333333,
+            66.0133333333333
+          ],
+          [
+            129.672,
+            129.672,
+            129.672
+          ],
+          [
+            193.33066666666667,
+            193.33066666666667,
+            193.33066666666667
+          ],
+          [
+            225.15999999999997,
+            225.15999999999997,
+            225.15999999999997
+          ],
+          [
+            253.01066666666668,
+            253.01066666666668,
+            253.01066666666668
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ],
+        "color": [
+          [
+            155.53333333333333,
+            0,
+            0
+          ],
+          [
+            0,
+            85.90666666666664,
+            0
+          ],
+          [
+            0,
+            0,
+            141.608
+          ],
+          [
+            153.544,
+            0,
+            4.343999999999994
+          ],
+          [
+            0,
+            0.3653333333333336,
+            69.992
+          ],
+          [
+            0,
+            0,
+            6.333333333333311
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2.159999999999968,
+        "colorMax": 3.343999999999994,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              -1.3546666666666498,
+              -1.3546666666666498,
+              -1.3546666666666498
+            ],
+            [
+              -1.013333333333307,
+              -1.013333333333307,
+              -1.013333333333307
+            ],
+            [
+              -0.671999999999997,
+              -0.671999999999997,
+              -0.671999999999997
+            ],
+            [
+              -1.3306666666666729,
+              -1.3306666666666729,
+              -1.3306666666666729
+            ],
+            [
+              -2.159999999999968,
+              -2.159999999999968,
+              -2.159999999999968
+            ],
+            [
+              -2.0106666666666797,
+              -2.0106666666666797,
+              -2.0106666666666797
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ]
+          ],
+          "color": [
+            [
+              -1.5333333333333314,
+              0,
+              0
+            ],
+            [
+              0,
+              -2.906666666666638,
+              0
+            ],
+            [
+              0,
+              0,
+              -0.6080000000000041
+            ],
+            [
+              -1.5440000000000111,
+              0,
+              -3.343999999999994
+            ],
+            [
+              0,
+              -0.3653333333333336,
+              -1.9920000000000044
+            ],
+            [
+              0,
+              0,
+              -2.333333333333311
+            ]
+          ]
+        }
+      }
+    },
+    "22-white-plus50": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/22-white-plus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-white-plus50-v8-1953.mov",
+      "snapshotSHA256": "39903d03b51ed091028b0cf748e2a6ef9c0ff34185173948df0b2c26d9ce2bbd",
+      "movieSHA256": "320f233d4853360cccd0675f11faf68f6081c3106495e01b27d2d7f7e8d234f1",
+      "parameters": {
+        "white": 1,
+        "black": 0
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "2753F45B-B345-4FA5-9260-B3D9EBEC7FFF",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "white",
+          "value": 1,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "C1E9B246-71D0-4FD8-B820-C16183840B9D",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": 0,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              60,
+              60,
+              60
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              188,
+              188,
+              188
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              253,
+              147,
+              55
+            ],
+            [
+              105,
+              254,
+              51
+            ],
+            [
+              51,
+              134,
+              253
+            ],
+            [
+              253,
+              103,
+              253
+            ],
+            [
+              186,
+              252,
+              252
+            ],
+            [
+              119,
+              187,
+              253
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            32,
+            32,
+            32
+          ],
+          [
+            62,
+            62,
+            62
+          ],
+          [
+            128,
+            128,
+            128
+          ],
+          [
+            190,
+            190,
+            190
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ],
+        "color": [
+          [
+            255,
+            150,
+            58
+          ],
+          [
+            108,
+            255,
+            54
+          ],
+          [
+            54,
+            136,
+            255
+          ],
+          [
+            255,
+            106,
+            255
+          ],
+          [
+            188,
+            254,
+            255
+          ],
+          [
+            122,
+            188,
+            255
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ]
+          ],
+          "color": [
+            [
+              -2,
+              -3,
+              -3
+            ],
+            [
+              -3,
+              -1,
+              -3
+            ],
+            [
+              -3,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -3,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -3
+            ],
+            [
+              -3,
+              -1,
+              -2
+            ]
+          ]
+        }
+      }
+    },
+    "23-white-minus50": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/23-white-minus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-white-minus50-v8-1954.mov",
+      "snapshotSHA256": "242752d9d11e4d16fb803c78a59db7711850fb0eb51cb7e68bae62a6414c8382",
+      "movieSHA256": "b69ccef1bb27d2a73652956af79dce1fe6e6064f8cfa05724faf278c29ee5308",
+      "parameters": {
+        "white": -1,
+        "black": 0
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "0553FFDD-4ACC-4119-A2BC-23958EE00843",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "manual_zoom",
+          "time_range": null,
+          "type": "white",
+          "value": -1,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "C1E9B246-71D0-4FD8-B820-C16183840B9D",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": 0,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              46,
+              46,
+              46
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              79,
+              79,
+              79
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              110,
+              110,
+              110
+            ],
+            [
+              118,
+              118,
+              118
+            ],
+            [
+              125,
+              125,
+              125
+            ],
+            [
+              126,
+              126,
+              126
+            ]
+          ],
+          "color": [
+            [
+              102,
+              35,
+              12
+            ],
+            [
+              24,
+              83,
+              12
+            ],
+            [
+              13,
+              32,
+              98
+            ],
+            [
+              101,
+              24,
+              62
+            ],
+            [
+              45,
+              62,
+              79
+            ],
+            [
+              28,
+              46,
+              65
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            8,
+            8
+          ],
+          [
+            15.5,
+            15.5,
+            15.5
+          ],
+          [
+            32,
+            32,
+            32
+          ],
+          [
+            47.5,
+            47.5,
+            47.5
+          ],
+          [
+            64,
+            64,
+            64
+          ],
+          [
+            80,
+            80,
+            80
+          ],
+          [
+            96,
+            96,
+            96
+          ],
+          [
+            112,
+            112,
+            112
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            127,
+            127,
+            127
+          ],
+          [
+            127.5,
+            127.5,
+            127.5
+          ]
+        ],
+        "color": [
+          [
+            102.5,
+            37.5,
+            14.5
+          ],
+          [
+            27,
+            85,
+            13.5
+          ],
+          [
+            13.5,
+            34,
+            99
+          ],
+          [
+            102,
+            26.5,
+            64.5
+          ],
+          [
+            47,
+            63.5,
+            81
+          ],
+          [
+            30.5,
+            47,
+            65
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -1.5,
+              -1.5,
+              -1.5
+            ]
+          ],
+          "color": [
+            [
+              -0.5,
+              -2.5,
+              -2.5
+            ],
+            [
+              -3,
+              -2,
+              -1.5
+            ],
+            [
+              -0.5,
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2.5,
+              -2.5
+            ],
+            [
+              -2,
+              -1.5,
+              -2
+            ],
+            [
+              -2.5,
+              -1,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "24-fade50": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/24-fade50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-fade50-v8-1955.mov",
+      "snapshotSHA256": "7838b7fda8bf71dc2a5a308a11b1fb8eae1591b6fabaf02f7e7d163dc2297527",
+      "movieSHA256": "8b5bd1a8fc3f14516d0c900391ad8e1d5eac8d379b574060b481057beff96f8a",
+      "parameters": {
+        "white": 0,
+        "black": 0,
+        "fade": 0.49865951742627346
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "9AEB4554-C5AC-42DF-BB7D-E3E06C0A7161",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "white",
+          "value": 0,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "C1E9B246-71D0-4FD8-B820-C16183840B9D",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": 0,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "EBB11AA1-03E0-49BD-9CF9-169730DAC645",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "fade",
+          "value": 0.49865951742627346,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              32,
+              32,
+              32
+            ],
+            [
+              42,
+              42,
+              42
+            ],
+            [
+              52,
+              52,
+              52
+            ],
+            [
+              73,
+              73,
+              73
+            ],
+            [
+              97,
+              97,
+              97
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              157,
+              157,
+              157
+            ],
+            [
+              186,
+              186,
+              186
+            ],
+            [
+              212,
+              212,
+              212
+            ],
+            [
+              224,
+              224,
+              224
+            ],
+            [
+              235,
+              235,
+              235
+            ],
+            [
+              236,
+              236,
+              236
+            ]
+          ],
+          "color": [
+            [
+              196,
+              81,
+              49
+            ],
+            [
+              67,
+              167,
+              48
+            ],
+            [
+              47,
+              76,
+              190
+            ],
+            [
+              195,
+              65,
+              126
+            ],
+            [
+              96,
+              125,
+              159
+            ],
+            [
+              72,
+              96,
+              130
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            34.40750670241287,
+            34.40750670241287,
+            34.40750670241287
+          ],
+          [
+            43.93079955842927,
+            43.93079955842927,
+            43.93079955842927
+          ],
+          [
+            52.858886610944644,
+            52.858886610944644,
+            52.858886610944644
+          ],
+          [
+            75.03308626399621,
+            75.03308626399621,
+            75.03308626399621
+          ],
+          [
+            99.29238290490458,
+            99.29238290490458,
+            99.29238290490458
+          ],
+          [
+            128.20337486200916,
+            128.20337486200916,
+            128.20337486200916
+          ],
+          [
+            158.2791357829995,
+            158.2791357829995,
+            158.2791357829995
+          ],
+          [
+            187.27153445828736,
+            187.27153445828736,
+            187.27153445828736
+          ],
+          [
+            213.74716921621194,
+            213.74716921621194,
+            213.74716921621194
+          ],
+          [
+            225.74420438416652,
+            225.74420438416652,
+            225.74420438416652
+          ],
+          [
+            235.82923829049045,
+            235.82923829049045,
+            235.82923829049045
+          ],
+          [
+            236.54959785522786,
+            236.54959785522786,
+            236.54959785522786
+          ]
+        ],
+        "color": [
+          [
+            198.263207695947,
+            83.30121431950798,
+            51.668475003942596
+          ],
+          [
+            68.12673079955843,
+            167.6729222520107,
+            50.47806339694054
+          ],
+          [
+            50.47806339694054,
+            78.0396782841823,
+            192.3446144141303
+          ],
+          [
+            197.41769436997322,
+            67.4376596751301,
+            129.11146506860118
+          ],
+          [
+            98.47815801923988,
+            127.29528465541712,
+            160.15789307680174
+          ],
+          [
+            72.9502286705567,
+            98.47815801923988,
+            130.0195552751932
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2.407506702412867,
+        "colorMax": 3.4780633969405415,
+        "samples": {
+          "gray": [
+            [
+              -2.407506702412867,
+              -2.407506702412867,
+              -2.407506702412867
+            ],
+            [
+              -1.9307995584292712,
+              -1.9307995584292712,
+              -1.9307995584292712
+            ],
+            [
+              -0.8588866109446442,
+              -0.8588866109446442,
+              -0.8588866109446442
+            ],
+            [
+              -2.0330862639962106,
+              -2.0330862639962106,
+              -2.0330862639962106
+            ],
+            [
+              -2.292382904904585,
+              -2.292382904904585,
+              -2.292382904904585
+            ],
+            [
+              -2.2033748620091558,
+              -2.2033748620091558,
+              -2.2033748620091558
+            ],
+            [
+              -1.2791357829995036,
+              -1.2791357829995036,
+              -1.2791357829995036
+            ],
+            [
+              -1.2715344582873627,
+              -1.2715344582873627,
+              -1.2715344582873627
+            ],
+            [
+              -1.7471692162119439,
+              -1.7471692162119439,
+              -1.7471692162119439
+            ],
+            [
+              -1.7442043841665225,
+              -1.7442043841665225,
+              -1.7442043841665225
+            ],
+            [
+              -0.8292382904904514,
+              -0.8292382904904514,
+              -0.8292382904904514
+            ],
+            [
+              -0.5495978552278586,
+              -0.5495978552278586,
+              -0.5495978552278586
+            ]
+          ],
+          "color": [
+            [
+              -2.2632076959469885,
+              -2.3012143195079773,
+              -2.6684750039425964
+            ],
+            [
+              -1.1267307995584304,
+              -0.672922252010693,
+              -2.4780633969405415
+            ],
+            [
+              -3.4780633969405415,
+              -2.039678284182301,
+              -2.344614414130291
+            ],
+            [
+              -2.417694369973219,
+              -2.4376596751301065,
+              -3.111465068601177
+            ],
+            [
+              -2.478158019239885,
+              -2.2952846554171202,
+              -1.1578930768017415
+            ],
+            [
+              -0.9502286705566974,
+              -2.478158019239885,
+              -0.01955527519319844
+            ]
+          ]
+        }
+      }
+    },
+    "25b-fade100-native": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/25b-fade100-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-fade100-controlled-v8-1958.mov",
+      "snapshotSHA256": "9f50776151056e648ed863bf5fe71ce87afbcc72673c5d5c028f97dbcdfe1b1b",
+      "movieSHA256": "c5a5d4cf113d1d0c9e6b0bc8530189be9db1248c244b43d03e1b626b60f3cc5f",
+      "parameters": {
+        "white": 0,
+        "black": 0,
+        "fade": 1
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "9AEB4554-C5AC-42DF-BB7D-E3E06C0A7161",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "white",
+          "value": 0,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "C1E9B246-71D0-4FD8-B820-C16183840B9D",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": 0,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "EBB11AA1-03E0-49BD-9CF9-169730DAC645",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "fade",
+          "value": 1,
+          "version": ""
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              67,
+              67,
+              67
+            ],
+            [
+              70,
+              70,
+              70
+            ],
+            [
+              73,
+              73,
+              73
+            ],
+            [
+              84,
+              84,
+              84
+            ],
+            [
+              102,
+              102,
+              102
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              155,
+              155,
+              155
+            ],
+            [
+              180,
+              180,
+              182
+            ],
+            [
+              201,
+              201,
+              201
+            ],
+            [
+              209,
+              209,
+              209
+            ],
+            [
+              216,
+              216,
+              216
+            ],
+            [
+              216,
+              216,
+              216
+            ]
+          ],
+          "color": [
+            [
+              190,
+              89,
+              72
+            ],
+            [
+              80,
+              164,
+              72
+            ],
+            [
+              72,
+              86,
+              185
+            ],
+            [
+              188,
+              80,
+              127
+            ],
+            [
+              101,
+              125,
+              157
+            ],
+            [
+              83,
+              101,
+              129
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            69,
+            69,
+            69
+          ],
+          [
+            72.01176470588236,
+            72.01176470588236,
+            72.01176470588236
+          ],
+          [
+            74.83529411764705,
+            74.83529411764705,
+            74.83529411764705
+          ],
+          [
+            86.12549019607843,
+            86.12549019607843,
+            86.12549019607843
+          ],
+          [
+            103.6078431372549,
+            103.6078431372549,
+            103.6078431372549
+          ],
+          [
+            128.4078431372549,
+            128.4078431372549,
+            128.4078431372549
+          ],
+          [
+            156.54901960784315,
+            156.54901960784315,
+            156.54901960784315
+          ],
+          [
+            182.5176470588235,
+            182.5176470588235,
+            182.5176470588235
+          ],
+          [
+            203.4392156862745,
+            203.4392156862745,
+            203.4392156862745
+          ],
+          [
+            211.41176470588235,
+            211.41176470588235,
+            211.41176470588235
+          ],
+          [
+            217.5607843137255,
+            217.5607843137255,
+            217.5607843137255
+          ],
+          [
+            218,
+            218,
+            218
+          ]
+        ],
+        "color": [
+          [
+            191.49019607843138,
+            91.64705882352942,
+            74.45882352941176
+          ],
+          [
+            82.32941176470588,
+            165.33333333333331,
+            74.08235294117647
+          ],
+          [
+            74.08235294117647,
+            88.13333333333333,
+            186.65882352941176
+          ],
+          [
+            190.8,
+            81.95294117647059,
+            129.2235294117647
+          ],
+          [
+            102.98039215686275,
+            127.5921568627451,
+            158.30588235294118
+          ],
+          [
+            84.96470588235294,
+            102.98039215686275,
+            130.0392156862745
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2.5176470588235134,
+        "colorMax": 2.8000000000000114,
+        "samples": {
+          "gray": [
+            [
+              -2,
+              -2,
+              -2
+            ],
+            [
+              -2.0117647058823565,
+              -2.0117647058823565,
+              -2.0117647058823565
+            ],
+            [
+              -1.8352941176470523,
+              -1.8352941176470523,
+              -1.8352941176470523
+            ],
+            [
+              -2.125490196078431,
+              -2.125490196078431,
+              -2.125490196078431
+            ],
+            [
+              -1.6078431372549034,
+              -1.6078431372549034,
+              -1.6078431372549034
+            ],
+            [
+              -2.4078431372549005,
+              -2.4078431372549005,
+              -2.4078431372549005
+            ],
+            [
+              -1.5490196078431495,
+              -1.5490196078431495,
+              -1.5490196078431495
+            ],
+            [
+              -2.5176470588235134,
+              -2.5176470588235134,
+              -0.5176470588235134
+            ],
+            [
+              -2.4392156862745082,
+              -2.4392156862745082,
+              -2.4392156862745082
+            ],
+            [
+              -2.411764705882348,
+              -2.411764705882348,
+              -2.411764705882348
+            ],
+            [
+              -1.5607843137254918,
+              -1.5607843137254918,
+              -1.5607843137254918
+            ],
+            [
+              -2,
+              -2,
+              -2
+            ]
+          ],
+          "color": [
+            [
+              -1.4901960784313815,
+              -2.64705882352942,
+              -2.4588235294117595
+            ],
+            [
+              -2.329411764705881,
+              -1.3333333333333144,
+              -2.0823529411764667
+            ],
+            [
+              -2.0823529411764667,
+              -2.1333333333333258,
+              -1.6588235294117624
+            ],
+            [
+              -2.8000000000000114,
+              -1.9529411764705884,
+              -2.2235294117647015
+            ],
+            [
+              -1.9803921568627487,
+              -2.5921568627450995,
+              -1.3058823529411825
+            ],
+            [
+              -1.9647058823529449,
+              -1.9803921568627487,
+              -1.0392156862745026
+            ]
+          ]
+        }
+      }
+    },
+    "26b-tones-temperature-native": {
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/26b-tones-temperature-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-tones-temperature-v8-2000.mov",
+      "snapshotSHA256": "47780f18b1fc2b6c3e7f1f6b324fa6e9b622c4d385728582bbfa4c70437b7bca",
+      "movieSHA256": "69d986ba273ac0f331160674a3399afec39c367f36ec6b95927fbcda8b899bc0",
+      "parameters": {
+        "white": 1,
+        "black": -1,
+        "fade": 0,
+        "temperature": 1
+      },
+      "fields": [
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "9AEB4554-C5AC-42DF-BB7D-E3E06C0A7161",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "white",
+          "value": 1,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "C1E9B246-71D0-4FD8-B820-C16183840B9D",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "black",
+          "value": -1,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "EBB11AA1-03E0-49BD-9CF9-169730DAC645",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "fade",
+          "value": 0,
+          "version": ""
+        },
+        {
+          "adjust_params": [],
+          "algorithm_artifact_path": "",
+          "apply_target_type": 0,
+          "bloom_params": null,
+          "category_id": "",
+          "category_name": "",
+          "color_match_info": {
+            "source_feature_path": "",
+            "target_feature_path": "",
+            "target_image_path": ""
+          },
+          "effect_id": "",
+          "enable_skin_tone_correction": false,
+          "exclusion_group": [],
+          "face_adjust_params": [],
+          "formula_id": "",
+          "id": "511CA537-686A-4C4D-8E24-52D0651AFD1A",
+          "intensity_key": "",
+          "multi_language_current": "",
+          "name": "",
+          "panel_id": "",
+          "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+          "platform": "all",
+          "request_id": "",
+          "resource_id": "",
+          "source_platform": 0,
+          "sub_type": "none",
+          "time_range": null,
+          "type": "temperature",
+          "value": 1,
+          "version": "v3"
+        }
+      ],
+      "native": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ]
+          ],
+          "color": [
+            [
+              255,
+              0,
+              0
+            ],
+            [
+              124,
+              214,
+              0
+            ],
+            [
+              12,
+              2,
+              72
+            ],
+            [
+              254,
+              0,
+              66
+            ],
+            [
+              88,
+              131,
+              62
+            ],
+            [
+              12,
+              2,
+              72
+            ]
+          ]
+        }
+      },
+      "predictions": {
+        "gray": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ],
+          [
+            255,
+            211.54057718395745,
+            51.648962485621965
+          ]
+        ],
+        "color": [
+          [
+            255,
+            0,
+            0
+          ],
+          [
+            126.20177740888775,
+            214.82933066129186,
+            0
+          ],
+          [
+            12.890176593102638,
+            2.860334343747437,
+            72.16314013037977
+          ],
+          [
+            255,
+            0,
+            67.10710938747484
+          ],
+          [
+            89.60106090046597,
+            133.4428686672781,
+            62.76701162141035
+          ],
+          [
+            12.890176593102638,
+            2.860334343747437,
+            72.16314013037977
+          ]
+        ]
+      },
+      "error": {
+        "grayMax": 2.648962485621965,
+        "colorMax": 2.4428686672781055,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ],
+            [
+              -1,
+              -1.5405771839574527,
+              -2.648962485621965
+            ]
+          ],
+          "color": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              -2.20177740888775,
+              -0.8293306612918627,
+              0
+            ],
+            [
+              -0.8901765931026375,
+              -0.8603343437474371,
+              -0.16314013037977304
+            ],
+            [
+              -1,
+              0,
+              -1.1071093874748357
+            ],
+            [
+              -1.601060900465967,
+              -2.4428686672781055,
+              -0.7670116214103473
+            ],
+            [
+              -0.8901765931026375,
+              -0.8603343437474371,
+              -0.16314013037977304
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "createdAt": "2026-10-19T11:19:03.810Z",
+  "scope": "Actual Cua-clicked IAB WebGL2 on Apple M3; unchanged 0.7 document except own asset registration and title. Pixel authority is unencoded libass RGB, not encoded MP4 or complete native parity.",
+  "pixelColdPrepareMs": 3536.400000035763,
+  "sameV7PrepareWithServerStyleCacheWarmMs": 194.19999998807907,
+  "projectRequests": [
+    {
+      "projectId": "1558380a-decd-4ec2-b18c-83f62d658656",
+      "requests": 60,
+      "uniqueContentURLs": 21,
+      "firstFrame": 15,
+      "lastFrame": 74
+    },
+    {
+      "projectId": "ae2c2687-297d-4a30-ac8b-1dc12b19744d",
+      "requests": 60,
+      "uniqueContentURLs": 21,
+      "firstFrame": 15,
+      "lastFrame": 74
+    }
+  ],
+  "cumulativeDecodesExplanation": "Two setDocument revisions reset the browser cache; 21 unique decoded PNGs per document yields 42 cumulative decodes, while live cache is 21 images (19,353,600 RGBA bytes), 60 aliases. 120 cumulative descriptors are 60 per document; actual play requested 0.",
+  "pixels": [
+    {
+      "frame": 15,
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "alphaMax": 0
+    },
+    {
+      "frame": 17,
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "alphaMax": 0
+    },
+    {
+      "frame": 19,
+      "maxRGB": 1,
+      "meanRGB": 0.0004123263888888889,
+      "alphaMax": 0
+    },
+    {
+      "frame": 21,
+      "maxRGB": 1,
+      "meanRGB": 0.0007421875,
+      "alphaMax": 0
+    },
+    {
+      "frame": 25,
+      "maxRGB": 1,
+      "meanRGB": 0.0011921296296296296,
+      "alphaMax": 0
+    },
+    {
+      "frame": 30,
+      "maxRGB": 1,
+      "meanRGB": 0.0018605324074074073,
+      "alphaMax": 0
+    },
+    {
+      "frame": 60,
+      "maxRGB": 1,
+      "meanRGB": 0.0018605324074074073,
+      "alphaMax": 0
+    },
+    {
+      "frame": 66,
+      "maxRGB": 1,
+      "meanRGB": 0.0044907407407407405,
+      "alphaMax": 0
+    },
+    {
+      "frame": 70,
+      "maxRGB": 1,
+      "meanRGB": 0.0019733796296296296,
+      "alphaMax": 0
+    },
+    {
+      "frame": 74,
+      "maxRGB": 1,
+      "meanRGB": 0.0025014467592592592,
+      "alphaMax": 0
+    }
+  ],
+  "audioContextsBeforePlay": 0,
+  "audioParamErrors": [],
+  "playback": {
+    "elapsedWallMs": 3079.2999999523163,
+    "startPrepareMs": 15.699999988079071,
+    "transportWallMs": 3063.599999964237,
+    "requestsDuringPlay": 0,
+    "outputDrops": 2,
+    "decoderDrops": 2,
+    "bufferEvents": 0,
+    "completed": true
+  },
+  "maxSourceDriftMs": 50.71899999999996,
+  "liveCacheBeforePlay": {
+    "textures": 21,
+    "bytes": 19353600,
+    "aliases": 60,
+    "requests": 120,
+    "hits": 373,
+    "decodes": 42,
+    "budgetStops": 0,
+    "warmMs": 3663.399999856949,
+    "warming": false
+  },
+  "cacheAfterDispose": {
+    "textures": 0,
+    "bytes": 0,
+    "aliases": 0,
+    "requests": 120,
+    "hits": 671,
+    "decodes": 42,
+    "budgetStops": 0,
+    "warmMs": 3665.19999986887,
+    "warming": false
+  },
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "notZeroDroppedFrames": true,
+  "baselineBoundary": "0.7 desktop had 53 decoder dropped frames reported; wall-clock was not collected by identical probe, so no claimed speedup factor or zero-drop guarantee."
+}

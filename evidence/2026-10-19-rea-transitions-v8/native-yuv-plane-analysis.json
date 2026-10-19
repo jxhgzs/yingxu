@@ -1,0 +1,574 @@
+[
+  {
+    "kind": "wipe",
+    "source": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+    "sha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+    "frames": [
+      0,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      119
+    ],
+    "decodePixelFormat": "yuv420p",
+    "bestObservedCandidates": {
+      "Y": {
+        "plane": "Y",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.05432302167338709,
+        "maxAbsError": 8.0,
+        "samplesDiffOver16": 0
+      },
+      "U": {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.11235887096774194,
+        "maxAbsError": 11.0,
+        "samplesDiffOver16": 0
+      },
+      "V": {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.11082619287634408,
+        "maxAbsError": 15.0,
+        "samplesDiffOver16": 0
+      }
+    },
+    "allCandidates": [
+      {
+        "plane": "Y",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.05432302167338709,
+        "maxAbsError": 8.0,
+        "samplesDiffOver16": 0
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0,
+          0
+        ],
+        "meanAbsError": 0.13213345654121864,
+        "maxAbsError": 120.0,
+        "samplesDiffOver16": 2315
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.11235887096774194,
+        "maxAbsError": 11.0,
+        "samplesDiffOver16": 0
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1,
+          0
+        ],
+        "meanAbsError": 0.14497073812724015,
+        "maxAbsError": 119.0,
+        "samplesDiffOver16": 3537
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0
+        ],
+        "meanAbsError": 0.17771715389784945,
+        "maxAbsError": 119.0,
+        "samplesDiffOver16": 7085
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0,
+          0
+        ],
+        "meanAbsError": 0.14063256048387096,
+        "maxAbsError": 160.0,
+        "samplesDiffOver16": 2330
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.11082619287634408,
+        "maxAbsError": 15.0,
+        "samplesDiffOver16": 0
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1,
+          0
+        ],
+        "meanAbsError": 0.15959691420250893,
+        "maxAbsError": 158.0,
+        "samplesDiffOver16": 3556
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0
+        ],
+        "meanAbsError": 0.20874523969534048,
+        "maxAbsError": 158.0,
+        "samplesDiffOver16": 7119
+      }
+    ],
+    "limits": "Direct decoded native planes, first/last same-output calibration. Candidate sample phases describe observed plane masks; they do not prove where in the native render/encode pipeline that sampling happens. No raw RGB maximum is discarded."
+  },
+  {
+    "kind": "circle",
+    "source": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+    "sha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+    "frames": [
+      0,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      119
+    ],
+    "decodePixelFormat": "yuv420p",
+    "bestObservedCandidates": {
+      "Y": {
+        "plane": "Y",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.058377331149193544,
+        "maxAbsError": 18.0,
+        "samplesDiffOver16": 1
+      },
+      "U": {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.12472250224014338,
+        "maxAbsError": 18.0,
+        "samplesDiffOver16": 5
+      },
+      "V": {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.11972418234767025,
+        "maxAbsError": 23.0,
+        "samplesDiffOver16": 7
+      }
+    },
+    "allCandidates": [
+      {
+        "plane": "Y",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.058377331149193544,
+        "maxAbsError": 18.0,
+        "samplesDiffOver16": 1
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0,
+          0
+        ],
+        "meanAbsError": 0.15452186939964158,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 4175
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0,
+          0.5
+        ],
+        "meanAbsError": 0.1566175235215054,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 3581
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0,
+          1
+        ],
+        "meanAbsError": 0.16952130936379928,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 4194
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0,
+          1.5
+        ],
+        "meanAbsError": 0.18661220318100358,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 5688
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.1454662298387097,
+        "maxAbsError": 120.0,
+        "samplesDiffOver16": 2327
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.12472250224014338,
+        "maxAbsError": 18.0,
+        "samplesDiffOver16": 5
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          1
+        ],
+        "meanAbsError": 0.14529891913082438,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 2334
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          0.5,
+          1.5
+        ],
+        "meanAbsError": 0.16598832325268817,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 4661
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1,
+          0
+        ],
+        "meanAbsError": 0.16939026097670254,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 4167
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1,
+          0.5
+        ],
+        "meanAbsError": 0.15633204525089608,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 3535
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1,
+          1
+        ],
+        "meanAbsError": 0.15349014336917563,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 4089
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1,
+          1.5
+        ],
+        "meanAbsError": 0.16405563956093192,
+        "maxAbsError": 121.0,
+        "samplesDiffOver16": 5640
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0
+        ],
+        "meanAbsError": 0.19993489583333338,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 7394
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0.5
+        ],
+        "meanAbsError": 0.18818856406810036,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 7084
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1.5,
+          1
+        ],
+        "meanAbsError": 0.18232330869175634,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 7388
+      },
+      {
+        "plane": "U",
+        "sampleOffsetFullPixels": [
+          1.5,
+          1.5
+        ],
+        "meanAbsError": 0.1832090053763441,
+        "maxAbsError": 122.0,
+        "samplesDiffOver16": 8191
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0,
+          0
+        ],
+        "meanAbsError": 0.17838317652329747,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 4197
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0,
+          0.5
+        ],
+        "meanAbsError": 0.16821558579749105,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 3591
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0,
+          1
+        ],
+        "meanAbsError": 0.17462757616487454,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 4197
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0,
+          1.5
+        ],
+        "meanAbsError": 0.19410954301075267,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 5690
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0
+        ],
+        "meanAbsError": 0.15093259968637993,
+        "maxAbsError": 160.0,
+        "samplesDiffOver16": 2339
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          0.5
+        ],
+        "meanAbsError": 0.11972418234767025,
+        "maxAbsError": 23.0,
+        "samplesDiffOver16": 7
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          1
+        ],
+        "meanAbsError": 0.15093511984767027,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 2347
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          0.5,
+          1.5
+        ],
+        "meanAbsError": 0.18251610103046598,
+        "maxAbsError": 162.0,
+        "samplesDiffOver16": 4688
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1,
+          0
+        ],
+        "meanAbsError": 0.17433495743727598,
+        "maxAbsError": 159.0,
+        "samplesDiffOver16": 4168
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1,
+          0.5
+        ],
+        "meanAbsError": 0.16744763664874554,
+        "maxAbsError": 159.0,
+        "samplesDiffOver16": 3564
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1,
+          1
+        ],
+        "meanAbsError": 0.17681983646953403,
+        "maxAbsError": 161.0,
+        "samplesDiffOver16": 4138
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1,
+          1.5
+        ],
+        "meanAbsError": 0.19916078629032258,
+        "maxAbsError": 162.0,
+        "samplesDiffOver16": 5703
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0
+        ],
+        "meanAbsError": 0.21815538194444445,
+        "maxAbsError": 160.0,
+        "samplesDiffOver16": 7414
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1.5,
+          0.5
+        ],
+        "meanAbsError": 0.21582241263440863,
+        "maxAbsError": 164.0,
+        "samplesDiffOver16": 7125
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1.5,
+          1
+        ],
+        "meanAbsError": 0.2224441364247312,
+        "maxAbsError": 164.0,
+        "samplesDiffOver16": 7457
+      },
+      {
+        "plane": "V",
+        "sampleOffsetFullPixels": [
+          1.5,
+          1.5
+        ],
+        "meanAbsError": 0.23530087925627244,
+        "maxAbsError": 164.0,
+        "samplesDiffOver16": 8287
+      }
+    ],
+    "limits": "Direct decoded native planes, first/last same-output calibration. Candidate sample phases describe observed plane masks; they do not prove where in the native render/encode pipeline that sampling happens. No raw RGB maximum is discarded."
+  }
+]

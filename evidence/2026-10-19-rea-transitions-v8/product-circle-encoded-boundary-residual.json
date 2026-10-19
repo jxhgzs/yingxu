@@ -1,0 +1,167 @@
+{
+  "source": "artifacts/qa/transitions-v8/product-circle/render.mp4",
+  "mismatches": 293,
+  "maxDistanceFromMathematicalEdge": 24.3470551084809,
+  "meanDistance": 0.3991349382949479,
+  "withinHalfPixel": 275,
+  "withinOnePixel": 290,
+  "withinTwoPixels": 290,
+  "frames": [
+    {
+      "frame": 45,
+      "mismatches": 0,
+      "maxDistanceFromMathematicalEdge": 0
+    },
+    {
+      "frame": 46,
+      "mismatches": 2,
+      "maxDistanceFromMathematicalEdge": 0.19104643284025968
+    },
+    {
+      "frame": 47,
+      "mismatches": 3,
+      "maxDistanceFromMathematicalEdge": 0.20413369835110018
+    },
+    {
+      "frame": 48,
+      "mismatches": 1,
+      "maxDistanceFromMathematicalEdge": 0.27525604342000065
+    },
+    {
+      "frame": 49,
+      "mismatches": 1,
+      "maxDistanceFromMathematicalEdge": 0.016740674920654897
+    },
+    {
+      "frame": 50,
+      "mismatches": 6,
+      "maxDistanceFromMathematicalEdge": 0.6689010218885869
+    },
+    {
+      "frame": 51,
+      "mismatches": 9,
+      "maxDistanceFromMathematicalEdge": 0.321382289863692
+    },
+    {
+      "frame": 52,
+      "mismatches": 2,
+      "maxDistanceFromMathematicalEdge": 0.2568338795766749
+    },
+    {
+      "frame": 53,
+      "mismatches": 21,
+      "maxDistanceFromMathematicalEdge": 0.4207773432009958
+    },
+    {
+      "frame": 54,
+      "mismatches": 9,
+      "maxDistanceFromMathematicalEdge": 0.5306205393758887
+    },
+    {
+      "frame": 55,
+      "mismatches": 25,
+      "maxDistanceFromMathematicalEdge": 0.668098328965101
+    },
+    {
+      "frame": 56,
+      "mismatches": 7,
+      "maxDistanceFromMathematicalEdge": 0.5352593233736798
+    },
+    {
+      "frame": 57,
+      "mismatches": 13,
+      "maxDistanceFromMathematicalEdge": 0.40231746462251294
+    },
+    {
+      "frame": 58,
+      "mismatches": 12,
+      "maxDistanceFromMathematicalEdge": 0.5052409930509043
+    },
+    {
+      "frame": 59,
+      "mismatches": 18,
+      "maxDistanceFromMathematicalEdge": 0.4340361037472462
+    },
+    {
+      "frame": 60,
+      "mismatches": 9,
+      "maxDistanceFromMathematicalEdge": 0.5341324063480215
+    },
+    {
+      "frame": 61,
+      "mismatches": 16,
+      "maxDistanceFromMathematicalEdge": 24.247348501798683
+    },
+    {
+      "frame": 62,
+      "mismatches": 8,
+      "maxDistanceFromMathematicalEdge": 0.5899466681294712
+    },
+    {
+      "frame": 63,
+      "mismatches": 17,
+      "maxDistanceFromMathematicalEdge": 24.3470551084809
+    },
+    {
+      "frame": 64,
+      "mismatches": 9,
+      "maxDistanceFromMathematicalEdge": 0.6031233215046541
+    },
+    {
+      "frame": 65,
+      "mismatches": 15,
+      "maxDistanceFromMathematicalEdge": 0.5410878270794797
+    },
+    {
+      "frame": 66,
+      "mismatches": 12,
+      "maxDistanceFromMathematicalEdge": 0.3349999553580574
+    },
+    {
+      "frame": 67,
+      "mismatches": 10,
+      "maxDistanceFromMathematicalEdge": 24.283737029574354
+    },
+    {
+      "frame": 68,
+      "mismatches": 10,
+      "maxDistanceFromMathematicalEdge": 0.5556174045990474
+    },
+    {
+      "frame": 69,
+      "mismatches": 16,
+      "maxDistanceFromMathematicalEdge": 0.3016545102617556
+    },
+    {
+      "frame": 70,
+      "mismatches": 8,
+      "maxDistanceFromMathematicalEdge": 0.22224672702645876
+    },
+    {
+      "frame": 71,
+      "mismatches": 22,
+      "maxDistanceFromMathematicalEdge": 0.29596277903749524
+    },
+    {
+      "frame": 72,
+      "mismatches": 6,
+      "maxDistanceFromMathematicalEdge": 0.2614487196178743
+    },
+    {
+      "frame": 73,
+      "mismatches": 4,
+      "maxDistanceFromMathematicalEdge": 0.3171462699822314
+    },
+    {
+      "frame": 74,
+      "mismatches": 2,
+      "maxDistanceFromMathematicalEdge": 0.2296318667374635
+    },
+    {
+      "frame": 75,
+      "mismatches": 0,
+      "maxDistanceFromMathematicalEdge": 0
+    }
+  ],
+  "limits": "Classifies encoded product luma relative to its own first/last frames where endpoint delta>32. Does not claim pre-encode wrong-pixel identity or exact native AA."
+}

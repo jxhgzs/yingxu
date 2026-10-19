@@ -1,0 +1,232 @@
+[
+  {
+    "label": "flash-white",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6724845376098013708/b033ea56618d5b0f098071fb326bb02a",
+    "files": 26,
+    "archiveSha256": "6a7bc9dd9d2f02bdb931836a3802ca36bbd14ad2c7c18b852f0fcbe75200c08a",
+    "reaInspectEvidence": "ev_45a888d4d900a7c96c6d8c3ed5aac7bf4d037cbd17f8a94264830601300b0329",
+    "reaSummaryEvidence": "ev_8142ddb3c5abb607f7898394cbe32a844882b4b5121e35bcffc7ab6cd686b517",
+    "reaInventoryEvidence": [
+      "ev_7a741f8eb99330639f93681aae63fc9c07d0f2db2dd40c4b4102ca3f6582bbb2"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingFeature/lua/SeekModeScript.lua",
+        "bytes": 1984,
+        "sha256": "0637cf38d40418df37de179aaa9e140f975008363be800172e71ef4e2405cb63"
+      },
+      {
+        "path": "AmazingFeature/xshader/VerticalGlitch0.frag",
+        "bytes": 256,
+        "sha256": "b0391211ee513eff28c05b22aaac8f354de29d82dc851e81571afad3bb302f36"
+      },
+      {
+        "path": "config.json",
+        "bytes": 353,
+        "sha256": "53aff40a60982756a6ab21196cde422c70ff93484d67ede81113664b1a29aeef"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 132,
+        "sha256": "bc228a293fdf91674ddb5000dc31d095088cba7795af72d23d20c29d6cb4d0e1"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  },
+  {
+    "label": "wipe-left",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6724849999336706573/2f258fcee6b54a483ffdce769e520b19",
+    "files": 16,
+    "archiveSha256": "fec6ca77fc67333f09017cfbd29aeffdfc65f4961da2c6cd6c7c68dcbbfb5b95",
+    "reaInspectEvidence": "ev_1c88014d4523f5628aad1a12042260ced13f2486787352039b05aa11896fb827",
+    "reaSummaryEvidence": "ev_5c34df0fe4eed6e5473244fade7978cb3eacb2a4c6685183b9a68f30d35fdb09",
+    "reaInventoryEvidence": [
+      "ev_4dd148dc2dffa0ea8cd1efb5393574a9e0b04a0e08a0ab6824202354e71b7c6b"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingAuto_out/lua/SadGE.lua",
+        "bytes": 9017,
+        "sha256": "7c41458ae30fc8c02caca253d82df9a820a909bc88cbc2865937ce2326c77fba"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/generalEffect.json",
+        "bytes": 2133,
+        "sha256": "f8fb7f6e11c501858c61a81f1a94a78612341168c9e3ff63de9575b2fcff75f8"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/resource1/shader/VerticalGlitch0.frag",
+        "bytes": 780,
+        "sha256": "47187100f34c99457a32e446484d8122c879b8e950d512ccb21bfa91606d0231"
+      },
+      {
+        "path": "config.json",
+        "bytes": 321,
+        "sha256": "7da9409fc8fba9ca6868b087af05b689a1b4b4861ab35f143a0f1fdb1edbb325"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 395,
+        "sha256": "9beeb83cee3bb4e385ce073b378871cea7a2771ade9feac52a97dfdf3728878a"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  },
+  {
+    "label": "circle-mask",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6725767129519362573/c8944bbacb49098c3766fa3f1abd532c",
+    "files": 16,
+    "archiveSha256": "2e2489e1f479c8babef0e3fb81496161b5e2877c7c8894677f0ac8c969bb474b",
+    "reaInspectEvidence": "ev_6e5c1ea1673be2145a8dc21d297a130b84c044a7376820ca4c943b19f10f15d3",
+    "reaSummaryEvidence": "ev_a3deff1afce444da85753da43bcb0f3b92ad0369f4507b4429e988bf263fc2a1",
+    "reaInventoryEvidence": [
+      "ev_6418e7d9eab19233dca3fb18a520d0da319d0bf135b8e862f31b068e20559c82"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingAuto_out/lua/SadGE.lua",
+        "bytes": 8999,
+        "sha256": "bf3064d5fb8572fcc95db370137c3debabb3b0fe0b4b8c63a3b871296ebf7d7b"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/generalEffect.json",
+        "bytes": 1718,
+        "sha256": "1f436313be86e277e905c095e4cdb9040185596fecef8c16c7c0b884da5c6f21"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/resource1/shader/VerticalGlitch0.frag",
+        "bytes": 547,
+        "sha256": "5ad2f45c508384993a757d7f173cb4c54a5eb5ba693bbdc8259a46273b293db2"
+      },
+      {
+        "path": "config.json",
+        "bytes": 321,
+        "sha256": "82e792a0e64c315773a864a8c5e9327ed1f1f51653b67317ec0715a6efc0c91b"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 395,
+        "sha256": "9beeb83cee3bb4e385ce073b378871cea7a2771ade9feac52a97dfdf3728878a"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  },
+  {
+    "label": "flash-white-legacy",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/322575/9732e719b858a6dbb648d4fb459fde08",
+    "files": 26,
+    "archiveSha256": "e5009eeddfe1d23cc04a6c610d5139d849e690aaa08fe47135ab5cbb029d8c04",
+    "reaInspectEvidence": "ev_6f15d2143ded1646199b2503148813bc98aeb5ca54efc21516682d1988a5f4af",
+    "reaSummaryEvidence": "ev_21ff3f3f62c4bf8021fdd62533ba1c8d0fb25360859222de034168db35b6edfc",
+    "reaInventoryEvidence": [
+      "ev_3e125be86c51b95f731259ce718704d7a02e1019e59646d7e113c585b1ad8d09"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingFeature/lua/SeekModeScript.lua",
+        "bytes": 1984,
+        "sha256": "f8e52d77c9e3f1056070a6cc15c8449b9f67a689f9d6ce5dfbd8052d43159e85"
+      },
+      {
+        "path": "AmazingFeature/xshader/VerticalGlitch0.frag",
+        "bytes": 256,
+        "sha256": "b0391211ee513eff28c05b22aaac8f354de29d82dc851e81571afad3bb302f36"
+      },
+      {
+        "path": "config.json",
+        "bytes": 353,
+        "sha256": "53aff40a60982756a6ab21196cde422c70ff93484d67ede81113664b1a29aeef"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 132,
+        "sha256": "bc228a293fdf91674ddb5000dc31d095088cba7795af72d23d20c29d6cb4d0e1"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  },
+  {
+    "label": "circle-legacy",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/325117/a7eb1d47f97049b17f49669622d07f3d",
+    "files": 14,
+    "archiveSha256": "c5526d9cae94c6051861d80bf1691dd7b34c4db43ea6af9c6262c6788fc52abf",
+    "reaInspectEvidence": "ev_0f4f5d33be8f5720b1ce65e8414c00e5ca579f358ef8fb1062d28745458b364b",
+    "reaSummaryEvidence": "ev_bfe6bd03ab8ab0c7b0c4be44a6c22d14f0f1eb94409bb6730eca42bdff33bb92",
+    "reaInventoryEvidence": [
+      "ev_647d4e846b41cc30b671c83ad82cdfb51085ab43ca05fa5c0915eeb4a9f11ecb"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingAuto_out/lua/SadGE.lua",
+        "bytes": 7806,
+        "sha256": "9cd5294330742dd77fb7bae35f30d0f41ca5360f9d516369e2c142f27cb65e57"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/generalEffect.json",
+        "bytes": 1718,
+        "sha256": "1f436313be86e277e905c095e4cdb9040185596fecef8c16c7c0b884da5c6f21"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/resource1/shader/VerticalGlitch0.frag",
+        "bytes": 547,
+        "sha256": "5ad2f45c508384993a757d7f173cb4c54a5eb5ba693bbdc8259a46273b293db2"
+      },
+      {
+        "path": "config.json",
+        "bytes": 172,
+        "sha256": "2569cc074414841f4bc05d4c07d84c116373f76d154c8eade634b3a49597e39c"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 86,
+        "sha256": "fcfa8283e14942f917dd36de12af0038fbe9c1e0f2732365f156a93d1a23a53b"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  },
+  {
+    "label": "wipe-legacy",
+    "source": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/322599/ea955d4c6033e6e3720a3c40eb2929bf",
+    "files": 14,
+    "archiveSha256": "ec70cdb017092c11d6d9fda653f5875521cb34b9977ba8984aed38cfc2253f3a",
+    "reaInspectEvidence": "ev_e188e1e3bd0bbc56512678c283e28b8e85deafbeb028966c4615f7176ded2577",
+    "reaSummaryEvidence": "ev_c4907b5500aa56c9732d4cdc9341c963ff5682caaaf0fbfb3dfd22d5e290a7ce",
+    "reaInventoryEvidence": [
+      "ev_acdfb2d9d11bbd230c135dc50ed2b4eaa5e0ec6889ff6cfd0a9e3a6decf0a1ab"
+    ],
+    "selectedFiles": [
+      {
+        "path": "AmazingAuto_out/lua/SadGE.lua",
+        "bytes": 7806,
+        "sha256": "9cd5294330742dd77fb7bae35f30d0f41ca5360f9d516369e2c142f27cb65e57"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/generalEffect.json",
+        "bytes": 2133,
+        "sha256": "f8fb7f6e11c501858c61a81f1a94a78612341168c9e3ff63de9575b2fcff75f8"
+      },
+      {
+        "path": "AmazingAuto_out/xshader/resource1/shader/VerticalGlitch0.frag",
+        "bytes": 780,
+        "sha256": "47187100f34c99457a32e446484d8122c879b8e950d512ccb21bfa91606d0231"
+      },
+      {
+        "path": "config.json",
+        "bytes": 172,
+        "sha256": "a1ecdb17b59b99b5a6e147ac5b58f8f2981fd3f151b3c10608ea5659a1c68178"
+      },
+      {
+        "path": "extra.json",
+        "bytes": 86,
+        "sha256": "fcfa8283e14942f917dd36de12af0038fbe9c1e0f2732365f156a93d1a23a53b"
+      }
+    ],
+    "sourceBytesReverified": true,
+    "missingOrChanged": []
+  }
+]

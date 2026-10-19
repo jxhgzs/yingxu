@@ -1,0 +1,38 @@
+{
+  "catalogCount": 308,
+  "localEffectDirectoryMatches": [
+    {
+      "id": "6724845717472416269",
+      "effect_id": "322577",
+      "title": "叠化",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 0.5,
+        "isOverlap": true
+      },
+      "md5": "2d641adc4bb63e37e3a0067d8c8cc3c3",
+      "directory": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/322577",
+      "files": 14,
+      "children": [
+        "2d641adc4bb63e37e3a0067d8c8cc3c3"
+      ]
+    },
+    {
+      "id": "6724239388189921806",
+      "effect_id": "321493",
+      "title": "闪黑",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 0.5,
+        "isOverlap": false
+      },
+      "md5": "3bca53e9f3dfa2c184fbee96438ea097",
+      "directory": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/321493",
+      "files": 24,
+      "children": [
+        "3bca53e9f3dfa2c184fbee96438ea097"
+      ]
+    }
+  ],
+  "scope": "Match exact cached category effect_id against direct local effect directory names; does not locate arbitrary alternative cache layouts."
+}

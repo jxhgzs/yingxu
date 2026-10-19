@@ -1,0 +1,606 @@
+{
+  "version": "0.8.0",
+  "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|b685a70176de8c054825d6dcbe233f259776cc6296b545fd7700c467d38c0a0a",
+  "mainProcessAbsentBeforeReopen": true,
+  "projects": [
+    {
+      "projectId": "49d5b05b-4130-4710-a4ee-f7842c2a5fa3",
+      "revision": 7,
+      "title": "Desktop 0.8 循环组合与调色",
+      "fieldsExceptTitleUnchanged": true,
+      "jobIdentityAndStatusUnchanged": true,
+      "document": {
+        "schemaVersion": 1,
+        "title": "Desktop 0.8 循环组合与调色",
+        "canvas": {
+          "width": 640,
+          "height": 360
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_7620a412033b63596fcc54f6",
+            "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7620a412033b63596fcc54f6.mp4",
+            "name": "audible-curve-probe.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "6",
+              "denominator": "1"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": true,
+            "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "mime": "video/mp4",
+            "frameTiming": "cfr30"
+          },
+          {
+            "id": "v7-text",
+            "kind": "text",
+            "path": "",
+            "duration": {
+              "numerator": "2",
+              "denominator": "1"
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "id": "v",
+            "kind": "video",
+            "name": "主轨道",
+            "clips": [
+              {
+                "id": "video-v7",
+                "materialId": "a_7620a412033b63596fcc54f6",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "3",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "3",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "volume": 0.15,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "colorAdjustments": {
+                  "version": "combine-adjust-v2",
+                  "brightness": 0,
+                  "contrast": 0,
+                  "saturation": 0,
+                  "highlight": 0,
+                  "shadow": 0,
+                  "temperature": 0.4,
+                  "tint": -0.2,
+                  "black": -0.3,
+                  "white": 0.2,
+                  "fade": 0.25
+                }
+              }
+            ]
+          },
+          {
+            "id": "t",
+            "kind": "text",
+            "name": "文字",
+            "clips": [
+              {
+                "id": "text-v7",
+                "materialId": "v7-text",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "1",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "text": {
+                  "content": "映序文字动画",
+                  "font": "Source Han Sans SC Medium",
+                  "size": 50,
+                  "color": "#ffffff",
+                  "outline": 0,
+                  "shadow": 0
+                },
+                "textAnimations": [
+                  {
+                    "phase": "in",
+                    "kind": "fade",
+                    "duration": {
+                      "numerator": "3",
+                      "denominator": "10"
+                    }
+                  },
+                  {
+                    "phase": "out",
+                    "kind": "fade",
+                    "duration": {
+                      "numerator": "2",
+                      "denominator": "5"
+                    }
+                  },
+                  {
+                    "phase": "loop",
+                    "kind": "flash",
+                    "duration": {
+                      "numerator": "1",
+                      "denominator": "2"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "jobs": [
+        {
+          "id": "22476396-220a-4ba3-93de-92a880fb3777",
+          "projectId": "49d5b05b-4130-4710-a4ee-f7842c2a5fa3",
+          "requestId": "3b35128a-f0f6-46b1-af84-d197d6de16ad",
+          "kind": "export",
+          "status": "completed",
+          "documentRevision": 7,
+          "documentHash": "bc11445e2e26b423050b7c455dd1c9c76b19f73912bb44b7f108c938c41f12e9",
+          "inputHashes": [
+            {
+              "id": "a_7620a412033b63596fcc54f6",
+              "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785"
+            }
+          ],
+          "protocolVersion": 1,
+          "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|b685a70176de8c054825d6dcbe233f259776cc6296b545fd7700c467d38c0a0a",
+          "progress": 1,
+          "createdAt": "2026-10-19T12:02:01.341Z",
+          "exportSettings": {
+            "format": "mp4",
+            "size": {
+              "width": 640,
+              "height": 360
+            },
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "videoCodec": "h264",
+            "audioSampleRate": 44100,
+            "audioBitrateKbps": 192
+          },
+          "resolvedExport": {
+            "version": 1,
+            "format": "mp4",
+            "extension": "mp4",
+            "mime": "video/mp4",
+            "audioOnly": false,
+            "hasAudio": true,
+            "width": 640,
+            "height": 360,
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "videoCodec": "h264",
+            "audioSampleRate": 44100,
+            "audioBitrateKbps": 192,
+            "startFrame": 0,
+            "endFrame": 90,
+            "frameCount": 90,
+            "actualStart": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "duration": 3
+          },
+          "completedAt": "2026-10-19T12:02:04.095Z",
+          "result": {
+            "width": 640,
+            "height": 360,
+            "frameCount": 90,
+            "duration": 3,
+            "format": "mp4",
+            "extension": "mp4",
+            "mime": "video/mp4",
+            "url": "/renders/22476396-220a-4ba3-93de-92a880fb3777/video",
+            "downloadUrl": "/renders/22476396-220a-4ba3-93de-92a880fb3777/download"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "1adfeed6-7c2a-4ebb-902e-2af4560d9bd3",
+      "revision": 8,
+      "title": "Desktop 0.8 零余量转场 · 重开验证",
+      "fieldsExceptTitleUnchanged": true,
+      "jobIdentityAndStatusUnchanged": true,
+      "document": {
+        "schemaVersion": 1,
+        "title": "Desktop 0.8 零余量转场 · 重开验证",
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_7620a412033b63596fcc54f6",
+            "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7620a412033b63596fcc54f6.mp4",
+            "name": "audible-curve-probe.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "6",
+              "denominator": "1"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": true,
+            "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "mime": "video/mp4",
+            "frameTiming": "cfr30"
+          },
+          {
+            "id": "v7-text",
+            "kind": "text",
+            "path": "",
+            "duration": {
+              "numerator": "2",
+              "denominator": "1"
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "id": "v",
+            "kind": "video",
+            "name": "主轨道",
+            "clips": [
+              {
+                "id": "video-v7",
+                "materialId": "a_7620a412033b63596fcc54f6",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "6",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "6",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "volume": 0.15,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "colorAdjustments": {
+                  "version": "combine-adjust-v2",
+                  "brightness": 0,
+                  "contrast": 0,
+                  "saturation": 0,
+                  "highlight": 0,
+                  "shadow": 0,
+                  "temperature": 0.4,
+                  "tint": -0.2,
+                  "black": -0.3,
+                  "white": 0.2,
+                  "fade": 0.25
+                }
+              },
+              {
+                "id": "v8-second",
+                "materialId": "a_7620a412033b63596fcc54f6",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "6",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "6",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "6",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "volume": 0.15,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "colorAdjustments": {
+                  "version": "combine-adjust-v2",
+                  "brightness": 0,
+                  "contrast": 0,
+                  "saturation": 0,
+                  "highlight": 0,
+                  "shadow": 0,
+                  "temperature": 0.4,
+                  "tint": -0.2,
+                  "black": -0.3,
+                  "white": 0.2,
+                  "fade": 0.25
+                }
+              }
+            ]
+          },
+          {
+            "id": "t",
+            "kind": "text",
+            "name": "文字",
+            "clips": [
+              {
+                "id": "text-v7",
+                "materialId": "v7-text",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "1",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "text": {
+                  "content": "映序文字动画",
+                  "font": "Source Han Sans SC Medium",
+                  "size": 50,
+                  "color": "#ffffff",
+                  "outline": 0,
+                  "shadow": 0
+                },
+                "textAnimations": [
+                  {
+                    "phase": "in",
+                    "kind": "fade",
+                    "duration": {
+                      "numerator": "3",
+                      "denominator": "10"
+                    }
+                  },
+                  {
+                    "phase": "out",
+                    "kind": "fade",
+                    "duration": {
+                      "numerator": "2",
+                      "denominator": "5"
+                    }
+                  },
+                  {
+                    "phase": "loop",
+                    "kind": "flash",
+                    "duration": {
+                      "numerator": "1",
+                      "denominator": "2"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "id": "d9414721-bca5-4dca-87f6-b7385865f93c",
+            "trackId": "v",
+            "outgoingClipId": "video-v7",
+            "incomingClipId": "v8-second",
+            "kind": "circleOpen",
+            "alignment": "center",
+            "overlap": true,
+            "duration": {
+              "numerator": "7",
+              "denominator": "15"
+            }
+          }
+        ]
+      },
+      "jobs": [
+        {
+          "id": "4d4fad2f-6670-46da-8143-edbc12592720",
+          "projectId": "1adfeed6-7c2a-4ebb-902e-2af4560d9bd3",
+          "requestId": "03411d8c-fb93-44ae-acaa-f999fa5915f7",
+          "kind": "export",
+          "status": "completed",
+          "documentRevision": 7,
+          "documentHash": "e6efc89be7e84713dfe3979c01dabbb336c22e4a5cbba528df2cced393cb69da",
+          "inputHashes": [
+            {
+              "id": "a_7620a412033b63596fcc54f6",
+              "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785"
+            }
+          ],
+          "protocolVersion": 1,
+          "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|b685a70176de8c054825d6dcbe233f259776cc6296b545fd7700c467d38c0a0a",
+          "progress": 1,
+          "createdAt": "2026-10-19T12:04:04.808Z",
+          "exportSettings": {
+            "format": "mp4",
+            "size": {
+              "width": 1280,
+              "height": 720
+            },
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "videoCodec": "h264",
+            "audioSampleRate": 44100,
+            "audioBitrateKbps": 192
+          },
+          "resolvedExport": {
+            "version": 1,
+            "format": "mp4",
+            "extension": "mp4",
+            "mime": "video/mp4",
+            "audioOnly": false,
+            "hasAudio": true,
+            "width": 1280,
+            "height": 720,
+            "fps": {
+              "numerator": "30",
+              "denominator": "1"
+            },
+            "videoCodec": "h264",
+            "audioSampleRate": 44100,
+            "audioBitrateKbps": 192,
+            "startFrame": 0,
+            "endFrame": 360,
+            "frameCount": 360,
+            "actualStart": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "duration": 12
+          },
+          "completedAt": "2026-10-19T12:04:26.219Z",
+          "result": {
+            "width": 1280,
+            "height": 720,
+            "frameCount": 360,
+            "duration": 12,
+            "format": "mp4",
+            "extension": "mp4",
+            "mime": "video/mp4",
+            "url": "/renders/4d4fad2f-6670-46da-8143-edbc12592720/video",
+            "downloadUrl": "/renders/4d4fad2f-6670-46da-8143-edbc12592720/download"
+          }
+        }
+      ]
+    }
+  ]
+}

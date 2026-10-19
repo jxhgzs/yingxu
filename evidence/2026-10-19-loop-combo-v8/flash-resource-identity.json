@@ -1,0 +1,43 @@
+{
+  "name": "闪烁",
+  "canonicalDirectory": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644514/e0cb5a808b474c4c461b652bc94f5be1",
+  "files": [
+    {
+      "resourceId": "6724921437930394120",
+      "effectId": "1644514",
+      "relative": "Spark.lua",
+      "bytes": 4252,
+      "sha256": "769740a2e5b0b81316dc844efbcfc35dcc4f9b3e4971f3acedf0db8339a044d1"
+    },
+    {
+      "resourceId": "6724921437930394120",
+      "effectId": "1644514",
+      "relative": "anim.prefab",
+      "bytes": 396,
+      "sha256": "e0478d60d55266be6596080cefd403b87c42497386695160e869a8f4e481a972"
+    },
+    {
+      "resourceId": "6724921437930394120",
+      "effectId": "1644514",
+      "relative": "config.json",
+      "bytes": 63,
+      "sha256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    {
+      "resourceId": "6724921437930394120",
+      "effectId": "1644514",
+      "relative": "content.json",
+      "bytes": 60,
+      "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+    }
+  ],
+  "formula": {
+    "period": "D",
+    "phase": "r=(t mod D)/D",
+    "alpha": "r<=1/2 ? 4*r-4*r*r : 1-(2*r-1)^2"
+  },
+  "authority": "fixed resource bytes, not runtime claim",
+  "reaParentEvidence": "ev_b33bda241086a762bee23a712a89802b234b3322f9fa48bb9950a798bc172d59",
+  "reaViewEvidence": "ev_d317aafb18ace9488a1269929f6e58b83b382bb2be26b3ad2c8f6db611cd166d",
+  "reaInventoryWarning": "REA JS inventory does not parse Lua semantics; formula read separately from fixed resource bytes and existing embedded Ease."
+}

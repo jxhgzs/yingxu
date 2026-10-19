@@ -1,0 +1,35 @@
+{
+  "targetVersion": "5.9.0",
+  "files": [
+    {
+      "relativePath": "combine_adjust/AmazingFeature/lua/SeekModeScript.lua",
+      "sha256": "ed1a057851bd63405131ec5dfbeb9a21c750ae350ea4299d4e09f73da50b6be2",
+      "size": 18383
+    },
+    {
+      "relativePath": "combine_adjust/AmazingFeature/xshader/colorAdjust.frag",
+      "sha256": "4bcf0f7dfc88360f9273a778d41f5fe5cfd89c3253c6906878fe5591b6508ee7",
+      "size": 7747
+    },
+    {
+      "relativePath": "vignetting/config.json",
+      "sha256": "16454a261107dc91d52c833f1610242fb3b012bf55eff4ca6e92bb2e046371ee",
+      "size": 248
+    },
+    {
+      "relativePath": "vignetting/amazingfeature/Transform.lua",
+      "sha256": "4e4b7c19259ebab2fbe29d179122a20584b783f12632bfc2d214d82e522c303b",
+      "size": 716
+    },
+    {
+      "relativePath": "vignetting/amazingfeature/xshader/gles2_filter.frag",
+      "sha256": "cbc6660d3b4cdef6747df5b7a73b704a057bf114bf22b8da542044850e74cffa",
+      "size": 11424
+    },
+    {
+      "relativePath": "vignetting/amazingfeature/image/anjiao.png",
+      "sha256": "ac8aaa8bbb406255adc7c649de92fa75ec424ff2280d98a7885f457b7d928c38",
+      "size": 37689
+    }
+  ]
+}

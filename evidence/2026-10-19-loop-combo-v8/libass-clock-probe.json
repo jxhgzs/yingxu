@@ -1,0 +1,77 @@
+[
+  {
+    "frame": 9,
+    "mode": "original",
+    "alpha": 0.9608868324317147
+  },
+  {
+    "frame": 9,
+    "mode": "us1ms",
+    "alpha": 0.9608868324317147
+  },
+  {
+    "frame": 9,
+    "mode": "us1us",
+    "alpha": 0.9608868324317147
+  },
+  {
+    "frame": 15,
+    "mode": "original",
+    "alpha": 0.0
+  },
+  {
+    "frame": 15,
+    "mode": "us1ms",
+    "alpha": 0.0
+  },
+  {
+    "frame": 15,
+    "mode": "us1us",
+    "alpha": 0.0
+  },
+  {
+    "frame": 110,
+    "mode": "original",
+    "alpha": 0.8902812185552871
+  },
+  {
+    "frame": 110,
+    "mode": "us1ms",
+    "alpha": 0.8902812185552871
+  },
+  {
+    "frame": 110,
+    "mode": "us1us",
+    "alpha": 0.8902812185552871
+  },
+  {
+    "frame": 111,
+    "mode": "original",
+    "alpha": 0.8902812185552871
+  },
+  {
+    "frame": 111,
+    "mode": "us1ms",
+    "alpha": 0.9608868324317147
+  },
+  {
+    "frame": 111,
+    "mode": "us1us",
+    "alpha": 0.9608868324317147
+  },
+  {
+    "frame": 112,
+    "mode": "original",
+    "alpha": 0.9960570798049329
+  },
+  {
+    "frame": 112,
+    "mode": "us1ms",
+    "alpha": 0.9960570798049329
+  },
+  {
+    "frame": 112,
+    "mode": "us1us",
+    "alpha": 0.9960570798049329
+  }
+]

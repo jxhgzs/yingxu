@@ -1,0 +1,30 @@
+{
+  "focusedTests": {
+    "count": 47,
+    "pass": 47,
+    "fail": 0,
+    "durationMs": 32281.973,
+    "log": "artifacts/qa/transitions-v8/focused-tests.log"
+  },
+  "sameResolutionStaticFollowup": {
+    "command": "node --test --test-name-pattern 'spatial resources|same-resolution native|spatial gates' test/transition-spatial.test.ts",
+    "tests": 3,
+    "pass": 3,
+    "fail": 0
+  },
+  "typecheckExitCode": 0,
+  "newTests": {
+    "candidate": 6,
+    "white": 4,
+    "spatial": 4
+  },
+  "runtime": "acabce7 (parent commit; no runtime edits after parent freeze)",
+  "rea": {
+    "resources": 6,
+    "resourceFiles": 112,
+    "export": "artifacts/rea/transitions-v8/final-evidence-bundle.json",
+    "closeAndStop": true,
+    "helperExitCode": 0
+  },
+  "limits": "Actual desktop and GPU benchmark results are recorded by parent/worker separately; no full pixel 1:1 claim."
+}

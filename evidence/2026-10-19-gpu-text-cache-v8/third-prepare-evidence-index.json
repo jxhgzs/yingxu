@@ -1,0 +1,154 @@
+{
+  "files": [
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/result-v3.json",
+      "bytes": 86636,
+      "sha256": "fdee728e2495c32a3d0a6fad2f9a72adcc34537314d7ac704d45438f740758cd"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/cases-v3.json",
+      "bytes": 60310,
+      "sha256": "6476be9a0dd4b8054d38d9ccdcd67ff3e8d4a246383b3ee643fac4a92ca242b6"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/probe-v3.ts",
+      "bytes": 9893,
+      "sha256": "1a0c7f5b8eabf6f092a2174db18a098541262c5510652b5cc96af7669953f744"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/prepare-v3.mjs",
+      "bytes": 4269,
+      "sha256": "02c0885fc15abd18ab6838ffd11835078f30c6bb0f389ffa58d8bb21c1b98196"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/prepare-v3.geometry-rejected.log",
+      "bytes": 1711,
+      "sha256": "7ec55bc1be7db2a1b5bcf367b535fddaf204d284291ce0e70602df1648c434c7"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-black-minus-0.rgba",
+      "bytes": 32768,
+      "sha256": "aef09d2a14d3dd58847cb857909ad95477d1063d6c97d3a581de4ff8a50814e7"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-black-plus-0.rgba",
+      "bytes": 32768,
+      "sha256": "b6c10dbf5d24c59d5febbff0f95dc1ac60b8e3de4bcabbc6f2dbcdcd9df5e1fd"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-black-white-extreme-0.rgba",
+      "bytes": 32768,
+      "sha256": "4b58a15e29bb018377b523f6d6510e0820e800bd8373a4db4359c90ce3a273eb"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-circleopen-45.rgba",
+      "bytes": 3686400,
+      "sha256": "4f3bb7d77522eb0959960834b5f6b11b001c589dffab16669774ca85d253fbcc"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-circleopen-52.rgba",
+      "bytes": 3686400,
+      "sha256": "707a38d998f1b5ba563c185d3ad37b68480c985f057d9bd559d9a55f3dfd98d5"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-circleopen-60.rgba",
+      "bytes": 3686400,
+      "sha256": "301fe379e4f70268ca1bcde32827201f689d085fe10fd05eeac75503c607d022"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-circleopen-67.rgba",
+      "bytes": 3686400,
+      "sha256": "b0dc7259a69b720a6780d94503bc78a76709fabef4fa2fddb4021b3b1a36ffed"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-circleopen-74.rgba",
+      "bytes": 3686400,
+      "sha256": "af6dd4c26dc61e4d79706044e65456bf1866ea054c3ae01ed08e2f6d7f534e9d"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-diptowhite-45.rgba",
+      "bytes": 3686400,
+      "sha256": "4f3bb7d77522eb0959960834b5f6b11b001c589dffab16669774ca85d253fbcc"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-diptowhite-52.rgba",
+      "bytes": 3686400,
+      "sha256": "7f64b439f89182ccb500478a237fc0faf30f0abffee38511acff2c9ae3482822"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-diptowhite-60.rgba",
+      "bytes": 3686400,
+      "sha256": "c1a278749cec50862b38ddd306291242df759ab458eaf3ba194604ac2756128a"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-diptowhite-67.rgba",
+      "bytes": 3686400,
+      "sha256": "3c349c396208f014f22a56b5d8e1c3e507c6433fe90d11fedbad292c6f3bad4e"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-diptowhite-74.rgba",
+      "bytes": 3686400,
+      "sha256": "fb01f5fb4f7c5602d6ed22baff30f211e954cbdc1ac6dca7e39a2f20b97f2279"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-fade-max-0.rgba",
+      "bytes": 32768,
+      "sha256": "0b9250b4ad9b35212db69979978fc897232a8e022077f5757a51dda1d3948ecf"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-source-0-0.rgba",
+      "bytes": 3686400,
+      "sha256": "4f3bb7d77522eb0959960834b5f6b11b001c589dffab16669774ca85d253fbcc"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-source-1-0.rgba",
+      "bytes": 3686400,
+      "sha256": "4fa5b58959b6432d0988ea2fe4d8317108930fad0b8864e86ef064186a24091d"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-tones-fade-combination-0.rgba",
+      "bytes": 32768,
+      "sha256": "9f7acc09ff7706cdd564a7e256156957898196c7119ef9581d31bd73e5a66001"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-tones-temperature-0.rgba",
+      "bytes": 32768,
+      "sha256": "103cb80c72589b57c2e79080b2baa461c344a89be66703480accb5757a65ae11"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-white-minus-0.rgba",
+      "bytes": 32768,
+      "sha256": "0e51f35a2e996494920d593b0ebc1254453a360f08542dc38c316f8d9f7632fa"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-white-plus-0.rgba",
+      "bytes": 32768,
+      "sha256": "c9aff0be218dbe4011905632581bc773d0ee92d078deff19ac3e5a0fe24577cd"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-wipeleft-45.rgba",
+      "bytes": 3686400,
+      "sha256": "4f3bb7d77522eb0959960834b5f6b11b001c589dffab16669774ca85d253fbcc"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-wipeleft-52.rgba",
+      "bytes": 3686400,
+      "sha256": "875727d6fbb2a38ca83eb6bb521291dcfb4fccb74b59a13eb1e92e589377227a"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-wipeleft-60.rgba",
+      "bytes": 3686400,
+      "sha256": "368cc835be60c0ac35d7f7e7a9bbd57999841c756d638944689f5c507e8d2b22"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-wipeleft-67.rgba",
+      "bytes": 3686400,
+      "sha256": "7fa041b5cb63a8ed96fb181f8ea59d5d85d46c91c7f20f38db72187670e5d1b0"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/v3-capture-wipeleft-74.rgba",
+      "bytes": 3686400,
+      "sha256": "eb01fdb3c7095c8c89b64e3d7d020d71ab3538d6a3f2fe0bfd9219742d707a12"
+    }
+  ]
+}

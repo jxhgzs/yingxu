@@ -1,0 +1,89 @@
+{
+  "evidenceId": "ev_2f13dded6eb82b43502b6979d19af2c6f42600ca1f8be63174a131e42e6069a2",
+  "rows": [
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/Transform.lua",
+      "sha256": "4e4b7c19259ebab2fbe29d179122a20584b783f12632bfc2d214d82e522c303b",
+      "manifestSHA256": "4e4b7c19259ebab2fbe29d179122a20584b783f12632bfc2d214d82e522c303b",
+      "matches": true,
+      "size": 716
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/content.json",
+      "sha256": "249db766fa8e46f7471aaf5345768d9524b31663c11352cf031d90a595ebd8a6",
+      "manifestSHA256": "249db766fa8e46f7471aaf5345768d9524b31663c11352cf031d90a595ebd8a6",
+      "matches": true,
+      "size": 796
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/image/anjiao.png",
+      "sha256": "ac8aaa8bbb406255adc7c649de92fa75ec424ff2280d98a7885f457b7d928c38",
+      "manifestSHA256": "ac8aaa8bbb406255adc7c649de92fa75ec424ff2280d98a7885f457b7d928c38",
+      "matches": true,
+      "size": 37689
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/main.scene",
+      "sha256": "e301ac89ed2a3d0065ad332fb766e4171796ca9204f226663a6a63f6c4bcfa28",
+      "manifestSHA256": "e301ac89ed2a3d0065ad332fb766e4171796ca9204f226663a6a63f6c4bcfa28",
+      "matches": true,
+      "size": 2493
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/material/filter.material",
+      "sha256": "bbeb09b8b2624e8021f218fb8bf2c4eb1697b64cc55585ce754c7ca85bd14615",
+      "manifestSHA256": "bbeb09b8b2624e8021f218fb8bf2c4eb1697b64cc55585ce754c7ca85bd14615",
+      "matches": true,
+      "size": 666
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/rt/outputTex.rt",
+      "sha256": "3ef9eb627e5247b476e73c2e4e1d9e0b7f6932fa6f43b8807677e3f2437cd197",
+      "manifestSHA256": "3ef9eb627e5247b476e73c2e4e1d9e0b7f6932fa6f43b8807677e3f2437cd197",
+      "matches": true,
+      "size": 762
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/scene.config",
+      "sha256": "5b405fa29439f5853937c9714c794f10a01ed033f81866ba52f7f8ea5312b41e",
+      "manifestSHA256": "5b405fa29439f5853937c9714c794f10a01ed033f81866ba52f7f8ea5312b41e",
+      "matches": true,
+      "size": 284
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/sticker.config",
+      "sha256": "59a8bf144f1872b9e46800badd168e48edb2f15bd5c299200581878ebb39b6f8",
+      "manifestSHA256": "59a8bf144f1872b9e46800badd168e48edb2f15bd5c299200581878ebb39b6f8",
+      "matches": true,
+      "size": 244
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/xshader/filter.xshader",
+      "sha256": "01155b0c16b9a789e0b01c71a7f2459268fd014cf3a501d977d4fc0a21bc56fd",
+      "manifestSHA256": "01155b0c16b9a789e0b01c71a7f2459268fd014cf3a501d977d4fc0a21bc56fd",
+      "matches": true,
+      "size": 1755
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/xshader/gles2_filter.frag",
+      "sha256": "cbc6660d3b4cdef6747df5b7a73b704a057bf114bf22b8da542044850e74cffa",
+      "manifestSHA256": "cbc6660d3b4cdef6747df5b7a73b704a057bf114bf22b8da542044850e74cffa",
+      "matches": true,
+      "size": 11424
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/amazingfeature/xshader/gles2_filter.vert",
+      "sha256": "add8f8c4c8e970dcdbe6ca1ab7180f7124cafc4e5dd909d8b0d7cf1734b3409e",
+      "manifestSHA256": "add8f8c4c8e970dcdbe6ca1ab7180f7124cafc4e5dd909d8b0d7cf1734b3409e",
+      "matches": true,
+      "size": 204
+    },
+    {
+      "logicalPath": "Contents/Resources/DefaultAdjustBundle/vignetting/config.json",
+      "sha256": "16454a261107dc91d52c833f1610242fb3b012bf55eff4ca6e92bb2e046371ee",
+      "manifestSHA256": "16454a261107dc91d52c833f1610242fb3b012bf55eff4ca6e92bb2e046371ee",
+      "matches": true,
+      "size": 248
+    }
+  ]
+}

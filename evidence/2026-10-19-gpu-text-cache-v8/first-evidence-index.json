@@ -1,0 +1,134 @@
+{
+  "files": [
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/result.json",
+      "bytes": 55430,
+      "sha256": "85f2e8e02ff518f279a469bc947c3ecaae38fc4d2f161397253fc010ce9bcd99"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/cases.json",
+      "bytes": 10164,
+      "sha256": "b7a16a2451a865cf7eed922b635a91bfe4e4ace649702b9780f4381e15aeaac6"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/probe.ts",
+      "bytes": 5312,
+      "sha256": "d0309868ee029caa077d2e868f5266a0fb106f9a82069b4afbc5c884e374c997"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/server.mjs",
+      "bytes": 1775,
+      "sha256": "8439d74618c6dce6021bb4dc7f1783149c6dd6e432f2aa73d0b20a4a50a1bcac"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/prepare.mjs",
+      "bytes": 3183,
+      "sha256": "fdfe28d9243dbc6696e1763c2b4eaa7f69afda2526b388a85e3122320dba0bb5"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/targeted-tests.log",
+      "bytes": 4273,
+      "sha256": "e39a9fef2a3cc3eaa4d763ab9c94b552c277b424a12109fdd640460e778c511b"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-15.rgba",
+      "bytes": 921600,
+      "sha256": "b9e4641857f04c2a8a80392c5f6afa32a971e8229a75f6c6781d78c93ac61fee"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-17.rgba",
+      "bytes": 921600,
+      "sha256": "b9e4641857f04c2a8a80392c5f6afa32a971e8229a75f6c6781d78c93ac61fee"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-19.rgba",
+      "bytes": 921600,
+      "sha256": "43524b209d0c384781ca5b31f4e36e3178b93a5a70239f8acef074c5b15e7352"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-21.rgba",
+      "bytes": 921600,
+      "sha256": "040110c3ef2ed989ac3cfea96e9d38749692eb927f1277f4b7832a25deda42c5"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-25.rgba",
+      "bytes": 921600,
+      "sha256": "01b88b1bd46245b030431f7e4e45cc54f57443e121acc02a687e0fb9844bb5e8"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-30.rgba",
+      "bytes": 921600,
+      "sha256": "9e1226c74a50c0b048af27279333eb42a259ce104253b31e650b3e0e5d50e368"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-60.rgba",
+      "bytes": 921600,
+      "sha256": "9e1226c74a50c0b048af27279333eb42a259ce104253b31e650b3e0e5d50e368"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-66.rgba",
+      "bytes": 921600,
+      "sha256": "d3c8b0abbe9e461e57811261731b8ee3a1c8f1a28f574edde9201114d9394d92"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-70.rgba",
+      "bytes": 921600,
+      "sha256": "394b207ea438755eecf446a94c8ceba46262d6aede5db8c949867443256c5583"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/capture-74.rgba",
+      "bytes": 921600,
+      "sha256": "a0f9cf3d9687b659509b2f5a1cc39fd683357bab3bcf81f9b3c1c760223c81a8"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-15.rgba",
+      "bytes": 921600,
+      "sha256": "b9e4641857f04c2a8a80392c5f6afa32a971e8229a75f6c6781d78c93ac61fee"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-17.rgba",
+      "bytes": 921600,
+      "sha256": "b9e4641857f04c2a8a80392c5f6afa32a971e8229a75f6c6781d78c93ac61fee"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-19.rgba",
+      "bytes": 921600,
+      "sha256": "87b6ebc0ef8dad34c047e7f43b6529b95570910401fed502aa9dec1d74544050"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-21.rgba",
+      "bytes": 921600,
+      "sha256": "300f5c40c3d65ac9680e569c7fb792a13636dd41212e6ae220d7747652e92b60"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-25.rgba",
+      "bytes": 921600,
+      "sha256": "52ecd637602cb77f4b2ed02a088c7642f03b163e22a8db637f0f8350d42b3dec"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-30.rgba",
+      "bytes": 921600,
+      "sha256": "854fcd9012d632da5a40f4ecbc57b270587310765808206c87d200857d68c0d2"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-60.rgba",
+      "bytes": 921600,
+      "sha256": "854fcd9012d632da5a40f4ecbc57b270587310765808206c87d200857d68c0d2"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-66.rgba",
+      "bytes": 921600,
+      "sha256": "61f834becb23ccf7ef44d74062ec1cbc22b4aec3decca98698ff4d271eac1faf"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-70.rgba",
+      "bytes": 921600,
+      "sha256": "529cc26a32118d09c1a972883252e01609d4e4cb51cc78ad4e1926d32055e2b5"
+    },
+    {
+      "path": "artifacts/qa/gpu-text-cache-v8/reference-74.rgba",
+      "bytes": 921600,
+      "sha256": "966419c47909e4656144e357d61d5edc8080cc29d6d97d367d0c363a1687d339"
+    }
+  ]
+}

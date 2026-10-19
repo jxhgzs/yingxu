@@ -1,0 +1,71 @@
+{
+  "scope": "One cached category, exact effectID/resourceID joins against two known local layouts; parent UI acquisition in progress makes this a non-atomic inventory.",
+  "matches": [
+    {
+      "layout": "effect",
+      "resourceId": "6724845717472416269",
+      "effectId": "322577",
+      "title": "叠化",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/322577",
+      "files": 14,
+      "children": [
+        "2d641adc4bb63e37e3a0067d8c8cc3c3"
+      ]
+    },
+    {
+      "layout": "effect",
+      "resourceId": "6724239388189921806",
+      "effectId": "321493",
+      "title": "闪黑",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/321493",
+      "files": 24,
+      "children": [
+        "3bca53e9f3dfa2c184fbee96438ea097"
+      ]
+    },
+    {
+      "layout": "effect",
+      "resourceId": "6724845376098013708",
+      "effectId": "322575",
+      "title": "闪白",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/322575",
+      "files": 26,
+      "children": [
+        "9732e719b858a6dbb648d4fb459fde08"
+      ]
+    },
+    {
+      "layout": "artistEffect",
+      "resourceId": "6724845376098013708",
+      "effectId": "322575",
+      "title": "闪白",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6724845376098013708",
+      "files": 26,
+      "children": [
+        "b033ea56618d5b0f098071fb326bb02a"
+      ]
+    },
+    {
+      "layout": "artistEffect",
+      "resourceId": "6724849999336706573",
+      "effectId": "2917283",
+      "title": "向左擦除",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6724849999336706573",
+      "files": 16,
+      "children": [
+        "2f258fcee6b54a483ffdce769e520b19"
+      ]
+    },
+    {
+      "layout": "artistEffect",
+      "resourceId": "6725767129519362573",
+      "effectId": "2916676",
+      "title": "圆形遮罩",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/6725767129519362573",
+      "files": 16,
+      "children": [
+        "c8944bbacb49098c3766fa3f1abd532c"
+      ]
+    }
+  ]
+}

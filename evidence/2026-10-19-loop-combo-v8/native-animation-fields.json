@@ -1,0 +1,130 @@
+[
+  {
+    "snapshot": "artifacts/qa/native-v8/01-loop-flash.json",
+    "bytes": 6939,
+    "sha256": "129c44a6b6c7706d11189a83fdafeb96f71ba3f98fe0c37a3b9da458651cd861",
+    "animations": [
+      {
+        "id": "1644514",
+        "resource_id": "6724921437930394120",
+        "name": "闪烁",
+        "type": "loop",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "xunhuan",
+        "anim_adjust_params": null
+      }
+    ]
+  },
+  {
+    "snapshot": "artifacts/qa/native-v8/02-loop-in-out-native-default.json",
+    "bytes": 7803,
+    "sha256": "7f6558282fab5b38218229820a2b5f03e0539dd1771081572d762adf216365ae",
+    "animations": [
+      {
+        "id": "1644600",
+        "resource_id": "6724919382104871427",
+        "name": "渐隐",
+        "type": "out",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "chuchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644304",
+        "resource_id": "6724916044072227332",
+        "name": "渐显",
+        "type": "in",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "ruchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644514",
+        "resource_id": "6724921437930394120",
+        "name": "闪烁",
+        "type": "loop",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "xunhuan",
+        "anim_adjust_params": null
+      }
+    ]
+  },
+  {
+    "snapshot": "artifacts/qa/native-v8/03-loop-in-out-controlled.json",
+    "bytes": 7803,
+    "sha256": "a297c06132e6850bc4ba0ca103cd5893a0545a8b5ef28f212ff998c089d5f5a2",
+    "animations": [
+      {
+        "id": "1644600",
+        "resource_id": "6724919382104871427",
+        "name": "渐隐",
+        "type": "out",
+        "start": 0,
+        "duration": 400000,
+        "category_id": "chuchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644304",
+        "resource_id": "6724916044072227332",
+        "name": "渐显",
+        "type": "in",
+        "start": 0,
+        "duration": 300000,
+        "category_id": "ruchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644514",
+        "resource_id": "6724921437930394120",
+        "name": "闪烁",
+        "type": "loop",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "xunhuan",
+        "anim_adjust_params": null
+      }
+    ]
+  },
+  {
+    "snapshot": "artifacts/qa/native-v8/04-combo-native-reopen.json",
+    "bytes": 7803,
+    "sha256": "288f3f14ebca1ab16d2fd19539f832313f6b632b18718c3c7bc4cb9e30e23d98",
+    "animations": [
+      {
+        "id": "1644600",
+        "resource_id": "6724919382104871427",
+        "name": "渐隐",
+        "type": "out",
+        "start": 0,
+        "duration": 400000,
+        "category_id": "chuchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644304",
+        "resource_id": "6724916044072227332",
+        "name": "渐显",
+        "type": "in",
+        "start": 0,
+        "duration": 300000,
+        "category_id": "ruchang",
+        "anim_adjust_params": null
+      },
+      {
+        "id": "1644514",
+        "resource_id": "6724921437930394120",
+        "name": "闪烁",
+        "type": "loop",
+        "start": 0,
+        "duration": 500000,
+        "category_id": "xunhuan",
+        "anim_adjust_params": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "issues": [
+    {
+      "name": "libass-integer-ms-selects-prior-event",
+      "frame": 111,
+      "targetSeconds": "111/30",
+      "initialProductAlpha": 0.8850251188353049,
+      "nativeAlpha": 0.9575449071325726,
+      "absoluteDifference": 0.07251978829726768,
+      "isolatedUnencodedOldAlpha": 0.8902812185552871,
+      "isolatedUnencodedCorrectAlpha": 0.9608868324317147,
+      "resolution": "frame-indexed ASS centisecond event lookup then exact integer frame PTS restoration; source/property evaluation time unchanged"
+    },
+    {
+      "name": "initial-final-encoded-alpha-bound-0.03-failed",
+      "frame": 20,
+      "productAlpha": 0.7608676965823608,
+      "nativeAlpha": 0.7932927863454136,
+      "absoluteDifference": 0.032425089763052806,
+      "resolution": "separate raw alpha<.003, product color/encoding-chain residual<.025 and final two-chain alpha<.045; not encoded-pixel equality"
+    }
+  ]
+}

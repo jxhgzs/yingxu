@@ -1,0 +1,100 @@
+{
+  "source": "local rp.db http_cache row1211",
+  "sha256": "0fa438fbee0bec3fa82ab9a410a6ff827347866a2c6afb535f90a60137bba99b",
+  "svr_time": 1792390395,
+  "version_code": "1754298802791,1129341276189,590,0-",
+  "panel_source": "loki",
+  "categories": [
+    {
+      "category_id": 39663,
+      "category_name": "热门",
+      "category_key": "hot",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39862,
+      "category_name": "叠化",
+      "category_key": "diehua123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39864,
+      "category_name": "幻灯片",
+      "category_key": "huandengpian123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39863,
+      "category_name": "运镜",
+      "category_key": "yunjing123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 43958,
+      "category_name": "最新",
+      "category_key": "new",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39866,
+      "category_name": "模糊",
+      "category_key": "mohu123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39870,
+      "category_name": "光效",
+      "category_key": "guangxiao123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39867,
+      "category_name": "拍摄",
+      "category_key": "paishe123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39868,
+      "category_name": "扭曲",
+      "category_key": "niuqu123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39869,
+      "category_name": "故障",
+      "category_key": "guzhang123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39865,
+      "category_name": "分割",
+      "category_key": "fenge123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39871,
+      "category_name": "自然",
+      "category_key": "ziran123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39872,
+      "category_name": "MG动画",
+      "category_key": "mgdonghua123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39874,
+      "category_name": "互动emoji",
+      "category_key": "hudongemoji123",
+      "category_is_vip": false
+    },
+    {
+      "category_id": 39873,
+      "category_name": "综艺",
+      "category_key": "zongyi123",
+      "category_is_vip": false
+    }
+  ],
+  "scope": "Cached panel category metadata, not all category effects or current online listing."
+}

@@ -1,0 +1,89 @@
+{
+  "cases": [
+    {
+      "name": "20b-black-plus50-real",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/20b-black-plus50-real.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-black-plus50-v8-real-1951.mov",
+      "snapshotSHA256": "7b0adc04c61cea956e36f4322ae0048343206f8c8f3530ac14bbc3e15a07ea76",
+      "sourceKind": "native UI applied then exported"
+    },
+    {
+      "name": "21-black-minus50",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/21-black-minus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-black-minus50-v8-1952.mov",
+      "snapshotSHA256": "4186057113e6af0b50bb22fc4dab2d7b1f21c0c4a86f8555bc513f83d95e65ac",
+      "sourceKind": "native UI applied then exported"
+    },
+    {
+      "name": "22-white-plus50",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/22-white-plus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-white-plus50-v8-1953.mov",
+      "snapshotSHA256": "39903d03b51ed091028b0cf748e2a6ef9c0ff34185173948df0b2c26d9ce2bbd",
+      "sourceKind": "native UI applied then exported"
+    },
+    {
+      "name": "23-white-minus50",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/23-white-minus50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-white-minus50-v8-1954.mov",
+      "snapshotSHA256": "242752d9d11e4d16fb803c78a59db7711850fb0eb51cb7e68bae62a6414c8382",
+      "sourceKind": "native UI applied then exported"
+    },
+    {
+      "name": "24-fade50",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/24-fade50.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-fade50-v8-1955.mov",
+      "snapshotSHA256": "7838b7fda8bf71dc2a5a308a11b1fb8eae1591b6fabaf02f7e7d163dc2297527",
+      "sourceKind": "native UI applied then exported"
+    },
+    {
+      "name": "25b-fade100-native",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/25b-fade100-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-fade100-controlled-v8-1958.mov",
+      "snapshotSHA256": "9f50776151056e648ed863bf5fe71ce87afbcc72673c5d5c028f97dbcdfe1b1b",
+      "sourceKind": "controlled reopened by native"
+    },
+    {
+      "name": "26b-tones-temperature-native",
+      "snapshot": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/native-v8/26b-tones-temperature-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-tones-temperature-v8-2000.mov",
+      "snapshotSHA256": "47780f18b1fc2b6c3e7f1f6b324fa6e9b622c4d385728582bbfa4c70437b7bca",
+      "sourceKind": "controlled reopened by native"
+    }
+  ],
+  "excludedFailedUI": {
+    "snapshot": "artifacts/qa/native-v8/20-black-plus50.json",
+    "sha256": "9828038bfc0b5e7ef888239eda108eb5ec887fab0c7840acc12e58feca4fd3a3",
+    "effects": [],
+    "reason": "UI field had lost focus; effects empty. Not accepted as black+50 observation."
+  },
+  "sourceQuantization": {
+    "initialCombinationFloatCandidateMaxColorError": 42.19090809516412,
+    "patch": {
+      "category": "color",
+      "index": 4,
+      "x": 960,
+      "y": 540
+    },
+    "inputFloatRGB": [
+      0.3669663369655609,
+      0.49700039625167847,
+      0.6368467211723328
+    ],
+    "nativeRGB": [
+      88,
+      131,
+      62
+    ],
+    "floatBWThenTemperatureRGB": [
+      63.38088908988249,
+      88.80909190483588,
+      65.97865630630746
+    ],
+    "nearest8BitInputThenBWAndTemperatureRGB": [
+      89.60106090046597,
+      133.4428686672781,
+      62.76601162141035
+    ],
+    "scope": "Input vs immediately-before-BW quantization not distinguished by this case because preceding adjustments are neutral. Product entry policy is explicit and isolated to BW-active."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "profileDigest": "6d47acb8fafee66c25ab41012c41ee6d1ffb78f9f65162917c011a4a96b4d329",
+  "reusedSnapshot": "text-animation-v7/expanded-native-snapshot.json",
+  "records": [
+    {
+      "receipt": "001-open.json",
+      "operation": "open_binary",
+      "elapsedSeconds": 4.281340583,
+      "receiptSHA256": "4f7389132e9be7c397d7ff705269b1e31ecf780ef4ed81138eb583abdb231a97",
+      "evidenceId": null,
+      "parentEvidenceId": null,
+      "error": null
+    },
+    {
+      "receipt": "002-search.json",
+      "operation": "search_procedures",
+      "elapsedSeconds": 18.722359125000004,
+      "receiptSHA256": "b20f2aa9b1ed3d5b4184199825a4f40992b88f628de317fb283952488699a7ea",
+      "evidenceId": "ev_bee25f79216c3fd822518889186e17f57faaccd9d7498d13b7971b208960bf29",
+      "parentEvidenceId": null,
+      "error": null
+    },
+    {
+      "receipt": "003-session.json",
+      "operation": "binary_session",
+      "elapsedSeconds": 0.15226966700000047,
+      "receiptSHA256": "da4ed10af40ea4cffcb954ffe1b10d95cc50acd5d9214432d710a2561ce36242",
+      "evidenceId": null,
+      "parentEvidenceId": null,
+      "error": null
+    },
+    {
+      "receipt": "004-flash-resource.json",
+      "operation": "analyze_javascript_application",
+      "elapsedSeconds": 0.05926008400000864,
+      "receiptSHA256": "2508c92e753a2263422d513a592f997b6ff7133cb2b2ff1a3ebfe688de56fb85",
+      "evidenceId": "ev_d317aafb18ace9488a1269929f6e58b83b382bb2be26b3ad2c8f6db611cd166d",
+      "parentEvidenceId": "ev_b33bda241086a762bee23a712a89802b234b3322f9fa48bb9950a798bc172d59",
+      "error": null
+    },
+    {
+      "receipt": "005-export.json",
+      "operation": "export_evidence_bundle",
+      "elapsedSeconds": 0.18249554099998205,
+      "receiptSHA256": "96ec5a026ad02301574c4d9fee723bca92223b35adbefcdde44d0dc4c37a3ea6",
+      "evidenceId": null,
+      "parentEvidenceId": null,
+      "error": null
+    },
+    {
+      "receipt": "006-close.json",
+      "operation": "close_binary",
+      "elapsedSeconds": 1.4059595839999965,
+      "receiptSHA256": "56675f03eff3d2223e288f0bb4ae386d70c7c9704d77954e0b2b72bc007bace5",
+      "evidenceId": null,
+      "parentEvidenceId": null,
+      "error": null
+    }
+  ],
+  "export": {
+    "path": "artifacts/rea/loop-combo-v8/final-evidence.json",
+    "bytes": 5122165,
+    "sha256": "f8d23d57e4fe264df27131dbe833b0bde3162724e76805e12b590a91fc78cc60"
+  },
+  "closed": true,
+  "helperStop": true,
+  "helperExitCode": 0
+}

@@ -1,0 +1,65 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "durationSeconds": 6,
+  "A": {
+    "seconds": [
+      0,
+      3
+    ],
+    "quadrantColors": [
+      [
+        225,
+        30,
+        40
+      ],
+      [
+        30,
+        180,
+        80
+      ],
+      [
+        30,
+        60,
+        225
+      ],
+      [
+        220,
+        180,
+        30
+      ]
+    ]
+  },
+  "B": {
+    "seconds": [
+      3,
+      6
+    ],
+    "quadrantColors": [
+      [
+        30,
+        190,
+        200
+      ],
+      [
+        180,
+        40,
+        190
+      ],
+      [
+        210,
+        100,
+        30
+      ],
+      [
+        80,
+        170,
+        70
+      ]
+    ]
+  },
+  "markers": "2px grid every160x120, top-left black24px square, bottom-right white60x30 rectangle",
+  "purpose": "Own generated spatial source. 0-2s -> 4-6s target clips leave constant-image handles. Distinguish UV movement from a wipe mask using native exports.",
+  "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18"
+}

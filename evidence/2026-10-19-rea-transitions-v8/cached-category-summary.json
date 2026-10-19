@@ -1,0 +1,88 @@
+{
+  "source": "local rp.db http_cache row1212",
+  "responseSha256": "a095c14fdf07c8078a62f8309a97704236942674b5bfb4a3aeed16830cc87384",
+  "serverTime": 1792390396,
+  "has_more": false,
+  "next_offset": 308,
+  "count": 308,
+  "limitation": "single cached category response, not whole catalog or current live listing",
+  "candidateItems": [
+    {
+      "id": "6724845376098013708",
+      "effect_id": "322575",
+      "title": "闪白",
+      "is_vip": null,
+      "transition": {
+        "isOverlap": false,
+        "defaultDura": 0.5
+      },
+      "md5": "9732e719b858a6dbb648d4fb459fde08"
+    },
+    {
+      "id": "6724849999336706573",
+      "effect_id": "2917283",
+      "title": "向左擦除",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 0.5,
+        "isOverlap": true
+      },
+      "md5": "316c2a1c1783f51505c793b13381b445"
+    },
+    {
+      "id": "6851775006418932238",
+      "effect_id": "813992",
+      "title": "圆形扫描",
+      "is_vip": null,
+      "transition": {
+        "isOverlap": true,
+        "defaultDura": 1
+      },
+      "md5": "0260ab98d7a840c3344cb5b3e70b7d4b"
+    },
+    {
+      "id": "6724849898857959950",
+      "effect_id": "2917284",
+      "title": "向右擦除",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 0.5,
+        "isOverlap": true
+      },
+      "md5": "a10153bd2b569c49ddd7c055e8c9eba9"
+    },
+    {
+      "id": "6724850215364334083",
+      "effect_id": "2916675",
+      "title": "圆形遮罩 II",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 1,
+        "isOverlap": true
+      },
+      "md5": "2772ad7c8c7e30c6421be7c2e5dd3f15"
+    },
+    {
+      "id": "6725767129519362573",
+      "effect_id": "2916676",
+      "title": "圆形遮罩",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 0.5,
+        "isOverlap": true
+      },
+      "md5": "a7eb1d47f97049b17f49669622d07f3d"
+    },
+    {
+      "id": "6757982416649851399",
+      "effect_id": "4212349",
+      "title": "滑动",
+      "is_vip": null,
+      "transition": {
+        "defaultDura": 1,
+        "isOverlap": true
+      },
+      "md5": "b99916e2936aeb2e56892ca617888694"
+    }
+  ]
+}
