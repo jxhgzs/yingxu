@@ -12,14 +12,14 @@ const loopMax=computed(()=>Math.max(0,toNumber(clip.value?.target.duration||deci
 const animations=computed<TextAnimation[]|undefined>(()=>{
  if(!clip.value)return;
  try{const values:TextAnimation[]=[];
-  if(draft.entrance!=='none')values.push({phase:'in',kind:draft.entrance as 'fade'|'typewriter'|'zoom-in',duration:decimal(String(draft.inSeconds))});
-  if(draft.exit!=='none')values.push({phase:'out',kind:'fade',duration:decimal(String(draft.outSeconds))});
-  if(draft.loop!=='none')values.push({phase:'loop',kind:draft.loop as 'flash'|'sway',duration:decimal(String(draft.loopSeconds))});
+  if(draft.entrance!=='none')values.push({phase:'in',kind:draft.entrance as 'fade'|'typewriter'|'typewriter-soft'|'zoom-in',duration:decimal(String(draft.inSeconds))});
+  if(draft.exit!=='none')values.push({phase:'out',kind:draft.exit as 'fade'|'zoom-out',duration:decimal(String(draft.outSeconds))});
+  if(draft.loop!=='none')values.push({phase:'loop',kind:draft.loop as 'flash'|'sway'|'bounce',duration:decimal(String(draft.loopSeconds))});
   validateTextAnimations(values,clip.value.target.duration);return values;
  }catch{return undefined;}
 });
 const glyphTextValid=computed(()=>canRenderTextAnimationText(clip.value?.text?.content||''));
-const valid=computed(()=>!!animations.value&&(draft.entrance!=='typewriter'||glyphTextValid.value)&&(draft.loop!=='sway'||glyphTextValid.value&&(clip.value?.text?.content.length||0)<=128));
+const valid=computed(()=>!!animations.value&&(!['typewriter','typewriter-soft'].includes(draft.entrance)||glyphTextValid.value)&&(draft.loop!=='sway'||glyphTextValid.value&&(clip.value?.text?.content.length||0)<=128));
 watch([()=>props.c.state.value?.id,()=>props.c.state.value?.revision,()=>props.c.selectedId.value],()=>{
  const animations=clip.value?.textAnimations||[],entrance=animations.find(a=>a.phase==='in'),exit=animations.find(a=>a.phase==='out'),loop=animations.find(a=>a.phase==='loop');
  draft.entrance=entrance?.kind||'none';draft.exit=exit?.kind||'none';draft.loop=loop?.kind||'none';
@@ -34,13 +34,13 @@ function remove(){if(!disabled.value&&clip.value)return props.c.guard(()=>props.
 </script>
 <template>
  <div class="inspector-section text-animation-controls"><header><strong>文字动画</strong><a-button size="small" :disabled="disabled||!clip?.textAnimations?.length" @click="remove">移除动画</a-button></header>
-  <div class="control-row"><span>入场</span><a-select v-model:value="draft.entrance" aria-label="文字入场动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'fade',label:'渐显'},{value:'typewriter',label:'打字机 I'},{value:'zoom-in',label:'放大'}]" /></div>
+  <div class="control-row"><span>入场</span><a-select v-model:value="draft.entrance" aria-label="文字入场动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'fade',label:'渐显'},{value:'typewriter',label:'打字机 I'},{value:'typewriter-soft',label:'打字机 II'},{value:'zoom-in',label:'放大'}]" /></div>
   <div v-if="draft.entrance!=='none'" class="control-row"><span>动画时长</span><a-input-number v-model:value="draft.inSeconds" aria-label="文字入场时长秒" :disabled="disabled" :min=".001" :max="clip?toNumber(clip.target.duration):1" :precision="6" :step=".1" /><small>秒</small></div>
-  <div class="control-row"><span>出场</span><a-select v-model:value="draft.exit" aria-label="文字出场动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'fade',label:'渐隐'}]" /></div>
+  <div class="control-row"><span>出场</span><a-select v-model:value="draft.exit" aria-label="文字出场动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'fade',label:'渐隐'},{value:'zoom-out',label:'缩小'}]" /></div>
   <div v-if="draft.exit!=='none'" class="control-row"><span>动画时长</span><a-input-number v-model:value="draft.outSeconds" aria-label="文字出场时长秒" :disabled="disabled" :min=".001" :max="clip?toNumber(clip.target.duration):1" :precision="6" :step=".1" /><small>秒</small></div>
-  <div class="control-row"><span>循环</span><a-select v-model:value="draft.loop" aria-label="文字循环动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'flash',label:'闪烁'},{value:'sway',label:'晃动'}]" /></div>
+  <div class="control-row"><span>循环</span><a-select v-model:value="draft.loop" aria-label="文字循环动画" :disabled="disabled" :options="[{value:'none',label:'无'},{value:'flash',label:'闪烁'},{value:'sway',label:'晃动'},{value:'bounce',label:'轻微跳动'}]" /></div>
   <div v-if="draft.loop!=='none'" class="control-row"><span>循环周期</span><a-input-number v-model:value="draft.loopSeconds" aria-label="文字循环周期秒" :disabled="disabled" :min=".1" :max="loopMax" :precision="6" :step=".1" /><small>秒</small></div>
-  <p v-if="draft.entrance==='typewriter'&&!canRenderTextAnimationText(clip?.text?.content||'')" class="quiet">当前打字机支持常用汉字、英文、空格和换行；此文字含暂未支持的字形。</p>
+  <p v-if="['typewriter','typewriter-soft'].includes(draft.entrance)&&!canRenderTextAnimationText(clip?.text?.content||'')" class="quiet">当前打字机支持常用汉字、英文、空格和换行；此文字含暂未支持的字形。</p>
   <p v-if="draft.loop==='sway'" class="quiet">逐字晃动使用精确预览，支持最多128个常用汉字、英文、空格和换行；首次预览需准备字形布局。</p>
   <p v-if="!valid" class="quiet">请检查动画时长：入场与出场总长不能超过片段；循环周期至少0.1秒，且不超过中间可用时长。</p>
   <a-button size="small" :disabled="disabled||!valid" @click="apply">应用文字动画</a-button>

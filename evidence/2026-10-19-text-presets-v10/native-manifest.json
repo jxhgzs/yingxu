@@ -1,0 +1,85 @@
+{
+  "scope": "Actual normal-UI native exports, including accepted controlled-input combinations and geometry cases. Full draft JSON remains in ignored native-v10 fixtures.",
+  "samples": [
+    {
+      "evidence": "bounce-combo-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-typewriter2-bounce-zoomout-v10.mov",
+      "sha256": "90a5c3a6f2c6588354603f601cc47623927c6d1db2e245e8195f3a1f6ba2721d",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "bounce-half-combo-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-typewriter2half-bounce1-zoomout-v10.mov",
+      "sha256": "d6750e88afe40dcaf9f8fc4fffabce587f501b50ef3043200a363ecbf2e48504",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "bounce-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-bounce-loop-v10.mov",
+      "sha256": "a0ad55c8be85df4fb2a5b002442d059cf732900fb17922bae440ce913c1b3a5d",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "bounce-portrait-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-bounce-portrait-v10.mov",
+      "sha256": "58277f8ff57dabfa9eb563f0ac312e04c501699e12f681f77134f530566cd0a5",
+      "frames": null,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "evidence": "bounce-square-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-bounce-square-v10.mov",
+      "sha256": "30b0f6722482a0334b08df9ac566f2ebad8bf6e64fe8cba03860f5b4f9e0a00b",
+      "frames": null,
+      "width": 720,
+      "height": 720
+    },
+    {
+      "evidence": "bounce-transform-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-bounce-transform-v10.mov",
+      "sha256": "234cb421ab11a7bea473e47b3d0ca26e78eea4ecbe81e623ba4f6523d79cc5de",
+      "frames": null,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "mixed-combo-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-mixed-typewriter2-bounce-zoomout-v10.mov",
+      "sha256": "9130b9cdc51d0595828e4b349e03742775973add52c8b2ff32cb849907734cbb",
+      "frames": null,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "shrink-out-native.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-zoomout-out-v10.mov",
+      "sha256": "c8d14f22f319eda07eccce7fc661529816d91da7b1aa798708781a286ba4825f",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "typewriter2-native-mixed.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-typewriter2-mixed-v10.mov",
+      "sha256": "e2b9e906461884491d7bf41f4584f212c5181ade9a5d8ce3c97d74468a12e276",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "evidence": "typewriter2-native-six.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-typewriter2-v10.mov",
+      "sha256": "9bd89851e733dc03afb567c8e3a56cad168aefbae8e6bf67cbda5deee9f78bb8",
+      "frames": 120,
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

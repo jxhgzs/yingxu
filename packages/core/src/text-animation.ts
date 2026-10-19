@@ -1,14 +1,16 @@
 /**
  * Target-clock interpretation of the individually verified Jianying 5.9 text
  * presets: 1644304 (appear), 1644600 (disappear), 1644275 (typewriter I),
- * 1644514 (loop flash), 1644264 (enlarge entrance), 1644520 (glyph sway).
+ * 1644514 (loop flash), 1644264 (enlarge entrance), 1644520 (glyph sway),
+ * 1644276 (quartic per-letter entrance), 1644602 (shrink exit),
+ * 1644525 (whole-text step bounce).
  * Resource source stays outside the product. Evidence and remaining glyph and
  * encoded-pixel differences: docs/qa/2026-10-19-rea-text-animation.md.
  */
 import {add,compare,div,mul,rational,sub,toNumber,ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 
-export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'flash'|'zoom-in'|'sway';duration:Rational};
+export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'typewriter-soft'|'flash'|'zoom-in'|'zoom-out'|'sway'|'bounce';duration:Rational};
 
 function time(value:unknown):asserts value is Rational{
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -30,7 +32,8 @@ export function validateTextAnimations(value:unknown,clipDuration:Rational):asse
     const v=item as Record<string,unknown>;
     if(Object.keys(v).some(key=>!['phase','kind','duration'].includes(key)))throw Error('UNSUPPORTED_TEXT_ANIMATION_FIELD');
     if(v.phase!=='in'&&v.phase!=='out'&&v.phase!=='loop')throw Error('TEXT_ANIMATION_PHASE_UNVERIFIED');
-    if(v.phase==='loop'?!['flash','sway'].includes(String(v.kind)):v.kind!=='fade'&&(!['typewriter','zoom-in'].includes(String(v.kind))||v.phase!=='in'))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
+    const kinds=v.phase==='loop'?['flash','sway','bounce']:v.phase==='out'?['fade','zoom-out']:['fade','typewriter','typewriter-soft','zoom-in'];
+    if(!kinds.includes(String(v.kind)))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
     if(phases.has(v.phase))throw Error('DUPLICATE_TEXT_ANIMATION_PHASE');
     phases.add(v.phase);time(v.duration);
     if(compare(v.duration,ZERO)<=0||compare(v.duration,clipDuration)>0)throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -59,9 +62,9 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
     }
     if(exit&&compare(targetElapsed,sub(targetDuration,exit.duration))>=0){
       const p=progress(sub(targetElapsed,sub(targetDuration,exit.duration)),exit.duration);
-      return (1-p)*(1-p);
+      return exit.kind==='zoom-out'?1-p*p:(1-p)*(1-p);
     }
-    if(loop.kind==='sway')return 1;
+    if(loop.kind==='sway'||loop.kind==='bounce')return 1;
     const elapsed=sub(targetElapsed,entrance?.duration??ZERO);
     const cycles=div(elapsed,loop.duration);
     const denominator=BigInt(cycles.denominator);
@@ -71,10 +74,10 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
   }
   let opacity=1;
   for(const animation of animations??[]){
-    if(animation.kind!=='fade'&&animation.kind!=='zoom-in')continue;
+    if(animation.kind!=='fade'&&animation.kind!=='zoom-in'&&animation.kind!=='zoom-out')continue;
     const elapsed=animation.phase==='in'?targetElapsed:sub(targetElapsed,sub(targetDuration,animation.duration));
     const p=progress(elapsed,animation.duration);
-    opacity*=animation.phase==='in'?p*(2-p):(1-p)*(1-p);
+    opacity*=animation.phase==='in'?p*(2-p):animation.kind==='zoom-out'?1-p*p:(1-p)*(1-p);
   }
   return opacity;
 }
@@ -83,7 +86,8 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
 export function textAnimationState(animations:readonly TextAnimation[]|undefined,targetElapsed:Rational,targetDuration:Rational):{opacity:number;scale:number}{
   const entrance=animations?.find(animation=>animation.phase==='in'&&animation.kind==='zoom-in');
   const p=entrance?progress(targetElapsed,entrance.duration):1;
-  return {opacity:textAnimationOpacity(animations,targetElapsed,targetDuration),scale:entrance ? 0.5+0.5*p*(2-p) : 1};
+  const exit=animations?.find(animation=>animation.phase==='out'&&animation.kind==='zoom-out'),tail=exit?progress(sub(targetElapsed,sub(targetDuration,exit.duration)),exit.duration):0;
+  return {opacity:textAnimationOpacity(animations,targetElapsed,targetDuration),scale:(entrance ? 0.5+0.5*p*(2-p) : 1)*(1-.5*tail*tail)};
 }
 
 /** Actual 1644520 rotates alternate character entries only during the loop stage. */
@@ -108,6 +112,15 @@ export function canRenderTextAnimationText(text:string):boolean{
   return typeof text==='string'&&text.length>0&&text.length<=2000&&/^[\n\u0020-\u007e\u4e00-\u9fff]+$/u.test(text);
 }
 
+/** 1644276: every original letter fades independently; space/LF remain clock entries. */
+export function textAnimationLetterOpacities(animations:readonly TextAnimation[]|undefined,text:string,targetElapsed:Rational):number[]|undefined{
+ const animation=animations?.find(a=>a.kind==='typewriter-soft');if(!animation)return;
+ if(animation.phase!=='in')throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
+ if(!canRenderTextAnimationText(text))throw Error('TEXT_ANIMATION_GLYPHS_UNVERIFIED');
+ time(animation.duration);if(compare(animation.duration,ZERO)<=0)throw Error('INVALID_TEXT_ANIMATION_DURATION');
+ return Array.from({length:text.length},(_,i)=>{const p=progress(targetElapsed,mul(animation.duration,rational(i+1,text.length+1)));return p*p*p*p;});
+}
+
 /**
  * Keep original shaping/layout and hide glyph suffixes; never re-centre a prefix.
  * Floor's 0.99999 threshold is compared as the exact rational 99999/100000.
@@ -123,4 +136,27 @@ export function textAnimationVisibleCount(animation:TextAnimation,text:string,ta
   const revealed=div(mul(targetElapsed,rational((count+1)*100000)),mul(animation.duration,rational(99999)));
   const exactCount=BigInt(revealed.numerator)/BigInt(revealed.denominator);
   return exactCount>=BigInt(count)?count:Number(exactCount);
+}
+
+/** 1644525 whole-text step motion, measured independently from glyph sway.
+ * Returned downward displacement is a fraction of the canvas' longer side.
+ * The native exit leaves the last loop output-frame position in place. Sample
+ * that frame using the absolute output grid; never offset the property clock.
+ */
+export function textAnimationOffsetY(animations:readonly TextAnimation[]|undefined,targetElapsed:Rational,targetDuration:Rational,fps:Rational,targetStart:Rational=ZERO):number{
+ const loop=animations?.find(a=>a.phase==='loop'&&a.kind==='bounce');if(!loop)return 0;
+ time(fps);if(compare(fps,ZERO)<=0)throw Error('INVALID_TEXT_ANIMATION_FPS');
+ const entrance=animations?.find(a=>a.phase==='in'),exit=animations?.find(a=>a.phase==='out');
+ let sample=targetElapsed;
+ if(exit&&compare(sample,sub(targetDuration,exit.duration))>=0){
+  const outFrame=mul(add(targetStart,sub(targetDuration,exit.duration)),fps),n=BigInt(outFrame.numerator),d=BigInt(outFrame.denominator);
+  const lastLoopFrame=(n+d-1n)/d-1n;sample=sub(div(rational(lastLoopFrame),fps),targetStart);
+ }
+ if(compare(sample,ZERO)<0||entrance&&compare(sample,entrance.duration)<=0)return 0;
+ const cycles=div(sub(sample,entrance?.duration??ZERO),loop.duration),d=BigInt(cycles.denominator),n=((BigInt(cycles.numerator)%d)+d)%d;
+ // A closed entrance causes the native loop dispatcher to retain the previous
+ // interval at exact cycle boundaries; the standalone loop resets at zero.
+ if(n===0n)return entrance ? .0025 : 0;
+ const six=n*6n,level=six<=d?0:six<=2n*d?1:six<=3n*d?2:six<=4n*d?3:six<=5n*d?2:1;
+ return level*.0025;
 }

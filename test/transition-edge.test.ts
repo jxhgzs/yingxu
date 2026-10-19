@@ -5,7 +5,7 @@ import {importJianying} from '../packages/jianying/src/import.ts';
 import {defaultTransform} from '../packages/core/src/document.ts';
 import type {Document} from '../packages/core/src/document.ts';
 import {rational as r} from '../packages/core/src/time.ts';
-import {spatialEdgePolicy,SPATIAL_EDGE_POLICY,spatialOutgoing,spatialChromaAnchor,spatialPlaneMask,rgbTo709,yuv709ToRgb,reconstructSpatialEdge} from '../packages/core/src/transition-edge.ts';
+import {spatialEdgePolicy,spatialReconstruction,SPATIAL_EDGE_POLICY,spatialOutgoing,spatialChromaAnchor,spatialPlaneMask,rgbTo709,yuv709ToRgb,reconstructSpatialEdge} from '../packages/core/src/transition-edge.ts';
 import {createPreviewPlan,previewFrame} from '../apps/editor/src/preview/plan.ts';
 const fixture=()=>{const doc=importJianying(JSON.parse(fs.readFileSync(new URL('../evidence/2026-10-19-rea-transitions-v8/18-circle-canvas720-native.json',import.meta.url),'utf8'))).document;for(const asset of doc.assets){asset.pixelFormat='yuv444p';asset.verifiedDisplayTransform='identity';}return doc;};
 
@@ -67,4 +67,11 @@ test('actual plane export retains B luma with A chroma at the observed cross-sid
   const ranged=await render(doc,path.join(dir,'range'),{exportSettings:{range:{start:r(2),duration:r(1,15)}}});
   const rangeRaw=decode(ranged.path,[1]);assert.equal(rangeRaw.length,bytes);offsets.forEach(offset=>assert(Math.abs(rangeRaw[offset]-raw[bytes+offset])<=4));
  }finally{await fsp.rm(dir,{recursive:true,force:true});}
+});
+
+
+test('new centered reconstruction stays within the probed444 cohort; existing420 policy remains unchanged',()=>{
+ const doc=fixture();assert.equal(spatialReconstruction(doc,doc.transitions![0]),'centered-bilinear444-v2');const plan=createPreviewPlan(doc).plan!;assert.equal(previewFrame(plan,r(2)).layers[0].transition!.edgeReconstruction,'centered-bilinear444-v2');
+ for(const asset of doc.assets)asset.pixelFormat='yuv420p';assert.equal(spatialEdgePolicy(doc,doc.transitions![0]),SPATIAL_EDGE_POLICY);assert.equal(spatialReconstruction(doc,doc.transitions![0]),undefined);
+ delete doc.assets[0].verifiedDisplayTransform;assert.equal(spatialReconstruction(doc,doc.transitions![0]),undefined);
 });

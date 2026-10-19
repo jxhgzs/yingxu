@@ -1,6 +1,6 @@
 import {vignetteParameters} from '../../../../packages/core/src/vignette.ts';
 import type {PlannedVisual} from './plan.ts';
-import {spatialEdgeShader} from '../../../../packages/core/src/transition-edge.ts';
+import {spatialEdgeShader,spatialChromaShader} from '../../../../packages/core/src/transition-edge.ts';
 import {layerVertices,transitionWeights} from './plan.ts';
 import type {DecodedMedia} from './decode.ts';
 import {colorShader,colorUniforms,previewColorState,validatePixelPoints} from './color.ts';
@@ -16,10 +16,14 @@ uniform int u_vignetteMode;uniform vec3 u_vignetteParams;
 vec3 spatialColor(vec3 rgb){if(u_vignetteMode==0)return rgb;float d=length(v_uv*2.0-1.0);float m=smoothstep(u_vignetteParams.y,u_vignetteParams.z,d);return u_vignetteMode==1?rgb*(1.0-m*u_vignetteParams.x):mix(rgb,vec3(1.0),m);}
 void main(){vec4 sampleColor=texture(u_image,v_uv);float alpha=sampleColor.a*u_opacity;color=vec4(spatialColor(previewColorAdjustments(sampleColor.rgb))*alpha,alpha);}`;
 const mixFragment=`#version 300 es
-precision highp float;uniform sampler2D u_outgoing;uniform sampler2D u_incoming;uniform float u_progress;uniform bool u_dipToBlack;uniform bool u_dipToWhite;uniform int u_spatialKind;uniform float u_aspectRatio;uniform bool u_planeEdges;in vec2 v_uv;out vec4 color;
+precision highp float;uniform sampler2D u_outgoing;uniform sampler2D u_incoming;uniform float u_progress;uniform bool u_dipToBlack;uniform bool u_dipToWhite;uniform int u_spatialKind;uniform float u_aspectRatio;uniform bool u_planeEdges;uniform bool u_centered420;uniform sampler2D u_edgeChroma;in vec2 v_uv;out vec4 color;
 ${spatialEdgeShader}
 void main(){vec4 outgoing=texture(u_outgoing,v_uv);vec4 incoming=texture(u_incoming,v_uv);
- if(u_planeEdges&&u_spatialKind>0){
+ if(u_centered420&&u_spatialKind>0){
+  vec2 point=vec2(v_uv.x,1.0-v_uv.y)*vec2(1280.0,720.0);vec3 rgb=edgeOutgoing(u_spatialKind,point,vec2(1280.0,720.0),u_progress)?outgoing.rgb:incoming.rgb;
+  float y=(floor(dot(rgb,edgeLuma)*219.0+16.0+0.5)-16.0)/219.0;vec2 uv=(texture(u_edgeChroma,v_uv).rg*255.0-128.0)/224.0;color=vec4(edgeToRgb(vec3(y,uv)),1.0);
+ }
+ else if(u_planeEdges&&u_spatialKind>0){
   vec2 size=vec2(1280.0,720.0),point=vec2(v_uv.x,1.0-v_uv.y)*size;
   vec2 anchor=floor(point/2.0)*2.0+vec2(edgePhase);
   bool yOut=edgeOutgoing(u_spatialKind,point,size,u_progress),uvOut=edgeOutgoing(u_spatialKind,anchor,size,u_progress);
@@ -31,6 +35,11 @@ void main(){vec4 outgoing=texture(u_outgoing,v_uv);vec4 incoming=texture(u_incom
  else if(u_spatialKind==2)color=length((v_uv-vec2(0.5))*vec2(u_aspectRatio,1.0))<u_progress*sqrt(u_aspectRatio*u_aspectRatio+1.0)*0.5?incoming:outgoing;
  else if(u_dipToBlack||u_dipToWhite){float wOut=max(1.0-2.0*u_progress,0.0);float wIn=max(2.0*u_progress-1.0,0.0);color=outgoing*wOut+incoming*wIn+vec4(vec3(u_dipToWhite?1.0-wOut-wIn:0.0),1.0-wOut-wIn);}
  else color=mix(outgoing,incoming,u_progress);}`;
+const chromaFragment=`#version 300 es
+precision highp float;precision highp int;uniform sampler2D u_outgoing;uniform sampler2D u_incoming;uniform float u_progress;uniform int u_spatialKind;in vec2 v_uv;out vec4 color;
+${spatialEdgeShader}
+${spatialChromaShader}
+void main(){ivec2 index=ivec2(vec2(v_uv.x,1.0-v_uv.y)*vec2(640.0,360.0));ivec2 anchor=index*2;bool outgoing=edgeOutgoing(u_spatialKind,vec2(anchor)+vec2(edgePhase),vec2(1280.0,720.0),u_progress);vec2 uv=edgeToYuv(filteredSource(outgoing,anchor)).yz;color=vec4(floor(uv*224.0+128.0+0.5)/255.0,0.0,1.0);}`;
 const screenVertices=new Float32Array([-1,1,0,1,1,1,1,1,-1,-1,0,0,-1,-1,0,0,1,1,1,1,1,-1,1,0]);
 type Framebuffer={texture:WebGLTexture;framebuffer:WebGLFramebuffer};
 function compileProgram(gl:WebGL2RenderingContext,pixelSource:string):WebGLProgram{
@@ -47,7 +56,7 @@ export class WebGLCompositor {
  readonly gl:WebGL2RenderingContext;readonly info:GLInfo;lastGpuMs?:number;
  private program:WebGLProgram;private buffer:WebGLBuffer;private vao:WebGLVertexArrayObject;
  private opacity:WebGLUniformLocation;private textures=new Map<string,Texture>();private timer?:TimerExtension;private queries:WebGLQuery[]=[];private disposed=false;
- private mixProgram?:WebGLProgram;private mixProgress?:WebGLUniformLocation;private mixDip?:WebGLUniformLocation;private mixWhite?:WebGLUniformLocation;private mixSpatial?:WebGLUniformLocation;private mixAspect?:WebGLUniformLocation;private mixPlaneEdges?:WebGLUniformLocation;private targets:Framebuffer[]=[];framebufferAllocations=0;
+ private mixProgram?:WebGLProgram;private mixProgress?:WebGLUniformLocation;private mixDip?:WebGLUniformLocation;private mixWhite?:WebGLUniformLocation;private mixSpatial?:WebGLUniformLocation;private mixAspect?:WebGLUniformLocation;private mixPlaneEdges?:WebGLUniformLocation;private mixCentered420?:WebGLUniformLocation;private planeTarget?:Framebuffer;private chromaProgram?:WebGLProgram;private chromaProgress?:WebGLUniformLocation;private chromaSpatial?:WebGLUniformLocation;private targets:Framebuffer[]=[];framebufferAllocations=0;
  private fxEnabled:WebGLUniformLocation;private fxParameters:WebGLUniformLocation;private fxOffset:WebGLUniformLocation;
  private fxContrastEnabled:WebGLUniformLocation;private fxContrastA:WebGLUniformLocation;private fxContrastB:WebGLUniformLocation;
  private fxTemperatureEnabled:WebGLUniformLocation;private fxTemperatureMatrix:WebGLUniformLocation;
@@ -55,8 +64,8 @@ export class WebGLCompositor {
  private vignetteMode:WebGLUniformLocation;private vignetteParams:WebGLUniformLocation;
  private capture?:{points:PixelPoint[];readback:ColorReadback};
  get colorState(){return previewColorState(this.gl as ColorGL);}
- get framebufferCount(){return this.targets.length;}
- get framebufferBytes(){return this.targets.length*this.canvas.width*this.canvas.height*4;}
+ get framebufferCount(){return this.targets.length+(this.planeTarget?1:0);}
+ get framebufferBytes(){return (this.targets.length+(this.planeTarget?0.25:0))*this.canvas.width*this.canvas.height*4;}
  constructor(canvas:HTMLCanvasElement){
   this.canvas=canvas;
   const gl=canvas.getContext('webgl2',{alpha:false,antialias:false,depth:false,stencil:false,premultipliedAlpha:false,preserveDrawingBuffer:false});
@@ -83,11 +92,11 @@ export class WebGLCompositor {
   }catch(e){gl.deleteBuffer(buffer);gl.deleteVertexArray(vao);gl.deleteProgram(program);throw e;}
  }
  resize(width:number,height:number){if(this.canvas.width!==width||this.canvas.height!==height){this.releaseTargets();this.canvas.width=width;this.canvas.height=height;}this.gl.viewport(0,0,width,height);}
- private releaseTargets(){for(const target of this.targets){this.gl.deleteFramebuffer(target.framebuffer);this.gl.deleteTexture(target.texture);}this.targets=[];}
+ private releaseTargets(){for(const target of this.targets){this.gl.deleteFramebuffer(target.framebuffer);this.gl.deleteTexture(target.texture);}this.targets=[];if(this.planeTarget){this.gl.deleteFramebuffer(this.planeTarget.framebuffer);this.gl.deleteTexture(this.planeTarget.texture);this.planeTarget=undefined;}}
  private ensureTargets(){
   const gl=this.gl;if(!this.mixProgram){const program=compileProgram(gl,mixFragment);try{
-    const out=gl.getUniformLocation(program,'u_outgoing'),incoming=gl.getUniformLocation(program,'u_incoming'),progress=gl.getUniformLocation(program,'u_progress'),dip=gl.getUniformLocation(program,'u_dipToBlack'),white=gl.getUniformLocation(program,'u_dipToWhite'),spatial=gl.getUniformLocation(program,'u_spatialKind'),aspect=gl.getUniformLocation(program,'u_aspectRatio'),planeEdges=gl.getUniformLocation(program,'u_planeEdges');
-    if(out===null||incoming===null||progress===null||dip===null||white===null||spatial===null||aspect===null||planeEdges===null)throw Error('GPU_UNIFORM_MISSING');gl.useProgram(program);gl.uniform1i(out,0);gl.uniform1i(incoming,1);this.mixProgress=progress;this.mixDip=dip;this.mixWhite=white;this.mixSpatial=spatial;this.mixAspect=aspect;this.mixPlaneEdges=planeEdges;this.mixProgram=program;
+    const out=gl.getUniformLocation(program,'u_outgoing'),incoming=gl.getUniformLocation(program,'u_incoming'),progress=gl.getUniformLocation(program,'u_progress'),dip=gl.getUniformLocation(program,'u_dipToBlack'),white=gl.getUniformLocation(program,'u_dipToWhite'),spatial=gl.getUniformLocation(program,'u_spatialKind'),aspect=gl.getUniformLocation(program,'u_aspectRatio'),planeEdges=gl.getUniformLocation(program,'u_planeEdges'),centered=gl.getUniformLocation(program,'u_centered420'),chroma=gl.getUniformLocation(program,'u_edgeChroma');
+    if(out===null||incoming===null||progress===null||dip===null||white===null||spatial===null||aspect===null||planeEdges===null||centered===null||chroma===null)throw Error('GPU_UNIFORM_MISSING');gl.useProgram(program);gl.uniform1i(out,0);gl.uniform1i(incoming,1);this.mixProgress=progress;this.mixDip=dip;this.mixWhite=white;this.mixSpatial=spatial;this.mixAspect=aspect;this.mixPlaneEdges=planeEdges;this.mixCentered420=centered;gl.uniform1i(chroma,2);this.mixProgram=program;
    }catch(e){gl.deleteProgram(program);throw e;}}
   if(this.targets.length)return;
   try{for(let i=0;i<2;i++){
@@ -97,6 +106,13 @@ export class WebGLCompositor {
     gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA8,this.canvas.width,this.canvas.height,0,gl.RGBA,gl.UNSIGNED_BYTE,null);gl.bindFramebuffer(gl.FRAMEBUFFER,framebuffer);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,texture,0);
     if(gl.checkFramebufferStatus(gl.FRAMEBUFFER)!==gl.FRAMEBUFFER_COMPLETE)throw Error('GPU_FRAMEBUFFER_INCOMPLETE');this.framebufferAllocations++;
    }}catch(e){this.releaseTargets();throw e;}finally{gl.bindFramebuffer(gl.FRAMEBUFFER,null);}
+ }
+ private ensurePlaneTarget(){
+  const gl=this.gl;
+  if(!this.chromaProgram){const program=compileProgram(gl,chromaFragment);try{const a=gl.getUniformLocation(program,'u_outgoing'),b=gl.getUniformLocation(program,'u_incoming'),p=gl.getUniformLocation(program,'u_progress'),kind=gl.getUniformLocation(program,'u_spatialKind');if(a===null||b===null||p===null||kind===null)throw Error('GPU_UNIFORM_MISSING');gl.useProgram(program);gl.uniform1i(a,0);gl.uniform1i(b,1);this.chromaProgress=p;this.chromaSpatial=kind;this.chromaProgram=program;}catch(error){gl.deleteProgram(program);throw error;}}
+  if(this.planeTarget)return;
+  const texture=gl.createTexture(),framebuffer=gl.createFramebuffer();if(!texture||!framebuffer){gl.deleteTexture(texture);gl.deleteFramebuffer(framebuffer);throw Error('GPU_FRAMEBUFFER_ALLOCATION_FAILED');}
+  try{gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA8,this.canvas.width/2,this.canvas.height/2,0,gl.RGBA,gl.UNSIGNED_BYTE,null);gl.bindFramebuffer(gl.FRAMEBUFFER,framebuffer);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,texture,0);if(gl.checkFramebufferStatus(gl.FRAMEBUFFER)!==gl.FRAMEBUFFER_COMPLETE)throw Error('GPU_FRAMEBUFFER_INCOMPLETE');this.planeTarget={texture,framebuffer};this.framebufferAllocations++;}catch(error){gl.deleteTexture(texture);gl.deleteFramebuffer(framebuffer);throw error;}finally{gl.bindFramebuffer(gl.FRAMEBUFFER,null);}
  }
  private texture(id:string,media:DecodedMedia):WebGLTexture{
   const gl=this.gl,pixels=media.pixels;if(!pixels)throw Error('GPU_MISSING_PIXELS');
@@ -136,8 +152,11 @@ export class WebGLCompositor {
      if(weights[i]>0){uploads+=this.drawLayer(side,media,canvas);drawCalls++;}framebufferPasses++;
      if(this.capture)captured[i===0?'outgoing':'incoming']=this.readPixels(this.capture.points);
     }
+    const centered=layer.transition.edgeReconstruction==='centered-bilinear444-v2'&&layer.transition.edgePolicy==='bt709-cosited420-v1'&&this.canvas.width===1280&&this.canvas.height===720;
+    if(centered){this.ensurePlaneTarget();gl.bindFramebuffer(gl.FRAMEBUFFER,this.planeTarget!.framebuffer);gl.viewport(0,0,this.canvas.width/2,this.canvas.height/2);gl.useProgram(this.chromaProgram!);for(let i=0;i<2;i++){gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,this.targets[i].texture);}gl.bufferData(gl.ARRAY_BUFFER,screenVertices,gl.DYNAMIC_DRAW);gl.uniform1f(this.chromaProgress!,Math.max(0,Math.min(1,layer.transition.progress)));gl.uniform1i(this.chromaSpatial!,layer.transition.kind==='wipeLeft'?1:2);gl.drawArrays(gl.TRIANGLES,0,6);drawCalls++;framebufferPasses++;}
     gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.useProgram(this.mixProgram!);
     for(let i=0;i<2;i++){gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,this.targets[i].texture);}
+    gl.activeTexture(gl.TEXTURE0+2);gl.bindTexture(gl.TEXTURE_2D,centered?this.planeTarget!.texture:this.targets[0].texture);gl.uniform1i(this.mixCentered420!,centered?1:0);
     gl.bufferData(gl.ARRAY_BUFFER,screenVertices,gl.DYNAMIC_DRAW);gl.uniform1f(this.mixProgress!,Math.max(0,Math.min(1,layer.transition.progress)));gl.uniform1i(this.mixDip!,layer.transition.kind==='dipToBlack'?1:0);gl.uniform1i(this.mixWhite!,layer.transition.kind==='dipToWhite'?1:0);gl.uniform1i(this.mixSpatial!,layer.transition.kind==='wipeLeft'?1:layer.transition.kind==='circleOpen'?2:0);gl.uniform1f(this.mixAspect!,canvas.width/canvas.height);gl.uniform1i(this.mixPlaneEdges!,layer.transition.edgePolicy==='bt709-cosited420-v1'&&this.canvas.width===1280&&this.canvas.height===720?1:0);gl.drawArrays(gl.TRIANGLES,0,6);drawCalls++;transitionDraws++;
     if(this.capture)this.capture.readback.transitions.push({id:layer.transition.id,progress:layer.transition.progress,...captured});
    }
@@ -161,6 +180,6 @@ export class WebGLCompositor {
  release(id:string){const record=this.textures.get(id);if(record)this.gl.deleteTexture(record.texture);this.textures.delete(id);}
  /** Context loss already invalidated GL objects. Deleting them after restore
   * raises INVALID_OPERATION in real WebGL and poisons the next upload check. */
- abandon(){this.disposed=true;this.targets=[];this.textures.clear();this.queries=[];this.capture=undefined;}
- dispose(releaseContext=false){if(this.disposed)return;this.disposed=true;this.releaseTargets();for(const id of this.textures.keys())this.release(id);for(const q of this.queries)this.gl.deleteQuery(q);this.queries=[];this.gl.deleteBuffer(this.buffer);this.gl.deleteVertexArray(this.vao);this.gl.deleteProgram(this.program);if(this.mixProgram)this.gl.deleteProgram(this.mixProgram);if(releaseContext)this.gl.getExtension('WEBGL_lose_context')?.loseContext();}
+ abandon(){this.disposed=true;this.targets=[];this.planeTarget=undefined;this.textures.clear();this.queries=[];this.capture=undefined;}
+ dispose(releaseContext=false){if(this.disposed)return;this.disposed=true;this.releaseTargets();for(const id of this.textures.keys())this.release(id);for(const q of this.queries)this.gl.deleteQuery(q);this.queries=[];this.gl.deleteBuffer(this.buffer);this.gl.deleteVertexArray(this.vao);this.gl.deleteProgram(this.program);if(this.mixProgram)this.gl.deleteProgram(this.mixProgram);if(this.chromaProgram)this.gl.deleteProgram(this.chromaProgram);if(releaseContext)this.gl.getExtension('WEBGL_lose_context')?.loseContext();}
 }

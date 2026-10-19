@@ -1,0 +1,88 @@
+{
+  "movie": "/Users/tal/Downloads/yingxu-native-bounce-square-v10.mov",
+  "sha256": "30b0f6722482a0334b08df9ac566f2ebad8bf6e64fe8cba03860f5b4f9e0a00b",
+  "width": 720,
+  "height": 720,
+  "rows": [
+    {
+      "frame": 0,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.0
+    },
+    {
+      "frame": 1,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.0738262910798122
+    },
+    {
+      "frame": 2,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.08309859154929577
+    },
+    {
+      "frame": 3,
+      "dyFit": 1.8,
+      "grayMaeFit": 0.7356572769953055
+    },
+    {
+      "frame": 4,
+      "dyFit": 1.8,
+      "grayMaeFit": 0.7867370892018778
+    },
+    {
+      "frame": 5,
+      "dyFit": 1.8,
+      "grayMaeFit": 1.2158215962441297
+    },
+    {
+      "frame": 6,
+      "dyFit": 3.6,
+      "grayMaeFit": 0.6541784037558641
+    },
+    {
+      "frame": 7,
+      "dyFit": 3.6,
+      "grayMaeFit": 0.6427934272300418
+    },
+    {
+      "frame": 8,
+      "dyFit": 5.4,
+      "grayMaeFit": 0.7146244131455335
+    },
+    {
+      "frame": 9,
+      "dyFit": 5.4,
+      "grayMaeFit": 0.6167840375586812
+    },
+    {
+      "frame": 10,
+      "dyFit": 5.4,
+      "grayMaeFit": 0.6118075117370851
+    },
+    {
+      "frame": 11,
+      "dyFit": 3.6,
+      "grayMaeFit": 0.6145070422535192
+    },
+    {
+      "frame": 12,
+      "dyFit": 3.6,
+      "grayMaeFit": 0.6149765258215942
+    },
+    {
+      "frame": 13,
+      "dyFit": 1.8,
+      "grayMaeFit": 0.6795774647887337
+    },
+    {
+      "frame": 14,
+      "dyFit": 1.8,
+      "grayMaeFit": 0.682323943661973
+    },
+    {
+      "frame": 15,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.7373239436619718
+    }
+  ]
+}

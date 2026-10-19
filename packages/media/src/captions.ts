@@ -3,7 +3,7 @@ import type {Rational} from '../../core/src/time.ts';
 import {add,sub,div,mul,rational} from '../../core/src/time.ts';
 import {check} from '../../core/src/document.ts';
 import {animatedValue} from './animation.ts';
-import {textAnimationState,textAnimationGlyphState,textAnimationVisibleCount} from '../../core/src/text-animation.ts';
+import {textAnimationState,textAnimationGlyphState,textAnimationVisibleCount,textAnimationLetterOpacities,textAnimationOffsetY} from '../../core/src/text-animation.ts';
 
 export type GlyphAnchor={x:number;y:number}|null;
 export type GlyphLayouts=Map<string,GlyphAnchor[]>;
@@ -49,8 +49,8 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
     for(const [lineIndex,line] of lines.entries()){
       const text=assText(line),lineOffset=(lineIndex-(lines.length-1)/2)*(style.lineHeight??0);
       const prefix=lines.slice(0,lineIndex).reduce((n,line)=>n+line.length+1,0);
-      const position=(x:number,y:number,scale:number,rotation:number)=>{
-        const offset=lineOffset*scale,angle=rotation*Math.PI/180;
+      const position=(x:number,y:number,scale:number,rotation:number,motionOffset=0)=>{
+        const offset=lineOffset*scale+motionOffset,angle=rotation*Math.PI/180;
         return `${canvas.width/2+x-Math.sin(angle)*offset},${canvas.height/2+y+Math.cos(angle)*offset}`;
       };
       if(animated){
@@ -65,6 +65,8 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
           const localVisible=Math.max(0,Math.min(line.length,visible-prefix));
           displayed=assText(line.slice(0,localVisible))+(localVisible<line.length?`{\\alpha&Hff&}${assText(line.slice(localVisible))}`:'');
         }
+        const letterOpacity=textAnimationLetterOpacities(clip.textAnimations,style.content,elapsed);
+        if(letterOpacity)displayed=Array.from(line,(char,i)=>`{\\alpha&H${Math.round((1-opacity*letterOpacity[prefix+i])*255).toString(16).padStart(2,'0')}&}${assText(char)}`).join('');
         if(textAnimationGlyphState(clip.textAnimations,elapsed,clip.target.duration).sway){
           const anchors=options.glyphLayouts?.get(clip.id);check(!!anchors,'TEXT_GLYPH_LAYOUT_REQUIRED');
           const rotation=value('rotation'),angle=rotation*Math.PI/180,[px,py]=position(value('x'),value('y'),scale,rotation).split(',').map(Number);
@@ -78,7 +80,7 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
           }
           continue;
         }
-        events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${position(value('x'),value('y'),scale,value('rotation'))})\\fscx${scale*100}\\fscy${scale*100}\\frz${-value('rotation')}\\alpha&H${alpha}&}${displayed}`);
+        events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${position(value('x'),value('y'),scale,value('rotation'),textAnimationOffsetY(clip.textAnimations,elapsed,clip.target.duration,fps,clip.target.start)*Math.max(canvas.width,canvas.height)*value('scale'))})\\fscx${scale*100}\\fscy${scale*100}\\frz${-value('rotation')}\\alpha&H${alpha}&}${displayed}`);
       }
       }else events.push(`Dialogue: ${layer},${first.ass},${last.ass},${name},,0,0,0,,{\\pos(${position(t.x,t.y,t.scale,t.rotation)})\\fscx${t.scale*100}\\fscy${t.scale*100}\\frz${-t.rotation}}${options.visibleGlyph===undefined?text:visibleGlyph(line,options.visibleGlyph-prefix,'00')}`);
     }

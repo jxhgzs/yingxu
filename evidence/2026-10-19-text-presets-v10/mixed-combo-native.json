@@ -1,0 +1,1032 @@
+{
+  "movie": "/Users/tal/Downloads/yingxu-native-mixed-typewriter2-bounce-zoomout-v10.mov",
+  "sha256": "9130b9cdc51d0595828e4b349e03742775973add52c8b2ff32cb849907734cbb",
+  "text": "AB C\u4e2d\u6587\nD EFG",
+  "alphaRows": [
+    {
+      "frame": 0,
+      "observed": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "frame": 1,
+      "observed": [
+        0.9976413746192236,
+        0.2640429233152746,
+        0.005736572593245336,
+        0.0009377292990562309,
+        0.0,
+        0.0004199391655695283,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        1,
+        0.2720717116293249,
+        0.017004481976832807,
+        0.006965035817710712,
+        0.003358910020115123,
+        0.0010627801235520505,
+        0.0004353147386069195,
+        0.00029732582378725486,
+        0.0002099318762571952
+      ]
+    },
+    {
+      "frame": 2,
+      "observed": [
+        0.9976413746192236,
+        0.9992143884314424,
+        0.2707440057700646,
+        0.10383267331429731,
+        0.04590011092556412,
+        0.006728911877944517,
+        0.0026979689139344154,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        1,
+        1,
+        0.2720717116293249,
+        0.1114405730833714,
+        0.05374256032184197,
+        0.017004481976832807,
+        0.006965035817710712,
+        0.004757213180596078,
+        0.003358910020115123
+      ]
+    },
+    {
+      "frame": 3,
+      "observed": [
+        0.9976413746192236,
+        0.9995333935877913,
+        0.9976120872504352,
+        0.5581823725700701,
+        0.2628130394928726,
+        0.09076639080776232,
+        0.04287495825596234,
+        0.025918546114634892,
+        0.00822242543920082
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        0.564167901234568,
+        0.2720717116293249,
+        0.0860851900077161,
+        0.0352604938271605,
+        0.024083391726767645,
+        0.017004481976832807
+      ]
+    },
+    {
+      "frame": 4,
+      "observed": [
+        0.9967225411881202,
+        0.9980164255649353,
+        0.9980093749594098,
+        0.9974563544169516,
+        0.8582972263829087,
+        0.2691455647541068,
+        0.10092527143131404,
+        0.0622076345867677,
+        0.044441250152379645
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        0.8598809651494715,
+        0.2720717116293249,
+        0.1114405730833714,
+        0.07611541088953724,
+        0.05374256032184197
+      ]
+    },
+    {
+      "frame": 5,
+      "observed": [
+        0.9950745740062517,
+        0.9918862191326154,
+        0.9952243891929585,
+        0.9967181564413351,
+        0.9930440440955762,
+        0.6494844303984699,
+        0.28957352055558233,
+        0.1912948402689097,
+        0.13559044481355284
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.6642375772200313,
+        0.2720717116293246,
+        0.18582863986703424,
+        0.13120742266074692
+      ]
+    },
+    {
+      "frame": 6,
+      "observed": [
+        0.9989540061978971,
+        0.9998031776095545,
+        1.0001464200040642,
+        1.000609565841993,
+        0.9948038158704104,
+        0.9968033366674623,
+        0.5565519835898589,
+        0.37956655725940075,
+        0.2720998133324545
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.564167901234568,
+        0.3853342676282823,
+        0.2720717116293249
+      ]
+    },
+    {
+      "frame": 7,
+      "observed": [
+        0.9990851565941803,
+        0.9998031776095545,
+        1.000201166486522,
+        1.0008152100653651,
+        0.9948038158704104,
+        0.9968592797402601,
+        0.9957703216351693,
+        0.703395143161694,
+        0.5227873780813943
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.7138793029131988,
+        0.5040464348935257
+      ]
+    },
+    {
+      "frame": 8,
+      "observed": [
+        0.9980300551256689,
+        0.9983691148815688,
+        0.998432962449173,
+        1.0000352667303802,
+        0.9895095795622054,
+        0.9955312175526516,
+        0.9957703216351693,
+        0.997538230979494,
+        0.8619996735998247
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.8598809651494715
+      ]
+    },
+    {
+      "frame": 9,
+      "observed": [
+        0.9987532038385084,
+        0.9982624690899665,
+        0.9985397717629881,
+        1.0000706379547764,
+        0.9926385938154912,
+        0.996520253003279,
+        0.9956310404016216,
+        0.998270133927158,
+        0.9918618350440224
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "positionRows": [
+    {
+      "frame": 10,
+      "dyFit": 0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.313749999999658,
+      "delta": 0.05000000000000093
+    },
+    {
+      "frame": 11,
+      "dyFit": 0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.365138888888538,
+      "delta": 0.05000000000000093
+    },
+    {
+      "frame": 12,
+      "dyFit": 0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.62930555555528,
+      "delta": 0.05000000000000093
+    },
+    {
+      "frame": 13,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.058333333333334,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 14,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.05,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 15,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 18.971527777777776,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 16,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.011111111111113,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 17,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.439722222223512,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 18,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.46027777777872,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 19,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.480555555556858,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 20,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 25.055555555556133,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 21,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 25.376111111111417,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 22,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 25.717222222222517,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 23,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 25.72694444444474,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 24,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.674166666667134,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 25,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.850555555556028,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 26,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.047777777778432,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 27,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.93888888888889,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 28,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.134722222222223,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 29,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.145833333333332,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 30,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.606944444444444,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 31,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 26.296944444443938,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 32,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 26.26916666666616,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 33,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 26.23972222222166,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 34,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.641666666666666,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 35,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.6375,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 36,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.575694444444444,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 37,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.514583333333334,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 38,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.96333333333405,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 39,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.764722222222936,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 40,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.96333333333405,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 41,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 25.914166666667168,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 42,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.06083333333382,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 43,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.1275000000005,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 44,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.13027777777828,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 45,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.193055555556302,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 46,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.155555555556298,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 47,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.31777777777852,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 48,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.39097222222222,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 49,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.395138888888887,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 50,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.26875,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 51,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.304861111111112,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 52,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.969861111110884,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 53,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.91152777777755,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 54,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.907361111110884,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 55,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.508333333333333,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 56,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.48611111111111,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 57,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.32777777777778,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 58,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.59027777777778,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 59,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.103194444444036,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 60,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 25.91333333333292,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 61,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.11013888888848,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 62,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.609722222222466,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 63,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.500277777778017,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 64,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.504444444444683,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 65,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.501666666666907,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 66,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 27.224444444445155,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 67,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 27.47222222222298,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 68,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 27.48472222222298,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 69,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.95277777777778,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 70,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.958333333333332,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 71,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.881944444444443,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 72,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.880555555555556,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 73,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.851527777777605,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 74,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.861249999999828,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 75,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.85291666666649,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 76,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.729861111111113,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 77,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.68263888888889,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 78,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.735416666666666,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 79,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.999305555555555,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 80,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 27.19361111111096,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 81,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 27.125972222222078,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 82,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.289583333333233,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 83,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.269722222222644,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 84,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.268333333333754,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 85,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.245833333333785,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 86,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.744166666666914,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 87,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 28.882500000000714,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 88,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 28.944444444445196,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 89,
+      "dyFit": 6.4,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 28.918055555556307,
+      "delta": 6.217248937900877e-15
+    },
+    {
+      "frame": 90,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.369444444444444,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 91,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.380555555555556,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 92,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.380555555555556,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 93,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 20.37638888888889,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 94,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.796944444444136,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 95,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.783055555555247,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 96,
+      "dyFit": -0.05,
+      "sixHanDyFit": 0.0,
+      "projectedGrayMae": 24.795555555555246,
+      "delta": 0.049999999999999156
+    },
+    {
+      "frame": 97,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.07638888888889,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 98,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.045833333333334,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 99,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.15486111111111,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 100,
+      "dyFit": 3.25,
+      "sixHanDyFit": 3.2,
+      "projectedGrayMae": 19.474305555555556,
+      "delta": 0.050000000000003375
+    },
+    {
+      "frame": 101,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.718472222222065,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 102,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.67583333333317,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 103,
+      "dyFit": 6.45,
+      "sixHanDyFit": 6.4,
+      "projectedGrayMae": 26.097916666666496,
+      "delta": 0.05000000000000604
+    },
+    {
+      "frame": 104,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.964166666666895,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 105,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.955833333333562,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 106,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.925277777778017,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 107,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.56666666666701,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 108,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 26.882500000000245,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 109,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 27.62787475083624,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 110,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 18.57068490654998,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 111,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.6,
+      "projectedGrayMae": 11.9703097873276,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 112,
+      "dyFit": 9.55,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 12.852067901234589,
+      "delta": 0.05000000000000959
+    },
+    {
+      "frame": 113,
+      "dyFit": 9.6,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 15.140032679344777,
+      "delta": 0.10000000000000853
+    },
+    {
+      "frame": 114,
+      "dyFit": 9.55,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 11.04910590277712,
+      "delta": 0.05000000000000959
+    },
+    {
+      "frame": 115,
+      "dyFit": 9.5,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 8.25177164378645,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 116,
+      "dyFit": 9.55,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 9.404861111111341,
+      "delta": 0.05000000000000959
+    },
+    {
+      "frame": 117,
+      "dyFit": 9.5,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 10.010085720485908,
+      "delta": 8.881784197001252e-15
+    },
+    {
+      "frame": 118,
+      "dyFit": 9.4,
+      "sixHanDyFit": 9.5,
+      "projectedGrayMae": 4.197556262859741,
+      "delta": 0.09999999999999076
+    },
+    {
+      "frame": 119,
+      "dyFit": 9.35,
+      "sixHanDyFit": 9.4,
+      "projectedGrayMae": 2.530352861904147,
+      "delta": 0.04999999999999183
+    }
+  ],
+  "maxEntryAlphaError": 0.018740943187868564,
+  "maxMixedVsHanDyFitError": 0.10000000000000853,
+  "scope": "Independent mixed native combination using original 12 entries; same-native full baseline, projection shift observation."
+}

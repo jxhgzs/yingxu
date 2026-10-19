@@ -5,8 +5,8 @@ import type {RenderGraph,Layer} from '../../../../packages/media/src/graph.ts';
 import {textAnimationOpacity,canRenderTextAnimationText} from '../../../../packages/core/src/text-animation.ts';
 import {sourceTimeAt,evaluateAnimation} from '../../../../packages/core/src/animation.ts';
 import {transitionWindow,transitionSourceAt,transitionDecodedSourceTime,transitionUsesSourceHandles} from '../../../../packages/core/src/transitions.ts';
-import {spatialEdgePolicy} from '../../../../packages/core/src/transition-edge.ts';
-import type {SpatialEdgePolicy} from '../../../../packages/core/src/transition-edge.ts';
+import {spatialEdgePolicy,spatialReconstruction} from '../../../../packages/core/src/transition-edge.ts';
+import type {SpatialEdgePolicy,SpatialReconstruction} from '../../../../packages/core/src/transition-edge.ts';
 import {defaultTransform} from '../../../../packages/core/src/document.ts';
 import type {Document,Asset,Clip,Transform,Diagnostic,Transition,Range} from '../../../../packages/core/src/document.ts';
 import {add,sub,compare,decimal,div,frameTime,mul,nearestFrame,toNumber,ZERO} from '../../../../packages/core/src/time.ts';
@@ -14,9 +14,9 @@ import type {Rational} from '../../../../packages/core/src/time.ts';
 
 export type PreviewReason={code:string;message:string;clipId?:string};
 export type PreviewSupport={supported:boolean;reasons:PreviewReason[];visualLayers:number;audioLayers:number;maxConcurrentMedia:number};
-type PreviewTransition={transition:Transition;outgoing:Layer;incoming:Layer;window:Range;edgePolicy?:SpatialEdgePolicy};
+type PreviewTransition={transition:Transition;outgoing:Layer;incoming:Layer;window:Range;edgePolicy?:SpatialEdgePolicy;edgeReconstruction?:SpatialReconstruction};
 export type PreviewPlan=RenderGraph&{media:Layer[];previewTransitions:PreviewTransition[];decodeRanges:Map<string,Range>};
-export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;textRasterMode?:'neutral'|'frame';transition?:{id:string;kind:Transition['kind'];progress:number;incoming:PlannedVisual;edgePolicy?:SpatialEdgePolicy}};
+export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;textRasterMode?:'neutral'|'frame';transition?:{id:string;kind:Transition['kind'];progress:number;incoming:PlannedVisual;edgePolicy?:SpatialEdgePolicy;edgeReconstruction?:SpatialReconstruction}};
 export type PlannedFrame={time:Rational;frame:number;layers:PlannedVisual[];audio:Layer[];media:Layer[]};
 export type PlanOptions={diagnostics?:Diagnostic[];maxConcurrentMedia?:number;texturesAvailable?:boolean;curveAudioAvailable?:boolean};
 const knownClipKeys=new Set(['id','materialId','source','target','speed','editableTiming','transform','volume','muted','text','animations','textAnimations','speedCurve','audioFade','colorAdjustments','vignette']);
@@ -64,7 +64,7 @@ export function createPreviewPlan(document:Document,options:PlanOptions={}):{sup
   const outgoing=visuals.get(transition.outgoingClipId),incoming=visuals.get(transition.incomingClipId);if(!outgoing||!incoming)continue;
   if(Object.keys(transition).some(k=>!knownTransitionKeys.has(k)))reason('UNKNOWN_TRANSITION_EFFECT','转场含实时预览尚未识别的属性。',outgoing.clip.id);
   if(!['crossfade','dipToBlack','dipToWhite','wipeLeft','circleOpen'].includes(transition.kind)){reason('TRANSITION_KIND_UNSUPPORTED','此转场需要后台预览。',outgoing.clip.id);continue;}
-  const window=transitionWindow(transition,outgoing.clip);previewTransitions.push({transition,outgoing,incoming,window,edgePolicy:spatialEdgePolicy(graph.document,transition)});
+  const window=transitionWindow(transition,outgoing.clip);previewTransitions.push({transition,outgoing,incoming,window,edgePolicy:spatialEdgePolicy(graph.document,transition),edgeReconstruction:spatialReconstruction(graph.document,transition)});
   if(transitionUsesSourceHandles(transition.kind))for(const layer of [outgoing,incoming]){const current=decodeRanges.get(layer.clip.id)!,end=add(current.start,current.duration),windowEnd=add(window.start,window.duration),start=compare(current.start,window.start)<0?current.start:window.start;
    decodeRanges.set(layer.clip.id,{start,duration:sub(compare(end,windowEnd)>0?end:windowEnd,start)});}
  }
@@ -90,7 +90,7 @@ export function previewFrame(plan:PreviewPlan,time:Rational):PlannedFrame{
  const emitted=new Set<string>(),layers:PlannedVisual[]=[];
  for(const layer of plan.layers){const pair=pairs.get(layer.clip.id);if(pair){if(emitted.has(pair.transition.id))continue;emitted.add(pair.transition.id);
    const mode=transitionUsesSourceHandles(pair.transition.kind)?'handles':'clamp';
-   layers.push({...visual(pair.outgoing,mode),transition:{id:pair.transition.id,kind:pair.transition.kind,edgePolicy:pair.edgePolicy,progress:toNumber(div(sub(at,pair.window.start),pair.window.duration)),incoming:visual(pair.incoming,mode)}});
+   layers.push({...visual(pair.outgoing,mode),transition:{id:pair.transition.id,kind:pair.transition.kind,edgePolicy:pair.edgePolicy,edgeReconstruction:pair.edgeReconstruction,progress:toNumber(div(sub(at,pair.window.start),pair.window.duration)),incoming:visual(pair.incoming,mode)}});
   }else if(active(layer))layers.push(visual(layer));}
  return {time:at,frame,layers,audio:plan.audio.filter(active),media:plan.media.filter(l=>inRange(plan.decodeRanges.get(l.clip.id)!))};
 }

@@ -195,3 +195,22 @@ test('text frame providers warm bounded frames, validate mode/revision, and reta
   const fixture=glFixture(),bad=new GpuPreview(fixture.canvas,{mediaUrl:()=>'',textTexture:async(clipId,context)=>({clipId,revision:context.revision,mode:'neutral',width:320,height:180,url:'http://127.0.0.1/text-renders/'+'a'.repeat(64)+'.png'})});await bad.setDocument(d,{textContext:{projectId:'p',revision:4}});assert.equal(bad.manifest.state,'fallback');assert.equal(bad.manifest.error?.code,'GPU_TEXT_TEXTURE_MODE_INVALID');assert.equal(bad.manifest.metrics.cachedMedia,0);bad.dispose();
  }finally{Object.assign(globalThis,saved);}
 });
+
+
+test('444 centered chroma reconstruction owns one half-size target, reuses it and frees every allocation',()=>{
+ const saved=globalThis.HTMLVideoElement;Object.assign(globalThis,{HTMLVideoElement:class {}});
+ const outgoing:PlannedVisual={clip:{...clip,id:'plane-a'},asset:{id:'plane-a',kind:'video',path:'',duration:rational(6),width:1280,height:720},transform:defaultTransform(),sourceTime:rational(2)};
+ const incoming={...outgoing,clip:{...clip,id:'plane-b'},asset:{...outgoing.asset,id:'plane-b'}};
+ const pair={...outgoing,transition:{id:'plane-v2',kind:'wipeLeft' as const,progress:16/30,incoming,edgePolicy:'bt709-cosited420-v1' as const,edgeReconstruction:'centered-bilinear444-v2' as const}};
+ const media=new Map([outgoing,incoming].map(l=>[l.clip.id,{id:l.clip.id,state:'ready',asset:l.asset,pixels:{naturalWidth:1280,naturalHeight:720}} as unknown as DecodedMedia]));
+ try{const {canvas,live}=glFixture(),compositor=new WebGLCompositor(canvas);compositor.resize(1280,720);
+  assert.deepEqual(compositor.draw([pair],media,{width:1280,height:720}),{drawCalls:4,textureUploads:2,framebufferPasses:3,transitionDraws:1});assert.equal(compositor.framebufferCount,3);assert.equal(compositor.framebufferBytes,8294400);assert.equal(compositor.framebufferAllocations,3);
+  compositor.draw([pair],media,{width:1280,height:720});assert.equal(compositor.framebufferAllocations,3);
+  compositor.resize(640,360);assert.equal(compositor.framebufferCount,0);assert.equal(live.framebuffers.size,0);compositor.draw([pair],media,{width:1280,height:720});assert.equal(compositor.framebufferCount,2,'scaled preview retains the existing mode without a half-size target');
+  compositor.resize(1280,720);compositor.draw([pair],media,{width:1280,height:720});assert.equal(compositor.framebufferCount,3);
+  // Browser context loss invalidates all handles externally. Abandon must not
+  // later delete objects owned by a restored compositor on that same canvas.
+  for(const set of Object.values(live))set.clear();compositor.abandon();assert.equal(compositor.framebufferCount,0);assert.equal(compositor.framebufferBytes,0);
+  const restored=new WebGLCompositor(canvas);restored.resize(1280,720);restored.draw([pair],media,{width:1280,height:720});assert.equal(restored.framebufferCount,3);compositor.dispose();assert.equal(live.framebuffers.size,3);restored.dispose();for(const set of Object.values(live))assert.equal(set.size,0);
+ }finally{Object.assign(globalThis,{HTMLVideoElement:saved});}
+});

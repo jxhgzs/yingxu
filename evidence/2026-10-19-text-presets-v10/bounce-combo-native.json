@@ -1,0 +1,1455 @@
+{
+  "movie": "/Users/tal/Downloads/yingxu-native-typewriter2-bounce-zoomout-v10.mov",
+  "sha256": "90a5c3a6f2c6588354603f601cc47623927c6d1db2e245e8195f3a1f6ba2721d",
+  "frames": 120,
+  "fps": "30/1",
+  "inDuration": 0.3,
+  "period": 0.7,
+  "outDuration": 0.4,
+  "rows": [
+    {
+      "frame": 9,
+      "dyFit": 0.0,
+      "grayMaeFit": 2.0650649350649353,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 10,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7387337662337662,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 11,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7405194805194805,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 12,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7683766233766234,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 13,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3593441558441606,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 14,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3593571428571476,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 15,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.359727272727278,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 16,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3547142857142922,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 17,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2119090909091006,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 18,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2136038961039057,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 19,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2127597402597496,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 20,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.274409090909104,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 21,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.2894415584415677,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 22,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.291162337662344,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 23,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.289883116883123,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 24,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.323909090909103,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 25,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3229870129870225,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 26,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3247272727272827,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 27,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4721753246753095,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 28,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.472246753246738,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 29,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4491493506493491,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 30,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3862727272727275,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 31,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7091558441558442,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 32,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7106168831168831,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 33,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.7318506493506494,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 34,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2982597402597438,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 35,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2985259740259776,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 36,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2928636363636403,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 37,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2833896103896152,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 38,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2706428571428634,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 39,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2708246753246817,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 40,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2708961038961104,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 41,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.2838181818181873,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 42,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.318305194805199,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 43,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.316285714285719,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 44,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.316441558441563,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 45,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3196623376623484,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 46,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3260909090909188,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 47,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3321688311688398,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 48,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4287662337662204,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 49,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4288181818181682,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 50,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.374922077922068,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 51,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3487792207792122,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 52,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6485714285714286,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 53,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6491883116883117,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 54,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6485714285714286,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 55,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2705974025974032,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 56,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2648701298701313,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 57,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2523116883116903,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 58,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3990779220779215,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 59,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.256850649350653,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 60,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2510909090909133,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 61,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.2569090909090943,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 62,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.304402597402598,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 63,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.375928571428571,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 64,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3677532467532476,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 65,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.371402597402597,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 66,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.341753246753255,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 67,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.3743311688311746,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 68,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.377123376623384,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 69,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4155779220779128,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 70,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.415623376623367,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 71,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3843246753246692,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 72,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3792337662337604,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 73,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6006493506493507,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 74,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6011688311688311,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 75,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.6008116883116883,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 76,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3028701298701313,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 77,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3020000000000016,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 78,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.2884415584415603,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 79,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3133701298701288,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 80,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.32642207792207,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 81,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.323792207792199,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 82,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.297564935064922,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 83,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.36860389610389,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 84,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3674155844155784,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 85,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3674805194805133,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 86,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3419155844155775,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 87,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.40442207792208,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 88,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.4078246753246773,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 89,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.4089155844155865,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 90,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4312142857142771,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 91,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.4327532467532378,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 92,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3723636363636322,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 93,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3685064935064895,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 94,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.5866558441558442,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 95,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.5891883116883117,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 96,
+      "dyFit": 0.0,
+      "grayMaeFit": 0.5880844155844156,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ]
+    },
+    {
+      "frame": 97,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3009415584415591,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 98,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3007467532467543,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 99,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.3007857142857153,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 100,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.300948051948053,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        346,
+        748,
+        379
+      ]
+    },
+    {
+      "frame": 101,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.246967532467521,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 102,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.245045454545443,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 103,
+      "dyFit": 6.4,
+      "grayMaeFit": 2.179227272727255,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        349,
+        748,
+        382
+      ]
+    },
+    {
+      "frame": 104,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3515324675324627,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 105,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3506818181818137,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 106,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.351571428571424,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 107,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.317974025974022,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 108,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.3459090909090867,
+      "alphaPrediction": 1,
+      "scalePrediction": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        352,
+        748,
+        386
+      ]
+    },
+    {
+      "frame": 109,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.6939190853450037,
+      "alphaPrediction": 0.9930555555555556,
+      "scalePrediction": 0.9965277777777778,
+      "boundsHalfAlpha": [
+        531,
+        353,
+        748,
+        385
+      ]
+    },
+    {
+      "frame": 110,
+      "dyFit": 9.6,
+      "grayMaeFit": 1.7377976222679894,
+      "alphaPrediction": 0.9722222222222224,
+      "scalePrediction": 0.9861111111111112,
+      "boundsHalfAlpha": [
+        532,
+        353,
+        747,
+        385
+      ]
+    },
+    {
+      "frame": 111,
+      "dyFit": 9.6,
+      "grayMaeFit": 2.5387918935902927,
+      "alphaPrediction": 0.9374999999999999,
+      "scalePrediction": 0.96875,
+      "boundsHalfAlpha": [
+        534,
+        353,
+        745,
+        385
+      ]
+    },
+    {
+      "frame": 112,
+      "dyFit": 9.5,
+      "grayMaeFit": 2.147135379998679,
+      "alphaPrediction": 0.888888888888889,
+      "scalePrediction": 0.9444444444444444,
+      "boundsHalfAlpha": [
+        537,
+        353,
+        742,
+        385
+      ]
+    },
+    {
+      "frame": 113,
+      "dyFit": 9.5,
+      "grayMaeFit": 1.8276303615237361,
+      "alphaPrediction": 0.8263888888888892,
+      "scalePrediction": 0.9131944444444446,
+      "boundsHalfAlpha": [
+        540,
+        354,
+        739,
+        384
+      ]
+    },
+    {
+      "frame": 114,
+      "dyFit": 9.5,
+      "grayMaeFit": 1.3962687185263907,
+      "alphaPrediction": 0.7500000000000007,
+      "scalePrediction": 0.8750000000000003,
+      "boundsHalfAlpha": [
+        544,
+        355,
+        734,
+        383
+      ]
+    },
+    {
+      "frame": 115,
+      "dyFit": 9.5,
+      "grayMaeFit": 0.9231290262677879,
+      "alphaPrediction": 0.6597222222222221,
+      "scalePrediction": 0.829861111111111,
+      "boundsHalfAlpha": [
+        549,
+        355,
+        729,
+        383
+      ]
+    },
+    {
+      "frame": 116,
+      "dyFit": 9.5,
+      "grayMaeFit": 0.6733055776423246,
+      "alphaPrediction": 0.5555555555555558,
+      "scalePrediction": 0.7777777777777779,
+      "boundsHalfAlpha": [
+        555,
+        356,
+        724,
+        382
+      ]
+    },
+    {
+      "frame": 117,
+      "dyFit": 9.5,
+      "grayMaeFit": 0.6221371569121026,
+      "alphaPrediction": 0.43750000000000067,
+      "scalePrediction": 0.7187500000000003,
+      "boundsHalfAlpha": [
+        562,
+        357,
+        717,
+        381
+      ]
+    },
+    {
+      "frame": 118,
+      "dyFit": 9.5,
+      "grayMaeFit": 0.5723245236919509,
+      "alphaPrediction": 0.3055555555555568,
+      "scalePrediction": 0.6527777777777783,
+      "boundsHalfAlpha": [
+        569,
+        359,
+        710,
+        380
+      ]
+    },
+    {
+      "frame": 119,
+      "dyFit": 9.4,
+      "grayMaeFit": 0.2775123035741529,
+      "alphaPrediction": 0.1597222222222221,
+      "scalePrediction": 0.579861111111111,
+      "boundsHalfAlpha": [
+        576,
+        360,
+        702,
+        379
+      ]
+    }
+  ],
+  "scope": "Actual native combination shift fit from single native whole-text reference. Fit is observation, not raster oracle."
+}

@@ -1,0 +1,2420 @@
+{
+  "movie": "/Users/tal/Downloads/yingxu-native-zoomout-out-v10.mov",
+  "sha256": "c8d14f22f319eda07eccce7fc661529816d91da7b1aa798708781a286ba4825f",
+  "referenceFrame": 30,
+  "referenceBounds128": [
+    531,
+    343,
+    749,
+    376
+  ],
+  "frames": 120,
+  "fps": "30/1",
+  "nativeDurationUs": 500000,
+  "rows": [
+    {
+      "frame": 0,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 2,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 3,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 4,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 5,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 6,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 7,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 8,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 9,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 10,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 11,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 12,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 13,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 14,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 15,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 16,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 17,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 18,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 19,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 20,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 21,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 22,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 23,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 24,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 25,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 26,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 27,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 28,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 29,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        749,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 0.0
+    },
+    {
+      "frame": 30,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        749,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 0.0
+    },
+    {
+      "frame": 31,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        749,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 0.0
+    },
+    {
+      "frame": 32,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        749,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 0.0
+    },
+    {
+      "frame": 33,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        749,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 0.0
+    },
+    {
+      "frame": 34,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 35,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 36,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 37,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 38,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 39,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 40,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 41,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 42,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 43,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 44,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 45,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 46,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 47,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 48,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 49,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 50,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 51,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 52,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 53,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 54,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 55,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 56,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 57,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 58,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 59,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 60,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 61,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 62,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 63,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 64,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 65,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 66,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 67,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 68,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 69,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 70,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 71,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 72,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 73,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 74,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 75,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 76,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 77,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 78,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 79,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 80,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 81,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 82,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 83,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 84,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 85,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 86,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 87,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 88,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 89,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 90,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 91,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 92,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 93,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 94,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 95,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 96,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 97,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 98,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 99,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 100,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 101,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 102,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 103,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 104,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 105,
+      "observedInteriorMedianAlpha": 1.0,
+      "quadInAlpha": 1,
+      "fadeTailAlpha": 1,
+      "quadInScale": 1.0,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.0,
+        343.0,
+        749.0,
+        376.0
+      ],
+      "boundsMaxError": 1.0
+    },
+    {
+      "frame": 106,
+      "observedInteriorMedianAlpha": 0.996078431372549,
+      "quadInAlpha": 0.9955555555555555,
+      "fadeTailAlpha": 0.8711111111111112,
+      "quadInScale": 0.9977777777777778,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        748,
+        376
+      ],
+      "predictedBounds": [
+        531.2422222222223,
+        343.03777777777776,
+        748.7577777777777,
+        375.96444444444444
+      ],
+      "boundsMaxError": 0.7577777777777328
+    },
+    {
+      "frame": 107,
+      "observedInteriorMedianAlpha": 0.9882352941176471,
+      "quadInAlpha": 0.9822222222222222,
+      "fadeTailAlpha": 0.7511111111111112,
+      "quadInScale": 0.9911111111111112,
+      "boundsHalfAlpha": [
+        531,
+        343,
+        747,
+        376
+      ],
+      "predictedBounds": [
+        531.9688888888888,
+        343.1511111111111,
+        748.0311111111112,
+        375.85777777777776
+      ],
+      "boundsMaxError": 1.0311111111111586
+    },
+    {
+      "frame": 108,
+      "observedInteriorMedianAlpha": 0.9607843137254902,
+      "quadInAlpha": 0.96,
+      "fadeTailAlpha": 0.6400000000000001,
+      "quadInScale": 0.98,
+      "boundsHalfAlpha": [
+        533,
+        343,
+        746,
+        376
+      ],
+      "predictedBounds": [
+        533.1800000000001,
+        343.34,
+        746.8199999999999,
+        375.68
+      ],
+      "boundsMaxError": 0.8199999999999363
+    },
+    {
+      "frame": 109,
+      "observedInteriorMedianAlpha": 0.9333333333333333,
+      "quadInAlpha": 0.9288888888888889,
+      "fadeTailAlpha": 0.5377777777777779,
+      "quadInScale": 0.9644444444444444,
+      "boundsHalfAlpha": [
+        534,
+        343,
+        744,
+        375
+      ],
+      "predictedBounds": [
+        534.8755555555556,
+        343.6044444444444,
+        745.1244444444444,
+        375.43111111111114
+      ],
+      "boundsMaxError": 1.124444444444407
+    },
+    {
+      "frame": 110,
+      "observedInteriorMedianAlpha": 0.8901960784313725,
+      "quadInAlpha": 0.8888888888888888,
+      "fadeTailAlpha": 0.44444444444444453,
+      "quadInScale": 0.9444444444444444,
+      "boundsHalfAlpha": [
+        537,
+        344,
+        742,
+        375
+      ],
+      "predictedBounds": [
+        537.0555555555555,
+        343.94444444444446,
+        742.9444444444445,
+        375.1111111111111
+      ],
+      "boundsMaxError": 0.9444444444444571
+    },
+    {
+      "frame": 111,
+      "observedInteriorMedianAlpha": 0.8431372549019608,
+      "quadInAlpha": 0.84,
+      "fadeTailAlpha": 0.36,
+      "quadInScale": 0.9199999999999999,
+      "boundsHalfAlpha": [
+        539,
+        344,
+        739,
+        375
+      ],
+      "predictedBounds": [
+        539.72,
+        344.36,
+        740.28,
+        374.72
+      ],
+      "boundsMaxError": 1.2799999999999727
+    },
+    {
+      "frame": 112,
+      "observedInteriorMedianAlpha": 0.7843137254901961,
+      "quadInAlpha": 0.7822222222222222,
+      "fadeTailAlpha": 0.28444444444444444,
+      "quadInScale": 0.8911111111111111,
+      "boundsHalfAlpha": [
+        542,
+        345,
+        736,
+        374
+      ],
+      "predictedBounds": [
+        542.8688888888889,
+        344.8511111111111,
+        737.1311111111111,
+        374.2577777777778
+      ],
+      "boundsMaxError": 1.1311111111110677
+    },
+    {
+      "frame": 113,
+      "observedInteriorMedianAlpha": 0.7137254901960784,
+      "quadInAlpha": 0.7155555555555555,
+      "fadeTailAlpha": 0.2177777777777778,
+      "quadInScale": 0.8577777777777778,
+      "boundsHalfAlpha": [
+        546,
+        345,
+        733,
+        374
+      ],
+      "predictedBounds": [
+        546.5022222222223,
+        345.41777777777776,
+        733.4977777777777,
+        373.72444444444443
+      ],
+      "boundsMaxError": 0.5022222222222581
+    },
+    {
+      "frame": 114,
+      "observedInteriorMedianAlpha": 0.6352941176470588,
+      "quadInAlpha": 0.64,
+      "fadeTailAlpha": 0.16000000000000003,
+      "quadInScale": 0.8200000000000001,
+      "boundsHalfAlpha": [
+        550,
+        346,
+        729,
+        373
+      ],
+      "predictedBounds": [
+        550.62,
+        346.06,
+        729.38,
+        373.12
+      ],
+      "boundsMaxError": 0.6200000000000045
+    },
+    {
+      "frame": 115,
+      "observedInteriorMedianAlpha": 0.5588235294117647,
+      "quadInAlpha": 0.5555555555555556,
+      "fadeTailAlpha": 0.11111111111111113,
+      "quadInScale": 0.7777777777777778,
+      "boundsHalfAlpha": [
+        555,
+        347,
+        724,
+        372
+      ],
+      "predictedBounds": [
+        555.2222222222222,
+        346.77777777777777,
+        724.7777777777778,
+        372.44444444444446
+      ],
+      "boundsMaxError": 0.7777777777778283
+    },
+    {
+      "frame": 116,
+      "observedInteriorMedianAlpha": 0.4549019607843137,
+      "quadInAlpha": 0.4622222222222223,
+      "fadeTailAlpha": 0.07111111111111114,
+      "quadInScale": 0.7311111111111112,
+      "boundsHalfAlpha": [
+        560,
+        347,
+        719,
+        371
+      ],
+      "predictedBounds": [
+        560.3088888888889,
+        347.5711111111111,
+        719.6911111111111,
+        371.6977777777778
+      ],
+      "boundsMaxError": 0.6977777777777874
+    },
+    {
+      "frame": 117,
+      "observedInteriorMedianAlpha": 0.36470588235294116,
+      "quadInAlpha": 0.3599999999999999,
+      "fadeTailAlpha": 0.03999999999999998,
+      "quadInScale": 0.6799999999999999,
+      "boundsHalfAlpha": [
+        566,
+        348,
+        713,
+        371
+      ],
+      "predictedBounds": [
+        565.88,
+        348.44,
+        714.12,
+        370.88
+      ],
+      "boundsMaxError": 1.1200000000000045
+    },
+    {
+      "frame": 118,
+      "observedInteriorMedianAlpha": 0.25098039215686274,
+      "quadInAlpha": 0.24888888888888883,
+      "fadeTailAlpha": 0.01777777777777777,
+      "quadInScale": 0.6244444444444444,
+      "boundsHalfAlpha": [
+        572,
+        349,
+        707,
+        370
+      ],
+      "predictedBounds": [
+        571.9355555555555,
+        349.38444444444445,
+        708.0644444444445,
+        369.9911111111111
+      ],
+      "boundsMaxError": 1.0644444444444616
+    },
+    {
+      "frame": 119,
+      "observedInteriorMedianAlpha": 0.12941176470588237,
+      "quadInAlpha": 0.12888888888888883,
+      "fadeTailAlpha": 0.004444444444444443,
+      "quadInScale": 0.5644444444444444,
+      "boundsHalfAlpha": [
+        578,
+        350,
+        701,
+        369
+      ],
+      "predictedBounds": [
+        578.4755555555555,
+        350.40444444444444,
+        701.5244444444445,
+        369.0311111111111
+      ],
+      "boundsMaxError": 0.524444444444498
+    }
+  ],
+  "quadInAlphaMaxError": 0.007320261437908593,
+  "oldFadeTailAlphaMaxError": 0.4998692810457516,
+  "tailBoundsMaxError": 1.2799999999999727,
+  "scope": "Actual native export relative to same-style baseline. Warped baseline only selects solid pixels, not output raster oracle."
+}

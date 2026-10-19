@@ -1,0 +1,94 @@
+{
+  "movie": "/Users/tal/Downloads/yingxu-native-bounce-portrait-v10.mov",
+  "sha256": "58277f8ff57dabfa9eb563f0ac312e04c501699e12f681f77134f530566cd0a5",
+  "width": 720,
+  "height": 1280,
+  "referenceBounds": [
+    299,
+    630,
+    420,
+    649
+  ],
+  "rows": [
+    {
+      "frame": 0,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.0
+    },
+    {
+      "frame": 1,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.24460093896713614
+    },
+    {
+      "frame": 2,
+      "dyFit": -0.0,
+      "grayMaeFit": 0.2415492957746479
+    },
+    {
+      "frame": 3,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.0431455399060992
+    },
+    {
+      "frame": 4,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.0689671361502304
+    },
+    {
+      "frame": 5,
+      "dyFit": 3.2,
+      "grayMaeFit": 1.0961971830985855
+    },
+    {
+      "frame": 6,
+      "dyFit": 6.4,
+      "grayMaeFit": 0.9621596244131526
+    },
+    {
+      "frame": 7,
+      "dyFit": 6.4,
+      "grayMaeFit": 0.9621596244131526
+    },
+    {
+      "frame": 8,
+      "dyFit": 9.6,
+      "grayMaeFit": 1.1652112676056487
+    },
+    {
+      "frame": 9,
+      "dyFit": 9.6,
+      "grayMaeFit": 0.990633802816913
+    },
+    {
+      "frame": 10,
+      "dyFit": 9.6,
+      "grayMaeFit": 0.9850469483568185
+    },
+    {
+      "frame": 11,
+      "dyFit": 6.4,
+      "grayMaeFit": 0.9539436619718338
+    },
+    {
+      "frame": 12,
+      "dyFit": 6.4,
+      "grayMaeFit": 0.9521596244131483
+    },
+    {
+      "frame": 13,
+      "dyFit": 3.2,
+      "grayMaeFit": 0.9865023474178337
+    },
+    {
+      "frame": 14,
+      "dyFit": 3.2,
+      "grayMaeFit": 0.9890375586854394
+    },
+    {
+      "frame": 15,
+      "dyFit": -0.0,
+      "grayMaeFit": 1.1765258215962442
+    }
+  ]
+}
