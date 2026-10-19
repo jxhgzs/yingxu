@@ -34,6 +34,7 @@ export class WebGLCompositor {
  private opacity:WebGLUniformLocation;private textures=new Map<string,Texture>();private timer?:TimerExtension;private queries:WebGLQuery[]=[];private disposed=false;
  private mixProgram?:WebGLProgram;private mixProgress?:WebGLUniformLocation;private mixDip?:WebGLUniformLocation;private targets:Framebuffer[]=[];framebufferAllocations=0;
  private fxEnabled:WebGLUniformLocation;private fxParameters:WebGLUniformLocation;private fxOffset:WebGLUniformLocation;
+ private fxContrastEnabled:WebGLUniformLocation;private fxContrastA:WebGLUniformLocation;private fxContrastB:WebGLUniformLocation;
  private capture?:{points:PixelPoint[];readback:ColorReadback};
  get colorState(){return previewColorState(this.gl as ColorGL);}
  get framebufferCount(){return this.targets.length;}
@@ -49,6 +50,8 @@ export class WebGLCompositor {
   for(const [name,offset] of [['a_position',0],['a_uv',8]] as const){const location=gl.getAttribLocation(program,name);if(location<0)throw Error('GPU_ATTRIBUTE_MISSING');gl.enableVertexAttribArray(location);gl.vertexAttribPointer(location,2,gl.FLOAT,false,16,offset);}
   gl.useProgram(program);const opacity=gl.getUniformLocation(program,'u_opacity'),image=gl.getUniformLocation(program,'u_image'),fxEnabled=gl.getUniformLocation(program,'u_fxEnabled'),fxParameters=gl.getUniformLocation(program,'u_fxParameters'),fxOffset=gl.getUniformLocation(program,'u_fxBrightnessOffset');
   if(opacity===null||image===null||fxEnabled===null||fxParameters===null||fxOffset===null)throw Error('GPU_UNIFORM_MISSING');this.opacity=opacity;this.fxEnabled=fxEnabled;this.fxParameters=fxParameters;this.fxOffset=fxOffset;gl.uniform1i(image,0);
+  const contrastEnabled=gl.getUniformLocation(program,'u_fxContrastEnabled'),contrastA=gl.getUniformLocation(program,'u_fxContrastA'),contrastB=gl.getUniformLocation(program,'u_fxContrastB');
+  if(contrastEnabled===null||contrastA===null||contrastB===null)throw Error('GPU_UNIFORM_MISSING');this.fxContrastEnabled=contrastEnabled;this.fxContrastA=contrastA;this.fxContrastB=contrastB;
   gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);gl.disable(gl.DEPTH_TEST);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);
   const colorGL=gl as ColorGL;if('drawingBufferColorSpace' in gl)colorGL.drawingBufferColorSpace='srgb';if('unpackColorSpace' in gl)colorGL.unpackColorSpace='srgb';gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL,gl.BROWSER_DEFAULT_WEBGL);
   const debug=gl.getExtension('WEBGL_debug_renderer_info'),renderer=String(gl.getParameter(debug?debug.UNMASKED_RENDERER_WEBGL:gl.RENDERER)),vendor=String(gl.getParameter(debug?debug.UNMASKED_VENDOR_WEBGL:gl.VENDOR));
@@ -78,7 +81,7 @@ export class WebGLCompositor {
   if(!w||!h||w>this.info.maxTextureSize||h>this.info.maxTextureSize)throw Error('GPU_TEXTURE_SIZE_LIMIT');
   let record=this.textures.get(id);if(!record){const texture=gl.createTexture();if(!texture)throw Error('GPU_TEXTURE_ALLOCATION_FAILED');record={texture,width:w,height:h,uploaded:false};this.textures.set(id,record);gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);}
   gl.bindTexture(gl.TEXTURE_2D,record.texture);
-  if(media.asset.kind!=='image'||!record.uploaded){
+  if((media.asset.kind!=='image'&&media.asset.kind!=='text')||!record.uploaded){
    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,pixels);record.uploaded=true;
    const error=gl.getError();if(error!==gl.NO_ERROR)throw Error('GPU_TEXTURE_UPLOAD_FAILED: '+error);
   }return record.texture;
@@ -86,9 +89,9 @@ export class WebGLCompositor {
  private drawLayer(layer:PlannedVisual,media:Map<string,DecodedMedia>,canvas:{width:number;height:number}):number{
   const gl=this.gl,source=media.get(layer.clip.id);if(!source||source.state!=='ready')throw Error('GPU_MEDIA_NOT_READY');
   gl.useProgram(this.program);gl.activeTexture(gl.TEXTURE0);const previous=this.textures.get(layer.clip.id)?.uploaded;this.texture(layer.clip.id,source);
-  const fx=colorUniforms(layer.clip.colorAdjustments);gl.uniform4iv(this.fxEnabled,fx.mask);gl.uniform4fv(this.fxParameters,fx.parameters);gl.uniform1f(this.fxOffset,fx.brightnessOffset);
-  gl.bufferData(gl.ARRAY_BUFFER,layerVertices(layer.asset,layer.transform,canvas),gl.DYNAMIC_DRAW);gl.uniform1f(this.opacity,layer.transform.opacity);gl.drawArrays(gl.TRIANGLES,0,6);
-  return source.asset.kind!=='image'||!previous?1:0;
+  const fx=colorUniforms(layer.clip.colorAdjustments);gl.uniform4iv(this.fxEnabled,fx.mask);gl.uniform4fv(this.fxParameters,fx.parameters);gl.uniform1f(this.fxOffset,fx.brightnessOffset);gl.uniform1i(this.fxContrastEnabled,fx.contrastEnabled?1:0);gl.uniform4fv(this.fxContrastA,fx.contrastA);gl.uniform4fv(this.fxContrastB,fx.contrastB);
+  gl.bufferData(gl.ARRAY_BUFFER,layerVertices(layer.asset.kind==='text'?source.asset:layer.asset,layer.asset.kind==='text'?{x:0,y:0,scale:1,rotation:0,opacity:1,flipX:false,flipY:false}:layer.transform,canvas),gl.DYNAMIC_DRAW);gl.uniform1f(this.opacity,layer.asset.kind==='text'?1:layer.transform.opacity);gl.drawArrays(gl.TRIANGLES,0,6);
+  return (source.asset.kind!=='image'&&source.asset.kind!=='text')||!previous?1:0;
  }
  draw(layers:PlannedVisual[],media:Map<string,DecodedMedia>,canvas:{width:number;height:number}):{drawCalls:number;textureUploads:number;framebufferPasses:number;transitionDraws:number}{
   if(this.disposed||this.gl.isContextLost())throw Error('GPU_CONTEXT_LOST');const gl=this.gl;

@@ -1,0 +1,25 @@
+{
+  "backend": "webgl2",
+  "metrics": {
+    "activeMedia": 1,
+    "cachedMedia": 1,
+    "contextLosses": 0,
+    "decoderDroppedFrames": 0,
+    "displayedFrames": 123,
+    "drawCalls": 123,
+    "droppedOutputFrames": 0,
+    "framebufferAllocations": 0,
+    "framebufferBytes": 0,
+    "framebufferCount": 0,
+    "framebufferPasses": 0,
+    "lastCpuMs": 0.10000002384185792,
+    "lastDecodeWaitMs": 1.7999999523162842,
+    "lastGpuMs": 0.229499,
+    "lastPresentedFrame": 119,
+    "maxSourceDriftMs": 0,
+    "meanCpuMs": 0.1804878028427681,
+    "textureUploads": 2,
+    "transitionDraws": 0
+  },
+  "state": "paused"
+}

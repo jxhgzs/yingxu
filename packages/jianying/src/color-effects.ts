@@ -1,10 +1,10 @@
 import type {ColorAdjustments} from '../../core/src/color-effects.ts';
 type Raw=Record<string,any>;
 const keys=new Set(['adjust_params','algorithm_artifact_path','apply_target_type','bloom_params','category_id','category_name','color_match_info','effect_id','enable_skin_tone_correction','exclusion_group','face_adjust_params','formula_id','id','intensity_key','multi_language_current','name','panel_id','path','platform','request_id','resource_id','source_platform','sub_type','time_range','type','value','version']);
-/** Fixed 5.9.0 combine resource and two runtime-observed parameter records only. */
+/** Fixed 5.9.0 combine resource and explicitly runtime-observed parameter versions. */
 export function isKnownColorAdjustment(v:Raw):boolean{
  if(!v||typeof v!=='object'||Object.keys(v).some(k=>!keys.has(k)))return false;
- if(!['brightness','saturation','highlight','shadow'].includes(v.type)||v.version!==(v.type==='brightness'?'v2':v.type==='saturation'?'v1':'v3')||!Number.isFinite(v.value)||Math.abs(v.value)>1)return false;
+ if(!['brightness','contrast','saturation','highlight','shadow'].includes(v.type)||v.version!==(v.type==='brightness'?'v2':v.type==='saturation'?'v1':'v3')||!Number.isFinite(v.value)||Math.abs(v.value)>1)return false;
  if(typeof v.path!=='string'||!v.path.replaceAll('\\','/').endsWith('/Resources/DefaultAdjustBundle/combine_adjust')||v.platform!=='all'||v.sub_type!=='none'||v.apply_target_type!==0||v.source_platform!==0||v.enable_skin_tone_correction!==false||v.bloom_params!==null||v.time_range!==null)return false;
  for(const key of ['adjust_params','exclusion_group','face_adjust_params'])if(!Array.isArray(v[key])||v[key].length)return false;
  for(const key of ['algorithm_artifact_path','category_id','category_name','effect_id','formula_id','intensity_key','multi_language_current','name','panel_id','request_id','resource_id'])if(v[key]!=='')return false;
@@ -14,6 +14,6 @@ export function isKnownColorAdjustment(v:Raw):boolean{
 export function importColorAdjustments(segment:Raw,materials:Raw):{colorAdjustments?:ColorAdjustments;diagnostic?:string}{
  const effects=(materials.effects||[]).filter((e:Raw)=>segment.extra_material_refs?.includes(e.id));if(!effects.length)return {};
  const values:ColorAdjustments={version:'combine-adjust-v2'},types=new Set<string>();
- for(const effect of effects){if(!isKnownColorAdjustment(effect)||types.has(effect.type))return {diagnostic:'COLOR_ADJUSTMENTS_NOT_INTERPRETED'};types.add(effect.type);values[effect.type as 'brightness'|'saturation'|'highlight'|'shadow']=effect.value;}
+ for(const effect of effects){if(!isKnownColorAdjustment(effect)||types.has(effect.type))return {diagnostic:'COLOR_ADJUSTMENTS_NOT_INTERPRETED'};types.add(effect.type);values[effect.type as 'brightness'|'contrast'|'saturation'|'highlight'|'shadow']=effect.value;}
  return {colorAdjustments:values};
 }

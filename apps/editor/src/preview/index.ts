@@ -4,6 +4,8 @@ import {toNumber,frameTime} from '../../../../packages/core/src/time.ts';
 import {createPreviewPlan,outputTime,previewFrame,sourceSeekTime} from './plan.ts';
 import type {PreviewPlan,PreviewSupport,PreviewReason,PlannedFrame} from './plan.ts';
 import {DecodedMedia} from './decode.ts';
+import {createCurveClock} from './curve-clock.ts';
+import type {CurveClock} from './curve-clock.ts';
 import {PreviewAudio} from './audio.ts';
 import {WebGLCompositor} from './webgl.ts';
 import type {GLInfo} from './webgl.ts';
@@ -18,7 +20,9 @@ export type PreviewMetrics={displayedFrames:number;droppedOutputFrames:number;de
  lastCpuMs:number;meanCpuMs:number;lastGpuMs?:number;lastDecodeWaitMs:number;maxSourceDriftMs:number;lastPresentedFrame:number;activeMedia:number;cachedMedia:number;contextLosses:number};
 export type PreviewManifest={backend:'webgl2';state:PreviewState;support:PreviewSupport;renderer:GLInfo;color:PreviewColorState;time:number;audioState:AudioContextState|'uninitialized';metrics:PreviewMetrics;
  decoders:{clipId:string;state:string;currentTime?:number;decodedMediaTime?:number;readyState?:number;presentedFrames:number;error?:string}[];error?:PreviewReason};
-export type GpuPreviewOptions={mediaUrl:(asset:Asset)=>string;maxDimension?:number;maxConcurrentMedia?:number;maxCachedMedia?:number;
+export type TextContext={projectId:string;revision:number};
+export type TextTexture={url:string;width:number;height:number};
+export type GpuPreviewOptions={textTexture?:(clipId:string,context:TextContext,signal:AbortSignal)=>Promise<TextTexture>;mediaUrl:(asset:Asset)=>string;maxDimension?:number;maxConcurrentMedia?:number;maxCachedMedia?:number;
  onState?:(manifest:PreviewManifest)=>void;onTime?:(seconds:number)=>void;onMetrics?:(manifest:PreviewManifest)=>void};
 const unsupported:PreviewSupport={supported:false,reasons:[],visualLayers:0,audioLayers:0,maxConcurrentMedia:0};
 const aborted=(e:unknown)=>(e as Error)?.name==='AbortError';
@@ -27,6 +31,7 @@ const aborted=(e:unknown)=>(e as Error)?.name==='AbortError';
 export class GpuPreview {
  readonly canvas:HTMLCanvasElement;private options:GpuPreviewOptions;
  private compositor:WebGLCompositor;private audio=new PreviewAudio();private plan?:PreviewPlan;
+ private textContext?:TextContext;private curveClocks=new Map<string,CurveClock>();
  private resources=new Map<string,DecodedMedia>();private support:PreviewSupport=unsupported;private error?:PreviewReason;
  private status:PreviewState='idle';private disposed=false;private playing=false;private buffering=false;private operation=new AbortController();private epoch=0;
  private raf?:number;private position=0;private anchorPosition=0;private anchorWall=0;private anchorAudio=0;private metricsAt=0;
@@ -56,11 +61,13 @@ export class GpuPreview {
  private beginOperation(){this.operation.abort();this.operation=new AbortController();return {epoch:++this.epoch,signal:this.operation.signal};}
  private current(epoch:number){return !this.disposed&&epoch===this.epoch&&!this.operation.signal.aborted;}
  private ensure(){if(this.disposed)throw Error('PREVIEW_DISPOSED');if(this.status==='context-lost')throw Error('GPU_CONTEXT_LOST');}
- async setDocument(document:Document,options:{diagnostics?:Diagnostic[];time?:number}={}):Promise<PreviewManifest>{
+ async setDocument(document:Document,options:{diagnostics?:Diagnostic[];time?:number;textContext?:TextContext}={}):Promise<PreviewManifest>{
   this.ensure();this.stopTransport();this.beginOperation();this.clearResources();this.plan=undefined;this.error=undefined;
-  const result=createPreviewPlan(document,{diagnostics:options.diagnostics,maxConcurrentMedia:this.options.maxConcurrentMedia});this.support=result.support;this.plan=result.plan;
+  this.textContext=options.textContext;this.curveClocks.clear();
+  const result=createPreviewPlan(document,{diagnostics:options.diagnostics,maxConcurrentMedia:this.options.maxConcurrentMedia,texturesAvailable:!!this.options.textTexture&&!!this.textContext});this.support=result.support;this.plan=result.plan;
   this.stats.lastPresentedFrame=-1;this.position=Math.min(Math.max(0,options.time??this.position),this.plan?.duration??0);this.resize();
   if(!this.plan){this.compositor.draw([],this.resources,document.canvas);this.setState('fallback');return this.manifest;}
+  for(const {clip} of this.plan.media)if(clip.speedCurve)this.curveClocks.set(clip.id,createCurveClock(clip));
   this.setState('loading');return this.seek(this.position);
  }
  private displayFrame(time:number|Rational):PlannedFrame{
@@ -111,25 +118,38 @@ export class GpuPreview {
  private async prepare(frame:PlannedFrame,seekAll:boolean,play:boolean,signal:AbortSignal):Promise<boolean>{
   const started=performance.now(),activeIds=new Set(frame.media.map(l=>l.clip.id));let synchronized=seekAll;
   for(const [id,r] of this.resources)if(!activeIds.has(id))r.pause();
-  const requested=frame.media.map(layer=>{
-   let r=this.resources.get(layer.clip.id);const url=this.options.mediaUrl(layer.asset);
+  const requested=await Promise.all(frame.media.map(async layer=>{
+   let r=this.resources.get(layer.clip.id);let url=layer.asset.kind==='text'?r?.url:this.options.mediaUrl(layer.asset),asset=layer.asset;
+   if(layer.asset.kind==='text'&&!r){
+    if(!this.options.textTexture||!this.textContext)throw Error('GPU_TEXT_TEXTURE_SERVICE_REQUIRED');
+    const texture=await this.options.textTexture(layer.clip.id,this.textContext,signal);if(signal.aborted)throw new DOMException('Aborted','AbortError');
+    if(texture.width!==this.plan!.document.canvas.width||texture.height!==this.plan!.document.canvas.height)throw Error('GPU_TEXT_TEXTURE_DIMENSIONS_INVALID');
+    asset={...asset,width:texture.width,height:texture.height};url=texture.url;
+   }
    if(!url)throw Error('GPU_REGISTERED_MEDIA_URL_REQUIRED');
    if(r&&(r.asset.id!==layer.asset.id||r.url!==url)){this.release(r.id);r=undefined;}
-   if(!r){r=new DecodedMedia(layer.clip.id,layer.asset,url);this.resources.set(r.id,r);synchronized=true;}
+   if(signal.aborted)throw new DOMException('Aborted','AbortError');
+   if(!r){r=new DecodedMedia(layer.clip.id,asset,url,10000,{textRaster:asset.kind==='text'});this.resources.set(r.id,r);synchronized=true;}
    r.lastUsed=performance.now();if(r.state==='loading')synchronized=true;return {layer,resource:r};
-  });
+  }));
   if(play&&synchronized)this.holdForBuffer(frame);
   await Promise.all(requested.map(async({layer,resource})=>{
    await resource.ready;if(signal.aborted)throw new DOMException('Aborted','AbortError');if(resource.state==='error')throw Error(resource.error);
    const media=resource.media;if(!media)return;
-   const target=sourceSeekTime(layer.clip,layer.asset,frame.time,this.plan!.document.fps),speed=toNumber(layer.clip.speed);
-   const drift=Math.abs(media.currentTime-target)/speed;
+   const target=sourceSeekTime(layer.clip,layer.asset,frame.time,this.plan!.document.fps),speed=this.curveClocks.get(layer.clip.id)?.sample(frame.time).playbackRate??toNumber(layer.clip.speed);
+   const drift=this.curveClocks.get(layer.clip.id)?.targetDrift(media.currentTime,frame.time)??Math.abs(media.currentTime-target)/speed;
    if(this.playing&&!this.buffering&&!media.paused)this.stats.maxSourceDriftMs=Math.max(this.stats.maxSourceDriftMs,drift*1000);
-   if(seekAll||media.paused||media.readyState<2||drift>Math.max(.08,2/toNumber(this.plan!.document.fps))){synchronized=true;if(play)this.holdForBuffer(frame);await resource.seek(target,signal);}
+   if(layer.clip.speedCurve){
+    // Variable playbackRate alone can decode the wrong source frame. Silent curves
+    // use the authoritative per-output-frame source seek and remain paused. The
+    // transport clock is not reanchored for every seek; late frames remain measurable.
+    await resource.seek(target,signal);
+    if(play&&!seekAll)await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
+   }else if(seekAll||media.paused||media.readyState<2||drift>Math.max(.08,2/toNumber(this.plan!.document.fps))){synchronized=true;if(play)this.holdForBuffer(frame);await resource.seek(target,signal);}
    media.playbackRate=speed;media.preservesPitch=true;
   }));
   if(signal.aborted)throw new DOMException('Aborted','AbortError');
-  if(play){if(synchronized)this.syncAudio(frame,toNumber(frame.time));await Promise.all(requested.map(({resource})=>resource.media?.paused?resource.media.play():undefined));}
+  if(play){if(synchronized)this.syncAudio(frame,toNumber(frame.time));await Promise.all(requested.map(({layer,resource})=>!layer.clip.speedCurve&&resource.media?.paused?resource.media.play():undefined));}
   this.stats.lastDecodeWaitMs=performance.now()-started;this.stats.activeMedia=activeIds.size;
   const inactive=[...this.resources.values()].filter(r=>!activeIds.has(r.id)).sort((a,b)=>a.lastUsed-b.lastUsed);
   while(this.resources.size>(this.options.maxCachedMedia??24)&&inactive.length)this.release(inactive.shift()!.id);

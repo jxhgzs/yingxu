@@ -1,0 +1,2771 @@
+{
+  "version": 1,
+  "mode": "integration-sd",
+  "source": {
+    "width": 640,
+    "height": 360,
+    "calibratedPalette": [
+      [
+        32,
+        29,
+        62
+      ],
+      [
+        44,
+        29,
+        63
+      ],
+      [
+        54,
+        28,
+        64
+      ],
+      [
+        66,
+        26,
+        62
+      ],
+      [
+        76,
+        24,
+        62
+      ],
+      [
+        86,
+        23,
+        63
+      ],
+      [
+        98,
+        23,
+        64
+      ],
+      [
+        110,
+        21,
+        65
+      ],
+      [
+        120,
+        20,
+        63
+      ],
+      [
+        130,
+        18,
+        63
+      ],
+      [
+        141,
+        17,
+        63
+      ],
+      [
+        154,
+        16,
+        65
+      ],
+      [
+        164,
+        15,
+        65
+      ],
+      [
+        174,
+        14,
+        63
+      ],
+      [
+        186,
+        12,
+        64
+      ],
+      [
+        197,
+        10,
+        64
+      ],
+      [
+        33,
+        48,
+        64
+      ],
+      [
+        45,
+        47,
+        62
+      ],
+      [
+        56,
+        46,
+        63
+      ],
+      [
+        66,
+        45,
+        64
+      ],
+      [
+        77,
+        44,
+        64
+      ],
+      [
+        89,
+        42,
+        64
+      ],
+      [
+        99,
+        41,
+        63
+      ],
+      [
+        110,
+        40,
+        64
+      ],
+      [
+        121,
+        39,
+        64
+      ],
+      [
+        133,
+        37,
+        65
+      ],
+      [
+        143,
+        36,
+        65
+      ],
+      [
+        153,
+        35,
+        63
+      ],
+      [
+        166,
+        34,
+        65
+      ],
+      [
+        177,
+        32,
+        65
+      ],
+      [
+        187,
+        31,
+        65
+      ],
+      [
+        197,
+        30,
+        66
+      ],
+      [
+        35,
+        67,
+        63
+      ],
+      [
+        45,
+        66,
+        63
+      ],
+      [
+        56,
+        66,
+        65
+      ],
+      [
+        68,
+        64,
+        65
+      ],
+      [
+        79,
+        63,
+        63
+      ],
+      [
+        89,
+        61,
+        64
+      ],
+      [
+        101,
+        59,
+        64
+      ],
+      [
+        111,
+        58,
+        64
+      ],
+      [
+        123,
+        58,
+        66
+      ],
+      [
+        133,
+        57,
+        64
+      ],
+      [
+        145,
+        54,
+        65
+      ],
+      [
+        155,
+        53,
+        65
+      ],
+      [
+        166,
+        52,
+        65
+      ],
+      [
+        177,
+        52,
+        67
+      ],
+      [
+        189,
+        50,
+        65
+      ],
+      [
+        199,
+        49,
+        65
+      ],
+      [
+        37,
+        86,
+        65
+      ],
+      [
+        47,
+        84,
+        65
+      ],
+      [
+        57,
+        83,
+        63
+      ],
+      [
+        69,
+        83,
+        65
+      ],
+      [
+        81,
+        81,
+        65
+      ],
+      [
+        91,
+        80,
+        65
+      ],
+      [
+        101,
+        78,
+        66
+      ],
+      [
+        112,
+        77,
+        64
+      ],
+      [
+        124,
+        75,
+        64
+      ],
+      [
+        135,
+        75,
+        66
+      ],
+      [
+        145,
+        74,
+        66
+      ],
+      [
+        157,
+        72,
+        66
+      ],
+      [
+        168,
+        71,
+        65
+      ],
+      [
+        178,
+        69,
+        65
+      ],
+      [
+        189,
+        69,
+        66
+      ],
+      [
+        201,
+        67,
+        67
+      ],
+      [
+        37,
+        105,
+        64
+      ],
+      [
+        48,
+        104,
+        65
+      ],
+      [
+        59,
+        102,
+        65
+      ],
+      [
+        70,
+        101,
+        65
+      ],
+      [
+        81,
+        100,
+        67
+      ],
+      [
+        93,
+        99,
+        65
+      ],
+      [
+        103,
+        97,
+        65
+      ],
+      [
+        114,
+        96,
+        66
+      ],
+      [
+        124,
+        95,
+        66
+      ],
+      [
+        137,
+        94,
+        67
+      ],
+      [
+        147,
+        93,
+        66
+      ],
+      [
+        158,
+        91,
+        66
+      ],
+      [
+        168,
+        90,
+        66
+      ],
+      [
+        180,
+        88,
+        67
+      ],
+      [
+        190,
+        87,
+        65
+      ],
+      [
+        202,
+        87,
+        66
+      ],
+      [
+        39,
+        124,
+        66
+      ],
+      [
+        50,
+        123,
+        66
+      ],
+      [
+        60,
+        121,
+        66
+      ],
+      [
+        72,
+        119,
+        65
+      ],
+      [
+        82,
+        118,
+        65
+      ],
+      [
+        94,
+        118,
+        66
+      ],
+      [
+        104,
+        117,
+        67
+      ],
+      [
+        116,
+        114,
+        67
+      ],
+      [
+        126,
+        113,
+        65
+      ],
+      [
+        136,
+        112,
+        66
+      ],
+      [
+        150,
+        111,
+        67
+      ],
+      [
+        160,
+        110,
+        67
+      ],
+      [
+        170,
+        109,
+        66
+      ],
+      [
+        180,
+        107,
+        66
+      ],
+      [
+        192,
+        105,
+        66
+      ],
+      [
+        203,
+        104,
+        67
+      ],
+      [
+        39,
+        142,
+        66
+      ],
+      [
+        52,
+        141,
+        66
+      ],
+      [
+        62,
+        140,
+        66
+      ],
+      [
+        72,
+        139,
+        66
+      ],
+      [
+        84,
+        137,
+        67
+      ]
+    ]
+  },
+  "manifest": {
+    "backend": "webgl2",
+    "state": "ready",
+    "support": {
+      "supported": true,
+      "reasons": [],
+      "visualLayers": 1,
+      "audioLayers": 0,
+      "maxConcurrentMedia": 1
+    },
+    "renderer": {
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+      "vendor": "Google Inc. (Apple)",
+      "softwareRenderer": false,
+      "maxTextureSize": 16384,
+      "timerAvailable": true
+    },
+    "color": {
+      "contract": "browser-srgb-v1",
+      "drawingBufferColorSpace": "srgb",
+      "unpackColorSpace": "srgb",
+      "unpackConversion": "browser-default",
+      "unpackConversionEnum": 37444,
+      "framebufferFormat": "rgba8",
+      "mixDomain": "encoded-component-values",
+      "premultipliedAlpha": false
+    },
+    "time": 1.9666666666666666,
+    "audioState": "uninitialized",
+    "metrics": {
+      "displayedFrames": 163,
+      "droppedOutputFrames": 0,
+      "decoderDroppedFrames": 0,
+      "drawCalls": 163,
+      "textureUploads": 163,
+      "framebufferPasses": 0,
+      "transitionDraws": 0,
+      "framebufferCount": 0,
+      "framebufferBytes": 0,
+      "framebufferAllocations": 0,
+      "lastCpuMs": 0.8999999761581421,
+      "meanCpuMs": 1.0073619616543592,
+      "lastDecodeWaitMs": 0.10000002384185791,
+      "maxSourceDriftMs": 0,
+      "lastPresentedFrame": 58,
+      "activeMedia": 1,
+      "cachedMedia": 1,
+      "contextLosses": 0,
+      "lastGpuMs": 0.361541
+    },
+    "decoders": [
+      {
+        "clipId": "c",
+        "state": "ready",
+        "currentTime": 3.060796,
+        "decodedMediaTime": 3.033333,
+        "readyState": 4,
+        "presentedFrames": 61
+      }
+    ]
+  },
+  "samples": [
+    {
+      "outputFrame": 0,
+      "wallMs": 3.399999976158142,
+      "targetSeconds": 0,
+      "expectedSourceSeconds": 0.1,
+      "expectedSourceFrame": 3,
+      "pixel": [
+        66,
+        26,
+        62,
+        255
+      ],
+      "actualSourceFrame": 3,
+      "currentTime": 0.1001,
+      "decodedMediaTime": 3.033333,
+      "metrics": {
+        "displayedFrames": 104,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 104,
+        "textureUploads": 104,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.6000000238418579,
+        "meanCpuMs": 0.7913461522414136,
+        "lastDecodeWaitMs": 1.800000011920929,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 0,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.164583
+      }
+    },
+    {
+      "outputFrame": 1,
+      "wallMs": 67.80000001192093,
+      "targetSeconds": 0.03333333333333333,
+      "expectedSourceSeconds": 0.133333,
+      "expectedSourceFrame": 4,
+      "pixel": [
+        76,
+        24,
+        62,
+        255
+      ],
+      "actualSourceFrame": 4,
+      "currentTime": 0.133433,
+      "decodedMediaTime": 0.133333,
+      "metrics": {
+        "displayedFrames": 105,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 105,
+        "textureUploads": 105,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.699999988079071,
+        "meanCpuMs": 0.7904761887732008,
+        "lastDecodeWaitMs": 17.19999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 1,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.165333
+      }
+    },
+    {
+      "outputFrame": 2,
+      "wallMs": 101.30000001192093,
+      "targetSeconds": 0.06666666666666667,
+      "expectedSourceSeconds": 0.166667,
+      "expectedSourceFrame": 5,
+      "pixel": [
+        86,
+        23,
+        63,
+        255
+      ],
+      "actualSourceFrame": 5,
+      "currentTime": 0.166767,
+      "decodedMediaTime": 0.166667,
+      "metrics": {
+        "displayedFrames": 106,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 106,
+        "textureUploads": 106,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.9000000357627869,
+        "meanCpuMs": 0.7915094326127252,
+        "lastDecodeWaitMs": 16.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 2,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.159
+      }
+    },
+    {
+      "outputFrame": 3,
+      "wallMs": 135.69999998807907,
+      "targetSeconds": 0.1,
+      "expectedSourceSeconds": 0.2,
+      "expectedSourceFrame": 6,
+      "pixel": [
+        98,
+        23,
+        64,
+        255
+      ],
+      "actualSourceFrame": 6,
+      "currentTime": 0.2001,
+      "decodedMediaTime": 0.2,
+      "metrics": {
+        "displayedFrames": 107,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 107,
+        "textureUploads": 107,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.699999988079071,
+        "meanCpuMs": 0.799999998551663,
+        "lastDecodeWaitMs": 17.100000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 3,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.192791
+      }
+    },
+    {
+      "outputFrame": 4,
+      "wallMs": 168.5999999642372,
+      "targetSeconds": 0.13333333333333333,
+      "expectedSourceSeconds": 0.233333,
+      "expectedSourceFrame": 7,
+      "pixel": [
+        110,
+        21,
+        65,
+        255
+      ],
+      "actualSourceFrame": 7,
+      "currentTime": 0.233433,
+      "decodedMediaTime": 0.233333,
+      "metrics": {
+        "displayedFrames": 108,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 108,
+        "textureUploads": 108,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.899999976158142,
+        "meanCpuMs": 0.8101851835295009,
+        "lastDecodeWaitMs": 17.400000035762787,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 4,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.448
+      }
+    },
+    {
+      "outputFrame": 5,
+      "wallMs": 202.39999997615814,
+      "targetSeconds": 0.16666666666666666,
+      "expectedSourceSeconds": 0.266667,
+      "expectedSourceFrame": 8,
+      "pixel": [
+        120,
+        20,
+        63,
+        255
+      ],
+      "actualSourceFrame": 8,
+      "currentTime": 0.266767,
+      "decodedMediaTime": 0.266667,
+      "metrics": {
+        "displayedFrames": 109,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 109,
+        "textureUploads": 109,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.699999988079071,
+        "meanCpuMs": 0.8183486221033501,
+        "lastDecodeWaitMs": 16.799999952316284,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 5,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.149249
+      }
+    },
+    {
+      "outputFrame": 6,
+      "wallMs": 236,
+      "targetSeconds": 0.2,
+      "expectedSourceSeconds": 0.30000000000000004,
+      "expectedSourceFrame": 9,
+      "pixel": [
+        130,
+        18,
+        63,
+        255
+      ],
+      "actualSourceFrame": 9,
+      "currentTime": 0.3001,
+      "decodedMediaTime": 0.3,
+      "metrics": {
+        "displayedFrames": 110,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 110,
+        "textureUploads": 110,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 2.099999964237213,
+        "meanCpuMs": 0.8299999979409307,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 6,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.155624
+      }
+    },
+    {
+      "outputFrame": 7,
+      "wallMs": 268.80000001192093,
+      "targetSeconds": 0.23333333333333334,
+      "expectedSourceSeconds": 0.333333,
+      "expectedSourceFrame": 10,
+      "pixel": [
+        141,
+        17,
+        63,
+        255
+      ],
+      "actualSourceFrame": 10,
+      "currentTime": 0.333433,
+      "decodedMediaTime": 0.333333,
+      "metrics": {
+        "displayedFrames": 111,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 111,
+        "textureUploads": 111,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.7000000476837158,
+        "meanCpuMs": 0.8378378362269018,
+        "lastDecodeWaitMs": 16.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 7,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.205874
+      }
+    },
+    {
+      "outputFrame": 8,
+      "wallMs": 302.39999997615814,
+      "targetSeconds": 0.26666666666666666,
+      "expectedSourceSeconds": 0.36666699999999997,
+      "expectedSourceFrame": 11,
+      "pixel": [
+        154,
+        16,
+        65,
+        255
+      ],
+      "actualSourceFrame": 11,
+      "currentTime": 0.366767,
+      "decodedMediaTime": 0.366667,
+      "metrics": {
+        "displayedFrames": 112,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 112,
+        "textureUploads": 112,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.800000011920929,
+        "meanCpuMs": 0.8464285699384556,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 8,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.1655
+      }
+    },
+    {
+      "outputFrame": 9,
+      "wallMs": 335.30000001192093,
+      "targetSeconds": 0.3,
+      "expectedSourceSeconds": 0.4,
+      "expectedSourceFrame": 12,
+      "pixel": [
+        164,
+        15,
+        65,
+        255
+      ],
+      "actualSourceFrame": 12,
+      "currentTime": 0.4001,
+      "decodedMediaTime": 0.4,
+      "metrics": {
+        "displayedFrames": 113,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 113,
+        "textureUploads": 113,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.852212387903602,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 9,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.176
+      }
+    },
+    {
+      "outputFrame": 10,
+      "wallMs": 368.30000001192093,
+      "targetSeconds": 0.3333333333333333,
+      "expectedSourceSeconds": 0.43333299999999997,
+      "expectedSourceFrame": 13,
+      "pixel": [
+        174,
+        14,
+        63,
+        255
+      ],
+      "actualSourceFrame": 13,
+      "currentTime": 0.433433,
+      "decodedMediaTime": 0.433333,
+      "metrics": {
+        "displayedFrames": 114,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 114,
+        "textureUploads": 114,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.8578947353781318,
+        "lastDecodeWaitMs": 17.30000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 10,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.157249
+      }
+    },
+    {
+      "outputFrame": 11,
+      "wallMs": 401.69999998807907,
+      "targetSeconds": 0.36666666666666664,
+      "expectedSourceSeconds": 0.46666700000000005,
+      "expectedSourceFrame": 14,
+      "pixel": [
+        186,
+        12,
+        64,
+        255
+      ],
+      "actualSourceFrame": 14,
+      "currentTime": 0.466767,
+      "decodedMediaTime": 0.466667,
+      "metrics": {
+        "displayedFrames": 115,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 115,
+        "textureUploads": 115,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.399999976158142,
+        "meanCpuMs": 0.8626086939936101,
+        "lastDecodeWaitMs": 17.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 11,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.188333
+      }
+    },
+    {
+      "outputFrame": 12,
+      "wallMs": 434.30000001192093,
+      "targetSeconds": 0.4,
+      "expectedSourceSeconds": 0.5,
+      "expectedSourceFrame": 15,
+      "pixel": [
+        197,
+        10,
+        64,
+        255
+      ],
+      "actualSourceFrame": 15,
+      "currentTime": 0.5001,
+      "decodedMediaTime": 0.5,
+      "metrics": {
+        "displayedFrames": 116,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 116,
+        "textureUploads": 116,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.8681034466315962,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 12,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.167958
+      }
+    },
+    {
+      "outputFrame": 13,
+      "wallMs": 469.0999999642372,
+      "targetSeconds": 0.43333333333333335,
+      "expectedSourceSeconds": 0.5333330000000001,
+      "expectedSourceFrame": 16,
+      "pixel": [
+        33,
+        48,
+        64,
+        255
+      ],
+      "actualSourceFrame": 16,
+      "currentTime": 0.533432,
+      "decodedMediaTime": 0.533333,
+      "metrics": {
+        "displayedFrames": 117,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 117,
+        "textureUploads": 117,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5999999642372131,
+        "meanCpuMs": 0.8743589724230972,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 13,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.160333
+      }
+    },
+    {
+      "outputFrame": 14,
+      "wallMs": 502.30000001192093,
+      "targetSeconds": 0.4666666666666667,
+      "expectedSourceSeconds": 0.566667,
+      "expectedSourceFrame": 17,
+      "pixel": [
+        45,
+        47,
+        62,
+        255
+      ],
+      "actualSourceFrame": 17,
+      "currentTime": 0.566767,
+      "decodedMediaTime": 0.566667,
+      "metrics": {
+        "displayedFrames": 118,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 118,
+        "textureUploads": 118,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5999999642372131,
+        "meanCpuMs": 0.8805084723537253,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 14,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.194124
+      }
+    },
+    {
+      "outputFrame": 15,
+      "wallMs": 535.5999999642372,
+      "targetSeconds": 0.5,
+      "expectedSourceSeconds": 0.6,
+      "expectedSourceFrame": 18,
+      "pixel": [
+        56,
+        46,
+        63,
+        255
+      ],
+      "actualSourceFrame": 18,
+      "currentTime": 0.6001,
+      "decodedMediaTime": 0.6,
+      "metrics": {
+        "displayedFrames": 119,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 119,
+        "textureUploads": 119,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.199999988079071,
+        "meanCpuMs": 0.8831932750068795,
+        "lastDecodeWaitMs": 17.400000035762787,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 15,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.158958
+      }
+    },
+    {
+      "outputFrame": 16,
+      "wallMs": 568.3999999761581,
+      "targetSeconds": 0.5333333333333333,
+      "expectedSourceSeconds": 0.6333329999999999,
+      "expectedSourceFrame": 19,
+      "pixel": [
+        66,
+        45,
+        64,
+        255
+      ],
+      "actualSourceFrame": 19,
+      "currentTime": 0.633433,
+      "decodedMediaTime": 0.633333,
+      "metrics": {
+        "displayedFrames": 120,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 120,
+        "textureUploads": 120,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.8999999761581421,
+        "meanCpuMs": 0.8833333308498067,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 16,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.165166
+      }
+    },
+    {
+      "outputFrame": 17,
+      "wallMs": 601.1999999880791,
+      "targetSeconds": 0.5666666666666667,
+      "expectedSourceSeconds": 0.666667,
+      "expectedSourceFrame": 20,
+      "pixel": [
+        77,
+        44,
+        64,
+        255
+      ],
+      "actualSourceFrame": 20,
+      "currentTime": 0.666767,
+      "decodedMediaTime": 0.666667,
+      "metrics": {
+        "displayedFrames": 121,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 121,
+        "textureUploads": 121,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.8999999761581421,
+        "meanCpuMs": 0.8834710717201235,
+        "lastDecodeWaitMs": 16.5,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 17,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.459333
+      }
+    },
+    {
+      "outputFrame": 18,
+      "wallMs": 634.3999999761581,
+      "targetSeconds": 0.6,
+      "expectedSourceSeconds": 0.7,
+      "expectedSourceFrame": 21,
+      "pixel": [
+        89,
+        42,
+        64,
+        255
+      ],
+      "actualSourceFrame": 21,
+      "currentTime": 0.7001,
+      "decodedMediaTime": 0.7,
+      "metrics": {
+        "displayedFrames": 122,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 122,
+        "textureUploads": 122,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.699999988079071,
+        "meanCpuMs": 0.8819672103788034,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 18,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.169166
+      }
+    },
+    {
+      "outputFrame": 19,
+      "wallMs": 668.8000000119209,
+      "targetSeconds": 0.6333333333333333,
+      "expectedSourceSeconds": 0.733333,
+      "expectedSourceFrame": 22,
+      "pixel": [
+        99,
+        41,
+        63,
+        255
+      ],
+      "actualSourceFrame": 22,
+      "currentTime": 0.733433,
+      "decodedMediaTime": 0.733333,
+      "metrics": {
+        "displayedFrames": 123,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 123,
+        "textureUploads": 123,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.699999988079071,
+        "meanCpuMs": 0.8804878020674235,
+        "lastDecodeWaitMs": 17.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 19,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.161208
+      }
+    },
+    {
+      "outputFrame": 20,
+      "wallMs": 701.5,
+      "targetSeconds": 0.6666666666666666,
+      "expectedSourceSeconds": 0.766667,
+      "expectedSourceFrame": 23,
+      "pixel": [
+        110,
+        40,
+        64,
+        255
+      ],
+      "actualSourceFrame": 23,
+      "currentTime": 0.766767,
+      "decodedMediaTime": 0.766667,
+      "metrics": {
+        "displayedFrames": 124,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 124,
+        "textureUploads": 124,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1,
+        "meanCpuMs": 0.8814516101152668,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 20,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.165833
+      }
+    },
+    {
+      "outputFrame": 21,
+      "wallMs": 734.6999999880791,
+      "targetSeconds": 0.7,
+      "expectedSourceSeconds": 0.7999999999999999,
+      "expectedSourceFrame": 24,
+      "pixel": [
+        121,
+        39,
+        64,
+        255
+      ],
+      "actualSourceFrame": 24,
+      "currentTime": 0.8001,
+      "decodedMediaTime": 0.8,
+      "metrics": {
+        "displayedFrames": 125,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 125,
+        "textureUploads": 125,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1,
+        "meanCpuMs": 0.8823999972343447,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 21,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.160249
+      }
+    },
+    {
+      "outputFrame": 22,
+      "wallMs": 768.5,
+      "targetSeconds": 0.7333333333333333,
+      "expectedSourceSeconds": 0.833333,
+      "expectedSourceFrame": 25,
+      "pixel": [
+        133,
+        37,
+        65,
+        255
+      ],
+      "actualSourceFrame": 25,
+      "currentTime": 0.833433,
+      "decodedMediaTime": 0.833333,
+      "metrics": {
+        "displayedFrames": 126,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 126,
+        "textureUploads": 126,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.9000000357627869,
+        "meanCpuMs": 0.8825396800798085,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 22,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.163249
+      }
+    },
+    {
+      "outputFrame": 23,
+      "wallMs": 801.5,
+      "targetSeconds": 0.7666666666666667,
+      "expectedSourceSeconds": 0.868166,
+      "expectedSourceFrame": 26,
+      "pixel": [
+        143,
+        36,
+        65,
+        255
+      ],
+      "actualSourceFrame": 26,
+      "currentTime": 0.868266,
+      "decodedMediaTime": 0.866667,
+      "metrics": {
+        "displayedFrames": 127,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 127,
+        "textureUploads": 127,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.7999999523162842,
+        "meanCpuMs": 0.8818897609635603,
+        "lastDecodeWaitMs": 16.700000047683716,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 23,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.431583
+      }
+    },
+    {
+      "outputFrame": 24,
+      "wallMs": 834.8000000119209,
+      "targetSeconds": 0.8,
+      "expectedSourceSeconds": 0.9121469999999999,
+      "expectedSourceFrame": 27,
+      "pixel": [
+        153,
+        35,
+        63,
+        255
+      ],
+      "actualSourceFrame": 27,
+      "currentTime": 0.912247,
+      "decodedMediaTime": 0.9,
+      "metrics": {
+        "displayedFrames": 128,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 128,
+        "textureUploads": 128,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1,
+        "meanCpuMs": 0.8828124972060325,
+        "lastDecodeWaitMs": 16.5,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 24,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.165375
+      }
+    },
+    {
+      "outputFrame": 25,
+      "wallMs": 868.3999999761581,
+      "targetSeconds": 0.8333333333333334,
+      "expectedSourceSeconds": 0.976935,
+      "expectedSourceFrame": 29,
+      "pixel": [
+        177,
+        32,
+        65,
+        255
+      ],
+      "actualSourceFrame": 29,
+      "currentTime": 0.977035,
+      "decodedMediaTime": 0.966667,
+      "metrics": {
+        "displayedFrames": 129,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 129,
+        "textureUploads": 129,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1,
+        "meanCpuMs": 0.8837209274602493,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 25,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.16725
+      }
+    },
+    {
+      "outputFrame": 26,
+      "wallMs": 902.3000000119209,
+      "targetSeconds": 0.8666666666666667,
+      "expectedSourceSeconds": 1.0697860000000001,
+      "expectedSourceFrame": 32,
+      "pixel": [
+        35,
+        67,
+        63,
+        255
+      ],
+      "actualSourceFrame": 32,
+      "currentTime": 1.069886,
+      "decodedMediaTime": 1.066667,
+      "metrics": {
+        "displayedFrames": 130,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 130,
+        "textureUploads": 130,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.8884615357105551,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 26,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.185125
+      }
+    },
+    {
+      "outputFrame": 27,
+      "wallMs": 935.8000000119209,
+      "targetSeconds": 0.9,
+      "expectedSourceSeconds": 1.190693,
+      "expectedSourceFrame": 35,
+      "pixel": [
+        68,
+        64,
+        65,
+        255
+      ],
+      "actualSourceFrame": 35,
+      "currentTime": 1.190793,
+      "decodedMediaTime": 1.166667,
+      "metrics": {
+        "displayedFrames": 131,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 131,
+        "textureUploads": 131,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.8931297682623829,
+        "lastDecodeWaitMs": 16.80000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 27,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.156333
+      }
+    },
+    {
+      "outputFrame": 28,
+      "wallMs": 969.5,
+      "targetSeconds": 0.9333333333333333,
+      "expectedSourceSeconds": 1.3396590000000002,
+      "expectedSourceFrame": 40,
+      "pixel": [
+        123,
+        58,
+        66,
+        255
+      ],
+      "actualSourceFrame": 40,
+      "currentTime": 1.339759,
+      "decodedMediaTime": 1.333333,
+      "metrics": {
+        "displayedFrames": 132,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 132,
+        "textureUploads": 132,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.899999976158142,
+        "meanCpuMs": 0.9007575728676538,
+        "lastDecodeWaitMs": 17.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 28,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.159375
+      }
+    },
+    {
+      "outputFrame": 29,
+      "wallMs": 1003.3000000119209,
+      "targetSeconds": 0.9666666666666667,
+      "expectedSourceSeconds": 1.508698,
+      "expectedSourceFrame": 45,
+      "pixel": [
+        177,
+        52,
+        67,
+        255
+      ],
+      "actualSourceFrame": 45,
+      "currentTime": 1.508798,
+      "decodedMediaTime": 1.5,
+      "metrics": {
+        "displayedFrames": 133,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 133,
+        "textureUploads": 133,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.9060150349050539,
+        "lastDecodeWaitMs": 17.30000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 29,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.165875
+      }
+    },
+    {
+      "outputFrame": 30,
+      "wallMs": 1036.199999988079,
+      "targetSeconds": 1,
+      "expectedSourceSeconds": 1.685337,
+      "expectedSourceFrame": 50,
+      "pixel": [
+        57,
+        83,
+        63,
+        255
+      ],
+      "actualSourceFrame": 50,
+      "currentTime": 1.685437,
+      "decodedMediaTime": 1.666667,
+      "metrics": {
+        "displayedFrames": 134,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 134,
+        "textureUploads": 134,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.800000011920929,
+        "meanCpuMs": 0.9126865645842768,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 30,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.162166
+      }
+    },
+    {
+      "outputFrame": 31,
+      "wallMs": 1069.5,
+      "targetSeconds": 1.0333333333333334,
+      "expectedSourceSeconds": 1.85437,
+      "expectedSourceFrame": 55,
+      "pixel": [
+        112,
+        77,
+        64,
+        255
+      ],
+      "actualSourceFrame": 55,
+      "currentTime": 1.85447,
+      "decodedMediaTime": 1.833333,
+      "metrics": {
+        "displayedFrames": 135,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 135,
+        "textureUploads": 135,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.9177777753935922,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 31,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.1535
+      }
+    },
+    {
+      "outputFrame": 32,
+      "wallMs": 1102.5,
+      "targetSeconds": 1.0666666666666667,
+      "expectedSourceSeconds": 2.00334,
+      "expectedSourceFrame": 60,
+      "pixel": [
+        168,
+        71,
+        65,
+        255
+      ],
+      "actualSourceFrame": 60,
+      "currentTime": 2.00344,
+      "decodedMediaTime": 2,
+      "metrics": {
+        "displayedFrames": 136,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 136,
+        "textureUploads": 136,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.9227941154557118,
+        "lastDecodeWaitMs": 16.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 32,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.224666
+      }
+    },
+    {
+      "outputFrame": 33,
+      "wallMs": 1135.8999999761581,
+      "targetSeconds": 1.1,
+      "expectedSourceSeconds": 2.1242460000000003,
+      "expectedSourceFrame": 63,
+      "pixel": [
+        201,
+        67,
+        67,
+        255
+      ],
+      "actualSourceFrame": 63,
+      "currentTime": 2.124346,
+      "decodedMediaTime": 2.1,
+      "metrics": {
+        "displayedFrames": 137,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 137,
+        "textureUploads": 137,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5999999642372131,
+        "meanCpuMs": 0.9277372238409782,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 33,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.160708
+      }
+    },
+    {
+      "outputFrame": 34,
+      "wallMs": 1169.199999988079,
+      "targetSeconds": 1.1333333333333333,
+      "expectedSourceSeconds": 2.217094,
+      "expectedSourceFrame": 66,
+      "pixel": [
+        59,
+        102,
+        65,
+        255
+      ],
+      "actualSourceFrame": 66,
+      "currentTime": 2.217194,
+      "decodedMediaTime": 2.2,
+      "metrics": {
+        "displayedFrames": 138,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 138,
+        "textureUploads": 138,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.9318840555522755,
+        "lastDecodeWaitMs": 16.700000047683716,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 34,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.162958
+      }
+    },
+    {
+      "outputFrame": 35,
+      "wallMs": 1203.0999999642372,
+      "targetSeconds": 1.1666666666666667,
+      "expectedSourceSeconds": 2.2818840000000002,
+      "expectedSourceFrame": 68,
+      "pixel": [
+        81,
+        100,
+        67,
+        255
+      ],
+      "actualSourceFrame": 68,
+      "currentTime": 2.281984,
+      "decodedMediaTime": 2.266667,
+      "metrics": {
+        "displayedFrames": 139,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 139,
+        "textureUploads": 139,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 2.100000023841858,
+        "meanCpuMs": 0.9402877675543588,
+        "lastDecodeWaitMs": 17.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 35,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.161666
+      }
+    },
+    {
+      "outputFrame": 36,
+      "wallMs": 1236.199999988079,
+      "targetSeconds": 1.2,
+      "expectedSourceSeconds": 2.325864,
+      "expectedSourceFrame": 69,
+      "pixel": [
+        93,
+        99,
+        65,
+        255
+      ],
+      "actualSourceFrame": 69,
+      "currentTime": 2.325964,
+      "decodedMediaTime": 2.3,
+      "metrics": {
+        "displayedFrames": 140,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 140,
+        "textureUploads": 140,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.800000011920929,
+        "meanCpuMs": 0.9464285692998343,
+        "lastDecodeWaitMs": 17.100000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 36,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.146958
+      }
+    },
+    {
+      "outputFrame": 37,
+      "wallMs": 1269.5999999642372,
+      "targetSeconds": 1.2333333333333334,
+      "expectedSourceSeconds": 2.360696,
+      "expectedSourceFrame": 70,
+      "pixel": [
+        103,
+        97,
+        65,
+        255
+      ],
+      "actualSourceFrame": 70,
+      "currentTime": 2.360796,
+      "decodedMediaTime": 2.333333,
+      "metrics": {
+        "displayedFrames": 141,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 141,
+        "textureUploads": 141,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.699999988079071,
+        "meanCpuMs": 0.9517730474472048,
+        "lastDecodeWaitMs": 16.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 37,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.15375
+      }
+    },
+    {
+      "outputFrame": 38,
+      "wallMs": 1302.199999988079,
+      "targetSeconds": 1.2666666666666666,
+      "expectedSourceSeconds": 2.39403,
+      "expectedSourceFrame": 71,
+      "pixel": [
+        114,
+        96,
+        66,
+        255
+      ],
+      "actualSourceFrame": 71,
+      "currentTime": 2.39413,
+      "decodedMediaTime": 2.366667,
+      "metrics": {
+        "displayedFrames": 142,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 142,
+        "textureUploads": 142,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.100000023841858,
+        "meanCpuMs": 0.952816899393646,
+        "lastDecodeWaitMs": 16.80000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 38,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.380958
+      }
+    },
+    {
+      "outputFrame": 39,
+      "wallMs": 1335.300000011921,
+      "targetSeconds": 1.3,
+      "expectedSourceSeconds": 2.427363,
+      "expectedSourceFrame": 72,
+      "pixel": [
+        124,
+        95,
+        66,
+        255
+      ],
+      "actualSourceFrame": 72,
+      "currentTime": 2.427463,
+      "decodedMediaTime": 2.4,
+      "metrics": {
+        "displayedFrames": 143,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 143,
+        "textureUploads": 143,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.9000000357627869,
+        "meanCpuMs": 0.9524475506969267,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 39,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.17725
+      }
+    },
+    {
+      "outputFrame": 40,
+      "wallMs": 1369.300000011921,
+      "targetSeconds": 1.3333333333333333,
+      "expectedSourceSeconds": 2.460696,
+      "expectedSourceFrame": 73,
+      "pixel": [
+        137,
+        94,
+        67,
+        255
+      ],
+      "actualSourceFrame": 73,
+      "currentTime": 2.460796,
+      "decodedMediaTime": 2.433333,
+      "metrics": {
+        "displayedFrames": 144,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 144,
+        "textureUploads": 144,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.9562499982615313,
+        "lastDecodeWaitMs": 16.5,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 40,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.161375
+      }
+    },
+    {
+      "outputFrame": 41,
+      "wallMs": 1402,
+      "targetSeconds": 1.3666666666666667,
+      "expectedSourceSeconds": 2.49403,
+      "expectedSourceFrame": 74,
+      "pixel": [
+        147,
+        93,
+        66,
+        255
+      ],
+      "actualSourceFrame": 74,
+      "currentTime": 2.49413,
+      "decodedMediaTime": 2.466667,
+      "metrics": {
+        "displayedFrames": 145,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 145,
+        "textureUploads": 145,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.399999976158142,
+        "meanCpuMs": 0.9593103429366804,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 41,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.162166
+      }
+    },
+    {
+      "outputFrame": 42,
+      "wallMs": 1436.0999999642372,
+      "targetSeconds": 1.4,
+      "expectedSourceSeconds": 2.5273630000000002,
+      "expectedSourceFrame": 75,
+      "pixel": [
+        158,
+        91,
+        66,
+        255
+      ],
+      "actualSourceFrame": 75,
+      "currentTime": 2.527463,
+      "decodedMediaTime": 2.5,
+      "metrics": {
+        "displayedFrames": 146,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 146,
+        "textureUploads": 146,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.9630136967521826,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 42,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.155041
+      }
+    },
+    {
+      "outputFrame": 43,
+      "wallMs": 1469.699999988079,
+      "targetSeconds": 1.4333333333333333,
+      "expectedSourceSeconds": 2.560696,
+      "expectedSourceFrame": 76,
+      "pixel": [
+        168,
+        90,
+        66,
+        255
+      ],
+      "actualSourceFrame": 76,
+      "currentTime": 2.560796,
+      "decodedMediaTime": 2.533333,
+      "metrics": {
+        "displayedFrames": 147,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 147,
+        "textureUploads": 147,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.7000000476837158,
+        "meanCpuMs": 0.9680272093435536,
+        "lastDecodeWaitMs": 17.299999952316284,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 43,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.163666
+      }
+    },
+    {
+      "outputFrame": 44,
+      "wallMs": 1503.199999988079,
+      "targetSeconds": 1.4666666666666666,
+      "expectedSourceSeconds": 2.59403,
+      "expectedSourceFrame": 77,
+      "pixel": [
+        180,
+        88,
+        67,
+        255
+      ],
+      "actualSourceFrame": 77,
+      "currentTime": 2.59413,
+      "decodedMediaTime": 2.566667,
+      "metrics": {
+        "displayedFrames": 148,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 148,
+        "textureUploads": 148,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.800000011920929,
+        "meanCpuMs": 0.9736486471988061,
+        "lastDecodeWaitMs": 17.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 44,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.149416
+      }
+    },
+    {
+      "outputFrame": 45,
+      "wallMs": 1536.199999988079,
+      "targetSeconds": 1.5,
+      "expectedSourceSeconds": 2.627363,
+      "expectedSourceFrame": 78,
+      "pixel": [
+        190,
+        87,
+        65,
+        255
+      ],
+      "actualSourceFrame": 78,
+      "currentTime": 2.627463,
+      "decodedMediaTime": 2.6,
+      "metrics": {
+        "displayedFrames": 149,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 149,
+        "textureUploads": 149,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.977852347713189,
+        "lastDecodeWaitMs": 17.30000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 45,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.156999
+      }
+    },
+    {
+      "outputFrame": 46,
+      "wallMs": 1569.5,
+      "targetSeconds": 1.5333333333333334,
+      "expectedSourceSeconds": 2.660696,
+      "expectedSourceFrame": 79,
+      "pixel": [
+        202,
+        87,
+        66,
+        255
+      ],
+      "actualSourceFrame": 79,
+      "currentTime": 2.660796,
+      "decodedMediaTime": 2.633333,
+      "metrics": {
+        "displayedFrames": 150,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 150,
+        "textureUploads": 150,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.9813333320617676,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 46,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.164291
+      }
+    },
+    {
+      "outputFrame": 47,
+      "wallMs": 1602.8999999761581,
+      "targetSeconds": 1.5666666666666667,
+      "expectedSourceSeconds": 2.69403,
+      "expectedSourceFrame": 80,
+      "pixel": [
+        39,
+        124,
+        66,
+        255
+      ],
+      "actualSourceFrame": 80,
+      "currentTime": 2.69413,
+      "decodedMediaTime": 2.666667,
+      "metrics": {
+        "displayedFrames": 151,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 151,
+        "textureUploads": 151,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5999999642372131,
+        "meanCpuMs": 0.9854304620761746,
+        "lastDecodeWaitMs": 16.69999998807907,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 47,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.161333
+      }
+    },
+    {
+      "outputFrame": 48,
+      "wallMs": 1636.3999999761581,
+      "targetSeconds": 1.6,
+      "expectedSourceSeconds": 2.727363,
+      "expectedSourceFrame": 81,
+      "pixel": [
+        50,
+        123,
+        66,
+        255
+      ],
+      "actualSourceFrame": 81,
+      "currentTime": 2.727463,
+      "decodedMediaTime": 2.7,
+      "metrics": {
+        "displayedFrames": 152,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 152,
+        "textureUploads": 152,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 0.9888157879835682,
+        "lastDecodeWaitMs": 17,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 48,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.158125
+      }
+    },
+    {
+      "outputFrame": 49,
+      "wallMs": 1669.5999999642372,
+      "targetSeconds": 1.6333333333333333,
+      "expectedSourceSeconds": 2.7606960000000003,
+      "expectedSourceFrame": 82,
+      "pixel": [
+        60,
+        121,
+        66,
+        255
+      ],
+      "actualSourceFrame": 82,
+      "currentTime": 2.760796,
+      "decodedMediaTime": 2.733333,
+      "metrics": {
+        "displayedFrames": 153,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 153,
+        "textureUploads": 153,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.9928104561917923,
+        "lastDecodeWaitMs": 17.299999952316284,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 49,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.166541
+      }
+    },
+    {
+      "outputFrame": 50,
+      "wallMs": 1702.800000011921,
+      "targetSeconds": 1.6666666666666667,
+      "expectedSourceSeconds": 2.7940300000000002,
+      "expectedSourceFrame": 83,
+      "pixel": [
+        72,
+        119,
+        65,
+        255
+      ],
+      "actualSourceFrame": 83,
+      "currentTime": 2.79413,
+      "decodedMediaTime": 2.766667,
+      "metrics": {
+        "displayedFrames": 154,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 154,
+        "textureUploads": 154,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.600000023841858,
+        "meanCpuMs": 0.9967532455921174,
+        "lastDecodeWaitMs": 16.799999952316284,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 50,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.161708
+      }
+    },
+    {
+      "outputFrame": 51,
+      "wallMs": 1735.5999999642372,
+      "targetSeconds": 1.7,
+      "expectedSourceSeconds": 2.827363,
+      "expectedSourceFrame": 84,
+      "pixel": [
+        82,
+        118,
+        65,
+        255
+      ],
+      "actualSourceFrame": 84,
+      "currentTime": 2.827463,
+      "decodedMediaTime": 2.8,
+      "metrics": {
+        "displayedFrames": 155,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 155,
+        "textureUploads": 155,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.199999988079071,
+        "meanCpuMs": 0.9980645148984849,
+        "lastDecodeWaitMs": 16.400000035762787,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 51,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.155166
+      }
+    },
+    {
+      "outputFrame": 52,
+      "wallMs": 1769.3999999761581,
+      "targetSeconds": 1.7333333333333334,
+      "expectedSourceSeconds": 2.860696,
+      "expectedSourceFrame": 85,
+      "pixel": [
+        94,
+        118,
+        66,
+        255
+      ],
+      "actualSourceFrame": 85,
+      "currentTime": 2.860796,
+      "decodedMediaTime": 2.833333,
+      "metrics": {
+        "displayedFrames": 156,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 156,
+        "textureUploads": 156,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.8999999761581421,
+        "meanCpuMs": 0.9974358960604058,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 52,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.209833
+      }
+    },
+    {
+      "outputFrame": 53,
+      "wallMs": 1804.199999988079,
+      "targetSeconds": 1.7666666666666666,
+      "expectedSourceSeconds": 2.89403,
+      "expectedSourceFrame": 86,
+      "pixel": [
+        104,
+        117,
+        67,
+        255
+      ],
+      "actualSourceFrame": 86,
+      "currentTime": 2.89413,
+      "decodedMediaTime": 2.866667,
+      "metrics": {
+        "displayedFrames": 157,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 157,
+        "textureUploads": 157,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.699999988079071,
+        "meanCpuMs": 1.0019108265828178,
+        "lastDecodeWaitMs": 17.400000035762787,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 53,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.446958
+      }
+    },
+    {
+      "outputFrame": 54,
+      "wallMs": 1836.3999999761581,
+      "targetSeconds": 1.8,
+      "expectedSourceSeconds": 2.927363,
+      "expectedSourceFrame": 87,
+      "pixel": [
+        116,
+        114,
+        67,
+        255
+      ],
+      "actualSourceFrame": 87,
+      "currentTime": 2.927463,
+      "decodedMediaTime": 2.9,
+      "metrics": {
+        "displayedFrames": 158,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 158,
+        "textureUploads": 158,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.5,
+        "meanCpuMs": 1.0050632897057115,
+        "lastDecodeWaitMs": 16.399999976158142,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 54,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.325291
+      }
+    },
+    {
+      "outputFrame": 55,
+      "wallMs": 1869.0999999642372,
+      "targetSeconds": 1.8333333333333333,
+      "expectedSourceSeconds": 2.960696,
+      "expectedSourceFrame": 88,
+      "pixel": [
+        126,
+        113,
+        65,
+        255
+      ],
+      "actualSourceFrame": 88,
+      "currentTime": 2.960796,
+      "decodedMediaTime": 2.933333,
+      "metrics": {
+        "displayedFrames": 159,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 159,
+        "textureUploads": 159,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.7999999523162842,
+        "meanCpuMs": 1.0037735831812498,
+        "lastDecodeWaitMs": 16.600000023841858,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 55,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.155374
+      }
+    },
+    {
+      "outputFrame": 56,
+      "wallMs": 1902.300000011921,
+      "targetSeconds": 1.8666666666666667,
+      "expectedSourceSeconds": 2.99403,
+      "expectedSourceFrame": 89,
+      "pixel": [
+        136,
+        112,
+        66,
+        255
+      ],
+      "actualSourceFrame": 89,
+      "currentTime": 2.99413,
+      "decodedMediaTime": 2.966667,
+      "metrics": {
+        "displayedFrames": 160,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 160,
+        "textureUploads": 160,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 0.9000000357627869,
+        "meanCpuMs": 1.0031249985098845,
+        "lastDecodeWaitMs": 16.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 56,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.1685
+      }
+    },
+    {
+      "outputFrame": 57,
+      "wallMs": 1936.699999988079,
+      "targetSeconds": 1.9,
+      "expectedSourceSeconds": 3.0273630000000002,
+      "expectedSourceFrame": 90,
+      "pixel": [
+        150,
+        111,
+        67,
+        255
+      ],
+      "actualSourceFrame": 90,
+      "currentTime": 3.027463,
+      "decodedMediaTime": 3,
+      "metrics": {
+        "displayedFrames": 161,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 161,
+        "textureUploads": 161,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.399999976158142,
+        "meanCpuMs": 1.005590060482855,
+        "lastDecodeWaitMs": 17.399999976158142,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 57,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.167666
+      }
+    },
+    {
+      "outputFrame": 58,
+      "wallMs": 1969.8999999761581,
+      "targetSeconds": 1.9333333333333333,
+      "expectedSourceSeconds": 3.060696,
+      "expectedSourceFrame": 91,
+      "pixel": [
+        160,
+        110,
+        67,
+        255
+      ],
+      "actualSourceFrame": 91,
+      "currentTime": 3.060796,
+      "decodedMediaTime": 3.033333,
+      "metrics": {
+        "displayedFrames": 162,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 162,
+        "textureUploads": 162,
+        "framebufferPasses": 0,
+        "transitionDraws": 0,
+        "framebufferCount": 0,
+        "framebufferBytes": 0,
+        "framebufferAllocations": 0,
+        "lastCpuMs": 1.4000000357627869,
+        "meanCpuMs": 1.0080246899598915,
+        "lastDecodeWaitMs": 17.599999964237213,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 58,
+        "activeMedia": 1,
+        "cachedMedia": 1,
+        "contextLosses": 0,
+        "lastGpuMs": 0.186374
+      }
+    }
+  ],
+  "summary": {
+    "drawn": 59,
+    "droppedOutputFrames": 0,
+    "decoderDroppedFrames": 0,
+    "wrongSourceFrames": 0,
+    "maxSourceFrameError": 0,
+    "durationMs": 2004.0999999642372,
+    "meanDecodeWaitMs": 16.627118644067796,
+    "maxDecodeWaitMs": 17.69999998807907
+  }
+}

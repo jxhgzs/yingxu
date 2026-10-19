@@ -1,6 +1,8 @@
 # WebGL2实时预览实现与接入
 
-此模块供父组件接入；不自行修改Preview.vue、控制器或核心工程。已批准的独立编辑器设计适用。
+已批准的独立编辑器设计适用。以下保留初轮调查过程，当前已验证色彩/转场事实以 `docs/qa/2026-10-19-effects-transitions-gpu.md` 为准。
+
+2026-10-19后续扩展：静态文字通过 `textTexture(clipId, {projectId,revision}, signal)` 按需取得libass透明PNG，不预渲整部工程。`setDocument(document,{textContext:{projectId,revision}})`开启这条路径；未连接服务、文字动画或文字曲线明确转后台。PNG烘焙原画幅位置/变换/opacity，GPU只应用identity，资源仍保留原text身份，纹理只上传一次。黑/白RGBA双底恢复有效alpha，避免libass alpha平面与实际覆盖不一致；量化容差、缓存上限、真实UI证据见 `docs/qa/2026-10-19-gpu-text.md`。静音曲线采用权威source seek逐帧取样且media保持暂停，带可闻音频曲线继续后台；真实源帧/掉帧验证另见曲线QA。
 
 转场扩展计划（2026-10-19）：先用居中窗口/源handles/层叠顺序写失败用例；再复用核心transitionWindow/transitionSourceAt规划pair；WebGL左右各写透明RGBA FBO，以premultiplied线性mix一次合回下层；复用两份FBO并记录pass/分配/字节数，resize/context loss/dispose释放；最后跑GPU专项测试及typecheck。仅支持crossfade画面，音频保持原切点；dipToBlack及未知规则继续明确回退。
 
@@ -19,7 +21,7 @@
 
 坐标规则与现有FFmpeg渲染图一致：先fit素材到画布，再按scale缩放；x向右、y向下；正rotation顺时针；flip在旋转前作用。黑色画布保留letterbox。视频采样由浏览器HTMLMediaElement解码，不冒称与FFmpeg或目标解码器逐帧/色彩完全相同。
 
-不支持的可见文字、曲线变速、未知诊断和无法解码的媒体明确返回回退状态。默认不静音冒充完整预览；基础音频通过WebAudio混音、HTML媒体preservesPitch恒速播放，源时钟volume和目标时间qsin淡变进入GainNode。曲线音频仍回退。
+可见文字动画、带可闻声音的曲线变速、未知诊断和无法解码的媒体明确返回回退状态。默认不静音冒充完整预览；基础音频通过WebAudio混音、HTML媒体preservesPitch恒速播放，源时钟volume和目标时间qsin淡变进入GainNode。曲线音频仍回退。
 
 色彩诊断接口：`await gpu.diagnoseColor([{x:640,y:360}], true)`会暂停并重绘当前输出帧，最多16个buffer坐标点（左上原点整数，非CSS坐标），在同一draw中同步读取out/in FBO和最终buffer，避免`preserveDrawingBuffer=false`被浏览器呈现后清空。第二参数true只为比较增加NONE上传；finally恢复原pixelStore并按正常策略再画。返回`passes`的原始RGBA、每次实际unpack/drawingBuffer状态、转场progress，以及可用时的`VideoFrame.colorSpace`和源素材中心点Canvas2D-sRGB读回。诊断有同步GPU读回成本，不用于性能基准；该API不读取新路径、不插入DOM、不重新加载其他视频。`manifest.color`平时只读回状态，不做readPixels。
 
@@ -55,6 +57,6 @@ gpu.dispose();
 
 验证（2026-10-19）：`node --test test/gpu-preview*.test.ts`共18组通过，覆盖移动后的2x源时钟、30/60/30000:1001单帧边界、portrait letterbox及顺时针旋转/UV翻转、隐藏/静音/未知效果判断、qsin包络、AudioContext延迟创建与恢复拒绝、更新中的增益曲线取消、编译/链接/初始化部分失败清理、context loss/restore状态及解码seek/取消/dispose；新增crossfade居中窗口/外延handles/音频切点/上下层顺序、NTSC半开窗口、未知转场属性拒绝、两个透明FBO分离/复用/resize/失败清理、诊断读回坐标/数量/状态恢复、共享调色参数/neutral与闪黑无handles/不透明黑覆盖。`npm run typecheck`通过。父任务已在IAB实测首轮普通预览Apple M3 ANGLE Metal，6秒180输出帧、输出跳帧0，解码器另报告12掉帧；具体初始状态见`artifacts/qa/gpu/browser-initial.json`、定位截图`browser-3.5.png`。这不代表转场实际像素、听审或多轨压力已通过，仍由父任务继续核验；上述单测未冒充真实像素或听感验收。
 
-仍有差异：不支持可见文字、曲线变速、未解析效果；HDR/广色域、浏览器色彩管理、VFR精确采样与浏览器保调算法没有目标一致性结论。普通HTML媒体多路启动与WebAudio lookahead属于基础同步，并非采样级音频编辑引擎；暂停后seek使用源帧内微小偏移，工程时间仍为精确有理数。`requestVideoFrameCallback`仅记录解码信息，不把其回调次数当作画布实际绘制帧数。GPU不可用/编译失败直接抛出，调用方应进入后台路径；运行时解码/上传/播放失败进入manifest的fallback状态。
+仍有差异：不支持文字动画、可闻曲线声音、未解析效果；HDR/广色域、浏览器色彩管理、VFR精确采样与浏览器保调算法没有目标一致性结论。普通HTML媒体多路启动与WebAudio lookahead属于基础同步，并非采样级音频编辑引擎；暂停后seek使用源帧内微小偏移，工程时间仍为精确有理数。`requestVideoFrameCallback`仅记录解码信息，不把其回调次数当作画布实际绘制帧数。GPU不可用/编译失败直接抛出，调用方应进入后台路径；运行时解码/上传/播放失败进入manifest的fallback状态。
 
 实现依据：[Mozilla texImage2D](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D)、[requestVideoFrameCallback](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)、[AudioParam cancelAndHoldAtTime](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime)。音量曲线替换要取消已经开始的lookahead曲线，避免新旧setValueCurveAtTime重叠；不支持cancelAndHoldAtTime时移除旧自动化再设置当前值。

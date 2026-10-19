@@ -41,7 +41,8 @@ test('hidden text is ignored, visible text/curves fall back and muted audio does
  const known=createPreviewPlan(d);assert.equal(known.support.supported,true);assert.equal(previewFrame(known.plan!,rational(7)).audio.length,0);
  d.tracks[2].hidden=false;assert(createPreviewPlan(d).support.reasons.some(r=>r.code==='TEXT_REQUIRES_OFFLINE_RENDER'));
  d.tracks[2].hidden=true;d.tracks[0].clips[0].speedCurve={points:[{x:0,y:1},{x:1,y:1}]};
- assert(createPreviewPlan(d).support.reasons.some(r=>r.code==='CURVE_SPEED_REQUIRES_OFFLINE_RENDER'));
+ assert.equal(createPreviewPlan(d).support.supported,true,'muted curve uses instantaneous visual clock');
+ d.tracks[0].muted=false;assert(createPreviewPlan(d).support.reasons.some(r=>r.code==='CURVE_AUDIO_REQUIRES_OFFLINE_RENDER'));
 });
 test('qsin gains use target-time fades and source-time volume at 2x',()=>{
  const c=clip();c.source={start:rational(0),duration:rational(4)};c.target={start:rational(1),duration:rational(2)};

@@ -5,12 +5,13 @@ export class DecodedMedia {
  readonly id:string;readonly asset:Asset;readonly url:string;readonly element:HTMLVideoElement|HTMLAudioElement|HTMLImageElement;
  readonly ready:Promise<void>;state:DecodeState='loading';error?:string;lastUsed=0;decodedTime?:number;presentedFrames=0;
  private abort=new AbortController();private frameCallback?:number;
- constructor(id:string,asset:Asset,url:string,timeoutMs=10000){
+ constructor(id:string,asset:Asset,url:string,timeoutMs=10000,options:{textRaster?:boolean}={}){
   this.id=id;this.asset=asset;this.url=url;
   const parsed=new URL(url,globalThis.location?.href);
-  if(!['http:','https:'].includes(parsed.protocol)||!['localhost','127.0.0.1'].includes(parsed.hostname)||parsed.pathname!==`/media/${asset.id}`)
+  const validPath=options.textRaster&&asset.kind==='text'?/^\/text-renders\/[a-f0-9]{64}\.png$/.test(parsed.pathname):parsed.pathname===`/media/${asset.id}`;
+  if(!['http:','https:'].includes(parsed.protocol)||!['localhost','127.0.0.1'].includes(parsed.hostname)||!validPath)
    throw Error('GPU_REGISTERED_MEDIA_URL_REQUIRED');
-  if(asset.kind==='image'){
+  if(asset.kind==='image'||asset.kind==='text'){
    const image=new Image();image.crossOrigin='anonymous';image.decoding='async';this.element=image;
    this.ready=this.wait('load',timeoutMs).then(async()=>{if(!image.naturalWidth||!image.naturalHeight)throw Error('GPU_IMAGE_DECODE_FAILED');if(image.decode)await image.decode();this.state='ready';});
    image.src=url;
@@ -33,7 +34,7 @@ export class DecodedMedia {
    try{action?.();}catch(e){finish(e);}
   });
  }
- get media():HTMLMediaElement|undefined{return this.asset.kind==='image'?undefined:this.element as HTMLMediaElement;}
+ get media():HTMLMediaElement|undefined{return this.asset.kind==='image'||this.asset.kind==='text'?undefined:this.element as HTMLMediaElement;}
  get pixels():HTMLVideoElement|HTMLImageElement|undefined{return this.asset.kind==='audio'?undefined:this.element as HTMLVideoElement|HTMLImageElement;}
  async seek(seconds:number,signal?:AbortSignal){
   await this.ready;if(signal?.aborted)throw new DOMException('Aborted','AbortError');const media=this.media;if(!media)return;

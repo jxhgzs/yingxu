@@ -26,7 +26,10 @@ function accept(next:PreviewManifest){
 }
 function createEngine(){
   if(!canvas.value||disposed)return;
-  try{engine=new GpuPreview(canvas.value,{mediaUrl:asset=>props.c.api.url(`/media/${encodeURIComponent(asset.id)}`),onState:accept,onMetrics:accept,onTime:time=>{
+  try{engine=new GpuPreview(canvas.value,{mediaUrl:asset=>props.c.api.url(`/media/${encodeURIComponent(asset.id)}`),textTexture:async(clipId,context,signal)=>{
+    const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/textures`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId}),signal});
+    const texture=await response.json();if(!response.ok)throw Error(texture.error||'TEXT_TEXTURE_REQUEST_FAILED');return {...texture,url:props.c.api.url(texture.url)};
+  },onState:accept,onMetrics:accept,onTime:time=>{
     if(disposed)return;engineTime=true;props.c.playhead.value=time;if(time>=props.c.total.value)props.c.playing.value=false;
     queueMicrotask(()=>{engineTime=false;});
   }});gpuError.value='';}
@@ -36,7 +39,7 @@ async function updateDocument(){
   const current=++epoch,document=props.c.doc.value;
   if(mode.value!=='auto'||!document){engine?.pause();props.c.setRealtimePreviewAvailable(false);return;}
   if(!engine)createEngine();if(!engine)return;
-  try{const result=await engine.setDocument(document,{diagnostics:props.c.state.value?.diagnostics,time:props.c.playhead.value});if(!disposed&&current===epoch)accept(result);}
+  try{const result=await engine.setDocument(document,{diagnostics:props.c.state.value?.diagnostics,time:props.c.playhead.value,textContext:props.c.state.value?{projectId:props.c.state.value.id,revision:props.c.state.value.revision}:undefined});if(!disposed&&current===epoch)accept(result);}
   catch(e){if(current===epoch){gpuError.value='实时预览不可用：'+(e as Error).message;props.c.setRealtimePreviewAvailable(false);}}
 }
 function seekPlayer(value:number){if(player.value)player.value.currentTime=Math.min(value+Math.min(.0001,.1/rate.value),Math.max(0,(player.value.duration||0)-.0001));}

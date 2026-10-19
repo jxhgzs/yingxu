@@ -100,9 +100,9 @@ export async function prepareColorEffects(value:ColorAdjustments|undefined,direc
   const operation=previous.catch(()=>{}).then(async()=>{
     await fs.mkdir(target,{recursive:true});
     const filters=['format=gbrapf32le'];
-    const brightness=stages.find(stage=>stage.kind==='brightness');
-    if(brightness){
-      const lut=await writeLut(target,payload({version:'combine-adjust-v2',brightness:normalized.brightness},COLOR_LUT_SAMPLES));
+    const hasPre=stages.some(stage=>stage.kind==='brightness'||stage.kind==='contrast');
+    if(hasPre){
+      const lut=await writeLut(target,payload({version:'combine-adjust-v2',brightness:normalized.brightness,contrast:normalized.contrast},COLOR_LUT_SAMPLES));
       metadata.luts.push(lut);filters.push(`lut1d=file=${lut.name}:interp=linear`);
     }
     const saturation=stages.find(stage=>stage.kind==='saturation');

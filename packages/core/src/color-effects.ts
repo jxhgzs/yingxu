@@ -1,20 +1,23 @@
 /**
- * Independent, versioned interpretation of four documented adjustment equations.
+ * Independent, versioned interpretation of documented adjustment equations.
  * The version identifies our mathematical contract, not a native draft version.
  * Inputs are normalized RGB; colour space and active Jianying resource generation
  * remain unverified. This module does not assert native pixel equivalence.
  */
+import {applyContrastChannel,contrastParameters} from './color-contrast.ts';
+import type {ContrastParameters} from './color-contrast.ts';
 export type ColorAdjustments={
-  version:'combine-adjust-v2';brightness?:number;saturation?:number;highlight?:number;shadow?:number;
+  version:'combine-adjust-v2';brightness?:number;contrast?:number;saturation?:number;highlight?:number;shadow?:number;
 };
 export type RGB=readonly [number,number,number];
 export type ColorAdjustmentStage=
   | {kind:'brightness';exponent:number;inputOffset:number}
+  | {kind:'contrast';intensity:number;parameters:ContrastParameters}
   | {kind:'saturation';factor:number}
   | {kind:'highlight'|'shadow';exponent:number};
 export const COLOR_EFFECT_EPSILON=1e-5;
 export const COLOR_LUMINANCE=[.208540,.702086,.089374] as const;
-const fields=['brightness','saturation','highlight','shadow'] as const;
+const fields=['brightness','contrast','saturation','highlight','shadow'] as const;
 const clamp=(v:number)=>Math.min(1,Math.max(0,v));
 
 export function validateColorAdjustments(value:unknown):asserts value is ColorAdjustments{
@@ -25,7 +28,7 @@ export function validateColorAdjustments(value:unknown):asserts value is ColorAd
 }
 export function normalizeColorAdjustments(value?:ColorAdjustments):Required<ColorAdjustments>{
   if(value!==undefined)validateColorAdjustments(value);
-  return {version:'combine-adjust-v2',brightness:value?.brightness??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0};
+  return {version:'combine-adjust-v2',brightness:value?.brightness??0,contrast:value?.contrast??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0};
 }
 /** Computes each intensity mapping once for CPU, geq and shader consumers. */
 export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentStage[]{
@@ -34,6 +37,7 @@ export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentSt
     const i=v.brightness,b=i<=0?i:i<=.7?.3*i:.6333*i-.2333;
     stages.push({kind:'brightness',exponent:b>0?1+5*b:1/(1-2.5*b),inputOffset:b<0?.01*b:0});
   }
+  if(Math.abs(v.contrast)>COLOR_EFFECT_EPSILON)stages.push({kind:'contrast',intensity:v.contrast,parameters:contrastParameters(v.contrast)});
   if(Math.abs(v.saturation)>COLOR_EFFECT_EPSILON)stages.push({kind:'saturation',factor:1+v.saturation});
   for(const kind of ['highlight','shadow'] as const){
     const i=v[kind];
@@ -54,6 +58,8 @@ export function applyColorAdjustments(rgb:RGB,value?:ColorAdjustments):[number,n
     if(stage.kind==='saturation'){
       const grey=result.reduce((sum,c,i)=>sum+c*COLOR_LUMINANCE[i],0);
       result=result.map(c=>clamp(c*stage.factor+grey*(1-stage.factor))) as [number,number,number];
+    }else if(stage.kind==='contrast'){
+      result=result.map(c=>applyContrastChannel(c,stage.intensity)) as [number,number,number];
     }else{
       result=result.map(c=>{
         if(stage.kind==='brightness')return clamp(1-Math.pow(1-c-stage.inputOffset,stage.exponent));

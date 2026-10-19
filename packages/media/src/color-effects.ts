@@ -19,6 +19,16 @@ export function colorEffectsGeqExpressions(value?:ColorAdjustments):GeqColorExpr
       const x=`ld(${i})`;
       let expression:string;
       if(stage.kind==='brightness')expression=`1-pow(1-${x}-(${stage.inputOffset}),${stage.exponent})`;
+      else if(stage.kind==='contrast'){
+        const p=stage.parameters;
+        if(p.factor<=1)expression=`${p.factor}*(${x}-${p.pivot})+${p.pivot}`;
+        else{
+          statements.push(`st(3,1/(1+exp(-${p.xFactor}*(${x}-${p.pivot}))))`);
+          statements.push(`st(4,${p.xFactor}*ld(3)*(1-ld(3)))`);
+          statements.push(`st(5,if(lte(${x},${p.pivot}),pow((${p.pivotSlope}-ld(4))/${p.leftSlopeDiff},2)*(${p.leftDiff}),pow((${p.pivotSlope}-ld(4))/${p.rightSlopeDiff},2)*(${p.rightDiff})))`);
+          expression=`ld(3)+${p.pivot}-.5+ld(5)`;
+        }
+      }
       else{
         const t=stage.kind==='highlight'?`(1-${x})`:x;
         const shaped=`(pow(${t},${stage.exponent})+(${stage.exponent-1})*(${t}*${t}-${t}*${t}*${t}))`;
@@ -54,6 +64,18 @@ export function colorEffectsShader(value?:ColorAdjustments,functionName='applyCo
       expression=`adjusted*${glFloat(stage.factor)}+vec3(fxLuma*${glFloat(1-stage.factor)})`;
     }else if(stage.kind==='brightness'){
       expression=`vec3(1.0)-pow(vec3(1.0)-adjusted-vec3(${glFloat(stage.inputOffset)}),vec3(${glFloat(stage.exponent)}))`;
+    }else if(stage.kind==='contrast'){
+      const p=stage.parameters;
+      if(p.factor<=1)expression=`${glFloat(p.factor)}*(adjusted-vec3(${glFloat(p.pivot)}))+vec3(${glFloat(p.pivot)})`;
+      else{
+        lines.push(`  vec3 fxContrastSigmoid = vec3(1.0)/(vec3(1.0)+exp(-${glFloat(p.xFactor)}*(adjusted-vec3(${glFloat(p.pivot)}))));`);
+        lines.push(`  vec3 fxContrastSlope = ${glFloat(p.xFactor)}*fxContrastSigmoid*(vec3(1.0)-fxContrastSigmoid);`);
+        lines.push(`  vec3 fxContrastLeft = step(adjusted,vec3(${glFloat(p.pivot)}));`);
+        lines.push(`  vec3 fxContrastSlopeDiff = mix(vec3(${glFloat(p.rightSlopeDiff)}),vec3(${glFloat(p.leftSlopeDiff)}),fxContrastLeft);`);
+        lines.push(`  vec3 fxContrastValueDiff = mix(vec3(${glFloat(p.rightDiff)}),vec3(${glFloat(p.leftDiff)}),fxContrastLeft);`);
+        lines.push(`  vec3 fxContrastCorrection = (vec3(${glFloat(p.pivotSlope)})-fxContrastSlope)/fxContrastSlopeDiff;`);
+        expression=`fxContrastSigmoid+vec3(${glFloat(p.pivot-.5)})+fxContrastCorrection*fxContrastCorrection*fxContrastValueDiff`;
+      }
     }else{
       const local=stage.kind==='highlight'?'fxHighlightInput':'fxShadowInput';
       lines.push(`  vec3 ${local} = ${stage.kind==='highlight'?'vec3(1.0)-adjusted':'adjusted'};`);

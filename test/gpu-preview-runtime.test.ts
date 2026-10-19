@@ -135,3 +135,20 @@ test('registered decoder waits for seek and cancels load/frame callbacks on disp
   const cancelled=new DecodedMedia('pending',asset,'http://127.0.0.1:8826/media/v');cancelled.dispose();await assert.rejects(cancelled.ready,{name:'AbortError'});assert.equal(cancelled.state,'disposed');
  }finally{Object.assign(globalThis,saved);}
 });
+
+test('static text texture keeps asset identity, uploads once and does not apply its baked transform/opacity twice',()=>{
+ const saved=globalThis.HTMLVideoElement;Object.assign(globalThis,{HTMLVideoElement:class {}});
+ const asset:Asset={id:'text-asset',kind:'text',path:'',duration:rational(20)},layer:PlannedVisual={clip:{...clip,id:'text-clip',materialId:asset.id},asset,sourceTime:rational(0),transform:{...defaultTransform(),x:70,y:-10,scale:.5,rotation:25,opacity:.4}};
+ const resource={id:'text-clip',state:'ready',asset:{...asset,width:320,height:180},pixels:{naturalWidth:320,naturalHeight:180}} as unknown as DecodedMedia;
+ try{const {canvas,draws}=glFixture(),compositor=new WebGLCompositor(canvas);compositor.resize(320,180);const resources=new Map([[layer.clip.id,resource]]);
+  assert.equal(compositor.draw([layer],resources,{width:320,height:180}).textureUploads,1);assert.equal(draws[0].opacity,1);
+  assert.equal(compositor.draw([layer],resources,{width:320,height:180}).textureUploads,0);compositor.dispose();
+ }finally{Object.assign(globalThis,{HTMLVideoElement:saved});}
+});
+
+test('invalid public curve document reports fallback before constructing any curve clock',async()=>{
+ const {canvas}=glFixture(),preview=new GpuPreview(canvas,{mediaUrl:a=>'http://127.0.0.1/media/'+a.id});
+ try{const d=emptyDocument();d.assets.push({id:'v',kind:'video',path:'/unused.mp4',duration:rational(2),width:320,height:180});d.tracks[0].clips.push({...clip,materialId:'v',speedCurve:{points:[{x:.2,y:1},{x:.8,y:1}]}});
+  const result=await preview.setDocument(d);assert.equal(result.state,'fallback');assert.equal(result.support.reasons[0].code,'INVALID_PREVIEW_DOCUMENT');assert.equal(result.decoders.length,0);
+ }finally{preview.dispose();}
+});

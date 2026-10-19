@@ -1,0 +1,127 @@
+{
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "width": 64,
+  "height": 64,
+  "pixelsPerCase": 4096,
+  "cases": [
+    {
+      "fields": {},
+      "maxErrorLSB": 0,
+      "meanErrorLSB": 0,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": -1
+      },
+      "maxErrorLSB": 0.43000000000003524,
+      "meanErrorLSB": 0.2464843750000043,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": -0.5
+      },
+      "maxErrorLSB": 0.41500000000002046,
+      "meanErrorLSB": 0.24277343749999325,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": -0.00002
+      },
+      "maxErrorLSB": 0.0011526000000117165,
+      "meanErrorLSB": 0.0005205796875011886,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": 0.00002
+      },
+      "maxErrorLSB": 0.49656209463609,
+      "meanErrorLSB": 0.33626293236618005,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": 0.1
+      },
+      "maxErrorLSB": 0.49404458260301,
+      "meanErrorLSB": 0.25083957136302293,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": 0.5
+      },
+      "maxErrorLSB": 0.4990790244883385,
+      "meanErrorLSB": 0.2606332388132746,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": 0.7
+      },
+      "maxErrorLSB": 0.4997071353627973,
+      "meanErrorLSB": 0.24955303139019347,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "contrast": 1
+      },
+      "maxErrorLSB": 0.4979515832463465,
+      "meanErrorLSB": 0.24644880634116184,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "brightness": 1,
+        "contrast": 1
+      },
+      "maxErrorLSB": 0.4930380886566468,
+      "meanErrorLSB": 0.2065035534967288,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "brightness": 0.6,
+        "contrast": -0.5
+      },
+      "maxErrorLSB": 0.4994450114107849,
+      "meanErrorLSB": 0.23499977909123715,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "brightness": -0.6,
+        "contrast": 0.7,
+        "saturation": 0.5,
+        "highlight": 0.4,
+        "shadow": -0.3
+      },
+      "maxErrorLSB": 0.5000350454327247,
+      "meanErrorLSB": 0.17000938818683334,
+      "overHalfLSB": 0
+    },
+    {
+      "fields": {
+        "brightness": 0.8,
+        "contrast": 1,
+        "saturation": 0.8,
+        "highlight": -1,
+        "shadow": -1
+      },
+      "maxErrorLSB": 0.4996425696076301,
+      "meanErrorLSB": 0.10274352081803688,
+      "overHalfLSB": 0
+    }
+  ],
+  "pass": true
+}

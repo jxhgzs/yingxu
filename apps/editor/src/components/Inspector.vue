@@ -21,6 +21,7 @@ const disabled = computed(()=>props.c.readOnly.value||props.c.busy.value||!!sele
 const trimDisabled=computed(()=>disabled.value||!!(clip.value?.speedCurve&&clip.value?.animations?.length));
 const constantSpeedValid=computed(()=>typeof draft.speed==='number'&&Number.isFinite(draft.speed)&&draft.speed>=.0625&&draft.speed<=16);
 watch(()=>[props.c.state.value?.id,props.c.state.value?.revision,props.c.selectedId.value],()=>{speedMode.value=clip.value?.speedCurve?'curve':'constant';},{immediate:true});
+watch(()=>[props.c.state.value?.id,props.c.selectedId.value],()=>{tab.value=selected.value?.track.kind==='text'?'text':selected.value?.track.kind==='audio'?'audio':'picture';},{immediate:true});
 watch(()=>[props.c.state.value?.revision, props.c.selectedId.value,props.c.playhead.value],()=>{
   const c=clip.value;if(!c)return;const t={...(c.transform||defaultTransform())};
   const time=sourceTimeAt(c,atFrame(props.c.playhead.value,props.c.doc.value!.fps));
@@ -29,7 +30,6 @@ watch(()=>[props.c.state.value?.revision, props.c.selectedId.value,props.c.playh
   Object.assign(draft,{x:t.x,y:t.y,scale:t.scale*100,rotation:t.rotation,opacity:t.opacity*100,flipX:t.flipX,flipY:t.flipY,
     fadeIn:toNumber(c.audioFade?.inDuration||rational(0)),fadeOut:toNumber(c.audioFade?.outDuration||rational(0)),volume:volume*100,speed:toNumber(c.speed),sourceIn:toNumber(c.source.start),sourceOut:toNumber(c.source.start)+toNumber(c.source.duration),
     textStart:toNumber(c.target.start),textDuration:toNumber(c.target.duration),content:c.text?.content||'',size:c.text?.size||54,color:c.text?.color||'#ffffff',font:c.text?.font||'PingFang SC'});
-  if(selected.value?.track.kind==='text')tab.value='text';else if(selected.value?.track.kind==='audio')tab.value='audio';else if(!['picture','audio','speed','transition','adjust'].includes(tab.value))tab.value='picture';
 },{immediate:true});
 function transform() {
   if(!clip.value)return;

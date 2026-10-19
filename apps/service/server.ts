@@ -5,6 +5,7 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {randomBytes, randomUUID} from 'node:crypto';
 import {Store} from './store.ts';
 import {Jobs} from './jobs.ts';
+import {TextRasters} from './text-raster.ts';
 import {json, body, serveFile} from './http.ts';
 import {probeAsset, ffmpeg} from '../../packages/media/src/probe.ts';
 import {runProcess} from '../../packages/media/src/process.ts';
@@ -18,6 +19,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   const version=JSON.parse(await fs.readFile(path.join(repo,'package.json'),'utf8')).version;
   const store = new Store(options.root || process.env.YINGXU_EDITOR_DATA || path.join(repo, '.local'));
   await store.initialize(); const jobs = new Jobs(store); await jobs.initialize();
+  const textRasters=new TextRasters(store,{engine:jobs.engine});
   const token = randomBytes(24).toString('hex');
   async function registerFile(file: string, name: string) {
     const asset = await probeAsset(file, name);
@@ -39,8 +41,8 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
       if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, engine:jobs.engine, projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
-        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU预览目前支持恒速视频、图片、音频、基础调节和叠化/闪黑；文字和曲线仍需后台预览']});
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'gpu-silent-curve', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
+        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU预览支持恒速媒体、静态文字、静音曲线、五项基础调节和叠化/闪黑；有声曲线、文字动画与未知效果需要后台预览']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
         const input = await body(request), doc = emptyDocument(); if (typeof input.title === 'string') doc.title = input.title.slice(0, 200);
@@ -89,6 +91,14 @@ export async function startServer(options: {root?: string; port?: number; dist?:
         } finally {await handle.close().catch(() => {}); await fs.rm(temp, {force: true});}
       }
       if ((match = /^\/api\/projects\/([a-f0-9-]+)$/.exec(route)) && request.method === 'GET') return respond({...store.state(match[1]), jobs: jobs.list(match[1])});
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/textures$/.exec(route)) && request.method === 'POST') {
+        const input=await body(request),controller=new AbortController();
+        const disconnected=()=>{if(!response.writableEnded)controller.abort();};response.once('close',disconnected);
+        try{return respond(await textRasters.request(match[1],input,controller.signal));}
+        finally{response.removeListener('close',disconnected);}
+      }
+      if ((match = /^\/text-renders\/([a-f0-9]{64})\.png$/.exec(route)) && ['GET','HEAD'].includes(request.method||''))
+        return await serveFile(request,response,await textRasters.file(match[1]),'image/png');
       if ((match = /^\/api\/projects\/([a-f0-9-]+)\/commands$/.exec(route)) && request.method === 'POST') {
         const input = await body(request), project = store.get(match[1]);
         check(project.diagnostics.length === 0, 'SOURCE_DRAFT_READ_ONLY');
@@ -148,6 +158,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   await new Promise<void>((resolve, reject) => {server.once('error', reject); server.listen(options.port ?? Number(process.env.PORT || 8815), '127.0.0.1', resolve);});
   let closing: Promise<void> | undefined;
   const close = () => closing ||= (async () => {
+    await textRasters.shutdown();
     await jobs.shutdown();
     const closed = new Promise<void>(resolve=>server.close(()=>resolve()));
     server.closeAllConnections(); await closed;
