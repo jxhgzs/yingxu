@@ -2,7 +2,7 @@ import {check, validateDocument, duration, defaultTransform} from './document.ts
 import type {Asset, Clip, Document, Track, Transform, TextStyle} from './document.ts';
 import {add, compare, div, sub, ZERO, rational} from './time.ts';
 import type {Rational} from './time.ts';
-import {sliceAnimations,animationBounds} from './animation.ts';
+import {trimAnimations,animationBounds} from './animation.ts';
 import type {Keyframe,AnimatedProperty} from './animation.ts';
 import {curveTrimDuration,alignCurveTrimTime} from './curve-speed.ts';
 
@@ -74,12 +74,21 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
     } else if (command.type === 'clip.trim') {
       check(command.pushFollowing===undefined||typeof command.pushFollowing==='boolean','INVALID_TRIM_POLICY');
       check(!c.speedCurve||!c.animations?.length,'CURVE_ANIMATED_TRIM_UNVERIFIED');
+      const oldSource=c.source;
       c.source = {start: structuredClone(command.sourceStart), duration: structuredClone(command.sourceDuration)};
       const oldStart=c.target.start;
       c.target.duration = c.speedCurve?curveTrimDuration(c.speedCurve,command.sourceDuration,next.fps):div(command.sourceDuration,c.speed);
       if(c.speedCurve)c.speed=div(c.source.duration,c.target.duration);
       if (command.targetStart !== undefined) c.target.start = structuredClone(command.targetStart);
-      if(c.animations?.length)c.animations=sliceAnimations(c.animations,c.source.start,add(c.source.start,c.source.duration));
+      if(c.animations?.length){
+        const startChanged=compare(oldSource.start,c.source.start)!==0,end=add(c.source.start,c.source.duration),endChanged=compare(add(oldSource.start,oldSource.duration),end)!==0;
+        const filtered=trimAnimations(c.animations,c.source.start,end,startChanged&&!endChanged?'left':endChanged&&!startChanged?'right':undefined);
+        c.animations=filtered.animations;
+        for(const [property,value] of Object.entries(filtered.staticValues)){
+          if(property==='volume')c.volume=value;
+          else{c.transform||=defaultTransform();c.transform[property as Exclude<AnimatedProperty,'volume'>]=value;}
+        }
+      }
       if(c.speedCurve&&command.pushFollowing){
         let end=add(c.target.start,c.target.duration);
         for(const later of t.clips.filter(other=>other.id!==c.id&&compare(other.target.start,oldStart)>=0).sort((a,b)=>compare(a.target.start,b.target.start))){

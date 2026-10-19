@@ -1,4 +1,4 @@
-import {add, sub, mul, div, compare, toNumber, nearestFrame, ZERO} from './time.ts';
+import {add, sub, mul, div, compare, toNumber, nearestFrame, micros,ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 import {check, validRational} from './document.ts';
 import type {Clip} from './document.ts';
@@ -70,4 +70,31 @@ export function sliceAnimations(animations:Animation[],start:Rational,end:Ration
     if(!points.length)points.push(boundary(start));
     return {property:animation.property,points};
   });
+}
+
+/** Native direct trim filters source points; split alone inserts interpolation boundaries.
+ * Multi-point removal needs a single edge to select the native static fallback. */
+export function trimAnimations(animations:Animation[],start:Rational,end:Rational,edge:'left'|'right'|undefined):{
+ animations:Animation[];staticValues:Partial<Record<AnimatedProperty,number>>;
+}{
+ const out:Animation[]=[],staticValues:Partial<Record<AnimatedProperty,number>>={};
+ const near=(a:Rational,b:Rational)=>compare(compare(a,b)>=0?sub(a,b):sub(b,a),micros(1000))<0;
+ for(const animation of animations){
+   const points:Keyframe[]=[],removed:Keyframe[]=[];
+   for(const original of animation.points){
+     const point=structuredClone(original);
+     if(compare(point.time,start)!==0&&near(point.time,start))point.time=structuredClone(start);
+     else if(compare(point.time,end)!==0&&near(point.time,end))point.time=structuredClone(end);
+     if(compare(point.time,start)<0||compare(point.time,end)>0)removed.push(point);
+     else points.push(point);
+   }
+   if(points.length){
+     check(points.every((point,i)=>i===0||compare(point.time,points[i-1].time)>0),'KEYFRAME_TRIM_COLLISION_UNSUPPORTED');
+     out.push({property:animation.property,points});
+   }else{
+     check(edge||removed.length===1,'KEYFRAME_TRIM_DIRECTION_UNVERIFIED');
+     staticValues[animation.property]=(edge==='right'?removed[0]:removed.at(-1))!.value;
+   }
+ }
+ return {animations:out,staticValues};
 }

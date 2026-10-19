@@ -38,6 +38,8 @@ export function explainError(error: unknown): string {
     TEXT_FLIP_UNSUPPORTED: '当前还不支持文字翻转，请先关闭该属性。',
     JOB_CANCELLED: '任务已取消。', INVALID_SESSION_TOKEN: '服务已重新启动，请刷新编辑器。', INVALID_TRANSFORM: '位置、缩放或透明度超出允许范围。',
     SOURCE_PROJECT_REQUIRES_DRAFT_IMPORT: '这份工程含尚未解析的剪映内容，请通过“导入剪映草稿”打开原始草稿。',
+    KEYFRAME_TRIM_DIRECTION_UNVERIFIED:'请一次只调整入点或出点，分别应用裁切。',
+    KEYFRAME_TRIM_COLLISION_UNSUPPORTED:'裁切使多个关键帧重合，请先移开边界附近的关键帧。',
     CURVE_ANIMATED_TRIM_UNVERIFIED:'含属性关键帧的曲线片段暂不支持直接裁切，可先分割后删除多余片段。',
     CURVE_DURATION_EMPTY:'裁切后不足一帧，请保留更长区间。',
     INVALID_CURVE_SPEED:'曲线端点必须位于0和1，横坐标递增，速度为0.1至10倍。',

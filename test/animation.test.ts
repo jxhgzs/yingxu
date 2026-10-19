@@ -1,10 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {emptyDocument, validateDocument} from '../packages/core/src/document.ts';
-import {rational, add} from '../packages/core/src/time.ts';
+import {rational, add,micros} from '../packages/core/src/time.ts';
 import {applyCommand} from '../packages/core/src/commands.ts';
-import {evaluateAnimation, sourceTimeAt,keyframeAtFrame} from '../packages/core/src/animation.ts';
+import {evaluateAnimation, sourceTimeAt,keyframeAtFrame,trimAnimations} from '../packages/core/src/animation.ts';
 import type {Animation} from '../packages/core/src/animation.ts';
+import fs from 'node:fs';
+import {importJianying} from '../packages/jianying/src/import.ts';
 import {createSession} from '../packages/core/src/session.ts';
 
 function example(){
@@ -40,11 +42,11 @@ test('keyframe edits replace exact times, reject invalid values atomically and r
   const locked=applyCommand(example(),{type:'track.update',trackId:'video-main',changes:{locked:true}});
   assert.throws(()=>applyCommand(locked,{type:'keyframe.remove',clipId:'c',property:'scale',pointId:'p2'}),/TRACK_LOCKED/);
 });
-test('hold interpolation, trimming boundary and invalid animation structure',()=>{
+test('hold interpolation, native trim filtering and invalid animation structure',()=>{
   const a:Animation={property:'x',points:[{id:'a',time:rational(1),value:0,interpolation:'hold'},{id:'b',time:rational(2),value:100,interpolation:'linear'}]};
   assert.equal(evaluateAnimation(a,rational(1999,1000)),0);assert.equal(evaluateAnimation(a,rational(2)),100);
   const d=example(),trimmed=applyCommand(d,{type:'clip.trim',clipId:'c',sourceStart:rational(4),sourceDuration:rational(1)});
-  assert.equal(trimmed.tracks[0].clips[0].animations![0].points[0].value,1.125);
+  assert.deepEqual(trimmed.tracks[0].clips[0].animations![0].points,[d.tracks[0].clips[0].animations![0].points[1]]);
   for(const mutate of [
     (a:Animation[])=>a.push(structuredClone(a[0])),
     (a:Animation[])=>a[0].points.push({...a[0].points[0],id:'dup'}),
@@ -68,4 +70,27 @@ test('UI frame hit testing preserves an existing half-frame keyframe after speed
   const point=keyframeAtFrame(c,'scale',rational(53,30),rational(30));
   assert.equal(point?.id,'p2');assert.deepEqual(point?.time,rational(5));
   assert.equal(keyframeAtFrame(c,'scale',rational(54,30),rational(30)),undefined);
+});
+
+test('native constant trim removes out-of-range source points and restores final single-point static value',()=>{
+ const raw=(name:string)=>{const v=JSON.parse(fs.readFileSync(new URL('../evidence/2026-10-19-curve-trim/'+name+'.json',import.meta.url),'utf8'));v.tracks=v.tracks.filter((t:any)=>t.type==='video').slice(0,1);v.tracks[0].segments=v.tracks[0].segments.filter((s:any)=>s.id==='B71C0B09-4F73-42F1-B889-5767BE0F3825');return importJianying(v).document;};
+ // Isolate the selected clip; main-track magnetic retiming is a separate pending contract.
+ const doc=raw('00-before-trim'),c=doc.tracks[0].clips[0],expectedLeft=raw('04-constant-keyframe-trim').tracks[0].clips[0],expectedRight=raw('05-constant-keyframes-removed').tracks[0].clips[0],session=createSession(doc);
+ const left=session.execute(0,{type:'clip.trim',clipId:c.id,sourceStart:micros(3200000),sourceDuration:micros(1466666)}).document;
+ const actualLeft=left.tracks[0].clips[0];assert.deepEqual(actualLeft.animations,expectedLeft.animations);assert.deepEqual(actualLeft.transform,expectedLeft.transform);assert.deepEqual(actualLeft.source,expectedLeft.source);assert.deepEqual(actualLeft.target,expectedLeft.target);
+ const right=session.execute(1,{type:'clip.trim',clipId:c.id,sourceStart:micros(3200000),sourceDuration:micros(1300000)}).document;
+ const actualRight=right.tracks[0].clips[0];assert.deepEqual(actualRight.animations??[],expectedRight.animations??[]);assert.deepEqual(actualRight.transform,expectedRight.transform);assert.deepEqual(actualRight.source,expectedRight.source);assert.deepEqual(actualRight.target,expectedRight.target);
+ assert.deepEqual(session.undo(2).document,left);assert.deepEqual(session.undo(3).document,doc);assert.deepEqual(session.redo(4).document,left);
+});
+
+test('native trim edge selects the first or last removed value and preserves 999us boundary snapping',()=>{
+ const a:Animation={property:'scale',points:[{id:'one',time:micros(3500000),value:1.1,interpolation:'linear'},{id:'two',time:micros(4500000),value:1.2,interpolation:'linear'}]};
+ assert.deepEqual(trimAnimations([a],rational(5),rational(6),'left'),{animations:[],staticValues:{scale:1.2}});
+ assert.deepEqual(trimAnimations([a],rational(3),micros(3250000),'right'),{animations:[],staticValues:{scale:1.1}});
+ assert.throws(()=>trimAnimations([a],rational(4),micros(4250000),undefined),/KEYFRAME_TRIM_DIRECTION_UNVERIFIED/);
+ const snapped=trimAnimations([a],micros(3500999),rational(6),'left');assert.deepEqual(snapped.animations[0].points[0].time,micros(3500999));assert.equal(snapped.animations[0].points[0].id,'one');
+ const exact=trimAnimations([a],micros(3501000),rational(6),'left');assert.deepEqual(exact.animations[0].points,[a.points[1]]);
+ const end=trimAnimations([a],rational(3),micros(4499001),'right');assert.deepEqual(end.animations[0].points[1].time,micros(4499001));
+ const collision=structuredClone(a);collision.points[1].time=micros(3500500);assert.throws(()=>trimAnimations([collision],micros(3500900),rational(6),'left'),/KEYFRAME_TRIM_COLLISION_UNSUPPORTED/);
+ const doc=example(),before=structuredClone(doc);assert.throws(()=>applyCommand(doc,{type:'clip.trim',clipId:'c',sourceStart:micros(3500000),sourceDuration:micros(500000)}),/KEYFRAME_TRIM_DIRECTION_UNVERIFIED/);assert.deepEqual(doc,before);
 });
