@@ -85,9 +85,10 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       if ((match = /^\/api\/projects\/([a-f0-9-]+)\/commands$/.exec(route)) && request.method === 'POST') {
         const input = await body(request), project = store.get(match[1]);
         check(project.diagnostics.length === 0, 'SOURCE_DRAFT_READ_ONLY');
-        if (input.command?.type === 'asset.add' && input.command.asset?.kind !== 'text') {
-          const registered = store.assets.get(input.command.asset?.id); check(registered, 'MEDIA_NOT_LINKED');
-          input.command.asset = registered;
+        const edits=input.command?.type==='batch'?input.command.commands:[input.command];
+        if(Array.isArray(edits))for(const edit of edits)if (edit?.type === 'asset.add' && edit.asset?.kind !== 'text') {
+          const registered = store.assets.get(edit.asset?.id); check(registered, 'MEDIA_NOT_LINKED');
+          edit.asset = registered;
         }
         return respond(await store.edit(match[1], input));
       }

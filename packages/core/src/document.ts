@@ -1,5 +1,7 @@
 import {rational, compare, add, mul, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
+import {validateAnimations} from './animation.ts';
+import type {Animation} from './animation.ts';
 
 export type Range = {start: Rational; duration: Rational};
 export type Asset = {
@@ -11,7 +13,7 @@ export type Transform = {x: number; y: number; scale: number; rotation: number; 
 export type TextStyle = {content: string; size: number; color: string; font: string};
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;
+  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
 export type Document = {
@@ -71,6 +73,7 @@ export function validateDocument(doc: Document): void {
       check(compare(add(c.source.start, c.source.duration), asset.duration) <= 0, 'SOURCE_RANGE_EXCEEDED', c.id);
       check(c.volume === undefined || Number.isFinite(c.volume) && c.volume >= 0 && c.volume <= 4, 'INVALID_VOLUME');
       check(c.muted === undefined || typeof c.muted === 'boolean', 'INVALID_MUTE');
+      if(c.animations!==undefined)validateAnimations(c.animations,asset.duration);
       if (c.transform !== undefined) {
         const v = c.transform;
         check(v && [v.x, v.y, v.scale, v.rotation, v.opacity].every(Number.isFinite), 'INVALID_TRANSFORM');

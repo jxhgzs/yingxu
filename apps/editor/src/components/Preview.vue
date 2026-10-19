@@ -9,15 +9,22 @@ const player = ref<HTMLVideoElement>();
 const rate = computed(() => props.c.doc.value ? toNumber(props.c.doc.value.fps) : 30);
 const ready = computed(() => !!props.c.preview.value?.result && props.c.preview.value.documentRevision === props.c.state.value?.revision && !props.c.previewPending.value);
 const source = computed(() => props.c.preview.value?.result ? props.c.api.url(props.c.preview.value.result.url) : '');
+function seekPlayer(value:number){
+  if(!player.value)return;
+  // Browser media clocks may round a fractional frame boundary down by a microsecond.
+  // Seek just inside the requested frame while retaining the exact editor playhead.
+  player.value.currentTime=Math.min(value+Math.min(.0001,.1/rate.value),Math.max(0,(player.value.duration||0)-.0001));
+}
 watch(() => props.c.playing.value, async playing => {
   if (!player.value) return;
   if (playing && ready.value) {try {await player.value.play();} catch {props.c.playing.value=false;}}
   else player.value.pause();
 });
 watch(() => props.c.playhead.value, value => {
-  if (player.value && Math.abs(player.value.currentTime-value) > .08) player.value.currentTime = Math.min(value, Math.max(0, (player.value.duration || 0)-.001));
+  const tolerance=props.c.playing.value ? .08 : .000001;
+  if (player.value && Math.abs(player.value.currentTime-value) > tolerance)seekPlayer(value);
 });
-function loaded() {if (player.value) player.value.currentTime=Math.min(props.c.playhead.value, Math.max(0,player.value.duration-.001));}
+function loaded() {seekPlayer(props.c.playhead.value);}
 function update() {if (player.value && props.c.playing.value) props.c.playhead.value=player.value.currentTime;}
 function step(delta: number) {props.c.playing.value=false;props.c.seek(props.c.playhead.value+delta/rate.value);}
 onBeforeUnmount(() => {if (player.value) {player.value.pause();player.value.removeAttribute('src');player.value.load();}});

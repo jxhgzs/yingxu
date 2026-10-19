@@ -1,0 +1,97 @@
+{
+  "targetVersion": "5.9.0",
+  "original": {
+    "source": {
+      "duration": 3000000,
+      "start": 3000000
+    },
+    "target": {
+      "duration": 3000000,
+      "start": 3000000
+    },
+    "points": [
+      [
+        "KFTypeScaleX",
+        [
+          [
+            3000000,
+            [
+              1.0
+            ]
+          ],
+          [
+            5000000,
+            [
+              1.2499999999999998
+            ]
+          ]
+        ]
+      ]
+    ]
+  },
+  "copy": {
+    "source": {
+      "duration": 3000000,
+      "start": 3000000
+    },
+    "target": {
+      "duration": 3000000,
+      "start": 6000000
+    },
+    "points": [
+      [
+        "KFTypeScaleX",
+        [
+          [
+            3000000,
+            [
+              1.0
+            ]
+          ],
+          [
+            5000000,
+            [
+              1.2499999999999998
+            ]
+          ]
+        ]
+      ]
+    ]
+  },
+  "copy2x": {
+    "source": {
+      "duration": 3000000,
+      "start": 3000000
+    },
+    "target": {
+      "duration": 1500000,
+      "start": 6000000
+    },
+    "points": [
+      [
+        "KFTypeScaleX",
+        [
+          [
+            3000000,
+            [
+              1.0
+            ]
+          ],
+          [
+            5000000,
+            [
+              1.2499999999999998
+            ]
+          ]
+        ]
+      ]
+    ]
+  },
+  "uiSample": {
+    "globalSecond": 7,
+    "shownScalePercent": 125,
+    "screenshot": "artifacts/qa/expansion/keyframe-2x-at-7.png"
+  },
+  "conclusion": "本例恒速与复制后，time_offset保留源时间坐标；全局7秒映射源5秒，并显示125%。不推广到曲线变速或其他属性。",
+  "failedAttempt": "01-moved原始草稿未改变，不能计为成功移动实验。"
+}

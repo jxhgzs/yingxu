@@ -2,6 +2,8 @@ import {check, validateDocument, duration, defaultTransform} from './document.ts
 import type {Asset, Clip, Document, Track, Transform, TextStyle} from './document.ts';
 import {add, compare, div, sub, ZERO, rational} from './time.ts';
 import type {Rational} from './time.ts';
+import {sliceAnimations,animationBounds} from './animation.ts';
+import type {Keyframe,AnimatedProperty} from './animation.ts';
 
 export type EditingCommand =
   | {type: 'asset.add'; asset: Asset}
@@ -10,6 +12,8 @@ export type EditingCommand =
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
   | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational}
   | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle}}
+  | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
+  | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
   | {type: 'track.add'; track: Track}
   | {type: 'track.update'; trackId: string; changes: {locked?: boolean; hidden?: boolean; muted?: boolean; name?: string}}
   | {type: 'project.settings'; title?: string; canvas?: {width: number; height: number}; fps?: Rational};
@@ -33,7 +37,7 @@ export function assertNoVideoOverlap(doc: Document): void {
     }
   }
 }
-export function applyEdit(doc: Document, command: EditingCommand): Document {
+export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=false): Document {
   const next = structuredClone(doc);
   const track = (id: string) => {const t = next.tracks.find(t => t.id === id); check(t, 'TRACK_NOT_FOUND'); return t;};
   const unlocked = (t: Track) => check(!t.locked, 'TRACK_LOCKED', t.id);
@@ -54,7 +58,7 @@ export function applyEdit(doc: Document, command: EditingCommand): Document {
   } else if (command.type === 'clip.add') {
     const t = track(command.trackId); unlocked(t); t.clips.push(structuredClone(command.clip));
   } else {
-    check(['clip.remove', 'clip.move', 'clip.trim', 'clip.update'].includes(command.type), 'UNKNOWN_COMMAND');
+    check(['clip.remove', 'clip.move', 'clip.trim', 'clip.update','keyframe.set','keyframe.remove'].includes(command.type), 'UNKNOWN_COMMAND');
     const t = next.tracks.find(t => t.clips.some(c => c.id === command.clipId)); check(t, 'CLIP_NOT_FOUND'); unlocked(t);
     const i = t.clips.findIndex(c => c.id === command.clipId), c = t.clips[i];
     check(c.editableTiming, 'TIMING_NOT_INTERPRETED');
@@ -70,10 +74,27 @@ export function applyEdit(doc: Document, command: EditingCommand): Document {
       c.source = {start: structuredClone(command.sourceStart), duration: structuredClone(command.sourceDuration)};
       c.target.duration = div(command.sourceDuration, c.speed);
       if (command.targetStart !== undefined) c.target.start = structuredClone(command.targetStart);
+      if(c.animations?.length)c.animations=sliceAnimations(c.animations,c.source.start,add(c.source.start,c.source.duration));
     } else if (command.type === 'clip.update') {
       check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text'].includes(k)), 'INVALID_CLIP_UPDATE');
       Object.assign(c, structuredClone(command.changes));
+    } else if(command.type==='keyframe.set'){
+      check(Object.hasOwn(animationBounds,command.property),'INVALID_ANIMATION_PROPERTY');
+      check(compare(command.point.time,c.source.start)>=0&&compare(command.point.time,add(c.source.start,c.source.duration))<=0,'KEYFRAME_OUTSIDE_CLIP');
+      c.animations||=[];let animation=c.animations.find(a=>a.property===command.property);
+      if(!animation){animation={property:command.property,points:[]};c.animations.push(animation);}
+      animation.points=animation.points.filter(p=>p.id!==command.point.id&&compare(p.time,command.point.time)!==0);
+      animation.points.push(structuredClone(command.point));animation.points.sort((a,b)=>compare(a.time,b.time));
+    } else if(command.type==='keyframe.remove'){
+      const animation=c.animations?.find(a=>a.property===command.property),point=animation?.points.find(p=>p.id===command.pointId);
+      check(animation&&point,'KEYFRAME_NOT_FOUND');
+      animation.points=animation.points.filter(p=>p.id!==command.pointId);
+      if(!animation.points.length){
+        c.animations=c.animations!.filter(a=>a!==animation);
+        if(command.property==='volume')c.volume=point.value;
+        else{c.transform||=defaultTransform();c.transform[command.property]=point.value;}
+      }
     }
   }
-  validateDocument(next); assertNoVideoOverlap(next); return next;
+  validateDocument(next); if(!deferOverlap)assertNoVideoOverlap(next); return next;
 }

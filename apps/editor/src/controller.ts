@@ -2,7 +2,9 @@ import {ref, shallowRef, computed} from 'vue';
 import {EditorAPI, explainError} from './api.ts';
 import type {ProjectState, ProjectSummary, JobView} from './api.ts';
 import type {Asset, Document, Clip} from '../../../packages/core/src/document.ts';
-import type {Command} from '../../../packages/core/src/commands.ts';
+import type {Command,AtomicCommand} from '../../../packages/core/src/commands.ts';
+import {sourceTimeAt,keyframeAtFrame} from '../../../packages/core/src/animation.ts';
+import type {AnimatedProperty,Keyframe} from '../../../packages/core/src/animation.ts';
 import {duration, defaultTransform} from '../../../packages/core/src/document.ts';
 import {newTextClip} from '../../../packages/core/src/edits.ts';
 import {rational, decimal, toNumber, add, compare, frameTime, nearestFrame} from '../../../packages/core/src/time.ts';
@@ -129,6 +131,11 @@ export function createEditorController(options: EditorOptions = {}) {
     for (const file of files) {const asset = await api.upload(file); if (!disposed && !assets.value.some(a => a.id === asset.id)) assets.value = [...assets.value, asset];}
   }
   async function split() {if (selected.value && doc.value) await edit({type: 'split', clipId: selected.value.clip.id, at: atFrame(playhead.value, doc.value.fps), rightId: crypto.randomUUID()});}
+  function keyframeCommand(property:AnimatedProperty,value:number,interpolation?:Keyframe['interpolation']):AtomicCommand{
+    const clip=selected.value?.clip;if(!clip||!doc.value)throw Error('CLIP_NOT_FOUND');
+    const head=atFrame(playhead.value,doc.value.fps),existing=keyframeAtFrame(clip,property,head,doc.value.fps),time=existing?.time||sourceTimeAt(clip,head);
+    return {type:'keyframe.set',clipId:clip.id,property,point:{id:existing?.id||crypto.randomUUID(),time,value,interpolation:interpolation||existing?.interpolation||'linear'}};
+  }
   async function remove(ripple = false) {if (selected.value) await edit({type: 'clip.remove', clipId: selected.value.clip.id, ripple});}
   async function duplicate() {
     if (!selected.value || !doc.value) return;
@@ -153,10 +160,10 @@ export function createEditorController(options: EditorOptions = {}) {
     try {sessionStorage.removeItem(key);} catch {}
     jobs.value = [job, ...jobs.value]; return job;
   }
-  function seek(time: number) {playhead.value = Math.min(Math.max(0, time), total.value);}
+  function seek(time: number) {playhead.value = Math.min(Math.max(0,doc.value?toNumber(atFrame(time,doc.value.fps)):time),total.value);}
   function dispose() {disposed = true; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
   async function flush() {await queue;}
   return {api, state, doc, assets, projects, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, zoom, snap, total, readOnly,
-    initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
+    initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;

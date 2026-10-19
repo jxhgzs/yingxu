@@ -4,15 +4,27 @@ import {rational, add, sub, mul, div, compare, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 import {applyEdit, assertNoVideoOverlap} from './edits.ts';
 import type {EditingCommand} from './edits.ts';
+import {sliceAnimations} from './animation.ts';
 
-export type Command =
+export type AtomicCommand =
   | {type: 'split'; clipId: string; at: Rational; rightId: string}
   | {type: 'speed'; clipId: string; value: Rational; shiftFollowing: boolean}
   | EditingCommand;
+export type Command = AtomicCommand | {type:'batch';commands:AtomicCommand[]};
 
 export function applyCommand(doc: Document, command: Command): Document {
+  if(command?.type==='batch'){
+    validateDocument(doc);
+    check(Array.isArray(command.commands)&&command.commands.length>0&&command.commands.length<=100,'INVALID_COMMAND_BATCH');
+    let next=doc;
+    for(const c of command.commands){check(c&&typeof c==='object'&&(c as {type:string}).type!=='batch','INVALID_COMMAND_BATCH');next=applySingle(next,c,true);}
+    validateDocument(next);assertNoVideoOverlap(next);return next;
+  }
+  return applySingle(doc,command,false);
+}
+function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Document{
   validateDocument(doc); check(command && typeof command === 'object', 'INVALID_COMMAND');
-  if (command.type !== 'split' && command.type !== 'speed') return applyEdit(doc, command);
+  if (command.type !== 'split' && command.type !== 'speed') return applyEdit(doc, command,deferOverlap);
   const next = structuredClone(doc);
   const track = next.tracks.find(t => t.clips.some(c => c.id === command.clipId)); check(track, 'CLIP_NOT_FOUND');
   const index = track.clips.findIndex(c => c.id === command.clipId), clip = track.clips[index];
@@ -29,6 +41,10 @@ export function applyCommand(doc: Document, command: Command): Document {
     right.source = {start: add(clip.source.start, leftSource), duration: sub(clip.source.duration, leftSource)};
     right.target = {start: command.at, duration: sub(clip.target.duration, leftTarget)};
     clip.source.duration = leftSource; clip.target.duration = leftTarget;
+    if(clip.animations?.length){
+      right.animations=sliceAnimations(clip.animations,right.source.start,add(right.source.start,right.source.duration));
+      clip.animations=sliceAnimations(clip.animations,clip.source.start,add(clip.source.start,clip.source.duration));
+    }
     track.clips.splice(index + 1, 0, right);
   } else if (command.type === 'speed') {
     validRational(command.value, 'speed');
@@ -44,6 +60,6 @@ export function applyCommand(doc: Document, command: Command): Document {
     }
   } else throw Error('UNKNOWN_COMMAND');
   validateDocument(next);
-  assertNoVideoOverlap(next);
+  if(!deferOverlap)assertNoVideoOverlap(next);
   return next;
 }

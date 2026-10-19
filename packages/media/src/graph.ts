@@ -19,7 +19,7 @@ export function renderGraph(input: Document): RenderGraph {
     check(asset.kind !== 'text' || compare(doc.fps,rational(100))<=0, 'TEXT_RENDER_FPS_LIMIT', clip.id);
     check(compare(clip.speed, rational(1, 16)) >= 0 && compare(clip.speed, rational(16)) <= 0, 'RENDER_SPEED_LIMIT');
     if (!t.hidden && t.kind !== 'audio') layers.push({asset, clip: {...clip, transform: clip.transform || defaultTransform()}});
-    if (!t.muted && !clip.muted && clip.volume !== 0 && (asset.hasAudio || asset.kind === 'audio')) audio.push({asset, clip});
+    if (!t.muted && !clip.muted && (clip.volume !== 0 || clip.animations?.some(a=>a.property==='volume')) && (asset.hasAudio || asset.kind === 'audio')) audio.push({asset, clip});
   }
   return {version: 1, document: doc, layers, audio, frameCount, duration: frameCount / toNumber(doc.fps)};
 }

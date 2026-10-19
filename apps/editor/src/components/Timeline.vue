@@ -5,6 +5,7 @@ import type {Clip, Track} from '../../../../packages/core/src/document.ts';
 import {atFrame, timecode} from '../controller.ts';
 import {toNumber, add, mul, sub, compare, rational} from '../../../../packages/core/src/time.ts';
 import Icon from './Icon.vue';
+import {targetTimeAt} from '../../../../packages/core/src/animation.ts';
 const props = defineProps<{c: EditorController}>();
 const scroller = ref<HTMLElement>(), scrollLeft = ref(0), viewport = ref(1400);
 const drag = ref<{id: string; mode: 'move'|'left'|'right'; originX: number; delta: number; trackId: string; destination: string; original: Clip} | null>(null);
@@ -19,6 +20,14 @@ const rows = computed(() => [...(props.c.doc.value?.tracks || [])].reverse());
 function onScroll() {if(scroller.value){scrollLeft.value=scroller.value.scrollLeft;viewport.value=scroller.value.clientWidth;}}
 function visible(clip: Clip) {const start=toNumber(clip.target.start)*props.c.zoom.value+144,end=start+toNumber(clip.target.duration)*props.c.zoom.value;return end>=scrollLeft.value&&start<=scrollLeft.value+viewport.value+200;}
 function name(clip: Clip) {return clip.text?.content || props.c.doc.value?.assets.find(a=>a.id===clip.materialId)?.name || '视频片段';}
+function keyframes(clip:Clip){
+  const points=new Map<string,{time:number;percent:number}>();
+  for(const animation of clip.animations||[])for(const p of animation.points){
+    if(compare(p.time,clip.source.start)<0||compare(p.time,add(clip.source.start,clip.source.duration))>0)continue;
+    const time=targetTimeAt(clip,p.time);points.set(`${time.numerator}/${time.denominator}`,{time:toNumber(time),percent:toNumber(sub(time,clip.target.start))/toNumber(clip.target.duration)*100});
+  }
+  return [...points.values()].sort((a,b)=>a.time-b.time);
+}
 function seek(event: PointerEvent) {
   if(!scroller.value)return;
   const x=event.clientX-scroller.value.getBoundingClientRect().left+scroller.value.scrollLeft-144;
@@ -88,6 +97,7 @@ function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({t
           </div></header>
           <button v-for="clip in track.clips.filter(visible)" :key="clip.id" class="timeline-clip" :class="[{selected:c.selectedId.value===clip.id,dragging:drag?.id===clip.id},'clip-'+track.kind]" :style="clipStyle(clip)" :aria-label="'片段 '+name(clip)" :data-clip-id="clip.id" @pointerdown.stop="begin($event,clip,track,'move')" @pointermove="moving" @pointerup="finish" @pointercancel="drag=null" @click.stop="c.selectedId.value=clip.id">
             <span class="clip-title"><Icon :name="track.kind" />{{name(clip)}}<small>{{toNumber(clip.speed)!==1?toNumber(clip.speed)+'×':''}}</small></span><span v-if="track.kind==='text'" class="clip-text-body">{{clip.text?.content}}</span>
+            <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
             <span class="trim-handle left" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span>
           </button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
