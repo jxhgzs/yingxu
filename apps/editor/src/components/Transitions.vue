@@ -4,6 +4,7 @@ import type {EditorController} from '../controller.ts';
 import type {Transition} from '../../../../packages/core/src/document.ts';
 import {toNumber} from '../../../../packages/core/src/time.ts';
 import {buildTransitionCandidate,transitionDurationFromInput} from '../transition-candidate.ts';
+import {transitionPresentation} from '../transition-presentation.ts';
 const props=defineProps<{c:EditorController}>();
 const durations=reactive<Record<string,number>>({});
 const selected=computed(()=>props.c.selected.value);
@@ -11,7 +12,7 @@ const related=computed(()=>props.c.doc.value?.transitions?.filter(t=>[t.outgoing
 const disabled=computed(()=>props.c.readOnly.value||props.c.busy.value||!!selected.value?.track.locked);
 watch(()=>props.c.state.value?.revision,()=>{for(const t of related.value)durations[t.id]=toNumber(t.duration);},{immediate:true});
 watch(()=>props.c.selectedId.value,()=>{for(const t of related.value)durations[t.id]=toNumber(t.duration);});
-const options:{kind:Transition['kind'];name:string;icon:string}[]=[{kind:'crossfade',name:'叠化',icon:'◩'},{kind:'dipToBlack',name:'闪黑',icon:'◼'},{kind:'dipToWhite',name:'闪白',icon:'◻'},{kind:'wipeLeft',name:'向左擦除',icon:'◧'},{kind:'circleOpen',name:'圆形遮罩',icon:'◉'}];
+const options=(Object.entries(transitionPresentation) as [Transition['kind'],{name:string;icon:string}][]).map(([kind,presentation])=>({kind,...presentation}));
 const candidates=computed(()=>options.map(option=>{const value=buildTransitionCandidate(props.c.doc.value,selected.value?.track.id,selected.value?.clip.id,option.kind);return {...value,...option,incomingName:value.name};}));
 async function addTransition(kind:Transition['kind']){const value=candidates.value.find(v=>v.kind===kind);if(value?.transition&&!disabled.value)await props.c.guard(()=>props.c.edit({type:'transition.add',transition:{...value.transition!,id:crypto.randomUUID()}}));}
 function update(t:Transition){if(!disabled.value)void props.c.guard(()=>props.c.edit({type:'transition.update',transitionId:t.id,changes:{duration:transitionDurationFromInput(t,durations[t.id])}}));}
