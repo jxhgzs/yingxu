@@ -52,3 +52,29 @@ test('synchronous provider cancellation also observes a later underlying provide
  const {c}=cache(async()=>{controller.abort();return new Promise((_resolve,reject)=>{fail=reject;});});
  try{await assert.rejects(c.prepare(request(0),controller.signal),{name:'AbortError'});fail(Error('LATE_PROVIDER_FAILURE'));await new Promise<void>(r=>setImmediate(()=>setImmediate(r)));assert.deepEqual(unhandled,[]);}finally{c.dispose();process.removeListener('unhandledRejection',listener);}
 });
+test('rolling spans 64 unique frames with bounded images while preserving current and the future horizon',async()=>{
+ const {c,made}=cache(async(_id,ctx)=>texture(ctx.frame!,ctx.frame!+1),{textures:4,bytes:256,aliasesPerClip:300});await c.prepare(request(0));let current=c.get(request(0))!;const pins=()=>new Set([current.url]);
+ for(let frame=0;frame<64;frame++){
+  const horizon=Array.from({length:Math.min(4,64-frame)},(_,i)=>request(frame+i));await c.roll(horizon,pins);const at=c.get(request(frame));assert.ok(at,'requested current frame must be ready');current=at;
+  assert.equal(current.disposed,false);assert(c.metrics.textures<=4);assert(c.metrics.bytes<=256);assert(c.metrics.aliases<=4);
+ }
+ assert(c.metrics.evictions>=60);assert(made.length>=64);assert.equal(current.url,texture(63,64).url);c.dispose();assert(made.every(r=>r.disposed));
+});
+test('rolling replaces a queued seek horizon without loading the old remaining frames',async()=>{
+ let resolve!:(texture:TextTexture)=>void;const frames:number[]=[];const {c}=cache(async(_id,ctx)=>{frames.push(ctx.frame!);if(ctx.frame===1)return new Promise(r=>{resolve=r;});return texture(ctx.frame!,ctx.frame!+1);},{textures:4,bytes:256,aliasesPerClip:300});
+ await c.prepare(request(0));const first=c.roll([request(0),request(1),request(2),request(3)],()=>new Set());await Promise.resolve();const second=c.roll([request(50),request(51),request(52),request(53)],()=>new Set());resolve(texture(1,2));await Promise.all([first,second]);
+ assert.equal(frames.includes(2),false);assert.equal(frames.includes(3),false);assert.ok(c.get(request(50)));assert.ok(c.get(request(53)));assert(c.metrics.textures<=4);assert(c.metrics.supersededWindows>0);c.dispose();
+});
+test('rolling cannot evict a current pin even when every other image belongs to the future window',async()=>{
+ const {c}=cache(async(_id,ctx)=>texture(ctx.frame!,ctx.frame!+1),{textures:2,bytes:128,aliasesPerClip:300});const current=await c.prepare(request(0));await c.prepare(request(1));await c.roll([request(1),request(2)],()=>new Set([current.url]));assert.equal(current.disposed,false);assert.ok(c.get(request(1)));assert.equal(c.get(request(2)),undefined);assert.equal(c.metrics.textures,2);c.dispose();
+});
+test('rolling reset/dispose rejects an ignored-abort provider and never revives decoded resources',async()=>{
+ let resolve!:(texture:TextTexture)=>void,start!:()=>void;const started=new Promise<void>(r=>{start=r;});const {c,made}=cache(async()=>new Promise(r=>{resolve=r;start();}));const pending=c.roll([request(0)],()=>new Set());await started;c.reset({projectId:'new',revision:1},4,4);resolve(texture(0));await assert.rejects(pending,{name:'AbortError'});assert.equal(made.length,0);assert.equal(c.metrics.textures,0);assert.equal(c.metrics.rollingRequests,0);c.dispose();
+});
+
+test('a late foreground load reads current pins when evicting rather than its earlier seek snapshot',async()=>{
+ let finish!:(texture:TextTexture)=>void;const {c,made}=cache(async(_id,ctx)=>ctx.frame===1?new Promise(r=>{finish=r;}):texture(ctx.frame!,ctx.frame!+1),{textures:2,bytes:128,aliasesPerClip:300});let current=await c.prepare(request(0));const late=c.prepare(request(1),undefined,()=>new Set([current.url]));current=await c.prepare(request(2));finish(texture(1,2));await late;assert.equal(current.disposed,false);assert.equal(c.get(request(2)),current);assert.equal(made[0].disposed,true);assert.equal(c.metrics.textures,2);c.dispose();
+});
+test('a new rolling window queued during producer completion is still consumed',async()=>{
+ const calls:number[]=[];const {c}=cache(async(_id,ctx)=>{calls.push(ctx.frame!);return texture(ctx.frame!,ctx.frame!+1);});const first=c.roll([request(0)],()=>new Set());for(let i=0;i<4;i++)await Promise.resolve();const second=c.roll([request(1)],()=>new Set());await Promise.all([first,second]);assert.deepEqual(calls,[0,1]);assert.ok(c.get(request(1)));c.dispose();
+});

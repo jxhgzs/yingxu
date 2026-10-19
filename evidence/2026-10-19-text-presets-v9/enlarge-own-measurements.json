@@ -1,0 +1,2296 @@
+{
+  "movie": "artifacts/qa/text-presets-v9/zoom-in/render.mp4",
+  "sha256": "d67c5aa8840f1880114e1ac7c4ee3769071be349ba84fae402744b34a48a7ea9",
+  "referenceFrame": 30,
+  "referenceBounds128": [
+    515,
+    341,
+    764,
+    379
+  ],
+  "origin": [
+    640,
+    360
+  ],
+  "observedFrames": 120,
+  "rows": [
+    {
+      "frame": 0,
+      "predictedAlpha": 0.0,
+      "observedInteriorMedianAlpha": 0.0,
+      "predictedScale": 0.5,
+      "boundsHalfAlpha": null,
+      "predictedBounds": [
+        577.5,
+        350.5,
+        702.0,
+        369.5
+      ],
+      "boundMaxAbsolutePixels": null
+    },
+    {
+      "frame": 1,
+      "predictedAlpha": 0.1288888888888889,
+      "observedInteriorMedianAlpha": 0.12941176470588237,
+      "predictedScale": 0.5644444444444444,
+      "boundsHalfAlpha": [
+        569,
+        350,
+        710,
+        371
+      ],
+      "predictedBounds": [
+        569.4444444444445,
+        349.27555555555557,
+        709.9911111111111,
+        370.72444444444443
+      ],
+      "boundMaxAbsolutePixels": 0.7244444444444298
+    },
+    {
+      "frame": 2,
+      "predictedAlpha": 0.24888888888888888,
+      "observedInteriorMedianAlpha": 0.2549019607843137,
+      "predictedScale": 0.6244444444444445,
+      "boundsHalfAlpha": [
+        562,
+        348,
+        717,
+        372
+      ],
+      "predictedBounds": [
+        561.9444444444445,
+        348.1355555555556,
+        717.4311111111111,
+        371.8644444444444
+      ],
+      "boundMaxAbsolutePixels": 0.43111111111113587
+    },
+    {
+      "frame": 3,
+      "predictedAlpha": 0.36000000000000004,
+      "observedInteriorMedianAlpha": 0.37058823529411766,
+      "predictedScale": 0.68,
+      "boundsHalfAlpha": [
+        555,
+        347,
+        724,
+        373
+      ],
+      "predictedBounds": [
+        555.0,
+        347.08,
+        724.32,
+        372.92
+      ],
+      "boundMaxAbsolutePixels": 0.32000000000005
+    },
+    {
+      "frame": 4,
+      "predictedAlpha": 0.46222222222222226,
+      "observedInteriorMedianAlpha": 0.47058823529411764,
+      "predictedScale": 0.7311111111111112,
+      "boundsHalfAlpha": [
+        548,
+        346,
+        730,
+        374
+      ],
+      "predictedBounds": [
+        548.6111111111111,
+        346.1088888888889,
+        730.6577777777778,
+        373.8911111111111
+      ],
+      "boundMaxAbsolutePixels": 0.6577777777778238
+    },
+    {
+      "frame": 5,
+      "predictedAlpha": 0.5555555555555556,
+      "observedInteriorMedianAlpha": 0.5647058823529412,
+      "predictedScale": 0.7777777777777778,
+      "boundsHalfAlpha": [
+        542,
+        345,
+        736,
+        375
+      ],
+      "predictedBounds": [
+        542.7777777777778,
+        345.22222222222223,
+        736.4444444444445,
+        374.77777777777777
+      ],
+      "boundMaxAbsolutePixels": 0.7777777777778283
+    },
+    {
+      "frame": 6,
+      "predictedAlpha": 0.6400000000000001,
+      "observedInteriorMedianAlpha": 0.6431372549019608,
+      "predictedScale": 0.8200000000000001,
+      "boundsHalfAlpha": [
+        537,
+        345,
+        741,
+        376
+      ],
+      "predictedBounds": [
+        537.5,
+        344.42,
+        741.6800000000001,
+        375.58
+      ],
+      "boundMaxAbsolutePixels": 0.6800000000000637
+    },
+    {
+      "frame": 7,
+      "predictedAlpha": 0.7155555555555555,
+      "observedInteriorMedianAlpha": 0.7176470588235294,
+      "predictedScale": 0.8577777777777778,
+      "boundsHalfAlpha": [
+        532,
+        344,
+        746,
+        376
+      ],
+      "predictedBounds": [
+        532.7777777777778,
+        343.70222222222225,
+        746.3644444444444,
+        376.29777777777775
+      ],
+      "boundMaxAbsolutePixels": 0.7777777777778283
+    },
+    {
+      "frame": 8,
+      "predictedAlpha": 0.7822222222222223,
+      "observedInteriorMedianAlpha": 0.788235294117647,
+      "predictedScale": 0.8911111111111112,
+      "boundsHalfAlpha": [
+        528,
+        343,
+        751,
+        377
+      ],
+      "predictedBounds": [
+        528.6111111111111,
+        343.06888888888886,
+        750.4977777777777,
+        376.93111111111114
+      ],
+      "boundMaxAbsolutePixels": 0.6111111111110858
+    },
+    {
+      "frame": 9,
+      "predictedAlpha": 0.84,
+      "observedInteriorMedianAlpha": 0.8392156862745098,
+      "predictedScale": 0.9199999999999999,
+      "boundsHalfAlpha": [
+        524,
+        343,
+        754,
+        378
+      ],
+      "predictedBounds": [
+        525.0,
+        342.52,
+        754.0799999999999,
+        377.48
+      ],
+      "boundMaxAbsolutePixels": 1.0
+    },
+    {
+      "frame": 10,
+      "predictedAlpha": 0.888888888888889,
+      "observedInteriorMedianAlpha": 0.8901960784313725,
+      "predictedScale": 0.9444444444444444,
+      "boundsHalfAlpha": [
+        522,
+        342,
+        757,
+        378
+      ],
+      "predictedBounds": [
+        521.9444444444445,
+        342.05555555555554,
+        757.1111111111111,
+        377.94444444444446
+      ],
+      "boundMaxAbsolutePixels": 0.11111111111108585
+    },
+    {
+      "frame": 11,
+      "predictedAlpha": 0.9288888888888888,
+      "observedInteriorMedianAlpha": 0.9411764705882353,
+      "predictedScale": 0.9644444444444444,
+      "boundsHalfAlpha": [
+        519,
+        342,
+        760,
+        379
+      ],
+      "predictedBounds": [
+        519.4444444444445,
+        341.67555555555555,
+        759.5911111111111,
+        378.32444444444445
+      ],
+      "boundMaxAbsolutePixels": 0.6755555555555475
+    },
+    {
+      "frame": 12,
+      "predictedAlpha": 0.96,
+      "observedInteriorMedianAlpha": 0.9647058823529412,
+      "predictedScale": 0.98,
+      "boundsHalfAlpha": [
+        517,
+        341,
+        762,
+        379
+      ],
+      "predictedBounds": [
+        517.5,
+        341.38,
+        761.52,
+        378.62
+      ],
+      "boundMaxAbsolutePixels": 0.5
+    },
+    {
+      "frame": 13,
+      "predictedAlpha": 0.9822222222222222,
+      "observedInteriorMedianAlpha": 0.9803921568627451,
+      "predictedScale": 0.991111111111111,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        763,
+        379
+      ],
+      "predictedBounds": [
+        516.1111111111111,
+        341.1688888888889,
+        762.8977777777777,
+        378.8311111111111
+      ],
+      "boundMaxAbsolutePixels": 1.1111111111110858
+    },
+    {
+      "frame": 14,
+      "predictedAlpha": 0.9955555555555555,
+      "observedInteriorMedianAlpha": 0.996078431372549,
+      "predictedScale": 0.9977777777777778,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.2777777777778,
+        341.0422222222222,
+        763.7244444444444,
+        378.9577777777778
+      ],
+      "boundMaxAbsolutePixels": 0.2777777777778283
+    },
+    {
+      "frame": 15,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 16,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 17,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 18,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 19,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 20,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 21,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 22,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 23,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 24,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 25,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 26,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 27,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 28,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 29,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 30,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 31,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 32,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 33,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 34,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 35,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 36,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 37,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 38,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 39,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 40,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 41,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 42,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 43,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 44,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 45,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 46,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 47,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 48,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 49,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 50,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 51,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 52,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 53,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 54,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 55,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 56,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 57,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 58,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 59,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 60,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 61,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 62,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 63,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 64,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 65,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 66,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 67,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 68,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 69,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 70,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 71,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 72,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 73,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 74,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 75,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 76,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 77,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 78,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 79,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 80,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 81,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 82,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 83,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 84,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 85,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 86,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 87,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 88,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 89,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 90,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 91,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 92,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 93,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 94,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 95,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 96,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 97,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 98,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 99,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 100,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 101,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 102,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 103,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 104,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 105,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 106,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 107,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 108,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 109,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 110,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 111,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 112,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 113,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 114,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 115,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 116,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 117,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 118,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    },
+    {
+      "frame": 119,
+      "predictedAlpha": 1,
+      "observedInteriorMedianAlpha": 1.0,
+      "predictedScale": 1.0,
+      "boundsHalfAlpha": [
+        515,
+        341,
+        764,
+        379
+      ],
+      "predictedBounds": [
+        515.0,
+        341.0,
+        764.0,
+        379.0
+      ],
+      "boundMaxAbsolutePixels": 0.0
+    }
+  ],
+  "maxInteriorMedianAlphaError": 0.012287581699346517,
+  "maxBoundsErrorPixelsFrames1to15": 1.1111111111110858,
+  "scope": "Same-native-export relative geometry and interior opacity. Resampled reference chooses only an eroded solid mask; it is not an output raster model. SDF edge antialiasing and encoded pixels remain distinct."
+}

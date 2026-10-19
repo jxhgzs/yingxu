@@ -61,7 +61,7 @@ export function importJianying(raw: unknown, sourceText?: string): Imported {
         const source=range(s.source_timerange,'source_timerange'),target=range(s.target_timerange,'target_timerange');
         const nativeSpeed=decimal(String(number(s.speed,'speed')));
         return {id:s.id,materialId:s.material_id,source,target,speed:hasCurve?div(source.duration,target.duration):nativeSpeed,editableTiming,
-          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{}),...(color.colorAdjustments?{colorAdjustments:color.colorAdjustments}:{}),...(fade.fade?{audioFade:fade.fade}:{})};
+          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{}),...(color.colorAdjustments?{colorAdjustments:color.colorAdjustments}:{}),...(color.vignette?{vignette:color.vignette}:{}),...(fade.fade?{audioFade:fade.fade}:{})};
       })};
     })
   };

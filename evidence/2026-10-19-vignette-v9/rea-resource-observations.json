@@ -1,0 +1,198 @@
+{
+  "scope": "REA safe app-bundle inventory and six exact retained resource paths. No new algorithm recovery or private script execution; resource subdirectory open rejected and preserved. Existing v7 math crosschecked with v9 actual native drafts/MOV separately.",
+  "calls": [
+    {
+      "call": "001-open.json",
+      "operation": "open_binary",
+      "elapsedSeconds": 2.065867292,
+      "evidenceId": null,
+      "error": {
+        "code": "target_unavailable",
+        "category": "unavailable",
+        "message": "open_binary accepts files and macOS app bundles. This target is a directory; JavaScript/Electron application directories can be analyzed directly with analyze_javascript_application or `rea analyze <directory>`.",
+        "retryable": false,
+        "remediation": {
+          "action": "For a JavaScript/Electron application directory, call analyze_javascript_application with input_path or run `rea analyze <directory>`. For binary analysis, select its executable file."
+        },
+        "details": {
+          "path": "/Applications/VideoFusion-macOS.app/Contents/Resources/DefaultAdjustBundle/vignetting_v1",
+          "reason": "this opening route requires a file or app bundle",
+          "constraint": "directory_requires_file"
+        }
+      },
+      "coverage": null,
+      "parentEvidenceId": null
+    },
+    {
+      "call": "002-open-app.json",
+      "operation": "open_binary",
+      "elapsedSeconds": 3.6020032920000085,
+      "evidenceId": null,
+      "error": null,
+      "coverage": null,
+      "parentEvidenceId": null
+    },
+    {
+      "call": "003-inspect-summary.json",
+      "operation": "inspect_artifact",
+      "elapsedSeconds": 4.254568790999998,
+      "evidenceId": "ev_65d60f6200781e650d3c7fadd9a0f36a7a7e238e8cd8df3240a0cabbd369659d",
+      "error": null,
+      "coverage": {
+        "status": "complete-within-view",
+        "examined": 10609,
+        "total": 10609,
+        "next_offset": null,
+        "exhausted": true
+      },
+      "parentEvidenceId": "ev_06769efab8a3af2355bdeff5bfa0b0b82efb34b75efdaf88b3524a9a6c2c286a"
+    },
+    {
+      "call": "004-resource-view.json",
+      "operation": "inspect_analysis_view",
+      "elapsedSeconds": 0.3077593340000021,
+      "evidenceId": "ev_546575a605df04d50d46a21088329d011ed63e88f2105a022fc31610b04ddfe4",
+      "error": null,
+      "coverage": {
+        "status": "page",
+        "examined": 6,
+        "total": 6,
+        "next_offset": null,
+        "exhausted": true
+      },
+      "parentEvidenceId": "ev_06769efab8a3af2355bdeff5bfa0b0b82efb34b75efdaf88b3524a9a6c2c286a"
+    },
+    {
+      "call": "005-export.json",
+      "operation": "export_evidence_bundle",
+      "elapsedSeconds": 0.22207191699999385,
+      "evidenceId": null,
+      "error": null,
+      "coverage": null,
+      "parentEvidenceId": null
+    },
+    {
+      "call": "006-close.json",
+      "operation": "close_binary",
+      "elapsedSeconds": 0.003084958000021288,
+      "evidenceId": null,
+      "error": null,
+      "coverage": null,
+      "parentEvidenceId": null
+    }
+  ],
+  "manifest": {
+    "manifest_id": "agm_45d1e7b25f0c5d1fbc8c8fce6154f99bdcb9d08f73f955e996cf7ec8524835c2",
+    "root_artifact_id": "art_94876001da99ff40dcefc2534ada65974676a4a5b2bec64f4fa7ecffc418feb5",
+    "root_sha256": "ff02a962d5e9e6fbd9542ef55126d524c15177385d3808857ff57c11c60a093e",
+    "root_format": "directory",
+    "graph_sha256": "30f0a22364aa0e9633e80d38eff8d64e421dd8a96d61a36d1531de57fe35669e",
+    "node_count": 3062,
+    "occurrence_count": 3896,
+    "edge_count": 3651
+  },
+  "resourceMetadata": [
+    {
+      "occurrence_id": "occ_7d58fcea8992638b845ce4ed2302c4ae805739474387c3120826aeb18af2bc81",
+      "artifact_id": "art_a122a8458d53d9d7ca49bf7d81cd19005ead5f4427c974c30f20d23615303d3c",
+      "parent_occurrence_id": "occ_64e6e6ce7c212f437978a4de02a11223f474faa61eaef8fedeeda04f437fc745",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/sharpen_v1/AmazingFeature/lua/SeekModeScript.lua",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 4081,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "437edc9ba75638eaf6feac90d19b0ee73102727f4a604ef2b1ce07cb28acaee1"
+    },
+    {
+      "occurrence_id": "occ_71eaffa7be95e0b70c794c960e08730e37fd0f5fa688e4ac8bceb4e310179b76",
+      "artifact_id": "art_f2378466a8e5664124c986e78d1e982b7a1b5cb25aa5d4a74615452e70172112",
+      "parent_occurrence_id": "occ_08e4829fb71139978403a97194a69ea09c4ffff3233df270b33e3be55c211e1c",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/sharpen_v1/AmazingFeature/prefabs/sharp/fshader.frag",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 2880,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "54d868459400f6f7ef5df5d0b10b59586eb507ba070a768ff9369f51a1477a1b"
+    },
+    {
+      "occurrence_id": "occ_521027e0b6e3096a9fc23c130aa0cd31d866d7e473d0aeaf16278dfa435b3cb0",
+      "artifact_id": "art_01e68cf12da30c483a7edecafb10bf31018f49e68b6df4da1097533391351b7a",
+      "parent_occurrence_id": "occ_d10263321ad53364d042976d854ed1f431629934cabd26026342634ad035ead1",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/sharpen_v1/config.json",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 282,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "bc8545e93b214ac52bace02ceaf519af3c3755ec6b12d58541aee01dac587af2"
+    },
+    {
+      "occurrence_id": "occ_b29e8e7f714682e49b565af525db0bb01ccf750548e2878d5a138cb872820cb8",
+      "artifact_id": "art_4a4ea0ca57d772e2a4a446680531e637419f1f74ce37e437df929441f51e5dbf",
+      "parent_occurrence_id": "occ_05949c3bcae636cbe89d2bbcf8df3417ddc51208d42cb9f60dd57a48d30321e1",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/vignetting_v1/AmazingFeature/lua/SeekModeScript.lua",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 2507,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "45a9d7d22d83cf852923588b25ea614ec967d58845edefcc454456b7964c2fc8"
+    },
+    {
+      "occurrence_id": "occ_f9fd6b84f63ec927016766b58c6f6e9d9f62a2134aaef4a05edc664fae90438f",
+      "artifact_id": "art_e6c3de85d96a796dfa32f46e5041084e69380c8656a726f53426a78768b462da",
+      "parent_occurrence_id": "occ_5dea3edf601d9ee4469f6ef098b943d52f52bb8206fb65633f768621d02ca6c7",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/vignetting_v1/AmazingFeature/xshader/vignetting.frag",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 1088,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "a5e6391c2da90f48f39d9b3d0fa267a69d8c5d6308888982a67fa84ff39e8c75"
+    },
+    {
+      "occurrence_id": "occ_bb26ac5bb128aa66b3c62f195b48fc5875740f3f629d5270168725835c416128",
+      "artifact_id": "art_de5ddcc54af673aacf9586f45ceaa0f5bf9a01a8b7d060db1a746e3df1f27663",
+      "parent_occurrence_id": "occ_975ce513fd243a9df407a14029474acdf3ff0457be5dc1bf4aa0f43c0bc51123",
+      "logical_path": "Contents/Resources/DefaultAdjustBundle/vignetting_v1/config.json",
+      "entry_kind": "file",
+      "artifact_kind": "resource",
+      "artifact_format": "file",
+      "declared_size": 339,
+      "compressed_size": null,
+      "executable": false,
+      "encrypted": false,
+      "hash_status": "verified",
+      "source_location": null,
+      "limitations": [],
+      "filesystemSHA256": "1e3c2709d14e4f07b4923b7035a0d11d283c3bc5238cafeff510888a7439ff8a"
+    }
+  ]
+}

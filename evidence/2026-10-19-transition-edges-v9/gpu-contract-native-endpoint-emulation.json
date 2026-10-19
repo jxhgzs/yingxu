@@ -1,0 +1,518 @@
+[
+  {
+    "kind": "wipe",
+    "basis": "CPU emulation of GPU edge contract using decoded native first/last RGB endpoints; no real GPU execution, no source texture or encoder parity claim. All pixels retained.",
+    "mae": 0.18885675683243727,
+    "max": 27,
+    "oldMAE": 0.24441086562873357,
+    "oldMax": 229,
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 0.30856300636574074,
+        "max": 25,
+        "oldMAE": 0.30856300636574074,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 46,
+        "mae": 0.30427662037037034,
+        "max": 25,
+        "oldMAE": 0.38109266493055555,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 47,
+        "mae": 0.29725405092592594,
+        "max": 25,
+        "oldMAE": 0.37403175636574076,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 48,
+        "mae": 0.2887413194444444,
+        "max": 25,
+        "oldMAE": 0.2887413194444444,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 49,
+        "mae": 0.2747533275462963,
+        "max": 25,
+        "oldMAE": 0.3536888744212963,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 50,
+        "mae": 0.27230360243055557,
+        "max": 25,
+        "oldMAE": 0.3503559027777778,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 51,
+        "mae": 0.2618041087962963,
+        "max": 25,
+        "oldMAE": 0.2618041087962963,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 52,
+        "mae": 0.2631181278935185,
+        "max": 25,
+        "oldMAE": 0.3412015335648148,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 53,
+        "mae": 0.2431224681712963,
+        "max": 25,
+        "oldMAE": 0.32208803530092595,
+        "oldMax": 179,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 54,
+        "mae": 0.23571433738425926,
+        "max": 25,
+        "oldMAE": 0.23571433738425926,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 55,
+        "mae": 0.23498046875,
+        "max": 25,
+        "oldMAE": 0.31317780671296297,
+        "oldMax": 179,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 56,
+        "mae": 0.22687102141203705,
+        "max": 25,
+        "oldMAE": 0.3045652488425926,
+        "oldMax": 179,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 57,
+        "mae": 0.2112160011574074,
+        "max": 25,
+        "oldMAE": 0.2112160011574074,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 58,
+        "mae": 0.1958644386574074,
+        "max": 24,
+        "oldMAE": 0.27475188078703705,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 59,
+        "mae": 0.19095666956018517,
+        "max": 24,
+        "oldMAE": 0.2698441116898148,
+        "oldMax": 176,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 60,
+        "mae": 0.17167643229166665,
+        "max": 24,
+        "oldMAE": 0.17167643229166665,
+        "oldMax": 24,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 61,
+        "mae": 0.1708955439814815,
+        "max": 24,
+        "oldMAE": 0.26583875868055556,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 62,
+        "mae": 0.16745768229166666,
+        "max": 24,
+        "oldMAE": 0.26240089699074076,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 63,
+        "mae": 0.16052372685185184,
+        "max": 24,
+        "oldMAE": 0.16052372685185184,
+        "oldMax": 24,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 64,
+        "mae": 0.14667534722222222,
+        "max": 24,
+        "oldMAE": 0.2409494357638889,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 65,
+        "mae": 0.14420102719907407,
+        "max": 24,
+        "oldMAE": 0.23847511574074073,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 66,
+        "mae": 0.1382349537037037,
+        "max": 24,
+        "oldMAE": 0.1382349537037037,
+        "oldMax": 24,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 67,
+        "mae": 0.1387330005787037,
+        "max": 24,
+        "oldMAE": 0.23332609953703703,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 68,
+        "mae": 0.12113245081018519,
+        "max": 24,
+        "oldMAE": 0.21541124131944445,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 69,
+        "mae": 0.11522569444444444,
+        "max": 24,
+        "oldMAE": 0.11522569444444444,
+        "oldMax": 24,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 70,
+        "mae": 0.11302408854166666,
+        "max": 24,
+        "oldMAE": 0.20728913483796296,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 71,
+        "mae": 0.11211299189814815,
+        "max": 27,
+        "oldMAE": 0.20564019097222222,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 72,
+        "mae": 0.09290581597222222,
+        "max": 23,
+        "oldMAE": 0.09290581597222222,
+        "oldMax": 23,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 73,
+        "mae": 0.09370912905092593,
+        "max": 23,
+        "oldMAE": 0.18837601273148147,
+        "oldMax": 228,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 74,
+        "mae": 0.08812717013888889,
+        "max": 23,
+        "oldMAE": 0.17924189814814814,
+        "oldMax": 229,
+        "crossSidePixels": 720
+      },
+      {
+        "frame": 75,
+        "mae": 0.07038483796296297,
+        "max": 10,
+        "oldMAE": 0.07038483796296297,
+        "oldMax": 10,
+        "crossSidePixels": 0
+      }
+    ]
+  },
+  {
+    "kind": "circle",
+    "basis": "CPU emulation of GPU edge contract using decoded native first/last RGB endpoints; no real GPU execution, no source texture or encoder parity claim. All pixels retained.",
+    "mae": 0.21300599238351253,
+    "max": 43,
+    "oldMAE": 0.2889075684177121,
+    "oldMax": 230,
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 0.3087337239583333,
+        "max": 25,
+        "oldMAE": 0.3087337239583333,
+        "oldMax": 25,
+        "crossSidePixels": 0
+      },
+      {
+        "frame": 46,
+        "mae": 0.31029333043981483,
+        "max": 25,
+        "oldMAE": 0.31721535011574076,
+        "oldMax": 228,
+        "crossSidePixels": 58
+      },
+      {
+        "frame": 47,
+        "mae": 0.31013671875,
+        "max": 25,
+        "oldMAE": 0.3297800925925926,
+        "oldMax": 228,
+        "crossSidePixels": 174
+      },
+      {
+        "frame": 48,
+        "mae": 0.3146535011574074,
+        "max": 25,
+        "oldMAE": 0.3472316261574074,
+        "oldMax": 228,
+        "crossSidePixels": 288
+      },
+      {
+        "frame": 49,
+        "mae": 0.3120847800925926,
+        "max": 25,
+        "oldMAE": 0.3505327690972222,
+        "oldMax": 228,
+        "crossSidePixels": 322
+      },
+      {
+        "frame": 50,
+        "mae": 0.3150325520833333,
+        "max": 41,
+        "oldMAE": 0.3585966435185185,
+        "oldMax": 228,
+        "crossSidePixels": 398
+      },
+      {
+        "frame": 51,
+        "mae": 0.3074927662037037,
+        "max": 31,
+        "oldMAE": 0.3690907118055556,
+        "oldMax": 228,
+        "crossSidePixels": 540
+      },
+      {
+        "frame": 52,
+        "mae": 0.30603370949074077,
+        "max": 25,
+        "oldMAE": 0.3784248408564815,
+        "oldMax": 229,
+        "crossSidePixels": 638
+      },
+      {
+        "frame": 53,
+        "mae": 0.30005678530092594,
+        "max": 39,
+        "oldMAE": 0.3795240162037037,
+        "oldMax": 229,
+        "crossSidePixels": 676
+      },
+      {
+        "frame": 54,
+        "mae": 0.2956058304398148,
+        "max": 25,
+        "oldMAE": 0.37436125578703705,
+        "oldMax": 229,
+        "crossSidePixels": 688
+      },
+      {
+        "frame": 55,
+        "mae": 0.28056712962962965,
+        "max": 25,
+        "oldMAE": 0.37680953414351853,
+        "oldMax": 229,
+        "crossSidePixels": 850
+      },
+      {
+        "frame": 56,
+        "mae": 0.27873083043981484,
+        "max": 25,
+        "oldMAE": 0.39135669849537036,
+        "oldMax": 229,
+        "crossSidePixels": 976
+      },
+      {
+        "frame": 57,
+        "mae": 0.2633561197916667,
+        "max": 25,
+        "oldMAE": 0.3789185474537037,
+        "oldMax": 230,
+        "crossSidePixels": 1000
+      },
+      {
+        "frame": 58,
+        "mae": 0.2471433738425926,
+        "max": 24,
+        "oldMAE": 0.3678399884259259,
+        "oldMax": 229,
+        "crossSidePixels": 1030
+      },
+      {
+        "frame": 59,
+        "mae": 0.2486150896990741,
+        "max": 38,
+        "oldMAE": 0.3853642216435185,
+        "oldMax": 230,
+        "crossSidePixels": 1196
+      },
+      {
+        "frame": 60,
+        "mae": 0.22208080150462964,
+        "max": 24,
+        "oldMAE": 0.3478276909722222,
+        "oldMax": 230,
+        "crossSidePixels": 1102
+      },
+      {
+        "frame": 61,
+        "mae": 0.2160232204861111,
+        "max": 43,
+        "oldMAE": 0.32759331597222224,
+        "oldMax": 230,
+        "crossSidePixels": 992
+      },
+      {
+        "frame": 62,
+        "mae": 0.19629159432870372,
+        "max": 24,
+        "oldMAE": 0.30118995949074073,
+        "oldMax": 230,
+        "crossSidePixels": 900
+      },
+      {
+        "frame": 63,
+        "mae": 0.19057327835648147,
+        "max": 24,
+        "oldMAE": 0.2940509259259259,
+        "oldMax": 229,
+        "crossSidePixels": 890
+      },
+      {
+        "frame": 64,
+        "mae": 0.17502495659722223,
+        "max": 25,
+        "oldMAE": 0.2825687210648148,
+        "oldMax": 228,
+        "crossSidePixels": 936
+      },
+      {
+        "frame": 65,
+        "mae": 0.1659107349537037,
+        "max": 40,
+        "oldMAE": 0.27023292824074074,
+        "oldMax": 229,
+        "crossSidePixels": 902
+      },
+      {
+        "frame": 66,
+        "mae": 0.14812210648148147,
+        "max": 34,
+        "oldMAE": 0.24915002893518517,
+        "oldMax": 229,
+        "crossSidePixels": 860
+      },
+      {
+        "frame": 67,
+        "mae": 0.14002748842592594,
+        "max": 26,
+        "oldMAE": 0.23365017361111112,
+        "oldMax": 230,
+        "crossSidePixels": 814
+      },
+      {
+        "frame": 68,
+        "mae": 0.12359917534722223,
+        "max": 26,
+        "oldMAE": 0.22646773726851852,
+        "oldMax": 230,
+        "crossSidePixels": 878
+      },
+      {
+        "frame": 69,
+        "mae": 0.1206665943287037,
+        "max": 27,
+        "oldMAE": 0.2216380931712963,
+        "oldMax": 230,
+        "crossSidePixels": 858
+      },
+      {
+        "frame": 70,
+        "mae": 0.10633716724537037,
+        "max": 26,
+        "oldMAE": 0.20316767939814814,
+        "oldMax": 228,
+        "crossSidePixels": 814
+      },
+      {
+        "frame": 71,
+        "mae": 0.105625,
+        "max": 39,
+        "oldMAE": 0.19249891493055554,
+        "oldMax": 229,
+        "crossSidePixels": 744
+      },
+      {
+        "frame": 72,
+        "mae": 0.0851732494212963,
+        "max": 26,
+        "oldMAE": 0.1399175347222222,
+        "oldMax": 229,
+        "crossSidePixels": 482
+      },
+      {
+        "frame": 73,
+        "mae": 0.07714771412037037,
+        "max": 19,
+        "oldMAE": 0.10718713831018518,
+        "oldMax": 229,
+        "crossSidePixels": 302
+      },
+      {
+        "frame": 74,
+        "mae": 0.06795211226851852,
+        "max": 17,
+        "oldMAE": 0.08111942997685186,
+        "oldMax": 228,
+        "crossSidePixels": 118
+      },
+      {
+        "frame": 75,
+        "mae": 0.0640943287037037,
+        "max": 8,
+        "oldMAE": 0.0640943287037037,
+        "oldMax": 8,
+        "crossSidePixels": 0
+      }
+    ]
+  }
+]

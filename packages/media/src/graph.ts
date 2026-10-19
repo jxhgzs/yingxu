@@ -20,7 +20,8 @@ export function renderGraph(input: Document): RenderGraph {
     check(clip.editableTiming, 'TIMING_NOT_INTERPRETED', clip.id);
     check(asset.kind !== 'text' || !clip.transform?.flipX && !clip.transform?.flipY, 'TEXT_FLIP_UNSUPPORTED', clip.id);
     check(asset.kind !== 'text' || compare(doc.fps,rational(100))<=0, 'TEXT_RENDER_FPS_LIMIT', clip.id);
-    check(!clip.textAnimations?.some(a=>a.kind==='typewriter')||canRenderTextAnimationText(clip.text!.content),'TEXT_ANIMATION_GLYPHS_UNVERIFIED',clip.id);
+    check(!clip.textAnimations?.some(a=>a.kind==='typewriter'||a.kind==='sway')||canRenderTextAnimationText(clip.text!.content),'TEXT_ANIMATION_GLYPHS_UNVERIFIED',clip.id);
+    check(!clip.textAnimations?.some(a=>a.kind==='sway')||clip.text!.content.length<=128,'TEXT_GLYPH_LAYOUT_TEXT_UNSUPPORTED',clip.id);
     check(compare(clip.speed, rational(1, 16)) >= 0 && compare(clip.speed, rational(16)) <= 0, 'RENDER_SPEED_LIMIT');
     if (!t.hidden && t.kind !== 'audio') layers.push({asset, clip: {...clip, transform: clip.transform || defaultTransform()}});
     if (!t.muted && !clip.muted && (clip.volume !== 0 || clip.animations?.some(a=>a.property==='volume')) && (asset.hasAudio || asset.kind === 'audio')) audio.push({asset, clip});

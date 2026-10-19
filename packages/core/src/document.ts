@@ -4,6 +4,8 @@ import {validateAnimations} from './animation.ts';
 import type {Animation} from './animation.ts';
 import {validateSpeedCurve} from './curve-speed.ts';
 import type {SpeedCurve} from './curve-speed.ts';
+import type {VerifiedDisplayTransform} from './source-display.ts';
+import {validVideoPixelFormat} from './video-pixels.ts';
 import {validateTransitions} from './transitions.ts';
 import {validateTextAnimations} from './text-animation.ts';
 import type {TextAnimation} from './text-animation.ts';
@@ -12,17 +14,19 @@ export type Range = {start: Rational; duration: Rational};
 export type Asset = {
   id: string; path: string; duration: Rational; kind?: 'video' | 'audio' | 'image' | 'text';
   name?: string; width?: number; height?: number; hasAudio?: boolean; fps?: Rational;
-  sha256?: string; mime?: string;colorSpace?:AssetColorSpace;frameTiming?:'cfr30';
+  sha256?: string; mime?: string;pixelFormat?:string;verifiedDisplayTransform?:VerifiedDisplayTransform;colorSpace?:AssetColorSpace;frameTiming?:'cfr30';
 };
 export type Transform = {x: number; y: number; scale: number; rotation: number; opacity: number; flipX: boolean; flipY: boolean};
 export type TextStyle = {content: string; size: number; color: string; font: string;outline?:number;shadow?:number;lineHeight?:number};
 import type {AudioFade} from './audio-fade.ts';
+import {validateVignette} from './vignette.ts';
+import type {Vignette} from './vignette.ts';
 import {validateColorAdjustments} from './color-effects.ts';
 import type {ColorAdjustments} from './color-effects.ts';
 import type {AssetColorSpace} from './color-space.ts';
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];textAnimations?:TextAnimation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;
+  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];textAnimations?:TextAnimation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
 export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
@@ -62,6 +66,8 @@ export function validateDocument(doc: Document): void {
     validRational(a.duration, a.id); check(compare(a.duration, ZERO) > 0, 'INVALID_TIME', a.id);
     check(a.kind === undefined || ['video', 'audio', 'image', 'text'].includes(a.kind), 'INVALID_MATERIAL_KIND');
     for (const n of [a.width, a.height]) check(n === undefined || Number.isSafeInteger(n) && n > 0 && n <= 65536, 'INVALID_MEDIA_SIZE');
+    if(a.verifiedDisplayTransform!==undefined)check((a.kind==='image'||a.kind==='video')&&['identity','unsupported'].includes(a.verifiedDisplayTransform),'INVALID_MEDIA_DISPLAY_TRANSFORM');
+    if(a.pixelFormat!==undefined)check(a.kind==='video'&&validVideoPixelFormat(a.pixelFormat),'INVALID_MEDIA_PIXEL_FORMAT');
     check(a.hasAudio === undefined || typeof a.hasAudio === 'boolean', 'INVALID_MEDIA_AUDIO');
     if (a.fps !== undefined) {validRational(a.fps); check(compare(a.fps, ZERO) > 0, 'INVALID_FPS');}
     if(a.frameTiming!==undefined)check(a.frameTiming==='cfr30'&&a.kind==='video'&&!!a.fps&&compare(a.fps,rational(30))===0,'INVALID_MEDIA_FRAME_TIMING');
@@ -101,6 +107,7 @@ export function validateDocument(doc: Document): void {
       check(c.volume === undefined || Number.isFinite(c.volume) && c.volume >= 0 && c.volume <= 4, 'INVALID_VOLUME');
       check(c.muted === undefined || typeof c.muted === 'boolean', 'INVALID_MUTE');
       if(c.colorAdjustments!==undefined){check(['video','image'].includes(kind),'COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED');validateColorAdjustments(c.colorAdjustments);}
+      if(c.vignette!==undefined){check(['video','image'].includes(kind),'VIGNETTE_MEDIA_UNSUPPORTED');validateVignette(c.vignette);}
       if(c.animations!==undefined)validateAnimations(c.animations,asset.duration);
       if(c.textAnimations!==undefined){check(kind==='text','TEXT_ANIMATION_MEDIA_UNSUPPORTED');validateTextAnimations(c.textAnimations,c.target.duration);}
       if(c.audioFade!==undefined){

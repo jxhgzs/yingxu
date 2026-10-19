@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {runProcess} from './process.ts';
+import {probeDisplayTransform} from '../../core/src/source-display.ts';
+import {validVideoPixelFormat} from '../../core/src/video-pixels.ts';
 import {decimal, rational} from '../../core/src/time.ts';
 import type {Asset} from '../../core/src/document.ts';
 
@@ -10,8 +12,8 @@ export const ffprobe = () => process.env.YINGXU_FFPROBE || '/opt/homebrew/bin/ff
 export async function fileHash(file: string): Promise<string> {
   const h = createHash('sha256'); for await (const chunk of fs.createReadStream(file)) h.update(chunk); return h.digest('hex');
 }
-export async function probe(file: string): Promise<any> {
-  const result = await runProcess(ffprobe(), ['-v', 'error', '-show_streams', '-show_format', '-of', 'json', file], {timeout: 30000});
+export async function probe(file: string, options:{signal?:AbortSignal}={}): Promise<any> {
+  const result = await runProcess(ffprobe(), ['-v', 'error', '-show_streams', '-show_format', '-of', 'json', file], {timeout: 30000,signal:options.signal});
   return JSON.parse(result.stdout);
 }
 export async function probeAsset(file: string, name = path.basename(file)): Promise<Asset> {
@@ -27,6 +29,6 @@ export async function probeAsset(file: string, name = path.basename(file)): Prom
   const rate = fpsString?.match(/^(\d+)\/(\d+)$/);
   const colorSpace=kind==='video'?Object.fromEntries([['matrix',video?.color_space],['primaries',video?.color_primaries],['transfer',video?.color_transfer],['range',video?.color_range]].filter(([,v])=>v&&v!=='unknown'&&v!=='unspecified')):undefined;
   return {id: 'a_' + sha256.slice(0, 24), path: file, name, kind, duration, width: video?.width, height: video?.height,
-    hasAudio: !!audio, sha256,...(colorSpace&&Object.keys(colorSpace).length?{colorSpace}:{}), fps: rate && rate[2] !== '0' && rate[1] !== '0' ? rational(rate[1], rate[2]) : undefined,
+    hasAudio: !!audio, sha256,...(video?{verifiedDisplayTransform:probeDisplayTransform(video)}:{}),...(kind==='video'&&validVideoPixelFormat(video?.pix_fmt)?{pixelFormat:video.pix_fmt}:{}),...(colorSpace&&Object.keys(colorSpace).length?{colorSpace}:{}), fps: rate && rate[2] !== '0' && rate[1] !== '0' ? rational(rate[1], rate[2]) : undefined,
     mime: kind === 'image' ? `image/${video.codec_name === 'mjpeg' ? 'jpeg' : video.codec_name}` : kind === 'audio' ? 'audio/mp4' : 'video/mp4'};
 }

@@ -2,11 +2,38 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {add,mul,rational,sub} from '../packages/core/src/time.ts';
-import {canRenderTextAnimationText,textAnimationOpacity,textAnimationVisibleCount,validateTextAnimations,type TextAnimation} from '../packages/core/src/text-animation.ts';
+import {canRenderTextAnimationText,textAnimationOpacity,textAnimationState,textAnimationVisibleCount,validateTextAnimations,type TextAnimation} from '../packages/core/src/text-animation.ts';
 const half=rational(1,2),two=rational(2);
 const fadeIn:TextAnimation={phase:'in',kind:'fade',duration:half};
 const fadeOut:TextAnimation={phase:'out',kind:'fade',duration:half};
 const printer:TextAnimation={phase:'in',kind:'typewriter',duration:half};
+
+test('native 1644264 entrance enlarges from half size with the same quadOut opacity',()=>{
+ const zoom:TextAnimation={phase:'in',kind:'zoom-in',duration:half};
+ assert.doesNotThrow(()=>validateTextAnimations([zoom],two));
+ for(const [time,opacity,scale]of [[rational(0),0,.5],[rational(1,8),.4375,.71875],[rational(1,4),.75,.875],[half,1,1],[two,1,1]]as const){
+  assert.deepEqual(textAnimationState([zoom],time,two),{opacity,scale});
+ }
+ assert.deepEqual(textAnimationState(undefined,rational(0),two),{opacity:1,scale:1});
+ for(const phase of ['out','loop'])assert.throws(()=>validateTextAnimations([{...zoom,phase}],two),/KIND_UNVERIFIED/);
+ const combo:TextAnimation[]=[zoom,{phase:'loop',kind:'flash',duration:half},fadeOut];
+ assert.deepEqual(textAnimationState(combo,half,two),{opacity:1,scale:1});
+ assert.equal(textAnimationState(combo,rational(5,8),two).scale,1);
+ assert.equal(textAnimationState(combo,rational(7,4),two).opacity,.25);
+});
+
+test('enlarge timing retains the independent native bounds and interior-alpha observations',()=>{
+ const record=JSON.parse(fs.readFileSync(new URL('../evidence/2026-10-19-text-presets-v9/enlarge-native-measurements.json',import.meta.url),'utf8'));
+ assert.equal(record.observedFrames,120);assert.equal(record.rows[0].boundsHalfAlpha,null);
+ for(const row of record.rows){
+  const state=textAnimationState([{phase:'in',kind:'zoom-in',duration:half}],rational(row.frame,30),rational(4));
+  assert(Math.abs(state.opacity-row.observedInteriorMedianAlpha)<.025,JSON.stringify(row));
+  if(row.frame>0&&row.frame<=15)for(let i=0;i<4;i++){
+   const origin=record.origin[i%2],expected=origin+(record.referenceBounds128[i]-origin)*state.scale;
+   assert(Math.abs(row.boundsHalfAlpha[i]-expected)<1.5,JSON.stringify(row));
+  }
+ }
+});
 
 test('native appear/disappear use quadOut at local target time and coexist without source clock',()=>{
   assert.equal(textAnimationOpacity([],rational(0),two),1);

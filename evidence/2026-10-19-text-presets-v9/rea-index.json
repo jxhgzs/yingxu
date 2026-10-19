@@ -1,0 +1,110 @@
+[
+  {
+    "operation": "open_binary",
+    "receipt": "001-open.json",
+    "elapsedSeconds": 5.180588792000001,
+    "evidenceId": null,
+    "parentEvidenceId": null,
+    "receiptSHA256": "b61b041b27bbb9f3069359a303e863d5bbe623c139a3431aa502f17489ac3229",
+    "error": null
+  },
+  {
+    "operation": "analyze_function",
+    "receipt": "002-caption-entry.json",
+    "elapsedSeconds": 17.916683375,
+    "evidenceId": "ev_19b6be4a8af412ce53ec8f4d8d107f436c4927062a813db5aacd4af4d04c5ce9",
+    "parentEvidenceId": null,
+    "receiptSHA256": "1af0de57bc73d78b1d92785e73ef708e080771bc6731ddeaeadb9ec77612f60b",
+    "error": null
+  },
+  {
+    "operation": "analyze_function",
+    "receipt": "003-caption-entry.json",
+    "elapsedSeconds": 0.0971506249999984,
+    "evidenceId": "ev_41d4a1780297e9f46dd3155657fdbb83c227ad7e052caa5487428a080a55b0d1",
+    "parentEvidenceId": null,
+    "receiptSHA256": "bc120f8b72df4952f340511fa0ced52d878f0403afc9cc653aefd562074a11ea",
+    "error": null
+  },
+  {
+    "operation": "analyze_function",
+    "receipt": "004-caption-entry.json",
+    "elapsedSeconds": 0.05915220799999952,
+    "evidenceId": "ev_b5699839b260586e74b959b1e8f7673a2ab05f0812e0b1a67f486f7a15d6379f",
+    "parentEvidenceId": null,
+    "receiptSHA256": "679be8bf7d75fd53a9295a3522b4604d8247f3df6815864ce0a1649f265cb628",
+    "error": null
+  },
+  {
+    "operation": "analyze_javascript_application",
+    "receipt": "005-bloom-resource.json",
+    "elapsedSeconds": 0.09463120799999888,
+    "evidenceId": "ev_39058c1d4df3f35962d7393ff5a49bd435da0db3cb2e96619ba425bfdfaf22ea",
+    "parentEvidenceId": "ev_6fffa0e422de84324e38d3145ba19e1c50dffad4eaf46411a973c8445efb5bda",
+    "receiptSHA256": "6a0c408f5a4c98f9c7b621a549f673fafc8d50ff13846f6043661068e5d02635",
+    "error": null
+  },
+  {
+    "operation": "analyze_javascript_application",
+    "receipt": "006-bloom-resource.json",
+    "elapsedSeconds": 0.016942917000000307,
+    "evidenceId": "ev_2daa4d45e1a4433cca4eb92ca8c740c76806c52dc4900699bc242488215187a5",
+    "parentEvidenceId": "ev_0fd6ee474712e6be080d1f9d14481ec8b9a80b0c38476bd37cd7639237e09077",
+    "receiptSHA256": "bc86f05bfef5c4e2108b8b6a411078c3d050900d8df73d7d9914ad4eb44b6da8",
+    "error": null
+  },
+  {
+    "operation": "export_evidence_bundle",
+    "receipt": "007-export-native.json",
+    "elapsedSeconds": 0.039040249999998194,
+    "evidenceId": null,
+    "parentEvidenceId": null,
+    "receiptSHA256": "d00c8e73a78f6d3bc914f3dfa826ec7057666ae636fb7611348bd5476aea07cf",
+    "error": null
+  },
+  {
+    "operation": "close_binary",
+    "receipt": "008-close-native.json",
+    "elapsedSeconds": 0.8684370830000043,
+    "evidenceId": null,
+    "parentEvidenceId": null,
+    "receiptSHA256": "6925266c3a82b5752bff35d6a23160f6101ed27cb1372418a87734ff784c4252",
+    "error": null
+  },
+  {
+    "operation": "analyze_javascript_application",
+    "receipt": "009-enlarge-resource.json",
+    "elapsedSeconds": 0.07398054100002628,
+    "evidenceId": "ev_41c44d584f0f8b01614a5073b61d5a780bc65b3a1938966af092c7c3202ba26d",
+    "parentEvidenceId": "ev_61573c7ae8ef5ea8e60a3c445c976e8168895be1aef91c90d38fb6cc08ee57af",
+    "receiptSHA256": "40a78fd9cebcf336d66139b067a3b47c3a6a8d565104b12b6c4e407f010c7d11",
+    "error": null
+  },
+  {
+    "operation": "analyze_javascript_application",
+    "receipt": "010-resource.json",
+    "elapsedSeconds": 0.05451104200002738,
+    "evidenceId": "ev_00092137fba52b558a739bf044a6344f79c4fa5202110ac0f00486acedcb65dc",
+    "parentEvidenceId": "ev_5a2b55071dbee7a88d8426620d7a49a953afd6ce40c0aa12271b57258841a086",
+    "receiptSHA256": "54ce9798042941381131c87d88e5e25af75c6db7986eb9abb988d78a7665ac7c",
+    "error": null
+  },
+  {
+    "operation": "analyze_javascript_application",
+    "receipt": "011-resource.json",
+    "elapsedSeconds": 0.011194374999962746,
+    "evidenceId": "ev_579e6cbf46b58d80caa136e6bebbc5453fa111bfa85b8da478e62da32809e5bc",
+    "parentEvidenceId": "ev_82fc455f36bec0349cae1c4c37b10c3596173f6e11588039c307028cd582e6f1",
+    "receiptSHA256": "7ab67bdcda1d7075224d8def4efc08bcaa10300a6cc504cb7fce4c9f3978b1f5",
+    "error": null
+  },
+  {
+    "operation": "export_evidence_bundle",
+    "receipt": "012-export-final.json",
+    "elapsedSeconds": 0.02422683299984783,
+    "evidenceId": null,
+    "parentEvidenceId": null,
+    "receiptSHA256": "d4497ff123bcec9713385d858d22b9d52e220c78b3c422288b9f500e671448eb",
+    "error": null
+  }
+]

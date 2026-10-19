@@ -1,3 +1,4 @@
+import type {Vignette} from './vignette.ts';
 import {check, validateDocument, duration, defaultTransform} from './document.ts';
 import type {Asset, Clip, Document, Track, Transform, TextStyle} from './document.ts';
 import {add, compare, div, sub, ZERO, rational} from './time.ts';
@@ -17,7 +18,7 @@ export type EditingCommand =
   | {type: 'clip.remove'; clipId: string; ripple: boolean}
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
   | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational;pushFollowing?:boolean}
-  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;textAnimations?:TextAnimation[]}}
+  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;textAnimations?:TextAnimation[]}}
   | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
   | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
   | {type: 'track.add'; track: Track}
@@ -108,7 +109,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
         }
       }
     } else if (command.type === 'clip.update') {
-      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade','colorAdjustments','textAnimations'].includes(k)), 'INVALID_CLIP_UPDATE');
+      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade','colorAdjustments','vignette','textAnimations'].includes(k)), 'INVALID_CLIP_UPDATE');
       Object.assign(c, structuredClone(command.changes));
     } else if(command.type==='keyframe.set'){
       check(Object.hasOwn(animationBounds,command.property),'INVALID_ANIMATION_PROPERTY');

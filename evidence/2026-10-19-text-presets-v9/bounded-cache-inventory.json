@@ -1,0 +1,98 @@
+{
+  "scope": "Only Cache/effect/*/*/config.json declaring InfoSticker and with content.json or non-marker Lua; captured non-atomically while parent may download more resources. Does not cover online inventory.",
+  "resources": [
+    {
+      "id": "1644275",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917",
+      "files": [
+        "content.json",
+        "anim.prefab",
+        "PrinterOne.lua",
+        "config.json"
+      ],
+      "lua": [
+        "PrinterOne.lua"
+      ],
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    {
+      "id": "1644304",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479",
+      "files": [
+        "content.json",
+        "Appear.lua",
+        "anim.prefab",
+        "config.json"
+      ],
+      "lua": [
+        "Appear.lua"
+      ],
+      "configSHA256": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718"
+    },
+    {
+      "id": "1644514",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644514/e0cb5a808b474c4c461b652bc94f5be1",
+      "files": [
+        "content.json",
+        "anim.prefab",
+        "config.json",
+        "Spark.lua"
+      ],
+      "lua": [
+        "Spark.lua"
+      ],
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    {
+      "id": "1644600",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1",
+      "files": [
+        "content.json",
+        "anim.prefab",
+        "config.json",
+        "Disappear.lua"
+      ],
+      "lua": [
+        "Disappear.lua"
+      ],
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    {
+      "id": "9762325",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/9762325/5e73b9655ea23c6ea73a491b59567c8e",
+      "files": [
+        "TextBloom.prefab",
+        "config.json",
+        "xshader",
+        "TextBloom.lua",
+        "Library",
+        "rt",
+        "extra.json",
+        "material",
+        "effect_platform_children.tag"
+      ],
+      "lua": [
+        "TextBloom.lua"
+      ],
+      "configSHA256": "81f642c01296f47db9be12b87c29de8da4dc3a09758fdcde2c12f0a715d145ea"
+    },
+    {
+      "id": "9762443",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/9762443/471b1cc0510cf0c5998090b79c738747",
+      "files": [
+        "TextBloom.prefab",
+        "config.json",
+        "xshader",
+        "TextBloom.lua",
+        "rt",
+        "extra.json",
+        "material",
+        "effect_platform_children.tag"
+      ],
+      "lua": [
+        "TextBloom.lua"
+      ],
+      "configSHA256": "81f642c01296f47db9be12b87c29de8da4dc3a09758fdcde2c12f0a715d145ea"
+    }
+  ]
+}

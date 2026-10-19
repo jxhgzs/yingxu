@@ -1,14 +1,14 @@
 /**
  * Target-clock interpretation of the individually verified Jianying 5.9 text
  * presets: 1644304 (appear), 1644600 (disappear), 1644275 (typewriter I),
- * 1644514 (loop flash).
+ * 1644514 (loop flash), 1644264 (enlarge entrance), 1644520 (glyph sway).
  * Resource source stays outside the product. Evidence and remaining glyph and
  * encoded-pixel differences: docs/qa/2026-10-19-rea-text-animation.md.
  */
 import {add,compare,div,mul,rational,sub,toNumber,ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 
-export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'flash';duration:Rational};
+export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'flash'|'zoom-in'|'sway';duration:Rational};
 
 function time(value:unknown):asserts value is Rational{
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -30,7 +30,7 @@ export function validateTextAnimations(value:unknown,clipDuration:Rational):asse
     const v=item as Record<string,unknown>;
     if(Object.keys(v).some(key=>!['phase','kind','duration'].includes(key)))throw Error('UNSUPPORTED_TEXT_ANIMATION_FIELD');
     if(v.phase!=='in'&&v.phase!=='out'&&v.phase!=='loop')throw Error('TEXT_ANIMATION_PHASE_UNVERIFIED');
-    if(v.phase==='loop'?v.kind!=='flash':v.kind!=='fade'&&(v.kind!=='typewriter'||v.phase!=='in'))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
+    if(v.phase==='loop'?!['flash','sway'].includes(String(v.kind)):v.kind!=='fade'&&(!['typewriter','zoom-in'].includes(String(v.kind))||v.phase!=='in'))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
     if(phases.has(v.phase))throw Error('DUPLICATE_TEXT_ANIMATION_PHASE');
     phases.add(v.phase);time(v.duration);
     if(compare(v.duration,ZERO)<=0||compare(v.duration,clipDuration)>0)throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -55,12 +55,13 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
     // alpha. The exact entrance endpoint still belongs to the entrance stage.
     if(entrance&&compare(targetElapsed,entrance.duration)<=0){
       const p=progress(targetElapsed,entrance.duration);
-      return entrance.kind==='fade'?p*(2-p):1;
+      return entrance.kind==='fade'||entrance.kind==='zoom-in'?p*(2-p):1;
     }
     if(exit&&compare(targetElapsed,sub(targetDuration,exit.duration))>=0){
       const p=progress(sub(targetElapsed,sub(targetDuration,exit.duration)),exit.duration);
       return (1-p)*(1-p);
     }
+    if(loop.kind==='sway')return 1;
     const elapsed=sub(targetElapsed,entrance?.duration??ZERO);
     const cycles=div(elapsed,loop.duration);
     const denominator=BigInt(cycles.denominator);
@@ -70,12 +71,32 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
   }
   let opacity=1;
   for(const animation of animations??[]){
-    if(animation.kind!=='fade')continue;
+    if(animation.kind!=='fade'&&animation.kind!=='zoom-in')continue;
     const elapsed=animation.phase==='in'?targetElapsed:sub(targetElapsed,sub(targetDuration,animation.duration));
     const p=progress(elapsed,animation.duration);
     opacity*=animation.phase==='in'?p*(2-p):(1-p)*(1-p);
   }
   return opacity;
+}
+
+/** Preset geometry and alpha share the target clock; source property curves stay separate. */
+export function textAnimationState(animations:readonly TextAnimation[]|undefined,targetElapsed:Rational,targetDuration:Rational):{opacity:number;scale:number}{
+  const entrance=animations?.find(animation=>animation.phase==='in'&&animation.kind==='zoom-in');
+  const p=entrance?progress(targetElapsed,entrance.duration):1;
+  return {opacity:textAnimationOpacity(animations,targetElapsed,targetDuration),scale:entrance ? 0.5+0.5*p*(2-p) : 1};
+}
+
+/** Actual 1644520 rotates alternate character entries only during the loop stage. */
+export function textAnimationGlyphState(animations:readonly TextAnimation[]|undefined,targetElapsed:Rational,targetDuration:Rational):{sway:boolean}{
+ const loop=animations?.find(a=>a.phase==='loop'&&a.kind==='sway');if(!loop)return {sway:false};
+ const entrance=animations?.find(a=>a.phase==='in'),exit=animations?.find(a=>a.phase==='out');
+ if(entrance&&compare(targetElapsed,entrance.duration)<=0||exit&&compare(targetElapsed,sub(targetDuration,exit.duration))>=0)return {sway:false};
+ const cycles=div(sub(targetElapsed,entrance?.duration??ZERO),loop.duration),d=BigInt(cycles.denominator),n=((BigInt(cycles.numerator)%d)+d)%d;
+ // Native .3/.7, .3/1 and .5/1 combinations retain the preceding state
+ // on exact half/full loop boundaries after the closed entrance endpoint.
+ // Select the discrete left limit; do not perturb any animation/property clock.
+ if(entrance){if(n===0n)return {sway:true};if(n*2n===d)return {sway:false};}
+ return {sway:n*2n>=d};
 }
 
 /**

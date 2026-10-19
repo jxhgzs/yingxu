@@ -1,0 +1,543 @@
+{
+  "actualHumanClick": true,
+  "startedAt": "2026-10-19T13:12:40.590Z",
+  "completedAt": "2026-10-19T13:12:50.200Z",
+  "resultSha256": "b084ef49618515f286e6bf8322f2c45bac1eb0be5338b30247ca98725dca693a",
+  "sourceHashes": {
+    "apps/editor/src/preview/webgl.ts": "ecafd0858af3cb99ea46ad26e992102486c632d84787005f61df7dafeb8318f5",
+    "apps/editor/src/preview/plan.ts": "4953214488160fe77c0163c1b6f294ce4477d623dd876807816f77693932edd0",
+    "packages/core/src/transition-edge.ts": "8ff3c1acc4533597bebac8acbb021f76d870e1f5f59d247859b9b23e97eddec0",
+    "artifacts/qa/plane-edges-v9/probe.ts": "dbba32579827db38bb13f0467cd1ede3d2ffb0924bbd5492dc0af69b287ff064"
+  },
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "colorBeforeDispose": {
+    "contract": "browser-srgb-v1",
+    "drawingBufferColorSpace": "srgb",
+    "unpackColorSpace": "srgb",
+    "unpackConversion": "browser-default",
+    "unpackConversionEnum": 37444,
+    "framebufferFormat": "rgba8",
+    "mixDomain": "encoded-component-values",
+    "premultipliedAlpha": false
+  },
+  "summary": {
+    "width": 1280,
+    "height": 720,
+    "framesPerKind": 30,
+    "fullRGBPixelsPerFrame": 921600,
+    "allPlaneUniformsTrue": true,
+    "unknownUniformsFalse": true,
+    "allSourceOpaque": true,
+    "maxMathRGB": 0.497406005859375,
+    "scope": "Actual product WebGL2 side FBO/final readback; all RGB pixels of frames45..74. Independent CPU equations versus real sideFBOs; actual native browser-decoded MOV frames and native RGB-endpoint models separately. No FFmpeg, native UI, encoder parity, audio or performance claim."
+  },
+  "cases": [
+    {
+      "id": "wipe",
+      "frames": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "fullRGBComponentObservations": 82944000,
+      "allPlanesTrue": true,
+      "allSpatialUniformsCorrect": true,
+      "allOpaque": true,
+      "allPresentedFramesCorrect": true,
+      "nativeDecodedTimeKnown": 30,
+      "nativeMaxDecodedTimeDriftSeconds": 3.33333333379926e-07,
+      "metrics": {
+        "math": {
+          "meanMAE": 9.012163443099937e-05,
+          "maxRGB": 0.497406005859375,
+          "over1RGB": 0,
+          "over3RGB": 0,
+          "worstFrame": 46,
+          "worst": {
+            "x": 1237,
+            "y": 360,
+            "channel": 0,
+            "actual": 231,
+            "expected": 231.49740600585938,
+            "anchor": {
+              "x": 1236,
+              "y": 360
+            }
+          }
+        },
+        "nativeEndpointModel": {
+          "meanMAE": 1.566328734899135,
+          "maxRGB": 123,
+          "over1RGB": 12360980,
+          "over3RGB": 6049194,
+          "worstFrame": 45,
+          "worst": {
+            "x": 2,
+            "y": 362,
+            "channel": 2,
+            "actual": 224,
+            "expected": 101,
+            "anchor": {
+              "x": 2,
+              "y": 362
+            }
+          }
+        },
+        "actualNativeFrame": {
+          "meanMAE": 1.5485409794560185,
+          "maxRGB": 110,
+          "over1RGB": 11470745,
+          "over3RGB": 5778864,
+          "worstFrame": 45,
+          "worst": {
+            "x": 2,
+            "y": 362,
+            "channel": 2,
+            "actual": 224,
+            "expected": 114,
+            "anchor": {
+              "x": 2,
+              "y": 362
+            }
+          }
+        },
+        "nativeFrameVsEndpointModel": {
+          "meanMAE": 0.2089706877190334,
+          "maxRGB": 73,
+          "over1RGB": 3653318,
+          "over3RGB": 895922,
+          "worstFrame": 63,
+          "worst": {
+            "x": 511,
+            "y": 5,
+            "channel": 0,
+            "actual": 156,
+            "expected": 229,
+            "anchor": {
+              "x": 510,
+              "y": 4
+            }
+          }
+        },
+        "nativeFrameVsOldRGBModel": {
+          "meanMAE": 0.24460775945216048,
+          "maxRGB": 212,
+          "over1RGB": 3653455,
+          "over3RGB": 896269,
+          "worstFrame": 74,
+          "worst": {
+            "x": 43,
+            "y": 20,
+            "channel": 0,
+            "actual": 241,
+            "expected": 29,
+            "anchor": {
+              "x": 42,
+              "y": 20
+            }
+          }
+        }
+      },
+      "nativeEndpoints": {
+        "a": {
+          "currentTime": 0.0001,
+          "decodedTime": 0,
+          "colorSpace": "srgb",
+          "readyState": 4
+        },
+        "b": {
+          "currentTime": 3.966766,
+          "decodedTime": 3.966667,
+          "colorSpace": "srgb",
+          "readyState": 4
+        }
+      },
+      "unknown": {
+        "pixelFormats": [
+          null
+        ],
+        "edgePolicy": null,
+        "actualPlaneUniform": false,
+        "actualSpatialUniform": 1,
+        "math": {
+          "meanRGB": 0,
+          "maxRGB": 0,
+          "over1RGB": 0,
+          "over3RGB": 0
+        }
+      },
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "native": {
+        "id": "a_d7b1e1af2fb5021bd2e17567",
+        "path": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+        "name": "yingxu-native-wipe-canvas720-v8-2004.mov",
+        "kind": "video",
+        "duration": {
+          "numerator": "4",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+        "pixelFormat": "yuv420p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "primaries": "bt709",
+          "transfer": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      }
+    },
+    {
+      "id": "circle",
+      "frames": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "fullRGBComponentObservations": 82944000,
+      "allPlanesTrue": true,
+      "allSpatialUniformsCorrect": true,
+      "allOpaque": true,
+      "allPresentedFramesCorrect": true,
+      "nativeDecodedTimeKnown": 30,
+      "nativeMaxDecodedTimeDriftSeconds": 3.33333333379926e-07,
+      "metrics": {
+        "math": {
+          "meanMAE": 0.0001393651069820295,
+          "maxRGB": 0.497406005859375,
+          "over1RGB": 0,
+          "over3RGB": 0,
+          "worstFrame": 68,
+          "worst": {
+            "x": 1203,
+            "y": 360,
+            "channel": 0,
+            "actual": 235,
+            "expected": 234.50259399414062,
+            "anchor": {
+              "x": 1202,
+              "y": 360
+            }
+          }
+        },
+        "nativeEndpointModel": {
+          "meanMAE": 1.5636405304896985,
+          "maxRGB": 123,
+          "over1RGB": 11351917,
+          "over3RGB": 5913615,
+          "worstFrame": 45,
+          "worst": {
+            "x": 2,
+            "y": 362,
+            "channel": 2,
+            "actual": 224,
+            "expected": 101,
+            "anchor": {
+              "x": 2,
+              "y": 362
+            }
+          }
+        },
+        "actualNativeFrame": {
+          "meanMAE": 1.593993537808642,
+          "maxRGB": 150,
+          "over1RGB": 10308701,
+          "over3RGB": 5835400,
+          "worstFrame": 65,
+          "worst": {
+            "x": 170,
+            "y": 222,
+            "channel": 0,
+            "actual": 30,
+            "expected": 180,
+            "anchor": {
+              "x": 170,
+              "y": 222
+            }
+          }
+        },
+        "nativeFrameVsEndpointModel": {
+          "meanMAE": 0.27769424158766187,
+          "maxRGB": 150,
+          "over1RGB": 4226278,
+          "over3RGB": 1053390,
+          "worstFrame": 65,
+          "worst": {
+            "x": 170,
+            "y": 222,
+            "channel": 0,
+            "actual": 180,
+            "expected": 30,
+            "anchor": {
+              "x": 170,
+              "y": 222
+            }
+          }
+        },
+        "nativeFrameVsOldRGBModel": {
+          "meanMAE": 0.3124812644675926,
+          "maxRGB": 226,
+          "over1RGB": 4227280,
+          "over3RGB": 1055005,
+          "worstFrame": 55,
+          "worst": {
+            "x": 486,
+            "y": 169,
+            "channel": 0,
+            "actual": 255,
+            "expected": 29,
+            "anchor": {
+              "x": 486,
+              "y": 168
+            }
+          }
+        }
+      },
+      "nativeEndpoints": {
+        "a": {
+          "currentTime": 0.0001,
+          "decodedTime": 0,
+          "colorSpace": "srgb",
+          "readyState": 4
+        },
+        "b": {
+          "currentTime": 3.966766,
+          "decodedTime": 3.966667,
+          "colorSpace": "srgb",
+          "readyState": 4
+        }
+      },
+      "unknown": {
+        "pixelFormats": [
+          null
+        ],
+        "edgePolicy": null,
+        "actualPlaneUniform": false,
+        "actualSpatialUniform": 2,
+        "math": {
+          "meanRGB": 0,
+          "maxRGB": 0,
+          "over1RGB": 0,
+          "over3RGB": 0
+        }
+      },
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "native": {
+        "id": "a_e0640c1d1cc11cbaf0acc119",
+        "path": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+        "name": "yingxu-native-circle-canvas720-v8-2002.mov",
+        "kind": "video",
+        "duration": {
+          "numerator": "4",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+        "pixelFormat": "yuv420p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "primaries": "bt709",
+          "transfer": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      }
+    }
+  ],
+  "afterDispose": {
+    "state": "disposed",
+    "framebufferCount": 0,
+    "framebufferBytes": 0,
+    "cachedMedia": 0,
+    "decoders": [],
+    "audioState": "uninitialized"
+  },
+  "rawCaptureIndex": {
+    "artifacts/qa/plane-edges-v9/capture-circle-60-a.rgba": {
+      "bytes": 3686400,
+      "sha256": "968078667d8770bfae706cfdca988839033fc6f8727c9bba3ada7a1064914364"
+    },
+    "artifacts/qa/plane-edges-v9/capture-circle-60-b.rgba": {
+      "bytes": 3686400,
+      "sha256": "01e1827ab4af4c8a8478693bf4b28897bc5d43d316093b13d5a10bc79491bc32"
+    },
+    "artifacts/qa/plane-edges-v9/capture-circle-60-final.rgba": {
+      "bytes": 3686400,
+      "sha256": "ebd16aaa50c1f987f5b9bc6b7ca08e7c09e641e6d75b91a3d3eedc7365f9b3dd"
+    },
+    "artifacts/qa/plane-edges-v9/capture-circle-60-native.rgba": {
+      "bytes": 3686400,
+      "sha256": "0e816f1e796d94b70ed2c07c13367cdeba675f1f207b3e5eccbfd7b3433b8b3b"
+    },
+    "artifacts/qa/plane-edges-v9/capture-circle-native-end-a.rgba": {
+      "bytes": 3686400,
+      "sha256": "a16624356bad7613f910c8751e065ddf16540e88cf32df69c37a50df4be47030"
+    },
+    "artifacts/qa/plane-edges-v9/capture-circle-native-end-b.rgba": {
+      "bytes": 3686400,
+      "sha256": "5834594ae2e7a2b6b0f3f52ce6789ba46424d44fdb4096e01eb42d7a71f6f4ca"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-61-a.rgba": {
+      "bytes": 3686400,
+      "sha256": "968078667d8770bfae706cfdca988839033fc6f8727c9bba3ada7a1064914364"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-61-b.rgba": {
+      "bytes": 3686400,
+      "sha256": "01e1827ab4af4c8a8478693bf4b28897bc5d43d316093b13d5a10bc79491bc32"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-61-final.rgba": {
+      "bytes": 3686400,
+      "sha256": "3e122ca8774c5ba0380762b51032869c336c3c37fe8f208cbded05eb33043360"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-61-native.rgba": {
+      "bytes": 3686400,
+      "sha256": "388bda813e42e54a64f41187d4dc889aedb801bfe39a1d31dca2709ff9abf0bd"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-native-end-a.rgba": {
+      "bytes": 3686400,
+      "sha256": "a16624356bad7613f910c8751e065ddf16540e88cf32df69c37a50df4be47030"
+    },
+    "artifacts/qa/plane-edges-v9/capture-wipe-native-end-b.rgba": {
+      "bytes": 3686400,
+      "sha256": "5834594ae2e7a2b6b0f3f52ce6789ba46424d44fdb4096e01eb42d7a71f6f4ca"
+    }
+  },
+  "scopeAndUnknowns": [
+    "60 paused-seek samples; all921600RGB pixels per frame. This is not a frame-rate/performance measurement.",
+    "GPU matches independent equations applied to its actual isolated side FBOs within .497406LSB. This does not establish native parity.",
+    "Actual GPU versus browser-decoded native MOV retains maximum110(wipe)/150(circle). All discrepancies retained, including thin lines and mask edges.",
+    "Native browser-decoded frames versus new RGB-endpoint model retain maxima73/150, old model212/226. Root cause of residuals not established.",
+    "Browser-native2D/srgb endpoint model and earlier FFmpeg YUV/RGB reconstruction are different readback chains and frame sets; maxima cannot be treated as equivalent baselines.",
+    "Source verified pix_fmt yuv444p/SHA, native MOV yuv420p; no unprobed alpha assumptions.",
+    "Unknown pixelFormat case uses same media with field removed, actual uniform false, old math max0.",
+    "No product source/tests changed for the post-run report; QA-only server52430 received TERM after parent finished."
+  ],
+  "qaServerShutdown": {
+    "pid": 52430,
+    "commandVerifiedBeforeStop": "node artifacts/qa/plane-edges-v9/server.mjs",
+    "signal": "TERM",
+    "afterStopPsExitCode": 1,
+    "afterStopPsOutput": "",
+    "verifiedAt": "2026-10-19T13:16:15.684466+00:00",
+    "otherServicesTouched": false
+  }
+}

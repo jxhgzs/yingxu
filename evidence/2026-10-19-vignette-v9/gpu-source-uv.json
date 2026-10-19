@@ -1,0 +1,3350 @@
+{
+  "createdAt": "2026-10-19T13:12:25.218Z",
+  "rows": [
+    {
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "intensity": -1,
+      "max": 0.49610773960171173,
+      "points": [
+        {
+          "x": 64,
+          "y": 36,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            254.99913222116317,
+            254.99673399601417,
+            254.99700221856372
+          ],
+          "max": 0.0032660039858285472
+        },
+        {
+          "x": 64,
+          "y": 360,
+          "rgba": [
+            237,
+            189,
+            194,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            237.37383203941707,
+            188.66151331198793,
+            194.10960159071357
+          ],
+          "max": 0.3738320394170671
+        },
+        {
+          "x": 64,
+          "y": 684,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            254.99998401939288,
+            254.99993985480597,
+            254.99994479426636
+          ],
+          "max": 6.0145194026972604e-05
+        },
+        {
+          "x": 384,
+          "y": 36,
+          "rgba": [
+            244,
+            212,
+            216,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            243.6014025163522,
+            212.09982401608917,
+            215.6230268746712
+          ],
+          "max": 0.3985974836477908
+        },
+        {
+          "x": 384,
+          "y": 360,
+          "rgba": [
+            202,
+            56,
+            72,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            202.09384617950096,
+            55.88047562103103,
+            72.23328680191253
+          ],
+          "max": 0.23328680191252715
+        },
+        {
+          "x": 384,
+          "y": 684,
+          "rgba": [
+            244,
+            213,
+            216,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            243.77619135370642,
+            212.75766564031326,
+            216.22684285825855
+          ],
+          "max": 0.2423343596867369
+        },
+        {
+          "x": 640,
+          "y": 36,
+          "rgba": [
+            237,
+            188,
+            194,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            237.32616857551324,
+            188.48212536602253,
+            193.94494598813662
+          ],
+          "max": 0.48212536602252953
+        },
+        {
+          "x": 640,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 684,
+          "rgba": [
+            238,
+            189,
+            195,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            237.54354752865123,
+            189.30026069874188,
+            194.69589146261333
+          ],
+          "max": 0.45645247134876854
+        },
+        {
+          "x": 1216,
+          "y": 36,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            254.9997709057575,
+            254.99913777257825,
+            254.99920858352593
+          ],
+          "max": 0.0008622274217486847
+        },
+        {
+          "x": 1216,
+          "y": 360,
+          "rgba": [
+            237,
+            189,
+            195,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            237.4961077396017,
+            189.12171458359188,
+            194.53200855498773
+          ],
+          "max": 0.49610773960171173
+        },
+        {
+          "x": 1216,
+          "y": 684,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            255,
+            255,
+            255
+          ],
+          "max": 0
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 4,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 4,
+          "textureUploads": 4,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1.2000000476837158,
+          "meanCpuMs": 2.0750000029802322,
+          "lastDecodeWaitMs": 0.10000002384185791,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.450333
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "intensity": -0.5,
+      "max": 0.46791171731308623,
+      "points": [
+        {
+          "x": 64,
+          "y": 36,
+          "rgba": [
+            244,
+            214,
+            217,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            243.99288559849634,
+            213.5732239797954,
+            216.9754229766238
+          ],
+          "max": 0.42677602020461336
+        },
+        {
+          "x": 64,
+          "y": 360,
+          "rgba": [
+            201,
+            52,
+            69,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            201.1186503528757,
+            52.21019314627763,
+            68.8644284917524
+          ],
+          "max": 0.21019314627763208
+        },
+        {
+          "x": 64,
+          "y": 684,
+          "rgba": [
+            244,
+            214,
+            218,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            244.21620845590797,
+            214.41373000678092,
+            217.74690193859118
+          ],
+          "max": 0.41373000678092353
+        },
+        {
+          "x": 384,
+          "y": 36,
+          "rgba": [
+            207,
+            75,
+            90,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            207.1977674618832,
+            75.08977935654228,
+            89.86501486832384
+          ],
+          "max": 0.1977674618831884
+        },
+        {
+          "x": 384,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 384,
+          "y": 684,
+          "rgba": [
+            207,
+            76,
+            91,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            207.44736228540276,
+            76.02916351051576,
+            90.72725153139127
+          ],
+          "max": 0.447362285402761
+        },
+        {
+          "x": 640,
+          "y": 36,
+          "rgba": [
+            201,
+            52,
+            69,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            201.09250361664857,
+            52.11178633902279,
+            68.77410340296777
+          ],
+          "max": 0.2258965970322322
+        },
+        {
+          "x": 640,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 684,
+          "rgba": [
+            201,
+            53,
+            69,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            201.21423521414897,
+            52.56993980597884,
+            69.19463073978734
+          ],
+          "max": 0.43006019402115925
+        },
+        {
+          "x": 1216,
+          "y": 36,
+          "rgba": [
+            244,
+            214,
+            217,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            244.11873875922095,
+            214.04688951197704,
+            217.41018844094512
+          ],
+          "max": 0.4101884409451202
+        },
+        {
+          "x": 1216,
+          "y": 360,
+          "rgba": [
+            201,
+            52,
+            69,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            201.18712630170154,
+            52.467911717313086,
+            69.10098176951442
+          ],
+          "max": 0.46791171731308623
+        },
+        {
+          "x": 1216,
+          "y": 684,
+          "rgba": [
+            244,
+            215,
+            218,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            244.34098942730733,
+            214.88336020822945,
+            218.17796347615263
+          ],
+          "max": 0.34098942730733484
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 6,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 6,
+          "textureUploads": 6,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1.399999976158142,
+          "meanCpuMs": 2,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.43425
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "intensity": 0,
+      "max": 0,
+      "points": [
+        {
+          "x": 64,
+          "y": 36,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 64,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 64,
+          "y": 684,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 384,
+          "y": 36,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 384,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 384,
+          "y": 684,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 36,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 684,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1216,
+          "y": 36,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1216,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1216,
+          "y": 684,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 8,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 8,
+          "textureUploads": 8,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1,
+          "meanCpuMs": 1.8249999955296516,
+          "lastDecodeWaitMs": 0.10000002384185791,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.523874
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "intensity": 0.5,
+      "max": 0.49247968609991233,
+      "points": [
+        {
+          "x": 64,
+          "y": 36,
+          "rgba": [
+            72,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            71.6644245223527,
+            17.199461885364652,
+            23.29093796976463
+          ],
+          "max": 0.33557547764729634
+        },
+        {
+          "x": 64,
+          "y": 360,
+          "rgba": [
+            148,
+            36,
+            48,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            147.94800130791702,
+            35.50752031390009,
+            48.083100425073035
+          ],
+          "max": 0.49247968609991233
+        },
+        {
+          "x": 64,
+          "y": 684,
+          "rgba": [
+            71,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            71.39902265881736,
+            17.135765438116167,
+            23.20468236411564
+          ],
+          "max": 0.39902265881735843
+        },
+        {
+          "x": 384,
+          "y": 36,
+          "rgba": [
+            129,
+            31,
+            42,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            128.76250538400058,
+            30.903001292160134,
+            41.84781424980018
+          ],
+          "max": 0.23749461599942379
+        },
+        {
+          "x": 384,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 384,
+          "y": 684,
+          "rgba": [
+            128,
+            31,
+            42,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            128.1776676684547,
+            30.76264024042912,
+            41.65774199224777
+          ],
+          "max": 0.34225800775222837
+        },
+        {
+          "x": 640,
+          "y": 36,
+          "rgba": [
+            148,
+            36,
+            48,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            148.08389225460303,
+            35.54013414110473,
+            48.127264982745984
+          ],
+          "max": 0.4598658588952702
+        },
+        {
+          "x": 640,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 684,
+          "rgba": [
+            147,
+            35,
+            48,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            147.4629008631843,
+            35.39109620716423,
+            47.925442780534894
+          ],
+          "max": 0.4629008631843021
+        },
+        {
+          "x": 1216,
+          "y": 36,
+          "rgba": [
+            72,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            71.51477720320926,
+            17.163546528770226,
+            23.24230259104301
+          ],
+          "max": 0.48522279679073677
+        },
+        {
+          "x": 1216,
+          "y": 360,
+          "rgba": [
+            148,
+            35,
+            48,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            147.59869297737978,
+            35.42368631457115,
+            47.969575217648426
+          ],
+          "max": 0.4236863145711496
+        },
+        {
+          "x": 1216,
+          "y": 684,
+          "rgba": [
+            71,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            71.25101590966531,
+            17.100243818319676,
+            23.156580170641224
+          ],
+          "max": 0.2510159096653126
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 10,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 10,
+          "textureUploads": 10,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 0.8999999761581421,
+          "meanCpuMs": 1.719999998807907,
+          "lastDecodeWaitMs": 0.09999996423721313,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.607958
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "intensity": 1,
+      "max": 0.46335251929689925,
+      "points": [
+        {
+          "x": 64,
+          "y": 36,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 64,
+          "y": 360,
+          "rgba": [
+            40,
+            10,
+            13,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            39.73603116959625,
+            9.5366474807031,
+            12.914210130118782
+          ],
+          "max": 0.46335251929689925
+        },
+        {
+          "x": 64,
+          "y": 684,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.050390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 384,
+          "y": 36,
+          "rgba": [
+            22,
+            5,
+            7,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            22.131059133044115,
+            5.311454191930588,
+            7.192594218239337
+          ],
+          "max": 0.3114541919305882
+        },
+        {
+          "x": 384,
+          "y": 360,
+          "rgba": [
+            170,
+            41,
+            55,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            170.35334623883912,
+            40.884803097321395,
+            55.36483752762272
+          ],
+          "max": 0.3648375276227185
+        },
+        {
+          "x": 384,
+          "y": 684,
+          "rgba": [
+            22,
+            5,
+            7,
+            255
+          ],
+          "uv": [
+            0.300390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            21.662096691496302,
+            5.198903205959112,
+            7.040181424736297
+          ],
+          "max": 0.337903308503698
+        },
+        {
+          "x": 640,
+          "y": 36,
+          "rgba": [
+            40,
+            10,
+            13,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            39.8765995720568,
+            9.570383897293633,
+            12.95989486091846
+          ],
+          "max": 0.4296161027063672
+        },
+        {
+          "x": 640,
+          "y": 360,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 640,
+          "y": 684,
+          "rgba": [
+            39,
+            9,
+            13,
+            255
+          ],
+          "uv": [
+            0.500390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            39.23615254505492,
+            9.41667661081318,
+            12.75174957714285
+          ],
+          "max": 0.4166766108131803
+        },
+        {
+          "x": 1216,
+          "y": 36,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.050694444444444445
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 1216,
+          "y": 360,
+          "rgba": [
+            39,
+            9,
+            13,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.5006944444444444
+          ],
+          "expected": [
+            39.375779844287486,
+            9.450187162628996,
+            12.797128449393432
+          ],
+          "max": 0.45018716262899616
+        },
+        {
+          "x": 1216,
+          "y": 684,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.950390625,
+            0.9506944444444444
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 12,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 12,
+          "textureUploads": 12,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1,
+          "meanCpuMs": 1.6833333323399227,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.707499
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 100,
+        "y": -50,
+        "scale": 0.5
+      },
+      "intensity": -1,
+      "max": 0.4917406282817751,
+      "points": [
+        {
+          "x": 452,
+          "y": 148,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            254.9975681094638,
+            254.99084724834552,
+            254.99159892360217
+          ],
+          "max": 0.009152751654482927
+        },
+        {
+          "x": 452,
+          "y": 310,
+          "rgba": [
+            237,
+            188,
+            194,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            237.3128712716507,
+            188.4320791496672,
+            193.89900984752063
+          ],
+          "max": 0.43207914966720296
+        },
+        {
+          "x": 452,
+          "y": 472,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            255,
+            255,
+            255
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 148,
+          "rgba": [
+            243,
+            212,
+            215,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            243.49174062828178,
+            211.68709654644238,
+            215.2441948977007
+          ],
+          "max": 0.4917406282817751
+        },
+        {
+          "x": 612,
+          "y": 310,
+          "rgba": [
+            202,
+            56,
+            72,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            202.0672183828627,
+            55.78025827731965,
+            72.14129986807117
+          ],
+          "max": 0.21974172268034664
+        },
+        {
+          "x": 612,
+          "y": 472,
+          "rgba": [
+            244,
+            213,
+            216,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            243.84165252548982,
+            213.00403768684347,
+            216.45298145169207
+          ],
+          "max": 0.45298145169206805
+        },
+        {
+          "x": 740,
+          "y": 148,
+          "rgba": [
+            237,
+            188,
+            194,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            237.21732179287935,
+            188.07246565683675,
+            193.5689298299468
+          ],
+          "max": 0.4310701700532036
+        },
+        {
+          "x": 740,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 472,
+          "rgba": [
+            238,
+            190,
+            195,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            237.65207510164007,
+            189.70871901889987,
+            195.07080489657474
+          ],
+          "max": 0.3479248983599348
+        },
+        {
+          "x": 1028,
+          "y": 148,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            254.9995728912176,
+            254.9983925178553,
+            254.99852453329714
+          ],
+          "max": 0.001607482144692085
+        },
+        {
+          "x": 1028,
+          "y": 310,
+          "rgba": [
+            238,
+            189,
+            195,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            237.55742032018233,
+            189.35247284141357,
+            194.74381565153905
+          ],
+          "max": 0.4425796798176691
+        },
+        {
+          "x": 1028,
+          "y": 472,
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            255,
+            255,
+            255
+          ],
+          "max": 0
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 16,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 16,
+          "textureUploads": 16,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1,
+          "meanCpuMs": 1.6312500014901161,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.565333
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 100,
+        "y": -50,
+        "scale": 0.5
+      },
+      "intensity": -0.5,
+      "max": 0.4908164260793484,
+      "points": [
+        {
+          "x": 452,
+          "y": 148,
+          "rgba": [
+            244,
+            213,
+            216,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            243.81743982533422,
+            212.91290988807614,
+            216.36933757842738
+          ],
+          "max": 0.3693375784273769
+        },
+        {
+          "x": 452,
+          "y": 310,
+          "rgba": [
+            201,
+            52,
+            69,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            201.0852637108767,
+            52.08453796639047,
+            68.7490928193922
+          ],
+          "max": 0.25090718060779693
+        },
+        {
+          "x": 452,
+          "y": 472,
+          "rgba": [
+            244,
+            215,
+            218,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            244.26514449748743,
+            214.5979074723618,
+            217.91595371859293
+          ],
+          "max": 0.4020925276381888
+        },
+        {
+          "x": 612,
+          "y": 148,
+          "rgba": [
+            207,
+            75,
+            89,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            207.0435028819596,
+            74.50918357392065,
+            89.33210086495133
+          ],
+          "max": 0.4908164260793484
+        },
+        {
+          "x": 612,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 472,
+          "rgba": [
+            208,
+            76,
+            91,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            207.54202034327838,
+            76.38542201924763,
+            91.0542520949616
+          ],
+          "max": 0.4579796567216192
+        },
+        {
+          "x": 740,
+          "y": 148,
+          "rgba": [
+            201,
+            52,
+            69,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            201.03394100427104,
+            51.89137796152928,
+            68.57179619657276
+          ],
+          "max": 0.4282038034272375
+        },
+        {
+          "x": 740,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 472,
+          "rgba": [
+            201,
+            53,
+            69,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            201.2773913146455,
+            52.807636402393065,
+            69.41280635968445
+          ],
+          "max": 0.4128063596844527
+        },
+        {
+          "x": 1028,
+          "y": 148,
+          "rgba": [
+            244,
+            214,
+            217,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            244.0702079641162,
+            213.86423724676456,
+            217.24253660331047
+          ],
+          "max": 0.24253660331046945
+        },
+        {
+          "x": 1028,
+          "y": 310,
+          "rgba": [
+            201,
+            53,
+            69,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            201.22221991220863,
+            52.59999130594883,
+            69.22221424217526
+          ],
+          "max": 0.40000869405116646
+        },
+        {
+          "x": 1028,
+          "y": 472,
+          "rgba": [
+            245,
+            216,
+            219,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            244.51362388401054,
+            215.53309352709422,
+            218.7743370538546
+          ],
+          "max": 0.48637611598945796
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 18,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 18,
+          "textureUploads": 18,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 0.9000000357627869,
+          "meanCpuMs": 1.600000003973643,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.413833
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 100,
+        "y": -50,
+        "scale": 0.5
+      },
+      "intensity": 0,
+      "max": 0,
+      "points": [
+        {
+          "x": 452,
+          "y": 148,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 452,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 452,
+          "y": 472,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 148,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 472,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 148,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 472,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1028,
+          "y": 148,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1028,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 1028,
+          "y": 472,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 20,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 20,
+          "textureUploads": 20,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 0.9000000357627869,
+          "meanCpuMs": 1.5650000035762788,
+          "lastDecodeWaitMs": 0.09999996423721313,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.696208
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 100,
+        "y": -50,
+        "scale": 0.5
+      },
+      "intensity": 0.5,
+      "max": 0.4507736364149366,
+      "points": [
+        {
+          "x": 452,
+          "y": 148,
+          "rgba": [
+            72,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            71.87338741793086,
+            17.249612980303407,
+            23.358850910827528
+          ],
+          "max": 0.3588509108275275
+        },
+        {
+          "x": 452,
+          "y": 310,
+          "rgba": [
+            148,
+            36,
+            48,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            148.12177651493778,
+            35.54922636358506,
+            48.13957736735477
+          ],
+          "max": 0.4507736364149366
+        },
+        {
+          "x": 452,
+          "y": 472,
+          "rgba": [
+            71,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            71.34095359046471,
+            17.121828861711528,
+            23.18580991690103
+          ],
+          "max": 0.3409535904647072
+        },
+        {
+          "x": 612,
+          "y": 148,
+          "rgba": [
+            129,
+            31,
+            42,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            129.1279403693574,
+            30.99070568864577,
+            41.96658062004115
+          ],
+          "max": 0.12794036935738973
+        },
+        {
+          "x": 612,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 612,
+          "y": 472,
+          "rgba": [
+            128,
+            31,
+            42,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            127.95787748601592,
+            30.709890596643817,
+            41.58631018295517
+          ],
+          "max": 0.4136898170448333
+        },
+        {
+          "x": 740,
+          "y": 148,
+          "rgba": [
+            148,
+            36,
+            48,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            148.39365253956564,
+            35.61447660949575,
+            48.22793707535884
+          ],
+          "max": 0.39365253956563606
+        },
+        {
+          "x": 740,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 472,
+          "rgba": [
+            147,
+            35,
+            48,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            147.15168201819756,
+            35.31640368436741,
+            47.824296655914196
+          ],
+          "max": 0.3164036843674083
+        },
+        {
+          "x": 1028,
+          "y": 148,
+          "rgba": [
+            72,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            71.57245872316985,
+            17.17739009356076,
+            23.261049085030198
+          ],
+          "max": 0.42754127683015497
+        },
+        {
+          "x": 1028,
+          "y": 310,
+          "rgba": [
+            147,
+            35,
+            48,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            147.4231627137927,
+            35.38155905131024,
+            47.91252788198262
+          ],
+          "max": 0.4231627137926921
+        },
+        {
+          "x": 1028,
+          "y": 472,
+          "rgba": [
+            71,
+            17,
+            23,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            71.04658716795431,
+            17.051180920309033,
+            23.09014082958515
+          ],
+          "max": 0.09014082958514891
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 22,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 22,
+          "textureUploads": 22,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 0.8999999761581421,
+          "meanCpuMs": 1.5409090925346722,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.434499
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    },
+    {
+      "transform": {
+        "x": 100,
+        "y": -50,
+        "scale": 0.5
+      },
+      "intensity": 1,
+      "max": 0.4868822339828718,
+      "points": [
+        {
+          "x": 452,
+          "y": 148,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 452,
+          "y": 310,
+          "rgba": [
+            40,
+            10,
+            13,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            39.91582989227227,
+            9.579799174145345,
+            12.972644714988487
+          ],
+          "max": 0.42020082585465524
+        },
+        {
+          "x": 452,
+          "y": 472,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.05078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 612,
+          "y": 148,
+          "rgba": [
+            22,
+            5,
+            7,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            22.42610667874181,
+            5.382265602898034,
+            7.288484670591087
+          ],
+          "max": 0.4261066787418102
+        },
+        {
+          "x": 612,
+          "y": 310,
+          "rgba": [
+            171,
+            41,
+            55,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            170.51408236729216,
+            40.92337976815011,
+            55.41707676936995
+          ],
+          "max": 0.4859176327078387
+        },
+        {
+          "x": 612,
+          "y": 472,
+          "rgba": [
+            21,
+            5,
+            7,
+            255
+          ],
+          "uv": [
+            0.30078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            21.486882233982872,
+            5.15685173615589,
+            6.983236726044433
+          ],
+          "max": 0.4868822339828718
+        },
+        {
+          "x": 740,
+          "y": 148,
+          "rgba": [
+            40,
+            10,
+            13,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            40.197904942184245,
+            9.64749718612422,
+            13.06431910620988
+          ],
+          "max": 0.3525028138757804
+        },
+        {
+          "x": 740,
+          "y": 310,
+          "rgba": [
+            200,
+            48,
+            65,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            200,
+            48,
+            65
+          ],
+          "max": 0
+        },
+        {
+          "x": 740,
+          "y": 472,
+          "rgba": [
+            39,
+            9,
+            13,
+            255
+          ],
+          "uv": [
+            0.50078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            38.917025681082414,
+            9.34008616345978,
+            12.648033346351786
+          ],
+          "max": 0.3519666536482138
+        },
+        {
+          "x": 1028,
+          "y": 148,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.05138888888888889
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        },
+        {
+          "x": 1028,
+          "y": 310,
+          "rgba": [
+            39,
+            9,
+            13,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.5013888888888889
+          ],
+          "expected": [
+            39.1953363269335,
+            9.406880718464041,
+            12.738484306253389
+          ],
+          "max": 0.4068807184640413
+        },
+        {
+          "x": 1028,
+          "y": 472,
+          "rgba": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "uv": [
+            0.95078125,
+            0.9513888888888888
+          ],
+          "expected": [
+            0.006958197801409938,
+            0.001669967472338385,
+            0.0022614142854582298
+          ],
+          "max": 0.006958197801409938
+        }
+      ],
+      "manifest": {
+        "backend": "webgl2",
+        "frameRasters": 0,
+        "previewQuality": "realtime",
+        "state": "ready",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 1,
+          "audioLayers": 0,
+          "maxConcurrentMedia": 1
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 1,
+        "audioState": "uninitialized",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 24,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 24,
+          "textureUploads": 24,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 0.8999999761581421,
+          "meanCpuMs": 1.5250000009934108,
+          "lastDecodeWaitMs": 0,
+          "maxSourceDriftMs": 0,
+          "lastPresentedFrame": 30,
+          "activeMedia": 1,
+          "cachedMedia": 1,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 0,
+          "lastGpuMs": 0.446458
+        },
+        "decoders": [
+          {
+            "clipId": "video",
+            "state": "ready",
+            "currentTime": 1.0001,
+            "decodedMediaTime": 1,
+            "readyState": 4,
+            "presentedFrames": 2
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Actual GPU sampled buffer against independent continuous source UV model applied to the GPU baseline decoded source. Not native pixels or playback performance.",
+  "max": 0.49610773960171173,
+  "pass": true,
+  "after": {
+    "backend": "webgl2",
+    "frameRasters": 0,
+    "previewQuality": "realtime",
+    "state": "ready",
+    "support": {
+      "supported": true,
+      "reasons": [],
+      "visualLayers": 1,
+      "audioLayers": 0,
+      "maxConcurrentMedia": 1
+    },
+    "renderer": {
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+      "vendor": "Google Inc. (Apple)",
+      "softwareRenderer": false,
+      "maxTextureSize": 16384,
+      "timerAvailable": true
+    },
+    "color": {
+      "contract": "browser-srgb-v1",
+      "drawingBufferColorSpace": "srgb",
+      "unpackColorSpace": "srgb",
+      "unpackConversion": "browser-default",
+      "unpackConversionEnum": 37444,
+      "framebufferFormat": "rgba8",
+      "mixDomain": "encoded-component-values",
+      "premultipliedAlpha": false
+    },
+    "time": 1,
+    "audioState": "uninitialized",
+    "curveAudio": {
+      "cachedClips": 0,
+      "pcmBytes": 0,
+      "routes": []
+    },
+    "metrics": {
+      "displayedFrames": 24,
+      "droppedOutputFrames": 0,
+      "decoderDroppedFrames": 0,
+      "drawCalls": 24,
+      "textureUploads": 24,
+      "framebufferPasses": 0,
+      "transitionDraws": 0,
+      "framebufferCount": 0,
+      "framebufferBytes": 0,
+      "framebufferAllocations": 0,
+      "lastCpuMs": 0.8999999761581421,
+      "meanCpuMs": 1.5250000009934108,
+      "lastDecodeWaitMs": 0,
+      "maxSourceDriftMs": 0,
+      "lastPresentedFrame": 30,
+      "activeMedia": 1,
+      "cachedMedia": 1,
+      "contextLosses": 0,
+      "bufferEvents": 0,
+      "coldTextPrepareMs": 0,
+      "lastGpuMs": 0.446458
+    },
+    "decoders": [
+      {
+        "clipId": "video",
+        "state": "ready",
+        "currentTime": 1.0001,
+        "decodedMediaTime": 1,
+        "readyState": 4,
+        "presentedFrames": 2
+      }
+    ]
+  },
+  "disposed": {
+    "backend": "webgl2",
+    "frameRasters": 0,
+    "previewQuality": "realtime",
+    "state": "disposed",
+    "support": {
+      "supported": true,
+      "reasons": [],
+      "visualLayers": 1,
+      "audioLayers": 0,
+      "maxConcurrentMedia": 1
+    },
+    "renderer": {
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+      "vendor": "Google Inc. (Apple)",
+      "softwareRenderer": false,
+      "maxTextureSize": 16384,
+      "timerAvailable": true
+    },
+    "color": {
+      "contract": "browser-srgb-v1",
+      "drawingBufferColorSpace": "srgb",
+      "unpackColorSpace": "srgb",
+      "unpackConversion": "browser-default",
+      "unpackConversionEnum": 37444,
+      "framebufferFormat": "rgba8",
+      "mixDomain": "encoded-component-values",
+      "premultipliedAlpha": false
+    },
+    "time": 1,
+    "audioState": "uninitialized",
+    "curveAudio": {
+      "cachedClips": 0,
+      "pcmBytes": 0,
+      "routes": []
+    },
+    "metrics": {
+      "displayedFrames": 24,
+      "droppedOutputFrames": 0,
+      "decoderDroppedFrames": 0,
+      "drawCalls": 24,
+      "textureUploads": 24,
+      "framebufferPasses": 0,
+      "transitionDraws": 0,
+      "framebufferCount": 0,
+      "framebufferBytes": 0,
+      "framebufferAllocations": 0,
+      "lastCpuMs": 0.8999999761581421,
+      "meanCpuMs": 1.5250000009934108,
+      "lastDecodeWaitMs": 0,
+      "maxSourceDriftMs": 0,
+      "lastPresentedFrame": 30,
+      "activeMedia": 1,
+      "cachedMedia": 0,
+      "contextLosses": 0,
+      "bufferEvents": 0,
+      "coldTextPrepareMs": 0,
+      "lastGpuMs": 0.446458
+    },
+    "decoders": []
+  },
+  "completed": true
+}

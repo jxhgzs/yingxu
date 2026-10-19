@@ -1,0 +1,50 @@
+[
+  {
+    "kind": "circle",
+    "beforePolicy": null,
+    "afterPolicy": "bt709-cosited420-v1",
+    "assets": [
+      {
+        "id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "note": "Actual unchanged source probed after stricter format gate; same transition filter/encoding branch as the recorded actual product output. Missing metadata previously admitted is now refused; source yuv444p qualifies explicitly."
+  },
+  {
+    "kind": "wipe",
+    "beforePolicy": null,
+    "afterPolicy": "bt709-cosited420-v1",
+    "assets": [
+      {
+        "id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "note": "Actual unchanged source probed after stricter format gate; same transition filter/encoding branch as the recorded actual product output. Missing metadata previously admitted is now refused; source yuv444p qualifies explicitly."
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "id": "1644264",
+  "name": "放大",
+  "resourceId": "6724919499042066958",
+  "phase": "in",
+  "nativeDurationUs": 500000,
+  "snapshot": "artifacts/qa/native-v9/10-text-zoom-in-ui.json",
+  "resourceFiles": [
+    {
+      "file": "content.json",
+      "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+    },
+    {
+      "file": "anim.prefab",
+      "sha256": "f7ee17526697648076ec918625df1283d51c4dee2d9c89233afee2cfbb0dc5c7"
+    },
+    {
+      "file": "config.json",
+      "sha256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    {
+      "file": "EnlargeIn.lua",
+      "sha256": "80149ff4709cf73fdab2c44891698a7438a005357423042b104f40e8d3cb8c6a"
+    }
+  ],
+  "observations": {
+    "alpha": {
+      "from": 0,
+      "to": 1,
+      "ease": "quadOut"
+    },
+    "uniformScale": {
+      "from": 0.5,
+      "to": 1,
+      "ease": "quadOut"
+    },
+    "duration": "same input duration for both channels",
+    "cleanup": "sets each tween to duration before clearing"
+  },
+  "status": "Static candidate; actual native MOV validation pending. No Lua source copied into product."
+}

@@ -1,3 +1,4 @@
+import {prepareVignette} from './vignette.ts';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {renderGraph} from './graph.ts';
@@ -7,11 +8,14 @@ import type {Document,Clip} from '../../core/src/document.ts';
 import type {Layer} from './graph.ts';
 import {detectCfr30} from './frame-timing.ts';
 import {transitionWindow,transitionSourceAt,transitionBoundaryPolicy,transitionUsesSourceHandles,isSpatialTransition} from '../../core/src/transitions.ts';
+import {probeDisplayTransform} from '../../core/src/source-display.ts';
+import {spatialEdgePolicy,spatialPlaneMask} from '../../core/src/transition-edge.ts';
 import {toNumber, add,sub,mul,frameTime,compare,div,rational} from '../../core/src/time.ts';
 import {animationExpression,animatedValue,maxAnimatedValue,fraction} from './animation.ts';
 import {resolveExportSettings} from '../../core/src/export.ts';
 import type {ExportSettings} from '../../core/src/export.ts';
-import {frameEdge,groupTextLayers,captionScript} from './captions.ts';
+import {frameEdge,groupTextLayers} from './captions.ts';
+import {renderCaptionScript} from './glyph-layout.ts';
 import {subtitleClock} from './subtitle-clock.ts';
 import {curveSourceExpression,curveTargetExpression,curveMediaRange} from './curve-speed.ts';
 import {renderCurveAudio} from './curve-audio.ts';
@@ -50,6 +54,16 @@ export async function render(doc: Document, directory: string, options: {
     const outgoing=layers.find(l=>l.clip.id===transition.outgoingClipId),incoming=layers.find(l=>l.clip.id===transition.incomingClipId);if(!outgoing||!incoming)continue;
     if(transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30')for(const {asset}of [outgoing,incoming])if(!checkedBoundaryAssets.has(asset.id)){if(await detectCfr30(asset,{signal:options.signal})!=='cfr30')throw Error('TRANSITION_SOURCE_FRAME_TIMING_UNVERIFIED: '+asset.id);checkedBoundaryAssets.add(asset.id);}
   }
+  // Recheck the real stream before the new geometry-sensitive plane path.
+  // Unknown old metadata retains RGBA; a forged/stale identity marker cannot
+  // authorize autorotated pixels or a coded/display-size mismatch on export.
+  const checkedPlaneAssets=new Set<string>();
+  for(const transition of doc.transitions||[])if(spatialEdgePolicy(doc,transition))for(const {asset}of layers.filter(l=>l.clip.id===transition.outgoingClipId||l.clip.id===transition.incomingClipId))if(!checkedPlaneAssets.has(asset.id)){
+    options.signal?.throwIfAborted();const metadata=await probe(asset.path,{signal:options.signal}),stream=metadata.streams?.find((s:any)=>s.codec_type==='video');options.signal?.throwIfAborted();
+    if(stream?.width!==asset.width||stream?.height!==asset.height)throw Error('SPATIAL_TRANSITION_SOURCE_SIZE_MISMATCH');
+    if(probeDisplayTransform(stream)!=='identity')throw Error('SPATIAL_TRANSITION_SOURCE_ORIENTATION_UNSUPPORTED');
+    checkedPlaneAssets.add(asset.id);
+  }
   const preparedColors=new Map<string,Awaited<ReturnType<typeof prepareColorEffects>>>();
   for(const {clip} of layers)if(!preparedColors.has(clip.id))preparedColors.set(clip.id,await prepareColorEffects(clip.colorAdjustments,directory));
   const bundledFonts=await prepareFonts(layers.flatMap(({clip})=>clip.text?[clip.text.font]:[]),directory);
@@ -65,6 +79,15 @@ export async function render(doc: Document, directory: string, options: {
       onProgress:progress=>report(preparationShare*(i+progress)/curvedAudio.length)});
     preparedAudio.set(clip.id,inputIndexes.size+preparedAudio.size);
     args.push('-i',prepared.path);
+  }
+  const preparedVignettes=new Map<string,{index:number;mode:'multiply'|'screen'}>(),checkedVignetteAssets=new Set<string>();
+  for(const {clip,asset}of layers)if(clip.vignette?.intensity&&!preparedVignettes.has(clip.id)){
+    if(!asset.width||!asset.height)throw Error('VIGNETTE_SOURCE_SIZE_REQUIRED');
+    if(!checkedVignetteAssets.has(asset.id)){options.signal?.throwIfAborted();const metadata=await probe(asset.path,{signal:options.signal}),stream=metadata.streams?.find((s:any)=>s.codec_type==='video');options.signal?.throwIfAborted();
+      if(stream?.width!==asset.width||stream?.height!==asset.height)throw Error('VIGNETTE_SOURCE_SIZE_MISMATCH');
+      if(probeDisplayTransform(stream)!=='identity')throw Error('VIGNETTE_SOURCE_ORIENTATION_UNSUPPORTED');checkedVignetteAssets.add(asset.id);
+    }
+    const mask=await prepareVignette(clip.vignette,asset.width,asset.height,directory,options.signal);if(mask){preparedVignettes.set(clip.id,{index:inputIndexes.size+preparedAudio.size+preparedVignettes.size,mode:mask.mode});args.push('-loop','1','-framerate',fps,'-i',mask.path);}
   }
   const filters: string[] = outputSettings.audioOnly?[]:[`color=c=black:s=${width}x${height}:r=${fps}:d=${seconds(graph.duration)},format=rgba[base]`];
   const buildVisual=(layer:Layer,i:string,cloneBoundary=false)=>{
@@ -96,9 +119,13 @@ export async function render(doc: Document, directory: string, options: {
     // Keep input/output transfer and primaries equal: effects operate on encoded
     // components. An 8-bit RGB intermediate amplifies near-white inverse curves.
     const matrixNames={bt709:'709',smpte170m:'170m',bt470bg:'470bg',gbr:'gbr'} as const;
-    const decodeColor=colorSpace?colorEffect?[`zscale=matrixin=${matrixNames[colorSpace.matrix]}:rangein=${colorSpace.range==='tv'?'limited':'full'}:primariesin=${colorSpace.primaries}:transferin=${colorSpace.transfer}:matrix=gbr:range=full:primaries=${colorSpace.primaries}:transfer=${colorSpace.transfer}:dither=none`,'format=gbrapf32le']:[`setparams=colorspace=${colorSpace.matrix}:color_primaries=${colorSpace.primaries}:color_trc=${colorSpace.transfer}:range=${colorSpace.range}`,`scale=${colorSpace.matrix==='gbr'?'':`in_color_matrix=${colorSpace.matrix==='bt470bg'?'bt601':colorSpace.matrix}:`}in_range=${colorSpace.range}:out_range=pc:flags=accurate_rnd+full_chroma_int`,'format=rgba']:['format=rgba'];
-    const video = [...(cloneBoundary&&(headFrames.numerator!=='0'||tailFrames.numerator!=='0')?[`tpad=start=${headFrames.numerator}:stop=${tailFrames.numerator}:start_mode=clone:stop_mode=clone`]:[]),trim,
-      ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:asset.kind==='image'?['setpts=PTS-STARTPTS']:['settb=1/1000000000',`setpts='floor((((PTS*TB-${fraction(mediaSourceStart)})/${fraction(clip.speed)})-0.0000005)/TB+0.5)'`]), `fps=${fps}:round=up`, ...decodeColor, ...(colorEffect?[colorEffect]:[]), animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba'];
+    const decodeColor=colorSpace?(colorEffect||clip.vignette?.intensity)?[`zscale=matrixin=${matrixNames[colorSpace.matrix]}:rangein=${colorSpace.range==='tv'?'limited':'full'}:primariesin=${colorSpace.primaries}:transferin=${colorSpace.transfer}:matrix=gbr:range=full:primaries=${colorSpace.primaries}:transfer=${colorSpace.transfer}:dither=none`,'format=gbrapf32le']:[`setparams=colorspace=${colorSpace.matrix}:color_primaries=${colorSpace.primaries}:color_trc=${colorSpace.transfer}:range=${colorSpace.range}`,`scale=${colorSpace.matrix==='gbr'?'':`in_color_matrix=${colorSpace.matrix==='bt470bg'?'bt601':colorSpace.matrix}:`}in_range=${colorSpace.range}:out_range=pc:flags=accurate_rnd+full_chroma_int`,'format=rgba']:['format=rgba'];
+    let visualSource=`[${media}:v]`;
+    let video = [...(cloneBoundary&&(headFrames.numerator!=='0'||tailFrames.numerator!=='0')?[`tpad=start=${headFrames.numerator}:stop=${tailFrames.numerator}:start_mode=clone:stop_mode=clone`]:[]),trim,
+      ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:asset.kind==='image'?['setpts=PTS-STARTPTS']:['settb=1/1000000000',`setpts='floor((((PTS*TB-${fraction(mediaSourceStart)})/${fraction(clip.speed)})-0.0000005)/TB+0.5)'`]), `fps=${fps}:round=up`, ...decodeColor, ...(colorEffect?[colorEffect]:[])];
+    const vignette=preparedVignettes.get(clip.id);
+    if(vignette){filters.push(`${visualSource}${video.join(',')},format=gbrap16le[spatialSource${i}]`,`[${vignette.index}:v]setpts=PTS-STARTPTS,format=gbrap16le[spatialMask${i}]`);visualSource=`[spatialSource${i}][spatialMask${i}]`;video=[`blend=all_mode=${vignette.mode}:c3_expr='A':shortest=1`];}
+    video.push(animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba');
     if (t.flipX) video.push('hflip'); if (t.flipY) video.push('vflip');
     if(clip.animations?.some(a=>a.property==='rotation')||animatedScale&&t.rotation){
       const box=even(Math.ceil(Math.hypot(w,h))+4);
@@ -113,15 +140,16 @@ export async function render(doc: Document, directory: string, options: {
     }
     else video.push(`colorchannelmixer=aa=${t.opacity}`);
     video.push(`setpts=PTS+(${clip.target.start.numerator}/${clip.target.start.denominator})/TB`);
-    filters.push(`[${media}:v]${video.join(',')}[visual${i}]`);
+    filters.push(`${visualSource}${video.join(',')}[visual${i}]`);
     const position=(key:'x'|'y',dimension:string,factor:number)=>`${clip.speedCurve&&clip.animations?.some(a=>a.property===key)?`st(0,${globalClock});`:''}(${dimension})/2+(${animationExpression(clip,key,clip.speedCurve?'ld(0)':globalClock,t[key])})*${factor}`;
     return {first,last,position};
   };
+  const planeTransitions:{mixed:string;first:number;last:number;id:string}[]=[];
   let composite = 'base', index = 0;
   for (const layer of groupTextLayers(layers)) {
     const i=index++,next=`composite${i}`;
     if(Array.isArray(layer)){
-      const file=`captions-${i}.ass`,content=captionScript(layer,doc.canvas,doc.fps);
+      const file=`captions-${i}.ass`,{script:content}=await renderCaptionScript(layer,doc.canvas,doc.fps,directory,options.signal);
       if(!content)continue;
       await fs.writeFile(path.join(directory,file),content);
       const clock=subtitleClock(doc.fps);
@@ -149,16 +177,35 @@ export async function render(doc: Document, directory: string, options: {
       }
       const progress=`min(1,max(0,(T+${fraction(sub(actualStart,window.start))})/${fraction(window.duration)}))`;
       const mixed=prefix+'mixed',next=prefix+'out';
+      const planePolicy=spatialEdgePolicy(doc,transition);
       const peak=`255*(1-max(1-2*(${progress}),0)-max(2*(${progress})-1,0))`,solid=transition.kind==='dipToWhite'?`+${peak}`:'';
       const mask=transition.kind==='wipeLeft'?`lte(X+0.5,W*(1-(${progress})))`:transition.kind==='circleOpen'?`gte(hypot(X+0.5-W/2,Y+0.5-H/2),(${progress})*hypot(W,H)/2)`:undefined;
       const blend=mask?`blend=all_expr='if(${mask},A,B)'`:transition.kind==='crossfade'?`blend=all_expr='A*(1-(${progress}))+B*(${progress})'`:'blend='+[0,1,2,3].map(channel=>`c${channel}_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)${channel===3?`+${peak}`:solid}'`).join(':');
-      filters.push(`[${prefix}apremult][${prefix}bpremult]${blend},unpremultiply=inplace=1,format=rgba,setpts=PTS+(${fraction(actualStart)})/TB[${mixed}]`);
-      filters.push(`[${composite}][${mixed}]overlay=format=rgb:eof_action=pass:repeatlast=0:enable='gte(n,${first})*lt(n,${last})'[${next}]`);
+      if(planePolicy){
+        for(const side of ['a','b'])filters.push(`[${prefix}${side}premult]format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p[${prefix}${side}yuv]`);
+        const planeBlend=([0,1,2] as const).map(plane=>`c${plane}_expr='if(${spatialPlaneMask(transition.kind as 'wipeLeft'|'circleOpen',width,height,progress,plane)},A,B)'`).join(':');
+        filters.push(`[${prefix}ayuv][${prefix}byuv]blend=${planeBlend},setpts=PTS+(${fraction(actualStart)})/TB[${mixed}]`);
+        // Preserve mixed YUV, including out-of-RGB-gamut boundary components.
+        // An RGBA round trip clips them and recreates the v8 fringe discrepancy.
+        planeTransitions.push({mixed,first,last,id:transition.id});
+        filters.push(`[${composite}]null[${next}]`);
+      }else{
+        filters.push(`[${prefix}apremult][${prefix}bpremult]${blend},unpremultiply=inplace=1,format=rgba,setpts=PTS+(${fraction(actualStart)})/TB[${mixed}]`);
+        filters.push(`[${composite}][${mixed}]overlay=format=rgb:eof_action=pass:repeatlast=0:enable='gte(n,${first})*lt(n,${last})'[${next}]`);
+      }
       composite=next;
     }
   }
   if(!outputSettings.audioOnly){
-    filters.push(`[${composite}]trim=start_frame=${outputSettings.startFrame}:end_frame=${outputSettings.endFrame},setpts=PTS-STARTPTS,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv[outv]`);
+    if(planeTransitions.length){
+      filters.push(`[${composite}]scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p[edgebase]`);
+      let planeComposite='edgebase';
+      for(const [i,t]of planeTransitions.entries()){
+        const next=`edgecomposite${i}`;
+        filters.push(`[${planeComposite}][${t.mixed}]overlay=format=yuv420:eof_action=pass:repeatlast=0:enable='gte(n,${t.first})*lt(n,${t.last})'[${next}]`);planeComposite=next;
+      }
+      filters.push(`[${planeComposite}]trim=start_frame=${outputSettings.startFrame}:end_frame=${outputSettings.endFrame},setpts=PTS-STARTPTS,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv[outv]`);
+    }else filters.push(`[${composite}]trim=start_frame=${outputSettings.startFrame}:end_frame=${outputSettings.endFrame},setpts=PTS-STARTPTS,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv[outv]`);
     if(outputSettings.format==='gif')filters.push('[outv]split[palette-input][gif-input]','[palette-input]palettegen[palette]','[gif-input][palette]paletteuse=dither=sierra2_4a[outgif]');
   }
   if(outputSettings.hasAudio){
@@ -183,6 +230,7 @@ export async function render(doc: Document, directory: string, options: {
   await fs.writeFile(path.join(directory,'color-effects.json'),JSON.stringify([...preparedColors].map(([clipId,value])=>({clipId,...value.metadata})),null,2));
   await fs.writeFile(path.join(directory, 'graph.json'), JSON.stringify(graph, null, 2));
   await fs.writeFile(path.join(directory,'color-space.json'),JSON.stringify({policy:VIDEO_COLOR_SPACE_POLICY,output:{matrix:'bt709',primaries:'bt709',transfer:'bt709',range:'tv'},inputs:[...new Map(layers.filter(l=>l.asset.kind!=='text'&&l.asset.kind!=='image').map(l=>[l.asset.id,{id:l.asset.id,...resolveVideoColorSpace({...l.asset,width:l.asset.width||doc.canvas.width,height:l.asset.height||doc.canvas.height})}])).values()]},null,2));
+  await fs.writeFile(path.join(directory,'transition-edges.json'),JSON.stringify({policy:'bt709-cosited420-v1',admitted:planeTransitions.map(t=>t.id)},null,2));
   await fs.writeFile(path.join(directory,'export-settings.json'),JSON.stringify(outputSettings,null,2));
   const partial = path.join(directory, `render.partial.${outputSettings.extension}`), output = path.join(directory, `render.${outputSettings.extension}`);
   args.push('-filter_complex_script', script);

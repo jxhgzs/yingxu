@@ -1,0 +1,36 @@
+{
+  "text": "文字动画对照",
+  "font": "Source Han Sans SC Medium",
+  "size": 60,
+  "canvas": [
+    1280,
+    720
+  ],
+  "input": "artifacts/qa/text-presets-v9/layout-debug/probe.gray",
+  "sha256": "b3ed28d1b35cfa8610ac7a4e26d536e6e95be55723835d2be33d1713dc2dc686",
+  "frames": "0..5 one visible glyph within complete original line, 6 complete original line",
+  "initialPixelEqualityGate": {
+    "maxGray": 2,
+    "observedMaxGray": 52,
+    "status": "failed, preserved"
+  },
+  "geometryObservations": [
+    {
+      "entry": 3,
+      "massRatioToOriginalCrop": 1.0000217924271315,
+      "centroidDeltaPixels": [
+        -0.1237886147746714,
+        -0.12993877776300877
+      ]
+    },
+    {
+      "entry": 4,
+      "massRatioToOriginalCrop": 0.9998445216077947,
+      "centroidDeltaPixels": [
+        -0.12563415082714613,
+        -0.002477983249843163
+      ]
+    }
+  ],
+  "implementedContract": "Measured original advances; per-entry brightness-centroid differences <.25px and mass ratio within1%, all original nonzero pixels covered once by one-pixel-expanded glyph support rectangles. Not pixel-identity contract."
+}

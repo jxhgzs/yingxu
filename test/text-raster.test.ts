@@ -59,7 +59,7 @@ test('text demand queue is bounded and old disk entries are evicted without pre-
  try{await assert.rejects(fs.access(path.join(root,'text-renders')),/ENOENT/);
   const controller=new AbortController();controller.abort();const requests=Array.from({length:33},()=>rasters.request(state.id,{revision:state.revision,clipId:'caption'},controller.signal));
   const results=await Promise.allSettled(requests);assert.equal(results.filter(r=>r.status==='rejected'&&/QUEUE_LIMIT/.test(r.reason.message)).length,1);assert.equal(results.filter(r=>r.status==='rejected'&&r.reason.name==='AbortError').length,32);
-  const cache=path.join(root,'text-renders');await fs.mkdir(cache);for(let i=0;i<129;i++){const key=i.toString(16).padStart(64,'0');await fs.writeFile(path.join(cache,key+'.png'),'old');await fs.writeFile(path.join(cache,key+'.json'),'{}');}
-  const texture=await rasters.request(state.id,{revision:state.revision,clipId:'caption'});assert.equal((await fs.readdir(cache)).filter(f=>f.endsWith('.png')).length,128);assert(await rasters.file(texture.key));
+  const cache=path.join(root,'text-renders');await fs.mkdir(cache);for(let i=0;i<513;i++){const key=i.toString(16).padStart(64,'0');await fs.writeFile(path.join(cache,key+'.png'),'old');await fs.writeFile(path.join(cache,key+'.json'),'{}');}
+  const texture=await rasters.request(state.id,{revision:state.revision,clipId:'caption'});assert.equal((await fs.readdir(cache)).filter(f=>f.endsWith('.png')).length,512);assert(await rasters.file(texture.key));
  }finally{await rasters.shutdown();await fs.rm(root,{recursive:true,force:true});}
 });

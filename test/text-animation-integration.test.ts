@@ -26,3 +26,15 @@ test('ASS uses measured quadratic target alpha and invisible glyph suffixes with
  assert.match(typed[0],/\\alpha&Hff&/i);assert.match(typed[3],/文.*\\alpha&Hff&.*字动画对照/i);
  assert.match(typed[13],/文字动画对照/);assert.equal(typed.length,60);
 });
+
+test('enlarge preset scales the complete ASS layout on target time while property transforms remain independent',()=>{
+ const doc=document(),clip=doc.tracks[0].clips[0];clip.textAnimations=[{phase:'in',kind:'zoom-in',duration:r(1,2)}];
+ clip.transform={...defaultTransform(),x:17,y:-8,scale:2};
+ clip.text={...clip.text!,content:'A\nB',lineHeight:60};
+ const lines=captionScript(renderGraph(doc).layers,doc.canvas,doc.fps).split('\n').filter(l=>l.startsWith('Dialogue:'));
+ assert.equal(lines.length,120);
+ assert.match(lines[0],/\\pos\(657,322\).*\\fscx100\\fscy100.*\\alpha&Hff&/i);
+ assert.match(lines[3],/\\fscx136\\fscy136.*\\alpha&Ha3&/i);
+ assert.match(lines[15],/\\pos\(657,292\).*\\fscx200\\fscy200.*\\alpha&H00&/i);
+ assert.match(lines[60],/\\pos\(657,382\).*\\fscx100\\fscy100/i);
+});

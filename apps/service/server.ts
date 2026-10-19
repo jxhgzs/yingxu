@@ -109,6 +109,18 @@ export async function startServer(options: {root?: string; port?: number; dist?:
         try{return respond(await textRasters.request(match[1],input,controller.signal));}
         finally{response.removeListener('close',disconnected);}
       }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/textures\/batch$/.exec(route)) && request.method === 'POST') {
+        const input=await body(request),controller=new AbortController();
+        const disconnected=()=>{if(!response.writableEnded)controller.abort();};response.once('close',disconnected);
+        try{return respond(await textRasters.batch(match[1],input,controller.signal));}
+        finally{response.removeListener('close',disconnected);}
+      }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/textures\/prepare$/.exec(route)) && request.method === 'POST') {
+        const input=await body(request),controller=new AbortController();
+        const disconnected=()=>{if(!response.writableEnded)controller.abort();};response.once('close',disconnected);
+        try{return respond(await textRasters.prepare(match[1],input,controller.signal));}
+        finally{response.removeListener('close',disconnected);}
+      }
       if ((match = /^\/text-renders\/([a-f0-9]{64})\.png$/.exec(route)) && ['GET','HEAD'].includes(request.method||''))
         return await serveFile(request,response,await textRasters.file(match[1]),'image/png');
       if ((match = /^\/api\/projects\/([a-f0-9-]+)\/commands$/.exec(route)) && request.method === 'POST') {

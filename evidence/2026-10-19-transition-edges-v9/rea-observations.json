@@ -1,0 +1,110 @@
+{
+  "targetSha256": "60a4d61ec74ee6cd4d231f1d06cbb91e89bac955c127de0852c970c73b143623",
+  "analysisProfileDigest": "91c686ab53c5977fe77a89d6c59aac868cdd9c32600720bc7b674ad27ffbec14",
+  "calls": [
+    {
+      "receipt": "001-session.json",
+      "operation": "binary_session",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 5.680923249999992
+    },
+    {
+      "receipt": "002-open-sdk.json",
+      "operation": "open_binary",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 0.27087304200000656
+    },
+    {
+      "receipt": "003-search-rgba-nv12.json",
+      "operation": "search_strings",
+      "isError": false,
+      "error": null,
+      "evidence_id": "ev_d14b3a250569b3c9bb916b35c0a0918efc5e976bb08e2491f34c7be5a71cd4ff",
+      "elapsedSeconds": 12.360554749999995
+    },
+    {
+      "receipt": "004-rgba-string-context.json",
+      "operation": "inspect_address_context",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 0.029043417000008048
+    },
+    {
+      "receipt": "005-search-nv12.json",
+      "operation": "search_strings",
+      "isError": false,
+      "error": null,
+      "evidence_id": "ev_7b553c348db1eea842be7f6a639789a35b10bb9f2fd89c52f2564696816020bf",
+      "elapsedSeconds": 0.03465783300000476
+    },
+    {
+      "receipt": "006-nv12-procedures.json",
+      "operation": "search_procedures",
+      "isError": false,
+      "error": null,
+      "evidence_id": "ev_49d0b6269f46ff47031ca75450a49369c1cb1a9cf0d2806dc1e591e48989a20f",
+      "elapsedSeconds": 0.06253870800000731
+    },
+    {
+      "receipt": "007-dispatch.json",
+      "operation": "inspect_native_dispatch_metadata",
+      "isError": true,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 3.305073875000002
+    },
+    {
+      "receipt": "008-export-dispatch.json",
+      "operation": "export_evidence_bundle",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 0.24155004200001712
+    },
+    {
+      "receipt": "009-overview.json",
+      "operation": "binary_overview",
+      "isError": false,
+      "error": null,
+      "evidence_id": "ev_25a482fc598e3aa979a2a65476267e8e3dba64cb17676530092a26a3a349d43f",
+      "elapsedSeconds": 0.07396383300004528
+    },
+    {
+      "receipt": "010-export.json",
+      "operation": "export_evidence_bundle",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 0.19702008400007617
+    },
+    {
+      "receipt": "011-close.json",
+      "operation": "close_binary",
+      "isError": false,
+      "error": null,
+      "evidence_id": null,
+      "elapsedSeconds": 0.6864323749999749
+    }
+  ],
+  "notes": [
+    "NV12 conversion related defined string observations are not recovered algorithms.",
+    "Dispatch operation completed but result delivery exceeded 10MiB; original retained evidence exported without repeating producer.",
+    "Dispatch coverage remains partial (max_records_reached); no claim that absent matching records prove method absence.",
+    "Final evidence bundle exported; close_binary succeeded; STOP issued and helper exited0."
+  ],
+  "finalBundleSha256": "4caca57c39979a5c5a1850cd9db35b4fe4ba4cb8a82b0b1f9c4da91ad9cc341d",
+  "dispatchRetainedEvidenceId": "ev_9e43cdca6b02b7487c36da46ab27b4228710a0cb7cf44c2e0868bff1f98dd7f9",
+  "dispatchCoverage": {
+    "status": "partial",
+    "reason": "max_records_reached",
+    "objcClassMethodIvarDecoded": 415,
+    "objcClassMethodIvarExamined": 208,
+    "binaryRelativePointersDecoded": 10182,
+    "binaryRelativePointersExamined": 10182
+  }
+}

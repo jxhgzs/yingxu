@@ -3,12 +3,12 @@ import {reactive,computed,watch} from 'vue';
 import type {EditorController} from '../controller.ts';
 import {normalizeColorAdjustments} from '../../../../packages/core/src/color-effects.ts';
 const props=defineProps<{c:EditorController}>();
-const controls=[{key:'brightness',label:'亮度'},{key:'contrast',label:'对比度'},{key:'saturation',label:'饱和度'},{key:'highlight',label:'高光'},{key:'shadow',label:'阴影'},{key:'black',label:'黑色'},{key:'white',label:'白色'},{key:'temperature',label:'色温'},{key:'tint',label:'色调'},{key:'fade',label:'褪色'}] as const;
-const draft=reactive({brightness:0,contrast:0,saturation:0,highlight:0,shadow:0,temperature:0,tint:0,black:0,white:0,fade:0});
+const controls=[{key:'brightness',label:'亮度'},{key:'contrast',label:'对比度'},{key:'saturation',label:'饱和度'},{key:'highlight',label:'高光'},{key:'shadow',label:'阴影'},{key:'black',label:'黑色'},{key:'white',label:'白色'},{key:'temperature',label:'色温'},{key:'tint',label:'色调'},{key:'fade',label:'褪色'},{key:'vignette',label:'暗角'}] as const;
+const draft=reactive({brightness:0,contrast:0,saturation:0,highlight:0,shadow:0,temperature:0,tint:0,black:0,white:0,fade:0,vignette:0});
 const selected=computed(()=>props.c.selected.value),supported=computed(()=>selected.value&&['video','image'].includes(selected.value.asset.kind||'video'));
 const disabled=computed(()=>!supported.value||props.c.busy.value||props.c.readOnly.value||!!selected.value?.track.locked);
-watch([()=>props.c.state.value?.id,()=>props.c.state.value?.revision,()=>props.c.selectedId.value],()=>{const values=normalizeColorAdjustments(selected.value?.clip.colorAdjustments);for(const {key}of controls)draft[key]=values[key]*(key==='fade'?100:50);},{immediate:true});
-function apply(){if(!disabled.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:selected.value!.clip.id,changes:{colorAdjustments:{version:'combine-adjust-v2',brightness:draft.brightness/50,contrast:draft.contrast/50,saturation:draft.saturation/50,highlight:draft.highlight/50,shadow:draft.shadow/50,temperature:draft.temperature/50,tint:draft.tint/50,black:draft.black/50,white:draft.white/50,fade:draft.fade/100}}}));}
+watch([()=>props.c.state.value?.id,()=>props.c.state.value?.revision,()=>props.c.selectedId.value],()=>{const values=normalizeColorAdjustments(selected.value?.clip.colorAdjustments);for(const {key}of controls)draft[key]=key==='vignette'?(selected.value?.clip.vignette?.intensity||0)*50:values[key]*(key==='fade'?100:50);},{immediate:true});
+function apply(){if(!disabled.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:selected.value!.clip.id,changes:{vignette:{version:'v1',intensity:draft.vignette/50},colorAdjustments:{version:'combine-adjust-v2',brightness:draft.brightness/50,contrast:draft.contrast/50,saturation:draft.saturation/50,highlight:draft.highlight/50,shadow:draft.shadow/50,temperature:draft.temperature/50,tint:draft.tint/50,black:draft.black/50,white:draft.white/50,fade:draft.fade/100}}}));}
 function reset(){for(const {key}of controls)draft[key]=0;void apply();}
 </script>
 <template>

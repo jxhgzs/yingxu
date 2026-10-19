@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "verification": [
+    {
+      "command": "node --test test/transition-edge.test.ts test/gpu-preview-transitions.test.ts test/transition-spatial.test.ts",
+      "tests": 11,
+      "failed": 0,
+      "note": "Before finite pixel-format eligibility was added; fallback spatial render retained."
+    },
+    {
+      "command": "node --test test/transition-edge.test.ts test/gpu-preview-runtime.test.ts",
+      "tests": 16,
+      "failed": 0,
+      "note": "Before final finite pixel-format eligibility."
+    },
+    {
+      "command": "node --test test/video-pixels.test.ts test/transition-edge.test.ts test/transition-clone.test.ts",
+      "tests": 12,
+      "failed": 0,
+      "durationMs": 14432.8665,
+      "note": "Final pixel-format/alpha/unknown gate, actual plane/range export, HTTP registration and legacy timing refresh."
+    },
+    {
+      "command": "npm run typecheck",
+      "passed": true
+    },
+    {
+      "command": "Parent Cua click: plane-edges-v9 run button; post-run raw JSON analysis only",
+      "actualGPUFrames": 60,
+      "rgbComponentObservations": 165888000,
+      "allPlaneUniformsTrue": true,
+      "unknownUniformsFalse": true,
+      "maxIndependentMathRGB": 0.497406005859375,
+      "actualNativeMaxRGB": {
+        "wipe": 110,
+        "circle": 150
+      },
+      "passed": "Independent GPU mathematical contract and eligibility verified; native parity unresolved"
+    },
+    {
+      "command": "Final orientation: node --test test/source-display.test.ts test/video-pixels.test.ts test/transition-edge.test.ts test/transition-clone.test.ts",
+      "tests": 14,
+      "failed": 0,
+      "durationMs": 11303.693333
+    },
+    {
+      "command": "Shared display helper: node --test test/vignette-media.test.ts",
+      "tests": 2,
+      "failed": 0
+    },
+    {
+      "command": "Orientation final npm run typecheck",
+      "passed": true
+    }
+  ],
+  "runtimeSourceFrozen": true,
+  "heavyProcessesRunning": false,
+  "reaSessionExportedClosedStopped": true,
+  "reaHelperExitCode": 0,
+  "newOwnedFilesSha256": {
+    "packages/core/src/transition-edge.ts": "a473aa4f7ff5843bd604f51962f2dc9b8c0359e594b7d18ef2e979ad97dfc5ea",
+    "packages/core/src/video-pixels.ts": "1f4db936c6486faeae7233d8178ed640965fbe45893c2a3faa3e2240141e3c77",
+    "test/transition-edge.test.ts": "62ebddb690109bfd2940a70bc993b2eda42be5466bf056a2ea8ef00f969d1dd7",
+    "test/video-pixels.test.ts": "b11e8e1bd2cbcba6f12b90d5b36d4187cdbd3cf6de91c2d51afd053dcab38423",
+    "packages/core/src/source-display.ts": "797fd9e89a7ea30560ceb927120cfaad1a8648578a258f6f5e698f336a00fcf1",
+    "test/source-display.test.ts": "a2f0ccd1d55b8946168d34c34d836fdd5afffe4b8aad7c4ba1d76db05a49b3e5"
+  },
+  "limits": [
+    "No native1:1 claim; product residual fullRGB maxima67/109 remain.",
+    "Original true/false resource mode gates remain; metadata unknown/alpha is not admitted.",
+    "Probe-format gate was tightened after recorded grid exports; actual unchanged source probed yuv444p, same blend/encoding branch retains eligibility.",
+    "Actual parent-clicked GPU results separately recorded; native browser fullRGB maxima110/150 remain. CPU endpoint emulation is still a distinct calculation.",
+    "Actual60-frame GPU capture preceded orientation eligibility gate; same original grid freshly probes identity, shader math unchanged, no post-gate GPU rerun claimed."
+  ],
+  "qaServer52430Stopped": true,
+  "orientationFixAfterGPUCapture": true
+}

@@ -1,0 +1,218 @@
+{
+  "createdAt": "2026-10-19T13:18:57.144Z",
+  "sourceOriginal": "artifacts/qa/transitions-v8/spatial-source.mp4",
+  "sourceOriginalSha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+  "fixture": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/transitions-v9/orientation-probe/grid-display-rot90.mp4",
+  "fixtureSha256": "aaddfeccd2439663c70a9763a5c9ec4ab3eb19f76af99cc07ce56c2806a4f12a",
+  "ffmpegCommand": "ffmpeg -display_rotation:v:0 90 -i spatial-source.mp4 -map 0:v:0 -c copy grid-display-rot90.mp4",
+  "rawVideoStream": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High 4:4:4 Predictive",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1280,
+    "height": 720,
+    "coded_width": 1280,
+    "coded_height": 720,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "pix_fmt": "yuv444p",
+    "level": 62,
+    "color_range": "tv",
+    "color_space": "bt709",
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "36000000/1199963",
+    "time_base": "1/1000000",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 5999815,
+    "duration": "5.999815",
+    "bit_rate": "16053",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "180",
+    "extradata_size": 50,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.19.101 libx264"
+    },
+    "side_data_list": [
+      {
+        "side_data_type": "Display Matrix",
+        "displaymatrix": "\n00000000:            0      -65536           0\n00000001:        65536           0           0\n00000002:            0           0  1073741824\n",
+        "rotation": 90
+      }
+    ]
+  },
+  "probedAsset": {
+    "id": "a_aaddfeccd2439663c70a9763",
+    "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/transitions-v9/orientation-probe/grid-display-rot90.mp4",
+    "name": "grid-display-rot90.mp4",
+    "kind": "video",
+    "duration": {
+      "numerator": "1199963",
+      "denominator": "200000"
+    },
+    "width": 1280,
+    "height": 720,
+    "hasAudio": false,
+    "sha256": "aaddfeccd2439663c70a9763a5c9ec4ab3eb19f76af99cc07ce56c2806a4f12a",
+    "pixelFormat": "yuv444p",
+    "colorSpace": {
+      "matrix": "bt709",
+      "range": "tv"
+    },
+    "fps": {
+      "numerator": "36000000",
+      "denominator": "1199963"
+    },
+    "mime": "video/mp4"
+  },
+  "admission": {
+    "spatialEdgePolicy": "bt709-cosited420-v1",
+    "previewSupported": true,
+    "previewReasons": [],
+    "previewTransitionEdgePolicy": "bt709-cosited420-v1"
+  },
+  "initialAttempt": {
+    "command": "ffmpeg -i spatial-source.mp4 -map0:v:0 -c copy -metadata:s:v:0 rotate=90 grid-rot90.mp4",
+    "observed": "No Display Matrix or rotate tag appeared in output; not accepted as a rotated fixture."
+  },
+  "limits": [
+    "This reproduces metadata/qualification only, not an actual rendered or browser-decoded output.",
+    "Input video payload is stream copied, not re-encoded.",
+    "Initial review did not modify product source/tests; subsequent parent-authorized fix and final tests are separately recorded under afterFix.",
+    "No claim that rotation==0 alone proves an arbitrary display matrix is identity."
+  ],
+  "oneFrameFfmpegAutorotate": {
+    "command": "ffmpeg -i grid-display-rot90.mp4 -frames:v1 -vf showinfo -an -f null -",
+    "exitCode": 0,
+    "selectedObservationLines": [
+      "        displaymatrix: rotation of 90.00 degrees",
+      "[Parsed_showinfo_0 @ 0x6000020502c0] n:   0 pts:      0 pts_time:0       duration:      0 duration_time:0       fmt:yuv444p cl:left sar:0/1 s:720x1280 i:P iskey:1 type:I checksum:C5057325 plane_checksum:[3D45ED53 C6D251E3 83E033E0] mean:[117 119 134] stdev:[43.9 52.1 53.6]",
+      "  Stream #0:0(und): Video: wrapped_avframe, yuv444p(tv, bt709/unknown/unknown, progressive), 720x1280, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)"
+    ],
+    "observedDisplayDimensions": {
+      "width": 720,
+      "height": 1280
+    },
+    "browserRun": false,
+    "executions": 2,
+    "executionNote": "Both commands decoded only one frame; first successful stderr was not retained by execFileSync, second spawnSync run retained showinfo. No render/performance test."
+  },
+  "streamCopyPacketValidation": {
+    "method": "ffprobe -show_packets -show_entries packet=data_hash -show_data_hash sha256",
+    "sourcePacketCount": 180,
+    "fixturePacketCount": 180,
+    "allOrderedCompressedPacketHashesEqual": true,
+    "containerTimingNotClaimedIdentical": true
+  },
+  "afterFix": {
+    "createdAt": "2026-10-19T13:24:44.590Z",
+    "results": [
+      {
+        "kind": "normal",
+        "sourceSha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "pixelFormat": "yuv444p",
+        "verifiedDisplayTransform": "identity",
+        "sideData": [],
+        "spatialEdgePolicy": "bt709-cosited420-v1",
+        "previewSupported": true,
+        "previewPairPolicy": "bt709-cosited420-v1",
+        "forgedIdentityActualCpuError": null
+      },
+      {
+        "kind": "rot90",
+        "sourceSha256": "aaddfeccd2439663c70a9763a5c9ec4ab3eb19f76af99cc07ce56c2806a4f12a",
+        "pixelFormat": "yuv444p",
+        "verifiedDisplayTransform": "unsupported",
+        "sideData": [
+          {
+            "side_data_type": "Display Matrix",
+            "displaymatrix": "\n00000000:            0      -65536           0\n00000001:        65536           0           0\n00000002:            0           0  1073741824\n",
+            "rotation": 90
+          }
+        ],
+        "spatialEdgePolicy": null,
+        "previewSupported": true,
+        "previewPairPolicy": null,
+        "forgedIdentityActualCpuError": "SPATIAL_TRANSITION_SOURCE_ORIENTATION_UNSUPPORTED"
+      },
+      {
+        "kind": "zero-angle-vflip",
+        "sourceSha256": "620996aac40ef2a22dbb79006a71619aea494a35b608a5996450ad171b4a1ad9",
+        "pixelFormat": "yuv444p",
+        "verifiedDisplayTransform": "unsupported",
+        "sideData": [
+          {
+            "side_data_type": "Display Matrix",
+            "displaymatrix": "\n00000000:        65536           0           0\n00000001:            0      -65536           0\n00000002:            0           0  1073741824\n",
+            "rotation": 0
+          }
+        ],
+        "spatialEdgePolicy": null,
+        "previewSupported": true,
+        "previewPairPolicy": null,
+        "forgedIdentityActualCpuError": "SPATIAL_TRANSITION_SOURCE_ORIENTATION_UNSUPPORTED"
+      }
+    ],
+    "field": "Asset.verifiedDisplayTransform optional identity|unsupported, image/video only; absent is unknown and never plane-admitted.",
+    "runtime": "Plane CPU fresh probes real dimensions and display transform with abort signal; vignette uses same helper. Ordinary unknown paths retain previous RGBA behavior.",
+    "tests": [
+      {
+        "command": "node --test test/source-display.test.ts test/video-pixels.test.ts test/transition-edge.test.ts test/transition-clone.test.ts",
+        "passed": 14,
+        "failed": 0,
+        "durationMs": 11303.693333
+      },
+      {
+        "command": "node --test test/vignette-media.test.ts",
+        "passed": 2,
+        "failed": 0,
+        "durationMs": 1229.659708
+      },
+      {
+        "command": "npm run typecheck",
+        "passed": true
+      }
+    ],
+    "initialTestFixtureError": {
+      "status": "corrected",
+      "description": "FFmpeg display_vflip is a boolean flag without a following1 argument; first test fixture command incorrectly supplied1 and exited before creating reflection. Corrected command used -display_vflip:v:0 with no value, then real matrix rotation0 reflection and all tests passed."
+    }
+  },
+  "initialReadonlyReview": true,
+  "followupAuthorizedImplementation": true
+}

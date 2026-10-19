@@ -1,0 +1,334 @@
+[
+  {
+    "kind": "wipe",
+    "source": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+    "sourceSha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+    "model": "Independent YUV420 same-output endpoints, phase(.5,.5) in full-resolution coordinates for each plane, native-output sidecar matrix/range/chroma_location -> RGB. No H264 re-encoding.",
+    "mae": 0.1887113108572282,
+    "max": 27,
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 0.30856300636574074,
+        "max": 25
+      },
+      {
+        "frame": 46,
+        "mae": 0.30437102141203703,
+        "max": 25
+      },
+      {
+        "frame": 47,
+        "mae": 0.29733977141203705,
+        "max": 25
+      },
+      {
+        "frame": 48,
+        "mae": 0.2887413194444444,
+        "max": 25
+      },
+      {
+        "frame": 49,
+        "mae": 0.27455186631944445,
+        "max": 25
+      },
+      {
+        "frame": 50,
+        "mae": 0.2723097511574074,
+        "max": 25
+      },
+      {
+        "frame": 51,
+        "mae": 0.2618041087962963,
+        "max": 25
+      },
+      {
+        "frame": 52,
+        "mae": 0.26311848958333334,
+        "max": 25
+      },
+      {
+        "frame": 53,
+        "mae": 0.24293149594907407,
+        "max": 25
+      },
+      {
+        "frame": 54,
+        "mae": 0.23571433738425926,
+        "max": 25
+      },
+      {
+        "frame": 55,
+        "mae": 0.23496455439814815,
+        "max": 25
+      },
+      {
+        "frame": 56,
+        "mae": 0.22674840856481482,
+        "max": 25
+      },
+      {
+        "frame": 57,
+        "mae": 0.2112160011574074,
+        "max": 25
+      },
+      {
+        "frame": 58,
+        "mae": 0.19537037037037036,
+        "max": 24
+      },
+      {
+        "frame": 59,
+        "mae": 0.19046260127314815,
+        "max": 24
+      },
+      {
+        "frame": 60,
+        "mae": 0.17167643229166665,
+        "max": 24
+      },
+      {
+        "frame": 61,
+        "mae": 0.17067672164351852,
+        "max": 24
+      },
+      {
+        "frame": 62,
+        "mae": 0.16723885995370372,
+        "max": 24
+      },
+      {
+        "frame": 63,
+        "mae": 0.16052372685185184,
+        "max": 24
+      },
+      {
+        "frame": 64,
+        "mae": 0.14630533854166666,
+        "max": 24
+      },
+      {
+        "frame": 65,
+        "mae": 0.1438310185185185,
+        "max": 24
+      },
+      {
+        "frame": 66,
+        "mae": 0.1382349537037037,
+        "max": 24
+      },
+      {
+        "frame": 67,
+        "mae": 0.13838541666666668,
+        "max": 24
+      },
+      {
+        "frame": 68,
+        "mae": 0.12076497395833333,
+        "max": 24
+      },
+      {
+        "frame": 69,
+        "mae": 0.11522569444444444,
+        "max": 24
+      },
+      {
+        "frame": 70,
+        "mae": 0.11265516493055555,
+        "max": 24
+      },
+      {
+        "frame": 71,
+        "mae": 0.1119017650462963,
+        "max": 27
+      },
+      {
+        "frame": 72,
+        "mae": 0.09290581597222222,
+        "max": 23
+      },
+      {
+        "frame": 73,
+        "mae": 0.093359375,
+        "max": 23
+      },
+      {
+        "frame": 74,
+        "mae": 0.0877734375,
+        "max": 23
+      },
+      {
+        "frame": 75,
+        "mae": 0.07038483796296297,
+        "max": 10
+      }
+    ],
+    "limits": "Uses encoded first/last planes; not a native pre-encode frame capture. Retains full-frame errors including all edges."
+  },
+  {
+    "kind": "circle",
+    "source": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+    "sourceSha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+    "model": "Independent YUV420 same-output endpoints, phase(.5,.5) in full-resolution coordinates for each plane, native-output sidecar matrix/range/chroma_location -> RGB. No H264 re-encoding.",
+    "mae": 0.2128990022028077,
+    "max": 43,
+    "frames": [
+      {
+        "frame": 45,
+        "mae": 0.3087337239583333,
+        "max": 25
+      },
+      {
+        "frame": 46,
+        "mae": 0.31029296875,
+        "max": 25
+      },
+      {
+        "frame": 47,
+        "mae": 0.3101240596064815,
+        "max": 25
+      },
+      {
+        "frame": 48,
+        "mae": 0.3146068431712963,
+        "max": 25
+      },
+      {
+        "frame": 49,
+        "mae": 0.3120486111111111,
+        "max": 25
+      },
+      {
+        "frame": 50,
+        "mae": 0.3149703414351852,
+        "max": 41
+      },
+      {
+        "frame": 51,
+        "mae": 0.3074088541666667,
+        "max": 29
+      },
+      {
+        "frame": 52,
+        "mae": 0.30595630787037037,
+        "max": 25
+      },
+      {
+        "frame": 53,
+        "mae": 0.2999605758101852,
+        "max": 39
+      },
+      {
+        "frame": 54,
+        "mae": 0.2955226417824074,
+        "max": 25
+      },
+      {
+        "frame": 55,
+        "mae": 0.28042281539351854,
+        "max": 25
+      },
+      {
+        "frame": 56,
+        "mae": 0.2786042390046296,
+        "max": 25
+      },
+      {
+        "frame": 57,
+        "mae": 0.26316731770833335,
+        "max": 25
+      },
+      {
+        "frame": 58,
+        "mae": 0.2469484230324074,
+        "max": 24
+      },
+      {
+        "frame": 59,
+        "mae": 0.24845196759259258,
+        "max": 39
+      },
+      {
+        "frame": 60,
+        "mae": 0.22189453125,
+        "max": 24
+      },
+      {
+        "frame": 61,
+        "mae": 0.21586299189814814,
+        "max": 43
+      },
+      {
+        "frame": 62,
+        "mae": 0.1961306423611111,
+        "max": 24
+      },
+      {
+        "frame": 63,
+        "mae": 0.19044270833333332,
+        "max": 24
+      },
+      {
+        "frame": 64,
+        "mae": 0.1748484519675926,
+        "max": 25
+      },
+      {
+        "frame": 65,
+        "mae": 0.16579607928240742,
+        "max": 40
+      },
+      {
+        "frame": 66,
+        "mae": 0.1479513888888889,
+        "max": 35
+      },
+      {
+        "frame": 67,
+        "mae": 0.13991283275462962,
+        "max": 26
+      },
+      {
+        "frame": 68,
+        "mae": 0.12340675636574074,
+        "max": 26
+      },
+      {
+        "frame": 69,
+        "mae": 0.12046332465277777,
+        "max": 27
+      },
+      {
+        "frame": 70,
+        "mae": 0.10618634259259259,
+        "max": 26
+      },
+      {
+        "frame": 71,
+        "mae": 0.105478515625,
+        "max": 38
+      },
+      {
+        "frame": 72,
+        "mae": 0.08511574074074074,
+        "max": 26
+      },
+      {
+        "frame": 73,
+        "mae": 0.07712601273148148,
+        "max": 19
+      },
+      {
+        "frame": 74,
+        "mae": 0.06793872974537037,
+        "max": 17
+      },
+      {
+        "frame": 75,
+        "mae": 0.0640943287037037,
+        "max": 8
+      }
+    ],
+    "limits": "Uses encoded first/last planes; not a native pre-encode frame capture. Retains full-frame errors including all edges."
+  }
+]

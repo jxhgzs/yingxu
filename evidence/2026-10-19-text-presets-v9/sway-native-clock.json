@@ -1,0 +1,4381 @@
+{
+  "single": {
+    "movie": "/Users/tal/Downloads/yingxu-native-text-sway-loop-v9.mov",
+    "sha256": "14252dc7d9a78e02ab2c03be7148338d7b3a1ece79722b9c0045f43bbcc66fdf",
+    "rows": [
+      {
+        "frame": 0,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985510817507524,
+        "rmse": 1.1565797167953131,
+        "alternateRmse": 38.732522458195035,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 1,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999576729966412,
+        "rmse": 0.15776735911513906,
+        "alternateRmse": 38.8591961309806,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 2,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999570580608225,
+        "rmse": 0.16809382727528296,
+        "alternateRmse": 38.860230535462144,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 3,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0,
+        "rmse": 0.0,
+        "alternateRmse": 38.864046380870484,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 4,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998041850162706,
+        "rmse": 0.43754540428829525,
+        "alternateRmse": 38.84625382891709,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 5,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9973081346357571,
+        "rmse": 2.04652097930415,
+        "alternateRmse": 38.73080124064603,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 6,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000160511194722,
+        "rmse": 0.5054519970695153,
+        "alternateRmse": 38.8788857345895,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 7,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0001713340651328,
+        "rmse": 0.44578501192526804,
+        "alternateRmse": 38.877878620082804,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 8,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9988763629042328,
+        "rmse": 1.564348882365002,
+        "alternateRmse": 38.566614448945685,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 9,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000032017230294,
+        "rmse": 0.08572173548839115,
+        "alternateRmse": 38.70857809533891,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 10,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0,
+        "rmse": 0.0,
+        "alternateRmse": 38.70947288512107,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 11,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000235643422064,
+        "rmse": 0.3206431141091053,
+        "alternateRmse": 38.71006001972985,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 12,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9997402408894978,
+        "rmse": 0.8137537288716349,
+        "alternateRmse": 38.685374163452785,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 13,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9999162279967914,
+        "rmse": 0.7385967871595723,
+        "alternateRmse": 38.6902286985137,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 14,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9998500077256983,
+        "rmse": 0.7229597278920638,
+        "alternateRmse": 38.688821367025085,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 15,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.997300049847992,
+        "rmse": 2.8272185510134387,
+        "alternateRmse": 38.627689328755956,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 16,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9972173765819119,
+        "rmse": 2.85444830873344,
+        "alternateRmse": 38.6239974364784,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 17,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9982823677439572,
+        "rmse": 2.643971927655238,
+        "alternateRmse": 38.702622033028184,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 18,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.998277021038838,
+        "rmse": 2.6378383777024053,
+        "alternateRmse": 38.70364691192505,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 19,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9984673145462155,
+        "rmse": 2.6425884128063593,
+        "alternateRmse": 38.707102205103325,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 20,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9979760390840778,
+        "rmse": 2.658659237471929,
+        "alternateRmse": 38.69027132446954,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 21,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9982590001828431,
+        "rmse": 2.6390260392565175,
+        "alternateRmse": 38.704180634158206,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 22,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9981657694397055,
+        "rmse": 2.6313863834840316,
+        "alternateRmse": 38.70912208816061,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 23,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.998153910121051,
+        "rmse": 2.474142026951634,
+        "alternateRmse": 38.61533571435619,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 24,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9980945735218472,
+        "rmse": 2.492330178193981,
+        "alternateRmse": 38.608011653384196,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 25,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9991521077930559,
+        "rmse": 2.337711500670127,
+        "alternateRmse": 38.68870085011975,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 26,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9991224982167212,
+        "rmse": 2.3378572065370706,
+        "alternateRmse": 38.69319703456665,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 27,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9993462469147529,
+        "rmse": 2.331798344560148,
+        "alternateRmse": 38.6960594738816,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 28,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9990417993978347,
+        "rmse": 2.350023357602506,
+        "alternateRmse": 38.68167238260492,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 29,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9987495141220551,
+        "rmse": 2.916707040177577,
+        "alternateRmse": 38.693808559860095,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 30,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985566485381645,
+        "rmse": 2.5569678697764715,
+        "alternateRmse": 38.75291249248476,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 31,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985566485381645,
+        "rmse": 2.5570806811960685,
+        "alternateRmse": 38.75291882496515,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 32,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985786308754342,
+        "rmse": 2.556391782621998,
+        "alternateRmse": 38.755036985859725,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 33,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9971779624324316,
+        "rmse": 2.946891095532088,
+        "alternateRmse": 38.64518332470948,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 34,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998532504216017,
+        "rmse": 2.13385792999427,
+        "alternateRmse": 38.86142028928114,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 35,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998538912494549,
+        "rmse": 2.134151133189128,
+        "alternateRmse": 38.86166197132929,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 36,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000029840569733,
+        "rmse": 2.137474680735668,
+        "alternateRmse": 38.86768706612793,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 37,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994948593534007,
+        "rmse": 2.236342952170384,
+        "alternateRmse": 38.86406027126988,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 38,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012913898960238,
+        "rmse": 2.1343843477301667,
+        "alternateRmse": 38.801523748683266,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 39,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012914290448687,
+        "rmse": 2.1343391227963977,
+        "alternateRmse": 38.80152870487213,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 40,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0013575383942346,
+        "rmse": 2.1345098662399273,
+        "alternateRmse": 38.799365672660564,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 41,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000661263138654,
+        "rmse": 2.1785667442013112,
+        "alternateRmse": 38.73272782179264,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 42,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0014077598373918,
+        "rmse": 2.1385008765160194,
+        "alternateRmse": 38.800108166562175,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 43,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001286998700591,
+        "rmse": 2.1346629098789154,
+        "alternateRmse": 38.801792827348955,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 44,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012869595517462,
+        "rmse": 2.134708127354412,
+        "alternateRmse": 38.801787871193824,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 45,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9990634527479789,
+        "rmse": 2.2895718408609773,
+        "alternateRmse": 38.79388629812435,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 46,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999483777562646,
+        "rmse": 2.154574609011806,
+        "alternateRmse": 38.86185091107184,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 47,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998567134812127,
+        "rmse": 2.1452522288678564,
+        "alternateRmse": 38.860259891012596,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 48,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000385661853513,
+        "rmse": 2.1515621585823728,
+        "alternateRmse": 38.85961545660844,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 49,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997516241862854,
+        "rmse": 2.1669886670798486,
+        "alternateRmse": 38.84674343010595,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 50,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000039996720256,
+        "rmse": 2.151763061335553,
+        "alternateRmse": 38.860008709428456,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 51,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998643710504088,
+        "rmse": 2.1443480962778727,
+        "alternateRmse": 38.861126662083464,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 52,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998643710504088,
+        "rmse": 2.1443480962778727,
+        "alternateRmse": 38.861126662083464,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 53,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0005483774444792,
+        "rmse": 2.153931017412818,
+        "alternateRmse": 38.74387470733342,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 54,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0009768811259745,
+        "rmse": 2.101667644985732,
+        "alternateRmse": 38.808795067815986,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 55,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0009621937843418,
+        "rmse": 2.105191707070747,
+        "alternateRmse": 38.81323616128435,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 56,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0011596997066976,
+        "rmse": 2.1021495232127956,
+        "alternateRmse": 38.81368296823247,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 57,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0009990132729396,
+        "rmse": 2.1148745311685957,
+        "alternateRmse": 38.805643713456746,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 58,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008620053655188,
+        "rmse": 2.5628083186669253,
+        "alternateRmse": 38.85183726394116,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 59,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008735020762949,
+        "rmse": 2.4677151997094056,
+        "alternateRmse": 38.848718452778925,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 60,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994269898580318,
+        "rmse": 2.1939961282397227,
+        "alternateRmse": 38.81066899084441,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 61,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9995205766166434,
+        "rmse": 2.1996447648854716,
+        "alternateRmse": 38.81223449445834,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 62,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9992533514018307,
+        "rmse": 2.3520538853707036,
+        "alternateRmse": 38.76875307618337,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 63,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000967798937633,
+        "rmse": 1.882629368798178,
+        "alternateRmse": 38.94197086744182,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 64,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009644912302287,
+        "rmse": 1.8831909406963592,
+        "alternateRmse": 38.94067659045598,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 65,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000967682423478,
+        "rmse": 1.883217075554159,
+        "alternateRmse": 38.940601584361474,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 66,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000214334261388,
+        "rmse": 2.0041531753309862,
+        "alternateRmse": 38.87063789380983,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 67,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002776920697496,
+        "rmse": 2.0012386430058733,
+        "alternateRmse": 38.87450322673518,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 68,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001815573354375,
+        "rmse": 2.0110847150271782,
+        "alternateRmse": 38.849285823711014,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 69,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001819383841942,
+        "rmse": 2.012194568200269,
+        "alternateRmse": 38.849939479548965,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 70,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0016982051174625,
+        "rmse": 2.015003935053935,
+        "alternateRmse": 38.80806583005156,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 71,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019184369442637,
+        "rmse": 2.026518155187963,
+        "alternateRmse": 38.862561882328094,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 72,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019084800880524,
+        "rmse": 2.0246055789690365,
+        "alternateRmse": 38.86230703761356,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 73,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0020355768129143,
+        "rmse": 2.013320436251621,
+        "alternateRmse": 38.860669128151756,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 74,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001815573354375,
+        "rmse": 2.011036902526565,
+        "alternateRmse": 38.849283348662965,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 75,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0006955312491062,
+        "rmse": 1.8374347773844757,
+        "alternateRmse": 38.889220819168465,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 76,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0007024314762938,
+        "rmse": 1.838043146354283,
+        "alternateRmse": 38.89006154881148,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 77,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0007293397731225,
+        "rmse": 1.8394948926581824,
+        "alternateRmse": 38.890340395139866,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 78,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000486381867622,
+        "rmse": 1.9457749411899425,
+        "alternateRmse": 38.85150375163261,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 79,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0008858247564836,
+        "rmse": 1.8225058795924463,
+        "alternateRmse": 38.904004121472234,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 80,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.00082060272164,
+        "rmse": 1.8188115536923255,
+        "alternateRmse": 38.90460334280151,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 81,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009227985817146,
+        "rmse": 1.8209180497257234,
+        "alternateRmse": 38.90319538500662,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 82,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0007024314762938,
+        "rmse": 1.8380693027484318,
+        "alternateRmse": 38.89006278503792,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 83,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0016522443735885,
+        "rmse": 1.993614932952031,
+        "alternateRmse": 38.856415123603924,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 84,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0016542931631365,
+        "rmse": 1.9937591591990187,
+        "alternateRmse": 38.85646689488433,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 85,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017380325423078,
+        "rmse": 1.9880053186549524,
+        "alternateRmse": 38.856736531113505,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 86,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0011835152539919,
+        "rmse": 1.986617797900204,
+        "alternateRmse": 38.81296746128158,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 87,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0018143010169167,
+        "rmse": 2.3736586478415123,
+        "alternateRmse": 38.89694799099889,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 88,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021599918419026,
+        "rmse": 2.284542011633263,
+        "alternateRmse": 38.910569191263114,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 89,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002007324396535,
+        "rmse": 2.2911247729641016,
+        "alternateRmse": 38.912602331215574,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 90,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0001644662029883,
+        "rmse": 1.9218858582271687,
+        "alternateRmse": 38.87764539474365,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 91,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000143053490477,
+        "rmse": 1.9398507887436713,
+        "alternateRmse": 38.87151232044594,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 92,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0013712874568816,
+        "rmse": 1.6859643563466131,
+        "alternateRmse": 38.973629734222385,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 93,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0013646655690644,
+        "rmse": 1.6858189026129387,
+        "alternateRmse": 38.973552885877915,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 94,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0014109346346722,
+        "rmse": 1.687745078440052,
+        "alternateRmse": 38.974503664433605,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 95,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009621997851776,
+        "rmse": 1.7933902537449968,
+        "alternateRmse": 38.9437208168318,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 96,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0014637349659763,
+        "rmse": 1.6455214142641426,
+        "alternateRmse": 38.98556440195816,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 97,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.001456284533056,
+        "rmse": 1.6454390345027943,
+        "alternateRmse": 38.98658030996242,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 98,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0025412363428357,
+        "rmse": 1.9705189800806324,
+        "alternateRmse": 38.90452168885889,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 99,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0025022767173852,
+        "rmse": 1.959522752364734,
+        "alternateRmse": 38.900488374544246,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 100,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0030370042646206,
+        "rmse": 2.0188821542836872,
+        "alternateRmse": 38.93988955400281,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 101,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0029939535848815,
+        "rmse": 2.022698162773575,
+        "alternateRmse": 38.941391734586325,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 102,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0031011496469358,
+        "rmse": 2.0129397153277044,
+        "alternateRmse": 38.943369731994544,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 103,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028724681944508,
+        "rmse": 2.0111161074021733,
+        "alternateRmse": 38.94135197291376,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 104,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028724551448358,
+        "rmse": 2.011164055352336,
+        "alternateRmse": 38.94135197291376,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 105,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998157522826725,
+        "rmse": 2.0684181475988015,
+        "alternateRmse": 38.83719925899253,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 106,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998338249227364,
+        "rmse": 2.0616429915684926,
+        "alternateRmse": 38.83833166136415,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 107,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9987926997434688,
+        "rmse": 2.3221945730201243,
+        "alternateRmse": 38.75771454419692,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 108,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009580958977133,
+        "rmse": 1.7726038593011741,
+        "alternateRmse": 38.95487837518039,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 109,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009602837746265,
+        "rmse": 1.7727306725982126,
+        "alternateRmse": 38.95504156943921,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 110,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009864865135156,
+        "rmse": 1.7714436129367577,
+        "alternateRmse": 38.95456312561331,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 111,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0004506443870371,
+        "rmse": 1.875956507158657,
+        "alternateRmse": 38.90165700465058,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 112,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005414283329166,
+        "rmse": 1.8367733095824055,
+        "alternateRmse": 38.918261014610735,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 113,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0027865430047744,
+        "rmse": 1.993040220481373,
+        "alternateRmse": 38.954819603764726,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 114,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028595034019923,
+        "rmse": 1.992206205713973,
+        "alternateRmse": 38.957518686493735,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 115,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.00250896464505,
+        "rmse": 1.9564640808387346,
+        "alternateRmse": 38.91954380152676,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 116,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0029316025246229,
+        "rmse": 2.2939807110349055,
+        "alternateRmse": 38.966656499508325,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 117,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0031741491929984,
+        "rmse": 2.2244474135065593,
+        "alternateRmse": 38.9723130838427,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 118,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.003101110498091,
+        "rmse": 2.225508846335737,
+        "alternateRmse": 38.97136962432628,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 119,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0029152448322758,
+        "rmse": 2.224227243729919,
+        "alternateRmse": 38.96743866965112,
+        "closedEntranceBoundarySway": true
+      }
+    ],
+    "initialRationalModMismatches": [],
+    "closedEntranceBoundaryMismatches": [],
+    "classifiedFrames": 120,
+    "boundaryModel": "No entrance: right-sided modulo. With entrance: exact half/full cycle retains prior state, as shown independently with .3/.7, .3/1, .5/1. This is a discrete observed boundary policy; no epsilon or universal float-engine claim."
+  },
+  "combo": {
+    "movie": "/Users/tal/Downloads/yingxu-native-text-zoom-sway-fade-v9.mov",
+    "sha256": "b31555950b497a45b4d8659bd15050dfd0a007c1b30ba521562de6aae1489e3f",
+    "rows": [
+      {
+        "frame": 0,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.0,
+        "rmse": 0.0,
+        "alternateRmse": 0.0,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 1,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.03820523373468751,
+        "rmse": 9.291013028235092,
+        "alternateRmse": 9.303969781085058,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 2,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.08284323601298063,
+        "rmse": 21.796811837285237,
+        "alternateRmse": 21.817302942758275,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 3,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.15617498612352881,
+        "rmse": 33.540385163170235,
+        "alternateRmse": 33.741024734120316,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 4,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.2590217942076113,
+        "rmse": 44.20395601617892,
+        "alternateRmse": 44.40245546127887,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 5,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.3903045477410181,
+        "rmse": 51.57680810902362,
+        "alternateRmse": 52.28237014136086,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 6,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5389740916988539,
+        "rmse": 55.498449432952235,
+        "alternateRmse": 57.17590018255022,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 7,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.7734699236541646,
+        "rmse": 42.76013494100825,
+        "alternateRmse": 49.835628418685964,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 8,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9547252208812241,
+        "rmse": 15.820540007232944,
+        "alternateRmse": 39.09651770497246,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 9,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967258939834984,
+        "rmse": 2.339090138998612,
+        "alternateRmse": 38.70265788672881,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 10,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967259198755328,
+        "rmse": 2.339121238498839,
+        "alternateRmse": 38.702661388053244,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 11,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967585891500322,
+        "rmse": 2.342826998619648,
+        "alternateRmse": 38.701745444872046,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 12,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9951802236744245,
+        "rmse": 2.5434419235771237,
+        "alternateRmse": 38.62178919670447,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 13,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9966225070898378,
+        "rmse": 2.4350770834806106,
+        "alternateRmse": 38.69031038649764,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 14,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965754159521355,
+        "rmse": 2.4238915315718286,
+        "alternateRmse": 38.69520470046243,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 15,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9966443599669351,
+        "rmse": 2.4265995857278884,
+        "alternateRmse": 38.69605177308426,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 16,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9963788177343632,
+        "rmse": 2.438564454435738,
+        "alternateRmse": 38.68565671506467,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 17,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965334902753111,
+        "rmse": 2.429947071752721,
+        "alternateRmse": 38.69980156974635,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 18,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964686760400103,
+        "rmse": 2.423706041959887,
+        "alternateRmse": 38.69951437787374,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 19,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964303040449177,
+        "rmse": 2.422921447551121,
+        "alternateRmse": 38.70123591120179,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 20,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9983312152394552,
+        "rmse": 2.494139203382246,
+        "alternateRmse": 38.597555412426004,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 21,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9992992617761046,
+        "rmse": 2.3144377901566338,
+        "alternateRmse": 38.679435445259735,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 22,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9992131930406638,
+        "rmse": 2.309898446289969,
+        "alternateRmse": 38.687028939261424,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 23,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9993892127719949,
+        "rmse": 2.3115494325691777,
+        "alternateRmse": 38.68778317436619,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 24,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9990431500329826,
+        "rmse": 2.3377100879060957,
+        "alternateRmse": 38.66989608915237,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 25,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.999351708178612,
+        "rmse": 2.323371917779723,
+        "alternateRmse": 38.680397825460844,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 26,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9992520352195797,
+        "rmse": 2.3095772361783315,
+        "alternateRmse": 38.685626565892086,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 27,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9993652341045136,
+        "rmse": 2.3070569705531265,
+        "alternateRmse": 38.69300400955872,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 28,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9991216173677117,
+        "rmse": 2.3182050248364,
+        "alternateRmse": 38.688249818516816,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 29,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9987495141220551,
+        "rmse": 2.916707040177577,
+        "alternateRmse": 38.693808559860095,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 30,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.9987932760058094,
+        "rmse": 2.844443162669054,
+        "alternateRmse": 38.698177834950535,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 31,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985566485381645,
+        "rmse": 2.5570806811960685,
+        "alternateRmse": 38.75291882496515,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 32,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985786308754342,
+        "rmse": 2.556391782621998,
+        "alternateRmse": 38.755036985859725,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 33,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9971779624324316,
+        "rmse": 2.946891095532088,
+        "alternateRmse": 38.64518332470948,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 34,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998532504216017,
+        "rmse": 2.13385792999427,
+        "alternateRmse": 38.86142028928114,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 35,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998538912494549,
+        "rmse": 2.134151133189128,
+        "alternateRmse": 38.86166197132929,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 36,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000029840569733,
+        "rmse": 2.137474680735668,
+        "alternateRmse": 38.86768706612793,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 37,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994948593534007,
+        "rmse": 2.236342952170384,
+        "alternateRmse": 38.86406027126988,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 38,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000962406921454,
+        "rmse": 2.148216714525512,
+        "alternateRmse": 38.8737284525937,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 39,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998538912494549,
+        "rmse": 2.134128605648283,
+        "alternateRmse": 38.86166073419939,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 40,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998532504216017,
+        "rmse": 2.1338016029575115,
+        "alternateRmse": 38.86141719643709,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 41,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000661263138654,
+        "rmse": 2.1785667442013112,
+        "alternateRmse": 38.73272782179264,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 42,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0014044126111556,
+        "rmse": 2.129742574512208,
+        "alternateRmse": 38.80290191599772,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 43,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001384851238337,
+        "rmse": 2.1291370772994562,
+        "alternateRmse": 38.80634234648931,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 44,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001547038377815,
+        "rmse": 2.123904645901914,
+        "alternateRmse": 38.81077751289383,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 45,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012914290448687,
+        "rmse": 2.134350385485563,
+        "alternateRmse": 38.8015293243957,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 46,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0016098526994046,
+        "rmse": 2.125291883383557,
+        "alternateRmse": 38.81433567814291,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 47,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0015179377364636,
+        "rmse": 2.1256544857165056,
+        "alternateRmse": 38.81250425595329,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 48,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0015735617202126,
+        "rmse": 2.129198458952327,
+        "alternateRmse": 38.81269686569363,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 49,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0013665883022065,
+        "rmse": 2.13485018967559,
+        "alternateRmse": 38.80606591941866,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 50,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0014894830510523,
+        "rmse": 2.130659666822084,
+        "alternateRmse": 38.812063890481525,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 51,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.0014493032866036,
+        "rmse": 2.1290355104096417,
+        "alternateRmse": 38.81090899088934,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 52,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.999239673934619,
+        "rmse": 2.3114440555888502,
+        "alternateRmse": 38.8066013806407,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 53,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9991969132396827,
+        "rmse": 2.3177239688774476,
+        "alternateRmse": 38.80209589182314,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 54,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0001764024308815,
+        "rmse": 2.148324399397318,
+        "alternateRmse": 38.859684881356074,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 55,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0001434224519683,
+        "rmse": 2.1429762529277134,
+        "alternateRmse": 38.862958025392786,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 56,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000278009247172,
+        "rmse": 2.1437976254055293,
+        "alternateRmse": 38.86536743458398,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 57,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999276576556755,
+        "rmse": 2.156477178689727,
+        "alternateRmse": 38.85022076834244,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 58,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997543946339742,
+        "rmse": 2.0813120052625096,
+        "alternateRmse": 38.89433674545623,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 59,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999714993430511,
+        "rmse": 1.6234293372543356,
+        "alternateRmse": 38.90229808103097,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 60,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999501254685916,
+        "rmse": 1.6189326926418504,
+        "alternateRmse": 38.90247505902388,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 61,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999545659525042,
+        "rmse": 1.6187406236500148,
+        "alternateRmse": 38.90318745630827,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 62,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0002446215571534,
+        "rmse": 2.0858362657595464,
+        "alternateRmse": 38.74657446681143,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 63,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017362055962138,
+        "rmse": 2.0198296748960556,
+        "alternateRmse": 38.8958005097377,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 64,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017464821679916,
+        "rmse": 2.0195620551897897,
+        "alternateRmse": 38.896294316844674,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 65,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001762011209789,
+        "rmse": 2.021865717750883,
+        "alternateRmse": 38.89562986864879,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 66,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012199106301034,
+        "rmse": 2.0141914703624626,
+        "alternateRmse": 38.833908682474416,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 67,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019935244287193,
+        "rmse": 2.027857889323843,
+        "alternateRmse": 38.90882560830676,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 68,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0020037488020372,
+        "rmse": 2.0277006534749953,
+        "alternateRmse": 38.90975195670343,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 69,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021739418802904,
+        "rmse": 2.0186353429023685,
+        "alternateRmse": 38.90940251403897,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 70,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017464821679916,
+        "rmse": 2.019573957963779,
+        "alternateRmse": 38.89629493485885,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 71,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002148403783822,
+        "rmse": 2.0206577557638195,
+        "alternateRmse": 38.90918446244364,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 72,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.0019894333744308,
+        "rmse": 2.029143621417239,
+        "alternateRmse": 38.910864474928964,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 73,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002183216346971,
+        "rmse": 1.9313909451668123,
+        "alternateRmse": 38.864745045566515,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 74,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002038674064513,
+        "rmse": 1.9500441217399147,
+        "alternateRmse": 38.86401722917222,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 75,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010502585944288,
+        "rmse": 1.8080694315630492,
+        "alternateRmse": 38.92400183585172,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 76,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010351700113382,
+        "rmse": 1.806138765228304,
+        "alternateRmse": 38.92632358237801,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 77,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0011550695499856,
+        "rmse": 1.8076478124637343,
+        "alternateRmse": 38.9241454375151,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 78,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000850339723235,
+        "rmse": 1.8314072644677062,
+        "alternateRmse": 38.91205263140084,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 79,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0011716598710756,
+        "rmse": 1.8155832046919342,
+        "alternateRmse": 38.920578489608225,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 80,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.00110794604724,
+        "rmse": 1.8079865490848224,
+        "alternateRmse": 38.92087994386614,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 81,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.001195720044112,
+        "rmse": 1.8048428683279873,
+        "alternateRmse": 38.925942423871625,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 82,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010123591289652,
+        "rmse": 1.804277370654289,
+        "alternateRmse": 38.92592917525724,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 83,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0005935813106859,
+        "rmse": 2.0164706425534566,
+        "alternateRmse": 38.79377969620519,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 84,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0005984879659093,
+        "rmse": 2.016436113677933,
+        "alternateRmse": 38.79409751479374,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 85,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000603851357656,
+        "rmse": 2.0152199174751635,
+        "alternateRmse": 38.79061879254907,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 86,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9997376244416991,
+        "rmse": 2.1387614288914794,
+        "alternateRmse": 38.67545981438561,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 87,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0018143010169167,
+        "rmse": 2.3736586478415123,
+        "alternateRmse": 38.89694799099889,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 88,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022156680241114,
+        "rmse": 2.2850855512835446,
+        "alternateRmse": 38.911902509625676,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 89,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022002107551964,
+        "rmse": 2.2845959238312092,
+        "alternateRmse": 38.914479846735865,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 90,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022857314068092,
+        "rmse": 2.2861968365349594,
+        "alternateRmse": 38.915113683218195,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 91,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002007324396535,
+        "rmse": 2.2911247729641016,
+        "alternateRmse": 38.912602331215574,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 92,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0024295381636217,
+        "rmse": 2.2615233946924977,
+        "alternateRmse": 38.93623176428157,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 93,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.002337845044135,
+        "rmse": 2.2609705602185683,
+        "alternateRmse": 38.93431037196986,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 94,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0008432323597716,
+        "rmse": 1.8188271919083558,
+        "alternateRmse": 38.91052927652662,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 95,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0006268914657117,
+        "rmse": 1.8553882996328381,
+        "alternateRmse": 38.886527136039675,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 96,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0016714085014955,
+        "rmse": 1.6415199082067298,
+        "alternateRmse": 38.9731983680285,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 97,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0016714085014955,
+        "rmse": 1.6415491959990673,
+        "alternateRmse": 38.97319960161785,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 98,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.001729484334824,
+        "rmse": 1.6429615242212356,
+        "alternateRmse": 38.97444689165486,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 99,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0015466606793926,
+        "rmse": 1.6833808829210157,
+        "alternateRmse": 38.955163711927995,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 100,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0015630697562414,
+        "rmse": 1.6827684054198917,
+        "alternateRmse": 38.95587141954902,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 101,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0015565125985106,
+        "rmse": 1.682299220325715,
+        "alternateRmse": 38.95540652556081,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 102,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0015564737604588,
+        "rmse": 1.68231377620479,
+        "alternateRmse": 38.95539973771995,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 103,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0015415987866527,
+        "rmse": 1.6823011929086724,
+        "alternateRmse": 38.955242648853456,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 104,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008436119332387,
+        "rmse": 2.0373192095618684,
+        "alternateRmse": 38.776723018830225,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 105,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008436119332387,
+        "rmse": 2.0374135998943395,
+        "alternateRmse": 38.77672466834483,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 106,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008762294458207,
+        "rmse": 2.0384445591985205,
+        "alternateRmse": 38.781310387626675,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 107,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9998489050332345,
+        "rmse": 2.185985751654232,
+        "alternateRmse": 38.67434866478017,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 108,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9951467646928736,
+        "rmse": 2.5772601547546903,
+        "alternateRmse": 38.55008961157351,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 109,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.8379849570775122,
+        "rmse": 1.9630808031914213,
+        "alternateRmse": 32.456454381005685,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 110,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.697924048526152,
+        "rmse": 1.4784160879645307,
+        "alternateRmse": 27.073715214704208,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 111,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5597929121423006,
+        "rmse": 1.8370993275558858,
+        "alternateRmse": 21.781083465612177,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 112,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.44911899666398614,
+        "rmse": 1.2279058801355167,
+        "alternateRmse": 17.504579030710598,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 113,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.34515214732319055,
+        "rmse": 0.9758745700274287,
+        "alternateRmse": 13.468290283103274,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 114,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.25540282124915514,
+        "rmse": 0.8369363413229813,
+        "alternateRmse": 9.976154013034439,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 115,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.17179518284783213,
+        "rmse": 0.8734913301549134,
+        "alternateRmse": 6.697870433699231,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 116,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.10919228264350707,
+        "rmse": 0.6779338595904228,
+        "alternateRmse": 4.2807782113226365,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 117,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.06569906968690258,
+        "rmse": 0.55084791262424,
+        "alternateRmse": 2.5711470544063637,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 118,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.025456271535254656,
+        "rmse": 0.49940493718557005,
+        "alternateRmse": 1.0661563575182667,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 119,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.006332790306167288,
+        "rmse": 0.27275222954783135,
+        "alternateRmse": 0.34280684764126024,
+        "closedEntranceBoundarySway": false
+      }
+    ],
+    "initialRationalModMismatches": [
+      30,
+      51,
+      72,
+      93
+    ],
+    "closedEntranceBoundaryMismatches": [],
+    "classifiedFrames": 111,
+    "boundaryModel": "No entrance: right-sided modulo. With entrance: exact half/full cycle retains prior state, as shown independently with .3/.7, .3/1, .5/1. This is a discrete observed boundary policy; no epsilon or universal float-engine claim."
+  },
+  "combo1": {
+    "movie": "/Users/tal/Downloads/yingxu-native-text-zoom-sway1-fade-v9.mov",
+    "sha256": "38aca5196674b119cee558eea352012afc59f342f093252230955ec685b958cc",
+    "rows": [
+      {
+        "frame": 0,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.0,
+        "rmse": 0.0,
+        "alternateRmse": 0.0,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 1,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.03820523373468751,
+        "rmse": 9.291013028235092,
+        "alternateRmse": 9.303969781085058,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 2,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.08284323601298063,
+        "rmse": 21.796811837285237,
+        "alternateRmse": 21.817302942758275,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 3,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.15617498612352881,
+        "rmse": 33.540385163170235,
+        "alternateRmse": 33.741024734120316,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 4,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.2590217942076113,
+        "rmse": 44.20395601617892,
+        "alternateRmse": 44.40245546127887,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 5,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.39044732289212447,
+        "rmse": 51.598662194784275,
+        "alternateRmse": 52.30899146354108,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 6,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5389740916988539,
+        "rmse": 55.498449432952235,
+        "alternateRmse": 57.17590018255022,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 7,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.7734699236541646,
+        "rmse": 42.76013494100825,
+        "alternateRmse": 49.835628418685964,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 8,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9547252208812241,
+        "rmse": 15.820540007232944,
+        "alternateRmse": 39.09651770497246,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 9,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967258939834984,
+        "rmse": 2.339090138998612,
+        "alternateRmse": 38.70265788672881,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 10,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967259198755328,
+        "rmse": 2.339121238498839,
+        "alternateRmse": 38.702661388053244,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 11,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9967585891500322,
+        "rmse": 2.342826998619648,
+        "alternateRmse": 38.701745444872046,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 12,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9951802236744245,
+        "rmse": 2.5434419235771237,
+        "alternateRmse": 38.62178919670447,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 13,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9966225070898378,
+        "rmse": 2.4350770834806106,
+        "alternateRmse": 38.69031038649764,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 14,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965754159521355,
+        "rmse": 2.4238915315718286,
+        "alternateRmse": 38.69520470046243,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 15,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9966443599669351,
+        "rmse": 2.4265995857278884,
+        "alternateRmse": 38.69605177308426,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 16,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9963788177343632,
+        "rmse": 2.438564454435738,
+        "alternateRmse": 38.68565671506467,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 17,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965796622457895,
+        "rmse": 2.4333489657208576,
+        "alternateRmse": 38.701404572266156,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 18,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965813581740477,
+        "rmse": 2.428640064847597,
+        "alternateRmse": 38.69934263483733,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 19,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965916373117344,
+        "rmse": 2.4267769721232284,
+        "alternateRmse": 38.703210034343996,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 20,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964687213510707,
+        "rmse": 2.423637104891889,
+        "alternateRmse": 38.69940549830683,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 21,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964985036637262,
+        "rmse": 2.4237497527953287,
+        "alternateRmse": 38.70555189587326,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 22,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965400668520679,
+        "rmse": 2.423558323574581,
+        "alternateRmse": 38.70574162421957,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 23,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9965191331421944,
+        "rmse": 2.4231571146395523,
+        "alternateRmse": 38.708371797699186,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 24,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 0.9965198387001339,
+        "rmse": 2.422886858036708,
+        "alternateRmse": 38.70383595835964,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 25,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9989298532759365,
+        "rmse": 2.345756019424852,
+        "alternateRmse": 38.66174445283571,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 26,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9989298532759365,
+        "rmse": 2.3457457717631827,
+        "alternateRmse": 38.6617416213256,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 27,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9990129858480123,
+        "rmse": 2.3486769330164154,
+        "alternateRmse": 38.660412792123324,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 28,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9983131545723564,
+        "rmse": 2.4864140770905294,
+        "alternateRmse": 38.60513046637896,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 29,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9987495141220551,
+        "rmse": 2.916707040177577,
+        "alternateRmse": 38.693808559860095,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 30,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9994769975318023,
+        "rmse": 2.7393419182189533,
+        "alternateRmse": 38.736180860735686,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 31,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9993658017627641,
+        "rmse": 2.7291196558856137,
+        "alternateRmse": 38.7337982561127,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 32,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9995866077726234,
+        "rmse": 2.729757744152771,
+        "alternateRmse": 38.74407931335445,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 33,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9989746199800423,
+        "rmse": 2.758116174483288,
+        "alternateRmse": 38.73203925227451,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 34,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000394803050872,
+        "rmse": 2.572965133783075,
+        "alternateRmse": 38.810012623853865,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 35,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000394803050872,
+        "rmse": 2.5730959283684767,
+        "alternateRmse": 38.810024600398215,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 36,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0005573164307238,
+        "rmse": 2.57050014604564,
+        "alternateRmse": 38.80833118094034,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 37,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000041165010378,
+        "rmse": 2.6123572862192797,
+        "alternateRmse": 38.79009092265909,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 38,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0005875523885763,
+        "rmse": 2.5711892217767294,
+        "alternateRmse": 38.80933042428169,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 39,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.000399226870342,
+        "rmse": 2.5727638993808335,
+        "alternateRmse": 38.811489482939756,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 40,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9988805578894527,
+        "rmse": 2.3207716273302825,
+        "alternateRmse": 38.77971918952074,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 41,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9988698062221368,
+        "rmse": 2.325389411518317,
+        "alternateRmse": 38.7787351369931,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 42,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998154415782587,
+        "rmse": 2.1668252417716602,
+        "alternateRmse": 38.85540368422497,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 43,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9996544643269162,
+        "rmse": 2.161513836503463,
+        "alternateRmse": 38.85426354749529,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 44,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998273519141175,
+        "rmse": 2.167254057671354,
+        "alternateRmse": 38.8518412691785,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 45,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9995056369127511,
+        "rmse": 2.1943025439140715,
+        "alternateRmse": 38.833025922133444,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 46,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999010082791916,
+        "rmse": 2.1659014613703094,
+        "alternateRmse": 38.85578404243848,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 47,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.999816813856086,
+        "rmse": 2.1542982061822276,
+        "alternateRmse": 38.8557213010423,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 48,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999110349695423,
+        "rmse": 2.1569518341041505,
+        "alternateRmse": 38.85943512782328,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 49,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9996134254522725,
+        "rmse": 2.163763119115843,
+        "alternateRmse": 38.851316782428924,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 50,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997777363030539,
+        "rmse": 2.1577941029983645,
+        "alternateRmse": 38.85685984658598,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 51,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997634115349804,
+        "rmse": 2.153846656070379,
+        "alternateRmse": 38.8572134538782,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 52,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998170986684652,
+        "rmse": 2.152087894303238,
+        "alternateRmse": 38.85950795376178,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 53,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997169288600882,
+        "rmse": 2.1507223855287427,
+        "alternateRmse": 38.85666390036555,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 54,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 0.9997169288600882,
+        "rmse": 2.150621790856485,
+        "alternateRmse": 38.8566605502479,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 55,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0010325834074132,
+        "rmse": 2.129741187247108,
+        "alternateRmse": 38.81445713432932,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 56,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0010995997050187,
+        "rmse": 2.126217850796067,
+        "alternateRmse": 38.81401910634848,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 57,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000517436807419,
+        "rmse": 2.1529381278050677,
+        "alternateRmse": 38.75911514997674,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 58,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0008620053655188,
+        "rmse": 2.5628083186669253,
+        "alternateRmse": 38.85183726394116,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 59,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001285876433705,
+        "rmse": 2.439120131217596,
+        "alternateRmse": 38.86712103058689,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 60,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001206619597271,
+        "rmse": 2.4351676439991907,
+        "alternateRmse": 38.862768644200365,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 61,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012845649474018,
+        "rmse": 2.436186555006706,
+        "alternateRmse": 38.86401181205722,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 62,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0011400535113817,
+        "rmse": 2.438402722486058,
+        "alternateRmse": 38.8621995701384,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 63,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019127407873356,
+        "rmse": 2.3407066851920098,
+        "alternateRmse": 38.90048645626284,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 64,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019187892838677,
+        "rmse": 2.3384302974200835,
+        "alternateRmse": 38.90304568988813,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 65,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019970673991798,
+        "rmse": 2.336713170635968,
+        "alternateRmse": 38.90473539520094,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 66,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0015438673213806,
+        "rmse": 2.38637657654533,
+        "alternateRmse": 38.88615382825027,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 67,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0020108151685359,
+        "rmse": 2.34105608751117,
+        "alternateRmse": 38.90721141317709,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 68,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0018856497866875,
+        "rmse": 2.341915850207211,
+        "alternateRmse": 38.906303088594896,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 69,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.001870982019477,
+        "rmse": 2.3415406024923087,
+        "alternateRmse": 38.90462950243896,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 70,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000319507705426,
+        "rmse": 2.018041728467569,
+        "alternateRmse": 38.8676750795363,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 71,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005527237329566,
+        "rmse": 1.8541248644934913,
+        "alternateRmse": 38.90667571430219,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 72,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000534728768996,
+        "rmse": 1.853969579441974,
+        "alternateRmse": 38.905598078737555,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 73,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000676338778551,
+        "rmse": 1.8566451867132283,
+        "alternateRmse": 38.91072936965306,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 74,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0003709098668698,
+        "rmse": 1.8761502432574337,
+        "alternateRmse": 38.89909788381678,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 75,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0007138369174802,
+        "rmse": 1.8623454863447113,
+        "alternateRmse": 38.91079848964053,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 76,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0006475403632058,
+        "rmse": 1.8561387496406603,
+        "alternateRmse": 38.91008464227628,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 77,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0007448944128337,
+        "rmse": 1.8535215934504856,
+        "alternateRmse": 38.91300614978224,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 78,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0004997227383854,
+        "rmse": 1.8536271732335245,
+        "alternateRmse": 38.90592851398103,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 79,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005126428635887,
+        "rmse": 1.8534193999918043,
+        "alternateRmse": 38.90600291921365,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 80,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005126428635887,
+        "rmse": 1.85340643015581,
+        "alternateRmse": 38.90600230135368,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 81,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005126428635887,
+        "rmse": 1.85340643015581,
+        "alternateRmse": 38.90600230135368,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 82,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005033540962205,
+        "rmse": 1.8535550325239056,
+        "alternateRmse": 38.90606020359127,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 83,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0005180348797682,
+        "rmse": 1.8533563844852188,
+        "alternateRmse": 38.90724142414762,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 84,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 1.0004927707271287,
+        "rmse": 1.8532519085854904,
+        "alternateRmse": 38.90498502463275,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 85,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0002102684457825,
+        "rmse": 2.125059092946076,
+        "alternateRmse": 38.71545184161047,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 86,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9998091298068493,
+        "rmse": 2.1617680672648816,
+        "alternateRmse": 38.68072668445784,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 87,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0018143010169167,
+        "rmse": 2.3736586478415123,
+        "alternateRmse": 38.89694799099889,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 88,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022156680241114,
+        "rmse": 2.2850855512835446,
+        "alternateRmse": 38.911902509625676,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 89,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022002107551964,
+        "rmse": 2.2845959238312092,
+        "alternateRmse": 38.914479846735865,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 90,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022857314068092,
+        "rmse": 2.2861968365349594,
+        "alternateRmse": 38.915113683218195,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 91,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002007324396535,
+        "rmse": 2.2911247729641016,
+        "alternateRmse": 38.912602331215574,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 92,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0025267577950423,
+        "rmse": 2.286188705037343,
+        "alternateRmse": 38.92973887045659,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 93,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0023070610024543,
+        "rmse": 2.2853132933007196,
+        "alternateRmse": 38.93091596311228,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 94,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0023453746719644,
+        "rmse": 2.2837421145003964,
+        "alternateRmse": 38.932051293607806,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 95,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021160407387317,
+        "rmse": 2.2808752661253346,
+        "alternateRmse": 38.92653567186508,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 96,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021160407387317,
+        "rmse": 2.2808752661253346,
+        "alternateRmse": 38.92653567186508,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 97,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021160407387317,
+        "rmse": 2.28074879295055,
+        "alternateRmse": 38.92654145905927,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 98,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021160407387317,
+        "rmse": 2.28074879295055,
+        "alternateRmse": 38.92654145905927,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 99,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.0021160407387317,
+        "rmse": 2.28074879295055,
+        "alternateRmse": 38.92654145905927,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 100,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9983733329340782,
+        "rmse": 2.3301351331555966,
+        "alternateRmse": 38.769328627034284,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 101,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9983733652991212,
+        "rmse": 2.3300734021209037,
+        "alternateRmse": 38.76932999700813,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 102,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9985797960169857,
+        "rmse": 2.329280608294844,
+        "alternateRmse": 38.77470936240604,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 103,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9973245307665887,
+        "rmse": 2.6862645311215396,
+        "alternateRmse": 38.67342136837906,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 104,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002410548409666,
+        "rmse": 1.9361567690933206,
+        "alternateRmse": 38.88681855540007,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 105,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002393912777516,
+        "rmse": 1.9513573504739705,
+        "alternateRmse": 38.88722063841273,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 106,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0002549006064025,
+        "rmse": 1.9339944995971778,
+        "alternateRmse": 38.88432821645419,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 107,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997024681588337,
+        "rmse": 2.05809055396343,
+        "alternateRmse": 38.851169852738195,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 108,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0001418754029083,
+        "rmse": 1.9859226974715425,
+        "alternateRmse": 38.86350338291788,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 109,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.8383183558594357,
+        "rmse": 1.4395678330019548,
+        "alternateRmse": 32.57208189852523,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 110,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.6980614704991305,
+        "rmse": 1.202942732296794,
+        "alternateRmse": 27.12495006601306,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 111,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5619231922247877,
+        "rmse": 1.3826989451750291,
+        "alternateRmse": 21.839794894224184,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 112,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.4494295133604419,
+        "rmse": 1.0210286271560909,
+        "alternateRmse": 17.522774745959868,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 113,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.3455092826277194,
+        "rmse": 0.8632069397964097,
+        "alternateRmse": 13.490512164803627,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 114,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.25539234144820117,
+        "rmse": 0.7330650914433314,
+        "alternateRmse": 9.967539873995364,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 115,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.1719400099426707,
+        "rmse": 0.7579831715171318,
+        "alternateRmse": 6.68191269487094,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 116,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.10919228264350707,
+        "rmse": 0.6779338595904228,
+        "alternateRmse": 4.2807782113226365,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 117,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.06569906968690258,
+        "rmse": 0.55084791262424,
+        "alternateRmse": 2.5711470544063637,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 118,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.025456271535254656,
+        "rmse": 0.49940493718557005,
+        "alternateRmse": 1.0661563575182667,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 119,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.006332790306167288,
+        "rmse": 0.27275222954783135,
+        "alternateRmse": 0.34280684764126024,
+        "closedEntranceBoundarySway": false
+      }
+    ],
+    "initialRationalModMismatches": [
+      24,
+      39,
+      54,
+      69,
+      84,
+      99
+    ],
+    "closedEntranceBoundaryMismatches": [],
+    "classifiedFrames": 111,
+    "boundaryModel": "No entrance: right-sided modulo. With entrance: exact half/full cycle retains prior state, as shown independently with .3/.7, .3/1, .5/1. This is a discrete observed boundary policy; no epsilon or universal float-engine claim."
+  },
+  "combohalf": {
+    "movie": "/Users/tal/Downloads/yingxu-native-text-zoomhalf-sway1-fade-v9.mov",
+    "sha256": "f98753cc480c58376cd91a7647fd0ad7fe5b6d1201943cc2582de89b7450a6d2",
+    "rows": [
+      {
+        "frame": 0,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.0,
+        "rmse": 0.0,
+        "alternateRmse": 0.0,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 1,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.02167913610661619,
+        "rmse": 5.083180840295694,
+        "alternateRmse": 5.087046308532567,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 2,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.0510485930012814,
+        "rmse": 11.777436358951475,
+        "alternateRmse": 11.797912628881054,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 3,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.0763353995593419,
+        "rmse": 19.240661499050315,
+        "alternateRmse": 19.28078436989888,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 4,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.11501067389992904,
+        "rmse": 26.70523122875786,
+        "alternateRmse": 26.86970627890418,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 5,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.1577785423837172,
+        "rmse": 33.74161115570683,
+        "alternateRmse": 33.940967923673355,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 6,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.21810538551932643,
+        "rmse": 40.262645341492686,
+        "alternateRmse": 40.447084196898935,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 7,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 0.2759216262832086,
+        "rmse": 46.19173162282515,
+        "alternateRmse": 46.38294629789497,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 8,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.34902001594729243,
+        "rmse": 51.08728966679206,
+        "alternateRmse": 51.356549868474794,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 9,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.45095392630921144,
+        "rmse": 53.41852035303703,
+        "alternateRmse": 54.542882072101406,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 10,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5392507416142157,
+        "rmse": 55.45113183351769,
+        "alternateRmse": 57.13998602286326,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 11,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.6700570926480494,
+        "rmse": 50.58709589218028,
+        "alternateRmse": 54.59535723975799,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 12,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.8231664602715504,
+        "rmse": 38.09241929728581,
+        "alternateRmse": 47.33036387894098,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 13,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9381882956391593,
+        "rmse": 20.61534740391513,
+        "alternateRmse": 40.36155571751255,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 14,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9898330136605662,
+        "rmse": 6.825542310443094,
+        "alternateRmse": 38.768969413832615,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 15,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9958128113877207,
+        "rmse": 2.546561005793699,
+        "alternateRmse": 38.62305497789191,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 16,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9952452709380355,
+        "rmse": 2.6069934424960417,
+        "alternateRmse": 38.60069040571104,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 17,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9963733545150889,
+        "rmse": 2.5206082530664737,
+        "alternateRmse": 38.661379094558605,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 18,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9962084610935318,
+        "rmse": 2.493010626382169,
+        "alternateRmse": 38.67057724716072,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 19,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964643132322012,
+        "rmse": 2.4912031497552793,
+        "alternateRmse": 38.67531635451002,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 20,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9961373292018191,
+        "rmse": 2.497325580469569,
+        "alternateRmse": 38.67217745367004,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 21,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964561637143501,
+        "rmse": 2.4872639437102744,
+        "alternateRmse": 38.67968103771028,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 22,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9963787076932167,
+        "rmse": 2.480395111645828,
+        "alternateRmse": 38.67999714318958,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 23,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964708186058632,
+        "rmse": 2.4807028060282295,
+        "alternateRmse": 38.680840761255894,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 24,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9962696245519715,
+        "rmse": 2.482430530250656,
+        "alternateRmse": 38.67774137453663,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 25,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964592513394613,
+        "rmse": 2.4840375341791763,
+        "alternateRmse": 38.685917784509286,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 26,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964228989230577,
+        "rmse": 2.479572597680184,
+        "alternateRmse": 38.6860287466313,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 27,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9964685983639069,
+        "rmse": 2.480437069757995,
+        "alternateRmse": 38.6868752253715,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 28,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.99632165459525,
+        "rmse": 2.4772013046542813,
+        "alternateRmse": 38.68353612873459,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 29,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9984279003967352,
+        "rmse": 2.548285473469548,
+        "alternateRmse": 38.81610973785214,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 30,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 0.9984583817943214,
+        "rmse": 2.22282571666325,
+        "alternateRmse": 38.818784136478236,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 31,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9989553978972124,
+        "rmse": 2.2314703062661616,
+        "alternateRmse": 38.66638290861172,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 32,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9989995708438377,
+        "rmse": 2.229108212496185,
+        "alternateRmse": 38.657510004155554,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 33,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 0.9983026170082796,
+        "rmse": 2.4251827617131894,
+        "alternateRmse": 38.56860096108353,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 34,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0010767628788462,
+        "rmse": 2.0722909346295615,
+        "alternateRmse": 38.80450260923044,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 35,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0010767628788462,
+        "rmse": 2.0722909346295615,
+        "alternateRmse": 38.80450260923044,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 36,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0013092743933207,
+        "rmse": 2.067854700423963,
+        "alternateRmse": 38.80177403421461,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 37,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.000647130405657,
+        "rmse": 2.0918433351395223,
+        "alternateRmse": 38.76844946389539,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 38,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0013685783684871,
+        "rmse": 2.064814443693449,
+        "alternateRmse": 38.811505497319864,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 39,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012183903499612,
+        "rmse": 2.063609696031762,
+        "alternateRmse": 38.81254773321069,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 40,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0013421528982016,
+        "rmse": 2.062624345305774,
+        "alternateRmse": 38.81418267847792,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 41,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0010770434455676,
+        "rmse": 2.0725334449779322,
+        "alternateRmse": 38.80419289619367,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 42,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012626220198537,
+        "rmse": 2.067487195922543,
+        "alternateRmse": 38.81103009716901,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 43,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012021435793412,
+        "rmse": 2.067415641738392,
+        "alternateRmse": 38.81315606740144,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 44,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012530240280537,
+        "rmse": 2.068878473417846,
+        "alternateRmse": 38.81492721226266,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 45,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.0011411431542303,
+        "rmse": 2.0710971410834866,
+        "alternateRmse": 38.8142567673615,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 46,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994234361763,
+        "rmse": 2.1856574031615685,
+        "alternateRmse": 38.789242145969894,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 47,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994234361763,
+        "rmse": 2.185778380840294,
+        "alternateRmse": 38.789248962887136,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 48,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994661968712363,
+        "rmse": 2.187398122805505,
+        "alternateRmse": 38.78678982524077,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 49,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9990637893444271,
+        "rmse": 2.3613941555565763,
+        "alternateRmse": 38.74835358700309,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 50,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998336177864606,
+        "rmse": 2.1453182849698815,
+        "alternateRmse": 38.80062732435083,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 51,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997213563979835,
+        "rmse": 2.139250916128569,
+        "alternateRmse": 38.794935101025395,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 52,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999433611745849,
+        "rmse": 2.1512686821505604,
+        "alternateRmse": 38.803983253400745,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 53,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9994971766904862,
+        "rmse": 2.1891662959696485,
+        "alternateRmse": 38.79025888831938,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 54,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9998774076897672,
+        "rmse": 2.1470986486266637,
+        "alternateRmse": 38.80607679938928,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 55,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.999773082209857,
+        "rmse": 2.1334678024146143,
+        "alternateRmse": 38.803469483660685,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 56,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999428174418609,
+        "rmse": 2.1302141329850617,
+        "alternateRmse": 38.80965111475094,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 57,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.999694176234793,
+        "rmse": 2.134160696250999,
+        "alternateRmse": 38.79731196767234,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 58,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9997543946339742,
+        "rmse": 2.0813120052625096,
+        "alternateRmse": 38.89433674545623,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 59,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9999683664068796,
+        "rmse": 1.6233992915897664,
+        "alternateRmse": 38.90183268948194,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 60,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 0.9999501254685916,
+        "rmse": 1.6189326926418504,
+        "alternateRmse": 38.90247505902388,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 61,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0003821123003276,
+        "rmse": 2.0731644146708423,
+        "alternateRmse": 38.75745765658977,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 62,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0002446215571534,
+        "rmse": 2.0858362657595464,
+        "alternateRmse": 38.74657446681143,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 63,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017362055962138,
+        "rmse": 2.0198296748960556,
+        "alternateRmse": 38.8958005097377,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 64,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017464821679916,
+        "rmse": 2.0195620551897897,
+        "alternateRmse": 38.896294316844674,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 65,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.001762011209789,
+        "rmse": 2.021865717750883,
+        "alternateRmse": 38.89562986864879,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 66,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0012199106301034,
+        "rmse": 2.0141914703624626,
+        "alternateRmse": 38.833908682474416,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 67,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019935244287193,
+        "rmse": 2.027857889323843,
+        "alternateRmse": 38.90882560830676,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 68,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0020037488020372,
+        "rmse": 2.0277006534749953,
+        "alternateRmse": 38.90975195670343,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 69,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021739418802904,
+        "rmse": 2.0186353429023685,
+        "alternateRmse": 38.90940251403897,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 70,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0017464821679916,
+        "rmse": 2.019573957963779,
+        "alternateRmse": 38.89629493485885,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 71,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022941027348033,
+        "rmse": 2.0152591019799533,
+        "alternateRmse": 38.91059085153909,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 72,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0021500349856916,
+        "rmse": 2.020407029174918,
+        "alternateRmse": 38.9092785450365,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 73,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022621768518138,
+        "rmse": 2.0251625556403434,
+        "alternateRmse": 38.91568457883972,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 74,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0019894333744308,
+        "rmse": 2.029167314487502,
+        "alternateRmse": 38.91086571049448,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 75,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.0019894333744308,
+        "rmse": 2.029214699798109,
+        "alternateRmse": 38.91087038178753,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 76,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000118261867468,
+        "rmse": 2.0692805605214026,
+        "alternateRmse": 38.83989812430099,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 77,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0000268241477166,
+        "rmse": 2.065931165087874,
+        "alternateRmse": 38.840600206162684,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 78,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9993783646172869,
+        "rmse": 2.357733808925642,
+        "alternateRmse": 38.77667185611334,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 79,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009756571700963,
+        "rmse": 1.817462597775701,
+        "alternateRmse": 38.922107524323955,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 80,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009756701161134,
+        "rmse": 1.8175948052073507,
+        "alternateRmse": 38.92210841390109,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 81,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010140680032407,
+        "rmse": 1.818245338291419,
+        "alternateRmse": 38.923062688664594,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 82,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0006758468298962,
+        "rmse": 1.8680825580979386,
+        "alternateRmse": 38.90592768214795,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 83,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0012241041869057,
+        "rmse": 1.8236099933252432,
+        "alternateRmse": 38.923858335597565,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 84,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.001014792980206,
+        "rmse": 1.8176605296278583,
+        "alternateRmse": 38.92363483839553,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 85,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010436367066116,
+        "rmse": 1.8171291746533675,
+        "alternateRmse": 38.92363202834766,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 86,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0009768028926218,
+        "rmse": 1.8174844795693768,
+        "alternateRmse": 38.92211684734475,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 87,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000554639743508,
+        "rmse": 1.5901057610806888,
+        "alternateRmse": 38.88197224963472,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 88,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.0010278943496507,
+        "rmse": 1.2042547460215027,
+        "alternateRmse": 38.907270117408395,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 89,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 1.000908816883098,
+        "rmse": 1.2076957000355806,
+        "alternateRmse": 38.904486020507385,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 90,
+        "observedSway": false,
+        "expectedSway": true,
+        "fitAlpha": 1.0009049007128834,
+        "rmse": 1.2072596611418256,
+        "alternateRmse": 38.905048806302624,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 91,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0011535663876683,
+        "rmse": 2.006576362423926,
+        "alternateRmse": 38.78399697717065,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 92,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0026317027985168,
+        "rmse": 2.0414636323821775,
+        "alternateRmse": 38.923955867960565,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 93,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002612591637414,
+        "rmse": 2.039158654688991,
+        "alternateRmse": 38.92276534249616,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 94,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0026218960128774,
+        "rmse": 2.0403081217116146,
+        "alternateRmse": 38.92150565347762,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 95,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0022181931246055,
+        "rmse": 2.0242863938594287,
+        "alternateRmse": 38.89190790006357,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 96,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028954877152327,
+        "rmse": 2.0575153167782303,
+        "alternateRmse": 38.95092754057549,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 97,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028651212612307,
+        "rmse": 2.058225650996537,
+        "alternateRmse": 38.950681608586414,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 98,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.0028931387845408,
+        "rmse": 2.056522981694022,
+        "alternateRmse": 38.95112354893091,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 99,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 100,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 101,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 102,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 103,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 104,
+        "observedSway": true,
+        "expectedSway": true,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 105,
+        "observedSway": true,
+        "expectedSway": false,
+        "fitAlpha": 1.002844235352494,
+        "rmse": 2.0571190473953336,
+        "alternateRmse": 38.951919308872455,
+        "closedEntranceBoundarySway": true
+      },
+      {
+        "frame": 106,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.998365235200296,
+        "rmse": 2.64926639442113,
+        "alternateRmse": 38.744017477326835,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 107,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9982271335614123,
+        "rmse": 2.6907912467857655,
+        "alternateRmse": 38.713887406363895,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 108,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.9988703952659211,
+        "rmse": 2.5319769628259916,
+        "alternateRmse": 38.77044391744121,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 109,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.8366310367027551,
+        "rmse": 1.733092133133339,
+        "alternateRmse": 32.471421050196604,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 110,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.6970064218783237,
+        "rmse": 1.461607834909768,
+        "alternateRmse": 27.063812305359118,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 111,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.5603955686637432,
+        "rmse": 1.8580867668462417,
+        "alternateRmse": 21.7990279009119,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 112,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.44906338704694143,
+        "rmse": 1.2608480080627598,
+        "alternateRmse": 17.503721406712117,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 113,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.34542817582972496,
+        "rmse": 1.00168300080836,
+        "alternateRmse": 13.482753664072115,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 114,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.2554686452738004,
+        "rmse": 0.8434295487487296,
+        "alternateRmse": 9.972777025418859,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 115,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.17179518284783213,
+        "rmse": 0.8734913301549134,
+        "alternateRmse": 6.697870433699231,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 116,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.10919228264350707,
+        "rmse": 0.6779338595904228,
+        "alternateRmse": 4.2807782113226365,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 117,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.06569906968690258,
+        "rmse": 0.55084791262424,
+        "alternateRmse": 2.5711470544063637,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 118,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.025456271535254656,
+        "rmse": 0.49940493718557005,
+        "alternateRmse": 1.0661563575182667,
+        "closedEntranceBoundarySway": false
+      },
+      {
+        "frame": 119,
+        "observedSway": false,
+        "expectedSway": false,
+        "fitAlpha": 0.006332790306167288,
+        "rmse": 0.27275222954783135,
+        "alternateRmse": 0.34280684764126024,
+        "closedEntranceBoundarySway": false
+      }
+    ],
+    "initialRationalModMismatches": [
+      30,
+      45,
+      60,
+      75,
+      90,
+      105
+    ],
+    "closedEntranceBoundaryMismatches": [],
+    "classifiedFrames": 105,
+    "boundaryModel": "No entrance: right-sided modulo. With entrance: exact half/full cycle retains prior state, as shown independently with .3/.7, .3/1, .5/1. This is a discrete observed boundary policy; no epsilon or universal float-engine claim."
+  }
+}

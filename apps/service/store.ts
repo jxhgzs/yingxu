@@ -6,6 +6,7 @@ import type {SessionArchive} from '../../packages/core/src/session.ts';
 import {check, validateDocument, emptyDocument} from '../../packages/core/src/document.ts';
 import type {Document, Asset, Diagnostic, Imported} from '../../packages/core/src/document.ts';
 import type {Command} from '../../packages/core/src/commands.ts';
+import {validVideoPixelFormat} from '../../packages/core/src/video-pixels.ts';
 import {compare,rational} from '../../packages/core/src/time.ts';
 
 export const contentHash = (data: unknown) => createHash('sha256').update(JSON.stringify(data)).digest('hex');
@@ -46,14 +47,20 @@ export class Store {
     delete candidate.frameTiming;
     if(verified){check(asset.kind==='video'&&!!asset.fps&&compare(asset.fps,rational(30))===0&&typeof asset.sha256==='string'&&/^[a-f0-9]{64}$/.test(asset.sha256),'ASSET_FRAME_TIMING_IDENTITY_MISMATCH');candidate.frameTiming='cfr30';}
     const matches=(found:Asset)=>check(found.sha256===asset.sha256&&found.kind===asset.kind&&!!found.fps&&!!asset.fps&&compare(found.fps,asset.fps)===0,'ASSET_FRAME_TIMING_IDENTITY_MISMATCH');
+    const pixels=asset.pixelFormat!==undefined;
+    if(pixels)check(asset.kind==='video'&&validVideoPixelFormat(asset.pixelFormat),'INVALID_MEDIA_PIXEL_FORMAT');
+    const display=asset.verifiedDisplayTransform!==undefined;
+    if(display)check((asset.kind==='image'||asset.kind==='video')&&['identity','unsupported'].includes(asset.verifiedDisplayTransform!),'INVALID_MEDIA_DISPLAY_TRANSFORM');
+    const matchPixels=(found:Asset)=>{if(pixels||display)check(typeof asset.sha256==='string'&&found.sha256===asset.sha256&&found.kind===asset.kind&&found.width===asset.width&&found.height===asset.height,pixels?'ASSET_PIXEL_FORMAT_IDENTITY_MISMATCH':'ASSET_DISPLAY_TRANSFORM_IDENTITY_MISMATCH');};
+    const refreshNeeded=(found:Asset)=>(verified&&found.frameTiming!=='cfr30')||(pixels&&found.pixelFormat!==asset.pixelFormat)||(display&&found.verifiedDisplayTransform!==asset.verifiedDisplayTransform);
     const existing = this.assets.get(asset.id);
-    if(existing){if(verified)matches(existing);if(!verified||existing.frameTiming==='cfr30')return existing;}
+    if(existing){if(verified)matches(existing);matchPixels(existing);if(!refreshNeeded(existing))return existing;}
     // A single asset-list queue prevents uploads and metadata refreshes from losing registrations.
     return await this.#serial('assets', async () => {
       const found=this.assets.get(asset.id);
       if(found){
-        if(!verified)return found;matches(found);if(found.frameTiming==='cfr30')return found;
-        const refreshed:Asset={...found,frameTiming:'cfr30'},next=[...this.assets.values()].map(item=>item.id===found.id?refreshed:item);
+        if(verified)matches(found);matchPixels(found);if(!refreshNeeded(found))return found;
+        const refreshed:Asset={...found,...(verified?{frameTiming:'cfr30' as const}:{}),...(pixels?{pixelFormat:asset.pixelFormat}:{}),...(display?{verifiedDisplayTransform:asset.verifiedDisplayTransform}:{})},next=[...this.assets.values()].map(item=>item.id===found.id?refreshed:item);
         await atomicJSON(path.join(this.root,'assets.json'),next);this.assets.set(found.id,refreshed);return refreshed;
       }
       const next = [...this.assets.values(), candidate]; await atomicJSON(path.join(this.root, 'assets.json'), next);

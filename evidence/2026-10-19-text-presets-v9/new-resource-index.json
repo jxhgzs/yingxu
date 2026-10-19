@@ -1,0 +1,108 @@
+[
+  {
+    "id": "1644520",
+    "name": "晃动",
+    "files": [
+      {
+        "file": "TextWave.lua",
+        "sha256": "62f4be004cd3d206227b3926b25ab0aa1d48bf73ee2f8842799e9ea222379444"
+      },
+      {
+        "file": "anim.prefab",
+        "sha256": "6e2712e5a20c65cbcdb199196c6fceb238ffd809e2755f6a44f835b6d7594fe4"
+      },
+      {
+        "file": "config.json",
+        "sha256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+      },
+      {
+        "file": "content.json",
+        "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+      }
+    ],
+    "status": "native export successful"
+  },
+  {
+    "id": "12453543",
+    "name": "放大缩小",
+    "files": [
+      {
+        "file": "ImageBusinessSlider.json",
+        "sha256": "edb3dc39e93b7782fcccb4693e87809a39a3f7132f58a94d29db9d77d0e78433"
+      },
+      {
+        "file": "LuaRTTI.MarkGen.lua",
+        "sha256": "abc34a16ba9189d5d2026e44a0f42259c48c79a349c90e6e1686c57ab66c150e"
+      },
+      {
+        "file": "algorithmConfig.json",
+        "sha256": "1280ace81958e7624d5a3a78159475b24217f2b987115be2932e27a764e7c1a0"
+      },
+      {
+        "file": "anim.prefab",
+        "sha256": "f24050fce5f163aa4aa8d45872defd00618236ea132da58c0ab2eaf9a7a9ea8a"
+      },
+      {
+        "file": "config.json",
+        "sha256": "df40a817b281ae7abc6db79ef030b5b97d0661d5aa8c16407bf9c70b4fbbb0fa"
+      },
+      {
+        "file": "content.json",
+        "sha256": "b510240f4d2e037e4675be06e3d5e980bab7ae6f310099e42f0b70be2bead5ff"
+      },
+      {
+        "file": "extra.json",
+        "sha256": "43078d88e9c5ee53cc73253b8c584ad3cd823bbc3d195479ea85d64bcf24dd8c"
+      },
+      {
+        "file": "js-meta.json",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "file": "lua/ImageBusinessSlider.lua",
+        "sha256": "64585f0b380e0a2b4e00e30664dab06ad04ac7efdd02aa29531f4770f1445116"
+      },
+      {
+        "file": "lua/TextAnim.lua",
+        "sha256": "ec48144f5d77215ebfc6c366385c7157e392b0ad302218f4652cf62ef8a11b80"
+      },
+      {
+        "file": "lua/src/AE.lua",
+        "sha256": "51c3e1289d2ad5550ab76ae408f7a6e61c66ccd7b6826aabfeaaad4fd7c512ce"
+      },
+      {
+        "file": "lua/src/TextEntry.lua",
+        "sha256": "62f66691636910a9e713fd98f37113e97d6afbaea99bf6b6bba5a346381a2da1"
+      },
+      {
+        "file": "lua/src/TextMain.lua",
+        "sha256": "70133af337b88a830ab743b4d803d24dde98385abd857fa18db8249155961f2b"
+      },
+      {
+        "file": "lua/src/common/AEAdapter.lua",
+        "sha256": "94af13d46dc874ab11fbdbc89f96a0977b4106edabfbabfc604f9872716438b5"
+      },
+      {
+        "file": "lua/src/common/Utils.lua",
+        "sha256": "5400f60545df78185df84e14fddc27e0d7b7a5b7d50e72f8798bad9c2476504a"
+      },
+      {
+        "file": "lua/src/info_sticker/Helper.lua",
+        "sha256": "97096bdeca97bc83783c1ab05b8f16e561407f77e34f8c63303a3b1cc6e460d8"
+      },
+      {
+        "file": "lua/src/info_sticker/Patch0.lua",
+        "sha256": "7fcfa04b61c91a47f7d52b8e0303046db708979eb66bb22aa07dc5f4ed2aaad8"
+      },
+      {
+        "file": "lua-meta.json",
+        "sha256": "04e1272af358ca13eeca84eaf6acc6a863f6cf02d534fa3288cb06017eb3b4a1"
+      },
+      {
+        "file": "raw_summary.json",
+        "sha256": "e6ef5e9d7d048f8a449c23012bd5b253173418c8f470a3716630bffa1b3842e8"
+      }
+    ],
+    "status": "native UI applied; export requested login; cancelled, no MOV, no product support"
+  }
+]

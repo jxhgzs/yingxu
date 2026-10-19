@@ -1,0 +1,24 @@
+{
+  "nativeExport": {
+    "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/rea/text-presets-v9/native-evidence.json",
+    "bytes": 787690,
+    "records": 7,
+    "unknowns": 0
+  },
+  "nativeClose": {
+    "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/rea/text-presets-v9/native-snapshot.json",
+    "bytes": 1465834,
+    "primitive_entries": 3,
+    "workflow_entries": 0,
+    "evidence_records": 3
+  },
+  "finalExport": {
+    "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/rea/text-presets-v9/final-evidence.json",
+    "bytes": 91764,
+    "records": 6,
+    "unknowns": 0
+  },
+  "helperStopped": true,
+  "helperExitCode": 0,
+  "privateCodeLocation": "ignored artifacts/rea/text-presets-v9; no private source in product"
+}

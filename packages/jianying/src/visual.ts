@@ -1,7 +1,7 @@
 import {defaultTransform} from '../../core/src/document.ts';
 import type {Transform} from '../../core/src/document.ts';
 import {isKnownTransitionMaterial} from './transitions.ts';
-import {isKnownColorAdjustment} from './color-effects.ts';
+import {isKnownColorAdjustment,isKnownVignette} from './color-effects.ts';
 
 type Raw=Record<string,any>;
 const blank=(v:unknown)=>v==null||v==='';
@@ -41,7 +41,7 @@ export function importKnownVideoVisual(segment:Raw,material:Raw,materials:Raw,kn
     audio_fades:v=>knownFade&&v.type==='audio_fade'&&v.fade_type===0,
     loudnesses:v=>Object.keys(v).every(k=>['id','enable','file_id','loudness_param','target_loudness','time_range'].includes(k))&&v.enable===false&&v.file_id===''&&v.loudness_param===null&&v.target_loudness===0&&v.time_range===null,
     transitions:isKnownTransitionMaterial,
-    effects:isKnownColorAdjustment,
+    effects:v=>isKnownColorAdjustment(v)||isKnownVignette(v),
     material_animations:v=>v.type==='sticker_animation'&&Array.isArray(v.animations)&&v.animations.length===0&&v.multi_language_current==='none',
   };
   for(const ref of segment.extra_material_refs){

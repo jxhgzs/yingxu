@@ -1,0 +1,46 @@
+{
+  "scope": "Pure in-memory independent review of TextFrameCache.roll; no UI, HTTP, FFmpeg or performance task was started. Product sources/tests untouched by reviewer.",
+  "scenario": "Immediate async texture provider; FakeResource ready=Promise.resolve; first roll(frame0), await Promise.resolve exactly four times, second roll(frame1), await both.",
+  "attemptedMicrotaskDelays": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "failedDelay": 4,
+  "observed": {
+    "providerFrames": [
+      0
+    ],
+    "secondFrameReady": false,
+    "secondPromiseRejected": false,
+    "rollingBeforeSecondCall": true
+  },
+  "finding": "New latest window can be enqueued after run returns but before tracked.finally clears rollingPromise; no producer processes the new window.",
+  "notified": [
+    "/root",
+    "/root/gpu_text_cache_v8"
+  ],
+  "status": "GPU agent reproduced old failure, fixed rolling ownership in producer try/finally, added exact ticks4 regression; reviewer read-confirmed final patch. GPU agent reported38 pure cache/transport/GL tests passed.",
+  "additionalConfirmedFinding": {
+    "issue": "Public external signal originally replaced internal operation signal; seek/pause failed to abort provider and stale warm could start old disk preparation.",
+    "fix": "Capture generation and AbortSignal.any before warm; propagate composite signal and verify generation after warm; automated warm checks epoch before rolling.",
+    "verification": "Reviewer read-confirmed patch and targeted pure regressions; tests executed by GPU agent."
+  }
+}
