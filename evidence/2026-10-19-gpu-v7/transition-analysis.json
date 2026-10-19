@@ -1,0 +1,339 @@
+{
+  "resultSHA256": "d4d426c5374b7fc24cf93765f12b2275c02e3a326d3371085ab9ea4bf47773c3",
+  "sourceSHA256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785",
+  "formal": {
+    "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/transition-zero-clone/render/render.mp4",
+    "sha256": "990df5aafc95193700c29ce43825486fe42bb7cec2b2b1a82b8958e2bd5abee9"
+  },
+  "native": {
+    "path": "/Users/tal/Downloads/yingxu-native-zero-handles-v7-1758.mov",
+    "sha256": "5fdf4d3ea5167c88de2a71c56b49738805da46cc886adf8ec34965d2b6a7296b"
+  },
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "sourcePalette": [
+    {
+      "frame": 0,
+      "rgb": [
+        32,
+        31,
+        63
+      ],
+      "nearest": [
+        {
+          "frame": 0,
+          "error": 0
+        },
+        {
+          "frame": 1,
+          "error": 12.206555615733702
+        }
+      ],
+      "correct": true,
+      "decodedTime": 0
+    },
+    {
+      "frame": 14,
+      "rgb": [
+        201,
+        32,
+        64
+      ],
+      "nearest": [
+        {
+          "frame": 14,
+          "error": 0
+        },
+        {
+          "frame": 15,
+          "error": 11.045361017187261
+        }
+      ],
+      "correct": true,
+      "decodedTime": 0.466667
+    },
+    {
+      "frame": 15,
+      "rgb": [
+        212,
+        31,
+        64
+      ],
+      "nearest": [
+        {
+          "frame": 15,
+          "error": 0
+        },
+        {
+          "frame": 14,
+          "error": 11.045361017187261
+        }
+      ],
+      "correct": true,
+      "decodedTime": 0.5
+    },
+    {
+      "frame": 165,
+      "rgb": [
+        92,
+        192,
+        65
+      ],
+      "nearest": [
+        {
+          "frame": 165,
+          "error": 0
+        },
+        {
+          "frame": 164,
+          "error": 11.090536506409416
+        }
+      ],
+      "correct": true,
+      "decodedTime": 5.5
+    },
+    {
+      "frame": 179,
+      "rgb": [
+        67,
+        208,
+        64
+      ],
+      "nearest": [
+        {
+          "frame": 179,
+          "error": 0
+        },
+        {
+          "frame": 178,
+          "error": 11
+        }
+      ],
+      "correct": true,
+      "decodedTime": 5.966667
+    }
+  ],
+  "records": [
+    {
+      "frame": 165,
+      "sourceFrames": [
+        165,
+        0
+      ],
+      "progress": 0,
+      "rgb": [
+        92,
+        192,
+        65
+      ],
+      "vsFormal": {
+        "maxRGB": 1,
+        "meanRGB": 0.3333333333333333,
+        "over3RGB": 0
+      },
+      "vsNative": {
+        "maxRGB": 1,
+        "meanRGB": 0.3333333333333333,
+        "over3RGB": 0
+      },
+      "vsBrowserDecodedBlend": {
+        "maxRGB": 0,
+        "meanRGB": 0,
+        "over3RGB": 0
+      },
+      "decodedSourceTimes": [
+        {
+          "clipId": "left",
+          "time": 5.5
+        },
+        {
+          "clipId": "right",
+          "time": 0
+        }
+      ],
+      "readPixelsSha256": "b42a84fe4da75a934676dba019e77cb1a6ed74dc33ab2e380131aed307076cc0"
+    },
+    {
+      "frame": 179,
+      "sourceFrames": [
+        179,
+        0
+      ],
+      "progress": 0.4666666666666667,
+      "rgb": [
+        51,
+        125,
+        64
+      ],
+      "vsFormal": {
+        "maxRGB": 2,
+        "meanRGB": 1,
+        "over3RGB": 0
+      },
+      "vsNative": {
+        "maxRGB": 1,
+        "meanRGB": 0.3334259259259259,
+        "over3RGB": 0
+      },
+      "vsBrowserDecodedBlend": {
+        "maxRGB": 0.46666666666666856,
+        "meanRGB": 0.40000000000729097,
+        "over3RGB": 0
+      },
+      "decodedSourceTimes": [
+        {
+          "clipId": "left",
+          "time": 5.966667
+        },
+        {
+          "clipId": "right",
+          "time": 0
+        }
+      ],
+      "readPixelsSha256": "1500b575ffed40616692768b104b6277e8d49d2ca06e8fd148a49ad627f4bfb6"
+    },
+    {
+      "frame": 180,
+      "sourceFrames": [
+        179,
+        0
+      ],
+      "progress": 0.5,
+      "rgb": [
+        50,
+        120,
+        64
+      ],
+      "vsFormal": {
+        "maxRGB": 2,
+        "meanRGB": 1.3333333333333333,
+        "over3RGB": 0
+      },
+      "vsNative": {
+        "maxRGB": 1,
+        "meanRGB": 1,
+        "over3RGB": 0
+      },
+      "vsBrowserDecodedBlend": {
+        "maxRGB": 0.5,
+        "meanRGB": 0.5,
+        "over3RGB": 0
+      },
+      "decodedSourceTimes": [
+        {
+          "clipId": "left",
+          "time": 5.966667
+        },
+        {
+          "clipId": "right",
+          "time": 0
+        }
+      ],
+      "readPixelsSha256": "7a4a6406751a2aaeeac98b53cb7fa4396006ff7ab985c1459ecf2e5a057a87e5"
+    },
+    {
+      "frame": 194,
+      "sourceFrames": [
+        179,
+        14
+      ],
+      "progress": 0.9666666666666667,
+      "rgb": [
+        197,
+        38,
+        64
+      ],
+      "vsFormal": {
+        "maxRGB": 2,
+        "meanRGB": 1,
+        "over3RGB": 0
+      },
+      "vsNative": {
+        "maxRGB": 1,
+        "meanRGB": 0.6666666666666666,
+        "over3RGB": 0
+      },
+      "vsBrowserDecodedBlend": {
+        "maxRGB": 0.46666666666666856,
+        "meanRGB": 0.20000000000522472,
+        "over3RGB": 0
+      },
+      "decodedSourceTimes": [
+        {
+          "clipId": "left",
+          "time": 5.966667
+        },
+        {
+          "clipId": "right",
+          "time": 0.466667
+        }
+      ],
+      "readPixelsSha256": "f0ba6093d7003781b0ce5d8cbf35181406d724e7cafe2046d3c79782f751cfc3"
+    }
+  ],
+  "afterDispose": {
+    "backend": "webgl2",
+    "frameRasters": 0,
+    "previewQuality": "realtime",
+    "state": "disposed",
+    "support": {
+      "supported": true,
+      "reasons": [],
+      "visualLayers": 2,
+      "audioLayers": 0,
+      "maxConcurrentMedia": 2
+    },
+    "renderer": {
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+      "vendor": "Google Inc. (Apple)",
+      "softwareRenderer": false,
+      "maxTextureSize": 16384,
+      "timerAvailable": true
+    },
+    "color": {
+      "contract": "browser-srgb-v1",
+      "drawingBufferColorSpace": "srgb",
+      "unpackColorSpace": "srgb",
+      "unpackConversion": "unknown",
+      "unpackConversionEnum": null,
+      "framebufferFormat": "rgba8",
+      "mixDomain": "encoded-component-values",
+      "premultipliedAlpha": false
+    },
+    "time": 6.466666666666667,
+    "audioState": "uninitialized",
+    "curveAudio": {
+      "cachedClips": 0,
+      "pcmBytes": 0,
+      "routes": []
+    },
+    "metrics": {
+      "displayedFrames": 11,
+      "droppedOutputFrames": 0,
+      "decoderDroppedFrames": 0,
+      "drawCalls": 18,
+      "textureUploads": 14,
+      "framebufferPasses": 8,
+      "transitionDraws": 4,
+      "framebufferCount": 0,
+      "framebufferBytes": 0,
+      "framebufferAllocations": 2,
+      "lastCpuMs": 3.399999976158142,
+      "meanCpuMs": 3.2363636276938696,
+      "lastDecodeWaitMs": 7,
+      "maxSourceDriftMs": 0,
+      "lastPresentedFrame": 194,
+      "activeMedia": 2,
+      "cachedMedia": 0,
+      "contextLosses": 0,
+      "lastGpuMs": 4.011458
+    },
+    "decoders": []
+  },
+  "scope": "Actual WebGL readPixels independently recomputed; four selected CFR30 1x dissolve frames only; native/formal encoded references include codec residuals"
+}

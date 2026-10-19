@@ -1,0 +1,18 @@
+{
+  "path": "/Applications/VideoFusion-macOS.app/Contents/Frameworks/libeffect.dylib",
+  "sha256": "3eb3a9b59aa7b9b9f9c6f94ea834374ca257710451582064d246f36f6e4079aa",
+  "rows": [
+    {
+      "offset": 35922243,
+      "stringStart": 35921849,
+      "stringEnd": 35935831,
+      "sha256": "06782904959ef8f27a21fb65abf6f8e8f44556d6111488ca8b35dc36a4ea3d9c"
+    },
+    {
+      "offset": 75425490,
+      "stringStart": 75425096,
+      "stringEnd": 75439078,
+      "sha256": "06782904959ef8f27a21fb65abf6f8e8f44556d6111488ca8b35dc36a4ea3d9c"
+    }
+  ]
+}

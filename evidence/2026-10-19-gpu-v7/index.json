@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-10-19T09:59:53.919Z",
+  "scope": "Pure observations, independently computed metrics and hashes only. No private shader/decompiler output or raw pixels copied.",
+  "original29ResultSHA256": "ad48b054029be5c74e124c097bef09e92418a64c7f1621a5e686c72f66b0b4ae",
+  "files": [
+    {
+      "file": "QA.md",
+      "bytes": 5746,
+      "sha256": "51c5a815b1148028274d71e99d9cb01d083c8b0bf1cb26b3b986b6107a5b5f05"
+    },
+    {
+      "file": "TRANSITION-QA.md",
+      "bytes": 1614,
+      "sha256": "7bc137b072bc8f71cf3e6d942adde4eaff88d9f11ab1cf837c6153ee112fa8d4"
+    },
+    {
+      "file": "analysis.json",
+      "bytes": 246448,
+      "sha256": "e05c4af21b6b1af8dc3508c726eb15ddc1d143b45814a3a2d88dad25a7abd37f"
+    },
+    {
+      "file": "authority-encoded-comparison.json",
+      "bytes": 36184,
+      "sha256": "f5f2ca64ab14bef3fe5370722e17fd541440d801864c647565f9e4a962b34abc"
+    },
+    {
+      "file": "color-preencode-comparison.json",
+      "bytes": 7608,
+      "sha256": "a65dac9cf03fab12ade352622875d14ee0439a3d8e1d8260d4a844c237f3bcf7"
+    },
+    {
+      "file": "error-distribution.json",
+      "bytes": 10871,
+      "sha256": "eb0209ba4ca1cc171da285b722b1664947960c182d39b10731830902e7b34c7d"
+    },
+    {
+      "file": "float-source-isolation.json",
+      "bytes": 547,
+      "sha256": "c499e002126d6a8ac39e86eda60919426137bb44a8126cb212bdf49c71340b89"
+    },
+    {
+      "file": "image-float-conversion.json",
+      "bytes": 1802,
+      "sha256": "ddca53e30ba5154f6c5afcef8aa87be3932ee6e0360bff95268536adf9669371"
+    },
+    {
+      "file": "transition-analysis.json",
+      "bytes": 7401,
+      "sha256": "e055fd07b58d50cfa5fc85e73c758416c0e93e55ba3e8052cdad4acb4290d141"
+    },
+    {
+      "file": "transition-result.json",
+      "bytes": 18454,
+      "sha256": "d4d426c5374b7fc24cf93765f12b2275c02e3a326d3371085ab9ea4bf47773c3"
+    },
+    {
+      "file": "audio-result.json",
+      "bytes": 209875,
+      "sha256": "c119e2e8efd571427ba065b871cff20efedb627a7a0d05759d7fe70675e33427"
+    },
+    {
+      "file": "audio-analysis.json",
+      "bytes": 667,
+      "sha256": "3db82f780b3f4ee85a349968ca7043d666d50d09487e6a0bdee663ebb8e56672"
+    },
+    {
+      "file": "evidence-index.json",
+      "bytes": 1234,
+      "sha256": "9d7a2151a5ceba75e26e84dd5cc604dc3a7de146f2eff54d4c4a2cf14dd00f35"
+    }
+  ]
+}

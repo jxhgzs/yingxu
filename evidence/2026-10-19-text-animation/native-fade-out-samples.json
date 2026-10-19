@@ -1,0 +1,92 @@
+{
+  "path": "/Users/tal/Downloads/yingxu-native-text-fade-out-v7-1730.mov",
+  "sha256": "5787325d1aefe3bade616312c0973a982a4ab542a8191e0182f28f2c4edbcb21",
+  "frames": 60,
+  "rows": [
+    {
+      "frame": 43,
+      "alphaEstimate": 1.0027460145269946,
+      "outQuadPrediction": 1
+    },
+    {
+      "frame": 44,
+      "alphaEstimate": 1.002785508645998,
+      "outQuadPrediction": 1
+    },
+    {
+      "frame": 45,
+      "alphaEstimate": 1.002713122040017,
+      "outQuadPrediction": 1
+    },
+    {
+      "frame": 46,
+      "alphaEstimate": 0.8835608274457489,
+      "outQuadPrediction": 0.8711111111111107
+    },
+    {
+      "frame": 47,
+      "alphaEstimate": 0.7613047825775214,
+      "outQuadPrediction": 0.7511111111111112
+    },
+    {
+      "frame": 48,
+      "alphaEstimate": 0.6492291731192318,
+      "outQuadPrediction": 0.6399999999999997
+    },
+    {
+      "frame": 49,
+      "alphaEstimate": 0.5381313075020533,
+      "outQuadPrediction": 0.5377777777777779
+    },
+    {
+      "frame": 50,
+      "alphaEstimate": 0.45137910406483883,
+      "outQuadPrediction": 0.44444444444444425
+    },
+    {
+      "frame": 51,
+      "alphaEstimate": 0.3662828939948597,
+      "outQuadPrediction": 0.3600000000000001
+    },
+    {
+      "frame": 52,
+      "alphaEstimate": 0.2927802817067587,
+      "outQuadPrediction": 0.28444444444444433
+    },
+    {
+      "frame": 53,
+      "alphaEstimate": 0.2174596840645642,
+      "outQuadPrediction": 0.21777777777777788
+    },
+    {
+      "frame": 54,
+      "alphaEstimate": 0.16661156768864832,
+      "outQuadPrediction": 0.15999999999999992
+    },
+    {
+      "frame": 55,
+      "alphaEstimate": 0.11522610821034977,
+      "outQuadPrediction": 0.11111111111111122
+    },
+    {
+      "frame": 56,
+      "alphaEstimate": 0.07700164250918268,
+      "outQuadPrediction": 0.07111111111111108
+    },
+    {
+      "frame": 57,
+      "alphaEstimate": 0.036944905819663344,
+      "outQuadPrediction": 0.04000000000000007
+    },
+    {
+      "frame": 58,
+      "alphaEstimate": 0.012274796973375626,
+      "outQuadPrediction": 0.01777777777777777
+    },
+    {
+      "frame": 59,
+      "alphaEstimate": 0.001208313482305701,
+      "outQuadPrediction": 0.004444444444444472
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "filter": "format=gbrapf32le",
+    "maxLSB": 1.1050565242767334,
+    "meanLSB": 0.49965801848511165
+  },
+  {
+    "filter": "format=rgba,format=gbrapf32le",
+    "maxLSB": 1.1050565242767334,
+    "meanLSB": 0.49965801848511165
+  },
+  {
+    "filter": "format=rgba,format=gbrap16le,format=gbrapf32le",
+    "maxLSB": 1.2140040397644043,
+    "meanLSB": 0.5042939850976609
+  },
+  {
+    "filter": "format=rgba,scale=flags=accurate_rnd+full_chroma_int,format=gbrapf32le",
+    "maxLSB": 1.1050565242767334,
+    "meanLSB": 0.49965801848511165
+  }
+]

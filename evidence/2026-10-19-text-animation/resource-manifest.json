@@ -1,0 +1,98 @@
+[
+  {
+    "resource": "1644304",
+    "relative": "Appear.lua",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/Appear.lua",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/Appear.lua",
+    "bytes": 2025,
+    "sha256": "ef2d2d102315061748756dad60645f1f64fb4b23796ca01f1f200874605c23aa"
+  },
+  {
+    "resource": "1644304",
+    "relative": "anim.prefab",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/anim.prefab",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/anim.prefab",
+    "bytes": 398,
+    "sha256": "bb10f5900882853d37437a166615c32680d8632aa99b699294c444aae2703f87"
+  },
+  {
+    "resource": "1644304",
+    "relative": "config.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/config.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/config.json",
+    "bytes": 63,
+    "sha256": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718"
+  },
+  {
+    "resource": "1644304",
+    "relative": "content.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/content.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479/content.json",
+    "bytes": 60,
+    "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+  },
+  {
+    "resource": "1644275",
+    "relative": "PrinterOne.lua",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/PrinterOne.lua",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/PrinterOne.lua",
+    "bytes": 2106,
+    "sha256": "17fa3dcec8efd6ebcc421d5fc14d9e4385832fddbf6b69e62ec70215cfaabaae"
+  },
+  {
+    "resource": "1644275",
+    "relative": "anim.prefab",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/anim.prefab",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/anim.prefab",
+    "bytes": 406,
+    "sha256": "9ffd193f29ba2bf0de60b8f2b40169c9710d6118b51d8756faba2f757113ed2e"
+  },
+  {
+    "resource": "1644275",
+    "relative": "config.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/config.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/config.json",
+    "bytes": 63,
+    "sha256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+  },
+  {
+    "resource": "1644275",
+    "relative": "content.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/content.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917/content.json",
+    "bytes": 60,
+    "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+  },
+  {
+    "resource": "1644600",
+    "relative": "Disappear.lua",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/Disappear.lua",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/Disappear.lua",
+    "bytes": 2107,
+    "sha256": "eece8b2217d5ae2fe2cba6a4f3f75d81b54e01aa7b621436f64dfe38e9d20ce9"
+  },
+  {
+    "resource": "1644600",
+    "relative": "anim.prefab",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/anim.prefab",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/anim.prefab",
+    "bytes": 404,
+    "sha256": "b87721144e6459541645f7685e4ba6d630eea961df4948eb8593c5601d135aaa"
+  },
+  {
+    "resource": "1644600",
+    "relative": "config.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/config.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/config.json",
+    "bytes": 63,
+    "sha256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+  },
+  {
+    "resource": "1644600",
+    "relative": "content.json",
+    "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/content.json",
+    "canonical": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1/content.json",
+    "bytes": 60,
+    "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+  }
+]

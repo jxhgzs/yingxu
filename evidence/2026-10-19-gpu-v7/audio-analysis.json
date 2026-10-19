@@ -1,0 +1,25 @@
+{
+  "resultSHA256": "c119e2e8efd571427ba065b871cff20efedb627a7a0d05759d7fe70675e33427",
+  "syncCalls": 240,
+  "silenceCalls": 240,
+  "counts": {
+    "cancelScheduledValues": 963,
+    "setValueAtTime": 963,
+    "setValueCurveAtTime": 480
+  },
+  "schedulingEvents": 2406,
+  "curvesWithoutImmediateResetPair": 0,
+  "sameClockRepeatedCalls": 222,
+  "nativeErrors": [],
+  "observedOverlaps": 0,
+  "beforeDispose": {
+    "state": "running",
+    "time": 0.09066666666666667,
+    "curveRoutes": []
+  },
+  "afterDispose": {
+    "state": "closed"
+  },
+  "pass": true,
+  "scope": "Recomputed actual AudioParam log sequence, no audio waveform/listening or output latency claim"
+}

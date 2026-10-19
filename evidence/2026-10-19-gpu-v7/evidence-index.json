@@ -1,0 +1,42 @@
+[
+  {
+    "file": "result.json",
+    "sha256": "ad48b054029be5c74e124c097bef09e92418a64c7f1621a5e686c72f66b0b4ae"
+  },
+  {
+    "file": "analysis.json",
+    "sha256": "e05c4af21b6b1af8dc3508c726eb15ddc1d143b45814a3a2d88dad25a7abd37f"
+  },
+  {
+    "file": "authority-encoded-comparison.json",
+    "sha256": "f5f2ca64ab14bef3fe5370722e17fd541440d801864c647565f9e4a962b34abc"
+  },
+  {
+    "file": "color-preencode-comparison.json",
+    "sha256": "a65dac9cf03fab12ade352622875d14ee0439a3d8e1d8260d4a844c237f3bcf7"
+  },
+  {
+    "file": "error-distribution.json",
+    "sha256": "eb0209ba4ca1cc171da285b722b1664947960c182d39b10731830902e7b34c7d"
+  },
+  {
+    "file": "float-source-isolation.json",
+    "sha256": "c499e002126d6a8ac39e86eda60919426137bb44a8126cb212bdf49c71340b89"
+  },
+  {
+    "file": "cases.json",
+    "sha256": "737664f1c037e1a33ef6615b1cbccccc3315b47f4d3af33889ac4fc268467f0d"
+  },
+  {
+    "file": "probe.ts",
+    "sha256": "2d26fd2012d6092c0a277e2c25332ca6b8caadb745c1f7c3e3208fe5f7a52a97"
+  },
+  {
+    "file": "prepare.mjs",
+    "sha256": "158f12915478a0fad2d9edff5b623ce58f891e16ea180cae35315da7ae959781"
+  },
+  {
+    "file": "QA.md",
+    "sha256": "51c5a815b1148028274d71e99d9cb01d083c8b0bf1cb26b3b986b6107a5b5f05"
+  }
+]

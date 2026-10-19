@@ -1,0 +1,301 @@
+{
+  "alphaDissolve": {
+    "sourceFile": "artifacts/qa/native-transitions-v7/01-alpha-dissolve-native.json",
+    "sha256": "71eb1360c184e893be4cdda449c0e017b483985b21c6cb8ef2fdf2a77273eb33",
+    "duration": 4000000,
+    "fps": 30.0,
+    "canvas": {
+      "height": 360,
+      "ratio": "original",
+      "width": 640
+    },
+    "transitions": [
+      {
+        "category_id": "39663",
+        "category_name": "热门",
+        "duration": 1000000,
+        "effect_id": "322577",
+        "id": "FD1D377E-E49A-4BDF-9153-7DA19E3743AE",
+        "is_overlap": true,
+        "name": "叠化",
+        "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/322577/2d641adc4bb63e37e3a0067d8c8cc3c3",
+        "platform": "all",
+        "request_id": "20261019141316722840C06B827776A7FA",
+        "resource_id": "6724845717472416269",
+        "type": "transition"
+      }
+    ],
+    "assets": [
+      {
+        "id": "3328A921-9340-4718-BE0F-0952DFAE04A0",
+        "path": "/private/tmp/yingxu-transition-green-20261019.mp4",
+        "duration": 4000000,
+        "width": 640,
+        "height": 360
+      },
+      {
+        "id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+        "path": "/tmp/yingxu-transition-probe-20261019.mp4",
+        "duration": 6000000,
+        "width": 640,
+        "height": 360
+      },
+      {
+        "id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+        "path": "/tmp/yingxu-transition-probe-20261019.mp4",
+        "duration": 6000000,
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "tracks": [
+      {
+        "id": "42D319D7-7FDD-4EC3-BEF6-361AF0B38DC6",
+        "type": "video",
+        "segments": [
+          {
+            "id": "C6C5A08E-97B3-4CF8-91B0-672BC7010B66",
+            "material_id": "3328A921-9340-4718-BE0F-0952DFAE04A0",
+            "source_timerange": {
+              "duration": 4000000,
+              "start": 0
+            },
+            "target_timerange": {
+              "duration": 4000000,
+              "start": 0
+            },
+            "clip": {
+              "alpha": 1.0,
+              "flip": {
+                "horizontal": false,
+                "vertical": false
+              },
+              "rotation": 0.0,
+              "scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "transform": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            },
+            "extra_material_refs": [
+              "AD93F2AE-366A-4A96-A723-E71E5A59D9FC",
+              "88C00B13-F373-455C-AD03-C9B60AF11F2C",
+              "89B87D70-3C49-4863-9BC2-C3B47F4A5E29",
+              "9ECD458F-27B5-4110-B08E-BA2153F0A94B",
+              "7648534B-70AF-409C-AAFC-C62484A67BD7"
+            ],
+            "volume": 0.0
+          }
+        ]
+      },
+      {
+        "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+        "type": "video",
+        "segments": [
+          {
+            "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "material_id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+            "source_timerange": {
+              "duration": 2000000,
+              "start": 0
+            },
+            "target_timerange": {
+              "duration": 2000000,
+              "start": 0
+            },
+            "clip": {
+              "alpha": 0.5,
+              "flip": {
+                "horizontal": false,
+                "vertical": false
+              },
+              "rotation": 0.0,
+              "scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "transform": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            },
+            "extra_material_refs": [
+              "53FC5DA6-E8F5-4052-A94B-AF297DBD8619",
+              "FD1D377E-E49A-4BDF-9153-7DA19E3743AE",
+              "32610094-EF1E-456A-A888-D6E5C5F7B953",
+              "5170CA82-FC16-4C0F-A76F-0A1D130DFD63",
+              "8C30AAB2-E15B-4433-AC3E-41B17EE11DAF",
+              "3A34B563-5603-4C83-B645-5CA706B53F10"
+            ],
+            "volume": 0.0
+          },
+          {
+            "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "material_id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+            "source_timerange": {
+              "duration": 2000000,
+              "start": 4000000
+            },
+            "target_timerange": {
+              "duration": 2000000,
+              "start": 2000000
+            },
+            "clip": {
+              "alpha": 0.5,
+              "flip": {
+                "horizontal": false,
+                "vertical": false
+              },
+              "rotation": 0.0,
+              "scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "transform": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            },
+            "extra_material_refs": [
+              "0EE9DECE-4FBF-447B-A9E6-800A2462F4FF",
+              "0E9C0F0D-9C9D-4FDF-AD40-28BC46EBF14C",
+              "52D916B8-0FA0-4AF1-A215-97C63CA242EA",
+              "F0A2A46E-85D6-4E37-8FB9-0DD04C02A815",
+              "BB64E1CC-27E7-4EF3-ABFC-F7538425F77E"
+            ],
+            "volume": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "zeroHandles": {
+    "sourceFile": "artifacts/qa/native-transitions-v7/02-zero-handles-native.json",
+    "sha256": "dc7e62064c3d494a6f252e55a6118a4be1d87762c7511811862a3086624f1183",
+    "duration": 12000000,
+    "fps": 30.0,
+    "canvas": {
+      "height": 720,
+      "ratio": "original",
+      "width": 1280
+    },
+    "transitions": [
+      {
+        "category_id": "39663",
+        "category_name": "热门",
+        "duration": 1000000,
+        "effect_id": "322577",
+        "id": "FD1D377E-E49A-4BDF-9153-7DA19E3743AE",
+        "is_overlap": true,
+        "name": "叠化",
+        "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/322577/2d641adc4bb63e37e3a0067d8c8cc3c3",
+        "platform": "all",
+        "request_id": "20261019141316722840C06B827776A7FA",
+        "resource_id": "6724845717472416269",
+        "type": "transition"
+      }
+    ],
+    "assets": [
+      {
+        "id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+        "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-audible-curve/source-av.mp4",
+        "duration": 6000000,
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+        "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-audible-curve/source-av.mp4",
+        "duration": 6000000,
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "tracks": [
+      {
+        "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+        "type": "video",
+        "segments": [
+          {
+            "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "material_id": "13192F66-F204-48FE-8F94-E8BE66A0CE71",
+            "source_timerange": {
+              "duration": 6000000,
+              "start": 0
+            },
+            "target_timerange": {
+              "duration": 6000000,
+              "start": 0
+            },
+            "clip": {
+              "alpha": 1.0,
+              "flip": {
+                "horizontal": false,
+                "vertical": false
+              },
+              "rotation": 0.0,
+              "scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "transform": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            },
+            "extra_material_refs": [
+              "53FC5DA6-E8F5-4052-A94B-AF297DBD8619",
+              "FD1D377E-E49A-4BDF-9153-7DA19E3743AE",
+              "32610094-EF1E-456A-A888-D6E5C5F7B953",
+              "5170CA82-FC16-4C0F-A76F-0A1D130DFD63",
+              "8C30AAB2-E15B-4433-AC3E-41B17EE11DAF",
+              "FDAF9CDD-030A-4225-A1F4-97518C5B1223",
+              "DB625377-FFDB-4432-8547-1D2D6839A855"
+            ],
+            "volume": 0.0
+          },
+          {
+            "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "material_id": "7B25CB16-3B91-4186-A333-41DF08DBCFB5",
+            "source_timerange": {
+              "duration": 6000000,
+              "start": 0
+            },
+            "target_timerange": {
+              "duration": 6000000,
+              "start": 6000000
+            },
+            "clip": {
+              "alpha": 1.0,
+              "flip": {
+                "horizontal": false,
+                "vertical": false
+              },
+              "rotation": 0.0,
+              "scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "transform": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            },
+            "extra_material_refs": [
+              "0EE9DECE-4FBF-447B-A9E6-800A2462F4FF",
+              "0E9C0F0D-9C9D-4FDF-AD40-28BC46EBF14C",
+              "52D916B8-0FA0-4AF1-A215-97C63CA242EA",
+              "F0A2A46E-85D6-4E37-8FB9-0DD04C02A815",
+              "6E860260-E084-4C07-9074-3BF51945F249",
+              "2566BE7D-3A2D-4553-AF45-1CFF447246B7"
+            ],
+            "volume": 0.0
+          }
+        ]
+      }
+    ]
+  }
+}

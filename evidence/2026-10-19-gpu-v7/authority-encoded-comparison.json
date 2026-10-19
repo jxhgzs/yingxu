@@ -1,0 +1,1272 @@
+[
+  {
+    "id": "fade-neutral-30",
+    "kind": "text",
+    "encoding": {
+      "args": [
+        "-loop",
+        "1",
+        "-framerate",
+        "30/1",
+        "-i",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/service-data/media/a_515b0a32443a629673d6a589.png",
+        "-vf",
+        "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "90",
+        "-t",
+        "3",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/fade-neutral-30/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/fade-neutral-30/authority-encoded.mp4",
+      "sha256": "03a9d90650ab65c7e532e470de1a9441d9e2a420c60b5aa0ecb4bdec9a973856"
+    },
+    "frames": [
+      {
+        "frame": 30,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.9999074074074074,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.9999074074074074,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 35,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 16,
+          "meanRGB": 1.0680208333333334,
+          "over3RGB": 1790
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 16,
+          "meanRGB": 1.0694039351851852,
+          "over3RGB": 1820
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0032118055555555554,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 45,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 39,
+          "meanRGB": 1.2199074074074074,
+          "over3RGB": 3541
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 40,
+          "meanRGB": 1.2219212962962962,
+          "over3RGB": 3544
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0037847222222222223,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 75,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 84,
+          "meanRGB": 1.4903414351851851,
+          "over3RGB": 4586
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 84,
+          "meanRGB": 1.489681712962963,
+          "over3RGB": 4591
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.005393518518518519,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 85,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 13,
+          "meanRGB": 1.039994212962963,
+          "over3RGB": 1352
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 13,
+          "meanRGB": 1.0402546296296296,
+          "over3RGB": 1317
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0032118055555555554,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "decorated-60",
+    "kind": "text",
+    "encoding": {
+      "args": [
+        "-loop",
+        "1",
+        "-framerate",
+        "60/1",
+        "-i",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/service-data/media/a_515b0a32443a629673d6a589.png",
+        "-vf",
+        "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "60/1",
+        "-frames:v",
+        "180",
+        "-t",
+        "3",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/decorated-60/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/decorated-60/authority-encoded.mp4",
+      "sha256": "247b571f18fbd63b7482b5d115ab6532ed9256576a894d7a31b06d469a846577"
+    },
+    "frames": [
+      {
+        "frame": 60,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 75,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.1510127314814815,
+          "over3RGB": 3548
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.151278935185185,
+          "over3RGB": 3515
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 2,
+          "meanRGB": 0.016168981481481482,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 100,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 49,
+          "meanRGB": 1.3264699074074073,
+          "over3RGB": 5549
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 49,
+          "meanRGB": 1.327025462962963,
+          "over3RGB": 5553
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 2,
+          "meanRGB": 0.01412037037037037,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 155,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 70,
+          "meanRGB": 1.5518229166666666,
+          "over3RGB": 7439
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 70,
+          "meanRGB": 1.550630787037037,
+          "over3RGB": 7440
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 2,
+          "meanRGB": 0.017905092592592594,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 175,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 8,
+          "meanRGB": 1.0147685185185185,
+          "over3RGB": 516
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 8,
+          "meanRGB": 1.0144155092592593,
+          "over3RGB": 541
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 2,
+          "meanRGB": 0.018813657407407407,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "typewriter-30",
+    "kind": "text",
+    "encoding": {
+      "args": [
+        "-loop",
+        "1",
+        "-framerate",
+        "30/1",
+        "-i",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/service-data/media/a_515b0a32443a629673d6a589.png",
+        "-vf",
+        "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "90",
+        "-t",
+        "3",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/typewriter-30/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/typewriter-30/authority-encoded.mp4",
+      "sha256": "00963f9e6d479455ae9a48a1582ce29e524ef6f761c5fb1dc6f7413745ac6277"
+    },
+    "frames": [
+      {
+        "frame": 30,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 31,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 33,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.0250462962962963,
+          "over3RGB": 458
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.025005787037037,
+          "over3RGB": 461
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0003993055555555556,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 34,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.0256307870370371,
+          "over3RGB": 456
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.0255671296296296,
+          "over3RGB": 457
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0007002314814814815,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 40,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 36,
+          "meanRGB": 1.0789814814814815,
+          "over3RGB": 1203
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 36,
+          "meanRGB": 1.079056712962963,
+          "over3RGB": 1209
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.001267361111111111,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 45,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 43,
+          "meanRGB": 1.1208738425925926,
+          "over3RGB": 1700
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 42,
+          "meanRGB": 1.1198842592592593,
+          "over3RGB": 1701
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0024131944444444444,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 58,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 60,
+          "meanRGB": 1.354224537037037,
+          "over3RGB": 3901
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 61,
+          "meanRGB": 1.355769675925926,
+          "over3RGB": 3908
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.005283564814814815,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "typewriter-ntsc",
+    "kind": "text",
+    "encoding": {
+      "args": [
+        "-loop",
+        "1",
+        "-framerate",
+        "30000/1001",
+        "-i",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/service-data/media/a_515b0a32443a629673d6a589.png",
+        "-vf",
+        "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30000/1001",
+        "-frames:v",
+        "90",
+        "-t",
+        "3.003",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/typewriter-ntsc/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,subtitles=filename=authority.ass:fontsdir=fonts,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/typewriter-ntsc/authority-encoded.mp4",
+      "sha256": "70bf2a80bafe0c3181e14317e2fd5b47596b70cbb0b18833e6178bb7e52854d1"
+    },
+    "frames": [
+      {
+        "frame": 30,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 31,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 1,
+          "over3RGB": 0
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 34,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.0256307870370371,
+          "over3RGB": 456
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 31,
+          "meanRGB": 1.0255671296296296,
+          "over3RGB": 457
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0007002314814814815,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 44,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 43,
+          "meanRGB": 1.1182349537037037,
+          "over3RGB": 1696
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 43,
+          "meanRGB": 1.1182407407407406,
+          "over3RGB": 1700
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.0017881944444444445,
+          "over3RGB": 0
+        }
+      },
+      {
+        "frame": 58,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 60,
+          "meanRGB": 1.3659837962962964,
+          "over3RGB": 4208
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 60,
+          "meanRGB": 1.367482638888889,
+          "over3RGB": 4207
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 1,
+          "meanRGB": 0.005283564814814815,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-neutral",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-neutral/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-neutral/authority-encoded.mp4",
+      "sha256": "f8e342751b015c859629934e209fbb7c7a7b2d8c5bbd699143618e41ae533433"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 219,
+          "meanRGB": 23.202921549479168,
+          "over3RGB": 20016
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 219,
+          "meanRGB": 23.202921549479168,
+          "over3RGB": 20016
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-temperature-plus",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-temperature-plus/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-temperature-plus/authority-encoded.mp4",
+      "sha256": "df48de3e3131303edea86ca80c17966dfb1e5269d2ba8d3365c1fe59427b7412"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 16,
+          "meanRGB": 1.3568929036458333,
+          "over3RGB": 2877
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 157,
+          "meanRGB": 13.411702473958334,
+          "over3RGB": 17018
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 157,
+          "meanRGB": 13.411702473958334,
+          "over3RGB": 17018
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-temperature-minus",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-temperature-minus/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-temperature-minus/authority-encoded.mp4",
+      "sha256": "d41204f3e9f3294882acb6e599b086a97a2e2ccf58f1bc7e7c0e7eb8a96f1831"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 16,
+          "meanRGB": 1.8360188802083333,
+          "over3RGB": 4033
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 212,
+          "meanRGB": 23.554890950520832,
+          "over3RGB": 19709
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 212,
+          "meanRGB": 23.554890950520832,
+          "over3RGB": 19709
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-tint-plus",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-tint-plus/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-tint-plus/authority-encoded.mp4",
+      "sha256": "a5399079bb71e2323b698e72bc5521d03051d5669c740abbc48b386251ddbe82"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 17,
+          "meanRGB": 1.6632486979166667,
+          "over3RGB": 3797
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 219,
+          "meanRGB": 22.243896484375,
+          "over3RGB": 19452
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 219,
+          "meanRGB": 22.243896484375,
+          "over3RGB": 19452
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-tint-minus",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-tint-minus/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-tint-minus/authority-encoded.mp4",
+      "sha256": "045cc7c06f0766a8385c23008482919d49814bf5a091df927fae9c88d5eeece7"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 16,
+          "meanRGB": 1.7206217447916667,
+          "over3RGB": 3909
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 212,
+          "meanRGB": 23.2791748046875,
+          "over3RGB": 20222
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 212,
+          "meanRGB": 23.2791748046875,
+          "over3RGB": 20222
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-both-plus",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-both-plus/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-both-plus/authority-encoded.mp4",
+      "sha256": "0a31bc0e44cad2830e60076e10ce09451620d1067c07ce7d472c74c849d680d4"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 15,
+          "meanRGB": 1.4143473307291667,
+          "over3RGB": 3126
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 148,
+          "meanRGB": 14.059814453125,
+          "over3RGB": 17054
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 148,
+          "meanRGB": 14.059814453125,
+          "over3RGB": 17054
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "color-all-stages",
+    "kind": "color",
+    "encoding": {
+      "args": [
+        "-stream_loop",
+        "-1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgba",
+        "-s",
+        "128x64",
+        "-framerate",
+        "30/1",
+        "-i",
+        "math-quantized.rgba",
+        "-vf",
+        "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "30/1",
+        "-frames:v",
+        "30",
+        "-t",
+        "1",
+        "-colorspace",
+        "bt709",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-color_range",
+        "tv",
+        "-movflags",
+        "+faststart",
+        "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-all-stages/authority-encoded.mp4"
+      ],
+      "filter": "format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv",
+      "preset": "veryfast",
+      "crf": 18,
+      "pixelFormat": "yuv420p",
+      "colorSpace": "bt709 limited",
+      "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/gpu-v7/references/color-all-stages/authority-encoded.mp4",
+      "sha256": "c85429a1a6e0ddf1627da754fefaf72cb4328d6871bf9ab989a538753e1c9716"
+    },
+    "frames": [
+      {
+        "frame": 0,
+        "encodedAuthorityVsProduct": {
+          "maxRGB": 22,
+          "meanRGB": 2.7488606770833335,
+          "over3RGB": 7436
+        },
+        "authorityVsEncodedAuthority": {
+          "maxRGB": 218,
+          "meanRGB": 24.595499674479168,
+          "over3RGB": 19640
+        },
+        "gpuVsEncodedAuthority": {
+          "maxRGB": 218,
+          "meanRGB": 24.595499674479168,
+          "over3RGB": 19640
+        },
+        "gpuVsRawAuthority": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "over3RGB": 0
+        }
+      }
+    ]
+  }
+]

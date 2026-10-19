@@ -4,7 +4,9 @@
 
 ## 当前结论
 
-原生 UI 的色温使用草稿 **`type=temperature`**，色调使用 **`type=tone`**。两者 `version=v3`、`sub_type=none`，资源路径都为 `DefaultAdjustBundle/combine_adjust`，UI ±50 对应 value ±1。独立包的 `tone_intensity` 和合并包的 `tint_intensity` 仍是不同的资源 event key；内部 `MaterialPictureAdjust::get_hue()` 的名称不是草稿 type，禁止仅按名称猜映射。
+0.7补充校核：05中tone、07及09中temperature实际为`sub_type=manual_zoom`，此前“全none”记录不准确。产品仅为这两类允许该已观测subtype，其他未知字段继续拒绝。候选已接入0.7核心、GPU与导出，产品九原生色卡回归沿用灰4/彩3门槛；原始0.6隔离链记录如下。
+
+原生 UI 的色温使用草稿 **`type=temperature`**，色调使用 **`type=tone`**。两者 `version=v3`，观察到 `sub_type=none` 或 `manual_zoom`，资源路径都为 `DefaultAdjustBundle/combine_adjust`，UI ±50 对应 value ±1。独立包的 `tone_intensity` 和合并包的 `tint_intensity` 仍是不同的资源 event key；内部 `MaterialPictureAdjust::get_hue()` 的名称不是草稿 type，禁止仅按名称猜映射。
 
 独立重写白点矩阵后，在18个静态色块的 H264 编码链比较中，最大误差为灰阶4、彩色3个8位LSB。亮度+50、色温+50 的顺序探针支持“先亮度、后温度”；反序有显著偏差。结果支持继续集成候选，但不构成整应用或逐像素 1:1 验收。
 

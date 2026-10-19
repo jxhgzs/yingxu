@@ -1,0 +1,156 @@
+[
+  {
+    "receipt": "002-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_3eb82d880d2e17aaf2ff35613d7c6f20abcd9661d9a0c8bd82a25d66803e5c8b",
+    "parent": null,
+    "elapsedSeconds": 14.901902541
+  },
+  {
+    "receipt": "003-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_4dee4404b3f13e02761865b688a475c8e2b627537d69f21106ebf91efd7792ad",
+    "parent": null,
+    "elapsedSeconds": 0.026867042000001676
+  },
+  {
+    "receipt": "004-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_283770bde091d7de858dcb5cd8997c79879de994b8b1b6767b0647e8cdf01873",
+    "parent": null,
+    "elapsedSeconds": 0.15691808300000049
+  },
+  {
+    "receipt": "005-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_76eeae95a19f24508d3602aa933e56a313b8bb118c4609ea9a3a0bcf3f2c94f3",
+    "parent": null,
+    "elapsedSeconds": 0.43504162499999804
+  },
+  {
+    "receipt": "006-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_03ec5b5f0ad8aa5ff055459c783bbff172fe5cbec70f7419ebdc4b50be2a21d9",
+    "parent": null,
+    "elapsedSeconds": 0.058120750000001865
+  },
+  {
+    "receipt": "007-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_50dcdde00f92f129e9b08d7ba31a6cd0f695373a7fd89dad47e14c8e38191307",
+    "parent": null,
+    "elapsedSeconds": 0.34427187499999856
+  },
+  {
+    "receipt": "008-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_f4162af5bae13508b15b99ba1f4aa3607bfb06c61fe1a82a5d34bdb29bd35b88",
+    "parent": null,
+    "elapsedSeconds": 0.044528416000001014
+  },
+  {
+    "receipt": "009-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_8ace5677b497d90f03889cf7d2d55c5037066c7b96d8530c0e26c5d92c20a195",
+    "parent": null,
+    "elapsedSeconds": 0.2876463750000039
+  },
+  {
+    "receipt": "011-analyze.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_93bc8aca20d96cee9b28cf337d89cfad84a72926d9b97efc7c899c7c220d23e7",
+    "parent": null,
+    "elapsedSeconds": 0.07096095800001058
+  },
+  {
+    "receipt": "015-resource.json",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_e72e37f844da2d8c24d61b73555646d8f9e153f60a58d1875ea603f4a1693755",
+    "parent": "ev_9c5b93a02eb78124d308db899bc6491d4366140e3a1229dbd32b518859ce18b1",
+    "elapsedSeconds": 0.3564307919999992
+  },
+  {
+    "receipt": "021-inspect_macho.json",
+    "operation": "inspect_macho",
+    "evidenceId": "ev_1b9bce3e242eaa0fcd8091bcafd71bef1a4557d0a19be8dbe9564a2cb8ce725b",
+    "parent": "ev_fb47c7aefec845315287a178cf8bcebb871f8a3106e9dae16a97ca50335f8859",
+    "elapsedSeconds": 1.991966791999992
+  },
+  {
+    "receipt": "022-address_to_file_offset.json",
+    "operation": "address_to_file_offset",
+    "evidenceId": "ev_59d05813f70468192a94e9f99f426c423c3a3c187e34e56dc0dbf051a005f336",
+    "parent": null,
+    "elapsedSeconds": 17.591494875000002
+  },
+  {
+    "receipt": "023-read_bytes.json",
+    "operation": "read_bytes",
+    "evidenceId": "ev_753a2f9385f373dd818b5b4fda31f26010255de18321d93147e96e2d471be4b5",
+    "parent": null,
+    "elapsedSeconds": 0.007169499999989057
+  },
+  {
+    "receipt": "027-animation-enum-initializer.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_b718e11faa65db1242e425fa3190455c3f088585c311f23b03c7c91953c362e7",
+    "parent": null,
+    "elapsedSeconds": 14.997356084000028
+  },
+  {
+    "receipt": "028-segment-update-animation-duration.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_803a63adc57340339ea833d3129623abc5e6673e14cc2522d5589e7c2cfe6f3f",
+    "parent": null,
+    "elapsedSeconds": 0.0804654590000282
+  },
+  {
+    "receipt": "029-update-link-animations.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_138a22815aa788df92db987f3f272628702e5ebc8282af566d7cd26e6491fa9e",
+    "parent": null,
+    "elapsedSeconds": 0.04157345899997745
+  },
+  {
+    "receipt": "030-convert-animation-adjust-json.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_9e017e175ee014763323a46e57b590679bf3de848a0ea1baa3b3a4e207279c90",
+    "parent": null,
+    "elapsedSeconds": 0.062208625000028404
+  },
+  {
+    "receipt": "031-convert-text-animation.json",
+    "operation": "analyze_function",
+    "evidenceId": "ev_c40b6d34dc56e185160be8901b3ee38d19628ccd0463bcdbb5e5e94d88b6e233",
+    "parent": null,
+    "elapsedSeconds": 0.10235087500000373
+  },
+  {
+    "receipt": "032-typewriter-resource.json",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_8b89fa74a74496f693b272a8031cde2afd574910866980f80321a3d6cc5d7b5b",
+    "parent": "ev_379ab183139a1d05e677ab1f26dd283adb96c857f1f85bc1907a889de49e30b0",
+    "elapsedSeconds": 0.015976040999987163
+  },
+  {
+    "receipt": "033-enum-assembly.json",
+    "operation": "read_bytes",
+    "evidenceId": "ev_07c17d14b83ccef59c72e774adfc86271d36eb47df24d8004bafd915c4253606",
+    "parent": null,
+    "elapsedSeconds": 0.01704641700000502
+  },
+  {
+    "receipt": "034-vtable-text.json",
+    "operation": "read_bytes",
+    "evidenceId": "ev_01b820f23adfc86f1b9fbd61daaa9573933805c02e993290e8a70af3b36592bb",
+    "parent": null,
+    "elapsedSeconds": 0.004582792000030167
+  },
+  {
+    "receipt": "035-analyze_javascript_application.json",
+    "operation": "analyze_javascript_application",
+    "evidenceId": "ev_8caaaf19e53356c9e9fe0d160fa881272d44f3476fef3455fb2c15f54ef81496",
+    "parent": "ev_651a8475af8799dcf855ba371181b7b8b1848d2f19a6d13da33f5ba8d1f571eb",
+    "elapsedSeconds": 0.0379884590000147
+  }
+]

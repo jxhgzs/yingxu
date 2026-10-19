@@ -1,0 +1,471 @@
+[
+  {
+    "id": "fade-neutral-30",
+    "frame": 30,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0.38542789394266,
+      "maxCr": 0.45415290830581656,
+      "meanY": 0.9999604444429964,
+      "meanCb": 0.000053531651936480555,
+      "meanCr": 0.0000630767928202523
+    }
+  },
+  {
+    "id": "fade-neutral-30",
+    "frame": 35,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 273,
+    "maxChebyshevDistanceToGlyph": 2,
+    "distanceHistogram": {
+      "0": 262,
+      "1": 10,
+      "2": 1
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 6.123200000000001,
+      "maxCb": 7.41657684845872,
+      "maxCr": 6.91262382524765,
+      "meanY": 1.0093062083319695,
+      "meanCb": 0.07968283693803796,
+      "meanCr": 0.07542937551152931
+    }
+  },
+  {
+    "id": "fade-neutral-30",
+    "frame": 45,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 1135,
+    "maxChebyshevDistanceToGlyph": 4,
+    "distanceHistogram": {
+      "0": 762,
+      "1": 344,
+      "2": 22,
+      "3": 3,
+      "4": 4
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 12.6074,
+      "maxCb": 23.582884242293602,
+      "maxCr": 21.742189484378965,
+      "meanY": 1.0299542395820882,
+      "meanCb": 0.22050242247191443,
+      "meanCr": 0.19862103521082353
+    }
+  },
+  {
+    "id": "fade-neutral-30",
+    "frame": 75,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 1481,
+    "maxChebyshevDistanceToGlyph": 6,
+    "distanceHistogram": {
+      "0": 963,
+      "1": 446,
+      "2": 45,
+      "3": 14,
+      "4": 7,
+      "5": 4,
+      "6": 2
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 16.945,
+      "maxCb": 49.50948480275922,
+      "maxCr": 45.16776733553467,
+      "meanY": 1.0670465381933874,
+      "meanCb": 0.45425152803226587,
+      "meanCr": 0.40758103983222255
+    },
+    "quantization": {
+      "noH264RGBtoYUV420toRGB": {
+        "maxRGB": 72,
+        "meanRGB": 1.4328993055555554
+      },
+      "noH264VsProductDecoded": {
+        "maxRGB": 37,
+        "meanRGB": 0.2340162037037037
+      }
+    }
+  },
+  {
+    "id": "fade-neutral-30",
+    "frame": 85,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 75,
+    "maxChebyshevDistanceToGlyph": 1,
+    "distanceHistogram": {
+      "0": 71,
+      "1": 4
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 2.651,
+      "maxCb": 6.8020047424013805,
+      "maxCr": 5.729235458470916,
+      "meanY": 0.9899004305541987,
+      "meanCb": 0.06956740557112535,
+      "meanCr": 0.05775143404453351
+    }
+  },
+  {
+    "id": "decorated-60",
+    "frame": 60,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0,
+      "maxCr": 0,
+      "meanY": 0.9999999999985517,
+      "meanCb": 0,
+      "meanCr": 0
+    }
+  },
+  {
+    "id": "decorated-60",
+    "frame": 75,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 864,
+    "maxChebyshevDistanceToGlyph": 2,
+    "distanceHistogram": {
+      "0": 743,
+      "1": 114,
+      "2": 7
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 15.3462,
+      "maxCb": 13.062297909032118,
+      "maxCr": 13.141859283718567,
+      "meanY": 1.066512697915673,
+      "meanCb": 0.12967343035196763,
+      "meanCr": 0.128628368593544
+    }
+  },
+  {
+    "id": "decorated-60",
+    "frame": 100,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 1724,
+    "maxChebyshevDistanceToGlyph": 9,
+    "distanceHistogram": {
+      "0": 1365,
+      "1": 248,
+      "2": 63,
+      "3": 19,
+      "4": 7,
+      "5": 4,
+      "6": 5,
+      "7": 7,
+      "8": 3,
+      "9": 3
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 15.295199999999998,
+      "maxCb": 26.35374003017892,
+      "maxCr": 28.967106934213867,
+      "meanY": 1.1026842361103204,
+      "meanCb": 0.28617869182774,
+      "meanCr": 0.2714979459472832
+    }
+  },
+  {
+    "id": "decorated-60",
+    "frame": 155,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 2522,
+    "maxChebyshevDistanceToGlyph": 3,
+    "distanceHistogram": {
+      "0": 2025,
+      "1": 403,
+      "2": 83,
+      "3": 11
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 30.8384,
+      "maxCb": 34.64518215132572,
+      "maxCr": 31.56743713487427,
+      "meanY": 1.2328576770832158,
+      "meanCb": 0.43481568368123513,
+      "meanCr": 0.4240231188969348
+    },
+    "quantization": {
+      "noH264RGBtoYUV420toRGB": {
+        "maxRGB": 45,
+        "meanRGB": 1.2899363425925925
+      },
+      "noH264VsProductDecoded": {
+        "maxRGB": 63,
+        "meanRGB": 0.5292013888888889
+      }
+    }
+  },
+  {
+    "id": "decorated-60",
+    "frame": 175,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 5.647,
+      "maxCb": 3.22914421211468,
+      "maxCr": 3.1833883667767333,
+      "meanY": 1.000537270831958,
+      "meanCb": 0.03786870374362289,
+      "meanCr": 0.04034709434002214
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 30,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0,
+      "maxCr": 0,
+      "meanY": 0.9999999999985517,
+      "meanCb": 0,
+      "meanCr": 0
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 31,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0,
+      "maxCr": 0,
+      "meanY": 0.9999999999985517,
+      "meanCb": 0,
+      "meanCr": 0
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 33,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 127,
+    "maxChebyshevDistanceToGlyph": 6,
+    "distanceHistogram": {
+      "0": 71,
+      "1": 40,
+      "2": 5,
+      "3": 6,
+      "4": 2,
+      "5": 2,
+      "6": 1
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 9.540400000000002,
+      "maxCb": 17.47887475749084,
+      "maxCr": 14.329565659131317,
+      "meanY": 1.0027397083318914,
+      "meanCb": 0.02542637451797557,
+      "meanCr": 0.023699124932972077
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 34,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 131,
+    "maxChebyshevDistanceToGlyph": 6,
+    "distanceHistogram": {
+      "0": 75,
+      "1": 40,
+      "2": 5,
+      "3": 6,
+      "4": 2,
+      "5": 2,
+      "6": 1
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 9.540400000000002,
+      "maxCb": 17.47887475749084,
+      "maxCr": 14.329565659131317,
+      "meanY": 1.002095284720778,
+      "meanCb": 0.02632462396110267,
+      "meanCr": 0.024430258339683323
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 40,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 377,
+    "maxChebyshevDistanceToGlyph": 6,
+    "distanceHistogram": {
+      "0": 251,
+      "1": 113,
+      "2": 5,
+      "4": 2,
+      "5": 4,
+      "6": 2
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 10.4498,
+      "maxCb": 19.39545160594956,
+      "maxCr": 18.421259842519685,
+      "meanY": 1.0110222430541373,
+      "meanCb": 0.07841591369069006,
+      "meanCr": 0.07205000899585154
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 45,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 526,
+    "maxChebyshevDistanceToGlyph": 5,
+    "distanceHistogram": {
+      "0": 369,
+      "1": 145,
+      "2": 7,
+      "3": 1,
+      "4": 2,
+      "5": 2
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 8.7014,
+      "maxCb": 24.42660056046562,
+      "maxCr": 23.288036576073154,
+      "meanY": 1.01609814235971,
+      "meanCb": 0.11743001103267026,
+      "meanCr": 0.10840133359086195
+    }
+  },
+  {
+    "id": "typewriter-30",
+    "frame": 58,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 1285,
+    "maxChebyshevDistanceToGlyph": 3,
+    "distanceHistogram": {
+      "0": 882,
+      "1": 392,
+      "2": 10,
+      "3": 1
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 11.6532,
+      "maxCb": 35.60347057555508,
+      "maxCr": 33.61328422656845,
+      "meanY": 1.0327520902765495,
+      "meanCb": 0.3419597771610267,
+      "meanCr": 0.31619367450540575
+    }
+  },
+  {
+    "id": "typewriter-ntsc",
+    "frame": 30,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0,
+      "maxCr": 0,
+      "meanY": 0.9999999999985517,
+      "meanCb": 0,
+      "meanCr": 0
+    }
+  },
+  {
+    "id": "typewriter-ntsc",
+    "frame": 31,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 0,
+    "maxChebyshevDistanceToGlyph": null,
+    "distanceHistogram": {},
+    "approximateEncodedRec709Components": {
+      "maxY": 1,
+      "maxCb": 0,
+      "maxCr": 0,
+      "meanY": 0.9999999999985517,
+      "meanCb": 0,
+      "meanCr": 0
+    }
+  },
+  {
+    "id": "typewriter-ntsc",
+    "frame": 34,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 131,
+    "maxChebyshevDistanceToGlyph": 6,
+    "distanceHistogram": {
+      "0": 75,
+      "1": 40,
+      "2": 5,
+      "3": 6,
+      "4": 2,
+      "5": 2,
+      "6": 1
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 9.540400000000002,
+      "maxCb": 17.47887475749084,
+      "maxCr": 14.329565659131317,
+      "meanY": 1.002095284720778,
+      "meanCb": 0.02632462396110267,
+      "meanCr": 0.024430258339683323
+    }
+  },
+  {
+    "id": "typewriter-ntsc",
+    "frame": 44,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 527,
+    "maxChebyshevDistanceToGlyph": 5,
+    "distanceHistogram": {
+      "0": 355,
+      "1": 155,
+      "2": 5,
+      "3": 4,
+      "4": 4,
+      "5": 4
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 9.7244,
+      "maxCb": 24.5828842422936,
+      "maxCr": 23.288036576073154,
+      "meanY": 1.0151550208319289,
+      "meanCb": 0.11561106320806744,
+      "meanCr": 0.10647438916405635
+    }
+  },
+  {
+    "id": "typewriter-ntsc",
+    "frame": 58,
+    "largeErrorThreshold": 8,
+    "largeErrorPixels": 1363,
+    "maxChebyshevDistanceToGlyph": 4,
+    "distanceHistogram": {
+      "0": 897,
+      "1": 422,
+      "2": 31,
+      "3": 10,
+      "4": 3
+    },
+    "approximateEncodedRec709Components": {
+      "maxY": 12.743200000000002,
+      "maxCb": 35.718042681612424,
+      "maxCr": 34.475742951485906,
+      "meanY": 1.0353405381932137,
+      "meanCb": 0.3471535618158833,
+      "meanCr": 0.32133510119450853
+    }
+  }
+]

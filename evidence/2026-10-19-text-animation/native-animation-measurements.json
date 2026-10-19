@@ -1,0 +1,307 @@
+{
+  "files": {
+    "fade": {
+      "path": "/Users/tal/Downloads/yingxu-native-text-fade-in-v7-1723.mov",
+      "sha256": "3747a486d34d0ee9e065e3e8d855a103090a5a961ac5366882c395e3eaf144bd",
+      "frames": 60
+    },
+    "typewriter": {
+      "path": "/Users/tal/Downloads/yingxu-native-text-typewriter-v7-1726.mov",
+      "sha256": "745f698816248c37dc7507df5359116d2bd2226543686ebf6550234280d1c749",
+      "frames": 60
+    },
+    "zero": {
+      "path": "/Users/tal/Downloads/yingxu-native-text-zero-v7-1728.mov",
+      "sha256": "5831a677cc3621c7d916670dfdd402641d337b02573b33d073ba4b5b6958e0bf",
+      "frames": 60
+    }
+  },
+  "maskPixels": 1929,
+  "glyphs": [
+    {
+      "x0": 531,
+      "x1": 563,
+      "pixels": 252,
+      "firstVisibleFrame": 3,
+      "firstVisibleUs": 100000.0,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        254.0,
+        254.0,
+        254.0,
+        255.0,
+        255.0,
+        254.5,
+        255.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0
+      ]
+    },
+    {
+      "x0": 569,
+      "x1": 599,
+      "pixels": 320,
+      "firstVisibleFrame": 5,
+      "firstVisibleUs": 166666.66666666666,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        253.0,
+        253.0,
+        253.0,
+        252.0,
+        253.0,
+        253.0,
+        253.0,
+        253.0,
+        253.0,
+        253.0,
+        253.0,
+        253.0
+      ]
+    },
+    {
+      "x0": 606,
+      "x1": 636,
+      "pixels": 309,
+      "firstVisibleFrame": 7,
+      "firstVisibleUs": 233333.33333333334,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        254.0,
+        253.0,
+        255.0,
+        254.0,
+        254.0,
+        254.0,
+        255.0,
+        254.0,
+        254.0,
+        254.0
+      ]
+    },
+    {
+      "x0": 644,
+      "x1": 673,
+      "pixels": 372,
+      "firstVisibleFrame": 9,
+      "firstVisibleUs": 300000.0,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        255.0,
+        255.0,
+        255.0,
+        254.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0
+      ]
+    },
+    {
+      "x0": 679,
+      "x1": 711,
+      "pixels": 298,
+      "firstVisibleFrame": 11,
+      "firstVisibleUs": 366666.6666666667,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        254.0,
+        254.0,
+        254.0,
+        254.0,
+        254.0,
+        254.0
+      ]
+    },
+    {
+      "x0": 717,
+      "x1": 748,
+      "pixels": 378,
+      "firstVisibleFrame": 13,
+      "firstVisibleUs": 433333.3333333333,
+      "medianByFrame": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        254.0,
+        254.0,
+        254.0,
+        255.0
+      ]
+    }
+  ],
+  "fadeAgainstIndependentZero": [
+    {
+      "frame": 0,
+      "observedAlphaLeastSquares": 0.0,
+      "formulaAlpha": 0.0,
+      "errorFromFormulaAlpha": 0.0,
+      "meanAbsolutePixelError": 0.0
+    },
+    {
+      "frame": 1,
+      "observedAlphaLeastSquares": 0.11740665595098697,
+      "formulaAlpha": 0.1288888888888889,
+      "errorFromFormulaAlpha": -0.011482232937901918,
+      "meanAbsolutePixelError": 2.9090029376188014
+    },
+    {
+      "frame": 2,
+      "observedAlphaLeastSquares": 0.2338409751156634,
+      "formulaAlpha": 0.24888888888888888,
+      "errorFromFormulaAlpha": -0.01504791377322548,
+      "meanAbsolutePixelError": 3.873898968953398
+    },
+    {
+      "frame": 3,
+      "observedAlphaLeastSquares": 0.3477588303138154,
+      "formulaAlpha": 0.36000000000000004,
+      "errorFromFormulaAlpha": -0.01224116968618466,
+      "meanAbsolutePixelError": 3.5177604976671932
+    },
+    {
+      "frame": 4,
+      "observedAlphaLeastSquares": 0.45776428203833824,
+      "formulaAlpha": 0.46222222222222226,
+      "errorFromFormulaAlpha": -0.004457940183884013,
+      "meanAbsolutePixelError": 3.327536432233167
+    },
+    {
+      "frame": 5,
+      "observedAlphaLeastSquares": 0.5497430091366023,
+      "formulaAlpha": 0.5555555555555556,
+      "errorFromFormulaAlpha": -0.005812546418953235,
+      "meanAbsolutePixelError": 3.5457058925177156
+    },
+    {
+      "frame": 6,
+      "observedAlphaLeastSquares": 0.6302689554275567,
+      "formulaAlpha": 0.6400000000000001,
+      "errorFromFormulaAlpha": -0.009731044572443448,
+      "meanAbsolutePixelError": 3.471539657853834
+    },
+    {
+      "frame": 7,
+      "observedAlphaLeastSquares": 0.7022697014831827,
+      "formulaAlpha": 0.7155555555555555,
+      "errorFromFormulaAlpha": -0.013285854072372816,
+      "meanAbsolutePixelError": 4.29247163181843
+    },
+    {
+      "frame": 8,
+      "observedAlphaLeastSquares": 0.7724454114201613,
+      "formulaAlpha": 0.7822222222222223,
+      "errorFromFormulaAlpha": -0.009776810802060942,
+      "meanAbsolutePixelError": 4.454045273889755
+    },
+    {
+      "frame": 9,
+      "observedAlphaLeastSquares": 0.8322697469244549,
+      "formulaAlpha": 0.84,
+      "errorFromFormulaAlpha": -0.0077302530755450904,
+      "meanAbsolutePixelError": 3.4197200622083916
+    },
+    {
+      "frame": 10,
+      "observedAlphaLeastSquares": 0.8878916981374769,
+      "formulaAlpha": 0.888888888888889,
+      "errorFromFormulaAlpha": -0.0009971907514120248,
+      "meanAbsolutePixelError": 3.1559817982835088
+    },
+    {
+      "frame": 11,
+      "observedAlphaLeastSquares": 0.9267511746057141,
+      "formulaAlpha": 0.9288888888888888,
+      "errorFromFormulaAlpha": -0.002137714283174663,
+      "meanAbsolutePixelError": 3.3309025977766202
+    },
+    {
+      "frame": 12,
+      "observedAlphaLeastSquares": 0.9522461600385113,
+      "formulaAlpha": 0.96,
+      "errorFromFormulaAlpha": -0.007753839961488707,
+      "meanAbsolutePixelError": 3.720933125972003
+    },
+    {
+      "frame": 13,
+      "observedAlphaLeastSquares": 0.976295204189538,
+      "formulaAlpha": 0.9822222222222222,
+      "errorFromFormulaAlpha": -0.00592701803268425,
+      "meanAbsolutePixelError": 3.3027844018201726
+    },
+    {
+      "frame": 14,
+      "observedAlphaLeastSquares": 0.9917350267835362,
+      "formulaAlpha": 0.9955555555555555,
+      "errorFromFormulaAlpha": -0.003820528772019327,
+      "meanAbsolutePixelError": 2.7111848395829754
+    },
+    {
+      "frame": 15,
+      "observedAlphaLeastSquares": 0.9917955005198522,
+      "formulaAlpha": 1,
+      "errorFromFormulaAlpha": -0.008204499480147787,
+      "meanAbsolutePixelError": 2.8678071539657854
+    },
+    {
+      "frame": 16,
+      "observedAlphaLeastSquares": 0.9911278167601576,
+      "formulaAlpha": 1,
+      "errorFromFormulaAlpha": -0.008872183239842402,
+      "meanAbsolutePixelError": 3.012960082944531
+    },
+    {
+      "frame": 17,
+      "observedAlphaLeastSquares": 0.9925585208874083,
+      "formulaAlpha": 1,
+      "errorFromFormulaAlpha": -0.007441479112591742,
+      "meanAbsolutePixelError": 2.7397615344738204
+    }
+  ],
+  "scope": "Actual native H264 gray decode; text glyph mask from independent no-animation export; no 1:1 encoded-chain claim."
+}

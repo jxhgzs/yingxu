@@ -1,0 +1,3 @@
+Browser tab: 9, Title: "编辑器挂载验证", URL: "http://127.0.0.1:61997/lifecycle-test.html".
+There has been no change in the accessibility tree.
+The focused UI element is 0 AXWebArea 编辑器挂载验证, URL: 127.0.0.1:61997/lifecycle-test.html

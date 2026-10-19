@@ -1,0 +1,196 @@
+{
+  "id": "f12a355d-359d-4121-b681-3b95cea8b76c",
+  "revision": 5,
+  "title": "Desktop 0.7.0 文字动画与色温 · 重开验证",
+  "fieldsExceptTitleUnchanged": true,
+  "jobIdentityAndStatusUnchanged": true,
+  "quitMainProcessAbsent": true,
+  "document": {
+    "schemaVersion": 1,
+    "title": "Desktop 0.7.0 文字动画与色温 · 重开验证",
+    "canvas": {
+      "width": 640,
+      "height": 360
+    },
+    "fps": {
+      "numerator": "30",
+      "denominator": "1"
+    },
+    "assets": [
+      {
+        "id": "a_7620a412033b63596fcc54f6",
+        "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7620a412033b63596fcc54f6.mp4",
+        "name": "audible-curve-probe.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "6",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4",
+        "frameTiming": "cfr30"
+      },
+      {
+        "id": "v7-text",
+        "kind": "text",
+        "path": "",
+        "duration": {
+          "numerator": "2",
+          "denominator": "1"
+        }
+      }
+    ],
+    "tracks": [
+      {
+        "id": "v",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-v7",
+            "materialId": "a_7620a412033b63596fcc54f6",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "volume": 0.15,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "opacity": 1,
+              "flipX": false,
+              "flipY": false
+            },
+            "colorAdjustments": {
+              "version": "combine-adjust-v2",
+              "brightness": 0,
+              "contrast": 0,
+              "saturation": 0,
+              "highlight": 0,
+              "shadow": 0,
+              "temperature": 0.4,
+              "tint": -0.2
+            }
+          }
+        ]
+      },
+      {
+        "id": "t",
+        "kind": "text",
+        "name": "文字",
+        "clips": [
+          {
+            "id": "text-v7",
+            "materialId": "v7-text",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "1",
+                "denominator": "2"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "opacity": 1,
+              "flipX": false,
+              "flipY": false
+            },
+            "text": {
+              "content": "映序文字动画",
+              "font": "Source Han Sans SC Medium",
+              "size": 50,
+              "color": "#ffffff",
+              "outline": 0,
+              "shadow": 0
+            },
+            "textAnimations": [
+              {
+                "phase": "in",
+                "kind": "typewriter",
+                "duration": {
+                  "numerator": "1",
+                  "denominator": "2"
+                }
+              },
+              {
+                "phase": "out",
+                "kind": "fade",
+                "duration": {
+                  "numerator": "1",
+                  "denominator": "2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "fc575a68-2890-48cd-893c-5315632f8b04",
+      "kind": "export",
+      "status": "completed"
+    },
+    {
+      "id": "90b445a1-7435-46b8-b336-8317e5de86f8",
+      "kind": "preview",
+      "status": "completed"
+    }
+  ]
+}

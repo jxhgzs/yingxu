@@ -1,0 +1,428 @@
+[
+  {
+    "id": "color-neutral",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-temperature-plus",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.044026692708333336,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.044026692708333336,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-temperature-minus",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.060465494791666664,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.060465494791666664,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-tint-plus",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.059122721354166664,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.059122721354166664,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-tint-minus",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.059895833333333336,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.059895833333333336,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-both-plus",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.04345703125,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 1,
+      "meanRGB": 0.04345703125,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  },
+  {
+    "id": "color-all-stages",
+    "gpuVsProductBeforeEncode": {
+      "maxRGB": 2,
+      "meanRGB": 0.2722574869791667,
+      "over1RGB": 147,
+      "alphaMax": 0,
+      "peaks": [
+        {
+          "pixel": 169,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 170,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 458,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 539,
+          "max": 2,
+          "a": [
+            255,
+            251,
+            77,
+            255
+          ],
+          "b": [
+            255,
+            253,
+            77,
+            255
+          ]
+        },
+        {
+          "pixel": 585,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 586,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 713,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 824,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        }
+      ]
+    },
+    "mathQuantizedVsProductBeforeEncode": {
+      "maxRGB": 2,
+      "meanRGB": 0.2722574869791667,
+      "over1RGB": 147,
+      "alphaMax": 0,
+      "peaks": [
+        {
+          "pixel": 169,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 170,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 458,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 539,
+          "max": 2,
+          "a": [
+            255,
+            251,
+            77,
+            255
+          ],
+          "b": [
+            255,
+            253,
+            77,
+            255
+          ]
+        },
+        {
+          "pixel": 585,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 586,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 713,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        },
+        {
+          "pixel": 824,
+          "max": 2,
+          "a": [
+            255,
+            250,
+            0,
+            255
+          ],
+          "b": [
+            255,
+            252,
+            0,
+            255
+          ]
+        }
+      ]
+    },
+    "preProductReencodedVsProduct": {
+      "maxRGB": 0,
+      "meanRGB": 0,
+      "over1RGB": 0,
+      "alphaMax": 0,
+      "peaks": []
+    }
+  }
+]

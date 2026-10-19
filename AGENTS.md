@@ -83,3 +83,12 @@
 - 曲线PCM只做时间变换，源时钟音量与目标时钟淡变只在WebAudio施加一次；原曲线video始终静音，prepare不能在最终transport anchor之前启动一次性音源。暂停/seek必须stop旧源，再以目标offset创建新源。
 - 并行准备中即使某分支先失败，其他分支的ready Promise仍可能稍后拒绝；创建时立即观察拒绝，同时保留原Promise让await收到实际错误。回归需覆盖迟到错误和cancel/dispose，不能只测同时成功。
 - AudioWorklet捕获按currentFrame重建时间轴，不直接拼接有间隙的块。相关搜索的最佳偏移、未对齐误差与对齐后误差分别记录；AudioContext推导漂移不等于声卡延迟。PCM缓存预算、激活AudioBuffer副本和临时解析内存分别说明。
+
+
+## 0.7文字动画与边界经验
+
+- 原生文字preset与common_keyframes独立。渐显quadOut、渐隐尾部quadIn、打字机N含空格/LF，不能默认线性、按已显前缀居中或沿用source时钟。复杂字形未知继续拒绝。普通glyph乘alpha对描边/阴影不成立，未通过候选不可开放；用有界完整ASS当前帧并显示“精确预览”。
+- 纹理内容键包含评估后的transform/量化alpha/可见字数，帧响应仍核对请求frame/revision；相同URL的hold帧须更新资源帧标记。冷请求前暂停传输及音源；旧provider忽略abort仍不得迟到绘制。
+- 转场端帧延展需实际源时钟证据。平均30fps不等于CFR30；逐帧整数PTS、首PTS0、帧间隔、总长一致后才赋有界标记，正式render再次证明，不能信任导入JSON。实际采样钳制与属性时钟分开，不改原source/target。
+- FFmpeg overlay默认YUV可破坏已有彩色门槛；RGB效果栈叠加显式format=rgb。GPU对未编码参考、正式编码前、编码后与原生分别报误差；相同全时序重编码复现才可归因编码，PNG→float输入残差另列，不凭大边缘误差拟合gamma。
+- 本机Chromium的cancelAndHoldAtTime可保留短active curve，文字buffering同一AudioContext.currentTime重新setValueCurveAtTime会重叠。已有解析增益时清完整automation后setValueAtTime再排窗口；真实原生AudioParam压力验证不能只用理想mock。细节和240次实测见0.7 QA，未作听审。

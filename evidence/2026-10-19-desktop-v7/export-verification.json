@@ -1,0 +1,69 @@
+{
+  "file": "/Users/tal/Downloads/yingxu-v7-text-color-1759.mp4",
+  "sha256": "f74bbbf8977f182c781fe4def92cab055a083ca2e84c3160497e30b07375dc74",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "30/1",
+        "duration": "3.000000",
+        "nb_frames": "90"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "3.000000",
+        "nb_frames": "131"
+      }
+    ],
+    "format": {
+      "duration": "3.000000"
+    }
+  },
+  "fullDecodePassed": true,
+  "revision": 4,
+  "jobs": [
+    {
+      "id": "fc575a68-2890-48cd-893c-5315632f8b04",
+      "kind": "export",
+      "status": "completed"
+    },
+    {
+      "id": "90b445a1-7435-46b8-b336-8317e5de86f8",
+      "kind": "preview",
+      "status": "completed"
+    }
+  ],
+  "textAnimations": [
+    {
+      "phase": "in",
+      "kind": "typewriter",
+      "duration": {
+        "numerator": "1",
+        "denominator": "2"
+      }
+    },
+    {
+      "phase": "out",
+      "kind": "fade",
+      "duration": {
+        "numerator": "1",
+        "denominator": "2"
+      }
+    }
+  ],
+  "color": {
+    "version": "combine-adjust-v2",
+    "brightness": 0,
+    "contrast": 0,
+    "saturation": 0,
+    "highlight": 0,
+    "shadow": 0,
+    "temperature": 0.4,
+    "tint": -0.2
+  }
+}
