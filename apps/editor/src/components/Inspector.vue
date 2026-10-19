@@ -21,7 +21,7 @@ const disabled = computed(()=>props.c.readOnly.value||props.c.busy.value||!!sele
 const trimDisabled=computed(()=>disabled.value||!!(clip.value?.speedCurve&&clip.value?.animations?.length));
 const constantSpeedValid=computed(()=>typeof draft.speed==='number'&&Number.isFinite(draft.speed)&&draft.speed>=.0625&&draft.speed<=16);
 watch(()=>[props.c.state.value?.id,props.c.state.value?.revision,props.c.selectedId.value],()=>{speedMode.value=clip.value?.speedCurve?'curve':'constant';},{immediate:true});
-watch(()=>[props.c.state.value?.id,props.c.selectedId.value],()=>{tab.value=selected.value?.track.kind==='text'?'text':selected.value?.track.kind==='audio'?'audio':'picture';},{immediate:true});
+watch([()=>props.c.state.value?.id,()=>props.c.selectedId.value],()=>{tab.value=selected.value?.track.kind==='text'?'text':selected.value?.track.kind==='audio'?'audio':'picture';},{immediate:true});
 watch(()=>[props.c.state.value?.revision, props.c.selectedId.value,props.c.playhead.value],()=>{
   const c=clip.value;if(!c)return;const t={...(c.transform||defaultTransform())};
   const time=sourceTimeAt(c,atFrame(props.c.playhead.value,props.c.doc.value!.fps));
