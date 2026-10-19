@@ -16,10 +16,11 @@ export type AudioRoute={id:string;element:HTMLMediaElement;clip:Clip};
 export type CurveAudioRoute={id:string;clip:Clip;pcm:CurvePcm};
 type NodeRoute={element:HTMLMediaElement;source:MediaElementAudioSourceNode;gain:GainNode};
 type BufferRoute={pcm:CurvePcm;buffer:AudioBuffer;gain:GainNode;source?:AudioBufferSourceNode;offset:number;startedAt:number;expectedOffset:number};
-// cancelScheduledValues(now) leaves a curve that started before now active. Cancel
-// that curve too before replacing the lookahead window (or silencing a route).
+// Replace the full automation timeline with the explicitly evaluated gain.
+// Chromium can retain a shortened active curve after cancelAndHoldAtTime(now),
+// rejecting a new curve at that same audio-clock instant during frame buffering.
 function replaceEnvelope(param:AudioParam,now:number,value:number){
- if(typeof param.cancelAndHoldAtTime==='function')param.cancelAndHoldAtTime(now);else param.cancelScheduledValues(0);
+ param.cancelScheduledValues(0);
  param.setValueAtTime(value,now);
 }
 function scheduleEnvelope(param:AudioParam,clip:Clip,targetSeconds:number,now:number){

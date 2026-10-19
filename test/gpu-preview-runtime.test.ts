@@ -11,9 +11,10 @@ import type {Clip} from '../packages/core/src/document.ts';
 import type {Asset} from '../packages/core/src/document.ts';
 
 class Envelope {
- value=0;end=0;last=0;holds=0;
- cancelAndHoldAtTime(now:number){this.holds++;this.end=now;}
- cancelScheduledValues(now:number){if(now===0)this.end=0;}
+ value=0;end=0;last=0;holds=0;clears=0;
+ // Model Chromium's retained, shortened curve at a buffering boundary.
+ cancelAndHoldAtTime(now:number){this.holds++;this.end=now+.005333333333333329;}
+ cancelScheduledValues(now:number){if(now===0){this.end=0;this.clears++;}}
  setValueAtTime(value:number,now:number){assert(now>=this.end,'new event overlaps a previous active curve');this.last=value;}
  setValueCurveAtTime(values:Float32Array,now:number,length:number){assert(now>=this.end,'lookahead curves overlap');this.last=values[0];this.end=now+length;}
 }
@@ -34,7 +35,10 @@ test('WebAudio stays lazy, replaces active envelopes and releases every route',a
   const audio=new PreviewAudio(),element={muted:true,volume:1} as HTMLMediaElement,active=[{id:'c',element,clip}];
   const before=AudioFake.count;audio.sync(active,0);assert.equal(AudioFake.count,before);assert.equal(audio.state,'uninitialized');
   await audio.start();const context=AudioFake.latest;audio.sync(active,0);assert.equal(context.sources.length,1);assert.equal(element.muted,false);assert.equal(context.gains[0].gain.last,.5);
-  context.currentTime=.02;audio.sync(active,.02);assert.equal(context.sources.length,1,'a media element must be connected only once');assert.equal(context.gains[0].gain.holds,2);
+  context.currentTime=.02;audio.sync(active,.02);assert.equal(context.sources.length,1,'a media element must be connected only once');assert.equal(context.gains[0].gain.clears,2);assert.equal(context.gains[0].gain.holds,0);
+  // Frame preparation may reschedule at the identical AudioContext time.
+  for(let i=0;i<20;i++){audio.sync(active,.02);audio.silence();audio.sync(active,.02);}
+  assert.equal(context.sources.length,1);assert.equal(context.gains[0].gain.last,.5);
   audio.silence();assert.equal(context.gains[0].gain.last,0);assert.equal(element.muted,true);
   await audio.suspend();assert.equal(audio.state,'suspended');audio.dispose();audio.dispose();
   assert(context.sources.every(n=>n.disconnected));assert(context.gains.every(n=>n.disconnected));assert.equal(audio.state,'closed');
