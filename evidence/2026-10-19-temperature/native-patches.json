@@ -1,0 +1,4590 @@
+{
+  "date": "2026-10-19",
+  "scope": "18 static patches, source float RGB mathematical comparison, not product export or GPU",
+  "decode": "zscale preserves Rec709 transfer/primaries, limited YUV to full encoded GBR float",
+  "source": {
+    "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-color-patches/source.mp4",
+    "sha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad",
+    "samples": {
+      "gray": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.06392693519592285,
+          0.06392693519592285,
+          0.06392693519592285
+        ],
+        [
+          0.12328766286373138,
+          0.12328766286373138,
+          0.12328766286373138
+        ],
+        [
+          0.2511415481567383,
+          0.2511415481567383,
+          0.2511415481567383
+        ],
+        [
+          0.37442919611930847,
+          0.37442919611930847,
+          0.37442919611930847
+        ],
+        [
+          0.5022830963134766,
+          0.5022830963134766,
+          0.5022830963134766
+        ],
+        [
+          0.6255707740783691,
+          0.6255707740783691,
+          0.6255707740783691
+        ],
+        [
+          0.7534246444702148,
+          0.7534246444702148,
+          0.7534246444702148
+        ],
+        [
+          0.8767123222351074,
+          0.8767123222351074,
+          0.8767123222351074
+        ],
+        [
+          0.9406392574310303,
+          0.9406392574310303,
+          0.9406392574310303
+        ],
+        [
+          0.9954337477684021,
+          0.9954337477684021,
+          0.9954337477684021
+        ],
+        [
+          0.9999999403953552,
+          0.9999999403953552,
+          0.9999999403953552
+        ]
+      ],
+      "color": [
+        [
+          0.8029189109802246,
+          0.29242414236068726,
+          0.11475818604230881
+        ],
+        [
+          0.21331427991390228,
+          0.6663729548454285,
+          0.10719999670982361
+        ],
+        [
+          0.1077081561088562,
+          0.2664602994918823,
+          0.7747260332107544
+        ],
+        [
+          0.7990768551826477,
+          0.2094515562057495,
+          0.5052750706672668
+        ],
+        [
+          0.3669663369655609,
+          0.49700039625167847,
+          0.6368467211723328
+        ],
+        [
+          0.23911245167255402,
+          0.36914652585983276,
+          0.5089928507804871
+        ]
+      ]
+    }
+  },
+  "cases": {
+    "zero": {
+      "parameters": {
+        "temperature": 0,
+        "tint": 0,
+        "brightness": 0
+      },
+      "rawNativeValues": {},
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-zero-20261019.mov",
+        "bytes": 15716,
+        "sha256": "d09ce82fd1633fad23f9438fb0158dd71ab1acbe248a2cf34db12ba61d502ae2",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "47636",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:54:25.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:54:25.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-zero-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "15716",
+            "bit_rate": "62864",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:54:25.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              158,
+              158,
+              158
+            ],
+            [
+              190,
+              190,
+              190
+            ],
+            [
+              222,
+              222,
+              222
+            ],
+            [
+              238,
+              238,
+              238
+            ],
+            [
+              252,
+              252,
+              252
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              52,
+              168,
+              25
+            ],
+            [
+              25,
+              66,
+              197
+            ],
+            [
+              203,
+              52,
+              126
+            ],
+            [
+              91,
+              125,
+              160
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "materialSummary": [],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/zero.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              16.301368474960327,
+              16.301368474960327,
+              16.301368474960327
+            ],
+            [
+              31.438354030251503,
+              31.438354030251503,
+              31.438354030251503
+            ],
+            [
+              64.04109477996826,
+              64.04109477996826,
+              64.04109477996826
+            ],
+            [
+              95.47944501042366,
+              95.47944501042366,
+              95.47944501042366
+            ],
+            [
+              128.08218955993652,
+              128.08218955993652,
+              128.08218955993652
+            ],
+            [
+              159.52054738998413,
+              159.52054738998413,
+              159.52054738998413
+            ],
+            [
+              192.12328433990479,
+              192.12328433990479,
+              192.12328433990479
+            ],
+            [
+              223.5616421699524,
+              223.5616421699524,
+              223.5616421699524
+            ],
+            [
+              239.86301064491272,
+              239.86301064491272,
+              239.86301064491272
+            ],
+            [
+              253.83560568094254,
+              253.83560568094254,
+              253.83560568094254
+            ],
+            [
+              254.99998480081558,
+              254.99998480081558,
+              254.99998480081558
+            ]
+          ],
+          "color": [
+            [
+              204.74432229995728,
+              74.56815630197525,
+              29.263337440788746
+            ],
+            [
+              54.39514137804508,
+              169.92510348558426,
+              27.33599916100502
+            ],
+            [
+              27.46557980775833,
+              67.94737637042999,
+              197.55513846874237
+            ],
+            [
+              203.76459807157516,
+              53.410146832466125,
+              128.84514302015305
+            ],
+            [
+              93.57641592621803,
+              126.73510104417801,
+              162.39591389894485
+            ],
+            [
+              60.973675176501274,
+              94.13236409425735,
+              129.7931769490242
+            ]
+          ]
+        },
+        "error": {
+          "gray": 2.123284339904785,
+          "color": 2.8451430201530457
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/zero/encoded.mp4",
+        "sha256": "4611c64f2954b9f985d19c4732a3e74e79fc2cab2334eb567ea79c8a8daf4a36",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              127,
+              127,
+              127
+            ],
+            [
+              158,
+              158,
+              158
+            ],
+            [
+              192,
+              192,
+              192
+            ],
+            [
+              222,
+              222,
+              222
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              53,
+              171,
+              24
+            ],
+            [
+              25,
+              66,
+              195
+            ],
+            [
+              203,
+              53,
+              127
+            ],
+            [
+              91,
+              125,
+              160
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "error": {
+          "gray": 2,
+          "color": 3
+        }
+      }
+    },
+    "temperature-plus50": {
+      "parameters": {
+        "temperature": 1,
+        "tint": 0,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": 1
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-plus50-20261019.mov",
+        "bytes": 20980,
+        "sha256": "f25c32f2bcbe2ef92e541c27afdb95f9a460e289730def2d6f7b2efbfd4ab4b2",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "68688",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:56:14.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:56:14.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-plus50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "20980",
+            "bit_rate": "83920",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:56:14.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              27,
+              10,
+              1
+            ],
+            [
+              56,
+              24,
+              4
+            ],
+            [
+              116,
+              51,
+              11
+            ],
+            [
+              174,
+              77,
+              17
+            ],
+            [
+              233,
+              104,
+              25
+            ],
+            [
+              253,
+              130,
+              28
+            ],
+            [
+              253,
+              157,
+              38
+            ],
+            [
+              253,
+              185,
+              44
+            ],
+            [
+              253,
+              197,
+              46
+            ],
+            [
+              253,
+              209,
+              48
+            ],
+            [
+              254,
+              210,
+              49
+            ]
+          ],
+          "color": [
+            [
+              254,
+              56,
+              0
+            ],
+            [
+              154,
+              140,
+              0
+            ],
+            [
+              76,
+              58,
+              51
+            ],
+            [
+              254,
+              39,
+              27
+            ],
+            [
+              192,
+              104,
+              33
+            ],
+            [
+              129,
+              76,
+              27
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/temperature-plus50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              29.988282712007855,
+              13.523140768946964,
+              3.3017598777550052
+            ],
+            [
+              57.83454622889677,
+              26.080343361854894,
+              6.3676798741888705
+            ],
+            [
+              117.8111186430839,
+              53.12662805194906,
+              12.971200399328398
+            ],
+            [
+              175.64565788180926,
+              79.20696826160372,
+              19.33887950388775
+            ],
+            [
+              235.6222372861678,
+              106.25325610389812,
+              25.942400798656795
+            ],
+            [
+              255,
+              132.33360261795326,
+              32.31008144247517
+            ],
+            [
+              255,
+              159.37988415584718,
+              38.91360119798519
+            ],
+            [
+              255,
+              185.46023066990233,
+              45.28128184180357
+            ],
+            [
+              255,
+              198.98337143884928,
+              48.58304171955858
+            ],
+            [
+              255,
+              210.57462955131768,
+              51.41312029541228
+            ],
+            [
+              255,
+              211.54056457515648,
+              51.648959407103895
+            ]
+          ],
+          "color": [
+            [
+              255,
+              58.21231065648693,
+              0
+            ],
+            [
+              155.87523216306084,
+              142.15139545178795,
+              0
+            ],
+            [
+              79.15894213672387,
+              58.79715635647624,
+              51.24310509563571
+            ],
+            [
+              255,
+              41.5279995050041,
+              29.184345658552093
+            ],
+            [
+              192.0341474935257,
+              106.33534878003515,
+              36.41876096468532
+            ],
+            [
+              132.05757715197018,
+              79.28906733376976,
+              29.815241284516038
+            ]
+          ]
+        },
+        "error": {
+          "gray": 4.310081442475173,
+          "color": 3.418760964685319
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/temperature-plus50/encoded.mp4",
+        "sha256": "eb06628b260dfd492b2ec21d0965634375f836e1b07f42b66f916e61099b4896",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              26,
+              12,
+              2
+            ],
+            [
+              56,
+              24,
+              4
+            ],
+            [
+              116,
+              51,
+              11
+            ],
+            [
+              174,
+              77,
+              17
+            ],
+            [
+              235,
+              105,
+              24
+            ],
+            [
+              253,
+              130,
+              28
+            ],
+            [
+              253,
+              158,
+              35
+            ],
+            [
+              253,
+              185,
+              44
+            ],
+            [
+              252,
+              197,
+              46
+            ],
+            [
+              253,
+              209,
+              49
+            ],
+            [
+              252,
+              210,
+              49
+            ]
+          ],
+          "color": [
+            [
+              253,
+              55,
+              0
+            ],
+            [
+              153,
+              141,
+              0
+            ],
+            [
+              76,
+              58,
+              48
+            ],
+            [
+              252,
+              40,
+              27
+            ],
+            [
+              192,
+              104,
+              35
+            ],
+            [
+              130,
+              77,
+              28
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3,
+          "color": 3
+        }
+      }
+    },
+    "temperature-minus50": {
+      "parameters": {
+        "temperature": -1,
+        "tint": 0,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": -1
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-minus50-20261019.mov",
+        "bytes": 14551,
+        "sha256": "9c968e226496bef10fd90da2d0d8bc5f17f97fedca3db6f49070baea8b2a3f19",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "42972",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:57:08.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:57:08.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-minus50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "14551",
+            "bit_rate": "58204",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:57:08.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              15,
+              23
+            ],
+            [
+              20,
+              30,
+              45
+            ],
+            [
+              47,
+              63,
+              96
+            ],
+            [
+              74,
+              95,
+              141
+            ],
+            [
+              98,
+              127,
+              194
+            ],
+            [
+              124,
+              161,
+              240
+            ],
+            [
+              150,
+              193,
+              253
+            ],
+            [
+              174,
+              224,
+              253
+            ],
+            [
+              188,
+              242,
+              254
+            ],
+            [
+              198,
+              253,
+              254
+            ],
+            [
+              198,
+              253,
+              254
+            ]
+          ],
+          "color": [
+            [
+              176,
+              75,
+              46
+            ],
+            [
+              27,
+              172,
+              45
+            ],
+            [
+              11,
+              65,
+              252
+            ],
+            [
+              176,
+              52,
+              193
+            ],
+            [
+              66,
+              126,
+              242
+            ],
+            [
+              40,
+              93,
+              193
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": -1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/temperature-minus50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12.810607208191591,
+              16.488239064921753,
+              24.667148204980727
+            ],
+            [
+              24.706171470956782,
+              31.798747317114106,
+              47.572358073867434
+            ],
+            [
+              50.32738887345094,
+              64.77522929031265,
+              96.90666023366109
+            ],
+            [
+              75.03355735829675,
+              96.57397276407171,
+              144.4790125576963
+            ],
+            [
+              100.65477774690189,
+              129.5504585806253,
+              193.81332046732217
+            ],
+            [
+              125.36095220396962,
+              161.34920974109446,
+              241.38568429102185
+            ],
+            [
+              150.9821666203528,
+              194.32568787093794,
+              255
+            ],
+            [
+              175.68834107742057,
+              226.1244390314071,
+              255
+            ],
+            [
+              188.4989482856122,
+              242.61267809632884,
+              255
+            ],
+            [
+              199.47946363072901,
+              255,
+              255
+            ],
+            [
+              200.39450359004445,
+              255,
+              255
+            ]
+          ],
+          "color": [
+            [
+              179.17813632205883,
+              76.51426721581825,
+              48.16896543614125
+            ],
+            [
+              30.822017954004053,
+              172.64011471677009,
+              47.64587530055421
+            ],
+            [
+              13.185231147824469,
+              67.29010710212003,
+              255
+            ],
+            [
+              178.2386412518121,
+              54.06981143622971,
+              192.6565747892287
+            ],
+            [
+              68.31544782319008,
+              127.68093219378241,
+              243.4622403331676
+            ],
+            [
+              42.694229918259964,
+              94.70445404464029,
+              194.12794388012435
+            ]
+          ]
+        },
+        "error": {
+          "gray": 4.706171470956782,
+          "color": 3.8220179540040533
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/temperature-minus50/encoded.mp4",
+        "sha256": "059de2fc67cc4ffa619ce01578fb3ae555b6b2723e3018e97ce1eefc220c9c06",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              15,
+              23
+            ],
+            [
+              22,
+              31,
+              46
+            ],
+            [
+              49,
+              62,
+              94
+            ],
+            [
+              72,
+              95,
+              141
+            ],
+            [
+              98,
+              127,
+              192
+            ],
+            [
+              124,
+              161,
+              240
+            ],
+            [
+              150,
+              193,
+              253
+            ],
+            [
+              173,
+              225,
+              252
+            ],
+            [
+              186,
+              242,
+              252
+            ],
+            [
+              198,
+              253,
+              254
+            ],
+            [
+              198,
+              253,
+              252
+            ]
+          ],
+          "color": [
+            [
+              176,
+              75,
+              46
+            ],
+            [
+              30,
+              172,
+              45
+            ],
+            [
+              10,
+              67,
+              253
+            ],
+            [
+              176,
+              52,
+              190
+            ],
+            [
+              66,
+              126,
+              242
+            ],
+            [
+              40,
+              93,
+              193
+            ]
+          ]
+        },
+        "error": {
+          "gray": 2,
+          "color": 3
+        }
+      }
+    },
+    "tint-plus50": {
+      "parameters": {
+        "temperature": 0,
+        "tint": 1,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": 2.220446049250313e-16,
+        "tone": 1
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-tint-plus50-20261019.mov",
+        "bytes": 16707,
+        "sha256": "492945877507f5d39bacd16f51c0677935d5ab9a06df32b3b4b57b8a22de8b95",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "51596",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:57:57.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:57:57.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-tint-plus50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "16707",
+            "bit_rate": "66828",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:57:57.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              16,
+              13,
+              17
+            ],
+            [
+              33,
+              27,
+              32
+            ],
+            [
+              70,
+              60,
+              68
+            ],
+            [
+              105,
+              89,
+              104
+            ],
+            [
+              144,
+              119,
+              140
+            ],
+            [
+              180,
+              150,
+              178
+            ],
+            [
+              217,
+              180,
+              211
+            ],
+            [
+              253,
+              210,
+              246
+            ],
+            [
+              253,
+              225,
+              254
+            ],
+            [
+              253,
+              238,
+              253
+            ],
+            [
+              252,
+              240,
+              254
+            ]
+          ],
+          "color": [
+            [
+              219,
+              69,
+              31
+            ],
+            [
+              70,
+              160,
+              31
+            ],
+            [
+              32,
+              62,
+              217
+            ],
+            [
+              217,
+              46,
+              143
+            ],
+            [
+              108,
+              118,
+              178
+            ],
+            [
+              69,
+              87,
+              143
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 2.220446049250313e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "manual_zoom",
+            "version": "v3",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/tint-plus50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              18.538280343891046,
+              15.441411447511056,
+              18.10468994858963
+            ],
+            [
+              35.75239842339173,
+              29.77986544867745,
+              34.91618836087207
+            ],
+            [
+              72.82896343238683,
+              60.66269194304248,
+              71.12557247819583
+            ],
+            [
+              108.58135753456554,
+              90.44255379237703,
+              106.0417566189234
+            ],
+            [
+              145.65792686477366,
+              121.32538388608496,
+              142.25114495639167
+            ],
+            [
+              181.4103296093784,
+              151.10525293410532,
+              177.1673375374082
+            ],
+            [
+              218.48689029716047,
+              181.9880758291274,
+              213.37671743458745
+            ],
+            [
+              254.2392930417652,
+              211.7679448771478,
+              248.29291001560404
+            ],
+            [
+              255,
+              227.20935632465884,
+              255
+            ],
+            [
+              255,
+              240.44484568079477,
+              255
+            ],
+            [
+              255,
+              241.5477995277965,
+              255
+            ]
+          ],
+          "color": [
+            [
+              220.53738523462735,
+              70.16355258812465,
+              33.2718565216031
+            ],
+            [
+              72.77837023657368,
+              161.98640166511285,
+              31.92450068095327
+            ],
+            [
+              35.05978705281237,
+              64.12536186363903,
+              217.74834588042646
+            ],
+            [
+              217.51574580767144,
+              49.62405626077878,
+              142.41745102084033
+            ],
+            [
+              109.55079023282627,
+              120.08912388431938,
+              179.86755924073108
+            ],
+            [
+              72.47422558294001,
+              89.20630100743705,
+              143.65817933730827
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3.581357534565541,
+          "color": 3.6240562607787794
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/tint-plus50/encoded.mp4",
+        "sha256": "b4b0051e8eac31c5bc36d613f9eaa629fec9317d26b125a2450fc7c524e22276",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              18,
+              13,
+              17
+            ],
+            [
+              33,
+              28,
+              33
+            ],
+            [
+              70,
+              60,
+              68
+            ],
+            [
+              105,
+              89,
+              104
+            ],
+            [
+              144,
+              119,
+              140
+            ],
+            [
+              180,
+              151,
+              175
+            ],
+            [
+              218,
+              181,
+              212
+            ],
+            [
+              253,
+              211,
+              247
+            ],
+            [
+              253,
+              225,
+              252
+            ],
+            [
+              253,
+              238,
+              253
+            ],
+            [
+              253,
+              242,
+              253
+            ]
+          ],
+          "color": [
+            [
+              218,
+              68,
+              31
+            ],
+            [
+              70,
+              160,
+              31
+            ],
+            [
+              32,
+              62,
+              217
+            ],
+            [
+              215,
+              48,
+              140
+            ],
+            [
+              109,
+              119,
+              179
+            ],
+            [
+              70,
+              88,
+              141
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3,
+          "color": 3
+        }
+      }
+    },
+    "tint-minus50": {
+      "parameters": {
+        "temperature": 0,
+        "tint": -1,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": 2.220446049250313e-16,
+        "tone": -1
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-tint-minus50-20261019.mov",
+        "bytes": 16269,
+        "sha256": "0f1e75f1eb3264455a66cfaba0a321c19bc9a5a6728615c1e8842e660fca59da",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "49844",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:58:45.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:58:45.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-tint-minus50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "16269",
+            "bit_rate": "65076",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:58:45.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              15,
+              12
+            ],
+            [
+              25,
+              31,
+              27
+            ],
+            [
+              54,
+              66,
+              55
+            ],
+            [
+              81,
+              98,
+              83
+            ],
+            [
+              108,
+              132,
+              111
+            ],
+            [
+              136,
+              166,
+              140
+            ],
+            [
+              165,
+              200,
+              169
+            ],
+            [
+              190,
+              233,
+              198
+            ],
+            [
+              205,
+              250,
+              212
+            ],
+            [
+              218,
+              253,
+              224
+            ],
+            [
+              218,
+              253,
+              226
+            ]
+          ],
+          "color": [
+            [
+              188,
+              77,
+              23
+            ],
+            [
+              33,
+              176,
+              20
+            ],
+            [
+              18,
+              69,
+              179
+            ],
+            [
+              189,
+              55,
+              115
+            ],
+            [
+              77,
+              131,
+              144
+            ],
+            [
+              48,
+              97,
+              115
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 2.220446049250313e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "none",
+            "version": "v3",
+            "value": -1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/tint-minus50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              14.145319577602505,
+              17.13213996866399,
+              14.564631875175527
+            ],
+            [
+              27.280259656408848,
+              33.0405562243443,
+              28.088933387119724
+            ],
+            [
+              55.57090210884196,
+              67.30484015511853,
+              57.21820053243922
+            ],
+            [
+              82.8511584680227,
+              100.34539238601658,
+              85.30713052459049
+            ],
+            [
+              111.14180421768393,
+              134.60968031023705,
+              114.43640106487844
+            ],
+            [
+              138.4220671713209,
+              167.6502405280276,
+              142.52533784696658
+            ],
+            [
+              166.71270632652588,
+              201.9145204653556,
+              171.65460159731768
+            ],
+            [
+              193.99296928016287,
+              234.95508068314612,
+              199.7435383794058
+            ],
+            [
+              208.13828885776533,
+              252.0872206518101,
+              214.30817025458134
+            ],
+            [
+              220.26284284331933,
+              255,
+              226.79213461335732
+            ],
+            [
+              221.27321904488738,
+              255,
+              227.83246158162024
+            ]
+          ],
+          "color": [
+            [
+              189.51895456099393,
+              78.82311379446863,
+              25.403376673792412
+            ],
+            [
+              36.64519211533981,
+              177.6024035766316,
+              22.9075097568761
+            ],
+            [
+              20.16845722499094,
+              71.63474717387419,
+              178.11300225378915
+            ],
+            [
+              190.5306775785612,
+              57.062048703489566,
+              115.78084349840938
+            ],
+            [
+              78.18482566622266,
+              133.1545256468523,
+              145.57041958656234
+            ],
+            [
+              49.894182867509286,
+              98.8902456920619,
+              116.44115584214369
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3.9929692801628676,
+          "color": 3.6451921153398104
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/tint-minus50/encoded.mp4",
+        "sha256": "53fcbae45a124c06c42276dbe7a23af8df8a715da672e4d08c4ea0fbda175ad4",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              12,
+              15,
+              12
+            ],
+            [
+              25,
+              31,
+              25
+            ],
+            [
+              54,
+              67,
+              54
+            ],
+            [
+              82,
+              100,
+              84
+            ],
+            [
+              111,
+              133,
+              115
+            ],
+            [
+              136,
+              166,
+              140
+            ],
+            [
+              164,
+              202,
+              171
+            ],
+            [
+              192,
+              235,
+              200
+            ],
+            [
+              207,
+              251,
+              214
+            ],
+            [
+              218,
+              253,
+              226
+            ],
+            [
+              221,
+              253,
+              226
+            ]
+          ],
+          "color": [
+            [
+              188,
+              77,
+              23
+            ],
+            [
+              34,
+              178,
+              22
+            ],
+            [
+              18,
+              70,
+              176
+            ],
+            [
+              188,
+              55,
+              112
+            ],
+            [
+              76,
+              132,
+              145
+            ],
+            [
+              48,
+              97,
+              115
+            ]
+          ]
+        },
+        "error": {
+          "gray": 4,
+          "color": 3
+        }
+      }
+    },
+    "combination-plus50": {
+      "parameters": {
+        "temperature": 1,
+        "tint": 1,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": 1,
+        "tone": 1
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-tint-plus50-20261019.mov",
+        "bytes": 19181,
+        "sha256": "88efab5f6fde77841f7256c9a510ce356e2ec1cfc063df3e277e6db5b95cfe69",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "61492",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:59:49.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T08:59:49.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-tint-plus50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "19181",
+            "bit_rate": "76724",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T08:59:49.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              28,
+              11,
+              4
+            ],
+            [
+              58,
+              24,
+              10
+            ],
+            [
+              120,
+              49,
+              22
+            ],
+            [
+              180,
+              72,
+              31
+            ],
+            [
+              244,
+              100,
+              44
+            ],
+            [
+              252,
+              125,
+              54
+            ],
+            [
+              253,
+              150,
+              66
+            ],
+            [
+              253,
+              176,
+              77
+            ],
+            [
+              253,
+              189,
+              83
+            ],
+            [
+              253,
+              200,
+              89
+            ],
+            [
+              253,
+              200,
+              87
+            ]
+          ],
+          "color": [
+            [
+              253,
+              54,
+              4
+            ],
+            [
+              164,
+              136,
+              1
+            ],
+            [
+              81,
+              54,
+              77
+            ],
+            [
+              253,
+              35,
+              45
+            ],
+            [
+              198,
+              100,
+              59
+            ],
+            [
+              137,
+              74,
+              47
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "manual_zoom",
+            "version": "v3",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/combination-plus50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              31.147850647500476,
+              12.918768134738475,
+              5.762733724523777
+            ],
+            [
+              60.070855857388494,
+              24.914767547184624,
+              11.113843803477932
+            ],
+            [
+              122.36656441285238,
+              50.75230682798452,
+              22.639312595800025
+            ],
+            [
+              182.4374130097779,
+              75.6670713638462,
+              33.75315505600343
+            ],
+            [
+              244.73312882570477,
+              101.50461365596904,
+              45.27862519160005
+            ],
+            [
+              255,
+              126.41938421447658,
+              56.39247033835252
+            ],
+            [
+              255,
+              152.25692048395354,
+              67.91793778740008
+            ],
+            [
+              255,
+              177.1716910424611,
+              79.03178293415255
+            ],
+            [
+              255,
+              190.09045917719956,
+              84.79451665867633
+            ],
+            [
+              255,
+              201.1636838447075,
+              89.73400040551178
+            ],
+            [
+              255,
+              202.08644955567692,
+              90.14562270780688
+            ]
+          ],
+          "color": [
+            [
+              255,
+              55.25191322307292,
+              5.2138316976176
+            ],
+            [
+              166.11697822109122,
+              136.70376413250716,
+              2.4891413766493864
+            ],
+            [
+              82.75387831223705,
+              55.910065064843714,
+              78.84555430280912
+            ],
+            [
+              255,
+              38.84740656575655,
+              47.81912941587526
+            ],
+            [
+              200.26716298998326,
+              101.59697960718171,
+              60.26354439094932
+            ],
+            [
+              137.97145670128882,
+              75.75944343995735,
+              48.738077006829684
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3.6670713638462047,
+          "color": 3.8474065657565504
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/combination-plus50/encoded.mp4",
+        "sha256": "68da1c04ff308ed03ffa88f9e7dcb973bdd6f97eddbc7c39a91ba8b6b2b24791",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              28,
+              11,
+              4
+            ],
+            [
+              58,
+              24,
+              9
+            ],
+            [
+              120,
+              49,
+              19
+            ],
+            [
+              181,
+              73,
+              32
+            ],
+            [
+              244,
+              100,
+              41
+            ],
+            [
+              252,
+              125,
+              54
+            ],
+            [
+              252,
+              152,
+              66
+            ],
+            [
+              253,
+              176,
+              77
+            ],
+            [
+              252,
+              189,
+              83
+            ],
+            [
+              253,
+              200,
+              87
+            ],
+            [
+              252,
+              202,
+              88
+            ]
+          ],
+          "color": [
+            [
+              253,
+              54,
+              4
+            ],
+            [
+              166,
+              134,
+              1
+            ],
+            [
+              81,
+              54,
+              75
+            ],
+            [
+              253,
+              35,
+              45
+            ],
+            [
+              198,
+              100,
+              59
+            ],
+            [
+              136,
+              74,
+              47
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3,
+          "color": 2
+        }
+      }
+    },
+    "temperature-plus1": {
+      "parameters": {
+        "temperature": 0.019999999999999796,
+        "tint": 0,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": 0.019999999999999796,
+        "tone": -1.1102230246251565e-16
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-plus1-20261019.mov",
+        "bytes": 16527,
+        "sha256": "7c354a2ccbd5192a378cd264ddd574b6dbfff8aaed5b855cec8d1eafb361b9f1",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "50876",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:00:58.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:00:58.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-plus1-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "16527",
+            "bit_rate": "66108",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T09:00:58.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              160,
+              158,
+              159
+            ],
+            [
+              192,
+              189,
+              190
+            ],
+            [
+              224,
+              222,
+              223
+            ],
+            [
+              239,
+              237,
+              238
+            ],
+            [
+              253,
+              251,
+              252
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              52,
+              168,
+              25
+            ],
+            [
+              25,
+              66,
+              195
+            ],
+            [
+              203,
+              52,
+              126
+            ],
+            [
+              91,
+              125,
+              158
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 0.019999999999999796,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "none",
+            "version": "v3",
+            "value": -1.1102230246251565e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/temperature-plus1.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              16.354612797049988,
+              16.296161071233147,
+              16.206739937625468
+            ],
+            [
+              31.541039510340283,
+              31.428311180032818,
+              31.2558561336689
+            ],
+            [
+              64.25026891664743,
+              64.02063712108139,
+              63.66933978665834
+            ],
+            [
+              95.79130461478056,
+              95.44894450253193,
+              94.92519214258873
+            ],
+            [
+              128.50053783329486,
+              128.04127424216279,
+              127.33867957331668
+            ],
+            [
+              160.04158115584235,
+              159.46958922077786,
+              158.59453948472404
+            ],
+            [
+              192.75080674994234,
+              192.06191136324415,
+              191.008019359975
+            ],
+            [
+              224.29185007248975,
+              223.49022634185926,
+              222.2638792713824
+            ],
+            [
+              240.6464628695398,
+              239.7863874130924,
+              238.47061920900788
+            ],
+            [
+              254.66469587465602,
+              253.75451896229404,
+              252.36210410799228
+            ],
+            [
+              255,
+              254.91852612614525,
+              253.5197240718358
+            ]
+          ],
+          "color": [
+            [
+              205.12997540289408,
+              74.52917052489374,
+              29.049443722729396
+            ],
+            [
+              54.7534129081577,
+              169.86890683489577,
+              27.10246796385862
+            ],
+            [
+              27.687964711518585,
+              67.94010246854059,
+              196.49402123982065
+            ],
+            [
+              204.1525410257479,
+              53.38631441476952,
+              128.1259782967239
+            ],
+            [
+              93.96349060208254,
+              126.70050760948956,
+              161.479459562572
+            ],
+            [
+              61.25426120352773,
+              94.10818546735472,
+              129.06597968778192
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3.0619113632441497,
+          "color": 3.4794595625720035
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/temperature-plus1/encoded.mp4",
+        "sha256": "11fdc33906cc559dd112f2ff42af27e4191fbe87f15d78587c49047ba8b56e4c",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              127,
+              127,
+              127
+            ],
+            [
+              159,
+              159,
+              157
+            ],
+            [
+              192,
+              192,
+              192
+            ],
+            [
+              223,
+              223,
+              221
+            ],
+            [
+              240,
+              238,
+              237
+            ],
+            [
+              253,
+              253,
+              251
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              53,
+              171,
+              24
+            ],
+            [
+              25,
+              66,
+              195
+            ],
+            [
+              203,
+              53,
+              127
+            ],
+            [
+              91,
+              125,
+              160
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3,
+          "color": 3
+        }
+      }
+    },
+    "reset-zero": {
+      "parameters": {
+        "temperature": 0,
+        "tint": 0,
+        "brightness": 0
+      },
+      "rawNativeValues": {
+        "temperature": -1.1102230246251565e-16,
+        "tone": -1.1102230246251565e-16
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-temperature-reset0-20261019.mov",
+        "bytes": 15699,
+        "sha256": "2c84b2be89db0ca58a95a0ed980efc74a374690943fb1ed42a4f4dae29ebd373",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "47564",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:01:27.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:01:27.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-temperature-reset0-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "15699",
+            "bit_rate": "62796",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T09:01:27.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              126,
+              126,
+              126
+            ],
+            [
+              158,
+              158,
+              158
+            ],
+            [
+              190,
+              190,
+              190
+            ],
+            [
+              222,
+              222,
+              222
+            ],
+            [
+              238,
+              238,
+              238
+            ],
+            [
+              252,
+              252,
+              252
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              52,
+              168,
+              25
+            ],
+            [
+              25,
+              66,
+              197
+            ],
+            [
+              203,
+              52,
+              126
+            ],
+            [
+              91,
+              125,
+              160
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "temperature",
+            "sub_type": "manual_zoom",
+            "version": "v3",
+            "value": -1.1102230246251565e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "none",
+            "version": "v3",
+            "value": -1.1102230246251565e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/reset-zero.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              16.301368474960327,
+              16.301368474960327,
+              16.301368474960327
+            ],
+            [
+              31.438354030251503,
+              31.438354030251503,
+              31.438354030251503
+            ],
+            [
+              64.04109477996826,
+              64.04109477996826,
+              64.04109477996826
+            ],
+            [
+              95.47944501042366,
+              95.47944501042366,
+              95.47944501042366
+            ],
+            [
+              128.08218955993652,
+              128.08218955993652,
+              128.08218955993652
+            ],
+            [
+              159.52054738998413,
+              159.52054738998413,
+              159.52054738998413
+            ],
+            [
+              192.12328433990479,
+              192.12328433990479,
+              192.12328433990479
+            ],
+            [
+              223.5616421699524,
+              223.5616421699524,
+              223.5616421699524
+            ],
+            [
+              239.86301064491272,
+              239.86301064491272,
+              239.86301064491272
+            ],
+            [
+              253.83560568094254,
+              253.83560568094254,
+              253.83560568094254
+            ],
+            [
+              254.99998480081558,
+              254.99998480081558,
+              254.99998480081558
+            ]
+          ],
+          "color": [
+            [
+              204.74432229995728,
+              74.56815630197525,
+              29.263337440788746
+            ],
+            [
+              54.39514137804508,
+              169.92510348558426,
+              27.33599916100502
+            ],
+            [
+              27.46557980775833,
+              67.94737637042999,
+              197.55513846874237
+            ],
+            [
+              203.76459807157516,
+              53.410146832466125,
+              128.84514302015305
+            ],
+            [
+              93.57641592621803,
+              126.73510104417801,
+              162.39591389894485
+            ],
+            [
+              60.973675176501274,
+              94.13236409425735,
+              129.7931769490242
+            ]
+          ]
+        },
+        "error": {
+          "gray": 2.123284339904785,
+          "color": 2.8451430201530457
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/reset-zero/encoded.mp4",
+        "sha256": "4611c64f2954b9f985d19c4732a3e74e79fc2cab2334eb567ea79c8a8daf4a36",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              15
+            ],
+            [
+              30,
+              30,
+              30
+            ],
+            [
+              62,
+              62,
+              62
+            ],
+            [
+              94,
+              94,
+              94
+            ],
+            [
+              127,
+              127,
+              127
+            ],
+            [
+              158,
+              158,
+              158
+            ],
+            [
+              192,
+              192,
+              192
+            ],
+            [
+              222,
+              222,
+              222
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              253,
+              253,
+              253
+            ],
+            [
+              253,
+              253,
+              253
+            ]
+          ],
+          "color": [
+            [
+              202,
+              73,
+              27
+            ],
+            [
+              53,
+              171,
+              24
+            ],
+            [
+              25,
+              66,
+              195
+            ],
+            [
+              203,
+              53,
+              127
+            ],
+            [
+              91,
+              125,
+              160
+            ],
+            [
+              59,
+              93,
+              127
+            ]
+          ]
+        },
+        "error": {
+          "gray": 2,
+          "color": 3
+        }
+      }
+    },
+    "brightness50-temperature50": {
+      "parameters": {
+        "temperature": 1,
+        "tint": 0,
+        "brightness": 1
+      },
+      "rawNativeValues": {
+        "brightness": 1,
+        "temperature": 1,
+        "tone": -1.1102230246251565e-16
+      },
+      "native": {
+        "path": "/Users/tal/Downloads/yingxu-native-brightness50-temperature50-20261019.mov",
+        "bytes": 20822,
+        "sha256": "5d1a593c951d46e91ebb2f11246ae15536ff949a17794352787562f7867b6ed9",
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "width": 1280,
+              "height": 720,
+              "coded_width": 1280,
+              "coded_height": 720,
+              "closed_captions": 0,
+              "film_grain": 0,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 41,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "refs": 4,
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/600",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 1200,
+              "duration": "2.000000",
+              "bit_rate": "68052",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "60",
+              "nb_read_frames": "60",
+              "extradata_size": 34,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:03:26.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "vendor_id": "[0][0][0][0]",
+                "encoder": "H.264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 0,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 88064,
+              "duration": "1.996916",
+              "bit_rate": "2067",
+              "nb_frames": "89",
+              "nb_read_frames": "87",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "creation_time": "2026-10-19T09:03:26.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+              }
+            }
+          ],
+          "format": {
+            "filename": "/Users/tal/Downloads/yingxu-native-brightness50-temperature50-20261019.mov",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.000000",
+            "size": "20822",
+            "bit_rate": "83288",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "qt  ",
+              "minor_version": "0",
+              "compatible_brands": "qt  ",
+              "creation_time": "2026-10-19T09:03:26.000000Z"
+            }
+          }
+        },
+        "fullDecodeExit": 0,
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              81,
+              34,
+              6
+            ],
+            [
+              150,
+              66,
+              13
+            ],
+            [
+              253,
+              122,
+              28
+            ],
+            [
+              253,
+              157,
+              38
+            ],
+            [
+              254,
+              183,
+              42
+            ],
+            [
+              253,
+              198,
+              47
+            ],
+            [
+              252,
+              207,
+              47
+            ],
+            [
+              253,
+              209,
+              49
+            ],
+            [
+              253,
+              209,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ],
+            [
+              254,
+              210,
+              49
+            ]
+          ],
+          "color": [
+            [
+              253,
+              132,
+              4
+            ],
+            [
+              253,
+              203,
+              1
+            ],
+            [
+              182,
+              130,
+              59
+            ],
+            [
+              254,
+              102,
+              51
+            ],
+            [
+              253,
+              183,
+              49
+            ],
+            [
+              254,
+              158,
+              47
+            ]
+          ]
+        },
+        "materialSummary": [
+          {
+            "type": "brightness",
+            "sub_type": "none",
+            "version": "v2",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "temperature",
+            "sub_type": "none",
+            "version": "v3",
+            "value": 1,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          },
+          {
+            "type": "tone",
+            "sub_type": "none",
+            "version": "v3",
+            "value": -1.1102230246251565e-16,
+            "path": "/Applications/VideoFusion-macOS.app/Contents/MacOS/../Resources/DefaultAdjustBundle/combine_adjust",
+            "intensity_key": "",
+            "adjust_params": []
+          }
+        ],
+        "retainedPath": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/evidence/2026-10-19-temperature/brightness50-temperature50.mov"
+      },
+      "cpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              84.33622282613663,
+              38.03120786047714,
+              9.28555861110527
+            ],
+            [
+              152.99185687574914,
+              68.99129359631203,
+              16.84465827892561
+            ],
+            [
+              255,
+              122.70378009033553,
+              29.958899701869417
+            ],
+            [
+              255,
+              159.75329741021577,
+              39.004772392766164
+            ],
+            [
+              255,
+              185.45857919536536,
+              45.280878623907796
+            ],
+            [
+              255,
+              200.43597754725468,
+              48.93770463765289
+            ],
+            [
+              255,
+              208.369238033666,
+              50.87466008471593
+            ],
+            [
+              255,
+              211.14415979017102,
+              51.55217468550871
+            ],
+            [
+              255,
+              211.49632938622238,
+              51.63815910749134
+            ],
+            [
+              255,
+              211.5405570433123,
+              51.64895756815678
+            ],
+            [
+              255,
+              211.54057718395745,
+              51.648962485621965
+            ]
+          ],
+          "color": [
+            [
+              255,
+              133.49847352030005,
+              7.1026381098892974
+            ],
+            [
+              255,
+              204.52108836470734,
+              3.3301416349551016
+            ],
+            [
+              184.69374388775668,
+              131.08250033083434,
+              60.5173077307935
+            ],
+            [
+              255,
+              105.10412048004417,
+              50.58943221234921
+            ],
+            [
+              255,
+              185.6235938727302,
+              51.442720546200505
+            ],
+            [
+              255,
+              159.9747104851125,
+              49.214837551083235
+            ]
+          ]
+        },
+        "error": {
+          "gray": 4.031207860477139,
+          "color": 3.1041204800441733
+        }
+      },
+      "reverseCpu": {
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              79.79962082599876,
+              38.45598004123462,
+              9.77757884947035
+            ],
+            [
+              137.12760523901275,
+              70.51167127431584,
+              18.62998267655357
+            ],
+            [
+              215.29214898566596,
+              128.48070862159972,
+              36.96772838720766
+            ],
+            [
+              247.3152149281769,
+              171.4542028165352,
+              53.72795741983903
+            ],
+            [
+              254.8880998832194,
+              204.3870044221918,
+              70.17796295913993
+            ],
+            [
+              255,
+              226.61450508077112,
+              85.16730219589209
+            ],
+            [
+              255,
+              241.55479477300725,
+              99.8320814252166
+            ],
+            [
+              255,
+              249.8284660938634,
+              113.14938507737844
+            ],
+            [
+              255,
+              252.2968475515352,
+              119.7442423812887
+            ],
+            [
+              255,
+              253.65161841422622,
+              125.23158576087
+            ],
+            [
+              255,
+              253.73767297628615,
+              125.68204251594432
+            ]
+          ],
+          "color": [
+            [
+              255,
+              137.80383025861283,
+              0
+            ],
+            [
+              240.02157364006635,
+              232.8991886038314,
+              0
+            ],
+            [
+              171.38571073037252,
+              138.84563589150875,
+              124.90620576845666
+            ],
+            [
+              255,
+              105.3962778039004,
+              77.9150001098208
+            ],
+            [
+              251.16085157803198,
+              204.47075745365774,
+              94.39528558717772
+            ],
+            [
+              226.42245338108353,
+              171.57120113352426,
+              79.39510529989236
+            ]
+          ]
+        },
+        "error": {
+          "gray": 76.68204251594432,
+          "color": 65.90620576845666
+        }
+      },
+      "isolatedEncodedChain": {
+        "kind": "candidate matrix in isolated float decode -> float mixer -> clamp -> RGBA composite encoding -> H264 pipeline; not product-integrated renderer",
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/native-temperature-next/encoded/brightness50-temperature50/encoded.mp4",
+        "sha256": "77f51580363e36f361bdf9124af500dedea8b1667f7465977078ff1edd4d74f0",
+        "samples": {
+          "gray": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              82,
+              35,
+              8
+            ],
+            [
+              152,
+              68,
+              16
+            ],
+            [
+              253,
+              122,
+              28
+            ],
+            [
+              253,
+              158,
+              35
+            ],
+            [
+              253,
+              185,
+              44
+            ],
+            [
+              253,
+              198,
+              47
+            ],
+            [
+              253,
+              208,
+              48
+            ],
+            [
+              252,
+              210,
+              49
+            ],
+            [
+              252,
+              210,
+              49
+            ],
+            [
+              252,
+              210,
+              49
+            ],
+            [
+              252,
+              210,
+              49
+            ]
+          ],
+          "color": [
+            [
+              252,
+              132,
+              4
+            ],
+            [
+              253,
+              203,
+              1
+            ],
+            [
+              183,
+              131,
+              59
+            ],
+            [
+              253,
+              104,
+              49
+            ],
+            [
+              253,
+              183,
+              49
+            ],
+            [
+              252,
+              159,
+              46
+            ]
+          ]
+        },
+        "error": {
+          "gray": 3,
+          "color": 2
+        }
+      }
+    }
+  },
+  "resetVsInitial": {
+    "gray": 0,
+    "color": 0
+  },
+  "resetVsInitialAllDecodedVideoFrames": {
+    "format": "ffmpeg native-decoded video framemd5",
+    "frameCounts": {
+      "zero": 60,
+      "reset-zero": 60
+    },
+    "equal": false
+  },
+  "resetVsInitialFullFrame30Rgb": {
+    "channelSamples": 2764800,
+    "max8bitLSB": 0,
+    "meanAbsolute8bitLSB": 0.0,
+    "differingChannelSamples": 0,
+    "sha256": [
+      "9db83f81954352f8a61f665f60646a6aa2fd73e2af9a2ba5f431867b5848951e",
+      "9db83f81954352f8a61f665f60646a6aa2fd73e2af9a2ba5f431867b5848951e"
+    ]
+  },
+  "resetVsInitialAllRgbFrames": {
+    "format": "ffmpeg decoded RGB24 framemd5",
+    "frameCounts": {
+      "zero": 60,
+      "reset-zero": 60
+    },
+    "equal": false,
+    "differingFrames": [
+      5
+    ]
+  },
+  "resetVsInitialRgbFrame5": {
+    "channelSamples": 2764800,
+    "max8bitLSB": 21,
+    "meanAbsolute8bitLSB": 0.1548759403935185,
+    "differingChannelSamples": 112915
+  }
+}

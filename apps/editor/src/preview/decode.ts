@@ -22,6 +22,10 @@ export class DecodedMedia {
    element.src=url;element.load();
   }
   this.ready=this.ready.catch(e=>{if(this.state!=='disposed'){this.state='error';this.error=(e as Error).message;}throw e;});
+  // Loading starts in the constructor. A sibling PCM request may fail before
+  // the caller reaches await ready; observe rejection now without hiding it
+  // from that later await (including cancellation/disposal while still loading).
+  void this.ready.catch(()=>{});
   this.element.addEventListener('error',()=>{if(this.state!=='disposed'){this.state='error';this.error='GPU_MEDIA_DECODE_FAILED';}},{signal:this.abort.signal});
  }
  private wait(event:string,timeout:number,external?:AbortSignal,action?:()=>void):Promise<void>{

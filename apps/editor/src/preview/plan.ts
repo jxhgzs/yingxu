@@ -1,3 +1,4 @@
+import {CURVE_PCM_MAX_BYTES} from './curve-sound.ts';
 import {resolveVideoColorSpace} from '../../../../packages/core/src/color-space.ts';
 import {renderGraph} from '../../../../packages/media/src/graph.ts';
 import type {RenderGraph,Layer} from '../../../../packages/media/src/graph.ts';
@@ -14,7 +15,7 @@ type PreviewTransition={transition:Transition;outgoing:Layer;incoming:Layer;wind
 export type PreviewPlan=RenderGraph&{media:Layer[];previewTransitions:PreviewTransition[];decodeRanges:Map<string,Range>};
 export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;transition?:{id:string;kind:'crossfade'|'dipToBlack';progress:number;incoming:PlannedVisual}};
 export type PlannedFrame={time:Rational;frame:number;layers:PlannedVisual[];audio:Layer[];media:Layer[]};
-export type PlanOptions={diagnostics?:Diagnostic[];maxConcurrentMedia?:number;texturesAvailable?:boolean};
+export type PlanOptions={diagnostics?:Diagnostic[];maxConcurrentMedia?:number;texturesAvailable?:boolean;curveAudioAvailable?:boolean};
 const knownClipKeys=new Set(['id','materialId','source','target','speed','editableTiming','transform','volume','muted','text','animations','speedCurve','audioFade','colorAdjustments']);
 const knownTransitionKeys=new Set(['id','trackId','outgoingClipId','incomingClipId','kind','alignment','overlap','duration']);
 function edge(time:Rational,fps:Rational):number{const v=mul(time,fps),n=BigInt(v.numerator),d=BigInt(v.denominator);return Number((n+d-1n)/d);}
@@ -35,7 +36,10 @@ export function createPreviewPlan(document:Document,options:PlanOptions={}):{sup
  const media=new Map<string,Layer>();for(const l of [...graph.layers,...graph.audio])media.set(l.clip.id,l);
  for(const {clip,asset} of media.values()){
   if((asset.kind||'video')==='video')try{resolveVideoColorSpace(asset);}catch{reason('UNSUPPORTED_VIDEO_COLOR_SPACE','素材色彩格式暂不支持实时预览。',clip.id);}
-  if(clip.speedCurve&&graph.audio.some(l=>l.clip.id===clip.id))reason('CURVE_AUDIO_REQUIRES_OFFLINE_RENDER','带声音的曲线变速需要后台预览。',clip.id);
+  if(clip.speedCurve&&graph.audio.some(l=>l.clip.id===clip.id)){
+   if(!options.curveAudioAvailable)reason('CURVE_AUDIO_REQUIRES_OFFLINE_RENDER','曲线音轨服务尚未连接，需要后台预览。',clip.id);
+   else if(Math.ceil(toNumber(clip.target.duration)*44100)*8>CURVE_PCM_MAX_BYTES)reason('GPU_CURVE_AUDIO_SIZE_LIMIT','此曲线音轨超出实时缓存限制，需要后台预览。',clip.id);
+  }
   if(Object.keys(clip).some(k=>!knownClipKeys.has(k)))reason('UNKNOWN_CLIP_EFFECT','片段含实时预览尚未识别的属性。',clip.id);
   if(asset.kind==='text'){
    if(clip.speedCurve||clip.animations?.some(a=>a.property!=='volume'))reason('TEXT_ANIMATION_REQUIRES_OFFLINE_RENDER','文字动画需要后台预览。',clip.id);

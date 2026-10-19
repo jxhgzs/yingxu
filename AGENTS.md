@@ -77,3 +77,9 @@
 - Qt原生滚动有惯性，动作前读取稳定截图；数值框失焦时不能反复Cmd+A/粘贴，实测微调箭头可确定每次一单位。原生JSON、实际MOV和像素证据要交叉检查；组合新增3码值差异应单列，不降低旧单变量验收标准或任意改公式。
 
 - Vue watch getter返回新数组会在依赖state对象替换时触发，即使数组内id相同；只需选择变化才重置页签时使用独立source数组 `watch([()=>projectId,()=>selectedId], ...)`，并用实际保存/撤销/播放头变化验证，不能只靠类型检查。
+
+## 0.6有声曲线预览经验
+
+- 曲线PCM只做时间变换，源时钟音量与目标时钟淡变只在WebAudio施加一次；原曲线video始终静音，prepare不能在最终transport anchor之前启动一次性音源。暂停/seek必须stop旧源，再以目标offset创建新源。
+- 并行准备中即使某分支先失败，其他分支的ready Promise仍可能稍后拒绝；创建时立即观察拒绝，同时保留原Promise让await收到实际错误。回归需覆盖迟到错误和cancel/dispose，不能只测同时成功。
+- AudioWorklet捕获按currentFrame重建时间轴，不直接拼接有间隙的块。相关搜索的最佳偏移、未对齐误差与对齐后误差分别记录；AudioContext推导漂移不等于声卡延迟。PCM缓存预算、激活AudioBuffer副本和临时解析内存分别说明。

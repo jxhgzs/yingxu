@@ -1,0 +1,101 @@
+{
+  "sampleRate": 48000,
+  "commonFrames": 94720,
+  "analysisWindow": [
+    0.35,
+    1.25
+  ],
+  "summary": {
+    "drawn": 59,
+    "wrong": 0,
+    "drops": 0,
+    "allCurveVideoPausedMuted": true,
+    "mediaSources": 1,
+    "bufferSources": 1
+  },
+  "contexts": 1,
+  "instrumentation": {
+    "mediaSources": 1,
+    "bufferSources": 1,
+    "gains": 2,
+    "sourceStarts": [
+      {
+        "when": 0.005333333333333333,
+        "offset": 0,
+        "at": 0.005333333333333333
+      }
+    ],
+    "sourceStops": [
+      {
+        "at": 1.9733333333333334
+      }
+    ]
+  },
+  "spectral": {
+    "mix": [
+      {
+        "rms": 0.04592883002631158,
+        "hz440": 0.044197487699134,
+        "hz660": 0.000028251295448621515,
+        "hz1000": 0.044172918157467114
+      },
+      {
+        "rms": 0.04017805042721841,
+        "hz440": 0.000022998175604980748,
+        "hz660": 0.03315533840681207,
+        "hz1000": 0.044181567569132184
+      }
+    ],
+    "constant": [
+      {
+        "rms": 0.031243208932849598,
+        "hz440": 2.531572779849468e-9,
+        "hz660": 2.9381469597792668e-9,
+        "hz1000": 0.04418456954480003
+      },
+      {
+        "rms": 0.031243208932849598,
+        "hz440": 2.531572779849468e-9,
+        "hz660": 2.9381469597792668e-9,
+        "hz1000": 0.04418456954480003
+      }
+    ],
+    "curve": [
+      {
+        "rms": 0.03367245178409282,
+        "hz440": 0.0441974852844693,
+        "hz660": 0.000028250622935047457,
+        "hz1000": 0.000011953906236183505
+      },
+      {
+        "rms": 0.025264028919696292,
+        "hz440": 0.000023000659792359802,
+        "hz660": 0.033155338254326774,
+        "hz1000": 0.000010110502145844203
+      }
+    ]
+  },
+  "sum": [
+    {
+      "rmsError": 1.3191998213514714e-9,
+      "maxError": 7.450580596923828e-9,
+      "relativeRmsError": 2.872269597718125e-8
+    },
+    {
+      "rmsError": 1.1398809342598418e-9,
+      "maxError": 7.450580596923828e-9,
+      "relativeRmsError": 2.837073779243466e-8
+    }
+  ],
+  "checks": {
+    "singleContext": true,
+    "oneConstantSource": true,
+    "oneCurveSource": true,
+    "oneCurveStart": true,
+    "allVideoFramesExact": true,
+    "nativeCurveMutedPaused": true,
+    "constantSingleGain": true,
+    "mixedSignalsPresent": true,
+    "sumMatchesCapturedRoutes": true
+  }
+}

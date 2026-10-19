@@ -29,6 +29,9 @@ function createEngine(){
   try{engine=new GpuPreview(canvas.value,{mediaUrl:asset=>props.c.api.url(`/media/${encodeURIComponent(asset.id)}`),textTexture:async(clipId,context,signal)=>{
     const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/textures`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId}),signal});
     const texture=await response.json();if(!response.ok)throw Error(texture.error||'TEXT_TEXTURE_REQUEST_FAILED');return {...texture,url:props.c.api.url(texture.url)};
+  },curveAudio:async(clipId,context,signal)=>{
+    const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/curve-audio`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId}),signal});
+    const audio=await response.json();if(!response.ok)throw Error(audio.error||'CURVE_AUDIO_REQUEST_FAILED');return {...audio,url:props.c.api.url(audio.url)};
   },onState:accept,onMetrics:accept,onTime:time=>{
     if(disposed)return;engineTime=true;props.c.playhead.value=time;if(time>=props.c.total.value)props.c.playing.value=false;
     queueMicrotask(()=>{engineTime=false;});
@@ -70,7 +73,7 @@ onBeforeUnmount(()=>{disposed=true;epoch++;engine?.dispose({releaseContext:true}
       <canvas v-show="realtime" ref="canvas" aria-label="实时视频画面" @click="ready&&(c.playing.value=!c.playing.value)" />
       <video v-show="!realtime" v-if="source" ref="player" :src="source" preload="auto" playsinline @loadedmetadata="loaded" @timeupdate="update" @ended="c.playing.value=false" @click="ready&&(c.playing.value=!c.playing.value)" />
       <div v-if="!realtime&&!source" class="preview-empty"><Icon name="video" /><span>{{c.readOnly.value?'此草稿暂不支持预览':c.total.value?'正在准备预览':'将素材添加到时间线开始剪辑'}}</span></div>
-      <div v-if="waiting" class="preview-updating"><a-spin size="small" /><span>{{realtime?'正在定位素材':'正在更新预览'}}</span></div>
+      <div v-if="waiting" class="preview-updating"><a-spin size="small" /><span>{{realtime?'正在准备画面与音轨':'正在更新预览'}}</span></div>
       <div v-if="details" class="preview-performance"><strong>{{backendLabel}}</strong><span v-if="manifest&&realtime">{{manifest.renderer.renderer}}</span><span v-if="manifest&&realtime">合成 {{manifest.metrics.meanCpuMs.toFixed(2)}} ms · 定位 {{manifest.metrics.lastDecodeWaitMs.toFixed(1)}} ms · 掉帧 输出 {{manifest.metrics.droppedOutputFrames}} / 解码 {{manifest.metrics.decoderDroppedFrames}}</span><span v-if="!realtime">{{reason||'按当前工程修订生成后台预览。'}}</span><button v-if="realtime" class="text-link" aria-label="采样预览颜色" @click="sampleColors">颜色诊断</button><span v-if="colorDiagnostic">已记录第 {{colorDiagnostic.frame}} 帧的画布与源颜色</span></div>
       <span v-if="c.doc.value" class="preview-size">{{c.doc.value.canvas.width}} × {{c.doc.value.canvas.height}}</span>
     </div>

@@ -1,0 +1,50 @@
+[
+  {
+    "offset": 0.9,
+    "gpu": {
+      "wrong": 0,
+      "drawn": 32,
+      "drops": 4,
+      "audioFrames": 50944
+    },
+    "sampleRate": 48000,
+    "audioFrameGaps": 128,
+    "capturePeak": 0.3020514249801636,
+    "captureFinite": true,
+    "crossCorrelationBestLagSamples": 256,
+    "crossCorrelationBestLagMs": 5.333333333333333,
+    "correlation": 0.9999943126051414,
+    "rmsActual": 0.04753031499508,
+    "rmsExpected": 0.0475459835985991,
+    "rmsRatio": 0.9996704536885517,
+    "rmsError": 0.0004197184648751533,
+    "unshiftedRmsError": 0.0871551412164204,
+    "nativeVideoMutedByDesign": true,
+    "soundDeviceLatencyMeasured": false,
+    "rawCaptureSHA256": "7964abdd37fa7dc2a8f3e9f177f9754556dedab1c3c0a6944e06984a1b5b3e7f"
+  },
+  {
+    "offset": 0,
+    "gpu": {
+      "wrong": 0,
+      "drawn": 59,
+      "drops": 0,
+      "audioFrames": 94464
+    },
+    "sampleRate": 48000,
+    "audioFrameGaps": 256,
+    "capturePeak": 0.3012557625770569,
+    "captureFinite": true,
+    "crossCorrelationBestLagSamples": 0,
+    "crossCorrelationBestLagMs": 0.0,
+    "correlation": 0.999999272138328,
+    "rmsActual": 0.037288455424359546,
+    "rmsExpected": 0.03731397636150275,
+    "rmsRatio": 0.9993160488473286,
+    "rmsError": 0.00013386634706009945,
+    "unshiftedRmsError": 0.00013258762277832054,
+    "nativeVideoMutedByDesign": true,
+    "soundDeviceLatencyMeasured": false,
+    "rawCaptureSHA256": "74d3b933a8137e367b3284db28afa4f56b2f2d1587d174ca2f8be3b3f4a28281"
+  }
+]
