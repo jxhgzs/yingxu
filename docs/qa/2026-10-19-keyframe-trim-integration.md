@@ -21,3 +21,12 @@
 自身渲染由00快照的单视频片段投影执行两条真实裁切命令得来，**没有使用07导入丢失未知效果后的默认画面**。该视频投影关闭声音、移到0秒渲染40帧；与原生90—129帧比较，160×90缩略图的[x10..150,y5..60]区域避开原生字幕，40帧均匹配同一帧序，区域平均MAE约2.462/255。只证明本样例画面时序和静态缩放回退，没有证明整画面像素或声音一致。完整SHA/probe/MAE保存在ignored `artifacts/qa/keyframe-trim/native-render-comparison.json`。
 
 原生草稿通过菜单撤销后逐轨恢复到00，未修改app。全量95项测试通过，类型/构建通过。生成式规则测试覆盖999/1000us、左右多点删光及碰撞拒绝，但这些合成测试不是新增原生UI证据。
+
+
+## 桌面0.3.1验证
+
+提交`8a66ac96468aca7b7716050365a5d475fb2c40b9`的开发包为`artifacts/desktop/20261019132828/映序剪辑.app`，严格签名校验通过；backend SHA256 `dc4b8ff021d00d13705834e3888d126e6d0ddc9b0af4c7aa8385e7c49b3dc986`。实际启动版本接口返回0.3.1。
+
+桌面打开视频投影工程、拖动第二曲线左边缘，得到原生03的source/target区间。任务`c1a53731-c6ba-4cf0-9c40-0df88486d090`实际导出并保存`/Users/tal/Downloads/Desktop-0.3.1-curve-trim.mp4`：720p30、285帧、9.5秒，完整解码通过，尾部27帧全部匹配；SHA256 `183f5530a878ad485890c591560ea43c820063cbc2ed1114b31f84d3acec079a`与浏览器同设置输出相同。
+
+正常退出再打开，工程`daef4fc2-913a-4607-8bda-66cccba39671`修订2、名称“桌面0.3.1裁切重开验证”、裁切和已完成任务都保留。记录`artifacts/qa/keyframe-trim/desktop-v31-verification.json`；截图`artifacts/ui/desktop-v31-{export-completed,reopened-jobs}.png`。仍依赖本机FFmpeg/FFprobe/Rubber Band，非公证分发包。
