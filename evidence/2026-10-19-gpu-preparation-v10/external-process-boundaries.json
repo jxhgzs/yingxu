@@ -1,0 +1,85 @@
+{
+  "method": "fs.watch result start/completed transitions; ps once per observed mode boundary. ps %cpu is process lifetime average, not instantaneous utilization. Already-running files on observer startup are midpoint samples, never reconstructed starts. Other tasks are observed only.",
+  "events": [
+    {
+      "at": "2026-10-19T14:33:43.535Z",
+      "id": "scalar-cold-v10-1792420423430",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T14:33:43.430Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:34:28.539Z",
+      "id": "scalar-cold-v10-1792420423430",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T14:33:43.430Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:34:36.903Z",
+      "id": "batch-cold-v10-1792420476758",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T14:34:36.758Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:34:50.926Z",
+      "id": "batch-cold-v10-1792420476758",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T14:34:36.758Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:34:59.796Z",
+      "id": "batch-retained-v10-1792420499751",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T14:34:59.751Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:35:19.456Z",
+      "id": "batch-retained-v10-1792420499751",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T14:34:59.751Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:35:26.895Z",
+      "id": "pixels-v10-1792420526844",
+      "boundary": "mode-start-file-created",
+      "probeCreatedAt": "2026-10-19T14:35:26.844Z",
+      "probeCompleted": false,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    },
+    {
+      "at": "2026-10-19T14:35:33.283Z",
+      "id": "pixels-v10-1792420526844",
+      "boundary": "mode-completed",
+      "probeCreatedAt": "2026-10-19T14:35:26.844Z",
+      "probeCompleted": true,
+      "externalFfmpegCount": 0,
+      "externalPsCpuPercent": 0,
+      "processes": []
+    }
+  ]
+}

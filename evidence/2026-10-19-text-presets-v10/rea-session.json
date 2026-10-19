@@ -1,0 +1,202 @@
+{
+  "scope": "New bounded REA calls with imported retained evidence; JS semantic analysis applies only three exact template files. Lua resources inventoried, not semantically analyzed by REA. Private sources and exported bundle remain ignored.",
+  "records": [
+    {
+      "receipt": "001-import-app.json",
+      "tool": "import_evidence_bundle",
+      "elapsedSeconds": 2.6376134169999994,
+      "isError": false,
+      "evidenceId": null,
+      "subjectSha256": null,
+      "statistics": null,
+      "result": null
+    },
+    {
+      "receipt": "002-import-bridges.json",
+      "tool": "import_evidence_bundle",
+      "elapsedSeconds": 0.03167454100000032,
+      "isError": false,
+      "evidenceId": null,
+      "subjectSha256": null,
+      "statistics": null,
+      "result": null
+    },
+    {
+      "receipt": "003-open-app.json",
+      "tool": "open_binary",
+      "elapsedSeconds": 3.0767878750000004,
+      "isError": false,
+      "evidenceId": null,
+      "subjectSha256": null,
+      "statistics": null,
+      "result": null
+    },
+    {
+      "receipt": "004-retained-template-paths.json",
+      "tool": "inspect_analysis_view",
+      "elapsedSeconds": 0.15399129200000608,
+      "isError": false,
+      "evidenceId": "ev_49199b5be9280d09abc140b10d7725d4185096e286addf67162dc2e1929373d3",
+      "subjectSha256": "ff02a962d5e9e6fbd9542ef55126d524c15177385d3808857ff57c11c60a093e",
+      "statistics": null,
+      "result": null
+    },
+    {
+      "receipt": "005-template-slice.json",
+      "tool": "analyze_javascript_application",
+      "elapsedSeconds": 3.701026958999995,
+      "isError": false,
+      "evidenceId": "ev_b5acdb37029b90a73fc0a0fec6f2a3a7cfec697a9e274d6352d0e69382cc84db",
+      "subjectSha256": "af0916dea5d9f58ac32d6a9542dea21654c1a1847243298e0ed35a291640fbb8",
+      "statistics": {
+        "relevant_files": 3,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 82711,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 3,
+        "skipped_javascript_files": 0,
+        "visited_ast_nodes": 21563,
+        "findings": 184,
+        "modules": 12,
+        "parse_failures": 0
+      },
+      "result": null
+    },
+    {
+      "receipt": "006-typewriter2-resource.json",
+      "tool": "analyze_javascript_application",
+      "elapsedSeconds": 0.009246083999998518,
+      "isError": false,
+      "evidenceId": "ev_6f2ed3fd9fa9480621b5bf1b7f9ec9a7424f1bd843b38f18b7b19a64315486ee",
+      "subjectSha256": "ec9e8f62e47c5fd1a57ef3ecceacac0f430ff30a3fa287ee26014064f6f60fed",
+      "statistics": {
+        "relevant_files": 2,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 123,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 0,
+        "skipped_javascript_files": 0,
+        "visited_ast_nodes": 0,
+        "findings": 0,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "result": null
+    },
+    {
+      "receipt": "007-shrink-out-resource.json",
+      "tool": "analyze_javascript_application",
+      "elapsedSeconds": 0.019433459000021684,
+      "isError": false,
+      "evidenceId": "ev_38df09353788d29f2a5f44fd40caa002fd856fd8932167ae9027caad211add05",
+      "subjectSha256": "082de064b31864de8bfd20d46d1db4d8fafec2597c7df03edca6bbdd0fae5bac",
+      "statistics": {
+        "relevant_files": 2,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 123,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 0,
+        "skipped_javascript_files": 0,
+        "visited_ast_nodes": 0,
+        "findings": 0,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "result": null
+    },
+    {
+      "receipt": "008-template-fact-keys.json",
+      "tool": "inspect_analysis_view",
+      "elapsedSeconds": 0.0589421250000014,
+      "isError": false,
+      "evidenceId": "ev_e9238ababb46f764815ec96900bb2e49907e2cfa953785d20755391a082d8e5c",
+      "subjectSha256": "af0916dea5d9f58ac32d6a9542dea21654c1a1847243298e0ed35a291640fbb8",
+      "statistics": null,
+      "result": null
+    },
+    {
+      "receipt": "009-bounce-resource.json",
+      "tool": "analyze_javascript_application",
+      "elapsedSeconds": 0.037067292000050656,
+      "isError": false,
+      "evidenceId": "ev_9f07b66438b4a5744393db2123e676368cdbaf6837a77c68aabbcfcfbae8ae7b",
+      "subjectSha256": "9b13802b0f0f3f885939dfe5c805ba49a007164c9f01102f028a0d36b3f4af42",
+      "statistics": {
+        "relevant_files": 2,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 123,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 0,
+        "skipped_javascript_files": 0,
+        "visited_ast_nodes": 0,
+        "findings": 0,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "result": null
+    },
+    {
+      "receipt": "010-export.json",
+      "tool": "export_evidence_bundle",
+      "elapsedSeconds": 0.45639895800000524,
+      "isError": false,
+      "evidenceId": null,
+      "subjectSha256": null,
+      "statistics": null,
+      "result": {
+        "path": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/rea/text-presets-v10/evidence-bundle.json",
+        "bytes": 39448713,
+        "records": 21,
+        "unknowns": 0
+      }
+    },
+    {
+      "receipt": "011-close.json",
+      "tool": "close_binary",
+      "elapsedSeconds": 0.007986415999941527,
+      "isError": true,
+      "evidenceId": null,
+      "subjectSha256": null,
+      "statistics": null,
+      "result": null
+    }
+  ],
+  "helperLifecycle": {
+    "exported": true,
+    "closed": false,
+    "stopFile": true,
+    "execSession": 9725,
+    "observedExitCode": 0,
+    "closeError": "snapshot requested for .app metadata without concrete provider analysis profile; explicit close failed, retained"
+  },
+  "privateBundleSha256": "2693bd8d2ac277e1d0cd564bd285765222fe071c3d17d832e3492ae749707d30",
+  "correctiveLifecycle": {
+    "scope": "Separate metadata-only session; export successful, close_binary without snapshot successful, no provider analysis or FFmpeg.",
+    "records": [
+      {
+        "receipt": "001-open.json",
+        "tool": "open_binary",
+        "elapsedSeconds": 5.813297292000001,
+        "isError": false
+      },
+      {
+        "receipt": "002-export.json",
+        "tool": "export_evidence_bundle",
+        "elapsedSeconds": 0.031164333000000623,
+        "isError": false
+      },
+      {
+        "receipt": "003-close.json",
+        "tool": "close_binary",
+        "elapsedSeconds": 0.005151332999997976,
+        "isError": false
+      }
+    ],
+    "exported": true,
+    "closeSucceeded": true,
+    "stopFile": true,
+    "execSession": 28889,
+    "observedExitCode": 0,
+    "bundleSha256": "000bef2a45fbd4b17adc4e2ab0acd65b076ef5c25f0d8479244c8088730de9cd"
+  }
+}

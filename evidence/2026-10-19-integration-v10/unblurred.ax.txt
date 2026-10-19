@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "映序 · 视频剪辑".
+The focused UI element is 8 文本栏 (settable) Description: 工程名称, Value: 0.10 REA 文字组合 · 退出重开验收

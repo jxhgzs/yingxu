@@ -1,0 +1,65 @@
+{
+  "started": "2026-10-19T14:11:56.007Z",
+  "condition": "Team CLI exclusive window; native UI selection only, no export; parent confirms stopped other worker FFmpeg.",
+  "before": [
+    "74159   1.9 /Applications/VideoFusion-macOS.app/Contents/MacOS/VideoFusion-macOS"
+  ],
+  "phases": [
+    {
+      "frames": 32,
+      "scriptMs": 121.93625,
+      "pipelineMs": 508.554709,
+      "totalMs": 630.7719169999999
+    }
+  ],
+  "byteIdentical": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "preparation": {
+    "projectId": "e61df320-f6ab-4460-966f-c115f9cea50a",
+    "revision": 0,
+    "status": "ready",
+    "requested": 180,
+    "completed": 180,
+    "uniqueTextures": 180,
+    "bytes": 4105871,
+    "elapsedMs": 4762.709625
+  },
+  "elapsedMs": 4762.991333,
+  "full180ByteHashSetEqual": true,
+  "after": [
+    "74159   2.0 /Applications/VideoFusion-macOS.app/Contents/MacOS/VideoFusion-macOS"
+  ],
+  "finished": "2026-10-19T14:12:01.567Z"
+}

@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-19T14:32:02.218Z",
+  "checks": [
+    {
+      "name": "index.html",
+      "status": 200
+    },
+    {
+      "name": "cases.json",
+      "status": 200
+    },
+    {
+      "name": "server-state.json",
+      "status": 200
+    },
+    {
+      "name": "reference-64.rgba",
+      "status": 200,
+      "contentEncoding": "gzip",
+      "bytes": 3686400,
+      "sha256": "cb79dc15605380cf1821fb7403cee1b1670c5c6b2e29c9f4e2075cebe6fdb64a",
+      "pass": true
+    },
+    {
+      "name": "reference-v10-soft-bounce-shrink-107.rgba",
+      "status": 200,
+      "contentEncoding": "gzip",
+      "bytes": 230400,
+      "sha256": "fa70de512086ed99a8146bf0ee33e6bd2916f6ea2656f64393ceec700c3a39df",
+      "pass": true
+    },
+    {
+      "name": "audible-source-http-range",
+      "status": 206,
+      "bytes": 16,
+      "contentRange": "bytes 0-15/143765"
+    }
+  ],
+  "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|7543809c5dea2c4f0603aaeed89c5558c087bb46d2e9711fd421e3cef42cebca",
+  "version": "0.10.0",
+  "pixelFrameCount": 63,
+  "frontend": {
+    "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+    "frontendSource": "apps/editor/src/preview/index.ts",
+    "sourceHashes": {
+      "apps/editor/src/preview/index.ts": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+      "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+      "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+      "packages/core/src/text-animation.ts": "5196530b9d9d14ff887122190acb995604c388b141c6e2b02c61defa7d243394",
+      "packages/media/src/captions.ts": "f46800189ae5c62b1a996a7d4036169a0e06399ff8514cdfef0b47936adcccd6",
+      "packages/media/src/glyph-layout.ts": "d550fc6ee694407781ece4b2f9d62fdd8fabca2f34299c2c23b4fbaed7a35f59",
+      "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+      "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+      "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+      "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+      "apps/service/text-raster.ts": "e149d0d31f498a6bde633273a27ad134c0d51d4e99dc0a4557f03bfa6e307e97"
+    },
+    "pid": 85278,
+    "service": "http://127.0.0.1:8838",
+    "vite": "http://127.0.0.1:8839",
+    "startedAt": "2026-10-19T14:31:25.255Z"
+  },
+  "pass": true
+}

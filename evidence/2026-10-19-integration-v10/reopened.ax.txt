@@ -1,0 +1,179 @@
+Window: "映序 · 视频剪辑", App: 映序剪辑.
+0 标准窗口 映序 · 视频剪辑, Secondary Actions: Raise
+	1 container 映序 · 视频剪辑
+		2 container
+			3 HTML 内容 映序 · 视频剪辑, URL: 127.0.0.1:53731/
+				4 container
+					5 文本 映序
+					6 按钮 文件
+					7 文本 已自动保存
+					8 文本栏 (settable) Description: 工程名称, Value: 0.10 REA 文字组合 · 退出重开验收
+					9 按钮 快捷键
+					10 按钮 导出任务
+					11 link Description: 下载工程, Value: 127.0.0.1:53731/api/projects/2744eae0-48e6-4634-8ab3-68b0e8c0ddf8/download
+					12 按钮 导出
+						13 文本 导出
+					14 按钮 媒体
+					15 按钮 音频
+					16 按钮 文本
+					17 按钮 转场
+					18 按钮 调节
+					19 container
+						20 按钮 本地
+						21 text 导入 素材库
+					22 文本栏 (settable) 搜索素材名称
+					23 按钮 导入
+						24 文本 导入
+					25 文本 全部 4
+					26 container
+						27 图像 动态测试素材.mp4
+						28 文本 00:06
+						29 按钮 添加 动态测试素材.mp4 到时间线
+						30 text 动态测试素材.mp4 640 × 360
+					31 container
+						32 图像 color-patches.mp4
+						33 文本 00:02
+						34 按钮 添加 color-patches.mp4 到时间线
+						35 text color-patches.mp4 1280 × 720
+					36 container
+						37 图像 curve-numbered-hd.mp4
+						38 文本 00:06
+						39 按钮 添加 curve-numbered-hd.mp4 到时间线
+						40 text curve-numbered-hd.mp4 1280 × 720
+					41 container
+						42 图像 audible-curve-probe.mp4
+						43 文本 00:06
+						44 按钮 添加 audible-curve-probe.mp4 到时间线
+						45 text audible-curve-probe.mp4 1280 × 720
+					46 container
+						47 文本 播放器
+						48 按钮 预览性能详情
+						49 弹出式按钮 Description: 预览方式, Value: 自动实时
+							50 (selected) 自动实时
+						51 按钮 重新生成预览
+					52 container
+						53 图像 实时视频画面
+						54 文本 1280 × 720
+					55 container
+						56 text 00:00:01:01  / 00:00:02:00
+					57 按钮 上一帧
+					58 按钮 播放
+					59 按钮 下一帧
+					60 文本 适应 
+					61 按钮 画面
+					62 按钮 文本
+					63 按钮 动画
+					64 按钮 变速
+					65 container
+						66 文本 文字动画
+						67 按钮 移除动画
+						68 文本 入场
+						69 container 文字入场动画
+							70 container
+								71 组合框
+								72 文本 打字机 II
+						73 文本 动画时长
+						74 container
+							75 按钮 Increase Value
+								76 图像 up
+							77 按钮 Decrease Value
+								78 图像 down
+						79 步进器 (settable, float) Description: 文字入场时长秒, Value: 0.3
+						80 text 秒 出场
+						81 container 文字出场动画
+							82 container
+								83 组合框
+								84 文本 缩小
+						85 文本 动画时长
+						86 container
+							87 按钮 Increase Value
+								88 图像 up
+							89 按钮 Decrease Value
+								90 图像 down
+						91 步进器 (settable, float) Description: 文字出场时长秒, Value: 0.4
+						92 text 秒 循环
+						93 container 文字循环动画
+							94 container
+								95 组合框
+								96 文本 轻微跳动
+						97 文本 循环周期
+						98 container
+							99 按钮 Increase Value
+								100 图像 up
+							101 按钮 Decrease Value
+								102 图像 down
+						103 步进器 (settable, float) Description: 文字循环周期秒, Value: 0.7
+						104 文本 秒
+						105 按钮 应用文字动画
+						106 文本 显示时间
+						107 文本 开始
+						108 步进器 (disabled) Description: 文字开始秒, Value: 0, Secondary Actions: Increment, Decrement
+						109 text 秒 持续
+						110 步进器 (disabled) Description: 文字时长秒, Value: 2, Secondary Actions: Increment, Decrement
+						111 文本 秒
+						112 按钮 (disabled) 应 用
+						113 文本 请先移除文字动画，再修改显示时间。
+					114 按钮 撤销
+					115 按钮 (disabled) 重做
+					116 按钮 分割
+					117 按钮 删除片段
+					118 按钮 复制片段
+					119 按钮 轨道
+						120 文本 轨道
+					121 切换按钮 Description: 时间线吸附, Value: 1
+					122 container
+						123 滑块 Value: 88, Secondary Actions: Increment, Decrement
+					124 container
+						125 文本 30 fps
+						126 文本 00:00
+						127 文本 00:01
+						128 文本 00:02
+						129 文本 00:03
+						130 文本 00:04
+						131 文本 00:05
+						132 文本 00:06
+						133 文本 00:07
+						134 文本 00:08
+						135 文本 00:09
+						136 文本 00:10
+						137 文本 00:11
+						138 文本 00:12
+						139 文本 00:13
+						140 文本 00:14
+						141 文本 00:15
+						142 文本 00:16
+						143 文本 00:17
+						144 文本 00:18
+						145 container
+							146 文本 文字
+							147 按钮 锁定文字
+							148 按钮 隐藏文字
+						149 按钮 片段 打字 跳动 缩小组合
+							150 文本 打字 跳动 缩小组合
+							151 container 裁切左边缘 打字 跳动 缩小组合
+							152 container 裁切右边缘 打字 跳动 缩小组合
+						153 container
+							154 文本 音频
+							155 按钮 锁定音频
+							156 按钮 静音音频
+						157 文本 拖入音频素材
+						158 container
+							159 文本 主轨道
+							160 按钮 锁定主轨道
+							161 按钮 隐藏主轨道
+						162 按钮 片段 color-patches.mp4
+							163 文本 color-patches.mp4
+							164 container 裁切左边缘 color-patches.mp4
+							165 container 裁切右边缘 color-patches.mp4
+					166 container
+						167 text 2 个片段 已选中 文字 1280 × 720
+	168 关闭按钮
+	169 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	170 最小化按钮
+171 menu bar
+	172 映序剪辑
+	173 文件
+	174 编辑
+	175 视图
+
+The focused UI element is 3 HTML 内容 映序 · 视频剪辑, URL: 127.0.0.1:53731/

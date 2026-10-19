@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-19T14:41:36.176Z",
+  "method": "Parent closed owned tab23, then SIGTERM sent only to owned server85278 and observer85530; process and loopback bind checks after sessions completed.",
+  "sessions": {
+    "serverExitCode": 143,
+    "observerExitCode": 0
+  },
+  "pids": [
+    {
+      "pid": 85278,
+      "exists": false
+    },
+    {
+      "pid": 85530,
+      "exists": false
+    }
+  ],
+  "ports": [
+    {
+      "port": 8838,
+      "bindSucceeded": true,
+      "closed": true
+    },
+    {
+      "port": 8839,
+      "bindSucceeded": true,
+      "closed": true
+    }
+  ],
+  "pass": true
+}

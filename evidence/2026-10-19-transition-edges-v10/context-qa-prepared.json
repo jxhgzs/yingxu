@@ -1,0 +1,15 @@
+{
+  "pid": 89357,
+  "origin": "http://127.0.0.1:8841",
+  "startedAt": "2026-10-19T14:37:54.042Z",
+  "sourceHashes": {
+    "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+    "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+    "packages/core/src/transition-edge.ts": "1bb1319ed2455af2d99bbd06e5f10d92f54c9118897ff2798cd6556cae6495cd",
+    "artifacts/qa/plane-edges-v10/probe.ts": "048521b7ae7306252a157856a9769ec9dbf24e4274ad13f7392fb840b851426e",
+    "artifacts/qa/plane-edges-v10/reference.ts": "2878390044e4a0b28e39601b252ec583f33e624270851677b179b6994d48be65",
+    "artifacts/qa/plane-edges-v10/context.ts": "b653c280bf852554f94dfc0c0a3dd4d509313c6d74fd099472925e80b8030208"
+  },
+  "hmr": false,
+  "watch": false
+}

@@ -1,0 +1,219 @@
+{
+  "source": "artifacts/qa/transitions-v8/spatial-source.mp4",
+  "sourceSha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+  "native": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+  "nativeSha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+  "scope": "One source/native frame0; no H264 encoding candidate and no alpha/transforms. Preserve full plane differences.",
+  "rows": [
+    {
+      "variant": "direct-default",
+      "filter": null,
+      "metrics": [
+        {
+          "plane": "Y",
+          "mae": 0.10867404513888888,
+          "max": 10,
+          "over3": 3407,
+          "worst": {
+            "x": 1249,
+            "y": 689,
+            "candidate": 226,
+            "native": 216
+          }
+        },
+        {
+          "plane": "U",
+          "mae": 0.7745746527777778,
+          "max": 35,
+          "over3": 11888,
+          "worst": {
+            "x": 1,
+            "y": 181,
+            "candidate": 194,
+            "native": 159
+          }
+        },
+        {
+          "plane": "V",
+          "mae": 0.7793793402777778,
+          "max": 31,
+          "over3": 13992,
+          "worst": {
+            "x": 11,
+            "y": 11,
+            "candidate": 138,
+            "native": 169
+          }
+        }
+      ]
+    },
+    {
+      "variant": "direct-accurate",
+      "filter": "scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p",
+      "metrics": [
+        {
+          "plane": "Y",
+          "mae": 0.10867404513888888,
+          "max": 10,
+          "over3": 3407,
+          "worst": {
+            "x": 1249,
+            "y": 689,
+            "candidate": 226,
+            "native": 216
+          }
+        },
+        {
+          "plane": "U",
+          "mae": 0.7745746527777778,
+          "max": 35,
+          "over3": 11888,
+          "worst": {
+            "x": 1,
+            "y": 181,
+            "candidate": 194,
+            "native": 159
+          }
+        },
+        {
+          "plane": "V",
+          "mae": 0.7793793402777778,
+          "max": 31,
+          "over3": 13992,
+          "worst": {
+            "x": 11,
+            "y": 11,
+            "candidate": 138,
+            "native": 169
+          }
+        }
+      ]
+    },
+    {
+      "variant": "rgb-roundtrip",
+      "filter": "scale=in_color_matrix=bt709:in_range=tv:out_range=pc:flags=accurate_rnd+full_chroma_int,format=rgba,scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p",
+      "metrics": [
+        {
+          "plane": "Y",
+          "mae": 0.10867404513888888,
+          "max": 10,
+          "over3": 3407,
+          "worst": {
+            "x": 1249,
+            "y": 689,
+            "candidate": 226,
+            "native": 216
+          }
+        },
+        {
+          "plane": "U",
+          "mae": 0.8346223958333333,
+          "max": 40,
+          "over3": 11954,
+          "worst": {
+            "x": 1,
+            "y": 181,
+            "candidate": 199,
+            "native": 159
+          }
+        },
+        {
+          "plane": "V",
+          "mae": 0.8428298611111111,
+          "max": 36,
+          "over3": 13491,
+          "worst": {
+            "x": 81,
+            "y": 1,
+            "candidate": 209,
+            "native": 173
+          }
+        }
+      ]
+    },
+    {
+      "variant": "direct-neighbor",
+      "filter": "scale=flags=neighbor,format=yuv420p",
+      "metrics": [
+        {
+          "plane": "Y",
+          "mae": 0.10867404513888888,
+          "max": 10,
+          "over3": 3407,
+          "worst": {
+            "x": 1249,
+            "y": 689,
+            "candidate": 226,
+            "native": 216
+          }
+        },
+        {
+          "plane": "U",
+          "mae": 0.9158940972222223,
+          "max": 45,
+          "over3": 11177,
+          "worst": {
+            "x": 1,
+            "y": 181,
+            "candidate": 204,
+            "native": 159
+          }
+        },
+        {
+          "plane": "V",
+          "mae": 0.9155642361111112,
+          "max": 41,
+          "over3": 11772,
+          "worst": {
+            "x": 81,
+            "y": 1,
+            "candidate": 214,
+            "native": 173
+          }
+        }
+      ]
+    },
+    {
+      "variant": "direct-bilinear",
+      "filter": "scale=flags=bilinear,format=yuv420p",
+      "metrics": [
+        {
+          "plane": "Y",
+          "mae": 0.10867404513888888,
+          "max": 10,
+          "over3": 3407,
+          "worst": {
+            "x": 1249,
+            "y": 689,
+            "candidate": 226,
+            "native": 216
+          }
+        },
+        {
+          "plane": "U",
+          "mae": 0.7547873263888889,
+          "max": 27,
+          "over3": 11595,
+          "worst": {
+            "x": 1,
+            "y": 181,
+            "candidate": 186,
+            "native": 159
+          }
+        },
+        {
+          "plane": "V",
+          "mae": 0.7486805555555556,
+          "max": 22,
+          "over3": 11526,
+          "worst": {
+            "x": 22,
+            "y": 22,
+            "candidate": 148,
+            "native": 126
+          }
+        }
+      ]
+    }
+  ]
+}

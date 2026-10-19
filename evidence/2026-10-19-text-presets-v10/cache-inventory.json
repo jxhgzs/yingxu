@@ -1,0 +1,510 @@
+{
+  "boundary": "Immediate Cache/effect/*/*/config.json containing InfoSticker; no network lookup, no claim of complete online preset inventory.",
+  "entries": [
+    {
+      "id": "102584862",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/102584862/259e955ebb6238cf8b3a70e160fc26f9-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "108780445",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/108780445/f6ab639c8895f9778f0b83a231c1126c-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "109692410",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/109692410/9d6a96d28565c511fc9a96b51c70f7f5-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "110206413",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/110206413/c2090467a91f15c333bcb983403ebac6-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "110450154",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/110450154/2e85dc679048a1da139661e050438ec2-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "113096610",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/113096610/fa201c52ba126f103a453b9668f6f442-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "113454943",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/113454943/f625722b0ce881a1182f8ae3d2fc7b9a-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "113927430",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/113927430/4666460830ba95be46fee85812b702f6-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "113927966",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/113927966/f3f9766b7909e4c92b07a65cdbcbef8b-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "113931114",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/113931114/0597492b4816d447e85e057852c7c038-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "114520924",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/114520924/93edc0c6b3926ec19bc249779fe0a91a-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "115815828",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/115815828/7269f0ee6bcdd0cf8a1184618f65cbba-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "115825070",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/115825070/ea98039f50c8807e396522ae2317124f-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "12453543",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/12453543/5bc317e3b39f3f4ec248fb3cb92a03c8",
+      "previewOnly": false,
+      "configSHA256": "df40a817b281ae7abc6db79ef030b5b97d0661d5aa8c16407bf9c70b4fbbb0fa",
+      "luaFiles": [
+        "lua/TextAnim.lua",
+        "lua/ImageBusinessSlider.lua",
+        "lua/src/AE.lua",
+        "lua/src/TextEntry.lua",
+        "lua/src/TextMain.lua",
+        "lua/src/common/AEAdapter.lua",
+        "lua/src/common/Utils.lua",
+        "lua/src/info_sticker/Helper.lua",
+        "lua/src/info_sticker/Patch0.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644264",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644264/e694f4c17470423f93efd621e99f7a45",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "EnlargeIn.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644275",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644275/0dc90e490f15d6bac5fd1d778e501917",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "PrinterOne.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644276",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644276/d93a8de5e7c58f29366d829cd1fa46f8",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "PrinterOne.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644304",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644304/8aad5add2c87ca5154b841b00f890479",
+      "previewOnly": false,
+      "configSHA256": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718",
+      "luaFiles": [
+        "Appear.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644514",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644514/e0cb5a808b474c4c461b652bc94f5be1",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "Spark.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644520",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644520/a143b6f884c36e7e9922051c7297dbbf",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "TextWave.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "1644600",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644600/c044a54f941b5a7553e668b821033cc1",
+      "previewOnly": false,
+      "configSHA256": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "luaFiles": [
+        "Disappear.lua"
+      ],
+      "hasContent": true
+    },
+    {
+      "id": "20402327",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20402327/8626c3ab19bd1ea9e6a8cbbbb3ff48dd-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20402357",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20402357/f95108bc596583df9ddc9bfec7813e62-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20402387",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20402387/9d79db0486d90980a54240b3313ea156-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20402433",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20402433/c9db70b65b984a4363c15343b2bd2573-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20402439",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20402439/398d40463233dfad04e3419248a1f216-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20403099",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20403099/ca0367d4e28ad273f187747c45d27d57-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20403193",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20403193/b18c4a35769d204d8ee88db8a06ac471-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20403203",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20403203/b21936cc7b4fbb0191cc0b356d2d4d98-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "20403941",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/20403941/b2552e48bc11cb289ccdf4504e3b771f-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "26003132",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/26003132/adfad625c852fca682e02463bd7d0bbc-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "26003145",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/26003145/92fc337d10907e56437c0da3f6d10a78-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34131532",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34131532/2c6b6b843410224e98e99e3d1ab427e1-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549519",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549519/65bb1af80161acd665444de74af896d8-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549520",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549520/4577355bc0adeb1763ad581f05e7c5ea-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549523",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549523/ce70e138b40294d5f159ddbdfd2f5e23-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549532",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549532/b978210e888a28fd7f6b1ac6e864cc03-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549533",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549533/12fe695be021ad4406276e85f32de4be-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "34549535",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/34549535/a126d5a78f08f65afdcea6f0b6d3928c-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36825430",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36825430/e7226d59672ac424570ad6504c8241a0-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880879",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880879/991bae1ed498bc17c16056935b73fa9b-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880881",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880881/22b55c6dc66142309168297e2633ec9b-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880883",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880883/8335b615c4eb7b246b7aa564899c368d-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880885",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880885/60e524ded7b66c88a3bf39f2a4adb898-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880886",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880886/5b5b4250553e98394d9e01644ec47320-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880890",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880890/cc22c869da3e5aecae2c1ffaf27d3eda-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880892",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880892/a8554d938efd7655890ddb5c413b1d47-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "36880893",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/36880893/8d1f5570b333f80196ec40fde68fd190-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "645449",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/645449/10fbabdd4c0f2d733c3bac1934e2027b-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "81318536",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/81318536/d56f4a0c1c39de0bc7d5c9fb6e9b1400-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "81332685",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/81332685/96b32125bb5d11e8fe83565b5dc917fe-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "85757836",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/85757836/4cc0c3a634c7888ada2991778315963c-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "85757837",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/85757837/e29302f3d11350964083cc128799dd8e-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "85757845",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/85757845/0eb3ee4fdd0c5a415e73a7e82dd9dcd8-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "85757852",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/85757852/ab6662733ccf500d7de099211e31423c-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "85757854",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/85757854/456729f9a73f699c04d708ee6c69fdc2-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    },
+    {
+      "id": "9762325",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/9762325/5e73b9655ea23c6ea73a491b59567c8e",
+      "previewOnly": false,
+      "configSHA256": "81f642c01296f47db9be12b87c29de8da4dc3a09758fdcde2c12f0a715d145ea",
+      "luaFiles": [
+        "TextBloom.lua"
+      ],
+      "hasContent": false
+    },
+    {
+      "id": "9762443",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/9762443/471b1cc0510cf0c5998090b79c738747",
+      "previewOnly": false,
+      "configSHA256": "81f642c01296f47db9be12b87c29de8da4dc3a09758fdcde2c12f0a715d145ea",
+      "luaFiles": [
+        "TextBloom.lua"
+      ],
+      "hasContent": false
+    },
+    {
+      "id": "98222876",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/98222876/af78243f78f27dfa80aca4e82c77eb1d-preview",
+      "previewOnly": true,
+      "configSHA256": "15a1917460b23db6adda6ea1fd2bd0ac6cecbb8ed1a4c393f682aa8f99a08617",
+      "luaFiles": [],
+      "hasContent": false
+    }
+  ],
+  "counts": {
+    "total": 59,
+    "previewOnly": 49,
+    "withActualLua": 10
+  }
+}

@@ -1,0 +1,843 @@
+{
+  "createdAt": "2026-10-19T14:31:01.098Z",
+  "media": [
+    {
+      "id": "a_70afffbae2ef4e9d3f73c335",
+      "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+      "name": "yingxu-transition-grid-v8.mp4",
+      "kind": "video",
+      "duration": {
+        "numerator": "5966667",
+        "denominator": "1000000"
+      },
+      "width": 1280,
+      "height": 720,
+      "hasAudio": false,
+      "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+      "verifiedDisplayTransform": "identity",
+      "pixelFormat": "yuv444p",
+      "colorSpace": {
+        "matrix": "bt709",
+        "range": "tv"
+      },
+      "fps": {
+        "numerator": "20000000",
+        "denominator": "662963"
+      },
+      "mime": "video/mp4"
+    },
+    {
+      "id": "a_d7b1e1af2fb5021bd2e17567",
+      "path": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+      "name": "yingxu-native-wipe-canvas720-v8-2004.mov",
+      "kind": "video",
+      "duration": {
+        "numerator": "4",
+        "denominator": "1"
+      },
+      "width": 1280,
+      "height": 720,
+      "hasAudio": true,
+      "sha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+      "verifiedDisplayTransform": "identity",
+      "pixelFormat": "yuv420p",
+      "colorSpace": {
+        "matrix": "bt709",
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "range": "tv"
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "mime": "video/mp4"
+    },
+    {
+      "id": "a_e0640c1d1cc11cbaf0acc119",
+      "path": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+      "name": "yingxu-native-circle-canvas720-v8-2002.mov",
+      "kind": "video",
+      "duration": {
+        "numerator": "4",
+        "denominator": "1"
+      },
+      "width": 1280,
+      "height": 720,
+      "hasAudio": true,
+      "sha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+      "verifiedDisplayTransform": "identity",
+      "pixelFormat": "yuv420p",
+      "colorSpace": {
+        "matrix": "bt709",
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "range": "tv"
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "mime": "video/mp4"
+    }
+  ],
+  "cases": [
+    {
+      "id": "wipe",
+      "kind": "wipeLeft",
+      "document": {
+        "schemaVersion": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_70afffbae2ef4e9d3f73c335",
+            "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+            "name": "yingxu-transition-grid-v8.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "5966667",
+              "denominator": "1000000"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": false,
+            "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+            "verifiedDisplayTransform": "identity",
+            "pixelFormat": "yuv444p",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "20000000",
+              "denominator": "662963"
+            },
+            "mime": "video/mp4"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "387283AC-15F8-4716-A657-565464051843",
+            "kind": "video",
+            "clips": []
+          },
+          {
+            "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "kind": "video",
+            "clips": [
+              {
+                "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              },
+              {
+                "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "7",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              }
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "id": "78E84EA7-7A61-45E5-B6B9-5EBA39836333",
+            "trackId": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "outgoingClipId": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "incomingClipId": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "kind": "wipeLeft",
+            "alignment": "center",
+            "overlap": true,
+            "duration": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          }
+        ]
+      },
+      "unknownDocument": {
+        "schemaVersion": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_70afffbae2ef4e9d3f73c335",
+            "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+            "name": "yingxu-transition-grid-v8.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "5966667",
+              "denominator": "1000000"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": false,
+            "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+            "verifiedDisplayTransform": "identity",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "20000000",
+              "denominator": "662963"
+            },
+            "mime": "video/mp4"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "387283AC-15F8-4716-A657-565464051843",
+            "kind": "video",
+            "clips": []
+          },
+          {
+            "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "kind": "video",
+            "clips": [
+              {
+                "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              },
+              {
+                "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "7",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              }
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "id": "78E84EA7-7A61-45E5-B6B9-5EBA39836333",
+            "trackId": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "outgoingClipId": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "incomingClipId": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "kind": "wipeLeft",
+            "alignment": "center",
+            "overlap": true,
+            "duration": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          }
+        ]
+      },
+      "native": {
+        "id": "a_d7b1e1af2fb5021bd2e17567",
+        "path": "/Users/tal/Downloads/yingxu-native-wipe-canvas720-v8-2004.mov",
+        "name": "yingxu-native-wipe-canvas720-v8-2004.mov",
+        "kind": "video",
+        "duration": {
+          "numerator": "4",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "d7b1e1af2fb5021bd2e17567e35803ae78b5bb4280b2b28a1dec1864ee14af77",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv420p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "primaries": "bt709",
+          "transfer": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      },
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "expectedPolicy": "bt709-cosited420-v1",
+      "frames": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "captureFrame": 61,
+      "draft": "19-wipe-canvas720-native.json"
+    },
+    {
+      "id": "circle",
+      "kind": "circleOpen",
+      "document": {
+        "schemaVersion": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_70afffbae2ef4e9d3f73c335",
+            "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+            "name": "yingxu-transition-grid-v8.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "5966667",
+              "denominator": "1000000"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": false,
+            "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+            "verifiedDisplayTransform": "identity",
+            "pixelFormat": "yuv444p",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "20000000",
+              "denominator": "662963"
+            },
+            "mime": "video/mp4"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "387283AC-15F8-4716-A657-565464051843",
+            "kind": "video",
+            "clips": []
+          },
+          {
+            "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "kind": "video",
+            "clips": [
+              {
+                "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              },
+              {
+                "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "7",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              }
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "id": "F5496AF8-E0DA-4E6B-85E4-D4DE44AB79E0",
+            "trackId": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "outgoingClipId": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "incomingClipId": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "kind": "circleOpen",
+            "alignment": "center",
+            "overlap": true,
+            "duration": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          }
+        ]
+      },
+      "unknownDocument": {
+        "schemaVersion": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "assets": [
+          {
+            "id": "a_70afffbae2ef4e9d3f73c335",
+            "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+            "name": "yingxu-transition-grid-v8.mp4",
+            "kind": "video",
+            "duration": {
+              "numerator": "5966667",
+              "denominator": "1000000"
+            },
+            "width": 1280,
+            "height": 720,
+            "hasAudio": false,
+            "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+            "verifiedDisplayTransform": "identity",
+            "colorSpace": {
+              "matrix": "bt709",
+              "range": "tv"
+            },
+            "fps": {
+              "numerator": "20000000",
+              "denominator": "662963"
+            },
+            "mime": "video/mp4"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "387283AC-15F8-4716-A657-565464051843",
+            "kind": "video",
+            "clips": []
+          },
+          {
+            "id": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "kind": "video",
+            "clips": [
+              {
+                "id": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "0",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              },
+              {
+                "id": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+                "materialId": "a_70afffbae2ef4e9d3f73c335",
+                "source": {
+                  "start": {
+                    "numerator": "7",
+                    "denominator": "2"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "target": {
+                  "start": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  },
+                  "duration": {
+                    "numerator": "2",
+                    "denominator": "1"
+                  }
+                },
+                "speed": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "editableTiming": true,
+                "transform": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "rotation": 0,
+                  "opacity": 1,
+                  "flipX": false,
+                  "flipY": false
+                },
+                "volume": 0
+              }
+            ]
+          }
+        ],
+        "transitions": [
+          {
+            "id": "F5496AF8-E0DA-4E6B-85E4-D4DE44AB79E0",
+            "trackId": "06F2DC0E-8C17-4EDC-BBB0-2CDC0D8196A7",
+            "outgoingClipId": "EAF7B071-7416-4130-90DD-DA921D234FBB",
+            "incomingClipId": "0D4C05C1-EBD1-4FD3-8A58-BB5875ED9A30",
+            "kind": "circleOpen",
+            "alignment": "center",
+            "overlap": true,
+            "duration": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          }
+        ]
+      },
+      "native": {
+        "id": "a_e0640c1d1cc11cbaf0acc119",
+        "path": "/Users/tal/Downloads/yingxu-native-circle-canvas720-v8-2002.mov",
+        "name": "yingxu-native-circle-canvas720-v8-2002.mov",
+        "kind": "video",
+        "duration": {
+          "numerator": "4",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "e0640c1d1cc11cbaf0acc119da3a7765fa0ebfa8cc27d5fb11c7aea97e549a9d",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv420p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "primaries": "bt709",
+          "transfer": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      },
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "expectedPolicy": "bt709-cosited420-v1",
+      "frames": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "captureFrame": 60,
+      "draft": "18-circle-canvas720-native.json"
+    }
+  ],
+  "scope": "New plane policy only; actual clicks later. Source pixelFormat is original ffprobe pix_fmt; no guessed alpha status; no FFmpeg/native UI calls."
+}

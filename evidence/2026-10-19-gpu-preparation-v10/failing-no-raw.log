@@ -1,0 +1,28 @@
+✖ bounded batch PNG bytes equal scalar ASS frame output across CFR and NTSC clocks (272.298917ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 400.047708
+
+✖ failing tests:
+
+test at test/text-raster-batch.test.ts:5:1
+✖ bounded batch PNG bytes equal scalar ASS frame output across CFR and NTSC clocks (272.298917ms)
+  AssertionError [ERR_ASSERTION]: bounded batch must stream raw frames instead of persisting whole-window RGBAs
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/tal/Work/Next/%E5%A4%A9%E5%A4%A9%E5%AD%A6/%E5%A6%82%E6%9E%9C%E5%8E%86%E5%8F%B2%E6%98%AF%E4%B8%80%E7%BE%A4%E5%96%B5%20%E8%A7%86%E9%A2%91/%E9%A1%B9%E7%9B%AE%E8%B0%83%E7%A0%94/%E6%98%A0%E5%BA%8F%E5%89%AA%E8%BE%91%E5%86%85%E6%A0%B8/test/text-raster-batch.test.ts:7:9)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -80,6 +80,15 @@
       "frames": 120,
       "width": 1280,
       "height": 720
+    },
+    {
+      "evidence": "template-rain-visibility.json",
+      "movie": "/Users/tal/Downloads/yingxu-native-template-rain-v10.mov",
+      "sha256": "0ecd67e771b58b43773f3d3ea0cae8f4f89fbd5a67f37bf361904105a91677d0",
+      "frames": 90,
+      "width": 1280,
+      "height": 720,
+      "role": "complex template reference, not implemented"
     }
   ]
 }

@@ -1,0 +1,172 @@
+[
+  {
+    "path": "artifacts/qa/transitions-v10/full420-gpu-model.json",
+    "bytes": 51534,
+    "sha256": "429a46fdbe4801967d5e9b5d9fbe13fb6fa6c85c25478b0925edd522c201cad4"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/full420-gpu-model.py",
+    "bytes": 3719,
+    "sha256": "9115c035c9daea0162215a3b789f72e9fe7807adc5126cf1f80ec91090360505"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-accurate.filter",
+    "bytes": 2758,
+    "sha256": "4a6dd996ce6d75f6e28ad35e84cd3213d3c4b51079fb7807d5069f019f504a21"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-bilinear.mp4.comparison.json",
+    "bytes": 7177,
+    "sha256": "ece0c0bfb7eadaddd75122dab15d8854500601de6296a3e51d381a20e1ccaa8a"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/endpoint-planes.py",
+    "bytes": 2041,
+    "sha256": "8beefbc0519cc0f499935dd6c3f43e8c130c0b48c031f6ce6304143baf174a1e"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/build-direct-candidates.py",
+    "bytes": 1015,
+    "sha256": "9318faffca4b68043bddd5b491d69b3e4400799484a6cd752527dfb75202dfe2"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-accurate.filter",
+    "bytes": 2854,
+    "sha256": "f580affefca3a5ce37c14390ec21f1cdcdc71a5813fd93f08111c322983a129e"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/endpoint-planes.json",
+    "bytes": 5193,
+    "sha256": "a8e29ba66c1f09f1a6f6ba88f3e5074837305a4bc8bdd1cc884768c44bcc68c3"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/old-failure.log",
+    "bytes": 1552,
+    "sha256": "1dda0a5dd91aa4c4d83f45a4ebe62cd0ad27604b1026e6ba76552b48a3880e9a"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-accurate.mp4",
+    "bytes": 31134,
+    "sha256": "0838e123c816ea5ed549cc90aa83f9113cafa272af080ba2cd5b6058a9a1a778"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/candidate-render-records.json",
+    "bytes": 4370,
+    "sha256": "26bd282d23bc659d670b87222683509e4c9a5ee9489ef2fd2063be1f08163109"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/box-footprint.py",
+    "bytes": 1762,
+    "sha256": "71c3dd32dfe568d4398a24449193fa7a4f3cfeff89bc7486a3684d9ea2a3095e"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-bilinear.mp4",
+    "bytes": 35558,
+    "sha256": "9f2ca45b41189b5bbab47f01a74bc6f0ab6a78c83b259f6a6abb0062f65b3427"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/native-reconstruction.json",
+    "bytes": 12575,
+    "sha256": "c5a815adfd1e257d79165bde3e0f39e34c159b3216670fc5ccb0cac903f75d01"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-accurate.mp4.comparison.json",
+    "bytes": 7204,
+    "sha256": "acc26e59442948620ee3e26502186cb5c5e7a627b333c1ae0bb9315b1b996ebc"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/render-candidates.py",
+    "bytes": 1119,
+    "sha256": "177371e6ad4d674b3c5d3310594170d6ef8ec3e58a36a585a5966bbdf0a16a99"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/fbo-downsample.py",
+    "bytes": 2057,
+    "sha256": "8f586741ff17f2f41dab6be7514215aa3dd1fcdca0ecd1a49abf9abf6068d8b9"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/fbo-downsample.json",
+    "bytes": 10164,
+    "sha256": "b378e9bd1d8fb1075c0e75682c790881c2b96ab98fb18544bab578147819c8f1"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-bilinear.filter",
+    "bytes": 2718,
+    "sha256": "c53706cb02e4d6646d84d234ee4242de2b36c3cd4f19d8635e0f0ac76252c2cd"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-bilinear.mp4.comparison.json",
+    "bytes": 7209,
+    "sha256": "e5e346b51bef9170c9b5a340e00532ba13ea8cd048da937e592991a390038195"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-bilinear.filter",
+    "bytes": 2814,
+    "sha256": "8134832100660bd64ce738ac844b0f1dce9a01ff00f96ed88c07fdfd43b6a023"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-accurate.mp4",
+    "bytes": 92659,
+    "sha256": "4b506984513691a4b8da1650836287665308f467c5968df89ae3a222dedbbfc8"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/native-reconstruction.py",
+    "bytes": 3042,
+    "sha256": "d4f2a240aac62d0179bbca9daaaf1a42e40301a9a993e790818f5e918f45ab99"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/circle-direct-bilinear.mp4",
+    "bytes": 99995,
+    "sha256": "e5d11338261529cd4596f060e2821c1a1034665f1989c6cb902e0bb090c7523f"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/box-footprint.json",
+    "bytes": 5303,
+    "sha256": "24375692fc2d7b4f0c6282b2e301d9e70d7f65ecb15e3c1336bfcd55a835a692"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/native-reconstruction-preserved.py",
+    "bytes": 3042,
+    "sha256": "d4f2a240aac62d0179bbca9daaaf1a42e40301a9a993e790818f5e918f45ab99"
+  },
+  {
+    "path": "artifacts/qa/transitions-v10/wipe-direct-accurate.mp4.comparison.json",
+    "bytes": 7216,
+    "sha256": "a5bef782753ae09b50b5984cf499a1d53b33efee51522f7cce86e5b96cd5d8e2"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/index.html",
+    "bytes": 848,
+    "sha256": "ad8648997d8097d8bdc92ce9e23d87a4ac2f3f4b40fd807781d65315b53507ce"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/reference.ts",
+    "bytes": 2905,
+    "sha256": "2878390044e4a0b28e39601b252ec583f33e624270851677b179b6994d48be65"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/probe.ts",
+    "bytes": 12149,
+    "sha256": "048521b7ae7306252a157856a9769ec9dbf24e4274ad13f7392fb840b851426e"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/server-state.json",
+    "bytes": 713,
+    "sha256": "e2bbf6dbe201e1f5894e2a9f0fd44ddf0a063c851df2e45c675065bb9a62dca1"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/cases.json",
+    "bytes": 24212,
+    "sha256": "21a4e19bf2921d42e5a725c7a48d60f6807a86989da223b45456d0678fea4146"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/server.mjs",
+    "bytes": 2719,
+    "sha256": "1b59ae5faaa02b4d38788c186114fb522d5eb2545dedb375a07272893da69c20"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/prepare.mjs",
+    "bytes": 2645,
+    "sha256": "c7b3cdec82fe63bd06d07cd338ba5acbcd462e73931aecc82e97527b2ae293ad"
+  }
+]

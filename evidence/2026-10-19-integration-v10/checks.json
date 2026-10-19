@@ -1,0 +1,14 @@
+[
+  {
+    "command": "test",
+    "exitCode": 0
+  },
+  {
+    "command": "replay",
+    "exitCode": 0
+  },
+  {
+    "command": "build:desktop",
+    "exitCode": 0
+  }
+]

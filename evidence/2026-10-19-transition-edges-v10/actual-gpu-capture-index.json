@@ -1,0 +1,82 @@
+[
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-native-end-b.rgba",
+    "bytes": 3686400,
+    "sha256": "5834594ae2e7a2b6b0f3f52ce6789ba46424d44fdb4096e01eb42d7a71f6f4ca"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-native.rgba",
+    "bytes": 3686400,
+    "sha256": "388bda813e42e54a64f41187d4dc889aedb801bfe39a1d31dca2709ff9abf0bd"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-v1control.rgba",
+    "bytes": 3686400,
+    "sha256": "3e122ca8774c5ba0380762b51032869c336c3c37fe8f208cbded05eb33043360"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-native-end-a.rgba",
+    "bytes": 3686400,
+    "sha256": "a16624356bad7613f910c8751e065ddf16540e88cf32df69c37a50df4be47030"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-chroma.rgba",
+    "bytes": 921600,
+    "sha256": "61929e393e809701de395773832dda9238f98a3865c901a04cf977dcee17bc4a"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-a.rgba",
+    "bytes": 3686400,
+    "sha256": "968078667d8770bfae706cfdca988839033fc6f8727c9bba3ada7a1064914364"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-a.rgba",
+    "bytes": 3686400,
+    "sha256": "968078667d8770bfae706cfdca988839033fc6f8727c9bba3ada7a1064914364"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-final.rgba",
+    "bytes": 3686400,
+    "sha256": "8090097d94867268cb826601ebc4b50c9ed0194b48b6e9f59bbc27e6e1a7cbc1"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-b.rgba",
+    "bytes": 3686400,
+    "sha256": "01e1827ab4af4c8a8478693bf4b28897bc5d43d316093b13d5a10bc79491bc32"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-final.rgba",
+    "bytes": 3686400,
+    "sha256": "9552a65ab0ef0978525bce3af7f37a3741a7e155014f9147ff328f705331ec2a"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-b.rgba",
+    "bytes": 3686400,
+    "sha256": "01e1827ab4af4c8a8478693bf4b28897bc5d43d316093b13d5a10bc79491bc32"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-native-end-b.rgba",
+    "bytes": 3686400,
+    "sha256": "5834594ae2e7a2b6b0f3f52ce6789ba46424d44fdb4096e01eb42d7a71f6f4ca"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-v1control.rgba",
+    "bytes": 3686400,
+    "sha256": "ebd16aaa50c1f987f5b9bc6b7ca08e7c09e641e6d75b91a3d3eedc7365f9b3dd"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-circle-60-native.rgba",
+    "bytes": 3686400,
+    "sha256": "0e816f1e796d94b70ed2c07c13367cdeba675f1f207b3e5eccbfd7b3433b8b3b"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-61-chroma.rgba",
+    "bytes": 921600,
+    "sha256": "fb3148b6b811c78ad0bc4a1f5c249de058e7e437a5cc86fcb53b26815a7c5029"
+  },
+  {
+    "path": "artifacts/qa/plane-edges-v10/capture-wipe-native-end-a.rgba",
+    "bytes": 3686400,
+    "sha256": "a16624356bad7613f910c8751e065ddf16540e88cf32df69c37a50df4be47030"
+  }
+]

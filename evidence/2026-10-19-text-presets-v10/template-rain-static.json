@@ -1,0 +1,1269 @@
+{
+  "fixture": "artifacts/qa/native-v10/11-template-rain-ui.json",
+  "fixtureSha256": "3be759ca1696fe45be5192d7eed4f8ec19247793820c1cfc5e252f125c0a6689",
+  "movie": "/Users/tal/Downloads/yingxu-native-template-rain-v10.mov",
+  "movieBytes": 605540,
+  "movieSha256": "0ecd67e771b58b43773f3d3ea0cae8f4f89fbd5a67f37bf361904105a91677d0",
+  "parentReportedFps": "30/1",
+  "parentReportedDurationUs": 3000000,
+  "decodedByThisWorker": true,
+  "probeReferences": [],
+  "template": {
+    "resourceId": "7349464671453269299",
+    "name": "春日简约标题 雨过是天晴",
+    "durationUs": 3000000,
+    "canvas": {
+      "height": 720,
+      "ratio": "original",
+      "width": 1280
+    },
+    "groupContainer": null,
+    "root": {
+      "duration": 3,
+      "name": "rootWidget",
+      "preview_time": 2.533333333333333
+    },
+    "children": [
+      {
+        "name": "5AD9E5CB-ED72-453f-9A56-B6514A4D3460",
+        "type": "sticker",
+        "order": 1,
+        "startSeconds": 0,
+        "durationSeconds": 3,
+        "position": [
+          -2.384033203125,
+          -25.35260009765625,
+          0
+        ],
+        "scale": [
+          1.1156378984451294,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "originalSize": [
+          517,
+          232
+        ],
+        "layout": {
+          "bottom_toBottomOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "fix_dimensionRatio": false,
+          "fix_height": true,
+          "fix_width": false,
+          "hCenter_toHCenterOf": "",
+          "left_toLeftOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "right_toRightOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "top_toTopOf": "",
+          "vCenter_toVCenterOf": ""
+        },
+        "animations": [
+          {
+            "anim_resource_id": "6763469998330483213",
+            "anim_resource_path": "",
+            "anim_script_type": "lua",
+            "anim_start_time": 0,
+            "anim_type": "in",
+            "duration": 2.5,
+            "loop_duration": 0
+          }
+        ],
+        "stickerResourceId": "7349466995789729075"
+      },
+      {
+        "name": "7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+        "type": "text",
+        "order": 2,
+        "startSeconds": 0,
+        "durationSeconds": 3,
+        "position": [
+          -118.97421264648438,
+          92.23422241210938,
+          0
+        ],
+        "scale": [
+          0.9999998807907104,
+          0.9999992251396179,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "originalSize": [
+          302.4072570800781,
+          241.92581176757812
+        ],
+        "layout": {
+          "bottom_toBottomOf": "",
+          "fix_dimensionRatio": false,
+          "fix_height": true,
+          "fix_width": true,
+          "hCenter_toHCenterOf": "",
+          "left_toLeftOf": "",
+          "right_toRightOf": "",
+          "top_toTopOf": "",
+          "vCenter_toVCenterOf": ""
+        },
+        "animations": [
+          {
+            "anim_resource_id": "6897084405781631496",
+            "anim_resource_path": "",
+            "anim_script_type": "lua",
+            "anim_start_time": 0,
+            "anim_type": "in",
+            "duration": 1.5,
+            "loop_duration": 0
+          }
+        ],
+        "text": "雨过",
+        "styles": [
+          {
+            "fill": {
+              "content": {
+                "gradient": {
+                  "mode": "character",
+                  "angle": 90,
+                  "percent": [
+                    0.493362843990326,
+                    1
+                  ],
+                  "alpha": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    [
+                      1,
+                      1,
+                      1
+                    ],
+                    [
+                      0.125490203499794,
+                      0.729411780834198,
+                      0.49803921580314636
+                    ]
+                  ]
+                },
+                "render_type": "gradient"
+              }
+            },
+            "range": [
+              0,
+              2
+            ],
+            "shadows": [
+              {
+                "angle": -45,
+                "content": {
+                  "gradient": {
+                    "mode": "character",
+                    "angle": 90,
+                    "percent": [
+                      0.4314159154891968,
+                      1
+                    ],
+                    "alpha": [
+                      1,
+                      1
+                    ],
+                    "color": [
+                      [
+                        1,
+                        1,
+                        1
+                      ],
+                      [
+                        0.12941177189350128,
+                        0.7490196228027344,
+                        0.5098039507865906
+                      ]
+                    ]
+                  },
+                  "render_type": "gradient"
+                },
+                "feather": 0.06666667014360428,
+                "distance": 0,
+                "alpha": 0.5
+              }
+            ],
+            "effectStyle": {
+              "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/artistEffect/7349463487376149786/8471045aa1e507a035d8ce321b6bbca7",
+              "id": "7349463487376149786"
+            },
+            "size": 41.4729995727539,
+            "font": {
+              "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/26003145/92fc337d10907e56437c0da3f6d10a78/凌丝体.otf",
+              "id": "7290455877864133157"
+            }
+          }
+        ],
+        "nativeMaterialId": "BD125704-C16D-4EAA-910B-D26CC111A795",
+        "attach": {
+          "clip": {
+            "alpha": 1.0,
+            "flip": {
+              "horizontal": false,
+              "vertical": false
+            },
+            "rotation": 0.0,
+            "scale": {
+              "x": 0.9999998807907104,
+              "y": 0.9999992251396179
+            },
+            "transform": {
+              "x": -118.97421264648438,
+              "y": 92.23422241210938
+            }
+          },
+          "duration": 3000000,
+          "original_size_height": 241.92581176757812,
+          "original_size_width": 302.4072570800781,
+          "start_time": 0
+        },
+        "materialAnimationRefs": [
+          {
+            "id": "F9AD3035-2CC5-4F5D-826F-D1DC7F6FEFFA",
+            "animations": [
+              {
+                "anim_adjust_params": null,
+                "category_id": "",
+                "category_name": "",
+                "duration": 1500000,
+                "id": "",
+                "material_type": "sticker",
+                "name": "",
+                "panel": "",
+                "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644314/b94e6dad630c5140fda762c641646738",
+                "platform": "all",
+                "request_id": "",
+                "resource_id": "6897084405781631496",
+                "start": 0,
+                "type": "in"
+              }
+            ]
+          }
+        ],
+        "materialEffectRefs": [
+          {
+            "id": "4910494A-B7DE-4B7C-9951-CFCB397AFBE7",
+            "resourceId": "7349463487376149786"
+          }
+        ]
+      },
+      {
+        "name": "A39B10E6-0176-49f7-A5D4-A60D9A31E8A2",
+        "type": "text",
+        "order": 3,
+        "startSeconds": 0,
+        "durationSeconds": 3,
+        "position": [
+          83.41140747070312,
+          -73.41169738769531,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "originalSize": [
+          414.72998046875,
+          241.92581176757812
+        ],
+        "layout": {
+          "bottom_toBottomOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "fix_dimensionRatio": false,
+          "fix_height": true,
+          "fix_width": true,
+          "hCenter_toHCenterOf": "",
+          "left_toLeftOf": "",
+          "right_toRightOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "top_toTopOf": "",
+          "vCenter_toVCenterOf": ""
+        },
+        "animations": [
+          {
+            "anim_resource_id": "6897084405781631496",
+            "anim_resource_path": "",
+            "anim_script_type": "lua",
+            "anim_start_time": 0,
+            "anim_type": "in",
+            "duration": 1.8,
+            "loop_duration": 0
+          }
+        ],
+        "text": "是天晴",
+        "styles": [
+          {
+            "fill": {
+              "content": {
+                "gradient": {
+                  "mode": "character",
+                  "angle": 90,
+                  "percent": [
+                    0,
+                    0.4712389409542084
+                  ],
+                  "alpha": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    [
+                      0.12156862765550613,
+                      0.6980392336845398,
+                      0.4745098054409027
+                    ],
+                    [
+                      1,
+                      1,
+                      1
+                    ]
+                  ]
+                },
+                "render_type": "gradient"
+              }
+            },
+            "range": [
+              0,
+              3
+            ],
+            "shadows": [
+              {
+                "angle": -45,
+                "content": {
+                  "gradient": {
+                    "mode": "character",
+                    "angle": 90,
+                    "percent": [
+                      0,
+                      0.6438053250312805
+                    ],
+                    "alpha": [
+                      1,
+                      1
+                    ],
+                    "color": [
+                      [
+                        0.12941177189350128,
+                        0.7490196228027344,
+                        0.5098039507865906
+                      ],
+                      [
+                        0.9960784316062927,
+                        0.9960784316062927,
+                        0.9960784316062927
+                      ]
+                    ]
+                  },
+                  "render_type": "gradient"
+                },
+                "feather": 0.06666667014360428,
+                "distance": 0,
+                "alpha": 0.449999988079071
+              }
+            ],
+            "effectStyle": {
+              "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/artistEffect/7349466657716210995/b3344548d193a4d8620f41fd0c09fece",
+              "id": "7349466657716210995"
+            },
+            "size": 41.4729995727539,
+            "font": {
+              "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/26003145/92fc337d10907e56437c0da3f6d10a78/凌丝体.otf",
+              "id": "7290455877864133157"
+            }
+          }
+        ],
+        "nativeMaterialId": "3BB6195F-BA76-41F1-A3AB-0AE96F54D542",
+        "attach": {
+          "clip": {
+            "alpha": 1.0,
+            "flip": {
+              "horizontal": false,
+              "vertical": false
+            },
+            "rotation": 0.0,
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "transform": {
+              "x": 83.41140747070312,
+              "y": -73.41169738769531
+            }
+          },
+          "duration": 3000000,
+          "original_size_height": 241.92581176757812,
+          "original_size_width": 414.72998046875,
+          "start_time": 0
+        },
+        "materialAnimationRefs": [
+          {
+            "id": "2896F850-B4E2-4329-B07F-56181A735BBE",
+            "animations": [
+              {
+                "anim_adjust_params": null,
+                "category_id": "",
+                "category_name": "",
+                "duration": 1799999,
+                "id": "",
+                "material_type": "sticker",
+                "name": "",
+                "panel": "",
+                "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1644314/b94e6dad630c5140fda762c641646738",
+                "platform": "all",
+                "request_id": "",
+                "resource_id": "6897084405781631496",
+                "start": 0,
+                "type": "in"
+              }
+            ]
+          }
+        ],
+        "materialEffectRefs": [
+          {
+            "id": "28E94A9D-8909-4102-9334-20E55FE768B9",
+            "resourceId": "7349466657716210995"
+          }
+        ]
+      },
+      {
+        "name": "FEC207BA-F0E2-4ebc-B34C-1B45BA5FFB8F",
+        "type": "text",
+        "order": 4,
+        "startSeconds": 0,
+        "durationSeconds": 3,
+        "position": [
+          119.47238159179688,
+          63.76439666748047,
+          0
+        ],
+        "scale": [
+          1,
+          0.9999998211860657,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "originalSize": [
+          221.5,
+          97.625
+        ],
+        "layout": {
+          "bottom_toBottomOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "fix_dimensionRatio": false,
+          "fix_height": true,
+          "fix_width": true,
+          "hCenter_toHCenterOf": "",
+          "left_toLeftOf": "",
+          "right_toRightOf": "@7539E781-FDD8-45bd-A467-EED76FD8CC6D",
+          "top_toTopOf": "",
+          "vCenter_toVCenterOf": ""
+        },
+        "animations": [
+          {
+            "anim_resource_id": "7089261793406620197",
+            "anim_resource_path": "",
+            "anim_script_type": "lua",
+            "anim_start_time": 0,
+            "anim_type": "in",
+            "duration": 2,
+            "loop_duration": 0
+          }
+        ],
+        "text": "Rain",
+        "styles": [
+          {
+            "fill": {
+              "content": {
+                "solid": {
+                  "color": [
+                    0.1294099986553192,
+                    0.749019980430603,
+                    0.5098000168800354
+                  ]
+                }
+              }
+            },
+            "range": [
+              0,
+              4
+            ],
+            "useLetterColor": true,
+            "size": 15,
+            "font": {
+              "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1485330/4e29c132141a12bbbffb4a6c5b35bac2/Signeton.otf",
+              "id": "7042230917837885965"
+            }
+          }
+        ],
+        "nativeMaterialId": "AD3001B5-407F-43DA-82B3-59E05A049AE2",
+        "attach": {
+          "clip": {
+            "alpha": 1.0,
+            "flip": {
+              "horizontal": false,
+              "vertical": false
+            },
+            "rotation": 0.0,
+            "scale": {
+              "x": 1.0,
+              "y": 0.9999998211860657
+            },
+            "transform": {
+              "x": 119.47238159179688,
+              "y": 63.76439666748047
+            }
+          },
+          "duration": 3000000,
+          "original_size_height": 97.625,
+          "original_size_width": 221.5,
+          "start_time": 0
+        },
+        "materialAnimationRefs": [
+          {
+            "id": "0C1BEF22-3DA8-4254-A163-61371055AC11",
+            "animations": [
+              {
+                "anim_adjust_params": null,
+                "category_id": "",
+                "category_name": "",
+                "duration": 2000000,
+                "id": "",
+                "material_type": "sticker",
+                "name": "",
+                "panel": "",
+                "path": "/Users/tal/Library/Containers/com.lemon.lvpro/Data/Movies/JianyingPro/User Data/Cache/effect/1722114/b604b7cd821a1ba28aabf217c9bfcf31",
+                "platform": "all",
+                "request_id": "",
+                "resource_id": "7089261793406620197",
+                "start": 0,
+                "type": "in"
+              }
+            ]
+          }
+        ],
+        "materialEffectRefs": []
+      }
+    ]
+  },
+  "resources": [
+    {
+      "resourceId": "7349464671453269299",
+      "panel": "template",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/7349464671453269299/036d9e6d04f6f7d2b1038ddac813395f",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 396,
+          "sha256": "b7b03cf9c2fd00b0925d33ac6e6a97b4bac1733c860b49b1dd250e0b4a2a1b93"
+        },
+        {
+          "path": "content.json",
+          "bytes": 5728,
+          "sha256": "14626c095964a4bf74d4983f49171badfd12a44e1a66fcfbabaa884fa271ed03"
+        },
+        {
+          "path": "depends",
+          "bytes": 1623,
+          "sha256": "561955c86ade7d0ad3c6b30c6a483ce89e05774d915ba6db72d05a36278219c1"
+        },
+        {
+          "path": "extra.json",
+          "bytes": 576,
+          "sha256": "52c80cde7a9a81615cf1035080fc08595071f5bc76c558eab973e3c9e26ab1ec"
+        },
+        {
+          "path": "js/main.js",
+          "bytes": 268449,
+          "sha256": "efc6a92e1c728e9d45e83f443be4eec5b4949e93a12594dfe5e29531fd2f342c"
+        },
+        {
+          "path": "js/template/template.js",
+          "bytes": 14336,
+          "sha256": "2108892691fbb912bc148e2baf866f231c472072266b373193caa9ffac08847c"
+        },
+        {
+          "path": "local/56286346-da30-47b0-93cb-6b34bb580773.png",
+          "bytes": 9965,
+          "sha256": "87c31f37a69f8aef6a6c52b56f4b0e13c8fed9a971589e407bd71af9181d3e3a"
+        }
+      ]
+    },
+    {
+      "resourceId": "7349466995789729075",
+      "panel": "default",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/7349466995789729075/c8cc98bff63a3e571c6ca4c22d1c365b",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 92,
+          "sha256": "feb7ab0df661239e01d36b1be1ce7c39c5bc037b0b949efe554c7daf065aa5a1"
+        },
+        {
+          "path": "heycanInfo.json",
+          "bytes": 110,
+          "sha256": "a0c0732dc5ae9c85a45a74bbdbc816c722b2a72d25910801d72c2a80be9f928a"
+        },
+        {
+          "path": "infoSticker.lua",
+          "bytes": 129,
+          "sha256": "aade4a2374c1997a4d91f2df4f3a9a4276162cf7a445bf086a7b145cd4ea9118"
+        },
+        {
+          "path": "singleImage.png",
+          "bytes": 9051,
+          "sha256": "f4eedb7aaf0c89b8883ce8da98e2c30e4c93681844ec8e4c081ecc7072ffeb71"
+        }
+      ]
+    },
+    {
+      "resourceId": "6763469998330483213",
+      "panel": "sticker",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1362980/099e15aa3f318f66da1ba940bdb63066",
+      "files": [
+        {
+          "path": "Transform.lua",
+          "bytes": 2249,
+          "sha256": "0d6109c1394ce3b81a572fb22cbc510f7d35e2c205cb01be0fe66d5b3e78bc0f"
+        },
+        {
+          "path": "anim.prefab",
+          "bytes": 404,
+          "sha256": "e22c75f563681a78a1700367fff8549bfef190181d5a3aa5743fa24491500688"
+        },
+        {
+          "path": "config.json",
+          "bytes": 63,
+          "sha256": "7db0338c142b18a0b4d43e5001252b0be3d8546469b1e4fe35eb57154c885d1e"
+        },
+        {
+          "path": "content.json",
+          "bytes": 60,
+          "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+        }
+      ]
+    },
+    {
+      "resourceId": "7290455877864133157",
+      "panel": "fonts",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/26003145/92fc337d10907e56437c0da3f6d10a78/凌丝体.otf",
+      "files": [
+        {
+          "path": "凌丝体.otf",
+          "bytes": 1295756,
+          "sha256": "f75023a5f4bb076826790902d9ba3c3637e1073c45b4dbfca65c2dbf4c3d5070"
+        }
+      ]
+    },
+    {
+      "resourceId": "6897084405781631496",
+      "panel": "text",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1644314/b94e6dad630c5140fda762c641646738",
+      "files": [
+        {
+          "path": "Library/ShaderData/29d83ca11eee296e4cd4eaae739a18af/shaderGLES/b11884d1b2b670fc999ade4dce342464.frag",
+          "bytes": 4348,
+          "sha256": "bf383bdfb5e2c12092d9dc3124af76c90e0de77b045a23e41ff26eba122e8d17"
+        },
+        {
+          "path": "Library/ShaderData/29d83ca11eee296e4cd4eaae739a18af/shaderGLES/b11884d1b2b670fc999ade4dce342464.vert",
+          "bytes": 214,
+          "sha256": "1a63ba6172dc85c06ed498031f84035d18747d80fc41817ef429e2c07ecd91db"
+        },
+        {
+          "path": "Library/ShaderData/29d83ca11eee296e4cd4eaae739a18af/shaderMetal/b11884d1b2b670fc999ade4dce342464.frag",
+          "bytes": 4062,
+          "sha256": "1e3f55b849136104e87e88ee19e7bab62f3631f1b31ced3a406245b46299bd21"
+        },
+        {
+          "path": "Library/ShaderData/29d83ca11eee296e4cd4eaae739a18af/shaderMetal/b11884d1b2b670fc999ade4dce342464.vert",
+          "bytes": 643,
+          "sha256": "d78f2f6f2785e1535e5fb789c730d7530e1d94b92ebadd029bc5ab555995950f"
+        },
+        {
+          "path": "T6221322013241518033.lua",
+          "bytes": 15506,
+          "sha256": "ccb19864eb58be0540d5f82d7927cb24a83aa6f5300326f4a767135892690106"
+        },
+        {
+          "path": "anim.prefab",
+          "bytes": 573,
+          "sha256": "bd6aa2560030306d57ba2cbbd232fa11fa6430c0322f5464a33cfbed255b956a"
+        },
+        {
+          "path": "config.json",
+          "bytes": 63,
+          "sha256": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718"
+        },
+        {
+          "path": "content.json",
+          "bytes": 60,
+          "sha256": "15a46e822a6181ccad1579c43d889e052ad196238aa97c40faa96f93c69980f0"
+        },
+        {
+          "path": "effect_platform_children.tag",
+          "bytes": 500,
+          "sha256": "7e381d5f7511173b678f8e1f2327420faf614f74c9315031dd66d29e9591701f"
+        },
+        {
+          "path": "rt.material",
+          "bytes": 538,
+          "sha256": "e98be06815eaad6097aa62764c6712b5cc7ee26492b279436a136baf846a1f75"
+        },
+        {
+          "path": "rt.xshader",
+          "bytes": 3367,
+          "sha256": "d0fbd421881f7923492a3bab86abe2e5460fc0ca536bc402d1d1951550a87c70"
+        }
+      ]
+    },
+    {
+      "resourceId": "7042230917837885965",
+      "panel": "fonts",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1485330/4e29c132141a12bbbffb4a6c5b35bac2/Signeton.otf",
+      "files": [
+        {
+          "path": "Signeton.otf",
+          "bytes": 140512,
+          "sha256": "d6948652187229359f31dda5545740387e54b40046e305c72ff9a5cfc3489eed"
+        }
+      ]
+    },
+    {
+      "resourceId": "7089261793406620197",
+      "panel": "text",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/effect/1722114/b604b7cd821a1ba28aabf217c9bfcf31",
+      "files": [
+        {
+          "path": "AETools.lua",
+          "bytes": 2625,
+          "sha256": "9490a69afcca0c64b0fa2f67455a6f66c2060b55b497271246727d1e75efa862"
+        },
+        {
+          "path": "Library/ShaderData/4a61f09c8585f4386e877f2cb72ad0ca/shaderGLES/028363154874a95f7f021851d41b7670.frag",
+          "bytes": 4070,
+          "sha256": "7267fb668123d59647ad34ef616f6f6a5d84b304f93437c3727ed366df63b698"
+        },
+        {
+          "path": "Library/ShaderData/4a61f09c8585f4386e877f2cb72ad0ca/shaderGLES/028363154874a95f7f021851d41b7670.vert",
+          "bytes": 901,
+          "sha256": "c95aa15abcece574fad5275d74037f2fe835d2affda62f70786dd8b12da957a9"
+        },
+        {
+          "path": "Library/ShaderData/4a61f09c8585f4386e877f2cb72ad0ca/shaderMetal/028363154874a95f7f021851d41b7670.frag",
+          "bytes": 1747,
+          "sha256": "00d06c45568fb094d74f33ef0a1708f698c74b28e045ef829c818dc6817041d4"
+        },
+        {
+          "path": "Library/ShaderData/4a61f09c8585f4386e877f2cb72ad0ca/shaderMetal/028363154874a95f7f021851d41b7670.vert",
+          "bytes": 1751,
+          "sha256": "c4708e6641345ed46a85d7e3c8f35822a1b92e560de8e1eab436bf11741dd20b"
+        },
+        {
+          "path": "Library/ShaderData/640f33e718020ecf51f7b4c353ba2268/shaderGLES/e67595373ddb14a965640d94ad5e9281.frag",
+          "bytes": 2719,
+          "sha256": "f5171d9d519e37bb1c735c9f2283c8a05f02c4cfc950c051adbed05c173d3f7c"
+        },
+        {
+          "path": "Library/ShaderData/640f33e718020ecf51f7b4c353ba2268/shaderGLES/e67595373ddb14a965640d94ad5e9281.vert",
+          "bytes": 441,
+          "sha256": "e2ea5f2e575f56d99f35702c97ef48107a4589c8ff72a5da0b7df8b1379e027c"
+        },
+        {
+          "path": "Library/ShaderData/640f33e718020ecf51f7b4c353ba2268/shaderMetal/e67595373ddb14a965640d94ad5e9281.frag",
+          "bytes": 3533,
+          "sha256": "69f56cf41ed7aa04d1056ed7e6526214d0072f5faacd5f25b7256f5f5d346047"
+        },
+        {
+          "path": "Library/ShaderData/640f33e718020ecf51f7b4c353ba2268/shaderMetal/e67595373ddb14a965640d94ad5e9281.vert",
+          "bytes": 643,
+          "sha256": "d78f2f6f2785e1535e5fb789c730d7530e1d94b92ebadd029bc5ab555995950f"
+        },
+        {
+          "path": "Library/ShaderData/79fc860b2fbac11911d0add5c5de4390/shaderGLES/44267cd6c3ecae01941571878936d1cf.frag",
+          "bytes": 200,
+          "sha256": "a84083f0025dbc9f2ecaeb54b2ff3f1d7a486171301eb985444a17c8d0d9722c"
+        },
+        {
+          "path": "Library/ShaderData/79fc860b2fbac11911d0add5c5de4390/shaderGLES/44267cd6c3ecae01941571878936d1cf.vert",
+          "bytes": 901,
+          "sha256": "c95aa15abcece574fad5275d74037f2fe835d2affda62f70786dd8b12da957a9"
+        },
+        {
+          "path": "Library/ShaderData/79fc860b2fbac11911d0add5c5de4390/shaderMetal/44267cd6c3ecae01941571878936d1cf.frag",
+          "bytes": 302,
+          "sha256": "f13e145726f8e234f3307ae8377b95fdad7f81b988d2b3995e47291136eba7e6"
+        },
+        {
+          "path": "Library/ShaderData/79fc860b2fbac11911d0add5c5de4390/shaderMetal/44267cd6c3ecae01941571878936d1cf.vert",
+          "bytes": 1751,
+          "sha256": "c4708e6641345ed46a85d7e3c8f35822a1b92e560de8e1eab436bf11741dd20b"
+        },
+        {
+          "path": "Library/ShaderData/817495688c741500642059398fa3db5c/shaderGLES/eeda61f9a8a08c49d823f395362f6e92.frag",
+          "bytes": 2184,
+          "sha256": "7eae5c685317ce71da26529ab08feb64d3f983587768a79babee2031301f357f"
+        },
+        {
+          "path": "Library/ShaderData/817495688c741500642059398fa3db5c/shaderGLES/eeda61f9a8a08c49d823f395362f6e92.vert",
+          "bytes": 467,
+          "sha256": "b6645fd7ed9236a797f6550a7fe364a1d4f2ca37e715dd08c3b613980005f9d7"
+        },
+        {
+          "path": "Library/ShaderData/817495688c741500642059398fa3db5c/shaderMetal/eeda61f9a8a08c49d823f395362f6e92.frag",
+          "bytes": 2765,
+          "sha256": "4f3f9a4abfc98f61704af33c4b8ec312e47b65cbd4dcd31eefafdc823b3396f1"
+        },
+        {
+          "path": "Library/ShaderData/817495688c741500642059398fa3db5c/shaderMetal/eeda61f9a8a08c49d823f395362f6e92.vert",
+          "bytes": 529,
+          "sha256": "8302fa16392ec2deeb4f50cff5216b66c4bb786fd1b9f9744613cbc6088ae819"
+        },
+        {
+          "path": "Library/ShaderData/b4bf1182c808206564cbf13a5739b9ef/shaderGLES/4ebb59ad8379b3da7db6a2d143e04c3a.frag",
+          "bytes": 4085,
+          "sha256": "62c090c96686105d44e8a0588a1d6e3a0b604b8ee1d1003e2d693d511c5d72a7"
+        },
+        {
+          "path": "Library/ShaderData/b4bf1182c808206564cbf13a5739b9ef/shaderGLES/4ebb59ad8379b3da7db6a2d143e04c3a.vert",
+          "bytes": 901,
+          "sha256": "c95aa15abcece574fad5275d74037f2fe835d2affda62f70786dd8b12da957a9"
+        },
+        {
+          "path": "Library/ShaderData/b4bf1182c808206564cbf13a5739b9ef/shaderMetal/4ebb59ad8379b3da7db6a2d143e04c3a.frag",
+          "bytes": 1747,
+          "sha256": "00d06c45568fb094d74f33ef0a1708f698c74b28e045ef829c818dc6817041d4"
+        },
+        {
+          "path": "Library/ShaderData/b4bf1182c808206564cbf13a5739b9ef/shaderMetal/4ebb59ad8379b3da7db6a2d143e04c3a.vert",
+          "bytes": 1751,
+          "sha256": "c4708e6641345ed46a85d7e3c8f35822a1b92e560de8e1eab436bf11741dd20b"
+        },
+        {
+          "path": "LuaRTTI.MarkGen.lua",
+          "bytes": 452,
+          "sha256": "d31eab93cd7fcd0c63b387d16a35caff7df0522e8d1fbdba2dcc2ca12965de1b"
+        },
+        {
+          "path": "TextAnim.lua",
+          "bytes": 16013,
+          "sha256": "f281c7cfc1ed5b728e5c3014a9731ed5708a6d28c8522080d14f7fbb23eb0d65"
+        },
+        {
+          "path": "Util.lua",
+          "bytes": 5661,
+          "sha256": "4e5dd52018242d9cfd60eb03b88a944ad8aca6a7f5c3d533ef6cfc95dfdf856a"
+        },
+        {
+          "path": "algorithmConfig.json",
+          "bytes": 368,
+          "sha256": "4c471941aa023409661a42dec1fd8c5a970ab36baa6e7e0ae4f80694c3247c72"
+        },
+        {
+          "path": "anim.prefab",
+          "bytes": 549,
+          "sha256": "e10535e611734bf4e4921f7e47a6addb51a10ffd00779a686a862b92191e66a3"
+        },
+        {
+          "path": "bowen.png.meta",
+          "bytes": 489,
+          "sha256": "bb6b006204b47d32b6419e9d22cbe7871d6ea051e8c4a7244d506855e0fb9da4"
+        },
+        {
+          "path": "config.json",
+          "bytes": 63,
+          "sha256": "6ee3d69b7de290e526c163ae604db468647129e33dd5c9cece2520ddc5e3056c"
+        },
+        {
+          "path": "content.json",
+          "bytes": 173,
+          "sha256": "41076909d9e2501dfaa3470f003359071f5789ad5f0df50babc2615bfb669530"
+        },
+        {
+          "path": "data_val.json",
+          "bytes": 151,
+          "sha256": "73bafe72414dec72e016fe5e8bd7b2d2964da900f21526c553a7f7bade567a09"
+        },
+        {
+          "path": "effect_platform_children.tag",
+          "bytes": 2469,
+          "sha256": "ba94da8b9a43dec41379c89733f7951a74158da176d0f8a1f2745ccdbabe12bf"
+        },
+        {
+          "path": "js-meta.json",
+          "bytes": 2,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "path": "lua-meta.json",
+          "bytes": 9220,
+          "sha256": "c94346eba80d1fa19f947e1298539ea93b60ae3b633771d57d3414c06a700359"
+        },
+        {
+          "path": "main.scene",
+          "bytes": 4491,
+          "sha256": "907fd09d436f9ae69667ec956d1bbea1b68c1bc02526eed72798029db2ddf11e"
+        },
+        {
+          "path": "material/effect.material",
+          "bytes": 504,
+          "sha256": "374f903ada59c7cede6c8a310a65b59cab12416c574fdcd98e85af2c920feb07"
+        },
+        {
+          "path": "material/shadow.material",
+          "bytes": 557,
+          "sha256": "1751916fc164c4463fafb35c003453f09d6446c9a8fdbbbd1b753e99d7182a79"
+        },
+        {
+          "path": "noise.png",
+          "bytes": 42673,
+          "sha256": "8c0a1f6b3e1a82018951d785976bfbff2a7ab1932047ed4982ecc7f5339b6862"
+        },
+        {
+          "path": "noise.png.meta",
+          "bytes": 389,
+          "sha256": "77036290582d6cbebcb336eadc887a3ee87016073014a592c2118efda204b86c"
+        },
+        {
+          "path": "raw_summary.json",
+          "bytes": 31708,
+          "sha256": "e6ef5e9d7d048f8a449c23012bd5b253173418c8f470a3716630bffa1b3842e8"
+        },
+        {
+          "path": "rt/outputTex.rt",
+          "bytes": 584,
+          "sha256": "1457854dbd5cdb04392fc416af222713da9f39142170819b991ed9a1e29debab"
+        },
+        {
+          "path": "rt.frag",
+          "bytes": 530,
+          "sha256": "8c4bd7a791eb0a96f89ace07d85b7410b7fab2cdda4b024f76d83ec70a9b02b5"
+        },
+        {
+          "path": "rt.material",
+          "bytes": 794,
+          "sha256": "fb910324f49be3cdc5366a5e611c7b51eb2ef5cd64ca83ad4cb6724a834aa626"
+        },
+        {
+          "path": "rt.rt",
+          "bytes": 538,
+          "sha256": "1a959feff0105cbd5ba965efb6bede63db25240776d76b0e62941f6f81f24c5c"
+        },
+        {
+          "path": "rt.vert",
+          "bytes": 234,
+          "sha256": "5140022348d7126948d4537c67b7583016758597d7bfbf319bb929a752b295d0"
+        },
+        {
+          "path": "rt.xshader",
+          "bytes": 6172,
+          "sha256": "b18e7bc93046ea336d14a248ceaf9de8c5b461a0a5ad24caa519679b34cfbcb1"
+        },
+        {
+          "path": "sticker.config",
+          "bytes": 308,
+          "sha256": "c28d52ca7b42dffb9f16a32e9356e5383fb992435b5a30ce7fc28bfb402ad49f"
+        },
+        {
+          "path": "xshader/effect.xshader",
+          "bytes": 3670,
+          "sha256": "9ffa5c85f166fe0f838ad1c1138c64e7c16bb2e133d1c1723dc8b911765ba818"
+        },
+        {
+          "path": "xshader/shadow.xshader",
+          "bytes": 7272,
+          "sha256": "aae327ef03dfa14d8cfa5e5de176c51a9e4440014e1ad46d6ca423888b405621"
+        }
+      ]
+    },
+    {
+      "resourceId": "7349463487376149786",
+      "panel": "flower",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/7349463487376149786/8471045aa1e507a035d8ce321b6bbca7",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 143,
+          "sha256": "c16a6efddcda303a246cf7ce7be7e4826cb2049c8d5fb87d8cc3516ee4df3e81"
+        },
+        {
+          "path": "cover_icon.png",
+          "bytes": 7888,
+          "sha256": "e7b0cd1cb9aadcb98c7ac956903ca6a7dbdf0d5487ab566c203c39daa4cb27ca"
+        },
+        {
+          "path": "effectStyle.json",
+          "bytes": 974,
+          "sha256": "a44d13de2f4c7b3233bc71497721c14ff5e0952827e79842a6f3d8e7d8ea4de9"
+        }
+      ]
+    },
+    {
+      "resourceId": "7349466657716210995",
+      "panel": "flower",
+      "path": "/Users/tal/Movies/JianyingPro/User Data/Cache/artistEffect/7349466657716210995/b3344548d193a4d8620f41fd0c09fece",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 143,
+          "sha256": "c16a6efddcda303a246cf7ce7be7e4826cb2049c8d5fb87d8cc3516ee4df3e81"
+        },
+        {
+          "path": "cover_icon.png",
+          "bytes": 8033,
+          "sha256": "d14e90725b56d143dd828b087dd53fa35c01817963d4deab4e8d10af22d88ed0"
+        },
+        {
+          "path": "effectStyle.json",
+          "bytes": 1022,
+          "sha256": "4e33edad0bdbebf8990a57b5f4eabe77533ad38dab4189814bcb72fab3c6a43d"
+        }
+      ]
+    }
+  ],
+  "supportStatus": "Static candidate only; no product import/render controls added, no native frame math comparison performed in this static follow-up.",
+  "criticalFacts": [
+    "Single template parent with three text children plus one sticker child, not one ordinary text clip with three phases.",
+    "The sticker entrance resource6763469998330483213 is present only in content.json; material_animations contains only three text references.",
+    "Character gradients and shadows differ between two Han layers; fonts and rich spans cannot be replaced by one plain TextStyle.",
+    "Root layout references connect child edges to the 雨过 layer; flattening only original coordinates would lose edit reflow behavior."
+  ],
+  "candidateMath": [
+    {
+      "resourceId": "6897084405781631496",
+      "kind": "whole-raster horizontal feather reveal",
+      "status": "manual static source reading only, not MOV validated",
+      "p": "quadOut(clamp(t/D,0,1))",
+      "feather": 0.2,
+      "maskCandidate": "1 - smoothstep(1.2*p-.2, 1.2*p, u)",
+      "unknowns": [
+        "actual render UV orientation/bounds and render-to-texture padding",
+        "active execution branch and hold/reset on animation leave",
+        "content duration1.8 versus serialized1799999us authority"
+      ]
+    },
+    {
+      "resourceId": "7089261793406620197",
+      "kind": "per-row staggered letter alpha/scale with noise/blur/wave render passes",
+      "status": "manual static source reading only, not MOV validated",
+      "lineEntryDelay": "(i-1)/(lineEntryCount-1+.001)*.25; excludes LF when grouping rows",
+      "easeControl": [
+        0.22,
+        0.6,
+        0.52,
+        0.93
+      ],
+      "scaleRange": [
+        0.95,
+        1
+      ],
+      "resourceOverrides": {
+        "blurSize": 2,
+        "blur_live_time": 0.78100001811981,
+        "noiseInfo": [
+          0,
+          0,
+          0.10000000149012
+        ]
+      },
+      "unknowns": [
+        "EditorSDK branch/autoplay versus exported runtime branch",
+        "space and ligature entries under Signeton font",
+        "noise texture sampling, wave displacement, blur pass order and alpha blending",
+        "per-glyph anchor and native richText bold/italic metrics"
+      ]
+    },
+    {
+      "resourceId": "6763469998330483213",
+      "kind": "sticker entrance",
+      "status": "manual static source reading only, not MOV validated",
+      "alphaDurationFactor": 0.2,
+      "scaleRange": [
+        0.9,
+        1
+      ],
+      "scaleAndPositionEase": "quadOut(t/D)",
+      "initialLocalY": "-.15 * textureHeight / outputHeight",
+      "unknowns": [
+        "textureHeight includes scaled stretch or original232px",
+        "scene-to-output coordinate mapping",
+        "nonuniform parent scale and layout reflow"
+      ]
+    }
+  ],
+  "validationMatrix": [
+    {
+      "id": "visibility-baseline",
+      "fixture": "existing11 only, no new native changes",
+      "frames": [
+        0,
+        1,
+        15,
+        30,
+        44,
+        45,
+        46,
+        53,
+        54,
+        55,
+        59,
+        60,
+        61,
+        74,
+        75,
+        76,
+        89
+      ],
+      "checks": [
+        "actual90-frame probe",
+        "not-all-black across full movie",
+        "all four layers visible after all entrance ends",
+        "frame0 black permitted, not treated as export failure"
+      ]
+    },
+    {
+      "id": "layer-isolation",
+      "fixtures": [
+        "Rain only",
+        "是天晴 only",
+        "雨过 only",
+        "sticker only"
+      ],
+      "sameTargetDurationSeconds": 3,
+      "checks": [
+        "preserve accepted original full template baseline first",
+        "native layer bounds and alpha reference at stable frame76",
+        "verify standalone versus grouped entrance transforms and render-to-texture padding"
+      ]
+    },
+    {
+      "id": "rich-style-isolation",
+      "fixtures": [
+        "native solid white no shadow for each Han layer",
+        "native fill gradient only",
+        "native fill plus native shadow",
+        "original full style"
+      ],
+      "checks": [
+        "per-character vs whole-text gradient coordinates",
+        "angle90 direction and stop clipping",
+        "shadow alpha .45/.5, distance0, feather.0666667",
+        "premultiply/gamma/composite order against two opaque backgrounds"
+      ]
+    },
+    {
+      "id": "anchor-and-reflow",
+      "fixtures": [
+        "change 雨过 from2 to4Han",
+        "change 是天晴 from3 to1Han",
+        "change Rain tolongerASCII",
+        "parent scale1.5 androtation30"
+      ],
+      "checks": [
+        "measure baseline left/right/bottom anchor offsets, do not assumezero offset",
+        "fixed-width false sticker stretch, text fixed-width and fixed-height",
+        "retained order1 sticker <2雨过 <3是天晴 <4Rain",
+        "root versus child transform coordinate spaces"
+      ]
+    },
+    {
+      "id": "duration-boundaries",
+      "fixtures": [
+        "existing3s at30fps",
+        "same native reopened persisted1.799999us field",
+        "6s root duration",
+        "1.5s root duration",
+        "60fps and30000/1001 only after30fps baseline"
+      ],
+      "checks": [
+        "44/45/46 for1.5s",
+        "53/54/55 for1.8s vs1799999us",
+        "59/60/61 for2s",
+        "74/75/76 for2.5s",
+        "clip last89 not90 at3s30fps",
+        "whether animation durations stretch with root or retain absolutes",
+        "no reuse of ordinary-loop phase repair without actual template evidence"
+      ]
+    }
+  ],
+  "implementationPlan": {
+    "status": "proposal only; frozen runtime unchanged",
+    "groupIR": [
+      "parent target range and design geometry",
+      "children originalrect/affine2D/order/relative ranges",
+      "separate per-child verified preset clock",
+      "rich text runs with font/style provenance",
+      "constraint edges with measured initial offsets",
+      "sticker image input distinct from original product assets"
+    ],
+    "compiler": [
+      "resolve text_template material parent and content.json child tree",
+      "resolve resource paths and ids, preserve all unverified diagnostics",
+      "deterministic layout dependency order, validate graph limits",
+      "compile immutable evaluated child layers at output rational frame",
+      "same authoritative renderer for export/scalar/batch GPU textures"
+    ],
+    "renderOperators": [
+      "independent glyph coverage with original word shaping",
+      "per-character gradient fill and feathered gradient shadow",
+      "independent horizontal reveal mask",
+      "separate measured noise/wave/blur passes if actually confirmed",
+      "full group compositing by child order and parent affine transform"
+    ],
+    "gates": [
+      "existingMOV visibility and frame metrics first",
+      "independent static/full rendered baselines before animation",
+      "native per-layer alpha/bounds/UV comparisons before controls",
+      "scalar/batch byte identity plus actual GPU sample equality",
+      "old presets, cache budget/cancel/revision regression",
+      "no native JS/Lua execution or private font/sprite redistribution in product"
+    ]
+  },
+  "visibilityEvidence": "template-rain-visibility.json",
+  "visibilityResult": {
+    "framesDecoded": 90,
+    "fps": "30/1",
+    "width": 1280,
+    "height": 720,
+    "framesWithVisiblePixelsAbove8": 89,
+    "firstVisibleFrameAbove8": 1,
+    "allBlack": false
+  },
+  "visualInspection": {
+    "contactSheetViewedByWorker": true,
+    "frames": [
+      0,
+      1,
+      15,
+      30,
+      44,
+      45,
+      46,
+      53,
+      54,
+      55,
+      59,
+      60,
+      61,
+      74,
+      75,
+      76,
+      89
+    ],
+    "finding": "Frame0 transparent black, frame1 visible pixels; late frames show all three text layers and the green decorative stroke. This confirms export visibility, not per-layer math or product support."
+  }
+}

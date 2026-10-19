@@ -1,0 +1,17 @@
+✔ failed encoder terminates its waiting renderer and drains both subprocesses (92.689584ms)
+✔ pipeline cancellation kills both owned subprocesses before rejecting and prevents late success (31.117292ms)
+✔ truncated successful render is rejected rather than encoding a partial window (26.928833ms)
+✔ timeout escalates for a subprocess that ignores SIGTERM and leaves no owned process (2107.933375ms)
+✔ exact paired-frame stream handles split pixels/frames and writable backpressure with bounded buffers (3.145292ms)
+✔ exact stream rejects short and extra frames and propagates sink failures (1.218208ms)
+✔ cancelled fragmented stream stops without writing a later frame (0.362459ms)
+✔ a blocked encoder does not pull an entire32-frame window into JavaScript (0.909375ms)
+✔ raw stream validates frame and window budgets before allocation (0.1845ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2317.320917

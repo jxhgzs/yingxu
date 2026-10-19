@@ -1,0 +1,32 @@
+{
+  "started": "2026-10-19T14:08:14.494Z",
+  "condition": "CLI batch baseline; team FFmpeg paused; native app open and possible short native export overlaps are recorded by parent.",
+  "before": [
+    "74159   2.2 /Applications/VideoFusion-macOS.app/Contents/MacOS/VideoFusion-macOS"
+  ],
+  "phases": [
+    {
+      "frames": 32,
+      "scriptMs": 125.426084,
+      "renderMs": 1675.84725,
+      "recoverDiskMs": 629.8827079999999,
+      "encodeMs": 341.46004200000016,
+      "totalMs": 2772.9175
+    }
+  ],
+  "preparation": {
+    "projectId": "9216374c-0f80-48d9-b3bc-d18ccc63e386",
+    "revision": 0,
+    "status": "ready",
+    "requested": 180,
+    "completed": 180,
+    "uniqueTextures": 180,
+    "bytes": 4105871,
+    "elapsedMs": 19038.725125
+  },
+  "elapsedMs": 19039.040166,
+  "after": [
+    "74159   2.3 /Applications/VideoFusion-macOS.app/Contents/MacOS/VideoFusion-macOS"
+  ],
+  "finished": "2026-10-19T14:08:36.379Z"
+}

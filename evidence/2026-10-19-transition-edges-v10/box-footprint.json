@@ -1,0 +1,217 @@
+{
+  "scope": "Four independently defined single-step 444->420 point/box/cosited footprints; no parameter search or encoding. Native encoded endpoints retain codec residual.",
+  "results": [
+    {
+      "sourceFrame": 0,
+      "nativeFrame": 0,
+      "models": [
+        {
+          "physicalModel": "point-top-left",
+          "horizontalPair": false,
+          "verticalPair": false,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10867404513888888,
+              "max": 10,
+              "over3": 3407
+            },
+            {
+              "plane": "U",
+              "mae": 0.9178472222222223,
+              "max": 44,
+              "over3": 11467
+            },
+            {
+              "plane": "V",
+              "mae": 0.898125,
+              "max": 42,
+              "over3": 11941
+            }
+          ]
+        },
+        {
+          "physicalModel": "box-center",
+          "horizontalPair": true,
+          "verticalPair": true,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10867404513888888,
+              "max": 10,
+              "over3": 3407
+            },
+            {
+              "plane": "U",
+              "mae": 0.9165885416666667,
+              "max": 44,
+              "over3": 11297
+            },
+            {
+              "plane": "V",
+              "mae": 0.905,
+              "max": 42,
+              "over3": 12022
+            }
+          ]
+        },
+        {
+          "physicalModel": "left-cosited",
+          "horizontalPair": false,
+          "verticalPair": true,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10867404513888888,
+              "max": 10,
+              "over3": 3407
+            },
+            {
+              "plane": "U",
+              "mae": 0.9192534722222222,
+              "max": 44,
+              "over3": 11460
+            },
+            {
+              "plane": "V",
+              "mae": 0.9040364583333333,
+              "max": 42,
+              "over3": 12022
+            }
+          ]
+        },
+        {
+          "physicalModel": "top-cosited",
+          "horizontalPair": true,
+          "verticalPair": false,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10867404513888888,
+              "max": 10,
+              "over3": 3407
+            },
+            {
+              "plane": "U",
+              "mae": 0.9151996527777778,
+              "max": 44,
+              "over3": 11302
+            },
+            {
+              "plane": "V",
+              "mae": 0.8989930555555555,
+              "max": 42,
+              "over3": 11941
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourceFrame": 105,
+      "nativeFrame": 119,
+      "models": [
+        {
+          "physicalModel": "point-top-left",
+          "horizontalPair": false,
+          "verticalPair": false,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6
+            },
+            {
+              "plane": "U",
+              "mae": 0.49787760416666665,
+              "max": 25,
+              "over3": 12344
+            },
+            {
+              "plane": "V",
+              "mae": 0.7222222222222222,
+              "max": 33,
+              "over3": 12363
+            }
+          ]
+        },
+        {
+          "physicalModel": "box-center",
+          "horizontalPair": true,
+          "verticalPair": true,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6
+            },
+            {
+              "plane": "U",
+              "mae": 0.49504340277777775,
+              "max": 25,
+              "over3": 12346
+            },
+            {
+              "plane": "V",
+              "mae": 0.7121527777777777,
+              "max": 33,
+              "over3": 12358
+            }
+          ]
+        },
+        {
+          "physicalModel": "left-cosited",
+          "horizontalPair": false,
+          "verticalPair": true,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6
+            },
+            {
+              "plane": "U",
+              "mae": 0.4965017361111111,
+              "max": 25,
+              "over3": 12344
+            },
+            {
+              "plane": "V",
+              "mae": 0.7149652777777777,
+              "max": 32,
+              "over3": 12361
+            }
+          ]
+        },
+        {
+          "physicalModel": "top-cosited",
+          "horizontalPair": true,
+          "verticalPair": false,
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6
+            },
+            {
+              "plane": "U",
+              "mae": 0.4963107638888889,
+              "max": 25,
+              "over3": 12346
+            },
+            {
+              "plane": "V",
+              "mae": 0.7193793402777777,
+              "max": 33,
+              "over3": 12361
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+✔ per-letter soft entrance cache identities preserve changing glyph alpha and batch/scalar bytes (979.502083ms)
+✔ bounce pose content keys distinguish rotated source-scale offsets and reuse identical loop poses (1295.5755ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2376.669167

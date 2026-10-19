@@ -1,0 +1,449 @@
+{
+  "scope": "Actual GPU source RGB FBO -> fixed709/limited8 -> four predeclared separable point/box/bilinear/area footprints against native encoded endpoint YUV; no fitted weights.",
+  "results": [
+    {
+      "side": "a",
+      "nativeFrame": 0,
+      "models": [
+        {
+          "physicalModel": "point",
+          "kernel": [
+            [
+              0,
+              1
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10871202256944444,
+              "max": 10,
+              "over3": 3417,
+              "worst": {
+                "x": 1249,
+                "y": 689,
+                "candidate": 226,
+                "native": 216
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.9178472222222223,
+              "max": 44,
+              "over3": 11467,
+              "worst": {
+                "x": 1,
+                "y": 181,
+                "candidate": 203,
+                "native": 159
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.8982855902777778,
+              "max": 42,
+              "over3": 11953,
+              "worst": {
+                "x": 81,
+                "y": 1,
+                "candidate": 215,
+                "native": 173
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "box2",
+          "kernel": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10871202256944444,
+              "max": 10,
+              "over3": 3417,
+              "worst": {
+                "x": 1249,
+                "y": 689,
+                "candidate": 226,
+                "native": 216
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.917578125,
+              "max": 44,
+              "over3": 11177,
+              "worst": {
+                "x": 1,
+                "y": 181,
+                "candidate": 203,
+                "native": 159
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.9078862847222222,
+              "max": 42,
+              "over3": 12028,
+              "worst": {
+                "x": 81,
+                "y": 1,
+                "candidate": 215,
+                "native": 173
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "bilinear4",
+          "kernel": [
+            [
+              -1,
+              0.125
+            ],
+            [
+              0,
+              0.375
+            ],
+            [
+              1,
+              0.375
+            ],
+            [
+              2,
+              0.125
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10871202256944444,
+              "max": 10,
+              "over3": 3417,
+              "worst": {
+                "x": 1249,
+                "y": 689,
+                "candidate": 226,
+                "native": 216
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.7559722222222223,
+              "max": 27,
+              "over3": 11583,
+              "worst": {
+                "x": 1,
+                "y": 181,
+                "candidate": 186,
+                "native": 159
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.7449001736111112,
+              "max": 22,
+              "over3": 11519,
+              "worst": {
+                "x": 22,
+                "y": 22,
+                "candidate": 148,
+                "native": 126
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "area4",
+          "kernel": [
+            [
+              -1,
+              0.25
+            ],
+            [
+              0,
+              0.25
+            ],
+            [
+              1,
+              0.25
+            ],
+            [
+              2,
+              0.25
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.10871202256944444,
+              "max": 10,
+              "over3": 3417,
+              "worst": {
+                "x": 1249,
+                "y": 689,
+                "candidate": 226,
+                "native": 216
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.9992838541666667,
+              "max": 34,
+              "over3": 12595,
+              "worst": {
+                "x": 79,
+                "y": 239,
+                "candidate": 170,
+                "native": 204
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 1.0227734375,
+              "max": 39,
+              "over3": 12247,
+              "worst": {
+                "x": 22,
+                "y": 22,
+                "candidate": 165,
+                "native": 126
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "side": "b",
+      "nativeFrame": 119,
+      "models": [
+        {
+          "physicalModel": "point",
+          "kernel": [
+            [
+              0,
+              1
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6,
+              "worst": {
+                "x": 45,
+                "y": 45,
+                "candidate": 28,
+                "native": 36
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.49787760416666665,
+              "max": 25,
+              "over3": 12344,
+              "worst": {
+                "x": 321,
+                "y": 61,
+                "candidate": 180,
+                "native": 155
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.7222222222222222,
+              "max": 33,
+              "over3": 12363,
+              "worst": {
+                "x": 1,
+                "y": 1,
+                "candidate": 57,
+                "native": 90
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "box2",
+          "kernel": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6,
+              "worst": {
+                "x": 45,
+                "y": 45,
+                "candidate": 28,
+                "native": 36
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.5075954861111112,
+              "max": 25,
+              "over3": 12349,
+              "worst": {
+                "x": 321,
+                "y": 61,
+                "candidate": 180,
+                "native": 155
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.7249479166666667,
+              "max": 33,
+              "over3": 12361,
+              "worst": {
+                "x": 1,
+                "y": 1,
+                "candidate": 57,
+                "native": 90
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "bilinear4",
+          "kernel": [
+            [
+              -1,
+              0.125
+            ],
+            [
+              0,
+              0.375
+            ],
+            [
+              1,
+              0.375
+            ],
+            [
+              2,
+              0.125
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6,
+              "worst": {
+                "x": 45,
+                "y": 45,
+                "candidate": 28,
+                "native": 36
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.32484375,
+              "max": 13,
+              "over3": 10276,
+              "worst": {
+                "x": 321,
+                "y": 61,
+                "candidate": 168,
+                "native": 155
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.48287760416666664,
+              "max": 17,
+              "over3": 14242,
+              "worst": {
+                "x": 22,
+                "y": 22,
+                "candidate": 112,
+                "native": 129
+              }
+            }
+          ]
+        },
+        {
+          "physicalModel": "area4",
+          "kernel": [
+            [
+              -1,
+              0.25
+            ],
+            [
+              0,
+              0.25
+            ],
+            [
+              1,
+              0.25
+            ],
+            [
+              2,
+              0.25
+            ]
+          ],
+          "metrics": [
+            {
+              "plane": "Y",
+              "mae": 0.015208333333333334,
+              "max": 8,
+              "over3": 6,
+              "worst": {
+                "x": 45,
+                "y": 45,
+                "candidate": 28,
+                "native": 36
+              }
+            },
+            {
+              "plane": "U",
+              "mae": 0.5244661458333333,
+              "max": 23,
+              "over3": 12365,
+              "worst": {
+                "x": 399,
+                "y": 59,
+                "candidate": 157,
+                "native": 180
+              }
+            },
+            {
+              "plane": "V",
+              "mae": 0.7541449652777777,
+              "max": 32,
+              "over3": 12422,
+              "worst": {
+                "x": 22,
+                "y": 22,
+                "candidate": 97,
+                "native": 129
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "scope": "Actual native MOV raw YUV420 versus prior human-clicked browser2D/srgb nativeRGBA captures; all pixels. Matrix=BT709 limited8, finite standard phases only; no encode, gamma fit or edge exclusion.",
+  "results": [
+    {
+      "kind": "wipe",
+      "frame": 0,
+      "capture": "artifacts/qa/plane-edges-v9/capture-wipe-native-end-a.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.6927365451388889,
+          "max": 63,
+          "over1": 191641,
+          "over3": 153261,
+          "worst": {
+            "x": 479,
+            "y": 479,
+            "channel": 2,
+            "candidate": 226,
+            "browser": 163
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.2981011284722222,
+          "max": 37,
+          "over1": 83768,
+          "over3": 64714,
+          "worst": {
+            "x": 639,
+            "y": 486,
+            "channel": 2,
+            "candidate": 153,
+            "browser": 190
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 1.0850694444444444e-06,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 799,
+            "y": 361,
+            "channel": 2,
+            "candidate": 205,
+            "browser": 206
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.6799721498842592,
+          "max": 49,
+          "over1": 188206,
+          "over3": 149076,
+          "worst": {
+            "x": 479,
+            "y": 479,
+            "channel": 2,
+            "candidate": 114,
+            "browser": 163
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.3889304832175926,
+          "max": 36,
+          "over1": 108655,
+          "over3": 85990,
+          "worst": {
+            "x": 165,
+            "y": 479,
+            "channel": 2,
+            "candidate": 159,
+            "browser": 195
+          }
+        }
+      ]
+    },
+    {
+      "kind": "wipe",
+      "frame": 61,
+      "capture": "artifacts/qa/plane-edges-v9/capture-wipe-61-native.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.6774027054398148,
+          "max": 80,
+          "over1": 189588,
+          "over3": 157773,
+          "worst": {
+            "x": 598,
+            "y": 119,
+            "channel": 0,
+            "candidate": 30,
+            "browser": 110
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.31357530381944443,
+          "max": 71,
+          "over1": 84105,
+          "over3": 68126,
+          "worst": {
+            "x": 597,
+            "y": 125,
+            "channel": 0,
+            "candidate": 170,
+            "browser": 241
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 7.233796296296296e-07,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 961,
+            "y": 607,
+            "channel": 2,
+            "candidate": 205,
+            "browser": 206
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.6646220341435185,
+          "max": 75,
+          "over1": 187633,
+          "over3": 153316,
+          "worst": {
+            "x": 598,
+            "y": 4,
+            "channel": 0,
+            "candidate": 30,
+            "browser": 105
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.35585539641203706,
+          "max": 35,
+          "over1": 106797,
+          "over3": 86544,
+          "worst": {
+            "x": 7,
+            "y": 479,
+            "channel": 2,
+            "candidate": 155,
+            "browser": 190
+          }
+        }
+      ]
+    },
+    {
+      "kind": "wipe",
+      "frame": 119,
+      "capture": "artifacts/qa/plane-edges-v9/capture-wipe-native-end-b.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.6634118200231481,
+          "max": 43,
+          "over1": 200777,
+          "over3": 168037,
+          "worst": {
+            "x": 159,
+            "y": 119,
+            "channel": 0,
+            "candidate": 30,
+            "browser": 73
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.27361328125,
+          "max": 28,
+          "over1": 88530,
+          "over3": 70816,
+          "worst": {
+            "x": 21,
+            "y": 42,
+            "channel": 0,
+            "candidate": 85,
+            "browser": 57
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 2.5318287037037036e-06,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 645,
+            "y": 480,
+            "channel": 1,
+            "candidate": 245,
+            "browser": 246
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.6455790653935185,
+          "max": 35,
+          "over1": 201433,
+          "over3": 165852,
+          "worst": {
+            "x": 159,
+            "y": 119,
+            "channel": 0,
+            "candidate": 108,
+            "browser": 73
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.37681278935185186,
+          "max": 28,
+          "over1": 116381,
+          "over3": 96800,
+          "worst": {
+            "x": 41,
+            "y": 21,
+            "channel": 0,
+            "candidate": 85,
+            "browser": 57
+          }
+        }
+      ]
+    },
+    {
+      "kind": "circle",
+      "frame": 0,
+      "capture": "artifacts/qa/plane-edges-v9/capture-circle-native-end-a.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.6927365451388889,
+          "max": 63,
+          "over1": 191641,
+          "over3": 153261,
+          "worst": {
+            "x": 479,
+            "y": 479,
+            "channel": 2,
+            "candidate": 226,
+            "browser": 163
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.2981011284722222,
+          "max": 37,
+          "over1": 83768,
+          "over3": 64714,
+          "worst": {
+            "x": 639,
+            "y": 486,
+            "channel": 2,
+            "candidate": 153,
+            "browser": 190
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 1.0850694444444444e-06,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 799,
+            "y": 361,
+            "channel": 2,
+            "candidate": 205,
+            "browser": 206
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.6799721498842592,
+          "max": 49,
+          "over1": 188206,
+          "over3": 149076,
+          "worst": {
+            "x": 479,
+            "y": 479,
+            "channel": 2,
+            "candidate": 114,
+            "browser": 163
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.3889304832175926,
+          "max": 36,
+          "over1": 108655,
+          "over3": 85990,
+          "worst": {
+            "x": 165,
+            "y": 479,
+            "channel": 2,
+            "candidate": 159,
+            "browser": 195
+          }
+        }
+      ]
+    },
+    {
+      "kind": "circle",
+      "frame": 60,
+      "capture": "artifacts/qa/plane-edges-v9/capture-circle-60-native.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.8192961516203704,
+          "max": 124,
+          "over1": 208078,
+          "over3": 167924,
+          "worst": {
+            "x": 470,
+            "y": 34,
+            "channel": 0,
+            "candidate": 29,
+            "browser": 153
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.3720923755787037,
+          "max": 71,
+          "over1": 95534,
+          "over3": 77278,
+          "worst": {
+            "x": 316,
+            "y": 188,
+            "channel": 0,
+            "candidate": 31,
+            "browser": 102
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 1.4467592592592592e-06,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 766,
+            "y": 15,
+            "channel": 1,
+            "candidate": 102,
+            "browser": 103
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.7841742621527777,
+          "max": 124,
+          "over1": 205254,
+          "over3": 166686,
+          "worst": {
+            "x": 470,
+            "y": 34,
+            "channel": 0,
+            "candidate": 29,
+            "browser": 153
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.4586686197916667,
+          "max": 71,
+          "over1": 121975,
+          "over3": 99167,
+          "worst": {
+            "x": 513,
+            "y": 15,
+            "channel": 0,
+            "candidate": 167,
+            "browser": 238
+          }
+        }
+      ]
+    },
+    {
+      "kind": "circle",
+      "frame": 119,
+      "capture": "artifacts/qa/plane-edges-v9/capture-circle-native-end-b.rgba",
+      "models": [
+        {
+          "model": "nearest-block",
+          "phaseX": null,
+          "phaseY": null,
+          "mae": 0.6634118200231481,
+          "max": 43,
+          "over1": 200777,
+          "over3": 168037,
+          "worst": {
+            "x": 159,
+            "y": 119,
+            "channel": 0,
+            "candidate": 30,
+            "browser": 73
+          }
+        },
+        {
+          "model": "bilinear-left-center",
+          "phaseX": 0.5,
+          "phaseY": 1,
+          "mae": 0.27361328125,
+          "max": 28,
+          "over1": 88530,
+          "over3": 70816,
+          "worst": {
+            "x": 21,
+            "y": 42,
+            "channel": 0,
+            "candidate": 85,
+            "browser": 57
+          }
+        },
+        {
+          "model": "bilinear-center-center",
+          "phaseX": 1,
+          "phaseY": 1,
+          "mae": 2.5318287037037036e-06,
+          "max": 1,
+          "over1": 0,
+          "over3": 0,
+          "worst": {
+            "x": 645,
+            "y": 480,
+            "channel": 1,
+            "candidate": 245,
+            "browser": 246
+          }
+        },
+        {
+          "model": "bilinear-left-top",
+          "phaseX": 0.5,
+          "phaseY": 0.5,
+          "mae": 0.6455790653935185,
+          "max": 35,
+          "over1": 201433,
+          "over3": 165852,
+          "worst": {
+            "x": 159,
+            "y": 119,
+            "channel": 0,
+            "candidate": 108,
+            "browser": 73
+          }
+        },
+        {
+          "model": "bilinear-center-top",
+          "phaseX": 1,
+          "phaseY": 0.5,
+          "mae": 0.37681278935185186,
+          "max": 28,
+          "over1": 116381,
+          "over3": 96800,
+          "worst": {
+            "x": 41,
+            "y": 21,
+            "channel": 0,
+            "candidate": 85,
+            "browser": 57
+          }
+        }
+      ]
+    }
+  ]
+}

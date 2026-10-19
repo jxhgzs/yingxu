@@ -1,0 +1,34 @@
+
+> @yingxu/editor@0.10.0 build:desktop
+> npm run build && vite build --config apps/desktop/service.config.ts
+
+
+> @yingxu/editor@0.10.0 build
+> vue-tsc --noEmit && vite build --config apps/editor/vite.config.ts
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 3213 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                        0.47 kB │ gzip:   0.34 kB
+dist/lifecycle-test.html               0.82 kB │ gzip:   0.51 kB
+dist/assets/host-C_bVy0s0.css         25.14 kB │ gzip:   5.64 kB
+dist/assets/editor-BUjq-0Sy.js         0.12 kB │ gzip:   0.14 kB
+dist/assets/lifecycle-C6MDSKC_.js      3.07 kB │ gzip:   1.48 kB
+dist/assets/host-DSvnmVwF.js       1,707.69 kB │ gzip: 525.73 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.48s
+vite v8.3.4 building ssr environment for production...
+transforming...
+✓ 58 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-desktop/service/server.mjs  265.05 kB │ gzip: 72.03 kB
+
+✓ built in 66ms

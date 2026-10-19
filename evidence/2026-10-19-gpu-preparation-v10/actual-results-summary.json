@@ -1,0 +1,1294 @@
+{
+  "at": "2026-10-19T14:36:15.989Z",
+  "records": [
+    {
+      "file": "result-batch-cold-v10-1792420476758.json",
+      "id": "batch-cold-v10-1792420476758",
+      "mode": "batch-cold",
+      "createdAt": "2026-10-19T14:34:36.758Z",
+      "updatedAt": "2026-10-19T14:34:50.859Z",
+      "completed": true,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|7543809c5dea2c4f0603aaeed89c5558c087bb46d2e9711fd421e3cef42cebca",
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "sourceHashes": {
+          "apps/editor/src/preview/index.ts": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+          "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+          "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+          "packages/core/src/text-animation.ts": "5196530b9d9d14ff887122190acb995604c388b141c6e2b02c61defa7d243394",
+          "packages/media/src/captions.ts": "f46800189ae5c62b1a996a7d4036169a0e06399ff8514cdfef0b47936adcccd6",
+          "packages/media/src/glyph-layout.ts": "d550fc6ee694407781ece4b2f9d62fdd8fabca2f34299c2c23b4fbaed7a35f59",
+          "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+          "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+          "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+          "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+          "apps/service/text-raster.ts": "e149d0d31f498a6bde633273a27ad134c0d51d4e99dc0a4557f03bfa6e307e97"
+        },
+        "pid": 85278,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T14:31:25.255Z"
+      },
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T14:34:44.645Z",
+          "finishedAt": "2026-10-19T14:34:50.823Z",
+          "cold": true,
+          "batch": true,
+          "prepareMs": 6941.099999964237,
+          "startPrepareMs": 156.80000001192093,
+          "elapsedWallMs": 6178.400000035763,
+          "transportWallMs": 6021.600000023842,
+          "requestsDuringPlay": 20,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "completed": true,
+          "silentContexts": 0,
+          "visibility": [
+            {
+              "at": 66675.30000001192,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 72853.70000004768,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 741,
+            "maxMs": 9.400000000008731,
+            "p95Ms": 9.099999999991269,
+            "over33_4ms": 0
+          },
+          "longTasks": [],
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5317,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 2540.5999999046326,
+            "rollingWindows": 27,
+            "evictions": 148,
+            "supersededWindows": 18,
+            "batchCalls": 22,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 5,
+            "pendingBatches": 0
+          },
+          "preparation": {
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 6098.600000023842
+          },
+          "metrics": {
+            "displayedFrames": 182,
+            "droppedOutputFrames": 0,
+            "decoderDroppedFrames": 0,
+            "drawCalls": 364,
+            "textureUploads": 362,
+            "framebufferPasses": 0,
+            "transitionDraws": 0,
+            "framebufferCount": 0,
+            "framebufferBytes": 0,
+            "framebufferAllocations": 0,
+            "lastCpuMs": 1.800000011920929,
+            "meanCpuMs": 4.996703301484768,
+            "lastDecodeWaitMs": 8.600000023841858,
+            "maxSourceDriftMs": 31.39633333333336,
+            "lastPresentedFrame": 179,
+            "activeMedia": 2,
+            "cachedMedia": 2,
+            "contextLosses": 0,
+            "bufferEvents": 0,
+            "coldTextPrepareMs": 153.4000000357628,
+            "lastGpuMs": 1.133416
+          }
+        }
+      ],
+      "diskPreparations": [
+        {
+          "at": 62340.5,
+          "completed": 66675.10000002384,
+          "elapsedMs": 4334.600000023842,
+          "iso": "2026-10-19T14:34:40.310Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 4331.749624999997
+          }
+        },
+        {
+          "at": 66677,
+          "completed": 66829.70000004768,
+          "elapsedMs": 152.70000004768372,
+          "iso": "2026-10-19T14:34:44.646Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 149.29370799998287
+          }
+        }
+      ],
+      "disposed": {
+        "backend": "webgl2",
+        "frameRasters": 1,
+        "previewQuality": "exact-frames",
+        "state": "disposed",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 2,
+          "audioLayers": 1,
+          "maxConcurrentMedia": 2
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 6,
+        "textCache": {
+          "textures": 0,
+          "bytes": 0,
+          "aliases": 0,
+          "requests": 1,
+          "hits": 5317,
+          "decodes": 180,
+          "budgetStops": 1,
+          "warmMs": 2540.5999999046326,
+          "rollingWindows": 27,
+          "evictions": 148,
+          "supersededWindows": 18,
+          "batchCalls": 22,
+          "batchFrames": 180,
+          "warming": false,
+          "rolling": false,
+          "rollingRequests": 0,
+          "pendingBatches": 0
+        },
+        "textPreparation": {
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 153.4000000357628
+        },
+        "audioState": "closed",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 182,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 364,
+          "textureUploads": 362,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1.800000011920929,
+          "meanCpuMs": 4.996703301484768,
+          "lastDecodeWaitMs": 8.600000023841858,
+          "maxSourceDriftMs": 31.39633333333336,
+          "lastPresentedFrame": 179,
+          "activeMedia": 2,
+          "cachedMedia": 0,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 153.4000000357628,
+          "lastGpuMs": 1.133416
+        },
+        "decoders": []
+      }
+    },
+    {
+      "file": "result-batch-retained-v10-1792420499751.json",
+      "id": "batch-retained-v10-1792420499751",
+      "mode": "batch-retained",
+      "createdAt": "2026-10-19T14:34:59.751Z",
+      "updatedAt": "2026-10-19T14:35:19.402Z",
+      "completed": true,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|7543809c5dea2c4f0603aaeed89c5558c087bb46d2e9711fd421e3cef42cebca",
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "sourceHashes": {
+          "apps/editor/src/preview/index.ts": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+          "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+          "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+          "packages/core/src/text-animation.ts": "5196530b9d9d14ff887122190acb995604c388b141c6e2b02c61defa7d243394",
+          "packages/media/src/captions.ts": "f46800189ae5c62b1a996a7d4036169a0e06399ff8514cdfef0b47936adcccd6",
+          "packages/media/src/glyph-layout.ts": "d550fc6ee694407781ece4b2f9d62fdd8fabca2f34299c2c23b4fbaed7a35f59",
+          "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+          "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+          "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+          "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+          "apps/service/text-raster.ts": "e149d0d31f498a6bde633273a27ad134c0d51d4e99dc0a4557f03bfa6e307e97"
+        },
+        "pid": 85278,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T14:31:25.255Z"
+      },
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T14:35:00.141Z",
+          "finishedAt": "2026-10-19T14:35:06.315Z",
+          "cold": false,
+          "batch": true,
+          "prepareMs": 345.7000000476837,
+          "startPrepareMs": 151.9000000357628,
+          "elapsedWallMs": 6174.100000023842,
+          "transportWallMs": 6022.199999988079,
+          "requestsDuringPlay": 23,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "completed": true,
+          "silentContexts": 0,
+          "visibility": [
+            {
+              "at": 82170.70000004768,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 88344.90000003576,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 740,
+            "maxMs": 9.30000000000291,
+            "p95Ms": 9.099999999991269,
+            "over33_4ms": 0
+          },
+          "longTasks": [],
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5580,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1111.300000011921,
+            "rollingWindows": 33,
+            "evictions": 148,
+            "supersededWindows": 25,
+            "batchCalls": 25,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 24,
+            "pendingBatches": 0
+          },
+          "preparation": {
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 316.9000000357628
+          },
+          "metrics": {
+            "displayedFrames": 182,
+            "droppedOutputFrames": 0,
+            "decoderDroppedFrames": 0,
+            "drawCalls": 364,
+            "textureUploads": 362,
+            "framebufferPasses": 0,
+            "transitionDraws": 0,
+            "framebufferCount": 0,
+            "framebufferBytes": 0,
+            "framebufferAllocations": 0,
+            "lastCpuMs": 1.800000011920929,
+            "meanCpuMs": 5.280219779892281,
+            "lastDecodeWaitMs": 6.799999952316284,
+            "maxSourceDriftMs": 29.527333333332795,
+            "lastPresentedFrame": 179,
+            "activeMedia": 2,
+            "cachedMedia": 2,
+            "contextLosses": 0,
+            "bufferEvents": 0,
+            "coldTextPrepareMs": 149.80000001192093,
+            "lastGpuMs": 0.965666
+          }
+        },
+        {
+          "run": 2,
+          "startedAt": "2026-10-19T14:35:06.669Z",
+          "finishedAt": "2026-10-19T14:35:12.831Z",
+          "cold": false,
+          "batch": true,
+          "prepareMs": 277.80000001192093,
+          "startPrepareMs": 149.30000001192093,
+          "elapsedWallMs": 6161.600000023842,
+          "transportWallMs": 6012.300000011921,
+          "requestsDuringPlay": 23,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "completed": true,
+          "silentContexts": 0,
+          "visibility": [
+            {
+              "at": 88699.10000002384,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 94860.70000004768,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 739,
+            "maxMs": 9.400000000008731,
+            "p95Ms": 9.099999999991269,
+            "over33_4ms": 0
+          },
+          "longTasks": [],
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5673,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 968.2999999523163,
+            "rollingWindows": 30,
+            "evictions": 148,
+            "supersededWindows": 22,
+            "batchCalls": 25,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 30,
+            "pendingBatches": 0
+          },
+          "preparation": {
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 255.69999998807907
+          },
+          "metrics": {
+            "displayedFrames": 182,
+            "droppedOutputFrames": 0,
+            "decoderDroppedFrames": 0,
+            "drawCalls": 364,
+            "textureUploads": 362,
+            "framebufferPasses": 0,
+            "transitionDraws": 0,
+            "framebufferCount": 0,
+            "framebufferBytes": 0,
+            "framebufferAllocations": 0,
+            "lastCpuMs": 1.4000000357627869,
+            "meanCpuMs": 4.979670328098339,
+            "lastDecodeWaitMs": 6.299999952316284,
+            "maxSourceDriftMs": 26.511333333333358,
+            "lastPresentedFrame": 179,
+            "activeMedia": 2,
+            "cachedMedia": 2,
+            "contextLosses": 0,
+            "bufferEvents": 0,
+            "coldTextPrepareMs": 147.19999998807907,
+            "lastGpuMs": 0.993833
+          }
+        },
+        {
+          "run": 3,
+          "startedAt": "2026-10-19T14:35:13.199Z",
+          "finishedAt": "2026-10-19T14:35:19.365Z",
+          "cold": false,
+          "batch": true,
+          "prepareMs": 284.7000000476837,
+          "startPrepareMs": 152.10000002384186,
+          "elapsedWallMs": 6165.800000011921,
+          "transportWallMs": 6013.699999988079,
+          "requestsDuringPlay": 23,
+          "outputDrops": 0,
+          "decoderDrops": 0,
+          "bufferEvents": 0,
+          "completed": true,
+          "silentContexts": 0,
+          "visibility": [
+            {
+              "at": 95228.70000004768,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 101394.60000002384,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 740,
+            "maxMs": 9.39999999999418,
+            "p95Ms": 9,
+            "over33_4ms": 0
+          },
+          "longTasks": [],
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 1,
+            "hits": 5658,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 1122.199999988079,
+            "rollingWindows": 35,
+            "evictions": 148,
+            "supersededWindows": 27,
+            "batchCalls": 25,
+            "batchFrames": 180,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 25,
+            "pendingBatches": 0
+          },
+          "preparation": {
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 260.5
+          },
+          "metrics": {
+            "displayedFrames": 182,
+            "droppedOutputFrames": 0,
+            "decoderDroppedFrames": 0,
+            "drawCalls": 364,
+            "textureUploads": 362,
+            "framebufferPasses": 0,
+            "transitionDraws": 0,
+            "framebufferCount": 0,
+            "framebufferBytes": 0,
+            "framebufferAllocations": 0,
+            "lastCpuMs": 1.699999988079071,
+            "meanCpuMs": 5.038461542719016,
+            "lastDecodeWaitMs": 6.800000011920929,
+            "maxSourceDriftMs": 31.947666666666485,
+            "lastPresentedFrame": 179,
+            "activeMedia": 2,
+            "cachedMedia": 2,
+            "contextLosses": 0,
+            "bufferEvents": 0,
+            "coldTextPrepareMs": 150.10000002384186,
+            "lastGpuMs": 1.252583
+          }
+        }
+      ],
+      "diskPreparations": [
+        {
+          "at": 81975.70000004768,
+          "completed": 82170.60000002384,
+          "elapsedMs": 194.89999997615814,
+          "iso": "2026-10-19T14:34:59.945Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 192.7790410000016
+          }
+        },
+        {
+          "at": 82172.20000004768,
+          "completed": 82321.30000001192,
+          "elapsedMs": 149.0999999642372,
+          "iso": "2026-10-19T14:35:00.142Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 146.77249999999185
+          }
+        },
+        {
+          "at": 88552.20000004768,
+          "completed": 88699,
+          "elapsedMs": 146.79999995231628,
+          "iso": "2026-10-19T14:35:06.522Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 145.12454200000502
+          }
+        },
+        {
+          "at": 88700.40000003576,
+          "completed": 88847,
+          "elapsedMs": 146.5999999642372,
+          "iso": "2026-10-19T14:35:06.670Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 144.2803750000021
+          }
+        },
+        {
+          "at": 95079.40000003576,
+          "completed": 95228.70000004768,
+          "elapsedMs": 149.30000001192093,
+          "iso": "2026-10-19T14:35:13.050Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 147.4455420000013
+          }
+        },
+        {
+          "at": 95230.30000001192,
+          "completed": 95379.60000002384,
+          "elapsedMs": 149.30000001192093,
+          "iso": "2026-10-19T14:35:13.200Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e15d6312-0b0f-44d9-a743-00ae5e1918f3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 147.17179099997156
+          }
+        }
+      ],
+      "disposed": {
+        "backend": "webgl2",
+        "frameRasters": 1,
+        "previewQuality": "exact-frames",
+        "state": "disposed",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 2,
+          "audioLayers": 1,
+          "maxConcurrentMedia": 2
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 6,
+        "textCache": {
+          "textures": 0,
+          "bytes": 0,
+          "aliases": 0,
+          "requests": 1,
+          "hits": 5658,
+          "decodes": 180,
+          "budgetStops": 1,
+          "warmMs": 1122.199999988079,
+          "rollingWindows": 35,
+          "evictions": 148,
+          "supersededWindows": 27,
+          "batchCalls": 25,
+          "batchFrames": 180,
+          "warming": false,
+          "rolling": false,
+          "rollingRequests": 0,
+          "pendingBatches": 0
+        },
+        "textPreparation": {
+          "status": "ready",
+          "requested": 180,
+          "completed": 180,
+          "uniqueTextures": 180,
+          "bytes": 4105871,
+          "elapsedMs": 150
+        },
+        "audioState": "closed",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 182,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 0,
+          "drawCalls": 364,
+          "textureUploads": 362,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1.699999988079071,
+          "meanCpuMs": 5.038461542719016,
+          "lastDecodeWaitMs": 6.800000011920929,
+          "maxSourceDriftMs": 31.947666666666485,
+          "lastPresentedFrame": 179,
+          "activeMedia": 2,
+          "cachedMedia": 0,
+          "contextLosses": 0,
+          "bufferEvents": 0,
+          "coldTextPrepareMs": 150.10000002384186,
+          "lastGpuMs": 1.252583
+        },
+        "decoders": []
+      }
+    },
+    {
+      "file": "result-pixels-v10-1792420526844.json",
+      "id": "pixels-v10-1792420526844",
+      "mode": "pixels",
+      "createdAt": "2026-10-19T14:35:26.844Z",
+      "updatedAt": "2026-10-19T14:35:33.242Z",
+      "completed": true,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|7543809c5dea2c4f0603aaeed89c5558c087bb46d2e9711fd421e3cef42cebca",
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "sourceHashes": {
+          "apps/editor/src/preview/index.ts": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+          "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+          "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+          "packages/core/src/text-animation.ts": "5196530b9d9d14ff887122190acb995604c388b141c6e2b02c61defa7d243394",
+          "packages/media/src/captions.ts": "f46800189ae5c62b1a996a7d4036169a0e06399ff8514cdfef0b47936adcccd6",
+          "packages/media/src/glyph-layout.ts": "d550fc6ee694407781ece4b2f9d62fdd8fabca2f34299c2c23b4fbaed7a35f59",
+          "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+          "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+          "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+          "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+          "apps/service/text-raster.ts": "e149d0d31f498a6bde633273a27ad134c0d51d4e99dc0a4557f03bfa6e307e97"
+        },
+        "pid": 85278,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T14:31:25.255Z"
+      },
+      "audioParamErrors": [],
+      "pixelPass": true,
+      "pixelCount": 63,
+      "context": {
+        "automatic": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        },
+        "confirmingSeek": {
+          "maxRGB": 0,
+          "meanRGB": 0,
+          "alphaMax": 0
+        }
+      },
+      "pixelGroups": [
+        {
+          "id": "rolling",
+          "frames": [
+            0,
+            15,
+            31,
+            32,
+            33,
+            47,
+            64,
+            90,
+            127,
+            160,
+            179
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.0009393084490740741,
+          "alphaMax": 0
+        },
+        {
+          "id": "sway",
+          "frames": [
+            0,
+            7,
+            8,
+            14,
+            15
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.0003584346064814815,
+          "alphaMax": 0
+        },
+        {
+          "id": "sway-combo",
+          "frames": [
+            9,
+            20,
+            30,
+            31,
+            108,
+            111
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.0017661313657407406,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-soft-six",
+          "frames": [
+            0,
+            3,
+            6,
+            11,
+            15,
+            30
+          ],
+          "maxRGB": 3,
+          "maxMeanRGB": 0.013900462962962963,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-soft-mixed",
+          "frames": [
+            0,
+            3,
+            6,
+            11,
+            15,
+            30
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.015671296296296298,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-bounce",
+          "frames": [
+            0,
+            1,
+            3,
+            4,
+            6,
+            8,
+            15
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.011828703703703704,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-mixed-soft-bounce-shrink",
+          "frames": [
+            3,
+            9,
+            17,
+            107,
+            114
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.016689814814814814,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-shrink",
+          "frames": [
+            0,
+            105,
+            108,
+            112,
+            115,
+            119
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.011296296296296296,
+          "alphaMax": 0
+        },
+        {
+          "id": "v10-soft-bounce-shrink",
+          "frames": [
+            0,
+            3,
+            9,
+            17,
+            30,
+            31,
+            107,
+            108,
+            111,
+            114,
+            119
+          ],
+          "maxRGB": 2,
+          "maxMeanRGB": 0.021122685185185185,
+          "alphaMax": 0
+        }
+      ],
+      "runs": [],
+      "diskPreparations": [
+        {
+          "at": 109010.70000004768,
+          "completed": 109189.90000003576,
+          "elapsedMs": 179.19999998807907,
+          "iso": "2026-10-19T14:35:26.981Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e9243b6a-0153-4bef-a5e7-209d306b1b7e",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 177.09345899999607
+          }
+        },
+        {
+          "at": 109218.20000004768,
+          "completed": 109365.40000003576,
+          "elapsedMs": 147.19999998807907,
+          "iso": "2026-10-19T14:35:27.189Z",
+          "frameCount": 180,
+          "result": {
+            "projectId": "e9243b6a-0153-4bef-a5e7-209d306b1b7e",
+            "revision": 0,
+            "status": "ready",
+            "requested": 180,
+            "completed": 180,
+            "uniqueTextures": 180,
+            "bytes": 4105871,
+            "elapsedMs": 145.27620799999568
+          }
+        },
+        {
+          "at": 110326.70000004768,
+          "completed": 110354.30000001192,
+          "elapsedMs": 27.599999964237213,
+          "iso": "2026-10-19T14:35:28.297Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "02adcba9-a3b9-4105-908f-bed38090bcf8",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 2,
+            "bytes": 19902,
+            "elapsedMs": 26.036874999990687
+          }
+        },
+        {
+          "at": 111492.70000004768,
+          "completed": 111528.70000004768,
+          "elapsedMs": 36,
+          "iso": "2026-10-19T14:35:29.463Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "41144044-7d3a-4934-bb84-6d3585789d7e",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 22,
+            "bytes": 201321,
+            "elapsedMs": 34.10574999998789
+          }
+        },
+        {
+          "at": 112113.5,
+          "completed": 112154.20000004768,
+          "elapsedMs": 40.700000047683716,
+          "iso": "2026-10-19T14:35:30.084Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "506c9dae-5e3b-4120-ab5f-d1663cb858b8",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 14,
+            "bytes": 44811,
+            "elapsedMs": 38.871957999974256
+          }
+        },
+        {
+          "at": 112678.90000003576,
+          "completed": 112729.20000004768,
+          "elapsedMs": 50.30000001192093,
+          "iso": "2026-10-19T14:35:30.650Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "5ee45e8a-8f86-4436-997e-83c3217bedd0",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 15,
+            "bytes": 61368,
+            "elapsedMs": 47.72349999999278
+          }
+        },
+        {
+          "at": 113149.60000002384,
+          "completed": 113183.40000003576,
+          "elapsedMs": 33.80000001192093,
+          "iso": "2026-10-19T14:35:31.120Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "5915683d-9721-4b78-9670-7befde8d8de8",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 4,
+            "bytes": 16262,
+            "elapsedMs": 31.97254200000316
+          }
+        },
+        {
+          "at": 113704.80000001192,
+          "completed": 113750.40000003576,
+          "elapsedMs": 45.60000002384186,
+          "iso": "2026-10-19T14:35:31.675Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "6f896988-69ea-4929-a20c-93d8de187989",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 24,
+            "bytes": 102019,
+            "elapsedMs": 44.11737500000163
+          }
+        },
+        {
+          "at": 114064.40000003576,
+          "completed": 114101.30000001192,
+          "elapsedMs": 36.89999997615814,
+          "iso": "2026-10-19T14:35:32.035Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "411da711-b729-4e1f-9017-35c757114506",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 15,
+            "bytes": 48945,
+            "elapsedMs": 34.93345899999258
+          }
+        },
+        {
+          "at": 115005.30000001192,
+          "completed": 115049.5,
+          "elapsedMs": 44.19999998807907,
+          "iso": "2026-10-19T14:35:32.976Z",
+          "frameCount": 120,
+          "result": {
+            "projectId": "02d2b543-08c1-4905-b3ec-ef3a1cec2ed3",
+            "revision": 0,
+            "status": "ready",
+            "requested": 120,
+            "completed": 120,
+            "uniqueTextures": 23,
+            "bytes": 138409,
+            "elapsedMs": 42.54616699999315
+          }
+        }
+      ]
+    },
+    {
+      "file": "result-scalar-cold-v10-1792420423430.json",
+      "id": "scalar-cold-v10-1792420423430",
+      "mode": "scalar-cold",
+      "createdAt": "2026-10-19T14:33:43.430Z",
+      "updatedAt": "2026-10-19T14:34:28.492Z",
+      "completed": true,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|7543809c5dea2c4f0603aaeed89c5558c087bb46d2e9711fd421e3cef42cebca",
+      "frontendSource": {
+        "frontendIndexSha256": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+        "frontendSource": "apps/editor/src/preview/index.ts",
+        "sourceHashes": {
+          "apps/editor/src/preview/index.ts": "6e3e4b9aab4d8e8af1e1f9b7e9dd83b37f3b8efc7a50a9b791fd792f2b7ff2a3",
+          "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+          "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+          "packages/core/src/text-animation.ts": "5196530b9d9d14ff887122190acb995604c388b141c6e2b02c61defa7d243394",
+          "packages/media/src/captions.ts": "f46800189ae5c62b1a996a7d4036169a0e06399ff8514cdfef0b47936adcccd6",
+          "packages/media/src/glyph-layout.ts": "d550fc6ee694407781ece4b2f9d62fdd8fabca2f34299c2c23b4fbaed7a35f59",
+          "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+          "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+          "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+          "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+          "apps/service/text-raster.ts": "e149d0d31f498a6bde633273a27ad134c0d51d4e99dc0a4557f03bfa6e307e97"
+        },
+        "pid": 85278,
+        "service": "http://127.0.0.1:8838",
+        "vite": "http://127.0.0.1:8839",
+        "startedAt": "2026-10-19T14:31:25.255Z"
+      },
+      "audioParamErrors": [],
+      "runs": [
+        {
+          "run": 1,
+          "startedAt": "2026-10-19T14:33:52.024Z",
+          "finishedAt": "2026-10-19T14:34:28.455Z",
+          "cold": true,
+          "batch": false,
+          "prepareMs": 8525.399999976158,
+          "startPrepareMs": 8.699999988079071,
+          "elapsedWallMs": 36429.30000001192,
+          "transportWallMs": 36420.60000002384,
+          "requestsDuringPlay": 148,
+          "outputDrops": 0,
+          "decoderDrops": 135,
+          "bufferEvents": 145,
+          "completed": true,
+          "silentContexts": 0,
+          "visibility": [
+            {
+              "at": 14056.100000023842,
+              "state": "visible",
+              "focus": true
+            },
+            {
+              "at": 50485.5,
+              "state": "visible",
+              "focus": true
+            }
+          ],
+          "raf": {
+            "samples": 4371,
+            "maxMs": 9.400000000001455,
+            "p95Ms": 9.099999999998545,
+            "over33_4ms": 0
+          },
+          "longTasks": [],
+          "cache": {
+            "textures": 32,
+            "bytes": 117964800,
+            "aliases": 32,
+            "requests": 181,
+            "hits": 920,
+            "decodes": 180,
+            "budgetStops": 1,
+            "warmMs": 43913.40000003576,
+            "rollingWindows": 169,
+            "evictions": 148,
+            "supersededWindows": 168,
+            "batchCalls": 0,
+            "batchFrames": 0,
+            "warming": false,
+            "rolling": false,
+            "rollingRequests": 2,
+            "pendingBatches": 0
+          },
+          "preparation": {
+            "status": "idle",
+            "requested": 0,
+            "completed": 0,
+            "uniqueTextures": 0,
+            "bytes": 0,
+            "elapsedMs": 0
+          },
+          "metrics": {
+            "displayedFrames": 188,
+            "droppedOutputFrames": 0,
+            "decoderDroppedFrames": 135,
+            "drawCalls": 376,
+            "textureUploads": 374,
+            "framebufferPasses": 0,
+            "transitionDraws": 0,
+            "framebufferCount": 0,
+            "framebufferBytes": 0,
+            "framebufferAllocations": 0,
+            "lastCpuMs": 1.399999976158142,
+            "meanCpuMs": 4.503191487586244,
+            "lastDecodeWaitMs": 6.299999952316284,
+            "maxSourceDriftMs": 56.28999999999973,
+            "lastPresentedFrame": 179,
+            "activeMedia": 2,
+            "cachedMedia": 2,
+            "contextLosses": 0,
+            "bufferEvents": 145,
+            "coldTextPrepareMs": 0.6000000238418579,
+            "lastGpuMs": 0.851333
+          }
+        }
+      ],
+      "diskPreparations": [],
+      "disposed": {
+        "backend": "webgl2",
+        "frameRasters": 1,
+        "previewQuality": "exact-frames",
+        "state": "disposed",
+        "support": {
+          "supported": true,
+          "reasons": [],
+          "visualLayers": 2,
+          "audioLayers": 1,
+          "maxConcurrentMedia": 2
+        },
+        "renderer": {
+          "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+          "vendor": "Google Inc. (Apple)",
+          "softwareRenderer": false,
+          "maxTextureSize": 16384,
+          "timerAvailable": true
+        },
+        "color": {
+          "contract": "browser-srgb-v1",
+          "drawingBufferColorSpace": "srgb",
+          "unpackColorSpace": "srgb",
+          "unpackConversion": "browser-default",
+          "unpackConversionEnum": 37444,
+          "framebufferFormat": "rgba8",
+          "mixDomain": "encoded-component-values",
+          "premultipliedAlpha": false
+        },
+        "time": 6,
+        "textCache": {
+          "textures": 0,
+          "bytes": 0,
+          "aliases": 0,
+          "requests": 181,
+          "hits": 920,
+          "decodes": 180,
+          "budgetStops": 1,
+          "warmMs": 43913.40000003576,
+          "rollingWindows": 169,
+          "evictions": 148,
+          "supersededWindows": 168,
+          "batchCalls": 0,
+          "batchFrames": 0,
+          "warming": false,
+          "rolling": false,
+          "rollingRequests": 0,
+          "pendingBatches": 0
+        },
+        "textPreparation": {
+          "status": "idle",
+          "requested": 0,
+          "completed": 0,
+          "uniqueTextures": 0,
+          "bytes": 0,
+          "elapsedMs": 0
+        },
+        "audioState": "closed",
+        "curveAudio": {
+          "cachedClips": 0,
+          "pcmBytes": 0,
+          "routes": []
+        },
+        "metrics": {
+          "displayedFrames": 188,
+          "droppedOutputFrames": 0,
+          "decoderDroppedFrames": 135,
+          "drawCalls": 376,
+          "textureUploads": 374,
+          "framebufferPasses": 0,
+          "transitionDraws": 0,
+          "framebufferCount": 0,
+          "framebufferBytes": 0,
+          "framebufferAllocations": 0,
+          "lastCpuMs": 1.399999976158142,
+          "meanCpuMs": 4.503191487586244,
+          "lastDecodeWaitMs": 6.299999952316284,
+          "maxSourceDriftMs": 56.28999999999973,
+          "lastPresentedFrame": 179,
+          "activeMedia": 2,
+          "cachedMedia": 0,
+          "contextLosses": 0,
+          "bufferEvents": 145,
+          "coldTextPrepareMs": 0.6000000238418579,
+          "lastGpuMs": 0.851333
+        },
+        "decoders": []
+      }
+    }
+  ]
+}

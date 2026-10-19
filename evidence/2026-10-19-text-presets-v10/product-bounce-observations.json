@@ -1,0 +1,1638 @@
+{
+  "scope": "Product MP4 row-projection translation observations, compared with independent native dy fits; interpolation fit and codec are residuals, not pixel equality.",
+  "cases": [
+    {
+      "case": "bounce",
+      "movie": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/text-presets-v10/product/bounce/render.mp4",
+      "sha256": "068c20d6cf77edfae9ff75bb4d1c294d45751b596decebb68ca1042037b1a9b9",
+      "rows": [
+        {
+          "frame": 0,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 0.0,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 1,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 0.13194444444444445,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 2,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 0.24166666666666667,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 3,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.215833333333453,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 4,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.249166666666785,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 5,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.29500000000012,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 6,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.45569444444404,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 7,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.45152777777738,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 8,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.180138888889125,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 9,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.180138888889125,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 10,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.180138888889125,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 11,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.36013888888848,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 12,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.36152777777737,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 13,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.363055555554908,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 14,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.41999999999935,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 15,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.811111111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 16,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.769444444444445,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 17,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.809722222222222,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 18,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.36305555555514,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 19,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.33527777777736,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 20,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.32277777777736,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 21,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.06541666666627,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 22,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.0487499999996,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 23,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.71291666666691,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 24,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.701805555555794,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 25,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.72819444444468,
+          "error": 0.14999999999998792
+        },
+        {
+          "frame": 26,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.52250000000044,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 27,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.54750000000044,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 28,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.801944444443414,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 29,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.80888888888786,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 30,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.266666666666667,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 31,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.2652777777777775,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 32,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.25,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 33,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.15916666666731,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 34,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.163333333333977,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 35,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.1855555555562,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 36,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.54500000000043,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 37,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.621388888889314,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 38,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.451388888888886,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 39,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.451388888888886,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 40,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.44444444444444,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 41,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.860416666666325,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 42,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.86736111111077,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 43,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 23.72277777777675,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 44,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 23.414166666665643,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 45,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.223611111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 46,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.223611111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 47,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.220833333333333,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 48,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.602500000000205,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 49,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.60666666666687,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 50,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.610833333333538,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 51,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.41736111111095,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 52,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.42152777777762,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 53,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.109722222222224,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 54,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.109722222222224,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 55,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.1125,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 56,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.223055555554616,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 57,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.22930555555516,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 58,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.78527777777675,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 59,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.776944444443416,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 60,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.025,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 61,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.031944444444444,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 62,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.022222222222222,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 63,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.480000000000437,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 64,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.48694444444488,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 65,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.42861111111155,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 66,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.39263888888878,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 67,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 46.41624999999989,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 68,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.673611111111114,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 69,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.68055555555556,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 70,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.68611111111111,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 71,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.568333333333776,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 72,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.57111111111155,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 73,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.461666666665636,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 74,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.45611111111008,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 75,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.175,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 76,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.173611111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 77,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.161111111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 78,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.37750000000064,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 79,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.39277777777842,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 80,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.401111111111753,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 81,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.98708333333323,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 82,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.98430555555545,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 83,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.36944444444445,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 84,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.37083333333333,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 85,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.3625,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 86,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.60930555555521,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 87,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.623194444444096,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 88,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.91749999999907,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 89,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.91472222222129,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 90,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.272222222222222,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 91,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.275,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 92,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.270833333333333,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 93,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.02333333333354,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 94,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.027500000000206,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 95,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 19.053888888889094,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 96,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.16972222222266,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 97,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.16555555555599,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 98,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.27361111111111,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 99,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.272222222222226,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 100,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 49.272222222222226,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 101,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.77833333333377,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 102,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.78805555555599,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 103,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.92277777777736,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 104,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 22.928333333332915,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 105,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.461111111111111,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 106,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.4625,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 107,
+          "dyFit": 0.0,
+          "nativeDyFit": -2.220446049250313e-16,
+          "projectedGrayMae": 5.459722222222222,
+          "error": 1.1102230246251565e-15
+        },
+        {
+          "frame": 108,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.22722222222233,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 109,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.224444444444554,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 110,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 20.203611111111222,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 111,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.33430555555545,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 112,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 45.475972222222126,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 113,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.77361111111111,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 114,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.775,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 115,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.599999999999998,
+          "projectedGrayMae": 48.772222222222226,
+          "error": 0.09999999999998899
+        },
+        {
+          "frame": 116,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.212083333332984,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 117,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.399999999999999,
+          "projectedGrayMae": 47.04541666666632,
+          "error": 0.04999999999999183
+        },
+        {
+          "frame": 118,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 23.081111111110083,
+          "error": 0.09999999999999565
+        },
+        {
+          "frame": 119,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.1999999999999993,
+          "projectedGrayMae": 23.081111111110083,
+          "error": 0.09999999999999565
+        }
+      ],
+      "maxNativeDyFitError": 0.14999999999998792
+    },
+    {
+      "case": "soft-bounce-shrink",
+      "movie": "/Users/tal/Work/Next/\u5929\u5929\u5b66/\u5982\u679c\u5386\u53f2\u662f\u4e00\u7fa4\u55b5 \u89c6\u9891/\u9879\u76ee\u8c03\u7814/\u6620\u5e8f\u526a\u8f91\u5185\u6838/artifacts/qa/text-presets-v10/product/soft-bounce-shrink/render.mp4",
+      "sha256": "0dfee7708eb5e4d689b6f0a185faf7138a8fd05a6aa9a247b6150b54e17a717a",
+      "rows": [
+        {
+          "frame": 9,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.329166666666667,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 10,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.329166666666667,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 11,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.329166666666667,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 12,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.329166666666667,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 13,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.9158333333333,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 14,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.918611111111076,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 15,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.91444444444441,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 16,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.911666666666633,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 17,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.267916666666274,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 18,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.267916666666274,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 19,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.26097222222183,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 20,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.8504166666669,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 21,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.80097222222246,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 22,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.81625000000024,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 23,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.56166666666747,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 24,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.76472222222193,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 25,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.76749999999971,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 26,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.7688888888886,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 27,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.05416666666539,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 28,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.05416666666539,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 29,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.05694444444317,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 30,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.05416666666539,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 31,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.170833333333333,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 32,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.155555555555556,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 33,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.197222222222222,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 34,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.810277777777895,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 35,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.80750000000012,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 36,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.810277777777895,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 37,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.810277777777895,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 38,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.08083333333324,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 39,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.08083333333324,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 40,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.07319444444434,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 41,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.355555555555554,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 42,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.355555555555554,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 43,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.35138888888889,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 44,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.35,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 45,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.15541666666628,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 46,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.147083333332944,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 47,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 47.15541666666628,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 48,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 22.473611111109836,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 49,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 22.352777777776502,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 50,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 22.198611111109834,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 51,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 22.199999999998724,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 52,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.6722222222222225,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 53,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.6875,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 54,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 4.6875,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 55,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.443888888889003,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 56,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.442500000000113,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 57,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.43555555555567,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 58,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 20.445277777777893,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 59,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.692916666666555,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 60,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.69013888888878,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 61,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.692916666666555,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 62,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.08888888888889,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 63,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.08888888888889,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 64,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.083333333333336,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 65,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.08611111111111,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 66,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 48.389166666666846,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 67,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 48.390555555555736,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 68,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 48.391944444444626,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 69,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.691944444443166,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 70,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.68916666666539,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 71,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.72388888888761,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 72,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.732222222220944,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 73,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.909722222222222,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 74,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.893055555555556,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 75,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.902777777777778,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 76,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.304444444443167,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 77,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.316944444443166,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 78,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.334999999998722,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 79,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.334999999998722,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 80,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.424861111111,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 81,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.41652777777767,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 82,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.41652777777767,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 83,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.734722222222224,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 84,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.734722222222224,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 85,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.733333333333334,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 86,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.74166666666667,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 87,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 49.36708333333299,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 88,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 49.36986111111077,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 89,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 49.378194444444105,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 90,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 24.53388888888786,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 91,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 24.529722222221192,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 92,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 24.529722222221192,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 93,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 23.98388888888786,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 94,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.373611111111111,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 95,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.383333333333334,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 96,
+          "dyFit": 0.0,
+          "nativeDyFit": 0.0,
+          "projectedGrayMae": 5.381944444444445,
+          "error": 8.881784197001252e-16
+        },
+        {
+          "frame": 97,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 21.080000000000215,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 98,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 21.089722222222438,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 99,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 21.08277777777799,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 100,
+          "dyFit": 3.1,
+          "nativeDyFit": 3.2,
+          "projectedGrayMae": 21.121666666666883,
+          "error": 0.09999999999999654
+        },
+        {
+          "frame": 101,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.64902777777762,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 102,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.65319444444429,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 103,
+          "dyFit": 6.35,
+          "nativeDyFit": 6.4,
+          "projectedGrayMae": 46.485138888888734,
+          "error": 0.049999999999993605
+        },
+        {
+          "frame": 104,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.67013888888912,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 105,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.67013888888912,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 106,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.67013888888912,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 107,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.67013888888912,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 108,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 48.67013888888912,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 109,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 47.19401306905808,
+          "error": 0.1499999999999897
+        },
+        {
+          "frame": 110,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 41.07263374485599,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 111,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.6,
+          "projectedGrayMae": 23.46696234809116,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 112,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 21.350462962962276,
+          "error": 8.881784197001252e-15
+        },
+        {
+          "frame": 113,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 18.16257916988149,
+          "error": 8.881784197001252e-15
+        },
+        {
+          "frame": 114,
+          "dyFit": 9.55,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 15.251215277778318,
+          "error": 0.05000000000000959
+        },
+        {
+          "frame": 115,
+          "dyFit": 9.5,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 14.124159506548722,
+          "error": 8.881784197001252e-15
+        },
+        {
+          "frame": 116,
+          "dyFit": 9.35,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 9.277053326474563,
+          "error": 0.14999999999999147
+        },
+        {
+          "frame": 117,
+          "dyFit": 9.4,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 6.749203559027921,
+          "error": 0.09999999999999076
+        },
+        {
+          "frame": 118,
+          "dyFit": 9.45,
+          "nativeDyFit": 9.5,
+          "projectedGrayMae": 4.013217056755455,
+          "error": 0.04999999999999005
+        },
+        {
+          "frame": 119,
+          "dyFit": 9.3,
+          "nativeDyFit": 9.4,
+          "projectedGrayMae": 3.2460094762731337,
+          "error": 0.09999999999999076
+        }
+      ],
+      "maxNativeDyFitError": 0.14999999999999147
+    }
+  ]
+}

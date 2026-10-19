@@ -1,0 +1,906 @@
+{
+  "at": "2026-10-19T22:15:17.832989+08:00",
+  "files": [
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/authority.rgba",
+      "bytes": 40550400,
+      "sha256": "956fcf39a6d638bc1ee0ec43a119985c6c08d1f80de4e57d87c95c576bcbc579",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/authority.rgba.gz",
+      "gzipBytes": 448643,
+      "gzipSha256": "f2a3a623a885370bb71d515718e5e58b883c49042870414578d43b52addf7b1e",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-0.rgba",
+      "bytes": 3686400,
+      "sha256": "f6be22605ebaf4ac695872084bb9f97d01c1031a55fbf64efdc158fc47010b8c",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-0.rgba.gz",
+      "gzipBytes": 42634,
+      "gzipSha256": "e57b6651a131e864709befe0ded2c0a8b4ef98e07f875d144e7d51930e3dc23c",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-127.rgba",
+      "bytes": 3686400,
+      "sha256": "491856e4503e2e12bc50a785e059c56cd5e35f11c4e0fc9c5656b01bd2babcaf",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-127.rgba.gz",
+      "gzipBytes": 40227,
+      "gzipSha256": "42b52e26b931ba657f79bc872370d7da07276375a0726fd1dcab7e05395ca8bb",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-15.rgba",
+      "bytes": 3686400,
+      "sha256": "99c1c108589dc1f44fae688150739279454c5603725322d9b4d969a2d7f3bcf8",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-15.rgba.gz",
+      "gzipBytes": 41980,
+      "gzipSha256": "befe9ecb9fb0d565df64a6249c56bc4c3f7e5a6ec654923f37a76487224d2b0e",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-160.rgba",
+      "bytes": 3686400,
+      "sha256": "4065e50729c18517f63ce955c47461e362a41e0e18b607db581edc1d7ed041a0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-160.rgba.gz",
+      "gzipBytes": 41745,
+      "gzipSha256": "c3bf8eab98445a3fa512297fb2c8f541ed810f8b4742f9073918ed463114acd0",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-179.rgba",
+      "bytes": 3686400,
+      "sha256": "aa4b9a3cfe438aa4cbca8f3570da509cdc469cc66faa429b8609a5cee5adf0ac",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-179.rgba.gz",
+      "gzipBytes": 42533,
+      "gzipSha256": "fba415b9b04bf373a9ca7ceb3f46af3e81f4c451d19c3c01f02166845fcbfa1d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-31.rgba",
+      "bytes": 3686400,
+      "sha256": "c33638545695969075fec28d6d71a9599127ece13ad239dde98dd8cf026e9ece",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-31.rgba.gz",
+      "gzipBytes": 41312,
+      "gzipSha256": "3164472847e68e0d92c0960a418efbac8d472b044838925a19802be0447084d1",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-32.rgba",
+      "bytes": 3686400,
+      "sha256": "f04fbd6126ef8c1425ca5a3b40dafe71d759f04a9281acb13f765b30b0f53444",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-32.rgba.gz",
+      "gzipBytes": 41278,
+      "gzipSha256": "ac32fe59dc3f1abd0b701baa855f8c557461266697be35a0514605be807ce4d9",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-33.rgba",
+      "bytes": 3686400,
+      "sha256": "ea63fe1e7f432af4d444d1a3174c0f615d8c1962c7e4c55d0bfcd2d8f494dbcc",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-33.rgba.gz",
+      "gzipBytes": 41224,
+      "gzipSha256": "f4fa2edf8f23db63c2189118248d0b1bf0f4f72538e7e5b7cad7bebe80e30e52",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-47.rgba",
+      "bytes": 3686400,
+      "sha256": "c515c4d17e7c5fb9498ac6fa4bdac5fae7676e392bd546e0009897adf743ea66",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-47.rgba.gz",
+      "gzipBytes": 40648,
+      "gzipSha256": "927360cfa837a6ec988925a753e88fb10c90fca9600f87689373f62a726b2bf3",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-64.rgba",
+      "bytes": 3686400,
+      "sha256": "6b945381e505358890899cd777a588697a80dfba1d5286ec4438b75bd7756bd0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-64.rgba.gz",
+      "gzipBytes": 39873,
+      "gzipSha256": "77c0341ad5789398521dc1d11f8f8e176116f87ad46efa16a556dfacc40f9521",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-90.rgba",
+      "bytes": 3686400,
+      "sha256": "5b8b2594fc4bdbd713d54f5bd28e322058a90cb2128c876e999356f1f8b429bb",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-rolling-90.rgba.gz",
+      "gzipBytes": 35290,
+      "gzipSha256": "70da9d4c9924aa1a905672d953aac6681261dc1d47f7ab184926aa94644de4b3",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-0.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-0.rgba.gz",
+      "gzipBytes": 24686,
+      "gzipSha256": "66fec63ca526c302f438d6c058f68d38af8ce571010ec426b7a87bb714322713",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-14.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-14.rgba.gz",
+      "gzipBytes": 26950,
+      "gzipSha256": "07399256368550d31d3eacf29c2a1ff837f52f3febc663eeb994328828916d4a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-15.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-15.rgba.gz",
+      "gzipBytes": 24687,
+      "gzipSha256": "3a6da7a43e27ca57ae2354e2a16b686fcf86d1a44a937d758600e914611597fb",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-7.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-7.rgba.gz",
+      "gzipBytes": 24686,
+      "gzipSha256": "206dd029c10b431708903aae4ebf72c22d4fbd0767fdf94e6912543a24b3cd2f",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-8.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-8.rgba.gz",
+      "gzipBytes": 26949,
+      "gzipSha256": "b632d9798a0fe270803fedb63f55657bbdac8a41e778bdbbdc9e7cb9bd394f5a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-108.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-108.rgba.gz",
+      "gzipBytes": 24694,
+      "gzipSha256": "2dd9adcea2b06e0f67f60cc6a51cd213c28c4c1520a8777a89f8b7912ae56e40",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-111.rgba",
+      "bytes": 3686400,
+      "sha256": "daba2e0ef9f56dab2a36d535358e78c3bb3dd082ded7a524f0d909e8273cdc46",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-111.rgba.gz",
+      "gzipBytes": 25380,
+      "gzipSha256": "0a1d78272c2e993ac513c384713b883d3719e5e8354fe2dd75ac99cb0e8bb79b",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-20.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-20.rgba.gz",
+      "gzipBytes": 26956,
+      "gzipSha256": "66396d4ae0332dd1544352a2928da7c074a4bc7d4b8e212222c44c570da84add",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-30.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-30.rgba.gz",
+      "gzipBytes": 26956,
+      "gzipSha256": "500250a6ec0c2253a528dd0a00022b8ad78cbc28bb11b991eb68fbb253a6a472",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-31.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-31.rgba.gz",
+      "gzipBytes": 24693,
+      "gzipSha256": "997e8eb8867faa9145c545c321f055bfcf53fc01a69777aa155863857419520a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-9.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-1792415504578-sway-combo-9.rgba.gz",
+      "gzipBytes": 24692,
+      "gzipSha256": "56eb3b2abddda523233a52bd08d38ef5c94d00b9e9428c024997356a164e338d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-0.rgba",
+      "bytes": 3686400,
+      "sha256": "f6be22605ebaf4ac695872084bb9f97d01c1031a55fbf64efdc158fc47010b8c",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-0.rgba.gz",
+      "gzipBytes": 42637,
+      "gzipSha256": "b2057424c7e7a83f3fe18c76cd7623ed768201ccbc1bee3d97f9c0e30114e3fc",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-127.rgba",
+      "bytes": 3686400,
+      "sha256": "491856e4503e2e12bc50a785e059c56cd5e35f11c4e0fc9c5656b01bd2babcaf",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-127.rgba.gz",
+      "gzipBytes": 40230,
+      "gzipSha256": "86e9672205fc246f543050eecf14b2a18f81ce705422858abb9c7b657109b95b",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-15.rgba",
+      "bytes": 3686400,
+      "sha256": "99c1c108589dc1f44fae688150739279454c5603725322d9b4d969a2d7f3bcf8",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-15.rgba.gz",
+      "gzipBytes": 41983,
+      "gzipSha256": "980b11a45d4e5d4acc93ade05fb8211d5ad888c4051194c880662a794a499885",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-160.rgba",
+      "bytes": 3686400,
+      "sha256": "4065e50729c18517f63ce955c47461e362a41e0e18b607db581edc1d7ed041a0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-160.rgba.gz",
+      "gzipBytes": 41748,
+      "gzipSha256": "467aa303a2be8be0ebc9d60ad9c9b76c9fafddc34b2ddf0ecc8ed3d981803ff5",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-179.rgba",
+      "bytes": 3686400,
+      "sha256": "aa4b9a3cfe438aa4cbca8f3570da509cdc469cc66faa429b8609a5cee5adf0ac",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-179.rgba.gz",
+      "gzipBytes": 42536,
+      "gzipSha256": "db8843318c4e1c88d05b8f6854de0b31cfc05469887ff13573e7ba1b1aec476e",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-31.rgba",
+      "bytes": 3686400,
+      "sha256": "c33638545695969075fec28d6d71a9599127ece13ad239dde98dd8cf026e9ece",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-31.rgba.gz",
+      "gzipBytes": 41315,
+      "gzipSha256": "fe81039a6bb23bca207636513c325a7d0944c05fa17f64f05722e416a3332122",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-32.rgba",
+      "bytes": 3686400,
+      "sha256": "f04fbd6126ef8c1425ca5a3b40dafe71d759f04a9281acb13f765b30b0f53444",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-32.rgba.gz",
+      "gzipBytes": 41281,
+      "gzipSha256": "117815495208a57b9d0a3e509b9e7843f64fe550d78b0ede31db2a5051872728",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-33.rgba",
+      "bytes": 3686400,
+      "sha256": "ea63fe1e7f432af4d444d1a3174c0f615d8c1962c7e4c55d0bfcd2d8f494dbcc",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-33.rgba.gz",
+      "gzipBytes": 41227,
+      "gzipSha256": "03cfa0120e4e907efbacc971c7b59dfea85825711ac5f349e311c5eb18033eff",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-47.rgba",
+      "bytes": 3686400,
+      "sha256": "c515c4d17e7c5fb9498ac6fa4bdac5fae7676e392bd546e0009897adf743ea66",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-47.rgba.gz",
+      "gzipBytes": 40651,
+      "gzipSha256": "afc28bbc89fd69507450f6759c645c00c1670b70e842b7d72ddac1b4d40a56d3",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-64.rgba",
+      "bytes": 3686400,
+      "sha256": "6b945381e505358890899cd777a588697a80dfba1d5286ec4438b75bd7756bd0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-64.rgba.gz",
+      "gzipBytes": 39876,
+      "gzipSha256": "38494c16430dde730fd995d1080213843dd3fbd6e9b5aa4d423eaf817df4f698",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-90.rgba",
+      "bytes": 3686400,
+      "sha256": "5b8b2594fc4bdbd713d54f5bd28e322058a90cb2128c876e999356f1f8b429bb",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-rolling-90.rgba.gz",
+      "gzipBytes": 35293,
+      "gzipSha256": "bddfb48ad0d233c9f62808e3689636f0398d0a05e9cb388b520eb00778f39669",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-0.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-0.rgba.gz",
+      "gzipBytes": 24689,
+      "gzipSha256": "5791426012c4d16171b8d630093b3a99e8d74960f434ef59817d1a966859d43c",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-14.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-14.rgba.gz",
+      "gzipBytes": 26953,
+      "gzipSha256": "9772d82b89811b86ca81185f22fcea80db4a4d237be9f5943782cf09eef5c7a5",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-15.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-15.rgba.gz",
+      "gzipBytes": 24690,
+      "gzipSha256": "25d534ee4d1946e08f56bd89b8c84c36b9abae822f5205a4c12c6ec07decd00c",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-7.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-7.rgba.gz",
+      "gzipBytes": 24689,
+      "gzipSha256": "7db93cf3820cfdab5e23605ec6934859aeb8dbf03be22d88d486b4f417d5c9ef",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-8.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-8.rgba.gz",
+      "gzipBytes": 26952,
+      "gzipSha256": "b98e4e8a9f28eaab57e04fbd3717b03050ccfb30f7a0697275af68288fdff2fb",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-108.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-108.rgba.gz",
+      "gzipBytes": 24697,
+      "gzipSha256": "e085b5a92a46e500e6df95e071aa1980ec163f743a5770f2138d76efcbac7903",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-111.rgba",
+      "bytes": 3686400,
+      "sha256": "daba2e0ef9f56dab2a36d535358e78c3bb3dd082ded7a524f0d909e8273cdc46",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-111.rgba.gz",
+      "gzipBytes": 25383,
+      "gzipSha256": "f992dbfebb85a59276d5072d3975715c3ccc161293ff0e7712214aaa4e9693b5",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-20.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-20.rgba.gz",
+      "gzipBytes": 26959,
+      "gzipSha256": "9294cd39debb5078e3a48bacb14a32cc1342f82f3e28ca03e2b7bf40568e5c42",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-30.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-30.rgba.gz",
+      "gzipBytes": 26959,
+      "gzipSha256": "2025f2154ad83d6e7b85f101d16453109b37452b3c9ee59d36c3a23ba6ee959e",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-31.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-31.rgba.gz",
+      "gzipBytes": 24696,
+      "gzipSha256": "0f8515ac039ce4ebe264c70baac6f7f543dde9805c730b91977800362717ef62",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-9.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v2-1792417093839-sway-combo-9.rgba.gz",
+      "gzipBytes": 24695,
+      "gzipSha256": "9f5851c46434310096844c6953ebc0bff616959643d24c612670625c826fe65f",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-0.rgba",
+      "bytes": 3686400,
+      "sha256": "f6be22605ebaf4ac695872084bb9f97d01c1031a55fbf64efdc158fc47010b8c",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-0.rgba.gz",
+      "gzipBytes": 42637,
+      "gzipSha256": "61b1c20ba419cfc4520b5edafb835113bd969026e60742fff62fc4387350f355",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-127.rgba",
+      "bytes": 3686400,
+      "sha256": "491856e4503e2e12bc50a785e059c56cd5e35f11c4e0fc9c5656b01bd2babcaf",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-127.rgba.gz",
+      "gzipBytes": 40230,
+      "gzipSha256": "ed3248d4ea8bd54259b7b10946e2eb141596b9db7fa217e258569ac81b578a0d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-15.rgba",
+      "bytes": 3686400,
+      "sha256": "99c1c108589dc1f44fae688150739279454c5603725322d9b4d969a2d7f3bcf8",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-15.rgba.gz",
+      "gzipBytes": 41983,
+      "gzipSha256": "0d54276338d97ad110c148500e604a81ef9d9601bba1cf0eb020ea381c7062bc",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-160.rgba",
+      "bytes": 3686400,
+      "sha256": "4065e50729c18517f63ce955c47461e362a41e0e18b607db581edc1d7ed041a0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-160.rgba.gz",
+      "gzipBytes": 41748,
+      "gzipSha256": "e806af80af79c73950cb1abafdfe0ac0531ad6c7cbb00c43847808275438a01a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-179.rgba",
+      "bytes": 3686400,
+      "sha256": "aa4b9a3cfe438aa4cbca8f3570da509cdc469cc66faa429b8609a5cee5adf0ac",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-179.rgba.gz",
+      "gzipBytes": 42536,
+      "gzipSha256": "9e5b47057dd502032e3a7831bebf34e3c80f2c082e0e97da2e1cd22921b66288",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-31.rgba",
+      "bytes": 3686400,
+      "sha256": "c33638545695969075fec28d6d71a9599127ece13ad239dde98dd8cf026e9ece",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-31.rgba.gz",
+      "gzipBytes": 41315,
+      "gzipSha256": "ce72e686d025b0acf65fb059a3d83e35b2fd3788d4ca6257dccf041723e90a25",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-32.rgba",
+      "bytes": 3686400,
+      "sha256": "f04fbd6126ef8c1425ca5a3b40dafe71d759f04a9281acb13f765b30b0f53444",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-32.rgba.gz",
+      "gzipBytes": 41281,
+      "gzipSha256": "5fb8ceb479c6c1bcdc9ec3c2aef3915ca0578a3ff024a7b87ae7dacad7177e20",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-33.rgba",
+      "bytes": 3686400,
+      "sha256": "ea63fe1e7f432af4d444d1a3174c0f615d8c1962c7e4c55d0bfcd2d8f494dbcc",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-33.rgba.gz",
+      "gzipBytes": 41227,
+      "gzipSha256": "b35d44cc7e50ae23d6170c735ebdac1d0da939cba79b5bc5f1df6cd3ff10f38c",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-47.rgba",
+      "bytes": 3686400,
+      "sha256": "c515c4d17e7c5fb9498ac6fa4bdac5fae7676e392bd546e0009897adf743ea66",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-47.rgba.gz",
+      "gzipBytes": 40651,
+      "gzipSha256": "c55a8f464c194c6eed0ff3d35cf29f1b695ad9addbf38faf6217daeb7b4adfba",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-64.rgba",
+      "bytes": 3686400,
+      "sha256": "6b945381e505358890899cd777a588697a80dfba1d5286ec4438b75bd7756bd0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-64.rgba.gz",
+      "gzipBytes": 39876,
+      "gzipSha256": "ffad4df7cf1b0b4a596ad7ee73dda48ee288b17f896f43763b8fcead8a608075",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-90.rgba",
+      "bytes": 3686400,
+      "sha256": "5b8b2594fc4bdbd713d54f5bd28e322058a90cb2128c876e999356f1f8b429bb",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-rolling-90.rgba.gz",
+      "gzipBytes": 35293,
+      "gzipSha256": "fe4f96177a75ea14da761455169c8d2f36ddeb96a9c6de356b5accb07bbf2e76",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-0.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-0.rgba.gz",
+      "gzipBytes": 24689,
+      "gzipSha256": "ec561faf4364dfd2c699b9d554d30c15bd9dd66c027b279c5fff6f143b5786cb",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-14.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-14.rgba.gz",
+      "gzipBytes": 26953,
+      "gzipSha256": "5b210b045e4cd2a5b4ae2aa314ebc74c83b18a3c4858e2110f9ac50bf6bb04fc",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-15.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-15.rgba.gz",
+      "gzipBytes": 24690,
+      "gzipSha256": "62458c07daf3448a3e56d17499d444060361d48a67cdcdc8c78d35d5aa23d308",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-7.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-7.rgba.gz",
+      "gzipBytes": 24689,
+      "gzipSha256": "78639d8a8d5e3b49ba808b6924595ea9d9f6788530cf5533499312fec90ceb6f",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-8.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-8.rgba.gz",
+      "gzipBytes": 26952,
+      "gzipSha256": "4b681da7231b6782663d2036a6f13d706d6445ee159f177c239cd038696d0ab1",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-108.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-108.rgba.gz",
+      "gzipBytes": 24697,
+      "gzipSha256": "deb3c67bdf609712545bc2ac518e68e771bf4a6fb2dd7ead8db502a7d63b055f",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-111.rgba",
+      "bytes": 3686400,
+      "sha256": "daba2e0ef9f56dab2a36d535358e78c3bb3dd082ded7a524f0d909e8273cdc46",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-111.rgba.gz",
+      "gzipBytes": 25383,
+      "gzipSha256": "b3e6f7e27d51736c66f595f3c68c156568feb7b87bd5b19fa47391dbadd90be1",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-20.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-20.rgba.gz",
+      "gzipBytes": 26959,
+      "gzipSha256": "20f2081e77e40c9a881042299ec273e0388558d5278ec15b59fa9e663dbe5f3a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-30.rgba",
+      "bytes": 3686400,
+      "sha256": "86ba9686c26fec51f3081ad7e227df343017ccc2f054234008e67f5a0a918e23",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-30.rgba.gz",
+      "gzipBytes": 26959,
+      "gzipSha256": "e43967a1b69c75f2664330b1bebf6d6da51115da375a540a1a27b39377412ee4",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-31.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-31.rgba.gz",
+      "gzipBytes": 24696,
+      "gzipSha256": "8024821ccde8804a103bee535d488d63ebbcf3d8bdb785304b96442eb40ba483",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-9.rgba",
+      "bytes": 3686400,
+      "sha256": "deda2f420b100d2637c6f68819ccb96052d4305ed3418fa4bd640c5e5ebf5490",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/capture-pixels-v3-1792417557476-sway-combo-9.rgba.gz",
+      "gzipBytes": 24695,
+      "gzipSha256": "508583568bd7c49a1021fa9436d8ff72118f4eaf982a40c81ea7c7c89fd047f6",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-16/black.rgba",
+      "bytes": 58982400,
+      "sha256": "a05182031d3fbc8176df34c21a6b9f21186226a0260edff764312ad11c9de92c",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-16/black.rgba.gz",
+      "gzipBytes": 514662,
+      "gzipSha256": "96ec8f69d60898e2f43f0840350fa8b2a379b511ea2d495af43581d1766060b3",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-16/straight.rgba",
+      "bytes": 58982400,
+      "sha256": "9e1be5ef722eb3138ecb6e229744bd827b52f119e9a62e594ef03d61bc16e81b",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-16/straight.rgba.gz",
+      "gzipBytes": 589967,
+      "gzipSha256": "59a0b7f4a16804b14dc6e5a8e86f6f116416c47710f6b4dce0f56db937aca9ed",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-16/white.rgba",
+      "bytes": 58982400,
+      "sha256": "3cea9332243474caf68bbfc4eae64c914f2173f59ca7aa64ba62e1d51e959994",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-16/white.rgba.gz",
+      "gzipBytes": 619409,
+      "gzipSha256": "4895293d745a4c5ff742839bf2970b8fabb0bad04135512b12be7865024eaf74",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-32/black.rgba",
+      "bytes": 117964800,
+      "sha256": "f6f100ac1a8f19e2062cc075b6c0c19b70e76b63c043a76967efb345426cd5e0",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-32/black.rgba.gz",
+      "gzipBytes": 1020557,
+      "gzipSha256": "914556c05094612f8d49474caa064f517ba87d49405d73ab12fd4f42cb38ba83",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-32/straight.rgba",
+      "bytes": 117964800,
+      "sha256": "f71ec9ee0e97177298cee75de3323e80c4719a09ba87f79167b84feb24c99dbc",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-32/straight.rgba.gz",
+      "gzipBytes": 1170946,
+      "gzipSha256": "52c6d8e28f2825bfc25022f632f1266ac5a0dcc0c0ee4767210d05e4e79852ba",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/profile-32/white.rgba",
+      "bytes": 117964800,
+      "sha256": "a1bf6b6f4d1e46afbc8cda38fe52b70699f52d71c5b2224259eee5bbaa8f3dd7",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/profile-32/white.rgba.gz",
+      "gzipBytes": 1226368,
+      "gzipSha256": "b6a54d4dc4afbf4758460f0474a192a37fecda4cd623ac93accec7bf761dd1d1",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-0.rgba",
+      "bytes": 3686400,
+      "sha256": "ae7291509e617541c897236045afb460f7c0eafb8615c535ba62b198596bff57",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-0.rgba.gz",
+      "gzipBytes": 42846,
+      "gzipSha256": "6c6a1c7b7504ead0bf49f3b3b9580146f4971a782429b55ea14c36e42b06aefe",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-127.rgba",
+      "bytes": 3686400,
+      "sha256": "4774000f8c7a4dc18f7380beb5b1bc0d2ab8a87d7fa353cfab857790b59c74d8",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-127.rgba.gz",
+      "gzipBytes": 40533,
+      "gzipSha256": "34e970ce37fb128e678684f6afef54cc22b7ec71bac56f8e82eec0232278eba4",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-15.rgba",
+      "bytes": 3686400,
+      "sha256": "39f89a9786d80abe72a38b86f4f607fd39c96cf66eaac4b7a395b7999d7db3d2",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-15.rgba.gz",
+      "gzipBytes": 42200,
+      "gzipSha256": "fdc85cc35d13ee26e96189bce5668c966fc4e94560a324a50ace35b31274599d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-160.rgba",
+      "bytes": 3686400,
+      "sha256": "aaf7f5767280b57f73302e26c75c35ecf1b55ced87bde2d67b8bcd7ae3bd80ad",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-160.rgba.gz",
+      "gzipBytes": 41961,
+      "gzipSha256": "792cec19eea3d7c5374b9a9ba6c26a66ae9c0902da00cfcd0508f085a4e2863d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-179.rgba",
+      "bytes": 3686400,
+      "sha256": "3466fb9f3cb2970e71d96fbae206798452c848de6f8f5d269c048e342512fcf2",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-179.rgba.gz",
+      "gzipBytes": 42769,
+      "gzipSha256": "0aef272400f10418500636850735d45e11e1efd2dd30b82ea85c1c593aebd261",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-31.rgba",
+      "bytes": 3686400,
+      "sha256": "e476253cc3865ec4935cffa29496452d6c8a6be843cbd1762fdad5b6c86ebd26",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-31.rgba.gz",
+      "gzipBytes": 41489,
+      "gzipSha256": "2068845c63a4f1ffe0ab228a4de0ed7482ee7ebfb28e672074d5b3086fdc8990",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-32.rgba",
+      "bytes": 3686400,
+      "sha256": "dfa00d2bfd7b04bb3d0ddeddc4b57f2d0d77247f9213c15b4b40d07a894a903e",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-32.rgba.gz",
+      "gzipBytes": 41396,
+      "gzipSha256": "adc2615ce7865d44bbc066d1fec88c8df62159ce09d6b266c5e34402fc5e4f45",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-33.rgba",
+      "bytes": 3686400,
+      "sha256": "657cf5bcdc910ce34b1ac1e3eb224f9eb4100382fd2953df41659df35b526a8e",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-33.rgba.gz",
+      "gzipBytes": 41365,
+      "gzipSha256": "f172082097d475de702ce4d524807ca79fda851fa4cc3fb375846e2d527336af",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-47.rgba",
+      "bytes": 3686400,
+      "sha256": "467a9de5e6fbaf59bfaa80063556f4dcf745d0c6c998bb1b77fdb2ed2fcc17da",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-47.rgba.gz",
+      "gzipBytes": 40972,
+      "gzipSha256": "0c7aa4a99a94d9cd24de04a3066a041ec2a9fb44d04ed6bbf43ea2b8f05dea6d",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-64.rgba",
+      "bytes": 3686400,
+      "sha256": "cb79dc15605380cf1821fb7403cee1b1670c5c6b2e29c9f4e2075cebe6fdb64a",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-64.rgba.gz",
+      "gzipBytes": 40150,
+      "gzipSha256": "535441a39d10616c8a2ca9c60f439595174f2dee6649b32e0abfb803d26d193b",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-90.rgba",
+      "bytes": 3686400,
+      "sha256": "183c0f1a318cc6b8df4852eb0ed17db3e55db3405f0ce4bc0c7f373d0280f18b",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-90.rgba.gz",
+      "gzipBytes": 35407,
+      "gzipSha256": "1ca6d6300a4142003eefbaeaebe881a7b4ab3ee2c2550bb4ab99c353c784a9fc",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-0.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-0.rgba.gz",
+      "gzipBytes": 24699,
+      "gzipSha256": "eb9085b75f382d894820de10facb2d32eead4ea61bd3ce17b72a2877ba5e2bdd",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-14.rgba",
+      "bytes": 3686400,
+      "sha256": "de50a933d51f8d38de7aaecda3d58739a39cc5a6fab629f7e25cc0a4613c2ced",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-14.rgba.gz",
+      "gzipBytes": 26992,
+      "gzipSha256": "625b30421d436dd5e50af6e82507f6191532d82ed65b1e249778913c4ebb312a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-15.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-15.rgba.gz",
+      "gzipBytes": 24700,
+      "gzipSha256": "7524da32f612d0df1c087e40d3aa6cfeaf1e172d7dc700afc38b8013dc167ea7",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-7.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-7.rgba.gz",
+      "gzipBytes": 24699,
+      "gzipSha256": "f6d110c024484272a2b33048869d3f304e22453d0208b1ad20bf40716d482879",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-8.rgba",
+      "bytes": 3686400,
+      "sha256": "de50a933d51f8d38de7aaecda3d58739a39cc5a6fab629f7e25cc0a4613c2ced",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-8.rgba.gz",
+      "gzipBytes": 26991,
+      "gzipSha256": "1fc96a99b0c8d4ddecedf1f9275ede0230a3dc880984a16ffaf6ad93c1ecd47a",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-108.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-108.rgba.gz",
+      "gzipBytes": 24707,
+      "gzipSha256": "5f7f8bd59e7fc6fd80230ce041cbad0288ac0b5b889ce6fa181f79acc47bc2de",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-111.rgba",
+      "bytes": 3686400,
+      "sha256": "fb280d53f835d93d5e0144f1a9ed6e3e289efad2a1e71f87494d804ca2397c58",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-111.rgba.gz",
+      "gzipBytes": 25543,
+      "gzipSha256": "3bdbf5802d1c705a0d8697f1f324f244fef91d464402cb4b61eaeba8431ac7ef",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-20.rgba",
+      "bytes": 3686400,
+      "sha256": "de50a933d51f8d38de7aaecda3d58739a39cc5a6fab629f7e25cc0a4613c2ced",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-20.rgba.gz",
+      "gzipBytes": 26998,
+      "gzipSha256": "3ed0e5edc23ac831e8ecaca444f55db9ecbadabc6e3f6605289089c46566ff71",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-30.rgba",
+      "bytes": 3686400,
+      "sha256": "de50a933d51f8d38de7aaecda3d58739a39cc5a6fab629f7e25cc0a4613c2ced",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-30.rgba.gz",
+      "gzipBytes": 26998,
+      "gzipSha256": "cb0cbbdf1ddfe4321d3a1d09f4028efd1c132f9ee63438b5cf379f4608bbc11b",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-31.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-31.rgba.gz",
+      "gzipBytes": 24706,
+      "gzipSha256": "ba1c24c7ac853c337737fe613f41fdb2ac3184b236bb32f6bd62c3389bf697a6",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-9.rgba",
+      "bytes": 3686400,
+      "sha256": "a14eb2a63bde460c45279f23a04da7f092d60c069bcecbc2a440dc79fb14864f",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/reference-sway-combo-9.rgba.gz",
+      "gzipBytes": 24705,
+      "gzipSha256": "735d4b9b2fb8e5b7e6fc523f69ff63e3e11bb055789cce23eefa782f95cd434e",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/sway/authority.rgba",
+      "bytes": 18432000,
+      "sha256": "79b5ad60575f21c4972813851e9c404d3281d57df6319a843e0c415c99456722",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/sway/authority.rgba.gz",
+      "gzipBytes": 127899,
+      "gzipSha256": "dc0fd5b55d4e592007865618d76c2c144352b7a2aaba4daa42130b4a431349aa",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-rolling-v9/sway-combo/authority.rgba",
+      "bytes": 22118400,
+      "sha256": "c7b0fc67d83d43202cfec56a477de87d2c1e993c1bf82fe1dd233765434713ac",
+      "gzipPath": "artifacts/qa/gpu-rolling-v9/sway-combo/authority.rgba.gz",
+      "gzipBytes": 153377,
+      "gzipSha256": "f015415479be7140a4fdd7d61af570873c4ce6bbb3369dd953b7a5eb82853ce0",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-v10/baseline-32/black.rgba",
+      "bytes": 117964800,
+      "sha256": "f6f100ac1a8f19e2062cc075b6c0c19b70e76b63c043a76967efb345426cd5e0",
+      "gzipPath": "artifacts/qa/gpu-v10/baseline-32/black.rgba.gz",
+      "gzipBytes": 1020557,
+      "gzipSha256": "e09218954996dd1f88f4df2165a70f2be2b15f08a469728bd1948773fda8d44b",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-v10/baseline-32/straight.rgba",
+      "bytes": 117964800,
+      "sha256": "f71ec9ee0e97177298cee75de3323e80c4719a09ba87f79167b84feb24c99dbc",
+      "gzipPath": "artifacts/qa/gpu-v10/baseline-32/straight.rgba.gz",
+      "gzipBytes": 1170946,
+      "gzipSha256": "c9f57684a23291bb2c7cd96b9c44a718020923c9d0851d4ff642bbd52c32fb9c",
+      "roundTripVerified": true
+    },
+    {
+      "path": "artifacts/qa/gpu-v10/baseline-32/white.rgba",
+      "bytes": 117964800,
+      "sha256": "a1bf6b6f4d1e46afbc8cda38fe52b70699f52d71c5b2224259eee5bbaa8f3dd7",
+      "gzipPath": "artifacts/qa/gpu-v10/baseline-32/white.rgba.gz",
+      "gzipBytes": 1226368,
+      "gzipSha256": "1055f8067d3acd005f47ab3bcbe6d1fa5b44b6164190afa1ac82b6e547098e12",
+      "roundTripVerified": true
+    }
+  ],
+  "savedBytes": 1278027124
+}

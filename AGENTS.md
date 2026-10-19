@@ -115,3 +115,11 @@
 
 - 同一输出帧不能每个rAF重复prepare/seek/anchor，否则源先EOF时会在末帧重锚循环；先按buffer目标time聚类核HTTP/rAF，再修输出帧gate，每rAF仍保留音频和onTime。
 - 缓存异步前台使用实时pin，外部/内部signal须在首个warm前合并；滚动producer须在自身finally同一微任务释放所有权，避免外置finally丢掉latest窗口。用精确Promise微任务回归验证，不能只靠setTimeout。
+
+## 0.10预设、流式准备与模板经验
+
+- 双底色观测可拼为同一raw帧后背压恢复并送相同PNG encoder，避免整个窗口磁盘/RAM中间副本。逐帧SHA、非对齐buffer、截断/多帧、下游错误、超时及两个子进程回收分别核验；CLI改善不能冒充实际浏览器改善。
+- 逐字alpha身份应先用原公共opacity乘字母相对alpha再量化。空间loop的内容键包含位姿；出场保留最后loop实际输出帧位置，并受源scale/rotation而非出场preset.scale影响。非零片段start必须按绝对输出网格找末loop帧。
+- 单个模板clip、空group_container和3条动画refs不代表只有三层。「雨过是天晴」第四贴纸动画只在content资源树；同时核完整子树、锚点和富字形。初始0帧透明不能据此判全片失败，成功导出模态也不能证明后续帧有效。
+- 色度标签不能替代浏览器真实重建；源降采样、遮罩、重建、编码和读取分别对照。均值改善但极值退步的CPU候选不替换原路径。新UV FBO要实际丢失恢复并在自动ready内先读原帧，保留shader冷编译代价。
+- 原生空间检查失败时只归档本任务可恢复的旧raw，gzip逐一还原核SHA并保存清单；不删生产媒体、不绕过保护。Qt失败后先检查实际选中范围，撤销确认再改，不能用新命名掩盖无效样本。

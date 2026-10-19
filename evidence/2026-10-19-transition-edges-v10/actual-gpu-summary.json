@@ -1,0 +1,357 @@
+{
+  "startedAt": "2026-10-19T14:35:48.699Z",
+  "completedAt": "2026-10-19T14:35:59.307Z",
+  "summary": {
+    "width": 1280,
+    "height": 720,
+    "framesPerKind": 30,
+    "fullRGBPixelsPerFrame": 921600,
+    "allPlaneUniformsTrue": true,
+    "unknownUniformsFalse": true,
+    "allSourceOpaque": true,
+    "allCenteredUniformsTrue": true,
+    "allV1ControlsExplicit": true,
+    "maxMathRGB": 0.4999847412109375,
+    "scope": "Actual v2 and explicit v1 product WebGL2 on same source/frame; all pixels45..74. UV-surface quantization, final reconstruction and native browser MOV separately; per-draw CPU/GPU timer query recorded, seek/reference cost separate. Not a realtime fps benchmark, no native1:1 claim."
+  },
+  "sourceHashes": {
+    "apps/editor/src/preview/webgl.ts": "232a295712b29e869d78236e1e0a4a4ec560b42a381f9f2f980fa3be77ec2b99",
+    "apps/editor/src/preview/plan.ts": "29c12eab09acd275c9b9c2fe8fcd47dcedd51c4bc3613cdcc84d645894467c34",
+    "packages/core/src/transition-edge.ts": "1bb1319ed2455af2d99bbd06e5f10d92f54c9118897ff2798cd6556cae6495cd",
+    "artifacts/qa/plane-edges-v10/probe.ts": "048521b7ae7306252a157856a9769ec9dbf24e4274ad13f7392fb840b851426e",
+    "artifacts/qa/plane-edges-v10/reference.ts": "2878390044e4a0b28e39601b252ec583f33e624270851677b179b6994d48be65"
+  },
+  "cases": [
+    {
+      "id": "wipe",
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "frames": 30,
+      "mathMax": 0.4999542236328125,
+      "mathMean": 0.2657482667359869,
+      "uvMax": 0,
+      "finalFromActualUVMax": 0.4999542236328125,
+      "nativeMax": 35,
+      "nativeMean": 0.6868504533179013,
+      "v1NativeMax": 110,
+      "v1NativeMean": 1.5485409794560185,
+      "newGPUms": {
+        "available": 30,
+        "min": 1.038083,
+        "mean": 1.6200925000000008,
+        "p50": 1.750458,
+        "p95": 1.903249,
+        "max": 2.416666
+      },
+      "v1GPUms": {
+        "available": 30,
+        "min": 0.985583,
+        "mean": 1.4108842333333333,
+        "p50": 1.425416,
+        "p95": 1.727249,
+        "max": 1.85975
+      },
+      "newCPUms": {
+        "available": 30,
+        "min": 2.299999952316284,
+        "mean": 12.849999994039536,
+        "p50": 2.5,
+        "p95": 2.600000023841858,
+        "max": 313.9000000357628
+      },
+      "v1CPUms": {
+        "available": 30,
+        "min": 1.5,
+        "mean": 1.7199999968210855,
+        "p50": 1.699999988079071,
+        "p95": 1.9000000357627869,
+        "max": 2.199999988079071
+      },
+      "queryUnknowns": [],
+      "firstMetrics": {
+        "displayedFrames": 2,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 5,
+        "textureUploads": 3,
+        "framebufferPasses": 3,
+        "transitionDraws": 1,
+        "framebufferCount": 3,
+        "framebufferBytes": 8294400,
+        "framebufferAllocations": 3,
+        "lastCpuMs": 313.9000000357628,
+        "meanCpuMs": 158.84999999403954,
+        "lastDecodeWaitMs": 43.799999952316284,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 45,
+        "activeMedia": 2,
+        "cachedMedia": 2,
+        "contextLosses": 0,
+        "bufferEvents": 0,
+        "coldTextPrepareMs": 0,
+        "lastGpuMs": 0.636458
+      },
+      "lastMetrics": {
+        "displayedFrames": 60,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 208,
+        "textureUploads": 119,
+        "framebufferPasses": 148,
+        "transitionDraws": 59,
+        "framebufferCount": 3,
+        "framebufferBytes": 8294400,
+        "framebufferAllocations": 3,
+        "lastCpuMs": 2.5,
+        "meanCpuMs": 7.323333327968916,
+        "lastDecodeWaitMs": 36,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 74,
+        "activeMedia": 2,
+        "cachedMedia": 2,
+        "contextLosses": 0,
+        "bufferEvents": 0,
+        "coldTextPrepareMs": 0,
+        "lastGpuMs": 1.498124
+      },
+      "unknown": {
+        "pixelFormats": [
+          null
+        ],
+        "edgePolicy": null,
+        "actualPlaneUniform": false,
+        "actualSpatialUniform": 1,
+        "centeredUniform": false,
+        "math": {
+          "meanRGB": 0,
+          "maxRGB": 0,
+          "over1RGB": 0,
+          "over3RGB": 0
+        }
+      }
+    },
+    {
+      "id": "circle",
+      "source": {
+        "id": "a_70afffbae2ef4e9d3f73c335",
+        "path": "/private/tmp/yingxu-transition-grid-v8.mp4",
+        "name": "yingxu-transition-grid-v8.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "5966667",
+          "denominator": "1000000"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "70afffbae2ef4e9d3f73c3352074295a1a4bc61603661544d500536b623dca18",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv444p",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "20000000",
+          "denominator": "662963"
+        },
+        "mime": "video/mp4"
+      },
+      "frames": 30,
+      "mathMax": 0.4999847412109375,
+      "mathMean": 0.2650100385783752,
+      "uvMax": 0,
+      "finalFromActualUVMax": 0.4999847412109375,
+      "nativeMax": 39,
+      "nativeMean": 0.6603526114004629,
+      "v1NativeMax": 150,
+      "v1NativeMean": 1.5939935378086423,
+      "newGPUms": {
+        "available": 30,
+        "min": 1.131666,
+        "mean": 1.7195494333333334,
+        "p50": 1.804916,
+        "p95": 1.907791,
+        "max": 1.948416
+      },
+      "v1GPUms": {
+        "available": 30,
+        "min": 0.874833,
+        "mean": 1.4990132666666667,
+        "p50": 1.593583,
+        "p95": 1.702041,
+        "max": 1.899
+      },
+      "newCPUms": {
+        "available": 30,
+        "min": 2.199999988079071,
+        "mean": 2.500000003973643,
+        "p50": 2.5,
+        "p95": 2.699999988079071,
+        "max": 2.899999976158142
+      },
+      "v1CPUms": {
+        "available": 30,
+        "min": 1.5,
+        "mean": 1.7333333313465118,
+        "p50": 1.699999988079071,
+        "p95": 1.9000000357627869,
+        "max": 2.300000011920929
+      },
+      "queryUnknowns": [],
+      "firstMetrics": {
+        "displayedFrames": 64,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 219,
+        "textureUploads": 126,
+        "framebufferPasses": 155,
+        "transitionDraws": 62,
+        "framebufferCount": 3,
+        "framebufferBytes": 8294400,
+        "framebufferAllocations": 3,
+        "lastCpuMs": 2.899999976158142,
+        "meanCpuMs": 7.010937495157123,
+        "lastDecodeWaitMs": 34.60000002384186,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 45,
+        "activeMedia": 2,
+        "cachedMedia": 2,
+        "contextLosses": 0,
+        "bufferEvents": 0,
+        "coldTextPrepareMs": 0,
+        "lastGpuMs": 0.831666
+      },
+      "lastMetrics": {
+        "displayedFrames": 122,
+        "droppedOutputFrames": 0,
+        "decoderDroppedFrames": 0,
+        "drawCalls": 422,
+        "textureUploads": 242,
+        "framebufferPasses": 300,
+        "transitionDraws": 120,
+        "framebufferCount": 3,
+        "framebufferBytes": 8294400,
+        "framebufferAllocations": 3,
+        "lastCpuMs": 2.299999952316284,
+        "meanCpuMs": 4.680327866898208,
+        "lastDecodeWaitMs": 35.30000001192093,
+        "maxSourceDriftMs": 0,
+        "lastPresentedFrame": 74,
+        "activeMedia": 2,
+        "cachedMedia": 2,
+        "contextLosses": 0,
+        "bufferEvents": 0,
+        "coldTextPrepareMs": 0,
+        "lastGpuMs": 1.514
+      },
+      "unknown": {
+        "pixelFormats": [
+          null
+        ],
+        "edgePolicy": null,
+        "actualPlaneUniform": false,
+        "actualSpatialUniform": 2,
+        "centeredUniform": false,
+        "math": {
+          "meanRGB": 0,
+          "maxRGB": 0,
+          "over1RGB": 0,
+          "over3RGB": 0
+        }
+      }
+    }
+  ],
+  "afterDispose": {
+    "backend": "webgl2",
+    "frameRasters": 0,
+    "previewQuality": "realtime",
+    "state": "disposed",
+    "support": {
+      "supported": true,
+      "reasons": [],
+      "visualLayers": 2,
+      "audioLayers": 0,
+      "maxConcurrentMedia": 2
+    },
+    "renderer": {
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+      "vendor": "Google Inc. (Apple)",
+      "softwareRenderer": false,
+      "maxTextureSize": 16384,
+      "timerAvailable": true
+    },
+    "color": {
+      "contract": "browser-srgb-v1",
+      "drawingBufferColorSpace": "srgb",
+      "unpackColorSpace": "srgb",
+      "unpackConversion": "unknown",
+      "unpackConversionEnum": null,
+      "framebufferFormat": "rgba8",
+      "mixDomain": "encoded-component-values",
+      "premultipliedAlpha": false
+    },
+    "time": 2.033333333333333,
+    "textPreparation": {
+      "status": "idle",
+      "requested": 0,
+      "completed": 0,
+      "uniqueTextures": 0,
+      "bytes": 0,
+      "elapsedMs": 0
+    },
+    "audioState": "uninitialized",
+    "curveAudio": {
+      "cachedClips": 0,
+      "pcmBytes": 0,
+      "routes": []
+    },
+    "metrics": {
+      "displayedFrames": 124,
+      "droppedOutputFrames": 0,
+      "decoderDroppedFrames": 0,
+      "drawCalls": 428,
+      "textureUploads": 246,
+      "framebufferPasses": 304,
+      "transitionDraws": 122,
+      "framebufferCount": 0,
+      "framebufferBytes": 0,
+      "framebufferAllocations": 3,
+      "lastCpuMs": 2.599999964237213,
+      "meanCpuMs": 4.640322578530157,
+      "lastDecodeWaitMs": 34.90000003576279,
+      "maxSourceDriftMs": 0,
+      "lastPresentedFrame": 61,
+      "activeMedia": 2,
+      "cachedMedia": 0,
+      "contextLosses": 0,
+      "bufferEvents": 0,
+      "coldTextPrepareMs": 0,
+      "lastGpuMs": 1.502041
+    },
+    "decoders": []
+  }
+}

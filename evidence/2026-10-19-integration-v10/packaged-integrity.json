@@ -1,0 +1,51 @@
+{
+  "version": "0.10.0",
+  "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261019223703/映序剪辑.app",
+  "sourceCommit": "6f073257e42f9bce495c2598f48be52b8c9ed7b0",
+  "backendHash": "9dd0e48d248842e26ab8a41f2a17e31bee8656f3f31cbbe9fd7b20e56b83c204",
+  "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+  "runtime": "Electron 44.6.0",
+  "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+  "signing": "local ad-hoc; not a notarized installer",
+  "frontend": [
+    {
+      "file": "editor-BUjq-0Sy.js",
+      "sha256": "f954cc64aae268e5646c42b801f5bb178479fbeae89fed536b32db95ff94284b"
+    }
+  ],
+  "codesign": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "actualBootstrapVersion": "0.10.0",
+  "actualEngine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|8050dfaf76419b2c8bed6fe3cccf2bad04c1e70d835ffb941755cbaa8e7ed869",
+  "actualHttpScripts": [
+    {
+      "url": "/assets/editor-BUjq-0Sy.js",
+      "sha256": "f954cc64aae268e5646c42b801f5bb178479fbeae89fed536b32db95ff94284b",
+      "bytes": 127
+    }
+  ],
+  "actualOriginAfterReopen": "http://127.0.0.1:53731",
+  "reopenRevision": 4,
+  "reopenTitle": "0.10 REA 文字组合 · 退出重开验收",
+  "reopenJobs": 1,
+  "allJavaScriptHttpMatched": [
+    {
+      "file": "editor-BUjq-0Sy.js",
+      "bytes": 127,
+      "sha256": "f954cc64aae268e5646c42b801f5bb178479fbeae89fed536b32db95ff94284b"
+    },
+    {
+      "file": "host-DSvnmVwF.js",
+      "bytes": 1707696,
+      "sha256": "16a2e7633b3d5a2c7e0724932a40d638ca04fe982a8a0037de6786c159da87fd"
+    },
+    {
+      "file": "lifecycle-C6MDSKC_.js",
+      "bytes": 3075,
+      "sha256": "762b44498551458a030cdca56ec470bc108ce54d9e94c7d7397cab6b9ad7effb"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+✔ explicit preparation creates more than32 exact PNGs and latest lease protects its working set (2169.253584ms)
+✔ file and byte preparation budgets return honest partial counts without overrunning disk (785.44525ms)
+✔ active preparation cancellation/revision/latest lease never publishes stale ready state (983.305291ms)
+✔ HTTP explicit preparation validates300-frame horizon, revision, token and returns actual completion (844.1785ms)
+✔ GPU preparation verifies responses and old seek cannot publish a late completion (1.020167ms)
+✔ a caller aborts immediately even if preparation provider ignores abort; retry is not clobbered by late old result (1.448417ms)
+✔ external caller signal is merged with internal operation and stale warm cannot begin a disk preparation (0.54025ms)
+✔ bounded batch PNG bytes equal scalar ASS frame output across CFR and NTSC clocks (2846.777458ms)
+✔ batch requests enforce window/byte bounds and share scalar content identities (331.80125ms)
+✔ active batch cancellation and revision changes publish no partial or stale window (2018.883208ms)
+✔ HTTP batch validates strict body and cancels disconnected active subprocess (1230.719208ms)
+✔ sparse alpha fast path preserves exact RGB recovery for all alpha levels and unaligned views (26.509709ms)
+✔ failed encoder terminates its waiting renderer and drains both subprocesses (147.815875ms)
+✔ pipeline cancellation kills both owned subprocesses before rejecting and prevents late success (81.448375ms)
+✔ truncated successful render is rejected rather than encoding a partial window (64.935459ms)
+✔ timeout escalates for a subprocess that ignores SIGTERM and leaves no owned process (2110.64375ms)
+✔ per-letter soft entrance cache identities preserve changing glyph alpha and batch/scalar bytes (1876.735375ms)
+✔ exact paired-frame stream handles split pixels/frames and writable backpressure with bounded buffers (5.460291ms)
+✔ exact stream rejects short and extra frames and propagates sink failures (1.129833ms)
+✔ cancelled fragmented stream stops without writing a later frame (0.825583ms)
+✔ a blocked encoder does not pull an entire32-frame window into JavaScript (29.460708ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6635.266792

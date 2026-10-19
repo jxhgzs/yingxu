@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-19T14:18:31.373587+00:00",
+  "files": {
+    "packages/media/src/text-raster-batch.ts": "3fb8a53ef63e52de6841f6b9f312c9ef44bd2b8948d0cc697860fab9639d64d2",
+    "packages/media/src/text-raster-pixels.ts": "ea7cb660e459b86ff4e6250187adbe37849cd3a811bca92f4a1e90ecd8a531cb",
+    "packages/media/src/text-raster-process.ts": "7223bf2eb6307d9e8ea8446325fef9259608deab5dac4530244f7b0c8ea9d5a4",
+    "packages/media/src/text-raster-stream.ts": "ee3d3e46b9ef0d4ae599d9f4a9390e95f50d12205edc22baf84dda796b562d5f",
+    "apps/service/text-raster.ts": "971ba2980ece18880df0907f4c50ec557e532750bdf42b30016ab78b42bb8397",
+    "test/text-preparation.test.ts": "44997ea573a8cbcfdb26979c91c0118918ae21b0c2aca8d3ae812cdae7f40de7",
+    "test/text-raster-batch.test.ts": "df3724a83f262974c6855d4d75c577671c656f5a4ca287a093478e8e75d2e13c",
+    "test/text-raster-pixels.test.ts": "d23b24bf8025be0d525529c479b0e02fdfb57998468d7b1a8bf3a472102741b4",
+    "test/text-raster-stream.test.ts": "e103d7cd95248d837c55b0124a3ba8bcfe3ba487eb611f6e32a9bc84820a8af5",
+    "test/text-raster-process.test.ts": "7f53dcd04f588220cf65c57e72303380530afdab9f03b555916dac00c1e9b6dc",
+    "test/text-raster-soft-cache.test.ts": "9eeaa5bd42bb1ad08df5e81edfa4e6c1c2ef92c8568553027d272e13b07cf377"
+  }
+}

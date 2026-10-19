@@ -1,0 +1,259 @@
+{
+  "revision": 4,
+  "document": {
+    "schemaVersion": 1,
+    "title": "0.10 REA 文字组合 · 退出重开验收",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "fps": {
+      "numerator": "30",
+      "denominator": "1"
+    },
+    "assets": [
+      {
+        "id": "a_7e035a05d9b0cefc89a12b92",
+        "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7e035a05d9b0cefc89a12b92.mp4",
+        "name": "color-patches.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "2",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad",
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4",
+        "frameTiming": "cfr30",
+        "pixelFormat": "yuv420p",
+        "verifiedDisplayTransform": "identity"
+      },
+      {
+        "id": "v10-text-asset",
+        "kind": "text",
+        "path": "",
+        "duration": {
+          "numerator": "3600",
+          "denominator": "1"
+        }
+      }
+    ],
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "v10-video",
+            "materialId": "a_7e035a05d9b0cefc89a12b92",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "opacity": 1,
+              "flipX": false,
+              "flipY": false
+            },
+            "volume": 0.3
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": [
+          {
+            "id": "v10-text",
+            "materialId": "v10-text-asset",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "opacity": 1,
+              "flipX": false,
+              "flipY": false
+            },
+            "text": {
+              "content": "打字 跳动 缩小组合",
+              "size": 60,
+              "color": "#ffffff",
+              "font": "Source Han Sans SC Medium",
+              "outline": 1,
+              "shadow": 1
+            },
+            "textAnimations": [
+              {
+                "phase": "in",
+                "kind": "typewriter-soft",
+                "duration": {
+                  "numerator": "3",
+                  "denominator": "10"
+                }
+              },
+              {
+                "phase": "out",
+                "kind": "zoom-out",
+                "duration": {
+                  "numerator": "2",
+                  "denominator": "5"
+                }
+              },
+              {
+                "phase": "loop",
+                "kind": "bounce",
+                "duration": {
+                  "numerator": "7",
+                  "denominator": "10"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "canUndo": true,
+  "canRedo": false,
+  "id": "2744eae0-48e6-4634-8ab3-68b0e8c0ddf8",
+  "updatedAt": "2026-10-19T14:42:05.876Z",
+  "documentHash": "9accf3023d60dfc66d3ed6bf1e8535e4b65fe903944d4c14c3054ce8a0864e48",
+  "diagnostics": [],
+  "jobs": [
+    {
+      "id": "9a7a0134-c6b8-4c95-9bb1-26024e88b9f3",
+      "projectId": "2744eae0-48e6-4634-8ab3-68b0e8c0ddf8",
+      "requestId": "89366478-e062-4a59-af24-06aecd6c3785",
+      "kind": "export",
+      "status": "completed",
+      "documentRevision": 3,
+      "documentHash": "58abaecf58b20f5c08cadeb5d7a34ce11197823f798c262f454fe0aa84552a58",
+      "inputHashes": [
+        {
+          "id": "a_7e035a05d9b0cefc89a12b92",
+          "sha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad"
+        }
+      ],
+      "protocolVersion": 1,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|8050dfaf76419b2c8bed6fe3cccf2bad04c1e70d835ffb941755cbaa8e7ed869",
+      "progress": 1,
+      "createdAt": "2026-10-19T14:40:23.944Z",
+      "exportSettings": {
+        "format": "mp4",
+        "size": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "videoCodec": "h264",
+        "audioSampleRate": 44100,
+        "audioBitrateKbps": 192
+      },
+      "resolvedExport": {
+        "version": 1,
+        "format": "mp4",
+        "extension": "mp4",
+        "mime": "video/mp4",
+        "audioOnly": false,
+        "hasAudio": true,
+        "width": 1280,
+        "height": 720,
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "videoCodec": "h264",
+        "audioSampleRate": 44100,
+        "audioBitrateKbps": 192,
+        "startFrame": 0,
+        "endFrame": 60,
+        "frameCount": 60,
+        "actualStart": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "duration": 2
+      },
+      "completedAt": "2026-10-19T14:40:25.320Z",
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "frameCount": 60,
+        "duration": 2,
+        "format": "mp4",
+        "extension": "mp4",
+        "mime": "video/mp4",
+        "url": "/renders/9a7a0134-c6b8-4c95-9bb1-26024e88b9f3/video",
+        "downloadUrl": "/renders/9a7a0134-c6b8-4c95-9bb1-26024e88b9f3/download"
+      }
+    }
+  ]
+}

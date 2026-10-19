@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-19T14:46:08.363594+00:00",
+  "ports": {
+    "8838": {
+      "connectEx": 61,
+      "stopped": true
+    },
+    "8839": {
+      "connectEx": 61,
+      "stopped": true
+    },
+    "8841": {
+      "connectEx": 61,
+      "stopped": true
+    }
+  },
+  "nativeProcessAbsent": true,
+  "originalDraftSha256": "fbdb4f89720816fbffcb9cc42cc3236d3ef641da771ff78da0d348abc8a48a82",
+  "openDesktopProcesses": [
+    "91033 /Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261019223703/映序剪辑.app/Contents/MacOS/Electron"
+  ],
+  "productionChanges": false
+}

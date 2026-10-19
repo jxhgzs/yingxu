@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-19T14:41:33.321703+00:00",
+  "ownedPID": 89357,
+  "beforeCommand": "node artifacts/qa/plane-edges-v10/server.mjs",
+  "signal": "SIGTERM",
+  "execSession": 22639,
+  "execExitCode": 143,
+  "psExitCode": 1,
+  "psOutput": "",
+  "port": 8841,
+  "connectEx": 61,
+  "pidAbsent": true,
+  "listenerAbsent": true,
+  "termination": "owned SIGTERM; exec reported143"
+}

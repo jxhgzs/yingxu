@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "id": "soft-six",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        0,
+        3,
+        6,
+        11,
+        15,
+        30
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "1dd099c54d566b27e8c7ae67610ddc68842abc94192c7d6a2252498d72280852",
+        "fb9ffde7dbe5825a6c80a42bced6452acb31132f655246b6b9bf8145a73b9630",
+        "0efa154a7b85de232f1351dcd97ee6c44793c8fbe85274792b4f51cc620348b2",
+        "d7630d8800f25217239f2469f715c4522ab27204654a59c325acc44e6f07d31b",
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f",
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f"
+      ]
+    },
+    {
+      "id": "soft-mixed",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        0,
+        3,
+        6,
+        11,
+        15,
+        30
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "1dd099c54d566b27e8c7ae67610ddc68842abc94192c7d6a2252498d72280852",
+        "8d766c1c123e71917a468469e08a181a5f9c07b1d62e1f73945a98621f5856e8",
+        "878af4f2c45f1ed567e576143fc2d4048239f20bb54320a79a7187f1b8c5586e",
+        "049f43277f69ba9c46cb8d881ceb584ffcba94196fec9b24b02a0bac533f84a0",
+        "49632db82926b3f320a8c8063af5555abd29d0b02ee6772fb18fae72f7837d60",
+        "49632db82926b3f320a8c8063af5555abd29d0b02ee6772fb18fae72f7837d60"
+      ]
+    },
+    {
+      "id": "bounce",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        15
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f",
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f",
+        "819dd4544ee6f0b393d16fdfea47272851b53a8fb21db92553aefdc68db67999",
+        "819dd4544ee6f0b393d16fdfea47272851b53a8fb21db92553aefdc68db67999",
+        "4052d87c5474a77c2cc3dce38e9b5f1ea2da378e50666455170470b186da0551",
+        "d2d435785aaa5a6c33e43cf700628d77a868486e9140c5643922242a3ea9c054",
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f"
+      ]
+    },
+    {
+      "id": "mixed-soft-bounce-shrink",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        3,
+        9,
+        17,
+        107,
+        114
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "bf461c26f1d70d50d48694ce6d59b8bd4d50f220b1a3e0ca3f906efa80b7eab4",
+        "49632db82926b3f320a8c8063af5555abd29d0b02ee6772fb18fae72f7837d60",
+        "a88e708591fa84f3d7710de82a049de09485033246d45f1683218ded7c6dfb1a",
+        "7adb977d44a1b4257adb0538eb93fc245d712473dd7f3d5aac4f4013e2ac7074",
+        "e8ce40e70c3b7f832596d5997efa93806126ec2ec656996473c75aadb53aeff7"
+      ]
+    },
+    {
+      "id": "shrink",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        0,
+        105,
+        108,
+        112,
+        115,
+        119
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f",
+        "1a72cf5fbda241d262cd553855d0d2303100fee53d5a60bd99022118689a656f",
+        "6ed40ee3a5aed0f028e5f435f03b06541aed365b90445fb14153c8dfff652a2a",
+        "51e46f7e01853725ffc795c98717a5e14d8443f9c0535037d199ebecd9b9c2ef",
+        "5d0c1689765601640dd24897bee339b9fcdee0e6979b5872e18850e135997ef9",
+        "23040cf3040a0e278267c2329756ffb3ce2a6cf08c5e72cc21e82ef2f61a05a6"
+      ]
+    },
+    {
+      "id": "soft-bounce-shrink",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "numerator": "30",
+        "denominator": "1"
+      },
+      "frames": [
+        0,
+        3,
+        9,
+        17,
+        30,
+        31,
+        107,
+        108,
+        111,
+        114,
+        119
+      ],
+      "scalarBatchByteIdentical": true,
+      "pngSha256": [
+        "1dd099c54d566b27e8c7ae67610ddc68842abc94192c7d6a2252498d72280852",
+        "632990bd03ebfa685d748ce2d57db6bc3d4113a337b8f9e8c54e1b63980c16bb",
+        "d0a03fe4f82dde3962f3c91b6f604bc52b9c2651829bd4dca21b2727d90f21d1",
+        "53fdd97a17c13c02d4d1823cfbbb10dc05201d3b020b3338c58054db0a3c6476",
+        "f544220911ab1f586841b344ec235a918a0f861f91bf7bbf52e4b6ce856970af",
+        "d0a03fe4f82dde3962f3c91b6f604bc52b9c2651829bd4dca21b2727d90f21d1",
+        "667c7c0c0d93940371e201fb55c7be4eecc83b4ca2163265fee5d15bcf4dad8d",
+        "667c7c0c0d93940371e201fb55c7be4eecc83b4ca2163265fee5d15bcf4dad8d",
+        "93e7432ba57ca9fb25e074f15df4601777c25cdc41f250a4e8b5814dafd1b768",
+        "f829530b726e319b06696121672efa8ed2318ec660fcd71a6e769fe9150813f5",
+        "22a5e07fb7121dbf85a231548d119bbfd73942bfa59e09382bcee5be9d88d569"
+      ]
+    }
+  ],
+  "frames": 41,
+  "scope": "Actual rasterText and rasterTextFrames PNG byte equality, same full original ASS authority."
+}
