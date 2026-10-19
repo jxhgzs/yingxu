@@ -26,4 +26,6 @@
 
 40项自动测试通过，日志`artifacts/qa/expansion/full-export-tests.log`；类型检查与生产构建通过。新增原生用例真实输出六种格式并完整解码，验证HEVC、MOV容器标记、采样率、尺寸、帧数和编号源的区间首帧。真实HTTP覆盖设置幂等冲突、MP3/GIF、下载类型/后缀/字节和持久设置，原206/取消/关闭检查保留。
 
+0.2.0桌面开发包生成于`artifacts/desktop/20261019114815/映序剪辑.app`，源提交`5b61676`，backend SHA `bfd9c9c776f8d21516e0c350f606d09764b8ac6a7137380fdc813be5b47b8c21`。实际正常退出0.1后用新app打开原自有测试工程，UI导出MOV任务`731ac90d-d5be-4c73-8aab-56e21f692506`，1280×720、180帧、6秒；正常退出重开后工程和已完成MOV任务保持，下载文件完整解码退出0。记录在`artifacts/qa/expansion/desktop-v2-verification.json`，界面证据`artifacts/ui/desktop-v2-mov-completed.png`。这是本机依赖FFmpeg的ad-hoc开发包，不是公证安装器。
+
 仍未对齐目标全部可选项、编码字节、码率策略、色彩/HDR/硬件编码、GIF调色板视觉和压缩音频延迟；音频输出为立体声混音，不能据此称完整导出一致。预览仍为后台FFmpeg合成。已有关键帧及源时钟支持是独立编辑器功能，剪映含未知关键帧/效果的草稿仍保持只读诊断，不静默丢弃。
