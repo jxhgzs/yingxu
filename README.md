@@ -19,6 +19,8 @@
 - [0.3.1关键帧裁切及桌面验证](docs/qa/2026-10-19-keyframe-trim-integration.md)
 - [0.3.2音频淡入淡出验证](docs/qa/2026-10-19-audio-fade-integration.md)
 - [0.4基础调节、转场和GPU预览验证](docs/qa/2026-10-19-effects-transitions-gpu.md)
+- [0.6有声曲线、真实混音与桌面验证](docs/qa/2026-10-19-gpu-audible-curves.md)
+- [REA温度与色调原生对照（候选）](docs/qa/2026-10-19-native-temperature.md)
 
 原始分析、反汇编、六份草稿快照和实际导出文件保留在相邻目录 `../剪映5.9.0复刻分析_20261018/`。本仓库不修改这些基线文件，也不修改 `../../视频生产平台/` 的既有产品和数据。
 

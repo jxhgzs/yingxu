@@ -35,7 +35,7 @@ AudioWorklet在实际gain输出后旁路捕获，同时保留原speaker destinat
 
 独立审查发现：PCM先失败而视频仍加载，较晚video.ready拒绝可能无人订阅，出现unhandledRejection。DecodedMedia现在立即观察ready拒绝，并保留原promise让后续await仍收到实际错误。新增回归覆盖原prepare/fallback、迟到解码错误和加载中cancel/dispose；没有用吞掉错误冒充成功。
 
-本轮全量196项测试、类型检查与桌面构建通过。包括真实R3生成、gain-neutral WAV一致性、SHA/注册路径/修订冲突、队列/缓存上限、R3真实PID取消与HTTP断连、PCM格式/finite/内存、目标offset、恒速/曲线路由共存、源音量/qsin、旧source stop及未处理promise路径。全部基线与最终桌面操作在下节补记。
+本轮全量196项测试、类型检查与桌面构建通过。包括真实R3生成、gain-neutral WAV一致性、SHA/注册路径/修订冲突、队列/缓存上限、R3真实PID取消与HTTP断连、PCM格式/finite/内存、目标offset、恒速/曲线路由共存、源音量/qsin、旧source stop及未处理promise路径。九项基线与最终桌面操作见下节。
 
 温度/色调候选与原生新证据单列[REA记录](2026-10-19-rea-temperature.md)，未因此开放未经完整GPU/导出集成的控件。
 
@@ -44,3 +44,17 @@ AudioWorklet在实际gain输出后旁路捕获，同时保留原speaker destinat
 独立8836页面增加原创1000Hz常速WAV，volume=.5，与原440/660Hz曲线片段同区间。实际gain后分别捕获constant、curve与mix三路，保持speaker输出。59/59画面准确、0输出跳帧，曲线video每帧paused/muted；只有1个AudioContext、1个MediaElementSource、1个BufferSource与1次curve start。常速1000Hz幅度.04418457，符合单次.5增益；混合两声道RMS与两分支实际采样和的误差1.32e-9/1.14e-9。该检验确认混音与无重复路径，不证明普通HTML媒体和PCM在所有设备上采样级相位锁定。完整worklet时间戳仍保留启动空块，49.93ms最大源时钟统计另见原始manifest，不以0画面跳帧抹除。
 
 证据为 `mixed-integration.json`、`mixed-analysis.json`、`mixed-browser.png`。全量九个基线回放通过；原始测试/构建日志保留ignored artifacts/qa。
+
+## 0.6桌面交付验证
+
+实际构建包为 `artifacts/desktop/20261019170909/映序剪辑.app`，版本0.6.0，源提交 `8476f268c2247dab3de029a77a318d7714e8ebc7`，backend SHA `9df695bdbcabf339d49efe5419803b81f7e31878aff80db214a60492a56725df`，Electron44.6.0。`codesign --verify --deep --strict`通过；仅本地ad-hoc，仍依赖本机FFmpeg/FFprobe/Rubberband，未公证分发。
+
+正常退出0.5后启动该0.6包，打开独立有声曲线工程，实际播放与暂停逐帧后恢复均走GPU，显示输出/解码掉帧0/0；本样例没有整片preview作业，仅1个完成export作业。实际桌面导出、点击下载、保存后完整解码通过：H264/AAC MP4、1280×720、30fps、59帧、视频1.966667秒，音频track1.966009秒，解码87040样本包含编码填充，不把两者时长混为完全相同。
+
+导出59帧中心编码色块全部匹配已校准源帧。音频finite、peak.299484；与独立R3中性WAV＋源音量/qsin计算直接比较，不搜索时间偏移：84671样本相关系数.9997085、RMS比.979854、RMS误差.0011684。此测量保留约2%幅度差异，尚未隔离编码与包络实现贡献，不称逐采样完全一致，也未实际听审。下载文件SHA `f883754fc1c49702cdc5bef1b0933ea8a532cac4381bc9aa4d12a2e711f490a7`。
+
+未失焦修改工程名称后Cmd+Q，确认原包主进程退出，再重开0.6；名称保存、revision1，曲线/区间/音量关键帧/qsin字段与原工程完全保留，完成导出任务不重跑。重开定位首次841.9ms属于实际准备观测，不用播放阶段17.6ms代替冷定位耗时。界面AX曾显示过期下载href，实际点击保存面板显示正确新工程ID；正常重建AX后href更新，未据缓存读数修改产品逻辑。
+
+打包文件提供的生命周期页完成20次mount/dispose：DOM残留0、迟到变化0、dispose后请求0；真实WEBGL_lose_context恢复后采样像素一致，contextLosses1、未自动播放。该恢复用例为既有GPU样例，不能外推为曲线音频播放中所有context丢失情形已验收。详细桌面状态、probe、声音对比、截图与lifecycle.txt均在同名evidence目录。
+
+196/196测试、vue-tsc与桌面构建、9/9基线均通过；构建仍有大chunk提示。当前成果解决有界曲线音频播放链路；完整特效/转场资源、文字动画、调色项集成、长工程性能、原生音频算法、映序宿主接入和完整1:1继续保留未完成状态。

@@ -1,0 +1,10 @@
+{
+  "reference": "independent R3 target WAV + source-clock linear gain + target qsin envelope; compared directly without lag search",
+  "samplesCompared": 84671,
+  "sampleRate": 44100,
+  "correlation": 0.9997085146088587,
+  "RMSRatio": 0.9798540230023788,
+  "unshiftedRMSError": 0.001168357589871457,
+  "actualListening": false,
+  "nativeJianyingSampleParity": false
+}

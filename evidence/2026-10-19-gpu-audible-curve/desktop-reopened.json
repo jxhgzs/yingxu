@@ -1,0 +1,216 @@
+{
+  "revision": 1,
+  "document": {
+    "schemaVersion": 1,
+    "title": "Desktop 0.6.0 有声曲线 · 重开验证",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "fps": {
+      "numerator": "30",
+      "denominator": "1"
+    },
+    "assets": [
+      {
+        "id": "a_7620a412033b63596fcc54f6",
+        "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7620a412033b63596fcc54f6.mp4",
+        "name": "audible-curve-probe.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "6",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true,
+        "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785",
+        "colorSpace": {
+          "matrix": "bt709",
+          "range": "tv"
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "v",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "c",
+            "materialId": "a_7620a412033b63596fcc54f6",
+            "source": {
+              "start": {
+                "numerator": "1",
+                "denominator": "10"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "983333",
+                "denominator": "500000"
+              }
+            },
+            "speed": {
+              "numerator": "1500000",
+              "denominator": "983333"
+            },
+            "editableTiming": true,
+            "speedCurve": {
+              "points": [
+                {
+                  "x": 0,
+                  "y": 1
+                },
+                {
+                  "x": 0.25,
+                  "y": 1
+                },
+                {
+                  "x": 0.5,
+                  "y": 5.375
+                },
+                {
+                  "x": 0.75,
+                  "y": 1
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ]
+            },
+            "audioFade": {
+              "curve": "qsin",
+              "inDuration": {
+                "numerator": "1",
+                "denominator": "5"
+              },
+              "outDuration": {
+                "numerator": "3",
+                "denominator": "10"
+              }
+            },
+            "animations": [
+              {
+                "property": "volume",
+                "points": [
+                  {
+                    "id": "v0",
+                    "time": {
+                      "numerator": "1",
+                      "denominator": "10"
+                    },
+                    "value": 0.4,
+                    "interpolation": "linear"
+                  },
+                  {
+                    "id": "v1",
+                    "time": {
+                      "numerator": "31",
+                      "denominator": "10"
+                    },
+                    "value": 1.2,
+                    "interpolation": "linear"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "canUndo": true,
+  "canRedo": false,
+  "id": "53aceff6-5e16-4a42-88e0-8e3c29cb19c5",
+  "updatedAt": "2026-10-19T09:11:39.202Z",
+  "documentHash": "9b4cd780aef75d8d3f439056f6503787ed3d1b6174739bab8b4496dafe714048",
+  "diagnostics": [],
+  "jobs": [
+    {
+      "id": "3c9cfbbf-23fa-47a0-b606-289b6aa31995",
+      "projectId": "53aceff6-5e16-4a42-88e0-8e3c29cb19c5",
+      "requestId": "92925096-a6d1-4e88-b6de-d006f41fd726",
+      "kind": "export",
+      "status": "completed",
+      "documentRevision": 0,
+      "documentHash": "c9d49bd904f94e3d95737a182c051a5742d00a8f248dad40b9cbab78554d5ca3",
+      "inputHashes": [
+        {
+          "id": "a_7620a412033b63596fcc54f6",
+          "sha256": "7620a412033b63596fcc54f670d3be440190497d433c96a42373c67de1a5b785"
+        }
+      ],
+      "protocolVersion": 1,
+      "engine": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers|yingxu-reference-v4|bc9a69cf3260ed3181fbabb71ea482aa967ed142c3b3dceda4eadcbee2535b7d",
+      "progress": 1,
+      "createdAt": "2026-10-19T09:10:26.231Z",
+      "exportSettings": {
+        "format": "mp4",
+        "size": {
+          "width": 1280,
+          "height": 720
+        },
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "videoCodec": "h264",
+        "audioSampleRate": 44100,
+        "audioBitrateKbps": 192
+      },
+      "resolvedExport": {
+        "version": 1,
+        "format": "mp4",
+        "extension": "mp4",
+        "mime": "video/mp4",
+        "audioOnly": false,
+        "hasAudio": true,
+        "width": 1280,
+        "height": 720,
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "videoCodec": "h264",
+        "audioSampleRate": 44100,
+        "audioBitrateKbps": 192,
+        "startFrame": 0,
+        "endFrame": 59,
+        "frameCount": 59,
+        "actualStart": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "duration": 1.9666666666666666
+      },
+      "completedAt": "2026-10-19T09:10:27.700Z",
+      "result": {
+        "width": 1280,
+        "height": 720,
+        "frameCount": 59,
+        "duration": 1.966667,
+        "format": "mp4",
+        "extension": "mp4",
+        "mime": "video/mp4",
+        "url": "/renders/3c9cfbbf-23fa-47a0-b606-289b6aa31995/video",
+        "downloadUrl": "/renders/3c9cfbbf-23fa-47a0-b606-289b6aa31995/download"
+      }
+    }
+  ]
+}
