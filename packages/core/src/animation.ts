@@ -34,7 +34,8 @@ export function sourceTimeAt(clip:Clip, targetTime:Rational):Rational{
 }
 export function targetTimeAt(clip:Clip, sourceTime:Rational):Rational{
   if(clip.speedCurve){
-    let delta=sub(sourceTime,clip.source.start);if(compare(delta,ZERO)<0)delta=ZERO;if(compare(delta,clip.source.duration)>0)delta=clip.source.duration;
+    const covered=curveSourceDelta(clip.speedCurve,clip.source.duration,clip.target.duration,clip.target.duration),end=compare(covered,clip.source.duration)>0?covered:clip.source.duration;
+    let delta=sub(sourceTime,clip.source.start);if(compare(delta,ZERO)<0)delta=ZERO;if(compare(delta,end)>0)delta=end;
     return add(clip.target.start,curveTargetDelta(clip.speedCurve,clip.source.duration,clip.target.duration,delta));
   }
   return add(clip.target.start,div(sub(sourceTime,clip.source.start),clip.speed));

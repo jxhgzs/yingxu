@@ -18,7 +18,7 @@ export function timecode(seconds: number, fps = 30) {
 export function createEditorController(options: EditorOptions = {}) {
   const api = new EditorAPI(options.apiBase), state = shallowRef<ProjectState | null>(null), assets = shallowRef<Asset[]>([]), projects = shallowRef<ProjectSummary[]>([]);
   const selectedId = ref<string | null>(null), playhead = ref(0), playing = ref(false), error = ref(''), busy = ref(false), loading = ref(true);
-  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), zoom = ref(88), snap = ref(true);
+  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
   let disposed = false, loadEpoch = 0, pollTimer: ReturnType<typeof setTimeout> | undefined, previewTimer: ReturnType<typeof setTimeout> | undefined;
   let activePreview: string | null = null, queue: Promise<unknown> = Promise.resolve(), pending = 0;
   const doc = computed(() => state.value?.document);
@@ -163,7 +163,7 @@ export function createEditorController(options: EditorOptions = {}) {
   function seek(time: number) {playhead.value = Math.min(Math.max(0,doc.value?toNumber(atFrame(time,doc.value.fps)):time),total.value);}
   function dispose() {disposed = true; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
   async function flush() {await queue;}
-  return {api, state, doc, assets, projects, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, zoom, snap, total, readOnly,
+  return {api, state, doc, assets, projects, selectedId, selected, playhead, playing, error, busy, loading, jobs, preview, previewPending, zoom, snap, trimFollowing, total, readOnly,
     initialize, loadProject, edit, guard, report, schedulePreview, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;

@@ -59,6 +59,29 @@ export function curveDuration(curve:SpeedCurve,sourceDuration:Rational,fps:Ratio
   return rational(BigInt(microseconds.numerator)/BigInt(microseconds.denominator),1000000);
 }
 
+/** Direct trim uses the native constructor's lower-edge tolerance, then its upward getter.
+ * This intentionally differs from new-curve duration and never rewrites stored ranges. */
+export function curveTrimDuration(curve:SpeedCurve,sourceDuration:Rational,fps:Rational):Rational{
+  const raw=Math.trunc(nativeTime(sourceDuration,true)/curveAverageSpeed(curve)),result=alignCurveTrimTime(micros(raw),fps);
+  if(compare(result,rational(0))<=0)throw Error('CURVE_DURATION_EMPTY');return result;
+}
+
+/** Current native UI's aligned factory: integer-second origin and lower-frame tolerance. */
+export function alignCurveTrimTime(time:Rational,fps:Rational):Rational{
+  validFps(fps);
+  const raw=nativeTime(time),period=1000000/toNumber(fps);
+  const whole=Math.trunc(raw/1000000)*1000000,partial=(raw%1000000)/period,lower=Math.trunc(partial);
+  const frames=Math.abs(partial-lower)<800/period?lower:partial;
+  const result=Math.trunc(whole+Math.ceil(frames)*period);
+  return micros(result);
+}
+
+/** A drag converts a target delta by the curve's average, truncating toward zero in microseconds. */
+export function curveTrimSourceDelta(curve:SpeedCurve,targetDelta:Rational):Rational{
+  const us=toNumber(mul(targetDelta,usPerSecond)),result=Math.trunc(us*curveAverageSpeed(curve));
+  if(!Number.isSafeInteger(result))fail();return micros(result);
+}
+
 function spans(curve:SpeedCurve,duration:number):Span[]{
   const {x,y}=sequencePoints(curve),out:Span[]=[];
   for(let i=1;i<x.length;i++){
@@ -99,7 +122,8 @@ export function curveSourceDelta(curve:SpeedCurve,sourceDuration:Rational,target
 /** Inverse media mapping. Queries beyond the curve's covered source area return the explicit target end. */
 export function curveTargetDelta(curve:SpeedCurve,sourceDuration:Rational,targetDuration:Rational,sourceDelta:Rational):Rational{
   const times=mappingTimes(sourceDuration,targetDuration,sourceDelta);
-  if(compare(sourceDelta,sourceDuration)>0)fail();
+  const covered=curveSourceDelta(curve,sourceDuration,targetDuration,targetDuration);
+  if(compare(sourceDelta,sourceDuration)>0&&compare(sourceDelta,covered)>0)fail();
   let remaining=times.delta;
   for(const span of spans(curve,times.target)){
     const width=span.end-span.start,full=area(span,width);

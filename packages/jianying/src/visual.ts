@@ -32,6 +32,7 @@ export function importKnownVideoVisual(segment:Raw,material:Raw,materials:Raw,kn
     canvases:v=>v.type==='canvas_color'&&v.blur===0&&blank(v.color)&&blank(v.image)&&blank(v.image_id)&&blank(v.album_image),
     sound_channel_mappings:v=>v.audio_channel_mapping===0&&v.is_config_open===false&&blank(v.type),
     vocal_separations:v=>v.type==='vocal_separation'&&v.choice===0&&blank(v.production_path)&&v.time_range===null,
+    material_animations:v=>v.type==='sticker_animation'&&Array.isArray(v.animations)&&v.animations.length===0&&v.multi_language_current==='none',
   };
   for(const ref of segment.extra_material_refs){
     const matches=Object.entries(materials).flatMap(([kind,values])=>Array.isArray(values)?values.filter(v=>v&&v.id===ref).map(v=>({kind,value:v})):[]);

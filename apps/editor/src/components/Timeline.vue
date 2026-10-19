@@ -5,6 +5,7 @@ import type {Clip, Track} from '../../../../packages/core/src/document.ts';
 import {atFrame, timecode} from '../controller.ts';
 import {toNumber, add, mul, sub, compare, rational} from '../../../../packages/core/src/time.ts';
 import Icon from './Icon.vue';
+import {curveTrimSourceDelta,curveNearestFrame} from '../../../../packages/core/src/curve-speed.ts';
 import {targetTimeAt} from '../../../../packages/core/src/animation.ts';
 const props = defineProps<{c: EditorController}>();
 const scroller = ref<HTMLElement>(), scrollLeft = ref(0), viewport = ref(1400);
@@ -35,7 +36,7 @@ function seek(event: PointerEvent) {
 }
 function begin(event: PointerEvent, clip: Clip, track: Track, mode: 'move'|'left'|'right') {
   props.c.selectedId.value=clip.id;
-  if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value||clip.speedCurve&&mode!=='move')return;
+  if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value||clip.speedCurve&&clip.animations?.length&&mode!=='move')return;
   (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
   drag.value={id:clip.id,mode,originX:event.clientX,delta:0,trackId:track.id,destination:track.id,original:structuredClone(clip)};
 }
@@ -57,11 +58,11 @@ function finish() {
   const clip=d.original,fps=props.c.doc.value!.fps;
   if(d.mode==='move')props.c.guard(()=>props.c.edit({type:'clip.move',clipId:d.id,trackId:d.destination,start:snapTime(toNumber(clip.target.start)+d.delta,clip)}));
   else if(d.mode==='right'){
-    const end=snapTime(toNumber(add(clip.target.start,clip.target.duration))+d.delta,clip);
-    props.c.guard(()=>props.c.edit({type:'clip.trim',clipId:d.id,sourceStart:clip.source.start,sourceDuration:mul(sub(end,clip.target.start),clip.speed)}));
+    const snapped=snapTime(toNumber(add(clip.target.start,clip.target.duration))+d.delta,clip),end=clip.speedCurve?curveNearestFrame(snapped,fps):snapped;
+    props.c.guard(()=>props.c.edit({type:'clip.trim',clipId:d.id,sourceStart:clip.source.start,sourceDuration:clip.speedCurve?add(clip.source.duration,curveTrimSourceDelta(clip.speedCurve,sub(end,add(clip.target.start,clip.target.duration)))):mul(sub(end,clip.target.start),clip.speed),pushFollowing:props.c.trimFollowing.value}));
   }else{
-    const start=snapTime(toNumber(clip.target.start)+d.delta,clip),delta=sub(start,clip.target.start),sourceDelta=mul(delta,clip.speed);
-    props.c.guard(()=>props.c.edit({type:'clip.trim',clipId:d.id,sourceStart:add(clip.source.start,sourceDelta),sourceDuration:sub(clip.source.duration,sourceDelta),targetStart:start}));
+    const snapped=snapTime(toNumber(clip.target.start)+d.delta,clip),start=clip.speedCurve?curveNearestFrame(snapped,fps):snapped,delta=sub(start,clip.target.start),sourceDelta=clip.speedCurve?curveTrimSourceDelta(clip.speedCurve,delta):mul(delta,clip.speed);
+    props.c.guard(()=>props.c.edit({type:'clip.trim',clipId:d.id,sourceStart:add(clip.source.start,sourceDelta),sourceDuration:sub(clip.source.duration,sourceDelta),targetStart:start,pushFollowing:props.c.trimFollowing.value}));
   }
 }
 function clipStyle(clip: Clip) {
@@ -98,7 +99,7 @@ function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({t
           <button v-for="clip in track.clips.filter(visible)" :key="clip.id" class="timeline-clip" :class="[{selected:c.selectedId.value===clip.id,dragging:drag?.id===clip.id},'clip-'+track.kind]" :style="clipStyle(clip)" :aria-label="'片段 '+name(clip)" :data-clip-id="clip.id" @pointerdown.stop="begin($event,clip,track,'move')" @pointermove="moving" @pointerup="finish" @pointercancel="drag=null" @click.stop="c.selectedId.value=clip.id">
             <span class="clip-title"><Icon :name="track.kind" />{{name(clip)}}<small>{{clip.speedCurve?'曲线':toNumber(clip.speed)!==1?toNumber(clip.speed)+'×':''}}</small></span><span v-if="track.kind==='text'" class="clip-text-body">{{clip.text?.content}}</span>
             <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
-            <template v-if="!clip.speedCurve"><span class="trim-handle left" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>
+            <template v-if="!clip.speedCurve||!clip.animations?.length"><span class="trim-handle left" :aria-label="'裁切左边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" :aria-label="'裁切右边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>
           </button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
         </div>

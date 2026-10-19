@@ -4,13 +4,14 @@ import {add, compare, div, sub, ZERO, rational} from './time.ts';
 import type {Rational} from './time.ts';
 import {sliceAnimations,animationBounds} from './animation.ts';
 import type {Keyframe,AnimatedProperty} from './animation.ts';
+import {curveTrimDuration,alignCurveTrimTime} from './curve-speed.ts';
 
 export type EditingCommand =
   | {type: 'asset.add'; asset: Asset}
   | {type: 'clip.add'; trackId: string; clip: Clip}
   | {type: 'clip.remove'; clipId: string; ripple: boolean}
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
-  | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational}
+  | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational;pushFollowing?:boolean}
   | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle}}
   | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
   | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
@@ -71,11 +72,23 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
       const target = track(command.trackId); unlocked(target); check(target.kind === t.kind, 'TRACK_KIND_MISMATCH');
       c.target.start = structuredClone(command.start); if (target !== t) {t.clips.splice(i, 1); target.clips.push(c);}
     } else if (command.type === 'clip.trim') {
-      check(!c.speedCurve,'CURVE_TRIM_UNSUPPORTED');
+      check(command.pushFollowing===undefined||typeof command.pushFollowing==='boolean','INVALID_TRIM_POLICY');
+      check(!c.speedCurve||!c.animations?.length,'CURVE_ANIMATED_TRIM_UNVERIFIED');
       c.source = {start: structuredClone(command.sourceStart), duration: structuredClone(command.sourceDuration)};
-      c.target.duration = div(command.sourceDuration, c.speed);
+      const oldStart=c.target.start;
+      c.target.duration = c.speedCurve?curveTrimDuration(c.speedCurve,command.sourceDuration,next.fps):div(command.sourceDuration,c.speed);
+      if(c.speedCurve)c.speed=div(c.source.duration,c.target.duration);
       if (command.targetStart !== undefined) c.target.start = structuredClone(command.targetStart);
       if(c.animations?.length)c.animations=sliceAnimations(c.animations,c.source.start,add(c.source.start,c.source.duration));
+      if(c.speedCurve&&command.pushFollowing){
+        let end=add(c.target.start,c.target.duration);
+        for(const later of t.clips.filter(other=>other.id!==c.id&&compare(other.target.start,oldStart)>=0).sort((a,b)=>compare(a.target.start,b.target.start))){
+          check(later.editableTiming,'TIMING_NOT_INTERPRETED');
+          const start=compare(later.target.start,end)>0?later.target.start:end;
+          const alignedStart=alignCurveTrimTime(start,next.fps),alignedEnd=alignCurveTrimTime(add(start,later.target.duration),next.fps);
+          later.target.start=alignedStart;later.target.duration=sub(alignedEnd,alignedStart);later.speed=div(later.source.duration,later.target.duration);end=alignedEnd;
+        }
+      }
     } else if (command.type === 'clip.update') {
       check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text'].includes(k)), 'INVALID_CLIP_UPDATE');
       Object.assign(c, structuredClone(command.changes));

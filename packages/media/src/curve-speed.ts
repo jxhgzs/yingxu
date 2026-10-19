@@ -1,11 +1,21 @@
-import type {Clip} from '../../core/src/document.ts';
-import {curveVelocitySpans} from '../../core/src/curve-speed.ts';
+import type {Clip,Asset} from '../../core/src/document.ts';
+import {curveVelocitySpans,curveSourceDelta} from '../../core/src/curve-speed.ts';
 import type {SpeedCurve,CurveVelocitySpan} from '../../core/src/curve-speed.ts';
-import {mul,rational,toNumber} from '../../core/src/time.ts';
+import {mul,div,add,compare,rational,toNumber,ZERO} from '../../core/src/time.ts';
 import type {Rational} from '../../core/src/time.ts';
 
 type CurveClip=Clip&{speedCurve?:SpeedCurve};
 type AreaSpan=CurveVelocitySpan&{areaStart:number;areaEnd:number};
+/** Decode the source frame containing the exact in-point, including integral coverage past metadata trim. */
+export function curveMediaRange(asset:Asset,clip:Clip,fallbackFps:Rational):{start:Rational;end:Rational;origin:Rational}{
+ if(!clip.speedCurve)throw Error('INVALID_CURVE_SPEED');
+ const coverage=curveSourceDelta(clip.speedCurve,clip.source.duration,clip.target.duration,clip.target.duration);
+ if(asset.kind==='image')return {start:ZERO,end:coverage,origin:ZERO};
+ const end=add(clip.source.start,coverage);if(compare(end,asset.duration)>0)throw Error('CURVE_SOURCE_COVERAGE_EXCEEDED');
+ const fps=asset.fps??fallbackFps,frame=mul(clip.source.start,fps);
+ const index=BigInt(frame.numerator)/BigInt(frame.denominator),start=div(rational(index),fps);
+ return {start,end,origin:clip.source.start};
+}
 const fraction=(value:Rational)=>`(${value.numerator}/${value.denominator})`;
 const roundUs=(expression:string)=>`floor((${expression})+0.5)`;
 const boundedUs=(expression:string,maximum:number)=>roundUs(`min(${maximum},max(0,(${expression})*1000000))`);
@@ -45,7 +55,8 @@ export function curveSourceExpression(clip:CurveClip,targetDeltaExpression:strin
 export function curveTargetExpression(clip:CurveClip,sourceDeltaExpression:string):string{
  checkExpression(sourceDeltaExpression);
  if(!clip.speedCurve)return `(min(${fraction(clip.source.duration)},max(0,(${sourceDeltaExpression})))/${fraction(clip.speed)})`;
- const target=microseconds(clip.target.duration),clock=boundedUs(sourceDeltaExpression,microseconds(clip.source.duration)),spans=areaSpans(clip);
+ const target=microseconds(clip.target.duration),spans=areaSpans(clip);
+ const clock=boundedUs(sourceDeltaExpression,Math.max(microseconds(clip.source.duration),Math.round(spans.at(-1)!.areaEnd)));
  const inverse=decisions(spans,clock,span=>span.areaEnd,span=>{
   const width=span.end-span.start,slope=(span.to-span.from)/width,remaining=`max(0,(${clock}-${span.areaStart}))`;
   const elapsed=slope===0?`(${remaining}/${span.from})`:`(2*${remaining}/(${span.from}+sqrt(max(0,${span.from*span.from}+(${2*slope})*${remaining}))))`;

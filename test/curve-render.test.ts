@@ -25,3 +25,20 @@ test('curve render integrates separate audio inputs, source-clock volume and mon
   const graph=JSON.parse(await fs.readFile(path.join(root,'graph.json'),'utf8'));assert.deepEqual(graph.document.tracks[0].clips[1].speed,div(clip.source.duration,clip.target.duration));
  }finally{await fs.rm(root,{recursive:true,force:true});}
 });
+test('curve trim preserves all 27 native frame choices with a fractional source in-point and covered-source overrun',{timeout:60000},async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'yingxu-curve-trim-'));try{
+  const raw=JSON.parse(await fs.readFile(new URL('../evidence/2026-10-19-curve-trim/03-second-left-edge-drag.json',import.meta.url),'utf8'));
+  raw.tracks=raw.tracks.filter((t:any)=>t.type==='video');const imported=importJianying(raw);assert.deepEqual(imported.diagnostics,[]);
+  const doc=imported.document,clip=doc.tracks.at(-1)!.clips[1];
+  const source=await probeAsset(path.join(baselineRoot,'fixtures/timeline-probe.mp4'));source.hasAudio=false;clip.materialId=source.id;clip.target.start=rational(0);doc.assets=[source];doc.tracks=[{id:'trimmed',kind:'video',clips:[clip]}];
+  assert.deepEqual(clip.source.start,rational(1452153,1000000));
+  const native=[43,46,51,56,61,65,68,70,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
+  const output=await render(doc,root);assert.equal(output.frameCount,27);const frames=decode(output.path),reference=decode(source.path),stride=80*45*3;
+  for(let i=0;i<native.length;i++){let best=-1,bestError=Infinity;for(let candidate=0;candidate<100;candidate++){let error=0;for(let j=0;j<stride;j++)error+=Math.abs(frames[i*stride+j]-reference[candidate*stride+j]);if(error<bestError){best=candidate;bestError=error;}}assert.equal(best,native[i],`trimmed curve frame ${i}`);}
+  // The last visible frame uses source 3s, beyond the declared trim's half-open end.
+  source.hasAudio=true;const av=await render(doc,path.join(root,'av'));assert.equal(av.frameCount,27);assert(av.info.streams.some((s:any)=>s.codec_type==='audio'));
+  source.duration=rational(3);await assert.rejects(render(doc,path.join(root,'short')),/CURVE_SOURCE_COVERAGE_EXCEEDED/);
+  const animation=raw.materials.material_animations.find((a:any)=>a.id===raw.tracks.at(-1).segments[1].extra_material_refs.find((id:string)=>raw.materials.material_animations.some((a:any)=>a.id===id)));
+  animation.animations=[{type:'unverified'}];assert(importJianying(raw).diagnostics.some(d=>d.code==='VISUAL_SEMANTICS_NOT_INTERPRETED'));
+ }finally{await fs.rm(root,{recursive:true,force:true});}
+});

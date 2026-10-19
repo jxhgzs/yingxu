@@ -8,7 +8,7 @@ import type {Asset,Clip} from '../../core/src/document.ts';
 import {check,validRational} from '../../core/src/document.ts';
 import {curveSourceDelta,curveVelocitySpans,validateSpeedCurve} from '../../core/src/curve-speed.ts';
 import type {SpeedCurve} from '../../core/src/curve-speed.ts';
-import {add,compare,micros,mul,rational,toNumber,ZERO} from '../../core/src/time.ts';
+import {add,sub,compare,micros,mul,rational,toNumber,ZERO} from '../../core/src/time.ts';
 import type {Rational} from '../../core/src/time.ts';
 import {ffmpeg,ffprobe} from './probe.ts';
 import {runProcess} from './process.ts';
@@ -22,7 +22,7 @@ function sampleAt(time:Rational,rate:number):number{
 }
 function buildMap(clip:CurveClip,sampleRate:number):CurveAudioMap{
  const curve=clip.speedCurve!;
- const raw=curveSourceDelta(curve,clip.source.duration,clip.target.duration,clip.target.duration),coverage=structuredClone(compare(raw,clip.source.duration)>0?clip.source.duration:raw);
+ const coverage=curveSourceDelta(curve,clip.source.duration,clip.target.duration,clip.target.duration);
  const sourceSamples=sampleAt(coverage,sampleRate),targetSamples=sampleAt(clip.target.duration,sampleRate);
  check(sourceSamples>0&&targetSamples>0,'CURVE_AUDIO_EMPTY');
  const targetUs=sampleAt(clip.target.duration,1000000),gridCount=Math.floor(targetUs/20000);
@@ -92,6 +92,7 @@ export async function renderCurveAudio(asset:Asset,clip:CurveClip,directory:stri
  check(compare(clip.source.start,ZERO)>=0&&compare(clip.source.duration,ZERO)>0&&compare(clip.target.duration,ZERO)>0&&compare(add(clip.source.start,clip.source.duration),asset.duration)<=0,'CURVE_AUDIO_INVALID_RANGE');
  if(options.signal?.aborted)throw Error('JOB_CANCELLED');
  const map=buildMap(clip,options.sampleRate);await fs.mkdir(directory,{recursive:true});
+ check(compare(map.coverage,sub(asset.duration,clip.source.start))<=0,'CURVE_SOURCE_COVERAGE_EXCEEDED');
  const work=await fs.mkdtemp(path.join(path.resolve(directory),'curve-audio-')),source=path.join(work,'source.wav'),partial=path.join(work,'output.partial.wav'),output=path.join(work,'output.wav'),mapFile=path.join(work,'timemap.txt');
  await fs.writeFile(path.join(work,'timemap.json'),JSON.stringify(map));
  await fs.writeFile(mapFile,map.points.map(p=>`${p.sourceSample} ${p.targetSample}`).join('\n')+'\n');options.onProgress?.(.05);

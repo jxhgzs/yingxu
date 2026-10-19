@@ -36,3 +36,14 @@
 - 保调音频为独立Rubber Band R3路径，标记能量质心误差≤20ms、部分载波峰值约偏移21ms；未实际听审、未与目标自然语音逐样本对照，不能称音频1:1。
 - 官方SC全量CFF与目标CN子集TTF同版但栅格不同：720p五字样例目标178×35，当前174×33；多行布局已改善，混排字形仍存在差异。目标字体没有复制入产品。字体证据详见字体QA。
 - 字幕识别/拆分合并、剪映文字轨导入、Bezier、全部属性导入、蒙版/滤镜/转场/特效、完整逐屏交互、GPU实时预览、在线能力及映序产品接入仍未完成。
+
+
+## 原生桌面0.3追加验证
+
+已从提交b256a1170a9b18f308d6159e634b697f23fc49b1打包并实际运行`artifacts/desktop/20261019125509/映序剪辑.app`。本地临时签名严格校验通过，仍依赖本机FFmpeg/ffprobe/Rubber Band，没有公证安装包。
+
+实际打开曲线工程、导入SRT、720p/30fps/44.1kHz导出、下载、正常退出并重开。工程`f3443118-b42a-44cb-b15e-06ef9641ba54`修订2，10片段、1字幕来源、1曲线片段；重开保存标题“桌面0.3曲线字幕重开验证”和导出任务`b76905f6-9d58-4bff-84b2-dd17408e14ef`。
+
+真实下载`/Users/tal/Downloads/桌面0.3曲线与字幕验证.mp4`，SHA256 `6361ebdac992ad1a8140acb7fa05040d0d8fa08ede37e9059d47766131e54eb8`；1280×720、284帧、9.466667秒，完整解码成功，尾部59帧源编号全部匹配。记录在`artifacts/qa/expansion/desktop-v3-verification.json`，截图`artifacts/ui/desktop-v3-{export-completed,reopened-jobs,workspace}.png`。
+
+后续曲线裁切修复不在这个0.3包内，其最新状态见[裁切集成QA](2026-10-19-curve-trim-integration.md)。

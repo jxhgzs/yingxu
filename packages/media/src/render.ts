@@ -9,7 +9,7 @@ import {animationExpression,animatedValue,maxAnimatedValue,fraction} from './ani
 import {resolveExportSettings} from '../../core/src/export.ts';
 import type {ExportSettings} from '../../core/src/export.ts';
 import {frameEdge,groupTextLayers,captionScript} from './captions.ts';
-import {curveSourceExpression,curveTargetExpression} from './curve-speed.ts';
+import {curveSourceExpression,curveTargetExpression,curveMediaRange} from './curve-speed.ts';
 import {renderCurveAudio} from './curve-audio.ts';
 import {prepareFonts} from './fonts.ts';
 
@@ -77,8 +77,10 @@ export async function render(doc: Document, directory: string, options: {
       // The native clock is rounded to microseconds. Move each inverse boundary
       // back half a microsecond before upward FPS selection, on a nanosecond TB.
       // This preserves all 59 observed CFR frame choices, including rounded edges.
-      const video = [`trim=start=${seconds(asset.kind === 'image' ? 0 : toNumber(clip.source.start))}:duration=${seconds(toNumber(clip.source.duration))}`,
-        ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,'(PTS-STARTPTS)*TB')})-0.0000005)/TB+0.5)'`]:[`setpts=(PTS-STARTPTS)/${toNumber(clip.speed)}`]), `fps=${fps}${clip.speedCurve?':round=up':''}`, animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba'];
+      const curveRange=clip.speedCurve?curveMediaRange(asset,clip,doc.fps):undefined;
+      const trim=curveRange?`trim=start=${seconds(toNumber(curveRange.start))}:end=${seconds(toNumber(curveRange.end))}`:`trim=start=${seconds(asset.kind==='image'?0:toNumber(clip.source.start))}:duration=${seconds(toNumber(clip.source.duration))}`;
+      const video = [trim,
+        ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:[`setpts=(PTS-STARTPTS)/${toNumber(clip.speed)}`]), `fps=${fps}${clip.speedCurve?':round=up':''}`, animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba'];
       if (t.flipX) video.push('hflip'); if (t.flipY) video.push('vflip');
       if(clip.animations?.some(a=>a.property==='rotation')||animatedScale&&t.rotation){
         const box=even(Math.ceil(Math.hypot(w,h))+4);
