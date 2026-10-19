@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed} from 'vue';
+import {ref, computed, nextTick} from 'vue';
 import type {EditorController} from '../controller.ts';
 import type {Clip, Track} from '../../../../packages/core/src/document.ts';
 import {atFrame, timecode} from '../controller.ts';
@@ -80,6 +80,11 @@ async function drop(event: DragEvent, track: Track) {
   await props.c.guard(()=>props.c.addAsset(asset,track.id,Math.max(0,x/props.c.zoom.value)));
 }
 function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({type:'track.add',track:{id:crypto.randomUUID(),kind,name:kind==='video'?'视频轨道':kind==='audio'?'音频轨道':'文字轨道',clips:[]}}));}
+async function selectTransition(clipId:string){
+  const projectId=props.c.state.value?.id;props.c.selectedId.value=clipId;
+  await nextTick();
+  if(props.c.state.value?.id===projectId&&props.c.selectedId.value===clipId)props.c.inspectorTab.value='transition';
+}
 </script>
 <template>
   <section class="timeline-panel panel">
@@ -103,7 +108,7 @@ function addTrack(kind: Track['kind']) {return props.c.guard(()=>props.c.edit({t
             <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
             <template v-if="!clip.speedCurve||!clip.animations?.length"><span class="trim-handle left" :aria-label="'裁切左边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" :aria-label="'裁切右边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>
           </button>
-          <button v-for="transition in (c.doc.value?.transitions||[]).filter(t=>t.trackId===track.id)" :key="transition.id" class="timeline-transition" :aria-label="transitionPresentation[transition.kind].name+'转场 '+toNumber(transition.duration).toFixed(3)+' 秒'" :style="{left:144+toNumber(transitionWindow(transition,track.clips.find(x=>x.id===transition.outgoingClipId)!).start)*c.zoom.value+'px',width:Math.max(16,toNumber(transition.duration)*c.zoom.value)+'px'}" @click.stop="c.selectedId.value=transition.outgoingClipId;c.inspectorTab.value='transition'">{{transitionPresentation[transition.kind].icon}}</button>
+          <button v-for="transition in (c.doc.value?.transitions||[]).filter(t=>t.trackId===track.id)" :key="transition.id" class="timeline-transition" :aria-label="transitionPresentation[transition.kind].name+'转场 '+toNumber(transition.duration).toFixed(3)+' 秒'" :style="{left:144+toNumber(transitionWindow(transition,track.clips.find(x=>x.id===transition.outgoingClipId)!).start)*c.zoom.value+'px',width:Math.max(16,toNumber(transition.duration)*c.zoom.value)+'px'}" @click.stop="selectTransition(transition.outgoingClipId)">{{transitionPresentation[transition.kind].icon}}</button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
         </div>
         <div class="playhead" :style="{left:144+c.playhead.value*c.zoom.value+'px'}"><span></span></div>
