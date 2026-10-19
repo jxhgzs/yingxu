@@ -39,7 +39,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
       if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
         limitations: ['不支持未解析的剪映特效与关键帧渲染', '预览当前使用后台渲染，尚未实现GPU实时预览']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {

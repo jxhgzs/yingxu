@@ -1,0 +1,102 @@
+{
+  "1x": {
+    "file": "/Users/tal/Downloads/REA-audio-fade-1x-20261019.mov",
+    "sha256": "ced5a13a7b9fb31c0b11b5b5175ee4d7d62502e1b7f9a3f08dd19a3651964573",
+    "duration": 1.666666,
+    "referenceRMS": 0.08745726197957993,
+    "values": [
+      {
+        "edge": "in",
+        "fadeElapsed": 0.1,
+        "gain": 0.3778670107251339,
+        "qsin": 0.3826834323650898,
+        "linear": 0.25
+      },
+      {
+        "edge": "in",
+        "fadeElapsed": 0.2,
+        "gain": 0.7048757423872165,
+        "qsin": 0.7071067811865475,
+        "linear": 0.5
+      },
+      {
+        "edge": "in",
+        "fadeElapsed": 0.3,
+        "gain": 0.9171554009242383,
+        "qsin": 0.9238795325112866,
+        "linear": 0.7499999999999999
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.1,
+        "gain": 0.388420228968127,
+        "qsin": 0.3826834323650898,
+        "linear": 0.25
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.2,
+        "gain": 0.7132762666532633,
+        "qsin": 0.7071067811865475,
+        "linear": 0.5
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.3,
+        "gain": 0.9370280998593069,
+        "qsin": 0.9238795325112866,
+        "linear": 0.7499999999999999
+      }
+    ]
+  },
+  "2x": {
+    "file": "/Users/tal/Downloads/REA-audio-fade-2x-20261019.mov",
+    "sha256": "05922061be9de6a7d2d4a36f672dcd2a9b6dd74486fcd1d47d52facb47e7ba57",
+    "duration": 0.833333,
+    "referenceRMS": 0.0887775793671608,
+    "values": [
+      {
+        "edge": "in",
+        "fadeElapsed": 0.1,
+        "gain": 0.37143659217701275,
+        "qsin": 0.3826834323650898,
+        "linear": 0.25
+      },
+      {
+        "edge": "in",
+        "fadeElapsed": 0.2,
+        "gain": 0.6967943082658968,
+        "qsin": 0.7071067811865475,
+        "linear": 0.5
+      },
+      {
+        "edge": "in",
+        "fadeElapsed": 0.3,
+        "gain": 0.9126717454749161,
+        "qsin": 0.9238795325112866,
+        "linear": 0.7499999999999999
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.1,
+        "gain": 0.3846440672987552,
+        "qsin": 0.3826834323650898,
+        "linear": 0.25
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.2,
+        "gain": 0.7040623052698056,
+        "qsin": 0.7071067811865475,
+        "linear": 0.5
+      },
+      {
+        "edge": "out",
+        "fadeElapsed": 0.3,
+        "gain": 0.9271184442145856,
+        "qsin": 0.9238795325112866,
+        "linear": 0.7499999999999999
+      }
+    ]
+  }
+}

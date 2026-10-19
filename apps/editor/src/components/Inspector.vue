@@ -13,7 +13,7 @@ import {atFrame} from '../controller.ts';
 const props = defineProps<{c: EditorController}>();
 const tab = ref('picture'), ripple = ref(true);
 const speedMode=ref<'constant'|'curve'>('constant');
-const draft = reactive({x:0,y:0,scale:100,rotation:0,opacity:100,flipX:false,flipY:false,volume:100,speed:1,sourceIn:0,sourceOut:0,textStart:0,textDuration:4,content:'',size:54,color:'#ffffff',font:'PingFang SC'});
+const draft = reactive({x:0,y:0,scale:100,rotation:0,opacity:100,flipX:false,flipY:false,volume:100,fadeIn:0,fadeOut:0,speed:1,sourceIn:0,sourceOut:0,textStart:0,textDuration:4,content:'',size:54,color:'#ffffff',font:'PingFang SC'});
 const selected = computed(()=>props.c.selected.value), clip = computed(()=>selected.value?.clip);
 const disabled = computed(()=>props.c.readOnly.value||props.c.busy.value||!!selected.value?.track.locked);
 const trimDisabled=computed(()=>disabled.value||!!(clip.value?.speedCurve&&clip.value?.animations?.length));
@@ -25,7 +25,7 @@ watch(()=>[props.c.state.value?.revision, props.c.selectedId.value,props.c.playh
   for(const a of c.animations||[])if(a.property!=='volume')t[a.property]=evaluateAnimation(a,time);
   const audioAnimation=c.animations?.find(a=>a.property==='volume'),volume=audioAnimation?evaluateAnimation(audioAnimation,time):c.volume??1;
   Object.assign(draft,{x:t.x,y:t.y,scale:t.scale*100,rotation:t.rotation,opacity:t.opacity*100,flipX:t.flipX,flipY:t.flipY,
-    volume:volume*100,speed:toNumber(c.speed),sourceIn:toNumber(c.source.start),sourceOut:toNumber(c.source.start)+toNumber(c.source.duration),
+    fadeIn:toNumber(c.audioFade?.inDuration||rational(0)),fadeOut:toNumber(c.audioFade?.outDuration||rational(0)),volume:volume*100,speed:toNumber(c.speed),sourceIn:toNumber(c.source.start),sourceOut:toNumber(c.source.start)+toNumber(c.source.duration),
     textStart:toNumber(c.target.start),textDuration:toNumber(c.target.duration),content:c.text?.content||'',size:c.text?.size||54,color:c.text?.color||'#ffffff',font:c.text?.font||'PingFang SC'});
   if(selected.value?.track.kind==='text')tab.value='text';else if(selected.value?.track.kind==='audio')tab.value='audio';else if(!['picture','audio','speed'].includes(tab.value))tab.value='picture';
 },{immediate:true});
@@ -43,6 +43,7 @@ function transform() {
   });
 }
 function audio() {if(clip.value)return props.c.guard(()=>props.c.edit(clip.value!.animations?.some(a=>a.property==='volume')?props.c.keyframeCommand('volume',draft.volume/100):{type:'clip.update',clipId:clip.value!.id,changes:{volume:draft.volume/100}}));}
+function fades(){if(clip.value&&!disabled.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:clip.value!.id,changes:{audioFade:{curve:'qsin',inDuration:decimal(String(draft.fadeIn)),outDuration:decimal(String(draft.fadeOut))}}}));}
 function speed() {if(clip.value&&!clip.value.speedCurve&&!disabled.value&&constantSpeedValid.value)return props.c.guard(()=>props.c.edit({type:'speed',clipId:clip.value!.id,value:decimal(String(draft.speed)),shiftFollowing:ripple.value}));}
 function trim() {if(clip.value&&!trimDisabled.value)return props.c.guard(()=>props.c.edit({type:'clip.trim',clipId:clip.value!.id,sourceStart:decimal(String(draft.sourceIn)),sourceDuration:decimal((draft.sourceOut-draft.sourceIn).toFixed(6)),pushFollowing:props.c.trimFollowing.value}));}
 function text() {if(clip.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:clip.value!.id,changes:{text:{...clip.value!.text!,content:draft.content,size:draft.size,color:draft.color,font:draft.font,lineHeight:clip.value!.text!.lineHeight===undefined?undefined:clip.value!.text!.lineHeight*draft.size/clip.value!.text!.size}}}));}
@@ -64,7 +65,7 @@ function fps(value: string) {const [n,d='1']=value.split('/');props.c.guard(()=>
           </div>
           <div class="inspector-section"><header><strong>混合</strong></header><div class="control-row"><span>不透明度</span><a-slider v-model:value="draft.opacity" :min="0" :max="100" :disabled="disabled" @after-change="transform" /><a-input-number v-model:value="draft.opacity" aria-label="不透明度" :min="0" :max="100" :disabled="disabled" @blur="transform" /><small>%</small></div></div>
         </template>
-        <template v-if="tab==='audio'"><div class="inspector-section"><header><strong>音量</strong><Icon name="sound" /></header><div class="control-row"><a-slider v-model:value="draft.volume" :min="0" :max="200" :disabled="disabled" @after-change="audio" /><a-input-number v-model:value="draft.volume" aria-label="片段音量" :min="0" :max="400" :disabled="disabled" @blur="audio" /><small>%</small></div><a-checkbox :checked="!!clip.muted" :disabled="disabled" @change="(event:any)=>c.guard(()=>c.edit({type:'clip.update',clipId:clip!.id,changes:{muted:event.target.checked}}))">静音</a-checkbox></div></template>
+        <template v-if="tab==='audio'"><div class="inspector-section"><header><strong>音量</strong><Icon name="sound" /></header><div class="control-row"><a-slider v-model:value="draft.volume" :min="0" :max="200" :disabled="disabled" @after-change="audio" /><a-input-number v-model:value="draft.volume" aria-label="片段音量" :min="0" :max="400" :disabled="disabled" @blur="audio" /><small>%</small></div><a-checkbox :checked="!!clip.muted" :disabled="disabled" @change="(event:any)=>c.guard(()=>c.edit({type:'clip.update',clipId:clip!.id,changes:{muted:event.target.checked}}))">静音</a-checkbox></div><div class="inspector-section"><header><strong>淡入淡出</strong></header><div class="control-row"><span>淡入时长</span><a-input-number v-model:value="draft.fadeIn" aria-label="淡入秒" :min="0" :max="toNumber(clip.target.duration)" :precision="6" :step="0.1" :disabled="disabled" /><small>秒</small></div><div class="control-row"><span>淡出时长</span><a-input-number v-model:value="draft.fadeOut" aria-label="淡出秒" :min="0" :max="toNumber(clip.target.duration)" :precision="6" :step="0.1" :disabled="disabled" /><small>秒</small></div><a-button size="small" :disabled="disabled" @click="fades">应用淡入淡出</a-button></div></template>
         <template v-if="tab==='speed'"><div class="inspector-section"><header><strong>变速</strong></header>
           <a-radio-group v-model:value="speedMode" aria-label="变速方式" size="small" :disabled="disabled"><a-radio-button value="constant" :disabled="!!clip.speedCurve">常规</a-radio-button><a-radio-button value="curve">曲线</a-radio-button></a-radio-group>
           <template v-if="speedMode==='constant'&&!clip.speedCurve"><div class="control-row"><span>速度</span><a-input-number v-model:value="draft.speed" aria-label="片段速度" :min="0.0625" :max="16" :step="0.25" :precision="4" :disabled="disabled" /><small>倍</small><a-button size="small" :disabled="disabled||!constantSpeedValid" @click="speed">应用</a-button></div><a-checkbox v-model:checked="ripple" :disabled="disabled">联动后续片段</a-checkbox><p class="quiet">{{constantSpeedValid?'变速后时长 '+(toNumber(clip.source.duration)/draft.speed).toFixed(3)+' 秒':'请输入0.0625至16倍的速度'}}</p></template>

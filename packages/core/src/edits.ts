@@ -4,6 +4,8 @@ import {add, compare, div, sub, ZERO, rational} from './time.ts';
 import type {Rational} from './time.ts';
 import {trimAnimations,animationBounds} from './animation.ts';
 import type {Keyframe,AnimatedProperty} from './animation.ts';
+import {clampAudioFade} from './audio-fade.ts';
+import type {AudioFade} from './audio-fade.ts';
 import {curveTrimDuration,alignCurveTrimTime} from './curve-speed.ts';
 
 export type EditingCommand =
@@ -12,7 +14,7 @@ export type EditingCommand =
   | {type: 'clip.remove'; clipId: string; ripple: boolean}
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
   | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational;pushFollowing?:boolean}
-  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle}}
+  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade}}
   | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
   | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
   | {type: 'track.add'; track: Track}
@@ -89,6 +91,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
           else{c.transform||=defaultTransform();c.transform[property as Exclude<AnimatedProperty,'volume'>]=value;}
         }
       }
+      clampAudioFade(c);
       if(c.speedCurve&&command.pushFollowing){
         let end=add(c.target.start,c.target.duration);
         for(const later of t.clips.filter(other=>other.id!==c.id&&compare(other.target.start,oldStart)>=0).sort((a,b)=>compare(a.target.start,b.target.start))){
@@ -99,7 +102,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
         }
       }
     } else if (command.type === 'clip.update') {
-      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text'].includes(k)), 'INVALID_CLIP_UPDATE');
+      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade'].includes(k)), 'INVALID_CLIP_UPDATE');
       Object.assign(c, structuredClone(command.changes));
     } else if(command.type==='keyframe.set'){
       check(Object.hasOwn(animationBounds,command.property),'INVALID_ANIMATION_PROPERTY');

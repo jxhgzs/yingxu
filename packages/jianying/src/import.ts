@@ -2,6 +2,7 @@ import {createHash} from 'node:crypto';
 import {check, validateDocument} from '../../core/src/document.ts';
 import type {Document, Diagnostic, Imported} from '../../core/src/document.ts';
 import {decimal, micros,div} from '../../core/src/time.ts';
+import {importAudioFade} from './audio-fade.ts';
 import {importScaleAnimations} from './animation.ts';
 import {importKnownVideoVisual} from './visual.ts';
 import {importKnownSpeedCurve} from './curve.ts';
@@ -51,12 +52,13 @@ export function importJianying(raw: unknown, sourceText?: string): Imported {
         check(Array.isArray(speeds), 'INVALID_JSON_STRUCTURE', 'materials.speeds');
         const curve=importKnownSpeedCurve(s,materials),hasCurve=speeds.some((speed:any)=>speed&&refs.has(speed.id)&&speed.curve_speed!=null);
         if(curve.diagnostic){editableTiming=false;diagnostics.push({code:curve.diagnostic,clipId:s.id});}
-        const visual=importKnownVideoVisual(s,rawAssetById.get(s.material_id)!,materials,!!curve.curve);
+        const fade=importAudioFade(s,materials);if(fade.diagnostic)diagnostics.push({code:fade.diagnostic,clipId:s.id});
+        const visual=importKnownVideoVisual(s,rawAssetById.get(s.material_id)!,materials,!!curve.curve,!!fade.fade);
         if(!visual)diagnostics.push({code: 'VISUAL_SEMANTICS_NOT_INTERPRETED', trackId: t.id, clipId: s.id});
         const source=range(s.source_timerange,'source_timerange'),target=range(s.target_timerange,'target_timerange');
         const nativeSpeed=decimal(String(number(s.speed,'speed')));
         return {id:s.id,materialId:s.material_id,source,target,speed:hasCurve?div(source.duration,target.duration):nativeSpeed,editableTiming,
-          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{})};
+          ...(curve.curve?{speedCurve:curve.curve}:{}),...(animation.animations ? {animations:animation.animations} : {}),...(visual||{}),...(fade.fade?{audioFade:fade.fade}:{})};
       })};
     })
   };

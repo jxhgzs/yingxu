@@ -9,6 +9,7 @@ import {parseSubtitles} from './subtitles.ts';
 import {applySubtitleImport} from './subtitle-import.ts';
 import type {SubtitleImportOptions} from './subtitle-import.ts';
 import {applyAssetRelink} from './relink.ts';
+import {clampAudioFade} from './audio-fade.ts';
 import {curveDuration,splitSpeedCurve} from './curve-speed.ts';
 import type {SpeedCurve} from './curve-speed.ts';
 
@@ -64,6 +65,9 @@ function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Do
       right.animations=sliceAnimations(clip.animations,right.source.start,add(right.source.start,right.source.duration));
       clip.animations=sliceAnimations(clip.animations,clip.source.start,add(clip.source.start,clip.source.duration));
     }
+    if(clip.audioFade){
+      clip.audioFade.outDuration=ZERO;right.audioFade!.inDuration=ZERO;clampAudioFade(clip);clampAudioFade(right);
+    }
     track.clips.splice(index + 1, 0, right);
   } else if (command.type === 'speed') {
     validRational(command.value, 'speed');
@@ -86,6 +90,7 @@ function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Do
     if(command.curve)clip.speedCurve=structuredClone(command.curve);else delete clip.speedCurve;
     if(command.shiftFollowing)for(const other of track.clips)if(other.id!==clip.id&&compare(other.target.start,oldEnd)>=0){check(other.editableTiming,'TIMING_NOT_INTERPRETED',other.id);other.target.start=add(other.target.start,delta);}
   } else throw Error('UNKNOWN_COMMAND');
+  clampAudioFade(clip);
   validateDocument(next);
   if(!deferOverlap)assertNoVideoOverlap(next);
   return next;

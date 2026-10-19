@@ -13,9 +13,10 @@ export type Asset = {
 };
 export type Transform = {x: number; y: number; scale: number; rotation: number; opacity: number; flipX: boolean; flipY: boolean};
 export type TextStyle = {content: string; size: number; color: string; font: string;outline?:number;shadow?:number;lineHeight?:number};
+import type {AudioFade} from './audio-fade.ts';
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];speedCurve?:SpeedCurve;
+  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
 export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
@@ -88,6 +89,11 @@ export function validateDocument(doc: Document): void {
       check(c.volume === undefined || Number.isFinite(c.volume) && c.volume >= 0 && c.volume <= 4, 'INVALID_VOLUME');
       check(c.muted === undefined || typeof c.muted === 'boolean', 'INVALID_MUTE');
       if(c.animations!==undefined)validateAnimations(c.animations,asset.duration);
+      if(c.audioFade!==undefined){
+        const fade=c.audioFade;check(fade&&fade.curve==='qsin'&&['video','audio'].includes(kind),'INVALID_AUDIO_FADE');
+        for(const value of [fade.inDuration,fade.outDuration]){validRational(value,'audioFade');check(compare(value,ZERO)>=0&&compare(value,c.target.duration)<=0,'INVALID_AUDIO_FADE');}
+        check(compare(add(fade.inDuration,fade.outDuration),c.target.duration)<=0,'AUDIO_FADE_OVERLAP_UNVERIFIED');
+      }
       if (c.transform !== undefined) {
         const v = c.transform;
         check(v && [v.x, v.y, v.scale, v.rotation, v.opacity].every(Number.isFinite), 'INVALID_TRANSFORM');

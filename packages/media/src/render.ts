@@ -117,7 +117,9 @@ export async function render(doc: Document, directory: string, options: {
     const input=clip.speedCurve?preparedAudio.get(clip.id):inputIndexes.get(asset.id);
     const timing=clip.speedCurve?'asetpts=PTS-STARTPTS':`atrim=start=${seconds(toNumber(clip.source.start))}:duration=${seconds(toNumber(clip.source.duration))},asetpts=PTS-STARTPTS,aresample=${sampleRate},${tempo(toNumber(clip.speed))}`;
     const tail=clip.speedCurve?'':`,apad,atrim=duration=${seconds(toNumber(clip.target.duration))}`;
-    filters.push(`[${input}:a]${timing},volume='${clip.speedCurve?`st(0,${clock});`:''}if(isnan(t),${initial},${volume})':eval=frame${tail},adelay=delays=${Math.round(toNumber(clip.target.start) * sampleRate)}S:all=1[${name}]`);
+    const fade=clip.audioFade,fadeIn=fade?toNumber(fade.inDuration):0,fadeOut=fade?toNumber(fade.outDuration):0;
+    const fades=(fadeIn>0?`,afade=t=in:st=0:d=${seconds(fadeIn)}:curve=qsin`:'')+(fadeOut>0?`,afade=t=out:st=${seconds(toNumber(clip.target.duration)-fadeOut)}:d=${seconds(fadeOut)}:curve=qsin`:'');
+    filters.push(`[${input}:a]${timing},volume='${clip.speedCurve?`st(0,${clock});`:''}if(isnan(t),${initial},${volume})':eval=frame${tail}${fades},adelay=delays=${Math.round(toNumber(clip.target.start) * sampleRate)}S:all=1[${name}]`);
   }
   filters.push(audios.map(n => `[${n}]`).join('') + `amix=inputs=${audios.length}:normalize=0:duration=first,atrim=start=${seconds(toNumber(outputSettings.actualStart))}:duration=${seconds(outputSettings.duration)},asetpts=PTS-STARTPTS[outa]`);
   }
