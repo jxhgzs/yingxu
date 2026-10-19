@@ -28,3 +28,12 @@ REA同时发现两个枚举桥接点与qsin callback，但中间配置映射及�
 ## 未完成边界
 
 166666us等非整数毫秒的量化、首末采样端点、音频轨独立原生UI、重叠fade、音量关键帧组合、曲线变速与fade组合及音频算法/性能完整一致仍未验收。源时钟音量和曲线音频的既有实现可以组成自身渲染链，不据此宣称这些组合已与目标逐采样一致。
+
+
+## 桌面0.3.2追加验证
+
+开发包`artifacts/desktop/20261019135532/映序剪辑.app`，提交`f53e42e33e11644e62de9396ba536682416c0ee3`，backend SHA256 `9df800d03c49f2cc0cde75b63b9b2b70651a15e3861e8f72e36f0dc7c9c81e59`。本地临时签名严格检查通过，实际启动接口返回0.3.2。
+
+桌面打开内部测试工程，音频面板恢复0.4/0.4秒。工程`850d9774-a5f2-4a00-8d99-a07c6144f2e5`，任务`50068706-7194-42e0-a95a-c414acd200ea`导出48kHz WAV并经原生保存面板保存到`/Users/tal/Downloads/Desktop-0.3.2-audio-fades.wav`，SHA256与浏览器输出相同。记录`artifacts/qa/audio-fade/desktop-v32-verification.json`，截图`artifacts/ui/desktop-v32-export-completed.png`。本轮0.3.2未另做正常退出重开测试；宿主该项验证沿用0.3.1记录，不将旧包验证说成新包已重开。
+
+开发包依赖本机FFmpeg/FFprobe/Rubber Band，尚未公证分发。映序生产代码、媒体与数据库没有改动。
