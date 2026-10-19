@@ -57,9 +57,12 @@ gpu.dispose();
 
 验证（2026-10-19）：`node --test test/gpu-preview*.test.ts`共18组通过，覆盖移动后的2x源时钟、30/60/30000:1001单帧边界、portrait letterbox及顺时针旋转/UV翻转、隐藏/静音/未知效果判断、qsin包络、AudioContext延迟创建与恢复拒绝、更新中的增益曲线取消、编译/链接/初始化部分失败清理、context loss/restore状态及解码seek/取消/dispose；新增crossfade居中窗口/外延handles/音频切点/上下层顺序、NTSC半开窗口、未知转场属性拒绝、两个透明FBO分离/复用/resize/失败清理、诊断读回坐标/数量/状态恢复、共享调色参数/neutral与闪黑无handles/不透明黑覆盖。`npm run typecheck`通过。父任务已在IAB实测首轮普通预览Apple M3 ANGLE Metal，6秒180输出帧、输出跳帧0，解码器另报告12掉帧；具体初始状态见`artifacts/qa/gpu/browser-initial.json`、定位截图`browser-3.5.png`。这不代表转场实际像素、听审或多轨压力已通过，仍由父任务继续核验；上述单测未冒充真实像素或听感验收。
 
-仍有差异：不支持文字动画、可闻曲线声音、未解析效果；HDR/广色域、浏览器色彩管理、VFR精确采样与浏览器保调算法没有目标一致性结论。普通HTML媒体多路启动与WebAudio lookahead属于基础同步，并非采样级音频编辑引擎；暂停后seek使用源帧内微小偏移，工程时间仍为精确有理数。`requestVideoFrameCallback`仅记录解码信息，不把其回调次数当作画布实际绘制帧数。GPU不可用/编译失败直接抛出，调用方应进入后台路径；运行时解码/上传/播放失败进入manifest的fallback状态。
+仍有差异：完整命名动画/特效库尚未支持；可闻曲线声音需0.6音轨provider，0.7文字动画路径见下；HDR/广色域、浏览器色彩管理、VFR精确采样与浏览器保调算法没有目标一致性结论。普通HTML媒体多路启动与WebAudio lookahead属于基础同步，并非采样级音频编辑引擎；暂停后seek使用源帧内微小偏移，工程时间仍为精确有理数。`requestVideoFrameCallback`仅记录解码信息，不把其回调次数当作画布实际绘制帧数。GPU不可用/编译失败直接抛出，调用方应进入后台路径；运行时解码/上传/播放失败进入manifest的fallback状态。
 
 实现依据：[Mozilla texImage2D](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D)、[requestVideoFrameCallback](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)、[AudioParam cancelAndHoldAtTime](https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime)。音量曲线替换要取消已经开始的lookahead曲线，避免新旧setValueCurveAtTime重叠；不支持cancelAndHoldAtTime时移除旧自动化再设置当前值。
 
 
 0.6：可闻曲线可选 `curveAudio(clipId,context,signal)` provider。返回固定44100/stereo/float32 WAV描述；CurveSounds有界fetch/解析，不创建AudioContext。播放时PreviewAudio按目标局部offset以rate1调度PCM，原曲线video永远paused/muted；gain/动画/fade由原clip实时单次施加。音频only曲线不创建原HTML媒体。每clip PCM32MiB、PCM缓存64MiB，AudioBuffer只保留激活route，cold准备和超限fallback如实显示；不是R3实时推理或原生算法完全一致。manifest.curveAudio记录PCM字节和调度状态，不是声卡实测延迟。
+
+
+0.7：textTexture provider的context可含mode:'neutral'|'frame'及frame。请求只在相应模式附这两个字段；响应除url转absolute外保留mode/frame/clipId/revision/画幅，GpuPreview严格核对。neutral限已实测无装饰Source Han Sans SC Medium与基本中英字形；其他字体/描边阴影/几何/typewriter使用完整ASS的当前帧，最多300帧且≤1080p。manifest.frameRasters与previewQuality区分realtime/exact-frames，后者冷帧需要准备，UI标精确预览。包含温度mat3的column-major上传；新增实际验证见0.7 QA。

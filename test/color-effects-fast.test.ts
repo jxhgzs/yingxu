@@ -52,7 +52,7 @@ test('float LUT/matrix pipeline matches CPU through dense and adversarial edge c
       const values=i<4096?[edge[i%edge.length],edge[Math.floor(i/16)%16],edge[Math.floor(i/256)%16]]:[(i-4096+.5)/4096,((i*977)%4096+.5)/4096,((i*317)%4096+.5)/4096];
       for(let c=0;c<3;c++)input.writeFloatLE(values[c],(c*count+i)*4);input.writeFloatLE((i%257)/256,(3*count+i)*4);
     }
-    const cases=[adjust({brightness:-1}),adjust({brightness:-.5}),adjust({brightness:.7}),adjust({brightness:1}),adjust({contrast:-1}),adjust({contrast:-.5}),adjust({contrast:.00002}),adjust({contrast:.5}),adjust({contrast:1}),adjust({brightness:-1,contrast:-1}),adjust({brightness:1,contrast:1}),adjust({saturation:-1}),adjust({saturation:1}),adjust({highlight:-1,shadow:1}),adjust({highlight:1,shadow:-1}),adjust({brightness:-.99,saturation:1,highlight:-1,shadow:1}),adjust({brightness:.8,contrast:1,saturation:.8,highlight:-1,shadow:-1}),adjust({brightness:-.2,contrast:-.8,saturation:-.7,highlight:.8,shadow:.9})];
+    const cases=[adjust({brightness:-1}),adjust({brightness:-.5}),adjust({brightness:.7}),adjust({brightness:1}),adjust({contrast:-1}),adjust({contrast:-.5}),adjust({contrast:.00002}),adjust({contrast:.5}),adjust({contrast:1}),adjust({temperature:-1}),adjust({temperature:1}),adjust({tint:-1}),adjust({tint:1}),adjust({temperature:1,tint:1}),adjust({temperature:-1,tint:-1}),adjust({temperature:.00002,tint:.00002}),adjust({brightness:-1,contrast:-1}),adjust({brightness:1,contrast:1}),adjust({saturation:-1}),adjust({saturation:1}),adjust({highlight:-1,shadow:1}),adjust({highlight:1,shadow:-1}),adjust({brightness:-.99,saturation:1,highlight:-1,shadow:1}),adjust({brightness:.8,contrast:1,saturation:.8,highlight:-1,shadow:-1,temperature:1,tint:1}),adjust({brightness:-.2,contrast:-.8,saturation:-.7,highlight:.8,shadow:.9,temperature:-1,tint:-1})];
     let worst=0;
     for(const value of cases){
       const prepared=await prepareColorEffects(value,directory),output=runFloat(input,width,height,prepared.filter,directory);
@@ -73,7 +73,7 @@ test('float LUT/matrix pipeline matches CPU through dense and adversarial edge c
 test('fast colour benchmark processes sixty 720p frames without per-pixel expression evaluation',{timeout:60000},async t=>{
   const directory=await fs.mkdtemp(path.join(os.tmpdir(),'color-fast-benchmark-'));
   try{
-    const preparation=performance.now(),prepared=await prepareColorEffects(adjust({brightness:-.5,contrast:.5,saturation:1,highlight:-.8,shadow:.9}),directory),preparationMs=performance.now()-preparation;
+    const preparation=performance.now(),prepared=await prepareColorEffects(adjust({brightness:-.5,contrast:.5,saturation:1,highlight:-.8,shadow:.9,temperature:.7,tint:-.5}),directory),preparationMs=performance.now()-preparation;
     const started=performance.now();
     const result=spawnSync(ffmpeg(),['-v','error','-threads','2','-filter_threads','2','-f','lavfi','-i','testsrc2=size=1280x720:rate=30:duration=2','-vf',prepared.filter,'-frames:v','60','-f','null','-'],{cwd:directory,timeout:45000,maxBuffer:1024*1024});
     const seconds=(performance.now()-started)/1000;assert.equal(result.status,0,result.stderr?.toString());assert.ok(seconds<25,`Unexpected slow LUT path: ${seconds}s`);

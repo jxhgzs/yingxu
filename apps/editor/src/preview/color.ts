@@ -4,19 +4,21 @@ import type {ColorAdjustments} from '../../../../packages/core/src/color-effects
 
 /** Stage parameters are shared with the core/FFmpeg contracts; no slider mapping lives here. */
 export function colorUniforms(value?:ColorAdjustments){
- const mask=new Int32Array(4),parameters=new Float32Array([1,1,1,1]);let brightnessOffset=0;let contrastEnabled=false,contrast=contrastParameters(0);
+ const mask=new Int32Array(4),parameters=new Float32Array([1,1,1,1]);let brightnessOffset=0;let contrastEnabled=false,contrast=contrastParameters(0);let temperatureEnabled=false,temperatureMatrix=new Float32Array([1,0,0,0,1,0,0,0,1]);
  for(const stage of colorAdjustmentStages(value)){
   if(stage.kind==='contrast'){contrastEnabled=true;contrast=stage.parameters;continue;}
+  if(stage.kind==='temperatureTint'){temperatureEnabled=true;temperatureMatrix=new Float32Array([stage.matrix[0][0],stage.matrix[1][0],stage.matrix[2][0],stage.matrix[0][1],stage.matrix[1][1],stage.matrix[2][1],stage.matrix[0][2],stage.matrix[1][2],stage.matrix[2][2]]);continue;}
   const index=stage.kind==='brightness'?0:stage.kind==='saturation'?1:stage.kind==='highlight'?2:3;mask[index]=1;
   if(stage.kind==='saturation')parameters[index]=stage.factor;else parameters[index]=stage.exponent;
   if(stage.kind==='brightness')brightnessOffset=stage.inputOffset;
  }
- return {mask,parameters,brightnessOffset,contrastEnabled,contrastA:new Float32Array([contrast.factor,contrast.pivot,contrast.xFactor,contrast.pivotSlope]),contrastB:new Float32Array([contrast.leftDiff,contrast.rightDiff,contrast.leftSlopeDiff,contrast.rightSlopeDiff])};
+ return {mask,parameters,brightnessOffset,contrastEnabled,contrastA:new Float32Array([contrast.factor,contrast.pivot,contrast.xFactor,contrast.pivotSlope]),contrastB:new Float32Array([contrast.leftDiff,contrast.rightDiff,contrast.leftSlopeDiff,contrast.rightSlopeDiff]),temperatureEnabled,temperatureMatrix};
 }
 /** RGB math precedes premultiplication. Neutral channels bypass pow/clamp entirely. */
 export const colorShader=`
 uniform bvec4 u_fxEnabled;uniform vec4 u_fxParameters;uniform float u_fxBrightnessOffset;
 uniform bool u_fxContrastEnabled;uniform vec4 u_fxContrastA;uniform vec4 u_fxContrastB;
+uniform bool u_fxTemperatureEnabled;uniform mat3 u_fxTemperatureMatrix;
 vec3 previewContrast(vec3 x){
  float factor=u_fxContrastA.x;float pivot=u_fxContrastA.y;
  if(factor<=1.0)return clamp(factor*(x-vec3(pivot))+vec3(pivot),vec3(0.0),vec3(1.0));
@@ -32,6 +34,7 @@ vec3 previewColorAdjustments(vec3 adjusted){
  if(u_fxEnabled.y){float grey=dot(adjusted,vec3(${COLOR_LUMINANCE.join(',')}));adjusted=clamp(adjusted*u_fxParameters.y+vec3(grey*(1.0-u_fxParameters.y)),vec3(0.0),vec3(1.0));}
  if(u_fxEnabled.z){vec3 x=vec3(1.0)-adjusted;adjusted=clamp(vec3(1.0)-(pow(x,vec3(u_fxParameters.z))+(u_fxParameters.z-1.0)*(x*x-x*x*x)),vec3(0.0),vec3(1.0));}
  if(u_fxEnabled.w){vec3 x=adjusted;adjusted=clamp(pow(x,vec3(u_fxParameters.w))+(u_fxParameters.w-1.0)*(x*x-x*x*x),vec3(0.0),vec3(1.0));}
+ if(u_fxTemperatureEnabled)adjusted=clamp(u_fxTemperatureMatrix*adjusted,vec3(0.0),vec3(1.0));
  return adjusted;
 }`;
 

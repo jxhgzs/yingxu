@@ -1,7 +1,7 @@
 import type {Document,Asset,Diagnostic} from '../../../../packages/core/src/document.ts';
 import type {Rational} from '../../../../packages/core/src/time.ts';
 import {toNumber,frameTime} from '../../../../packages/core/src/time.ts';
-import {createPreviewPlan,outputTime,previewFrame,sourceSeekTime} from './plan.ts';
+import {createPreviewPlan,outputTime,previewFrame,sourceSeekTime,textRasterMode,sourceBoundaryHeld} from './plan.ts';
 import type {PreviewPlan,PreviewSupport,PreviewReason,PlannedFrame} from './plan.ts';
 import {DecodedMedia} from './decode.ts';
 import {createCurveClock} from './curve-clock.ts';
@@ -20,10 +20,10 @@ export type PreviewState='idle'|'loading'|'ready'|'playing'|'paused'|'buffering'
 export type PreviewMetrics={displayedFrames:number;droppedOutputFrames:number;decoderDroppedFrames:number;drawCalls:number;textureUploads:number;
  framebufferPasses:number;transitionDraws:number;framebufferCount:number;framebufferBytes:number;framebufferAllocations:number;
  lastCpuMs:number;meanCpuMs:number;lastGpuMs?:number;lastDecodeWaitMs:number;maxSourceDriftMs:number;lastPresentedFrame:number;activeMedia:number;cachedMedia:number;contextLosses:number};
-export type PreviewManifest={backend:'webgl2';state:PreviewState;support:PreviewSupport;renderer:GLInfo;color:PreviewColorState;time:number;audioState:AudioContextState|'uninitialized';metrics:PreviewMetrics;curveAudio:{cachedClips:number;pcmBytes:number;routes:PreviewAudio['curveRoutes']};
+export type PreviewManifest={backend:'webgl2';state:PreviewState;support:PreviewSupport;renderer:GLInfo;color:PreviewColorState;time:number;frameRasters:number;previewQuality:'realtime'|'exact-frames';audioState:AudioContextState|'uninitialized';metrics:PreviewMetrics;curveAudio:{cachedClips:number;pcmBytes:number;routes:PreviewAudio['curveRoutes']};
  decoders:{clipId:string;state:string;currentTime?:number;decodedMediaTime?:number;readyState?:number;presentedFrames:number;error?:string}[];error?:PreviewReason};
-export type TextContext={projectId:string;revision:number};
-export type TextTexture={url:string;width:number;height:number};
+export type TextContext={projectId:string;revision:number;mode?:'neutral'|'frame';frame?:number};
+export type TextTexture={url:string;width:number;height:number;mode?:'neutral'|'frame';frame?:number;clipId?:string;revision?:number};
 export type GpuPreviewOptions={curveAudio?:CurveAudioProvider;textTexture?:(clipId:string,context:TextContext,signal:AbortSignal)=>Promise<TextTexture>;mediaUrl:(asset:Asset)=>string;maxDimension?:number;maxConcurrentMedia?:number;maxCachedMedia?:number;
  onState?:(manifest:PreviewManifest)=>void;onTime?:(seconds:number)=>void;onMetrics?:(manifest:PreviewManifest)=>void};
 const unsupported:PreviewSupport={supported:false,reasons:[],visualLayers:0,audioLayers:0,maxConcurrentMedia:0};
@@ -34,7 +34,7 @@ export class GpuPreview {
  readonly canvas:HTMLCanvasElement;private options:GpuPreviewOptions;
  private compositor:WebGLCompositor;private audio=new PreviewAudio();private plan?:PreviewPlan;
  private sounds?:CurveSounds;private textContext?:TextContext;private curveClocks=new Map<string,CurveClock>();
- private resources=new Map<string,DecodedMedia>();private support:PreviewSupport=unsupported;private error?:PreviewReason;
+ private resources=new Map<string,DecodedMedia>();private textResourceFrames=new Map<string,number>();private support:PreviewSupport=unsupported;private error?:PreviewReason;
  private status:PreviewState='idle';private disposed=false;private playing=false;private buffering=false;private operation=new AbortController();private epoch=0;
  private raf?:number;private position=0;private anchorPosition=0;private anchorWall=0;private anchorAudio=0;private metricsAt=0;
  private stats:PreviewMetrics={displayedFrames:0,droppedOutputFrames:0,decoderDroppedFrames:0,drawCalls:0,textureUploads:0,framebufferPasses:0,transitionDraws:0,framebufferCount:0,framebufferBytes:0,framebufferAllocations:0,lastCpuMs:0,meanCpuMs:0,lastDecodeWaitMs:0,maxSourceDriftMs:0,lastPresentedFrame:-1,activeMedia:0,cachedMedia:0,contextLosses:0};
@@ -48,7 +48,8 @@ export class GpuPreview {
   let dropped=this.stats.decoderDroppedFrames;for(const r of this.resources.values())dropped+=r.quality()?.droppedVideoFrames||0;
   const unavailable=this.error||(this.status==='context-lost'?{code:'GPU_CONTEXT_LOST',message:'图形上下文正在恢复。'}:undefined);
   const support=unavailable?{...this.support,supported:false,reasons:[...this.support.reasons,unavailable]}:this.support;
-  return {backend:'webgl2',state:this.status,support:{...support,reasons:support.reasons.map(r=>({...r}))},renderer:{...this.compositor.info},color:this.compositor.colorState,time:this.currentTime,
+  const frameRasters=this.plan?.media.filter(l=>l.asset.kind==='text'&&textRasterMode(l.clip)==='frame').length??0;
+  return {backend:'webgl2',frameRasters,previewQuality:frameRasters?'exact-frames':'realtime',state:this.status,support:{...support,reasons:support.reasons.map(r=>({...r}))},renderer:{...this.compositor.info},color:this.compositor.colorState,time:this.currentTime,
    audioState:this.audio.state,curveAudio:{cachedClips:this.sounds?.size??0,pcmBytes:this.sounds?.bytes??0,routes:this.audio.curveRoutes},metrics:{...this.stats,decoderDroppedFrames:dropped,lastGpuMs:this.compositor.lastGpuMs,cachedMedia:this.resources.size,framebufferCount:this.compositor.framebufferCount,framebufferBytes:this.compositor.framebufferBytes,framebufferAllocations:this.compositor.framebufferAllocations},
    decoders:[...this.resources.values()].map(r=>({clipId:r.id,state:r.state,currentTime:r.media?.currentTime,decodedMediaTime:r.decodedTime,readyState:r.media?.readyState,presentedFrames:r.presentedFrames,...(r.error?{error:r.error}:{})})),...(this.error?{error:{...this.error}}:{})};
  }
@@ -59,13 +60,13 @@ export class GpuPreview {
  private resize(){const c=this.plan?.document.canvas||{width:1280,height:720},factor=Math.min(1,(this.options.maxDimension??1280)/Math.max(c.width,c.height),this.compositor.info.maxTextureSize/Math.max(c.width,c.height));
   this.compositor.resize(Math.max(2,Math.round(c.width*factor/2)*2),Math.max(2,Math.round(c.height*factor/2)*2));}
  private clearResources(){for(const id of [...this.resources.keys()])this.release(id);this.sounds?.clear();}
- private release(id:string){const r=this.resources.get(id);if(!r)return;this.stats.decoderDroppedFrames+=r.quality()?.droppedVideoFrames||0;this.audio.release(id);r.dispose();this.resources.delete(id);this.compositor.release(id);}
+ private release(id:string){const r=this.resources.get(id);if(!r)return;this.stats.decoderDroppedFrames+=r.quality()?.droppedVideoFrames||0;this.audio.release(id);r.dispose();this.resources.delete(id);this.textResourceFrames.delete(id);this.compositor.release(id);}
  private beginOperation(){this.operation.abort();this.operation=new AbortController();return {epoch:++this.epoch,signal:this.operation.signal};}
  private current(epoch:number){return !this.disposed&&epoch===this.epoch&&!this.operation.signal.aborted;}
  private ensure(){if(this.disposed)throw Error('PREVIEW_DISPOSED');if(this.status==='context-lost')throw Error('GPU_CONTEXT_LOST');}
  async setDocument(document:Document,options:{diagnostics?:Diagnostic[];time?:number;textContext?:TextContext}={}):Promise<PreviewManifest>{
   this.ensure();this.stopTransport();this.beginOperation();this.clearResources();this.plan=undefined;this.error=undefined;
-  this.textContext=options.textContext;this.curveClocks.clear();
+  this.textContext=options.textContext?{projectId:options.textContext.projectId,revision:options.textContext.revision}:undefined;this.curveClocks.clear();
   const result=createPreviewPlan(document,{diagnostics:options.diagnostics,maxConcurrentMedia:this.options.maxConcurrentMedia,texturesAvailable:!!this.options.textTexture&&!!this.textContext,curveAudioAvailable:!!this.sounds&&!!this.textContext});this.support=result.support;this.plan=result.plan;
   this.stats.lastPresentedFrame=-1;this.position=Math.min(Math.max(0,options.time??this.position),this.plan?.duration??0);this.resize();
   if(!this.plan){this.compositor.draw([],this.resources,document.canvas);this.setState('fallback');return this.manifest;}
@@ -120,23 +121,27 @@ export class GpuPreview {
  private async prepare(frame:PlannedFrame,seekAll:boolean,play:boolean,signal:AbortSignal):Promise<boolean>{
   const started=performance.now(),plan=this.plan!,activeIds=new Set(frame.media.map(l=>l.clip.id));let synchronized=seekAll;
   const curves=frame.audio.filter(l=>l.clip.speedCurve),curveIds=new Set(curves.map(l=>l.clip.id));
+  if(frame.media.some(l=>l.asset.kind==='text'&&(!this.resources.has(l.clip.id)||textRasterMode(l.clip)==='frame'&&this.textResourceFrames.get(l.clip.id)!==frame.frame)))synchronized=true;
   if(curves.some(l=>!this.sounds?.get(l.clip.id)))synchronized=true;
   if(play&&synchronized)this.holdForBuffer(frame);
   for(const [id,r] of this.resources)if(!activeIds.has(id))r.pause();
   // Curve audio-only clips use PCM directly, never an extra native HTMLAudio route.
-  const originalMedia=frame.media.filter(l=>!(l.asset.kind==='audio'&&l.clip.speedCurve));
+  const originalMedia=frame.media.filter(l=>!(l.asset.kind==='audio'&&l.clip.speedCurve)),heldIds=new Set(originalMedia.filter(l=>l.asset.kind==='video'&&sourceBoundaryHeld(l.clip,l.asset,frame.time)).map(l=>l.clip.id));
   const [requested]=await Promise.all([Promise.all(originalMedia.map(async layer=>{
    let r=this.resources.get(layer.clip.id);let url=layer.asset.kind==='text'?r?.url:this.options.mediaUrl(layer.asset),asset=layer.asset;
-   if(layer.asset.kind==='text'&&!r){
+   if(layer.asset.kind==='text'&&(!r||textRasterMode(layer.clip)==='frame'&&this.textResourceFrames.get(layer.clip.id)!==frame.frame)){
     if(!this.options.textTexture||!this.textContext)throw Error('GPU_TEXT_TEXTURE_SERVICE_REQUIRED');
-    const texture=await this.options.textTexture(layer.clip.id,this.textContext,signal);if(signal.aborted)throw new DOMException('Aborted','AbortError');
+    const mode=textRasterMode(layer.clip),context={...this.textContext,...(mode?{mode}:{}),...(mode==='frame'?{frame:frame.frame}:{})};
+    const texture=await this.options.textTexture(layer.clip.id,context,signal);if(signal.aborted)throw new DOMException('Aborted','AbortError');
+    if(mode&&(texture.clipId!==layer.clip.id||texture.revision!==this.textContext.revision))throw Error('GPU_TEXT_TEXTURE_IDENTITY_INVALID');
+    if(texture.mode!==mode||texture.frame!==(mode==='frame'?frame.frame:undefined))throw Error('GPU_TEXT_TEXTURE_MODE_INVALID');
     if(texture.width!==plan.document.canvas.width||texture.height!==plan.document.canvas.height)throw Error('GPU_TEXT_TEXTURE_DIMENSIONS_INVALID');
-    asset={...asset,width:texture.width,height:texture.height};url=texture.url;
+    asset={...asset,width:texture.width,height:texture.height};url=texture.url;if(mode==='frame'&&r?.url===url)this.textResourceFrames.set(layer.clip.id,frame.frame);
    }
    if(!url)throw Error('GPU_REGISTERED_MEDIA_URL_REQUIRED');
    if(r&&(r.asset.id!==layer.asset.id||r.url!==url)){this.release(r.id);r=undefined;}
    if(signal.aborted)throw new DOMException('Aborted','AbortError');
-   if(!r){r=new DecodedMedia(layer.clip.id,asset,url,10000,{textRaster:asset.kind==='text'});this.resources.set(r.id,r);synchronized=true;}
+   if(!r){r=new DecodedMedia(layer.clip.id,asset,url,10000,{textRaster:asset.kind==='text'});this.resources.set(r.id,r);if(asset.kind==='text'&&textRasterMode(layer.clip)==='frame')this.textResourceFrames.set(r.id,frame.frame);synchronized=true;}
    r.lastUsed=performance.now();if(r.state==='loading')synchronized=true;return {layer,resource:r};
   })),Promise.all(curves.map(layer=>{
     if(!this.sounds||!this.textContext)throw Error('GPU_CURVE_AUDIO_SERVICE_REQUIRED');
@@ -149,16 +154,16 @@ export class GpuPreview {
    const target=sourceSeekTime(layer.clip,layer.asset,frame.time,plan.document.fps),speed=this.curveClocks.get(layer.clip.id)?.sample(frame.time).playbackRate??toNumber(layer.clip.speed);
    const drift=this.curveClocks.get(layer.clip.id)?.targetDrift(media.currentTime,frame.time)??Math.abs(media.currentTime-target)/speed;
    if(this.playing&&!this.buffering&&!media.paused)this.stats.maxSourceDriftMs=Math.max(this.stats.maxSourceDriftMs,drift*1000);
-   if(layer.clip.speedCurve){
+   if(layer.clip.speedCurve||heldIds.has(layer.clip.id)){
     // Native curve video remains silent and paused. The target-clock PCM is
     // independently scheduled after the transport anchor, never rate-warped here.
     resource.pause();media.muted=true;await resource.seek(target,signal);
-    if(play&&!seekAll)await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
+    if(layer.clip.speedCurve&&play&&!seekAll)await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
    }else if(seekAll||media.paused||media.readyState<2||drift>Math.max(.08,2/toNumber(plan.document.fps))){synchronized=true;if(play)this.holdForBuffer(frame);await resource.seek(target,signal);}
    media.playbackRate=speed;media.preservesPitch=true;
   }));
   if(signal.aborted)throw new DOMException('Aborted','AbortError');
-  if(play)await Promise.all(requested.map(({layer,resource})=>!layer.clip.speedCurve&&resource.media?.paused?resource.media.play():undefined));
+  if(play)await Promise.all(requested.map(({layer,resource})=>!layer.clip.speedCurve&&!heldIds.has(layer.clip.id)&&resource.media?.paused?resource.media.play():undefined));
   this.stats.lastDecodeWaitMs=performance.now()-started;this.stats.activeMedia=activeIds.size;
   const inactive=[...this.resources.values()].filter(r=>!activeIds.has(r.id)).sort((a,b)=>a.lastUsed-b.lastUsed);
   while(this.resources.size>(this.options.maxCachedMedia??24)&&inactive.length)this.release(inactive.shift()!.id);

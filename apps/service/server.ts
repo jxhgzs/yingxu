@@ -8,6 +8,7 @@ import {Jobs} from './jobs.ts';
 import {TextRasters} from './text-raster.ts';
 import {CurveAudioRenders} from './curve-audio.ts';
 import {json, body, serveFile} from './http.ts';
+import {detectCfr30} from '../../packages/media/src/frame-timing.ts';
 import {probeAsset, ffmpeg} from '../../packages/media/src/probe.ts';
 import {runProcess} from '../../packages/media/src/process.ts';
 import {importJianying} from '../../packages/jianying/src/import.ts';
@@ -25,10 +26,11 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   const token = randomBytes(24).toString('hex');
   async function registerFile(file: string, name: string) {
     const asset = await probeAsset(file, name);
+    const frameTiming=await detectCfr30(asset);if(frameTiming)asset.frameTiming=frameTiming;
     const extension = path.extname(name).toLowerCase().replace(/[^a-z0-9.]/g, '').slice(0, 12) || '.media';
     const destination = path.join(store.root, 'media', asset.id + extension);
     if (!store.assets.has(asset.id)) {await fs.copyFile(file, destination); asset.path = destination;}
-    return await store.addAsset(asset);
+    return await store.addAsset(asset,{...(frameTiming?{verifiedFrameTiming:frameTiming}:{})});
   }
   const server = http.createServer(async (request, response) => {
     try {
@@ -43,8 +45,8 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
       if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, engine:jobs.engine, projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'gpu-silent-curve', 'gpu-curve-audio', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
-        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU预览支持恒速媒体、静态文字、静音曲线、五项基础调节和叠化/闪黑；曲线声音需先准备音轨，超缓存限制、文字动画与未知效果需要后台预览']});
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'text-animation', 'gpu-text-animation', 'temperature-tint', 'gpu-silent-curve', 'gpu-curve-audio', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
+        limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU支持七项调节、已验证叠化/闪黑及文字动画；部分文字使用精确逐帧纹理，冷帧需等待；曲线声音需先准备音轨，超缓存限制或未知样式回退后台预览；零余量转场只支持逐帧验证的30fps恒速素材']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
         const input = await body(request), doc = emptyDocument(); if (typeof input.title === 'string') doc.title = input.title.slice(0, 200);

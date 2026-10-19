@@ -6,6 +6,7 @@ import type {SessionArchive} from '../../packages/core/src/session.ts';
 import {check, validateDocument, emptyDocument} from '../../packages/core/src/document.ts';
 import type {Document, Asset, Diagnostic, Imported} from '../../packages/core/src/document.ts';
 import type {Command} from '../../packages/core/src/commands.ts';
+import {compare,rational} from '../../packages/core/src/time.ts';
 
 export const contentHash = (data: unknown) => createHash('sha256').update(JSON.stringify(data)).digest('hex');
 export async function atomicJSON(file: string, data: unknown) {
@@ -38,13 +39,25 @@ export class Store {
       validateDocument(p.document); createSession(p.document, p); this.projects.set(p.id, p);
     }
   }
-  async addAsset(asset: Asset) {
-    const existing = this.assets.get(asset.id); if (existing) return existing;
-    // A single asset-list queue prevents two uploads from losing each other's registration.
+  async addAsset(asset: Asset, options:{verifiedFrameTiming?:'cfr30'}={}) {
+    // The public asset value cannot grant itself a timing proof. Only registration
+    // may pass the result of the actual bounded PTS scan as a separate argument.
+    const verified=options.verifiedFrameTiming==='cfr30'&&asset.frameTiming==='cfr30',candidate={...asset};
+    delete candidate.frameTiming;
+    if(verified){check(asset.kind==='video'&&!!asset.fps&&compare(asset.fps,rational(30))===0&&typeof asset.sha256==='string'&&/^[a-f0-9]{64}$/.test(asset.sha256),'ASSET_FRAME_TIMING_IDENTITY_MISMATCH');candidate.frameTiming='cfr30';}
+    const matches=(found:Asset)=>check(found.sha256===asset.sha256&&found.kind===asset.kind&&!!found.fps&&!!asset.fps&&compare(found.fps,asset.fps)===0,'ASSET_FRAME_TIMING_IDENTITY_MISMATCH');
+    const existing = this.assets.get(asset.id);
+    if(existing){if(verified)matches(existing);if(!verified||existing.frameTiming==='cfr30')return existing;}
+    // A single asset-list queue prevents uploads and metadata refreshes from losing registrations.
     return await this.#serial('assets', async () => {
-      const found = this.assets.get(asset.id); if (found) return found;
-      const next = [...this.assets.values(), asset]; await atomicJSON(path.join(this.root, 'assets.json'), next);
-      this.assets.set(asset.id, asset); return asset;
+      const found=this.assets.get(asset.id);
+      if(found){
+        if(!verified)return found;matches(found);if(found.frameTiming==='cfr30')return found;
+        const refreshed:Asset={...found,frameTiming:'cfr30'},next=[...this.assets.values()].map(item=>item.id===found.id?refreshed:item);
+        await atomicJSON(path.join(this.root,'assets.json'),next);this.assets.set(found.id,refreshed);return refreshed;
+      }
+      const next = [...this.assets.values(), candidate]; await atomicJSON(path.join(this.root, 'assets.json'), next);
+      this.assets.set(candidate.id, candidate); return candidate;
     });
   }
   async create(document = emptyDocument(), extra: Partial<Pick<ProjectRecord, 'diagnostics' | 'provenance'>> = {}) {

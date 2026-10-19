@@ -54,7 +54,7 @@ function glFixture(failure?:'compile'|'link'|'uniform'|'framebuffer'){
  const gl={VERTEX_SHADER:1,FRAGMENT_SHADER:2,COMPILE_STATUS:3,LINK_STATUS:4,ARRAY_BUFFER:5,FLOAT:6,BLEND:7,ONE:8,ONE_MINUS_SRC_ALPHA:9,DEPTH_TEST:10,UNPACK_FLIP_Y_WEBGL:11,UNPACK_PREMULTIPLY_ALPHA_WEBGL:12,RENDERER:13,VENDOR:14,MAX_TEXTURE_SIZE:15,
   createShader:()=>alloc(live.shaders),shaderSource(){},compileShader(){},getShaderParameter:()=>failure!=='compile',getShaderInfoLog:()=> 'test compile error',deleteShader:(v:unknown)=>live.shaders.delete(v),
   createProgram:()=>alloc(live.programs),attachShader(){},linkProgram(){},getProgramParameter:()=>failure!=='link',getProgramInfoLog:()=> 'test link error',deleteProgram:(v:unknown)=>live.programs.delete(v),
-  createBuffer:()=>alloc(live.buffers),createVertexArray:()=>alloc(live.vaos),deleteBuffer:(v:unknown)=>live.buffers.delete(v),deleteVertexArray:(v:unknown)=>live.vaos.delete(v),bindVertexArray(){},bindBuffer(){},getAttribLocation:()=>0,enableVertexAttribArray(){},vertexAttribPointer(){},useProgram(){},getUniformLocation:(_p:unknown,name:string)=>failure==='uniform'?null:{name},uniform1i:(location:{name:string},value:number)=>{if(location.name==='u_dipToBlack')dip=!!value;},uniform4iv(){},uniform4fv(){},enable(){},blendFunc(){},disable(){},pixelStorei:(name:number,value:unknown)=>pixelStores.set(name,value),getExtension:()=>null,getParameter:(p:number)=>p===40?pixelStores.get(p):p===15?4096:p===13?'Test hardware renderer':'Test vendor',viewport(){},isContextLost:()=>false,
+  createBuffer:()=>alloc(live.buffers),createVertexArray:()=>alloc(live.vaos),deleteBuffer:(v:unknown)=>live.buffers.delete(v),deleteVertexArray:(v:unknown)=>live.vaos.delete(v),bindVertexArray(){},bindBuffer(){},getAttribLocation:()=>0,enableVertexAttribArray(){},vertexAttribPointer(){},useProgram(){},getUniformLocation:(_p:unknown,name:string)=>failure==='uniform'?null:{name},uniform1i:(location:{name:string},value:number)=>{if(location.name==='u_dipToBlack')dip=!!value;},uniform4iv(){},uniform4fv(){},uniformMatrix3fv(){},enable(){},blendFunc(){},disable(){},pixelStorei:(name:number,value:unknown)=>pixelStores.set(name,value),getExtension:()=>null,getParameter:(p:number)=>p===40?pixelStores.get(p):p===15?4096:p===13?'Test hardware renderer':'Test vendor',viewport(){},isContextLost:()=>false,
   UNPACK_COLORSPACE_CONVERSION_WEBGL:40,BROWSER_DEFAULT_WEBGL:41,NONE:0,drawingBufferColorSpace:'display-p3',unpackColorSpace:'display-p3',
   clearColor:(_r:number,_g:number,_b:number,a:number)=>{alpha=a;},clear:()=>clears.push({framebuffer:boundFramebuffer,alpha}),activeTexture(){},
   FRAMEBUFFER:30,COLOR_ATTACHMENT0:31,FRAMEBUFFER_COMPLETE:32,TEXTURE0:33,TEXTURE_2D:34,RGBA8:35,RGBA:36,UNSIGNED_BYTE:37,NO_ERROR:0,
@@ -146,9 +146,32 @@ test('static text texture keeps asset identity, uploads once and does not apply 
  }finally{Object.assign(globalThis,{HTMLVideoElement:saved});}
 });
 
+test('neutral text applies the quantized authority alpha once while exact frames retain baked alpha',()=>{
+ const saved=globalThis.HTMLVideoElement;Object.assign(globalThis,{HTMLVideoElement:class {}});
+ const asset:Asset={id:'text-asset',kind:'text',path:'',duration:rational(20)},layer:PlannedVisual={clip:{...clip,id:'text-clip',materialId:asset.id},asset,sourceTime:rational(0),transform:{...defaultTransform(),opacity:.345},textRasterMode:'neutral'};
+ const resource={id:'text-clip',state:'ready',asset:{...asset,width:320,height:180},pixels:{naturalWidth:320,naturalHeight:180}} as unknown as DecodedMedia;
+ try{const {canvas,draws}=glFixture(),compositor=new WebGLCompositor(canvas);compositor.resize(320,180);const resources=new Map([[layer.clip.id,resource]]);
+  assert.equal(compositor.draw([layer],resources,{width:320,height:180}).textureUploads,1);assert.equal(draws[0].opacity,1-Math.round((1-.345)*255)/255);
+  compositor.draw([{...layer,textRasterMode:'frame'}],resources,{width:320,height:180});assert.equal(draws[1].opacity,1);compositor.dispose();
+ }finally{Object.assign(globalThis,{HTMLVideoElement:saved});}
+});
+
 test('invalid public curve document reports fallback before constructing any curve clock',async()=>{
  const {canvas}=glFixture(),preview=new GpuPreview(canvas,{mediaUrl:a=>'http://127.0.0.1/media/'+a.id});
  try{const d=emptyDocument();d.assets.push({id:'v',kind:'video',path:'/unused.mp4',duration:rational(2),width:320,height:180});d.tracks[0].clips.push({...clip,materialId:'v',speedCurve:{points:[{x:.2,y:1},{x:.8,y:1}]}});
   const result=await preview.setDocument(d);assert.equal(result.state,'fallback');assert.equal(result.support.reasons[0].code,'INVALID_PREVIEW_DOCUMENT');assert.equal(result.decoders.length,0);
  }finally{preview.dispose();}
+});
+
+
+test('text frame providers are demand-only, strict about mode/revision, and replace exact-frame resources',async()=>{
+ class ImageFake extends EventTarget {naturalWidth=320;naturalHeight=180;crossOrigin='';decoding='';value='';get src(){return this.value;}set src(value:string){this.value=value;if(value)queueMicrotask(()=>this.dispatchEvent(new Event('load')));}async decode(){}removeAttribute(){this.value='';}remove(){}}
+ const saved={Image:globalThis.Image,HTMLVideoElement:globalThis.HTMLVideoElement,requestAnimationFrame:globalThis.requestAnimationFrame,cancelAnimationFrame:globalThis.cancelAnimationFrame};
+ Object.assign(globalThis,{Image:ImageFake,HTMLVideoElement:class {},requestAnimationFrame:(fn:FrameRequestCallback)=>{queueMicrotask(()=>fn(0));return 1;},cancelAnimationFrame:()=>{}});
+ try{const d=emptyDocument();d.canvas={width:320,height:180};d.assets=[{id:'txt',kind:'text',path:'',duration:rational(20)}];d.tracks[2].clips=[{...clip,id:'caption',materialId:'txt',transform:defaultTransform(),text:{content:'中文',font:'Source Han Sans SC Medium',size:24,color:'#ffffff'},animations:[{property:'x',points:[{id:'a',time:rational(0),value:-10,interpolation:'linear'},{id:'b',time:rational(2),value:10,interpolation:'linear'}]}]}];
+  const calls:{mode?:string;frame?:number}[]=[],{canvas}=glFixture(),preview=new GpuPreview(canvas,{mediaUrl:()=>{throw Error('text must not resolve as normal media');},textTexture:async(clipId,context)=>{calls.push(context);return {clipId,revision:context.revision,mode:context.mode,frame:context.frame,width:320,height:180,url:'http://127.0.0.1/text-renders/'+String(context.frame===31?30:context.frame).padStart(64,'0')+'.png'};}});
+  await preview.setDocument(d,{textContext:{projectId:'p',revision:4}});assert.equal(preview.manifest.state,'ready');assert.deepEqual(calls.map(c=>[c.mode,c.frame]),[['frame',0]]);assert.equal(preview.manifest.metrics.textureUploads,1);
+  await preview.seek(1);assert.deepEqual(calls.map(c=>c.frame),[0,30]);assert.equal(preview.manifest.metrics.cachedMedia,1);assert.equal(preview.manifest.metrics.textureUploads,2);await preview.seek(1);assert.equal(calls.length,2);assert.equal(preview.manifest.frameRasters,1);assert.equal(preview.manifest.previewQuality,'exact-frames');await preview.seek(rational(31,30));await preview.seek(rational(31,30));assert.deepEqual(calls.map(c=>c.frame),[0,30,31],'repeated same-hash target frame must not re-request');assert.equal(preview.manifest.metrics.textureUploads,2,'same content should retain its existing GPU texture');preview.dispose();
+  const fixture=glFixture(),bad=new GpuPreview(fixture.canvas,{mediaUrl:()=>'',textTexture:async(clipId,context)=>({clipId,revision:context.revision,mode:'neutral',width:320,height:180,url:'http://127.0.0.1/text-renders/'+'a'.repeat(64)+'.png'})});await bad.setDocument(d,{textContext:{projectId:'p',revision:4}});assert.equal(bad.manifest.state,'fallback');assert.equal(bad.manifest.error?.code,'GPU_TEXT_TEXTURE_MODE_INVALID');assert.equal(bad.manifest.metrics.cachedMedia,0);bad.dispose();
+ }finally{Object.assign(globalThis,saved);}
 });

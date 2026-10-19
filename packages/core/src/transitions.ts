@@ -1,5 +1,5 @@
 import {check, validRational} from './document.ts';
-import type {Clip, Document, Range, Transition} from './document.ts';
+import type {Asset,Clip, Document, Range, Transition} from './document.ts';
 import {add, sub, mul, div, compare, rational, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 export type {Transition} from './document.ts';
@@ -23,6 +23,22 @@ export function transitionHandles(transition:Transition,outgoing:Clip,incoming:C
 } {
   const window=transitionWindow(transition,outgoing);
   return {window,outgoingSourceEnd:transitionSourceAt(outgoing,add(window.start,window.duration)),incomingSourceStart:transitionSourceAt(incoming,window.start)};
+}
+
+/** Only the individually observed CFR30 / 1x / aligned source boundary is admitted. */
+export function transitionBoundaryPolicy(fps:Rational,transition:Transition,outgoing:Clip,incoming:Clip,outAsset:Asset,inAsset:Asset):'handles'|'clone-cfr30'{
+ const handles=transitionHandles(transition,outgoing,incoming);
+ if(compare(handles.outgoingSourceEnd,outAsset.duration)<=0&&compare(handles.incomingSourceStart,ZERO)>=0)return 'handles';
+ const aligned=(time:Rational)=>mul(time,rational(30)).denominator==='1';
+ const confirmed=compare(fps,rational(30))===0&&[outgoing,incoming].every(clip=>!clip.speedCurve&&compare(clip.speed,rational(1))===0&&[clip.source.start,clip.source.duration,clip.target.start,clip.target.duration].every(aligned))&&[outAsset,inAsset].every(asset=>asset.frameTiming==='cfr30'&&!!asset.fps&&compare(asset.fps,rational(30))===0&&compare(asset.duration,rational(300))<=0&&aligned(asset.duration))&&[handles.window.start,handles.window.duration].every(aligned);
+ check(confirmed,'TRANSITION_SOURCE_HANDLES_MISSING',transition.id);return 'clone-cfr30';
+}
+
+/** Sampling is clamped; source-clock property interpolation still uses the original clock. */
+export function transitionDecodedSourceTime(asset:Asset,time:Rational):Rational{
+ if(asset.frameTiming!=='cfr30')return time;
+ if(compare(time,ZERO)<0)return ZERO;
+ const last=sub(asset.duration,rational(1,30));return compare(time,last)>0?(compare(last,ZERO)<0?ZERO:last):time;
 }
 
 export function assertNoClipTransitions(doc:Document,clipId:string):void {
@@ -60,7 +76,7 @@ export function validateTransitions(doc:Document):void {
     // Product boundary: require a nonempty output frame window; native UI minimum is unverified.
     check(compare(transition.duration,div(rational(1),doc.fps))>=0,'TRANSITION_DURATION_BELOW_ONE_FRAME',transition.id);
     const handles=transitionHandles(transition,outgoing,incoming),outAsset=assets.get(outgoing.materialId)!;
-    if(transition.kind==='crossfade')check(compare(handles.outgoingSourceEnd,outAsset.duration)<=0&&compare(handles.incomingSourceStart,ZERO)>=0,'TRANSITION_SOURCE_HANDLES_MISSING',transition.id);
+    if(transition.kind==='crossfade')transitionBoundaryPolicy(doc.fps,transition,outgoing,incoming,outAsset,assets.get(incoming.materialId)!);
     const ranges=windows.get(track.id)||[];ranges.push({id:transition.id,range:handles.window});windows.set(track.id,ranges);
   }
   for(const ranges of windows.values()){

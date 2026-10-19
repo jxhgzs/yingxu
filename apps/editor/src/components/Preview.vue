@@ -17,7 +17,7 @@ const renderedReady=computed(()=>!!props.c.preview.value?.result&&props.c.previe
 const ready=computed(()=>realtime.value?['ready','playing','paused','buffering'].includes(manifest.value!.state):renderedReady.value);
 const source=computed(()=>props.c.preview.value?.result?props.c.api.url(props.c.preview.value.result.url):'');
 const waiting=computed(()=>realtime.value?['loading','buffering'].includes(manifest.value!.state):props.c.previewPending.value);
-const backendLabel=computed(()=>realtime.value?(manifest.value?.renderer.softwareRenderer?'WebGL 实时':'GPU 实时'):'后台预览');
+const backendLabel=computed(()=>realtime.value&&manifest.value?.previewQuality==='exact-frames'?'精确预览':realtime.value?(manifest.value?.renderer.softwareRenderer?'WebGL 实时':'GPU 实时'):'后台预览');
 const reason=computed(()=>gpuError.value||manifest.value?.support.reasons.map(r=>r.message).join('；')||'');
 function accept(next:PreviewManifest){
   if(disposed)return;manifest.value=next;
@@ -27,7 +27,7 @@ function accept(next:PreviewManifest){
 function createEngine(){
   if(!canvas.value||disposed)return;
   try{engine=new GpuPreview(canvas.value,{mediaUrl:asset=>props.c.api.url(`/media/${encodeURIComponent(asset.id)}`),textTexture:async(clipId,context,signal)=>{
-    const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/textures`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId}),signal});
+    const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/textures`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId,...(context.mode?{mode:context.mode}:{}),...(context.frame!==undefined?{frame:context.frame}:{})}),signal});
     const texture=await response.json();if(!response.ok)throw Error(texture.error||'TEXT_TEXTURE_REQUEST_FAILED');return {...texture,url:props.c.api.url(texture.url)};
   },curveAudio:async(clipId,context,signal)=>{
     const response=await fetch(props.c.api.url(`/api/projects/${encodeURIComponent(context.projectId)}/curve-audio`),{method:'POST',headers:{'Content-Type':'application/json','x-editor-token':props.c.api.token},body:JSON.stringify({revision:context.revision,clipId}),signal});

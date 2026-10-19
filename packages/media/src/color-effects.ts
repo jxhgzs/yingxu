@@ -15,6 +15,9 @@ export function colorEffectsGeqExpressions(value?:ColorAdjustments):GeqColorExpr
     if(stage.kind==='saturation'){
       statements.push(`st(3,${COLOR_LUMINANCE.map((weight,i)=>`${weight}*ld(${i})`).join('+')})`);
       for(let i=0;i<3;i++)statements.push(`st(${i},clip(ld(${i})*${stage.factor}+ld(3)*(${1-stage.factor}),0,1))`);
+    }else if(stage.kind==='temperatureTint'){
+      for(let i=0;i<3;i++)statements.push(`st(${3+i},clip(${stage.matrix[i].map((coefficient,j)=>`(${coefficient})*ld(${j})`).join('+')},0,1))`);
+      for(let i=0;i<3;i++)statements.push(`st(${i},ld(${3+i}))`);
     }else for(let i=0;i<3;i++){
       const x=`ld(${i})`;
       let expression:string;
@@ -62,6 +65,8 @@ export function colorEffectsShader(value?:ColorAdjustments,functionName='applyCo
     if(stage.kind==='saturation'){
       lines.push(`  float fxLuma = dot(adjusted,vec3(${COLOR_LUMINANCE.map(glFloat).join(',')}));`);
       expression=`adjusted*${glFloat(stage.factor)}+vec3(fxLuma*${glFloat(1-stage.factor)})`;
+    }else if(stage.kind==='temperatureTint'){
+      expression=`vec3(${stage.matrix.map(row=>`dot(adjusted,vec3(${row.map(glFloat).join(',')}))`).join(',')})`;
     }else if(stage.kind==='brightness'){
       expression=`vec3(1.0)-pow(vec3(1.0)-adjusted-vec3(${glFloat(stage.inputOffset)}),vec3(${glFloat(stage.exponent)}))`;
     }else if(stage.kind==='contrast'){

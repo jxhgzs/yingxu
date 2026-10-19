@@ -1,8 +1,9 @@
 import type {Layer} from './graph.ts';
 import type {Rational} from '../../core/src/time.ts';
-import {add,div,mul,rational} from '../../core/src/time.ts';
+import {add,sub,div,mul,rational} from '../../core/src/time.ts';
 import {check} from '../../core/src/document.ts';
 import {animatedValue} from './animation.ts';
+import {textAnimationOpacity,textAnimationVisibleCount} from '../../core/src/text-animation.ts';
 
 /** Align to the visible output frame first, then floor its ASS centisecond edge. */
 export function frameEdge(time:Rational,fps:Rational) {
@@ -25,7 +26,7 @@ export function groupTextLayers(layers:Layer[]):(Layer|Layer[])[] {
 export function captionScript(layers:Layer[],canvas:{width:number;height:number},fps:Rational):string {
   const entries=layers.map(({clip},layer)=>{
     const first=frameEdge(clip.target.start,fps),last=frameEdge(add(clip.target.start,clip.target.duration),fps);
-    const animated=clip.animations?.some(a=>a.property!=='volume')||false;
+    const animated=clip.animations?.some(a=>a.property!=='volume')||!!clip.textAnimations?.length;
     return {clip,layer,first,last,animated};
   }).filter(e=>e.first.frame<e.last.frame);
   if(!entries.length)return '';
@@ -48,8 +49,15 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
       for(let frame=first.frame;frame<last.frame;frame++){
         const time=div(rational(frame),fps),edge=frameEdge(time,fps),end=frameEdge(div(rational(frame+1),fps),fps);
         const value=(property:'x'|'y'|'scale'|'rotation'|'opacity')=>animatedValue(clip,property,time,t[property]);
-        const alpha=Math.round((1-value('opacity'))*255).toString(16).padStart(2,'0');
-        events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${position(value('x'),value('y'),value('scale'),value('rotation'))})\\fscx${value('scale')*100}\\fscy${value('scale')*100}\\frz${-value('rotation')}\\alpha&H${alpha}&}${text}`);
+        const elapsed=sub(time,clip.target.start),opacity=value('opacity')*textAnimationOpacity(clip.textAnimations,elapsed,clip.target.duration);
+        const alpha=Math.round((1-opacity)*255).toString(16).padStart(2,'0');
+        let displayed=text;const typewriter=clip.textAnimations?.find(a=>a.kind==='typewriter');
+        if(typewriter){
+          const visible=textAnimationVisibleCount(typewriter,style.content,elapsed),prefix=lines.slice(0,lineIndex).reduce((n,line)=>n+line.length+1,0);
+          const localVisible=Math.max(0,Math.min(line.length,visible-prefix));
+          displayed=assText(line.slice(0,localVisible))+(localVisible<line.length?`{\\alpha&Hff&}${assText(line.slice(localVisible))}`:'');
+        }
+        events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${position(value('x'),value('y'),value('scale'),value('rotation'))})\\fscx${value('scale')*100}\\fscy${value('scale')*100}\\frz${-value('rotation')}\\alpha&H${alpha}&}${displayed}`);
       }
       }else events.push(`Dialogue: ${layer},${first.ass},${last.ass},${name},,0,0,0,,{\\pos(${position(t.x,t.y,t.scale,t.rotation)})\\fscx${t.scale*100}\\fscy${t.scale*100}\\frz${-t.rotation}}${text}`);
     }

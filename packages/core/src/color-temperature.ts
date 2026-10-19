@@ -1,6 +1,5 @@
 /**
- * Independent temperature/tint mathematical candidate, not yet wired into the
- * editor. Static equations and numeric colourimetry data are documented in
+ * Independent temperature/tint equations, integrated into the editor in 0.7. Static equations and numeric colourimetry data are documented in
  * docs/qa/2026-10-19-rea-temperature.md. Limited native colour-card comparison
  * is recorded separately; this is not a claim of complete runtime parity.
  * RGB remains in the caller's current encoding, with no implicit gamma change.

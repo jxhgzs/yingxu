@@ -17,7 +17,7 @@ function harness(sounds:CurveSounds){
  doc.tracks[0].clips=[{id:'c',materialId:'v',source:{start:rational(0),duration:rational(1)},target:{start:rational(0),duration:rational(1)},speed:rational(1),editableTiming:true,speedCurve:{points:[{x:0,y:1},{x:1,y:1}]}}];
  const preview=Object.create(GpuPreview.prototype) as GpuPreview;
  Object.assign(preview,{
-  plan:createPreviewPlan(doc,{curveAudioAvailable:true}).plan,support:{supported:true,reasons:[]},resources:new Map(),sounds,canvas:new EventTarget(),
+  plan:createPreviewPlan(doc,{curveAudioAvailable:true}).plan,support:{supported:true,reasons:[]},resources:new Map(),textResourceFrames:new Map(),sounds,canvas:new EventTarget(),
   textContext:{projectId:'p',revision:0},options:{mediaUrl:(a:{id:string})=>'http://127.0.0.1/media/'+a.id},curveClocks:new Map(),
   status:'ready',disposed:false,playing:false,buffering:false,epoch:0,position:0,operation:new AbortController(),stats:{decoderDroppedFrames:0},
   audio:{silence(){},async suspend(){},release(){},dispose(){}},compositor:{release(){},dispose(){}},

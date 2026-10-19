@@ -20,7 +20,7 @@ type LutPayload={name:string;bytes:Buffer;sha256:string;samples:number};
 type LutRecord={name:string;bytes:number;sha256:string;samples:number;cacheHit:boolean};
 export type PreparedColorEffects={filter:string;files:string[];metadata:{
   compiler:typeof COMPILER;key:string;pixelFormat:'gbrapf32le';neutral:boolean;
-  interpolation:'linear';luts:LutRecord[];matrix?:number[];
+  interpolation:'linear';luts:LutRecord[];matrix?:number[];temperatureMatrix?:number[];
   limits:{maxFiles:number;maxFileBytes:number};
 }};
 const memoryCache=new Map<string,LutPayload>();
@@ -116,6 +116,16 @@ export async function prepareColorEffects(value:ColorAdjustments|undefined,direc
     const hasPost=stages.some(stage=>stage.kind==='highlight'||stage.kind==='shadow');
     if(hasPost||saturation){
       const lut=await writeLut(target,payload({version:'combine-adjust-v2',highlight:normalized.highlight,shadow:normalized.shadow},hasPost?COLOR_LUT_SAMPLES:2));
+      metadata.luts.push(lut);filters.push(`lut1d=file=${lut.name}:interp=linear`);
+    }
+    const temperature=stages.find(stage=>stage.kind==='temperatureTint');
+    if(temperature){
+      const matrix=temperature.matrix.flat();metadata.temperatureMatrix=matrix;
+      const fields=['rr','rg','rb','gr','gg','gb','br','bg','bb'];
+      filters.push(`colorchannelmixer=${matrix.map((coefficient,i)=>`${fields[i]}=${coefficient}`).join(':')}:pc=none:pa=0`);
+      // Float colorchannelmixer leaves out-of-gamut values. Clamp here before
+      // another effect/format conversion, rather than at the end of the graph.
+      const lut=await writeLut(target,payload({version:'combine-adjust-v2'},2));
       metadata.luts.push(lut);filters.push(`lut1d=file=${lut.name}:interp=linear`);
     }
     filters.push('format=gbrapf32le');

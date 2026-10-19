@@ -5,24 +5,34 @@ import {prepareFonts} from './fonts.ts';
 import {ffmpeg} from './probe.ts';
 import {runProcess} from './process.ts';
 import {rational} from '../../core/src/time.ts';
-import {check} from '../../core/src/document.ts';
+import type {Rational} from '../../core/src/time.ts';
+import {check,defaultTransform} from '../../core/src/document.ts';
 import type {Layer} from './graph.ts';
 
-/** Render one static caption with exactly the export ASS layout, never a browser font substitute. */
-export async function rasterText(layer:Layer,canvas:{width:number;height:number},directory:string,options:{signal?:AbortSignal}={}){
+/** Render static, neutral or exact-frame ASS with the same export layout and fonts. */
+export async function rasterText(layer:Layer,canvas:{width:number;height:number},directory:string,options:{signal?:AbortSignal;mode?:'neutral'|'frame';frame?:number;fps?:Rational}={}){
  check(layer.asset.kind==='text'&&!!layer.clip.text,'TEXT_RASTER_CLIP_REQUIRED');
- check(!layer.clip.animations?.some(a=>a.property!=='volume')&&!layer.clip.speedCurve,'TEXT_RASTER_ANIMATION_UNSUPPORTED');
+ check((options.mode!==undefined||!layer.clip.animations?.some(a=>a.property!=='volume')&&!layer.clip.textAnimations?.length)&&!layer.clip.speedCurve,'TEXT_RASTER_ANIMATION_UNSUPPORTED');
  check(!layer.clip.transform?.flipX&&!layer.clip.transform?.flipY,'TEXT_FLIP_UNSUPPORTED');
  check(Number.isInteger(canvas.width)&&Number.isInteger(canvas.height)&&canvas.width>=2&&canvas.height>=2&&canvas.width*canvas.height<=33554432,'TEXT_RASTER_SIZE_LIMIT');
  await fs.mkdir(directory,{recursive:true});
  const fonts=await prepareFonts([layer.clip.text!.font],directory),clip={...structuredClone(layer.clip),target:{start:rational(0),duration:rational(1)}};
- await fs.writeFile(path.join(directory,'caption.ass'),captionScript([{...layer,clip}],canvas,rational(30)));
+ if(options.mode==='neutral'){
+  clip.transform=defaultTransform();delete clip.textAnimations;
+  // Animated ASS uses an explicit alpha override for all glyph components.
+  // Retain that semantics while removing the original source-clock transform.
+  clip.animations=[{property:'opacity',points:[{id:'neutral-alpha',time:rational(0),value:1,interpolation:'hold'}]}];
+ }
+ const fps=options.mode==='frame'?options.fps!:rational(30);
+ check(options.mode!=='frame'||Number.isSafeInteger(options.frame)&&options.frame!>=0&&!!options.fps,'INVALID_TEXT_RASTER_FRAME');
+ await fs.writeFile(path.join(directory,'caption.ass'),captionScript(options.mode==='frame'?[layer]:[{...layer,clip}],canvas,fps));
  // libass' alpha-plane blending is not the same coverage used by its RGB planes.
  // Two opaque backgrounds recover the actual composite operator, including overlapping
  // glyph/outline/shadow components. This avoids dark antialiasing from double premultiply.
- const filter=`subtitles=filename=caption.ass${fonts?':fontsdir=fonts':''}`;
+ const shift=options.mode==='frame'?`settb=expr=${fps.denominator}/${fps.numerator},setpts=PTS+${options.frame},`:'';
+ const filter=`${shift}subtitles=filename=caption.ass${fonts?':fontsdir=fonts':''}`;
  const args=['-hide_banner','-loglevel','warning','-nostdin','-y','-threads','1','-filter_complex_threads','1'];
- for(const background of ['black','white'])args.push('-f','lavfi','-i',`color=c=${background}:s=${canvas.width}x${canvas.height}:r=30,format=rgba`);
+ for(const background of ['black','white'])args.push('-f','lavfi','-i',`color=c=${background}:s=${canvas.width}x${canvas.height}:r=${fps.numerator}/${fps.denominator},format=rgba`);
  args.push('-filter_complex',`[0:v]${filter}[black];[1:v]${filter}[white]`);
  for(const background of ['black','white'])args.push('-map',`[${background}]`,'-frames:v','1','-pix_fmt','rgba','-f','rawvideo',background+'.rgba');
  const result=await runProcess(ffmpeg(),args,{cwd:directory,signal:options.signal,timeout:30000});

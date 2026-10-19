@@ -5,7 +5,8 @@ import {ffmpeg, probe} from './probe.ts';
 import {runProcess} from './process.ts';
 import type {Document,Clip} from '../../core/src/document.ts';
 import type {Layer} from './graph.ts';
-import {transitionWindow,transitionSourceAt} from '../../core/src/transitions.ts';
+import {detectCfr30} from './frame-timing.ts';
+import {transitionWindow,transitionSourceAt,transitionBoundaryPolicy} from '../../core/src/transitions.ts';
 import {toNumber, add,sub,mul,frameTime,compare,div,rational} from '../../core/src/time.ts';
 import {animationExpression,animatedValue,maxAnimatedValue,fraction} from './animation.ts';
 import {resolveExportSettings} from '../../core/src/export.ts';
@@ -41,6 +42,11 @@ export async function render(doc: Document, directory: string, options: {
   const args: string[] = ['-hide_banner', '-loglevel', 'warning', '-nostdin', '-y', '-threads', '2', '-filter_complex_threads', '1'];
   const inputIndexes = new Map<string, number>();
   const layers=outputSettings.audioOnly?[]:graph.layers,audio=outputSettings.hasAudio?graph.audio:[];
+  const checkedBoundaryAssets=new Set<string>();
+  for(const transition of doc.transitions||[])if(transition.kind==='crossfade'){
+    const outgoing=layers.find(l=>l.clip.id===transition.outgoingClipId),incoming=layers.find(l=>l.clip.id===transition.incomingClipId);if(!outgoing||!incoming)continue;
+    if(transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30')for(const {asset}of [outgoing,incoming])if(!checkedBoundaryAssets.has(asset.id)){if(await detectCfr30(asset,{signal:options.signal})!=='cfr30')throw Error('TRANSITION_SOURCE_FRAME_TIMING_UNVERIFIED: '+asset.id);checkedBoundaryAssets.add(asset.id);}
+  }
   const preparedColors=new Map<string,Awaited<ReturnType<typeof prepareColorEffects>>>();
   for(const {clip} of layers)if(!preparedColors.has(clip.id))preparedColors.set(clip.id,await prepareColorEffects(clip.colorAdjustments,directory));
   const bundledFonts=await prepareFonts(layers.flatMap(({clip})=>clip.text?[clip.text.font]:[]),directory);
@@ -58,7 +64,7 @@ export async function render(doc: Document, directory: string, options: {
     args.push('-i',prepared.path);
   }
   const filters: string[] = outputSettings.audioOnly?[]:[`color=c=black:s=${width}x${height}:r=${fps}:d=${seconds(graph.duration)},format=rgba[base]`];
-  const buildVisual=(layer:Layer,i:string)=>{
+  const buildVisual=(layer:Layer,i:string,cloneBoundary=false)=>{
     const {clip,asset}=layer,t=clip.transform!;
     const first=frameEdge(clip.target.start,doc.fps),last=frameEdge(add(clip.target.start,clip.target.duration),doc.fps);
     if(first.frame===last.frame)return;
@@ -76,17 +82,20 @@ export async function render(doc: Document, directory: string, options: {
     // back half a microsecond before upward FPS selection, on a nanosecond TB.
     // This preserves all 59 observed CFR frame choices, including rounded edges.
     const curveRange=clip.speedCurve?curveMediaRange(asset,clip,doc.fps):undefined;
-    const sourceFrames=mul(clip.source.start,asset.fps||doc.fps),sourceFrame=BigInt(sourceFrames.numerator)/BigInt(sourceFrames.denominator);
+    const paddingHead=cloneBoundary&&compare(clip.source.start,rational(0))<0?sub(rational(0),clip.source.start):rational(0),requestedEnd=add(clip.source.start,clip.source.duration),paddingTail=cloneBoundary&&compare(requestedEnd,asset.duration)>0?sub(requestedEnd,asset.duration):rational(0);
+    const headFrames=mul(paddingHead,rational(30)),tailFrames=mul(paddingTail,rational(30));
+    if(headFrames.denominator!=='1'||tailFrames.denominator!=='1')throw Error('TRANSITION_SOURCE_FRAME_ALIGNMENT_UNVERIFIED');
+    const mediaSourceStart=add(clip.source.start,paddingHead),sourceFrames=mul(mediaSourceStart,asset.fps||doc.fps),sourceFrame=BigInt(sourceFrames.numerator)/BigInt(sourceFrames.denominator);
     const decodeStart=toNumber(div(rational(sourceFrame),asset.fps||doc.fps));
-    const trim=curveRange?`trim=start=${seconds(toNumber(curveRange.start))}:end=${seconds(toNumber(curveRange.end))}`:asset.kind==='image'?`trim=duration=${seconds(toNumber(clip.source.duration))}`:`trim=start=${(Math.floor(decodeStart*1e9)/1e9).toFixed(9)}:end=${seconds(toNumber(add(clip.source.start,clip.source.duration)))}`;
+    const trim=curveRange?`trim=start=${seconds(toNumber(curveRange.start))}:end=${seconds(toNumber(curveRange.end))}`:asset.kind==='image'?`trim=duration=${seconds(toNumber(clip.source.duration))}`:`trim=start=${(Math.floor(decodeStart*1e9)/1e9).toFixed(9)}:end=${seconds(toNumber(add(requestedEnd,paddingHead)))}`;
     const colorEffect=preparedColors.get(clip.id)?.filter;
     const colorSpace=asset.kind==='image'?undefined:resolveVideoColorSpace({...asset,width:asset.width||doc.canvas.width,height:asset.height||doc.canvas.height});
     // Keep input/output transfer and primaries equal: effects operate on encoded
     // components. An 8-bit RGB intermediate amplifies near-white inverse curves.
     const matrixNames={bt709:'709',smpte170m:'170m',bt470bg:'470bg',gbr:'gbr'} as const;
     const decodeColor=colorSpace?colorEffect?[`zscale=matrixin=${matrixNames[colorSpace.matrix]}:rangein=${colorSpace.range==='tv'?'limited':'full'}:primariesin=${colorSpace.primaries}:transferin=${colorSpace.transfer}:matrix=gbr:range=full:primaries=${colorSpace.primaries}:transfer=${colorSpace.transfer}:dither=none`,'format=gbrapf32le']:[`setparams=colorspace=${colorSpace.matrix}:color_primaries=${colorSpace.primaries}:color_trc=${colorSpace.transfer}:range=${colorSpace.range}`,`scale=${colorSpace.matrix==='gbr'?'':`in_color_matrix=${colorSpace.matrix==='bt470bg'?'bt601':colorSpace.matrix}:`}in_range=${colorSpace.range}:out_range=pc:flags=accurate_rnd+full_chroma_int`,'format=rgba']:['format=rgba'];
-    const video = [trim,
-      ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:asset.kind==='image'?['setpts=PTS-STARTPTS']:['settb=1/1000000000',`setpts='floor((((PTS*TB-${fraction(clip.source.start)})/${fraction(clip.speed)})-0.0000005)/TB+0.5)'`]), `fps=${fps}:round=up`, ...decodeColor, ...(colorEffect?[colorEffect]:[]), animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba'];
+    const video = [...(cloneBoundary&&(headFrames.numerator!=='0'||tailFrames.numerator!=='0')?[`tpad=start=${headFrames.numerator}:stop=${tailFrames.numerator}:start_mode=clone:stop_mode=clone`]:[]),trim,
+      ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:asset.kind==='image'?['setpts=PTS-STARTPTS']:['settb=1/1000000000',`setpts='floor((((PTS*TB-${fraction(mediaSourceStart)})/${fraction(clip.speed)})-0.0000005)/TB+0.5)'`]), `fps=${fps}:round=up`, ...decodeColor, ...(colorEffect?[colorEffect]:[]), animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba'];
     if (t.flipX) video.push('hflip'); if (t.flipY) video.push('vflip');
     if(clip.animations?.some(a=>a.property==='rotation')||animatedScale&&t.rotation){
       const box=even(Math.ceil(Math.hypot(w,h))+4);
@@ -117,7 +126,7 @@ export async function render(doc: Document, directory: string, options: {
       const visual=buildVisual(layer,String(i));if(!visual)continue;
       const excluded=(doc.transitions||[]).filter(t=>t.outgoingClipId===layer.clip.id||t.incomingClipId===layer.clip.id).map(t=>{const outgoing=layers.find(l=>l.clip.id===t.outgoingClipId)!.clip,w=transitionWindow(t,outgoing);return {first:frameEdge(w.start,doc.fps).frame,last:frameEdge(add(w.start,w.duration),doc.fps).frame};});
       const enabled=`gte(n,${visual.first.frame})*lt(n,${visual.last.frame})`+excluded.map(w=>`*not(gte(n,${w.first})*lt(n,${w.last}))`).join('');
-      filters.push(`[${composite}][visual${i}]overlay=x='${visual.position('x','W-w',scale)}':y='${visual.position('y','H-h',yScale)}':eof_action=pass:repeatlast=0:enable='${enabled}'[${next}]`);
+      filters.push(`[${composite}][visual${i}]overlay=format=rgb:x='${visual.position('x','W-w',scale)}':y='${visual.position('y','H-h',yScale)}':eof_action=pass:repeatlast=0:enable='${enabled}'[${next}]`);
     }
     composite = next;
     if(!Array.isArray(layer))for(const transition of (doc.transitions||[]).filter(t=>t.outgoingClipId===layer.clip.id)){
@@ -129,15 +138,16 @@ export async function render(doc: Document, directory: string, options: {
         const activeStart=transition.kind==='dipToBlack'&&compare(actualStart,original.clip.target.start)<0?original.clip.target.start:actualStart;
         const activeEnd=transition.kind==='dipToBlack'&&compare(actualEnd,originalEnd)>0?originalEnd:actualEnd;
         const activeDuration=sub(activeEnd,activeStart),clip:Clip={...original.clip,source:{start:transitionSourceAt(original.clip,activeStart),duration:mul(activeDuration,original.clip.speed)},target:{start:sub(activeStart,actualStart),duration:activeDuration}};
-        const v=buildVisual({...original,clip},key);if(!v)throw Error('TRANSITION_DURATION_EMPTY');
+        const cloneBoundary=transition.kind==='crossfade'&&transitionBoundaryPolicy(doc.fps,transition,outgoing.clip,incoming.clip,outgoing.asset,incoming.asset)==='clone-cfr30';
+        const v=buildVisual({...original,clip},key,cloneBoundary);if(!v)throw Error('TRANSITION_DURATION_EMPTY');
         filters.push(`color=c=black@0:s=${width}x${height}:r=${fps}:d=${seconds(toNumber(actualDuration))},format=rgba[${key}base]`);
-        filters.push(`[${key}base][visual${key}]overlay=x='${v.position('x','W-w',scale)}':y='${v.position('y','H-h',yScale)}':eof_action=pass:repeatlast=0,format=gbrap,premultiply=inplace=1[${key}premult]`);
+        filters.push(`[${key}base][visual${key}]overlay=format=rgb:x='${v.position('x','W-w',scale)}':y='${v.position('y','H-h',yScale)}':eof_action=pass:repeatlast=0,format=gbrap,premultiply=inplace=1[${key}premult]`);
       }
       const progress=`min(1,max(0,(T+${fraction(sub(actualStart,window.start))})/${fraction(window.duration)}))`;
       const mixed=prefix+'mixed',next=prefix+'out';
       const blend=transition.kind==='crossfade'?`blend=all_expr='A*(1-(${progress}))+B*(${progress})'`:`blend=c0_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c1_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c2_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)':c3_expr='A*max(1-2*(${progress}),0)+B*max(2*(${progress})-1,0)+255*(1-max(1-2*(${progress}),0)-max(2*(${progress})-1,0))'`;
       filters.push(`[${prefix}apremult][${prefix}bpremult]${blend},unpremultiply=inplace=1,format=rgba,setpts=PTS+(${fraction(actualStart)})/TB[${mixed}]`);
-      filters.push(`[${composite}][${mixed}]overlay=eof_action=pass:repeatlast=0:enable='gte(n,${first})*lt(n,${last})'[${next}]`);
+      filters.push(`[${composite}][${mixed}]overlay=format=rgb:eof_action=pass:repeatlast=0:enable='gte(n,${first})*lt(n,${last})'[${next}]`);
       composite=next;
     }
   }

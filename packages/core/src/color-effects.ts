@@ -6,18 +6,21 @@
  */
 import {applyContrastChannel,contrastParameters} from './color-contrast.ts';
 import type {ContrastParameters} from './color-contrast.ts';
+import {temperatureTintMatrix} from './color-temperature.ts';
+import type {TemperatureMatrix} from './color-temperature.ts';
 export type ColorAdjustments={
-  version:'combine-adjust-v2';brightness?:number;contrast?:number;saturation?:number;highlight?:number;shadow?:number;
+  version:'combine-adjust-v2';brightness?:number;contrast?:number;saturation?:number;highlight?:number;shadow?:number;temperature?:number;tint?:number;
 };
 export type RGB=readonly [number,number,number];
 export type ColorAdjustmentStage=
   | {kind:'brightness';exponent:number;inputOffset:number}
   | {kind:'contrast';intensity:number;parameters:ContrastParameters}
   | {kind:'saturation';factor:number}
-  | {kind:'highlight'|'shadow';exponent:number};
+  | {kind:'highlight'|'shadow';exponent:number}
+  | {kind:'temperatureTint';matrix:TemperatureMatrix};
 export const COLOR_EFFECT_EPSILON=1e-5;
 export const COLOR_LUMINANCE=[.208540,.702086,.089374] as const;
-const fields=['brightness','contrast','saturation','highlight','shadow'] as const;
+const fields=['brightness','contrast','saturation','highlight','shadow','temperature','tint'] as const;
 const clamp=(v:number)=>Math.min(1,Math.max(0,v));
 
 export function validateColorAdjustments(value:unknown):asserts value is ColorAdjustments{
@@ -28,7 +31,7 @@ export function validateColorAdjustments(value:unknown):asserts value is ColorAd
 }
 export function normalizeColorAdjustments(value?:ColorAdjustments):Required<ColorAdjustments>{
   if(value!==undefined)validateColorAdjustments(value);
-  return {version:'combine-adjust-v2',brightness:value?.brightness??0,contrast:value?.contrast??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0};
+  return {version:'combine-adjust-v2',brightness:value?.brightness??0,contrast:value?.contrast??0,saturation:value?.saturation??0,highlight:value?.highlight??0,shadow:value?.shadow??0,temperature:value?.temperature??0,tint:value?.tint??0};
 }
 /** Computes each intensity mapping once for CPU, geq and shader consumers. */
 export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentStage[]{
@@ -46,6 +49,7 @@ export function colorAdjustmentStages(value?:ColorAdjustments):ColorAdjustmentSt
       stages.push({kind,exponent:1+sign*.503*i+.183*i*i+sign*.147*i*i*i+.067*i*i*i*i});
     }
   }
+  if(Math.abs(v.temperature)>COLOR_EFFECT_EPSILON||Math.abs(v.tint)>COLOR_EFFECT_EPSILON)stages.push({kind:'temperatureTint',matrix:temperatureTintMatrix(v.temperature,v.tint)});
   return stages;
 }
 export function hasColorAdjustments(value?:ColorAdjustments):boolean{return colorAdjustmentStages(value).length>0;}
@@ -58,6 +62,9 @@ export function applyColorAdjustments(rgb:RGB,value?:ColorAdjustments):[number,n
     if(stage.kind==='saturation'){
       const grey=result.reduce((sum,c,i)=>sum+c*COLOR_LUMINANCE[i],0);
       result=result.map(c=>clamp(c*stage.factor+grey*(1-stage.factor))) as [number,number,number];
+    }else if(stage.kind==='temperatureTint'){
+      const input=result;
+      result=stage.matrix.map(row=>clamp(row[0]*input[0]+row[1]*input[1]+row[2]*input[2])) as [number,number,number];
     }else if(stage.kind==='contrast'){
       result=result.map(c=>applyContrastChannel(c,stage.intensity)) as [number,number,number];
     }else{

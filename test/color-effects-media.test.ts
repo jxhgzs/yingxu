@@ -18,7 +18,7 @@ test('actual FFmpeg geq planar RGB expressions agree with CPU stages and preserv
     input[128+pixel]=rgb[0];input[pixel]=rgb[1];input[64+pixel]=rgb[2];
   }
   input[255]=255;
-  const cases=[undefined,adjust({brightness:-1}),adjust({brightness:.5}),adjust({brightness:.7}),adjust({contrast:-1}),adjust({contrast:-.5}),adjust({contrast:.5}),adjust({contrast:1}),adjust({contrast:.00002}),adjust({saturation:-1}),adjust({saturation:.5}),adjust({highlight:.5}),adjust({shadow:-.5}),adjust({brightness:.3,contrast:.5,saturation:.7,highlight:-.3,shadow:.6}),adjust({brightness:-.8,contrast:-1,saturation:.7,highlight:.3,shadow:-.6})];
+  const cases=[undefined,adjust({brightness:-1}),adjust({brightness:.5}),adjust({brightness:.7}),adjust({contrast:-1}),adjust({contrast:-.5}),adjust({contrast:.5}),adjust({contrast:1}),adjust({contrast:.00002}),adjust({temperature:1}),adjust({temperature:-1}),adjust({tint:1}),adjust({tint:-1}),adjust({temperature:1,tint:1}),adjust({saturation:-1}),adjust({saturation:.5}),adjust({highlight:.5}),adjust({shadow:-.5}),adjust({brightness:.3,contrast:.5,saturation:.7,highlight:-.3,shadow:.6}),adjust({brightness:-.8,contrast:-1,saturation:.7,highlight:.3,shadow:-.6,temperature:.8,tint:-.7})];
   for(const value of cases){
     const result=spawnSync(ffmpeg(),['-v','error','-threads','1','-filter_threads','1','-f','rawvideo','-pixel_format','gbrap','-video_size','16x4','-i','pipe:0','-frames:v','1','-vf',colorEffectsGeq(value)??'null','-pix_fmt','gbrap','-f','rawvideo','pipe:1'],{input,maxBuffer:1024*1024,timeout:20000});
     assert.equal(result.status,0,result.stderr?.toString());assert.equal(result.stdout.length,input.length);

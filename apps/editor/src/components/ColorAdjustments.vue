@@ -3,12 +3,12 @@ import {reactive,computed,watch} from 'vue';
 import type {EditorController} from '../controller.ts';
 import {normalizeColorAdjustments} from '../../../../packages/core/src/color-effects.ts';
 const props=defineProps<{c:EditorController}>();
-const controls=[{key:'brightness',label:'亮度'},{key:'contrast',label:'对比度'},{key:'saturation',label:'饱和度'},{key:'highlight',label:'高光'},{key:'shadow',label:'阴影'}] as const;
-const draft=reactive({brightness:0,contrast:0,saturation:0,highlight:0,shadow:0});
+const controls=[{key:'brightness',label:'亮度'},{key:'contrast',label:'对比度'},{key:'saturation',label:'饱和度'},{key:'highlight',label:'高光'},{key:'shadow',label:'阴影'},{key:'temperature',label:'色温'},{key:'tint',label:'色调'}] as const;
+const draft=reactive({brightness:0,contrast:0,saturation:0,highlight:0,shadow:0,temperature:0,tint:0});
 const selected=computed(()=>props.c.selected.value),supported=computed(()=>selected.value&&['video','image'].includes(selected.value.asset.kind||'video'));
 const disabled=computed(()=>!supported.value||props.c.busy.value||props.c.readOnly.value||!!selected.value?.track.locked);
 watch(()=>[props.c.state.value?.revision,props.c.selectedId.value],()=>{const values=normalizeColorAdjustments(selected.value?.clip.colorAdjustments);for(const {key}of controls)draft[key]=values[key]*50;},{immediate:true});
-function apply(){if(!disabled.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:selected.value!.clip.id,changes:{colorAdjustments:{version:'combine-adjust-v2',brightness:draft.brightness/50,contrast:draft.contrast/50,saturation:draft.saturation/50,highlight:draft.highlight/50,shadow:draft.shadow/50}}}));}
+function apply(){if(!disabled.value)return props.c.guard(()=>props.c.edit({type:'clip.update',clipId:selected.value!.clip.id,changes:{colorAdjustments:{version:'combine-adjust-v2',brightness:draft.brightness/50,contrast:draft.contrast/50,saturation:draft.saturation/50,highlight:draft.highlight/50,shadow:draft.shadow/50,temperature:draft.temperature/50,tint:draft.tint/50}}}));}
 function reset(){for(const {key}of controls)draft[key]=0;void apply();}
 </script>
 <template>

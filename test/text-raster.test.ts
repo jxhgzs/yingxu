@@ -48,10 +48,10 @@ test('text textures are revision bound, content keyed, cached and unknown or ani
  }finally{await rasters.shutdown();await fs.rm(root,{recursive:true,force:true});}
 });
 
-test('GPU text planning enables only connected static rasters, respects cue frame edges and keeps animation fallback',()=>{
+test('GPU text planning enables only connected static rasters, respects cue frame edges and uses bounded exact animation frames',()=>{
  const d=doc();assert.equal(createPreviewPlan(d).support.supported,false);const result=createPreviewPlan(d,{texturesAvailable:true});assert.equal(result.support.supported,true);
  assert.equal(previewFrame(result.plan!,rational(29,30)).layers.length,0);assert.equal(previewFrame(result.plan!,rational(1)).layers[0].clip.id,'caption');assert.equal(previewFrame(result.plan!,rational(3)).layers.length,0);
- d.tracks[2].clips[0].animations=[{property:'opacity',points:[{id:'a',time:rational(0),value:0,interpolation:'linear'},{id:'b',time:rational(2),value:1,interpolation:'linear'}]}];assert(createPreviewPlan(d,{texturesAvailable:true}).support.reasons.some(r=>r.code==='TEXT_ANIMATION_REQUIRES_OFFLINE_RENDER'));
+ d.tracks[2].clips[0].animations=[{property:'opacity',points:[{id:'a',time:rational(0),value:0,interpolation:'linear'},{id:'b',time:rational(2),value:1,interpolation:'linear'}]}];assert.equal(createPreviewPlan(d,{texturesAvailable:true}).support.supported,true);
 });
 
 test('text demand queue is bounded and old disk entries are evicted without pre-rendering subtitles',{timeout:60000},async()=>{

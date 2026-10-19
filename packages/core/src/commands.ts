@@ -52,6 +52,7 @@ function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Do
   const index = track.clips.findIndex(c => c.id === command.clipId), clip = track.clips[index];
   check(!track.locked, 'TRACK_LOCKED', track.id);
   check(clip.editableTiming, 'TIMING_NOT_INTERPRETED', clip.id);
+  check(!clip.textAnimations?.length,'TEXT_ANIMATION_TIMING_EDIT_UNVERIFIED');
   assertNoClipTransitions(doc,clip.id);
   if (command.type === 'split') {
     validRational(command.at, 'split.at');
