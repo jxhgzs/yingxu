@@ -1,0 +1,52 @@
+通过
+{
+  "states": [
+    "loading",
+    "ready",
+    "paused",
+    "loading",
+    "ready",
+    "context-lost",
+    "paused",
+    "loading",
+    "ready",
+    "paused",
+    "loading",
+    "ready"
+  ],
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "contextLosses": 1,
+  "restoredState": "ready",
+  "restoredFrame": 15,
+  "autoPlayed": false,
+  "before": [
+    {
+      "x": 640,
+      "y": 360,
+      "rgba": [
+        0,
+        195,
+        255,
+        255
+      ]
+    }
+  ],
+  "after": [
+    {
+      "x": 640,
+      "y": 360,
+      "rgba": [
+        0,
+        195,
+        255,
+        255
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "source": "/tmp/yingxu-color-patches-20261019.mp4",
+  "sourceSha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad",
+  "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
+  "comparison": "Same default FFmpeg RGB24 decode at t=1s of actual H264/709-limited outputs and native MOV; patch centers only, not whole-frame perceptual equivalence.",
+  "profiles": {
+    "rgba": {
+      "zero": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 0.16666666666666666,
+        "ms": 475.59916699999997,
+        "fps": 126.15665493795956
+      },
+      "brightnessPlus": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 0.2777777777777778,
+        "ms": 1656.2339590000001,
+        "fps": 36.22676595535256
+      },
+      "brightnessMinus": {
+        "grayMax": 7,
+        "colorMax": 4,
+        "grayMean": 1.1666666666666667,
+        "colorMean": 0.5,
+        "ms": 1536.8479579999998,
+        "fps": 39.04094721125303
+      },
+      "saturationPlus": {
+        "grayMax": 0,
+        "colorMax": 3,
+        "grayMean": 0,
+        "colorMean": 0.5555555555555556,
+        "ms": 1162.181458,
+        "fps": 51.62704979242579
+      },
+      "saturationMinus": {
+        "grayMax": 0,
+        "colorMax": 0,
+        "grayMean": 0,
+        "colorMean": 0,
+        "ms": 1203.5541670000002,
+        "fps": 49.85234702776779
+      },
+      "highlightPlus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.16666666666666666,
+        "colorMean": 0.3888888888888889,
+        "ms": 1633.7988749999995,
+        "fps": 36.724226536145714
+      },
+      "highlightMinus": {
+        "grayMax": 8,
+        "colorMax": 3,
+        "grayMean": 1.0833333333333333,
+        "colorMean": 0.5555555555555556,
+        "ms": 1793.2332079999996,
+        "fps": 33.45911715906613
+      },
+      "shadowPlus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.16666666666666666,
+        "colorMean": 0.3333333333333333,
+        "ms": 1339.0607500000006,
+        "fps": 44.8075264695795
+      },
+      "shadowMinus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.08333333333333333,
+        "colorMean": 0.3888888888888889,
+        "ms": 2163.9285409999993,
+        "fps": 27.727348137047386
+      }
+    },
+    "scaleFloat": {
+      "zero": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 0.16666666666666666,
+        "ms": 810.8564160000024,
+        "fps": 73.99583800049727
+      },
+      "brightnessPlus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.8333333333333334,
+        "ms": 886.3590839999997,
+        "fps": 67.69265536178565
+      },
+      "brightnessMinus": {
+        "grayMax": 7,
+        "colorMax": 4,
+        "grayMean": 1.5,
+        "colorMean": 0.5,
+        "ms": 1049.0642909999988,
+        "fps": 57.19382550215892
+      },
+      "saturationPlus": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 0.5555555555555556,
+        "ms": 1025.661,
+        "fps": 58.49886073468719
+      },
+      "saturationMinus": {
+        "grayMax": 0,
+        "colorMax": 1,
+        "grayMean": 0,
+        "colorMean": 0.16666666666666666,
+        "ms": 1336.1869579999984,
+        "fps": 44.903895851376866
+      },
+      "highlightPlus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.25,
+        "colorMean": 0.6111111111111112,
+        "ms": 1088.5251659999994,
+        "fps": 55.120452768659305
+      },
+      "highlightMinus": {
+        "grayMax": 8,
+        "colorMax": 3,
+        "grayMean": 1.5,
+        "colorMean": 0.6111111111111112,
+        "ms": 953.7934999999998,
+        "fps": 62.90669835766339
+      },
+      "shadowPlus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.25,
+        "colorMean": 0.8333333333333334,
+        "ms": 563.3445829999982,
+        "fps": 106.50674881877792
+      },
+      "shadowMinus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.08333333333333333,
+        "colorMean": 0.8333333333333334,
+        "ms": 474.9366250000021,
+        "fps": 126.33264490814904
+      }
+    },
+    "zscaleFloat": {
+      "zero": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.4166666666666667,
+        "colorMean": 0.5,
+        "ms": 299.8457500000004,
+        "fps": 200.10288623400504
+      },
+      "brightnessPlus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.5,
+        "colorMean": 1,
+        "ms": 437.0617910000001,
+        "fps": 137.28035997546166
+      },
+      "brightnessMinus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.5555555555555556,
+        "ms": 414.8893330000028,
+        "fps": 144.6168778699345
+      },
+      "saturationPlus": {
+        "grayMax": 2,
+        "colorMax": 2,
+        "grayMean": 0.4166666666666667,
+        "colorMean": 0.3888888888888889,
+        "ms": 370.2873330000002,
+        "fps": 162.03632869072507
+      },
+      "saturationMinus": {
+        "grayMax": 2,
+        "colorMax": 1,
+        "grayMean": 0.4166666666666667,
+        "colorMean": 0.5,
+        "ms": 350.03641699999935,
+        "fps": 171.41073638632324
+      },
+      "highlightPlus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.4166666666666667,
+        "colorMean": 0.9444444444444444,
+        "ms": 432.45133299999725,
+        "fps": 138.74393584075364
+      },
+      "highlightMinus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.4444444444444444,
+        "ms": 513.7778749999998,
+        "fps": 116.78198482174817
+      },
+      "shadowPlus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.5833333333333334,
+        "colorMean": 1,
+        "ms": 568.3696659999987,
+        "fps": 105.56509889463408
+      },
+      "shadowMinus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.2777777777777778,
+        "ms": 549.8931669999984,
+        "fps": 109.11210322422534
+      }
+    },
+    "zscaleNoRgba": {
+      "zero": {
+        "grayMax": 2,
+        "colorMax": 2,
+        "grayMean": 0.5833333333333334,
+        "colorMean": 0.16666666666666666,
+        "ms": 216.98958300000004,
+        "fps": 276.510969653322
+      },
+      "brightnessPlus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.9166666666666666,
+        "colorMean": 1.1111111111111112,
+        "ms": 347.11199999999997,
+        "fps": 172.8548710502662
+      },
+      "brightnessMinus": {
+        "grayMax": 1,
+        "colorMax": 4,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.6666666666666666,
+        "ms": 363.0422090000002,
+        "fps": 165.27003888961013
+      },
+      "saturationPlus": {
+        "grayMax": 2,
+        "colorMax": 2,
+        "grayMean": 0.5833333333333334,
+        "colorMean": 0.3888888888888889,
+        "ms": 299.8566250000001,
+        "fps": 200.0956290360434
+      },
+      "saturationMinus": {
+        "grayMax": 2,
+        "colorMax": 1,
+        "grayMean": 0.5833333333333334,
+        "colorMean": 0.5,
+        "ms": 319.95849999999996,
+        "fps": 187.524319560193
+      },
+      "highlightPlus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.5833333333333334,
+        "colorMean": 0.8888888888888888,
+        "ms": 336.883875,
+        "fps": 178.1029145428822
+      },
+      "highlightMinus": {
+        "grayMax": 1,
+        "colorMax": 4,
+        "grayMean": 0.25,
+        "colorMean": 0.5,
+        "ms": 377.00737500000014,
+        "fps": 159.1480803260148
+      },
+      "shadowPlus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.5,
+        "colorMean": 1.1666666666666667,
+        "ms": 326.35916700000007,
+        "fps": 183.84652881529138
+      },
+      "shadowMinus": {
+        "grayMax": 1,
+        "colorMax": 2,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.6111111111111112,
+        "ms": 345.57529200000045,
+        "fps": 173.62352398735706
+      }
+    },
+    "zscaleBoth": {
+      "zero": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 0.16666666666666666,
+        "ms": 160.06112499999927,
+        "fps": 374.8567929908045
+      },
+      "brightnessPlus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.08333333333333333,
+        "colorMean": 0.8333333333333334,
+        "ms": 317.7152909999995,
+        "fps": 188.84832332479738
+      },
+      "brightnessMinus": {
+        "grayMax": 1,
+        "colorMax": 4,
+        "grayMean": 0.3333333333333333,
+        "colorMean": 0.6111111111111112,
+        "ms": 295.041792,
+        "fps": 203.36102080074136
+      },
+      "saturationPlus": {
+        "grayMax": 0,
+        "colorMax": 2,
+        "grayMean": 0,
+        "colorMean": 1,
+        "ms": 285.1559160000006,
+        "fps": 210.41120535615985
+      },
+      "saturationMinus": {
+        "grayMax": 0,
+        "colorMax": 1,
+        "grayMean": 0,
+        "colorMean": 0.3333333333333333,
+        "ms": 288.3092080000006,
+        "fps": 208.10989845319085
+      },
+      "highlightPlus": {
+        "grayMax": 1,
+        "colorMax": 1,
+        "grayMean": 0.25,
+        "colorMean": 0.3333333333333333,
+        "ms": 279.8093749999998,
+        "fps": 214.4317001530061
+      },
+      "highlightMinus": {
+        "grayMax": 2,
+        "colorMax": 3,
+        "grayMean": 0.4166666666666667,
+        "colorMean": 0.5,
+        "ms": 427.48562500000025,
+        "fps": 140.3555967525223
+      },
+      "shadowPlus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.25,
+        "colorMean": 0.6666666666666666,
+        "ms": 317.6635409999999,
+        "fps": 188.87908826779721
+      },
+      "shadowMinus": {
+        "grayMax": 1,
+        "colorMax": 3,
+        "grayMean": 0.08333333333333333,
+        "colorMean": 0.7222222222222222,
+        "ms": 294.4596250000004,
+        "fps": 203.76307957330283
+      }
+    }
+  },
+  "floatGrayErrorLsb": {
+    "rgba": 0.9805449843406677,
+    "scaleFloat": 0.9805449843406677,
+    "zscaleFloat": 0.00001519918441772461
+  },
+  "metadataProbe": {
+    "passed": 48,
+    "total": 48,
+    "note": "Synthetic same-primaries/same-transfer format negotiation and gray-range probes; not native color gamut or chroma-location equivalence."
+  },
+  "recommendedDecode": "zscale=matrixin=709:rangein=limited:primariesin=709:transferin=709:matrix=gbr:range=full:primaries=709:transfer=709:dither=none,format=gbrapf32le"
+}

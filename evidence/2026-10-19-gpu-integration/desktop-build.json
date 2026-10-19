@@ -1,0 +1,10 @@
+{
+  "version": "0.4.0",
+  "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261019150747/映序剪辑.app",
+  "sourceCommit": "c24fa7fe8e5427c0f5b6aa158d804e822162e5ff",
+  "backendHash": "e5d8305c4ac583936c1b749fefaa18e4c7b084b00cccc78db3193a9f29e88267",
+  "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+  "runtime": "Electron 44.6.0",
+  "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+  "signing": "local ad-hoc; not a notarized installer"
+}

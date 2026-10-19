@@ -1,0 +1,46 @@
+{
+  "module": "packages/media/src/color-effects-fast.ts",
+  "moduleSHA256": "b622641c0287af8b53f40ec5220b77e7093786af74c95ed97d7df307b999e967",
+  "test": "test/color-effects-fast.test.ts",
+  "testSHA256": "c5a875c50bd2d96606858cffadd05bdeb5fe93aa8b48963fc3a099d9e358c43f",
+  "ffmpeg": "7.1.1",
+  "pipeline": [
+    "format=gbrapf32le",
+    "brightness 65536-sample independently generated scalar 1D cube",
+    "saturation float linear matrix",
+    "highlight/shadow 65536-sample scalar LUT; 2-sample identity when only clamp required",
+    "format=gbrapf32le"
+  ],
+  "constraints": {
+    "maxFileBytes": 6291456,
+    "maxFilesPerJobPerProcess": 64,
+    "memoryEncodedLutCacheBytes": 12582912,
+    "relativeHashBasenamesOnly": true,
+    "atomicCreateHardLink": true,
+    "cacheContentSHA256Checked": true,
+    "invalidFieldsRejected": true
+  },
+  "references": [
+    "https://www.ffmpeg.org/ffmpeg-filters.html#lut1d",
+    "https://www.ffmpeg.org/ffmpeg-filters.html#colorchannelmixer",
+    "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/libavfilter/colorchannelmixer_template.c",
+    "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/libavfilter/vf_lut3d.c"
+  ],
+  "results": {
+    "testsPassed": 3,
+    "settings": 11,
+    "pixelsPerSetting": 8192,
+    "maxMeasuredErrorLSB": 0.042519,
+    "alphaFloatBitsUnchanged": true,
+    "nullSink720pFrames": 60,
+    "nullSinkSeconds": 0.644,
+    "nullSinkPreparationMs": 80.27,
+    "encodedBenchmark": "encoded-benchmark/result.json"
+  },
+  "limits": [
+    "Measured pixel comparison is finite corpus coverage, not proof for every possible intensity/input.",
+    "LUT interpolation is approximate, with no native algorithm-equivalence claim.",
+    "lutrgb was not chosen: actual float format probe inserted rgba64le conversion.",
+    "720p null sink isolates filter cost; real H264 medium CRF20 encode measured separately."
+  ]
+}

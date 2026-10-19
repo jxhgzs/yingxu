@@ -1,0 +1,129 @@
+{
+  "equalDocument": true,
+  "revision": 4,
+  "exportCount": 1,
+  "exportStatus": "completed",
+  "jobId": "fee991e3-419a-42d3-9052-efbbe0a4b540",
+  "document": {
+    "schemaVersion": 1,
+    "title": "Desktop 0.4.0 GPU与调节转场",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "fps": {
+      "numerator": "30",
+      "denominator": "1"
+    },
+    "assets": [
+      {
+        "id": "a_7e035a05d9b0cefc89a12b92",
+        "path": "/Users/tal/Library/Application Support/映序剪辑/editor-data/media/a_7e035a05d9b0cefc89a12b92.mp4",
+        "name": "color-patches.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "2",
+          "denominator": "1"
+        },
+        "width": 1280,
+        "height": 720,
+        "hasAudio": false,
+        "sha256": "7e035a05d9b0cefc89a12b92ce3c3e899010f1b8365203cce19e1c84a6606fad",
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "red",
+            "materialId": "a_7e035a05d9b0cefc89a12b92",
+            "source": {
+              "start": {
+                "numerator": "1",
+                "denominator": "2"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "colorAdjustments": {
+              "version": "combine-adjust-v2",
+              "brightness": 0.42,
+              "saturation": -0.2,
+              "highlight": 0.2,
+              "shadow": 0.1
+            }
+          },
+          {
+            "id": "blue",
+            "materialId": "a_7e035a05d9b0cefc89a12b92",
+            "source": {
+              "start": {
+                "numerator": "1",
+                "denominator": "2"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "1",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "desktop-dissolve",
+        "trackId": "video-main",
+        "outgoingClipId": "red",
+        "incomingClipId": "blue",
+        "kind": "crossfade",
+        "alignment": "center",
+        "overlap": true,
+        "duration": {
+          "numerator": "2",
+          "denominator": "5"
+        }
+      }
+    ]
+  }
+}
