@@ -1,0 +1,442 @@
+[
+  {
+    "case": "无选中",
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "分割",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "向左裁切",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "向右裁切",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "删除片段",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": true,
+        "name": "定格",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "倒放",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "镜像",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "旋转",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "裁剪比例",
+        "reason": "请先选择片段"
+      }
+    ]
+  },
+  {
+    "case": "锁定主轨且播放头在片段内",
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "分割",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "向左裁切",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "向右裁切",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "删除片段",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "添加标记",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "定格",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "倒放",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "镜像",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "旋转",
+        "reason": "请先解锁轨道。"
+      },
+      {
+        "disabled": true,
+        "name": "裁剪比例",
+        "reason": "请先解锁轨道。"
+      }
+    ]
+  },
+  {
+    "case": "恒定帧率视频内部：全部可用",
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "分割",
+        "reason": "⌘ / Ctrl B"
+      },
+      {
+        "disabled": false,
+        "name": "向左裁切",
+        "reason": "裁掉播放头左侧"
+      },
+      {
+        "disabled": false,
+        "name": "向右裁切",
+        "reason": "裁掉播放头右侧"
+      },
+      {
+        "disabled": false,
+        "name": "删除片段",
+        "reason": "Delete / Backspace"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": false,
+        "name": "定格",
+        "reason": "在播放头插入定格画面"
+      },
+      {
+        "disabled": false,
+        "name": "倒放",
+        "reason": "生成独立倒放素材"
+      },
+      {
+        "disabled": false,
+        "name": "镜像",
+        "reason": "水平翻转"
+      },
+      {
+        "disabled": false,
+        "name": "旋转",
+        "reason": "顺时针 90°"
+      },
+      {
+        "disabled": false,
+        "name": "裁剪比例",
+        "reason": "裁剪画面范围"
+      }
+    ]
+  },
+  {
+    "case": "当前位置已有标记",
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "分割",
+        "reason": "⌘ / Ctrl B"
+      },
+      {
+        "disabled": false,
+        "name": "向左裁切",
+        "reason": "裁掉播放头左侧"
+      },
+      {
+        "disabled": false,
+        "name": "向右裁切",
+        "reason": "裁掉播放头右侧"
+      },
+      {
+        "disabled": false,
+        "name": "删除片段",
+        "reason": "Delete / Backspace"
+      },
+      {
+        "disabled": true,
+        "name": "添加标记",
+        "reason": "当前位置已有标记"
+      },
+      {
+        "disabled": false,
+        "name": "定格",
+        "reason": "在播放头插入定格画面"
+      },
+      {
+        "disabled": false,
+        "name": "倒放",
+        "reason": "生成独立倒放素材"
+      },
+      {
+        "disabled": false,
+        "name": "镜像",
+        "reason": "水平翻转"
+      },
+      {
+        "disabled": false,
+        "name": "旋转",
+        "reason": "顺时针 90°"
+      },
+      {
+        "disabled": false,
+        "name": "裁剪比例",
+        "reason": "裁剪画面范围"
+      }
+    ]
+  },
+  {
+    "case": "定格图片：定格和倒放禁用，画面工具可用",
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "分割",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": true,
+        "name": "向左裁切",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": true,
+        "name": "向右裁切",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": false,
+        "name": "删除片段",
+        "reason": "Delete / Backspace"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": true,
+        "name": "定格",
+        "reason": "此素材暂不支持这项操作。"
+      },
+      {
+        "disabled": true,
+        "name": "倒放",
+        "reason": "此素材暂不支持这项操作。"
+      },
+      {
+        "disabled": false,
+        "name": "镜像",
+        "reason": "水平翻转"
+      },
+      {
+        "disabled": false,
+        "name": "旋转",
+        "reason": "顺时针 90°"
+      },
+      {
+        "disabled": false,
+        "name": "裁剪比例",
+        "reason": "裁剪画面范围"
+      }
+    ]
+  },
+  {
+    "case": "实际VFR视频：定格倒放禁用，裁剪仍可用",
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "分割",
+        "reason": "⌘ / Ctrl B"
+      },
+      {
+        "disabled": false,
+        "name": "向左裁切",
+        "reason": "裁掉播放头左侧"
+      },
+      {
+        "disabled": false,
+        "name": "向右裁切",
+        "reason": "裁掉播放头右侧"
+      },
+      {
+        "disabled": false,
+        "name": "删除片段",
+        "reason": "Delete / Backspace"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": true,
+        "name": "定格",
+        "reason": "当前素材的帧时间不规则，暂不支持这项操作。可先导出为恒定帧率视频后再导入。"
+      },
+      {
+        "disabled": true,
+        "name": "倒放",
+        "reason": "当前素材的帧时间不规则，暂不支持这项操作。可先导出为恒定帧率视频后再导入。"
+      },
+      {
+        "disabled": false,
+        "name": "镜像",
+        "reason": "水平翻转"
+      },
+      {
+        "disabled": false,
+        "name": "旋转",
+        "reason": "顺时针 90°"
+      },
+      {
+        "disabled": false,
+        "name": "裁剪比例",
+        "reason": "裁剪画面范围"
+      }
+    ]
+  },
+  {
+    "case": "左裁完成后播放头在片段起点：三项时间工具禁用",
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "分割",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": true,
+        "name": "向左裁切",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": true,
+        "name": "向右裁切",
+        "reason": "请将播放头放在所选片段内部再分割。"
+      },
+      {
+        "disabled": false,
+        "name": "删除片段",
+        "reason": "Delete / Backspace"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": false,
+        "name": "定格",
+        "reason": "在播放头插入定格画面"
+      },
+      {
+        "disabled": false,
+        "name": "倒放",
+        "reason": "生成独立倒放素材"
+      },
+      {
+        "disabled": false,
+        "name": "镜像",
+        "reason": "水平翻转"
+      },
+      {
+        "disabled": false,
+        "name": "旋转",
+        "reason": "顺时针 90°"
+      },
+      {
+        "disabled": false,
+        "name": "裁剪比例",
+        "reason": "裁剪画面范围"
+      }
+    ]
+  },
+  {
+    "case": "删除选中片段后：无选择的片段工具禁用",
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "分割",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "向左裁切",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "向右裁切",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "删除片段",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": false,
+        "name": "添加标记",
+        "reason": "M · 右键管理标记"
+      },
+      {
+        "disabled": true,
+        "name": "定格",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "倒放",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "镜像",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "旋转",
+        "reason": "请先选择片段"
+      },
+      {
+        "disabled": true,
+        "name": "裁剪比例",
+        "reason": "请先选择片段"
+      }
+    ]
+  }
+]

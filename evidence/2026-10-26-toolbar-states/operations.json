@@ -1,0 +1,182 @@
+{
+  "revision": 18,
+  "document": {
+    "schemaVersion": 1,
+    "title": "图标与工具状态验收",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "fps": {
+      "numerator": "30",
+      "denominator": "1"
+    },
+    "assets": [
+      {
+        "id": "a_b25555a7244261d8cf103c27",
+        "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/toolbar-v15/service-data/media/a_b25555a7244261d8cf103c27.mp4",
+        "name": "动态测试素材.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "6",
+          "denominator": "1"
+        },
+        "width": 640,
+        "height": 360,
+        "hasAudio": true,
+        "sha256": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv420p",
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4",
+        "frameTiming": "cfr30"
+      },
+      {
+        "id": "a_2c6a2307699faa6e44470b0c",
+        "path": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/qa/toolbar-v15/service-data/media/a_2c6a2307699faa6e44470b0c.mp4",
+        "name": "动态测试素材.mp4 · 倒放.mp4",
+        "kind": "video",
+        "duration": {
+          "numerator": "3",
+          "denominator": "1"
+        },
+        "width": 640,
+        "height": 360,
+        "hasAudio": true,
+        "sha256": "2c6a2307699faa6e44470b0c3710c8c4cab86afe22a185f33b38adf94d72f0fc",
+        "verifiedDisplayTransform": "identity",
+        "pixelFormat": "yuv420p",
+        "fps": {
+          "numerator": "30",
+          "denominator": "1"
+        },
+        "mime": "video/mp4"
+      }
+    ],
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "7e2585df-f0ed-462d-aa17-9c06a6d82c98",
+            "materialId": "a_2c6a2307699faa6e44470b0c",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "69c1b903-b5c2-417e-9816-d05c5aabb649",
+                "time": {
+                  "numerator": "8",
+                  "denominator": "3"
+                },
+                "title": "标记 01",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.21875,
+              "y": 0,
+              "width": 0.5625,
+              "height": 1
+            }
+          },
+          {
+            "id": "right",
+            "materialId": "a_b25555a7244261d8cf103c27",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ],
+        "locked": false
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "e0e03ed1-11e8-46ab-bd71-4a8e9f33f0fa",
+      "kind": "reverse",
+      "status": "completed",
+      "appliedRevision": 10,
+      "appliedClipId": "7e2585df-f0ed-462d-aa17-9c06a6d82c98"
+    },
+    {
+      "id": "18490f39-482b-43bf-8ef4-4e8d264ac595",
+      "kind": "freeze",
+      "status": "completed",
+      "appliedRevision": 8,
+      "appliedClipId": "93d2c537-80e7-48a7-86b6-bbaece491dc1"
+    }
+  ]
+}

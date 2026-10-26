@@ -1,0 +1,16 @@
+✔ freeze takes the selected frame; chunked reverse has no missing/repeated seam frames and reverses audio (843.19725ms)
+✔ freeze/reverse jobs apply one history entry, replay IDs, reject stale revisions and restore after restart (1849.174292ms)
+✔ NTSC with quantized container timestamps remains reversible, and VFR is rejected before output (692.298083ms)
+✔ read-only media-tool inspection proves actual CFR, rejects VFR/missing/changed files and never edits the project (601.798333ms)
+✔ ten tool states reflect selection, head boundaries, type, lock, unknown timing and global guards (16.828459ms)
+✔ preflight follows actual downstream transition, marker, orientation, rotation and batch restrictions (46.087542ms)
+✔ media proof gates freeze/reverse but does not disable valid VFR cropping (1.551667ms)
+✔ immutable toolbar resolver keeps head-sensitive markers, boundaries and frame limits current after cache reuse (2.171583ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3544.838

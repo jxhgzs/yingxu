@@ -1,0 +1,17 @@
+[
+  {
+    "clips": 3,
+    "coldMs": 4.28875,
+    "cachedHeadUpdateMeanMs": 0.010977741379310279
+  },
+  {
+    "clips": 25,
+    "coldMs": 28.309832999999998,
+    "cachedHeadUpdateMeanMs": 0.007843396551724046
+  },
+  {
+    "clips": 90,
+    "coldMs": 247.788125,
+    "cachedHeadUpdateMeanMs": 0.007878603448275578
+  }
+]
