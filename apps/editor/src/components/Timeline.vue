@@ -44,14 +44,15 @@ function beginScrub(event:PointerEvent){
   props.c.scrubbing.value=true;seekX(event.clientX);
 }
 function moveScrub(event:PointerEvent){if(event.pointerId!==scrubPointer)return;scrubX=event.clientX;if(scrubFrame===undefined)scrubFrame=requestAnimationFrame(()=>{scrubFrame=undefined;flushScrub();});}
-function cancelScrub(){
-  flushScrub();const target=scrubTarget,id=scrubPointer;scrubPointer=undefined;scrubTarget=undefined;props.c.scrubbing.value=false;
+function cancelScrub(flush=true){
+  if(flush)flushScrub();else {if(scrubFrame!==undefined)cancelAnimationFrame(scrubFrame);scrubFrame=undefined;scrubX=undefined;}
+  const target=scrubTarget,id=scrubPointer;scrubPointer=undefined;scrubTarget=undefined;props.c.scrubbing.value=false;
   if(id!==undefined&&target?.hasPointerCapture(id))target.releasePointerCapture(id);
 }
 function finishScrub(event:PointerEvent){if(event.pointerId!==scrubPointer)return;scrubX=event.clientX;cancelScrub();}
 function lostScrub(event:PointerEvent){if(event.pointerId===scrubPointer)cancelScrub();}
-watch(()=>props.c.state.value?.id,cancelScrub);
-onBeforeUnmount(cancelScrub);
+watch(()=>props.c.state.value?.id,()=>cancelScrub(false));
+onBeforeUnmount(()=>cancelScrub(false));
 function begin(event: PointerEvent, clip: Clip, track: Track, mode: 'move'|'left'|'right') {
   props.c.selectedId.value=clip.id;
   if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value||clip.speedCurve&&clip.animations?.length&&mode!=='move')return;
