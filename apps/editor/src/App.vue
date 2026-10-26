@@ -18,6 +18,7 @@ const subtitlesOpen=ref(false),relinkOpen=ref(false);
 watch(()=>props.c.doc.value?.title,value=>{title.value=value||'未命名工程';},{immediate:true});
 const uiTheme={algorithm:theme.darkAlgorithm,token:{colorPrimary:'#5bbdc7',colorBgContainer:'#303034',colorBgElevated:'#303034',colorText:'#e6e6e9',colorBorder:'#45454c',borderRadius:4,fontSize:12,controlHeight:30,controlHeightSM:26},components:{Slider:{trackBg:'#5bbdc7',trackHoverBg:'#79d6dc'},Modal:{contentBg:'#252528',headerBg:'#252528'}}};
 function popupContainer(trigger?:HTMLElement){return trigger?.closest<HTMLElement>('.yx-editor')||root.value||document.body;}
+function restoreEditorFocus(){if(document.activeElement===document.body)root.value?.focus({preventScroll:true});}
 function importMedia(){mediaInput.value?.click();}
 async function files(files:File[]){uploading.value=true;await props.c.guard(()=>props.c.upload(files));uploading.value=false;}
 async function mediaChanged(e:Event){const el=e.target as HTMLInputElement;if(el.files)await files(Array.from(el.files));el.value='';}
@@ -35,7 +36,7 @@ function menu({key}:{key:string|number}){
 function saveTitle(){if(title.value.trim()&&title.value!==props.c.doc.value?.title)props.c.guard(()=>props.c.edit({type:'project.settings',title:title.value.trim()}));}
 function focusEditor(event:PointerEvent){const target=event.target as HTMLElement;if(!shortcutTargetOwnsKeys(target)&&!target.closest('button'))root.value?.focus({preventScroll:true});}
 function keyboard(event:KeyboardEvent){
-  if(handleShortcut(event,props.c,exportOpen.value||projectsOpen.value||helpOpen.value||tasksOpen.value||subtitlesOpen.value||relinkOpen.value||uploading.value))root.value?.focus({preventScroll:true});
+  if(handleShortcut(event,props.c,exportOpen.value||projectsOpen.value||helpOpen.value||tasksOpen.value||subtitlesOpen.value||relinkOpen.value||uploading.value||props.c.toolDialogOpen.value||!!props.c.mediaJob.value))root.value?.focus({preventScroll:true});
 }
 async function openSaved(id:string){await props.c.guard(()=>props.c.loadProject(id));projectsOpen.value=false;}
 function nativeDrop(event:DragEvent){if(event.dataTransfer?.files.length){event.preventDefault();files(Array.from(event.dataTransfer.files));}}
@@ -60,6 +61,7 @@ onBeforeUnmount(()=>detachClose?.());
       <div v-if="c.loading.value||uploading" class="workspace-loading"><a-spin /><span>{{uploading?'正在导入素材':'正在打开工程'}}</span></div>
       <input ref="mediaInput" type="file" multiple accept="video/*,audio/*,image/*" hidden @change="mediaChanged" />
       <input ref="projectInput" type="file" accept=".json" hidden @change="projectChanged" />
+      <a-modal :open="!!c.mediaJob.value" :after-close="restoreEditorFocus" :title="c.mediaJob.value?.kind==='freeze'?'正在生成定格':'正在倒放视频'" :closable="false" :keyboard="false" :mask-closable="false" :get-container="false"><a-progress :percent="Math.round((c.mediaJob.value?.progress||0)*100)" /><p class="quiet">{{c.mediaJob.value?.applying?'正在保存工程':'原素材将保留，完成后可撤销。'}}</p><template #footer><a-button :disabled="c.mediaJob.value?.applying||c.mediaJob.value?.status==='cancelling'" @click="c.guard(c.cancelMediaOperation)">{{c.mediaJob.value?.status==='cancelling'?'正在取消':'取消'}}</a-button></template></a-modal>
       <ExportDialog :c="c" v-model:open="exportOpen" />
       <SubtitleImportDialog :c="c" v-model:open="subtitlesOpen" />
       <RelinkDialog :c="c" v-model:open="relinkOpen" />

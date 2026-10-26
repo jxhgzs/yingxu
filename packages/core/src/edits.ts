@@ -1,3 +1,4 @@
+import type {Crop} from './crop.ts';
 import type {Vignette} from './vignette.ts';
 import {check, validateDocument, duration, defaultTransform} from './document.ts';
 import type {Asset, Clip, Document, Track, Transform, TextStyle} from './document.ts';
@@ -18,12 +19,12 @@ export type EditingCommand =
   | {type: 'clip.remove'; clipId: string; ripple: boolean}
   | {type: 'clip.move'; clipId: string; trackId: string; start: Rational}
   | {type: 'clip.trim'; clipId: string; sourceStart: Rational; sourceDuration: Rational; targetStart?: Rational;pushFollowing?:boolean}
-  | {type: 'clip.update'; clipId: string; changes: {transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;textAnimations?:TextAnimation[]}}
+  | {type: 'clip.update'; clipId: string; changes: {crop?:Crop|null;transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;textAnimations?:TextAnimation[]}}
   | {type:'keyframe.set';clipId:string;property:AnimatedProperty;point:Keyframe}
   | {type:'keyframe.remove';clipId:string;property:AnimatedProperty;pointId:string}
   | {type: 'track.add'; track: Track}
   | {type: 'track.update'; trackId: string; changes: {locked?: boolean; hidden?: boolean; muted?: boolean; name?: string}}
-  | {type: 'project.settings'; title?: string; canvas?: {width: number; height: number}; fps?: Rational};
+  | {type: 'project.settings'; title?: string; canvas?: {width: number; height: number}; fps?: Rational;mainTrackMagnet?:boolean};
 
 export function newTextClip(doc: Document, materialId: string, id: string, position: Rational): Clip {
   const end = duration(doc), preferred = rational(4);
@@ -61,6 +62,7 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
   } else if (command.type === 'project.settings') {
     if (command.title !== undefined) {check(typeof command.title === 'string' && command.title.length <= 200, 'INVALID_TITLE'); next.title = command.title;}
     if (command.canvas !== undefined) next.canvas = structuredClone(command.canvas);
+    if(command.mainTrackMagnet!==undefined)next.mainTrackMagnet=command.mainTrackMagnet;
     if (command.fps !== undefined) next.fps = structuredClone(command.fps);
   } else if (command.type === 'clip.add') {
     const t = track(command.trackId); unlocked(t); t.clips.push(structuredClone(command.clip));
@@ -109,8 +111,8 @@ export function applyEdit(doc: Document, command: EditingCommand,deferOverlap=fa
         }
       }
     } else if (command.type === 'clip.update') {
-      check(command.changes && Object.keys(command.changes).every(k => ['transform', 'volume', 'muted', 'text','audioFade','colorAdjustments','vignette','textAnimations'].includes(k)), 'INVALID_CLIP_UPDATE');
-      Object.assign(c, structuredClone(command.changes));
+      check(command.changes && Object.keys(command.changes).every(k => ['crop','transform', 'volume', 'muted', 'text','audioFade','colorAdjustments','vignette','textAnimations'].includes(k)), 'INVALID_CLIP_UPDATE');
+      Object.assign(c, structuredClone(command.changes));if(command.changes.crop===null)delete c.crop;
     } else if(command.type==='keyframe.set'){
       check(Object.hasOwn(animationBounds,command.property),'INVALID_ANIMATION_PROPERTY');
       check(compare(command.point.time,c.source.start)>=0&&compare(command.point.time,add(c.source.start,c.source.duration))<=0,'KEYFRAME_OUTSIDE_CLIP');

@@ -5,11 +5,15 @@ import type {Clip, Track} from '../../../../packages/core/src/document.ts';
 import {atFrame, timecode} from '../controller.ts';
 import {toNumber, add, mul, sub, compare, rational} from '../../../../packages/core/src/time.ts';
 import Icon from './Icon.vue';
+import TimelineTools from './TimelineTools.vue';
+import CropDialog from './CropDialog.vue';
+import MarkerDialog from './MarkerDialog.vue';
 import {curveTrimSourceDelta,curveNearestFrame} from '../../../../packages/core/src/curve-speed.ts';
 import {targetTimeAt} from '../../../../packages/core/src/animation.ts';
 import {transitionWindow} from '../../../../packages/core/src/transitions.ts';
 import {transitionPresentation} from '../transition-presentation.ts';
 const props = defineProps<{c: EditorController}>();
+const cropOpen=ref(false),markerOpen=ref(false);watch([cropOpen,markerOpen],([crop,marker])=>props.c.toolDialogOpen.value=crop||marker);onBeforeUnmount(()=>props.c.toolDialogOpen.value=false);
 const scroller = ref<HTMLElement>(), scrollLeft = ref(0), viewport = ref(1400);
 let scrubPointer:number|undefined,scrubTarget:HTMLElement|undefined,scrubFrame:number|undefined,scrubX:number|undefined;
 const drag = ref<{id: string; mode: 'move'|'left'|'right'; originX: number; delta: number; trackId: string; destination: string; original: Clip} | null>(null);
@@ -105,15 +109,12 @@ async function selectTransition(clipId:string){
 </script>
 <template>
   <section class="timeline-panel panel">
-    <div class="timeline-tools">
-      <div class="tool-group"><a-tooltip title="撤销 ⌘Z"><button class="icon-button" aria-label="撤销" :disabled="!c.state.value?.canUndo||c.busy.value||c.readOnly.value" @click="c.guard(()=>c.edit(undefined,'undo'))"><Icon name="undo" /></button></a-tooltip><a-tooltip title="重做 ⇧⌘Z"><button class="icon-button" aria-label="重做" :disabled="!c.state.value?.canRedo||c.busy.value||c.readOnly.value" @click="c.guard(()=>c.edit(undefined,'redo'))"><Icon name="redo" /></button></a-tooltip></div>
-      <div class="tool-group"><a-tooltip title="在播放头处分割 ⌘B"><button class="icon-button" aria-label="分割" :disabled="!c.selected.value||c.busy.value||c.readOnly.value" @click="c.guard(c.split)"><Icon name="split" /></button></a-tooltip><a-tooltip title="删除片段"><button class="icon-button" aria-label="删除片段" :disabled="!c.selected.value||c.busy.value||c.readOnly.value" @click="c.guard(()=>c.remove(false))"><Icon name="delete" /></button></a-tooltip><a-tooltip title="复制到轨道末尾"><button class="icon-button" aria-label="复制片段" :disabled="!c.selected.value||c.busy.value||c.readOnly.value" @click="c.guard(c.duplicate)"><Icon name="copy" /></button></a-tooltip></div>
-      <a-dropdown><a-button size="small" class="add-track" :disabled="c.readOnly.value||c.busy.value"><Icon name="plus" />轨道<Icon name="down" /></a-button><template #overlay><a-menu @click="({key}:any)=>addTrack(key)"><a-menu-item key="video">视频轨道</a-menu-item><a-menu-item key="audio">音频轨道</a-menu-item><a-menu-item key="text">文字轨道</a-menu-item></a-menu></template></a-dropdown>
-      <div class="timeline-tools-right"><a-tooltip title="吸附到片段边缘与播放头"><button class="icon-button" :class="{active:c.snap.value}" aria-label="时间线吸附" :aria-pressed="c.snap.value" @click="c.snap.value=!c.snap.value"><Icon name="link" /></button></a-tooltip><Icon name="zoomOut" /><a-slider :value="c.zoom.value" :min="32" :max="200" :tooltip-open="false" @change="(v:any)=>c.zoom.value=Number(v)" /><Icon name="zoomIn" /></div>
-    </div>
+    <TimelineTools :c="c" @crop="cropOpen=true" @markers="markerOpen=true" />
+    <CropDialog :c="c" v-model:open="cropOpen" /><MarkerDialog :c="c" v-model:open="markerOpen" />
     <div ref="scroller" class="timeline-scroll" :data-scrubbing="c.scrubbing.value" @scroll="onScroll" @pointermove="moveScrub" @pointerup="finishScrub" @pointercancel="lostScrub" @lostpointercapture="lostScrub">
       <div class="timeline-canvas" :style="{width:width+'px',minHeight:'100%'}">
         <div class="time-ruler" @pointerdown="beginScrub"><span class="ruler-origin">{{c.doc.value ? toNumber(c.doc.value.fps).toFixed(2).replace('.00','') : '30'}} fps</span><span v-for="tick in ticks" :key="tick" class="ruler-tick" :style="{left:144+tick*c.zoom.value+'px'}"><i></i>{{timecode(tick,rate).slice(3,8)}}</span></div>
+        <button v-for="marker in c.doc.value?.markers||[]" :key="marker.id" class="timeline-marker global-marker" :style="{left:144+toNumber(marker.time)*c.zoom.value+'px',color:marker.color}" :aria-label="'标记 '+marker.title" :title="marker.title" @pointerdown.stop @click.stop="c.playing.value=false;c.seek(toNumber(marker.time))" @dblclick.stop="markerOpen=true"><Icon name="marker" /></button>
         <div v-for="track in rows" :key="track.id" :data-track-id="track.id" class="track-row" :class="['track-'+track.kind,{locked:track.locked}]" @dragover.prevent @drop.prevent="drop($event,track)" @pointerdown.self="beginScrub">
           <header class="track-header"><div><Icon :name="track.kind" /><span>{{track.name||track.kind}}</span></div><div class="track-switches">
             <button class="mini-icon" :aria-label="(track.locked?'解锁':'锁定')+(track.name||track.kind)" @click="c.guard(()=>c.edit({type:'track.update',trackId:track.id,changes:{locked:!track.locked}}))"><Icon :name="track.locked?'lock':'unlock'" /></button>
@@ -121,6 +122,7 @@ async function selectTransition(clipId:string){
             <button v-else class="mini-icon" :class="{off:track.muted}" :aria-label="(track.muted?'取消静音':'静音')+(track.name||track.kind)" @click="c.guard(()=>c.edit({type:'track.update',trackId:track.id,changes:{muted:!track.muted}}))"><Icon name="sound" /></button>
           </div></header>
           <button v-for="clip in track.clips.filter(visible)" :key="clip.id" class="timeline-clip" :class="[{selected:c.selectedId.value===clip.id,dragging:drag?.id===clip.id},'clip-'+track.kind]" :style="clipStyle(clip)" :aria-label="'片段 '+name(clip)" :data-clip-id="clip.id" @pointerdown.stop="begin($event,clip,track,'move')" @pointermove="moving" @pointerup="finish" @pointercancel="drag=null" @click.stop="c.selectedId.value=clip.id">
+            <span v-for="marker in (clip.markers||[]).filter(m=>compare(m.time,clip.source.start)>=0&&compare(m.time,add(clip.source.start,clip.source.duration))<0)" :key="marker.id" role="button" tabindex="0" class="clip-marker" :aria-label="'标记 '+marker.title" :title="marker.title" :style="{left:toNumber(sub(targetTimeAt(clip,marker.time),clip.target.start))*c.zoom.value+'px',color:marker.color}" @pointerdown.stop @pointerup.stop @click.stop="c.playing.value=false;c.seek(toNumber(targetTimeAt(clip,marker.time)))" @dblclick.stop="markerOpen=true" @keydown.enter.stop.prevent="markerOpen=true"><Icon name="marker" /></span>
             <span class="clip-title"><Icon :name="track.kind" />{{name(clip)}}<small>{{clip.speedCurve?'曲线':toNumber(clip.speed)!==1?toNumber(clip.speed)+'×':''}}</small></span><span v-if="track.kind==='text'" class="clip-text-body">{{clip.text?.content}}</span>
             <span v-for="point in keyframes(clip)" :key="point.time" class="timeline-keyframe" :style="{left:'clamp(4px, '+point.percent+'%, calc(100% - 4px))'}" :title="'关键帧 '+timecode(point.time,rate)" @pointerdown.stop @pointerup.stop @click.stop="c.selectedId.value=clip.id;c.playing.value=false;c.seek(point.time)">◆</span>
             <template v-if="!clip.speedCurve||!clip.animations?.length"><span class="trim-handle left" :aria-label="'裁切左边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'left')" @pointermove="moving" @pointerup.stop="finish"></span><span class="trim-handle right" :aria-label="'裁切右边缘 '+name(clip)" @pointerdown.stop="begin($event,clip,track,'right')" @pointermove="moving" @pointerup.stop="finish"></span></template>

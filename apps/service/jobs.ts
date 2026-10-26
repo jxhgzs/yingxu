@@ -1,3 +1,5 @@
+import {prepareMediaOperation,validateMediaOperation} from './clip-media.ts';
+import type {MediaOperation} from './clip-media.ts';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
@@ -14,9 +16,10 @@ import type {ExportSettings,ResolvedExport,ExportFormat} from '../../packages/co
 
 export type Job = {
   id: string; projectId: string; requestId: string; requestHash: string;
-  kind: 'preview' | 'export'; status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled' | 'interrupted' | 'cancelling';
+  kind: 'preview' | 'export' | 'freeze' | 'reverse'; status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled' | 'interrupted' | 'cancelling';
   documentRevision: number; documentHash: string; document: Document; inputHashes: {id: string; sha256: string}[];
   protocolVersion: 1; engine: string; progress: number; createdAt: string; error?: string; completedAt?: string;
+  operation?:MediaOperation;derivedAssetId?:string;appliedClipId?:string;appliedRevision?:number;applying?:boolean;
   exportSettings?:ExportSettings; resolvedExport?:ResolvedExport;
   result?: {width: number; height: number; frameCount: number; duration: number; path: string;format?:ExportFormat;extension?:string;mime?:string};
 };
@@ -33,7 +36,7 @@ export class Jobs {
       if (!/^[a-f0-9-]+$/.test(id)) continue;
       let job: Job;
       try {job = JSON.parse(await fs.readFile(path.join(this.directory(id), 'job.json'), 'utf8'));} catch (error: any) {if (error.code === 'ENOENT') continue; throw error;}
-      if (['running', 'queued', 'cancelling'].includes(job.status)) {job.status = 'interrupted'; job.error = '服务重启，任务已中断'; await this.#save(job);}
+      if (['running', 'queued', 'cancelling'].includes(job.status)) {const receipt=this.store.get(job.projectId).requests.find(r=>r.id==='media-job-'+job.id);if(job.operation&&receipt){job.status='completed';job.progress=1;job.appliedRevision=receipt.revision;delete job.applying;}else{job.status = 'interrupted'; job.error = '服务重启，任务已中断';}await this.#save(job);}
       this.records.set(job.id, job);
     }
   }
@@ -44,21 +47,23 @@ export class Jobs {
     url: `/renders/${job.id}/video`, downloadUrl: `/renders/${job.id}/download`
   }};}
   list(projectId: string) {return [...this.records.values()].filter(j => j.projectId === projectId).sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 40).map(j => this.public(j));}
-  async submit(projectId: string, body: {revision: number; requestId: string; kind: 'preview' | 'export';exportSettings?:ExportSettings}) {
+  async submit(projectId: string, body: {revision: number; requestId: string; kind: 'preview' | 'export' | 'freeze' | 'reverse';clipId?:string;at?:MediaOperation['at'];exportSettings?:ExportSettings}) {
     const task = this.#submitting.catch(() => {}).then(async () => {
       check(!this.#closing, 'SERVICE_CLOSING');
-      check(['preview', 'export'].includes(body.kind) && typeof body.requestId === 'string' && /^[a-zA-Z0-9_-]{1,100}$/.test(body.requestId), 'INVALID_JOB_REQUEST');
+      check(['preview', 'export','freeze','reverse'].includes(body.kind) && typeof body.requestId === 'string' && /^[a-zA-Z0-9_-]{1,100}$/.test(body.requestId), 'INVALID_JOB_REQUEST');
       const fingerprint = contentHash({projectId, ...body});
       const previous = [...this.records.values()].find(j => j.projectId === projectId && j.requestId === body.requestId);
       if (previous) {check(previous.requestHash === fingerprint, 'REQUEST_ID_CONFLICT'); return this.public(previous);}
       const project = this.store.get(projectId); check(project.revision === body.revision, 'REVISION_CONFLICT');
       check(project.diagnostics.length === 0, 'UNSUPPORTED_DRAFT_EFFECTS');
       check(body.kind==='export'||body.exportSettings===undefined,'INVALID_PREVIEW_SETTINGS');
+      const operation=body.kind==='freeze'||body.kind==='reverse'?{clipId:body.clipId!,...(body.at?{at:body.at}:{})}:undefined;
+      if(operation)validateMediaOperation(project.document,body.kind as 'freeze'|'reverse',operation);
       const resolvedExport=body.kind==='export'?resolveExportSettings(project.document,body.exportSettings):undefined;
       const exportSettings:ExportSettings|undefined=resolvedExport&&{format:resolvedExport.format,size:{width:resolvedExport.width,height:resolvedExport.height},fps:resolvedExport.fps,
         videoCodec:resolvedExport.videoCodec,videoBitrateKbps:resolvedExport.videoBitrateKbps,audioSampleRate:resolvedExport.audioSampleRate,audioBitrateKbps:resolvedExport.audioBitrateKbps,range:body.exportSettings?.range};
-      renderGraph(resolvedExport?{...project.document,fps:resolvedExport.fps}:project.document);
-      const inputs = project.document.assets.filter(a => project.document.tracks.some(t => t.clips.some(c => c.materialId === a.id)) && a.kind !== 'text');
+      if(!operation)renderGraph(resolvedExport?{...project.document,fps:resolvedExport.fps}:project.document);
+      const inputs = project.document.assets.filter(a => project.document.tracks.some(t => t.clips.some(c => c.materialId === a.id&&(!operation||c.id===operation.clipId))) && a.kind !== 'text');
       for (const a of inputs) {
         const registered = this.store.assets.get(a.id);
         check(registered && registered.sha256 === a.sha256 && registered.path === a.path, 'MEDIA_NOT_LINKED', a.name || a.id);
@@ -66,13 +71,13 @@ export class Jobs {
       const job: Job = {id: randomUUID(), projectId, requestId: body.requestId, requestHash: fingerprint, kind: body.kind,
         status: 'queued', documentRevision: project.revision, documentHash: contentHash(project.document), document: structuredClone(project.document),
         inputHashes: inputs.map(a => ({id: a.id, sha256: a.sha256!})), protocolVersion: 1, engine: this.engine,
-        progress: 0, createdAt: new Date().toISOString(),exportSettings:structuredClone(exportSettings),resolvedExport:structuredClone(resolvedExport)};
+        operation,progress: 0, createdAt: new Date().toISOString(),exportSettings:structuredClone(exportSettings),resolvedExport:structuredClone(resolvedExport)};
       await this.#save(job); this.records.set(job.id, job); void this.#pump().catch(error => process.stderr.write(String(error)+'\n')); return this.public(job);
     });
     this.#submitting = task; return await task;
   }
   async cancel(id: string) {
-    const job = this.get(id);
+    const job = this.get(id);if(job.applying)return this.public(job);
     if (job.status === 'queued') job.status = 'cancelled';
     else if (job.status === 'running') {job.status = 'cancelling'; this.#controllers.get(id)?.abort();}
     await this.#save(job); return this.public(job);
@@ -96,15 +101,23 @@ export class Jobs {
             const asset = job.document.assets.find(a => a.id === input.id)!;
             check(await fileHash(asset.path) === input.sha256, 'MEDIA_HASH_CHANGED', input.id);
           }
+          if(job.operation&&(job.kind==='freeze'||job.kind==='reverse')){
+            const prepared=await prepareMediaOperation(this.store,job.document,job.kind,job.operation,this.directory(job.id),{signal:controller.signal,onProgress:p=>{job.progress=Math.max(job.progress,Math.min(.94,p*.94));}});
+            job.derivedAssetId=prepared.assetId;job.appliedClipId=prepared.clipId;await this.#save(job);
+            if(controller.signal.aborted)throw Error('JOB_CANCELLED');
+            job.applying=true;await this.#save(job);
+            const next=await this.store.edit(job.projectId,{revision:job.documentRevision,requestId:'media-job-'+job.id,command:prepared.command});job.appliedRevision=next.revision;
+          }else{
           const result = await render(job.document, this.directory(job.id), {preview: job.kind === 'preview',exportSettings:job.exportSettings, signal: controller.signal,
             onProgress: p => {job.progress = p;}});
           if (controller.signal.aborted) throw Error('JOB_CANCELLED');
           job.result = {path: result.path, width: result.width, height: result.height, frameCount: result.frameCount, duration: result.duration,format:result.format,extension:result.extension,mime:result.mime};
+          }
           job.status = 'completed'; job.progress = 1;
         } catch (error) {
           job.status = this.#closing ? 'interrupted' : controller.signal.aborted ? 'cancelled' : 'failed'; job.error = error instanceof Error ? error.message : String(error);
         } finally {
-          job.completedAt = new Date().toISOString(); this.#controllers.delete(job.id); await this.#save(job);
+          delete job.applying;job.completedAt = new Date().toISOString(); this.#controllers.delete(job.id); await this.#save(job);
         }
       }
     } finally {this.#active = false; for(const resolve of this.#drainWaiters.splice(0))resolve();}

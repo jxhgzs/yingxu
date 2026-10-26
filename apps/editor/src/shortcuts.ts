@@ -2,9 +2,9 @@ import type {EditorController} from './controller.ts';
 import {add,toNumber} from '../../../packages/core/src/time.ts';
 
 type Keys=Pick<KeyboardEvent,'key'|'code'|'metaKey'|'ctrlKey'|'shiftKey'|'altKey'|'repeat'|'isComposing'|'keyCode'>;
-export type ShortcutAction='play'|'previous'|'next'|'back10'|'forward10'|'start'|'end'|'split'|'duplicate'|'undo'|'redo'|'save'|'delete'|'ripple'|'deselect';
+export type ShortcutAction='play'|'previous'|'next'|'back10'|'forward10'|'start'|'end'|'split'|'duplicate'|'undo'|'redo'|'save'|'delete'|'ripple'|'deselect'|'mark';
 export const shortcutHelp=[
- ['播放 / 暂停','Space'],['上一帧 / 下一帧','← / →'],['后退 / 前进 10 帧','Shift + ← / →'],['跳到开头 / 结尾','Home / End'],
+ ['添加标记','M'],['播放 / 暂停','Space'],['上一帧 / 下一帧','← / →'],['后退 / 前进 10 帧','Shift + ← / →'],['跳到开头 / 结尾','Home / End'],
  ['分割所选片段','⌘ / Ctrl + B'],['复制到本轨末尾','⌘ / Ctrl + D'],['撤销','⌘ / Ctrl + Z'],['重做','Shift + ⌘ / Ctrl + Z · Ctrl + Y'],
  ['完成自动保存','⌘ / Ctrl + S'],['删除片段','Delete / Backspace'],['涟漪删除','Shift + Delete / Backspace'],['取消选择','Esc']
 ] as const;
@@ -22,6 +22,7 @@ export function resolveShortcut(event:Keys):ShortcutAction|undefined{
  if(key==='delete'||key==='backspace')return event.shiftKey?'ripple':'delete';
  if(event.shiftKey)return;
  if(event.code==='Space'||key===' ')return 'play';
+ if(key==='m')return 'mark';
  return key==='home'?'start':key==='end'?'end':key==='escape'?'deselect':undefined;
 }
 export function shortcutTargetOwnsKeys(target:{isContentEditable?:boolean;closest(selector:string):unknown}):boolean{
@@ -50,6 +51,7 @@ export function runShortcut(action:ShortcutAction,c:EditorController):void{
  if(action==='undo'||action==='redo'){
   if(action==='undo'?c.state.value?.canUndo:c.state.value?.canRedo)void c.guard(()=>c.edit(undefined,action));return;
  }
+ if(action==='mark'){void c.guard(c.addMarker);return;}
  const selected=c.selected.value;if(!selected||selected.track.locked)return;
  if(action==='split'){
   const {start,duration}=selected.clip.target;

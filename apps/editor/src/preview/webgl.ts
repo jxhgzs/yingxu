@@ -133,7 +133,7 @@ export class WebGLCompositor {
   gl.uniform1i(this.fxBlackWhiteEnabled,fx.blackWhiteEnabled?1:0);gl.uniform2fv(this.fxBlackWhite,fx.blackWhite);gl.uniform1i(this.fxFadeEnabled,fx.fadeEnabled?1:0);gl.uniform1f(this.fxFadeAmount,fx.fadeAmount);
   const vignette=layer.clip.vignette?.intensity?vignetteParameters(layer.clip.vignette.intensity):undefined;gl.uniform1i(this.vignetteMode,vignette?(vignette.mode==='darken'?1:2):0);gl.uniform3fv(this.vignetteParams,vignette?[vignette.amount,vignette.inner,vignette.outer]:[0,0,1]);
   const bakedText=layer.asset.kind==='text'&&layer.textRasterMode!=='neutral',opacity=layer.asset.kind==='text'&&layer.textRasterMode==='neutral'?1-Math.round((1-layer.transform.opacity)*255)/255:layer.transform.opacity;
-  gl.bufferData(gl.ARRAY_BUFFER,layerVertices(layer.asset.kind==='text'?source.asset:layer.asset,bakedText?{x:0,y:0,scale:1,rotation:0,opacity:1,flipX:false,flipY:false}:layer.transform,canvas),gl.DYNAMIC_DRAW);gl.uniform1f(this.opacity,bakedText?1:opacity);gl.drawArrays(gl.TRIANGLES,0,6);
+  gl.bufferData(gl.ARRAY_BUFFER,layerVertices(layer.asset.kind==='text'?source.asset:layer.asset,bakedText?{x:0,y:0,scale:1,rotation:0,opacity:1,flipX:false,flipY:false}:layer.transform,canvas,layer.clip.crop),gl.DYNAMIC_DRAW);gl.uniform1f(this.opacity,bakedText?1:opacity);gl.drawArrays(gl.TRIANGLES,0,6);
   return (source.asset.kind!=='image'&&source.asset.kind!=='text')||!previous?1:0;
  }
  draw(layers:PlannedVisual[],media:Map<string,DecodedMedia>,canvas:{width:number;height:number}):{drawCalls:number;textureUploads:number;framebufferPasses:number;transitionDraws:number}{

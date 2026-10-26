@@ -1,3 +1,7 @@
+import {validateCrop} from './crop.ts';
+import type {Crop} from './crop.ts';
+import {validateMarkers} from './markers.ts';
+import type {Marker} from './markers.ts';
 import {rational, compare, add, mul, ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 import {validateAnimations} from './animation.ts';
@@ -26,7 +30,7 @@ import type {ColorAdjustments} from './color-effects.ts';
 import type {AssetColorSpace} from './color-space.ts';
 export type Clip = {
   id: string; materialId: string; source: Range; target: Range;
-  speed: Rational; editableTiming: boolean; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];textAnimations?:TextAnimation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;
+  speed: Rational; editableTiming: boolean;crop?:Crop;markers?:Marker[]; transform?: Transform; volume?: number; muted?: boolean; text?: TextStyle; animations?:Animation[];textAnimations?:TextAnimation[];speedCurve?:SpeedCurve;audioFade?:AudioFade;colorAdjustments?:ColorAdjustments;vignette?:Vignette;
 };
 export type Track = {id: string; kind: 'video' | 'audio' | 'text'; clips: Clip[]; name?: string; locked?: boolean; hidden?: boolean; muted?: boolean};
 export type SubtitleSource={id:string;assetId:string;name:string;format:'srt'|'vtt';text:string};
@@ -36,7 +40,7 @@ export type Transition = {
 };
 export type Document = {
   schemaVersion: 1; title?: string; canvas: {width: number; height: number};
-  fps: Rational; assets: Asset[]; tracks: Track[];subtitleSources?:SubtitleSource[];transitions?:Transition[];
+  fps: Rational; markers?:Marker[];mainTrackMagnet?:boolean;assets: Asset[]; tracks: Track[];subtitleSources?:SubtitleSource[];transitions?:Transition[];
 };
 export type Diagnostic = {code: string; trackId?: string; clipId?: string};
 export type Imported = {document: Document; provenance: {raw: unknown; sha256: string}; diagnostics: Diagnostic[]};
@@ -55,6 +59,8 @@ export function validRational(value: unknown, field = ''): asserts value is Rati
 export function validateDocument(doc: Document): void {
   check(doc && doc.schemaVersion === 1 && Array.isArray(doc.assets) && Array.isArray(doc.tracks), 'INVALID_JSON_STRUCTURE');
   check(doc.title === undefined || typeof doc.title === 'string' && doc.title.length <= 200, 'INVALID_TITLE');
+  if(doc.markers!==undefined)validateMarkers(doc.markers);
+  check(doc.mainTrackMagnet===undefined||typeof doc.mainTrackMagnet==='boolean','INVALID_MAGNET_POLICY');
   check(doc.assets.length <= 10000 && doc.tracks.length <= 500, 'DOCUMENT_LIMIT');
   check(doc.canvas && [doc.canvas.width, doc.canvas.height].every(n => Number.isSafeInteger(n) && n > 0 && n <= 16384), 'INVALID_CANVAS');
   validRational(doc.fps, 'fps'); check(compare(doc.fps, ZERO) > 0 && compare(doc.fps, rational(1000)) <= 0, 'INVALID_FPS');
@@ -108,6 +114,8 @@ export function validateDocument(doc: Document): void {
       check(c.muted === undefined || typeof c.muted === 'boolean', 'INVALID_MUTE');
       if(c.colorAdjustments!==undefined){check(['video','image'].includes(kind),'COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED');validateColorAdjustments(c.colorAdjustments);}
       if(c.vignette!==undefined){check(['video','image'].includes(kind),'VIGNETTE_MEDIA_UNSUPPORTED');validateVignette(c.vignette);}
+      if(c.markers!==undefined)validateMarkers(c.markers,asset.duration);
+      if(c.crop!==undefined){check(kind==='video'||kind==='image','CROP_MEDIA_UNSUPPORTED');validateCrop(c.crop);}
       if(c.animations!==undefined)validateAnimations(c.animations,asset.duration);
       if(c.textAnimations!==undefined){check(kind==='text','TEXT_ANIMATION_MEDIA_UNSUPPORTED');validateTextAnimations(c.textAnimations,c.target.duration);}
       if(c.audioFade!==undefined){

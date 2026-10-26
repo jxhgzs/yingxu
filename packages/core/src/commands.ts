@@ -1,3 +1,5 @@
+import {applyToolCommand} from './timeline-tools.ts';
+import type {ToolCommand} from './timeline-tools.ts';
 import {check, validateDocument, validRational} from './document.ts';
 import type {Document,Asset} from './document.ts';
 import {rational, add, sub, mul, div, compare, ZERO} from './time.ts';
@@ -21,7 +23,7 @@ export type AtomicCommand =
   | {type:'subtitles.import';input:string;format:'srt'|'vtt';options:SubtitleImportOptions}
   | {type:'asset.relink';assetId:string;replacement:Asset}
   | {type:'speed.curve';clipId:string;curve:SpeedCurve|null;shiftFollowing:boolean}
-  | EditingCommand | TransitionCommand;
+  | EditingCommand | TransitionCommand | ToolCommand;
 export type Command = AtomicCommand | {type:'batch';commands:AtomicCommand[]};
 
 export function applyCommand(doc: Document, command: Command): Document {
@@ -36,6 +38,7 @@ export function applyCommand(doc: Document, command: Command): Document {
 }
 function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Document{
   validateDocument(doc); check(command && typeof command === 'object', 'INVALID_COMMAND');
+  if(command.type==='clip.replace'||command.type==='marker.set'||command.type==='marker.remove'){const next=applyToolCommand(doc,command);if(!deferOverlap)assertNoVideoOverlap(next);return next;}
   if(command.type==='transition.add'||command.type==='transition.update'||command.type==='transition.remove'){
     const next=applyTransitionCommand(doc,command);validateDocument(next);if(!deferOverlap)assertNoVideoOverlap(next);return next;
   }
@@ -75,6 +78,7 @@ function applySingle(doc:Document,command:AtomicCommand,deferOverlap:boolean):Do
     if(clip.audioFade){
       clip.audioFade.outDuration=ZERO;right.audioFade!.inDuration=ZERO;clampAudioFade(clip);clampAudioFade(right);
     }
+    if(clip.markers){right.markers=clip.markers.filter(m=>compare(m.time,right.source.start)>=0&&compare(m.time,add(right.source.start,right.source.duration))<=0);clip.markers=clip.markers.filter(m=>compare(m.time,clip.source.start)>=0&&compare(m.time,add(clip.source.start,clip.source.duration))<0);}
     track.clips.splice(index + 1, 0, right);
   } else if (command.type === 'speed') {
     validRational(command.value, 'speed');

@@ -1,6 +1,6 @@
 import type {Document, Asset, Diagnostic} from '../../../packages/core/src/document.ts';
 export type ProjectState = {id: string; revision: number; document: Document; documentHash: string; updatedAt: string; canUndo: boolean; canRedo: boolean; diagnostics: Diagnostic[]};
-export type JobView = {engine?:string;id: string; projectId: string; kind: 'preview' | 'export'; status: string; progress: number; documentRevision: number; createdAt: string; error?: string;
+export type JobView = {engine?:string;id: string; projectId: string; kind: 'preview' | 'export' | 'freeze' | 'reverse';appliedClipId?:string;appliedRevision?:number;derivedAssetId?:string;applying?:boolean; status: string; progress: number; documentRevision: number; createdAt: string; error?: string;
   result?: {width: number; height: number; duration: number; frameCount: number; url: string; downloadUrl: string;format?:string;extension?:string;mime?:string}};
 export type ProjectSummary = {id: string; title: string; updatedAt: string; revision: number};
 export class EditorAPI {
@@ -28,6 +28,7 @@ export class EditorAPI {
 export function explainError(error: unknown): string {
   const raw = error instanceof Error ? error.message : String(error), code = raw.split(':')[0];
   const translations: Record<string, string> = {
+    MEDIA_OPERATION_FRAME_TIMING:'当前素材的帧时间不规则，暂不支持这项操作。可先导出为恒定帧率视频后再导入。',INVALID_CROP:'裁剪范围无效，请调整到原图范围内。',INVALID_MARKER:'标记内容或时间无效。',MARKER_NOT_FOUND:'标记已被删除，请刷新后重试。',FREEZE_OUTSIDE_CLIP:'请将播放头移到所选视频片段内。',MEDIA_OPERATION_UNSUPPORTED:'此素材暂不支持这项操作。',REVERSE_MEDIA_UNSUPPORTED:'此视频缺少倒放所需的帧率或尺寸信息。',REVERSE_MEDIA_LIMIT:'当前视频长度或帧率超出倒放处理范围。',REVERSE_FRAME_TOO_LARGE:'单帧尺寸超出倒放处理预算。',REVERSE_CURVE_RANGE_UNSUPPORTED:'此曲线超出片段的源区间，请先调整曲线或源范围。',
     UNSUPPORTED_VIDEO_COLOR_SPACE:'此素材的色彩格式暂不支持，请先转换为标准动态范围视频。',
     INVALID_COLOR_ADJUSTMENTS:'调节参数超出了有效范围。',
     COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED:'此素材类型暂不支持调节。',

@@ -1,3 +1,4 @@
+import {cropPixels} from '../../core/src/crop.ts';
 import {prepareVignette} from './vignette.ts';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -95,9 +96,10 @@ export async function render(doc: Document, directory: string, options: {
     const first=frameEdge(clip.target.start,doc.fps),last=frameEdge(add(clip.target.start,clip.target.duration),doc.fps);
     if(first.frame===last.frame)return;
     const media = inputIndexes.get(asset.id)!;
-    const fit = Math.min(width / (asset.width || width), height / (asset.height || height));
+    const cropped=cropPixels({width:asset.width||width,height:asset.height||height},clip.crop);
+    const fit = Math.min(width / cropped.width, height / cropped.height);
     const maxScale=maxAnimatedValue(clip,'scale',t.scale);
-    const w = even((asset.width || width) * fit * maxScale), h = even((asset.height || height) * fit * maxScale);
+    const w = even(cropped.width * fit * maxScale), h = even(cropped.height * fit * maxScale);
     if (w > 16384 || h > 16384) throw Error('RENDER_TRANSFORM_LIMIT');
     const sourceClock=clip.speedCurve?`(${fraction(clip.source.start)}+${curveSourceExpression(clip,'t')})`:`(${fraction(clip.source.start)}+t*${fraction(clip.speed)})`;
     const globalClock=clip.speedCurve?`(${fraction(clip.source.start)}+${curveSourceExpression(clip,`(t-${fraction(clip.target.start)})`)})`:`(${fraction(clip.source.start)}+(t-${fraction(clip.target.start)})*${fraction(clip.speed)})`;
@@ -125,7 +127,8 @@ export async function render(doc: Document, directory: string, options: {
       ...(clip.speedCurve?['settb=1/1000000000',`setpts='floor(((${curveTargetExpression(clip,`(PTS*TB-${fraction(curveRange!.origin)})`)})-0.0000005)/TB+0.5)'`]:asset.kind==='image'?['setpts=PTS-STARTPTS']:['settb=1/1000000000',`setpts='floor((((PTS*TB-${fraction(mediaSourceStart)})/${fraction(clip.speed)})-0.0000005)/TB+0.5)'`]), `fps=${fps}:round=up`, ...decodeColor, ...(colorEffect?[colorEffect]:[])];
     const vignette=preparedVignettes.get(clip.id);
     if(vignette){filters.push(`${visualSource}${video.join(',')},format=gbrap16le[spatialSource${i}]`,`[${vignette.index}:v]setpts=PTS-STARTPTS,format=gbrap16le[spatialMask${i}]`);visualSource=`[spatialSource${i}][spatialMask${i}]`;video=[`blend=all_mode=${vignette.mode}:c3_expr='A':shortest=1`];}
-    video.push(animatedScale?`scale=w='${scaleClock}max(2,round(${(asset.width||width)*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${(asset.height||height)*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba');
+    if(clip.crop)video.push(`crop=${cropped.width}:${cropped.height}:${cropped.x}:${cropped.y}:exact=1`);
+    video.push(animatedScale?`scale=w='${scaleClock}max(2,round(${cropped.width*fit}*${scaleExpression}/2)*2)':h='${scaleClock}max(2,round(${cropped.height*fit}*${scaleExpression}/2)*2)':eval=frame`:`scale=${w}:${h}`, 'setsar=1', 'format=rgba');
     if (t.flipX) video.push('hflip'); if (t.flipY) video.push('vflip');
     if(clip.animations?.some(a=>a.property==='rotation')||animatedScale&&t.rotation){
       const box=even(Math.ceil(Math.hypot(w,h))+4);

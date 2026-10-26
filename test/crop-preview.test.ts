@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import os from 'node:os';import path from 'node:path';
+import {emptyDocument,defaultTransform} from '../packages/core/src/document.ts';import {rational as r} from '../packages/core/src/time.ts';import {createPreviewPlan,layerVertices} from '../apps/editor/src/preview/plan.ts';import {ffmpeg,probeAsset} from '../packages/media/src/probe.ts';import {runProcess} from '../packages/media/src/process.ts';import {render} from '../packages/media/src/render.ts';
+test('crop and markers remain on GPU and use the exact cropped geometry/UV after mirror',()=>{
+ const d=emptyDocument();d.canvas={width:1280,height:720};d.assets=[{id:'a',path:'/fixture',kind:'video',width:1280,height:720,duration:r(2)}];d.tracks[0].clips=[{id:'c',materialId:'a',source:{start:r(0),duration:r(2)},target:{start:r(0),duration:r(2)},speed:r(1),editableTiming:true,crop:{x:.25,y:0,width:.5,height:1},markers:[{id:'m',time:r(1),title:'M',color:'#00c1cd'}]}];
+ const plan=createPreviewPlan(d);assert.equal(plan.support.supported,true,JSON.stringify(plan.support));const v=layerVertices(d.assets[0],{...defaultTransform(),flipX:true},d.canvas,d.tracks[0].clips[0].crop);assert.deepEqual([...v.slice(0,8)],[-.5,1,.75,0,.5,1,.25,0]);
+});
+test('offline crop preserves source window aspect and fits it without stretching',{timeout:60000},async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'yx-crop-'));try{
+ const file=path.join(root,'input.mp4');await runProcess(ffmpeg(),['-v','error','-y','-f','lavfi','-i',"nullsrc=s=128x96:r=30:d=0.2,geq=lum='16+X':cb=128:cr=128",'-c:v','libx264','-crf','0','-pix_fmt','yuv420p',file]);const asset=await probeAsset(file),d=emptyDocument();d.canvas={width:128,height:96};d.assets=[asset];d.tracks[0].clips=[{id:'c',materialId:asset.id,source:{start:r(0),duration:r(1,5)},target:{start:r(0),duration:r(1,5)},speed:r(1),editableTiming:true,crop:{x:.25,y:0,width:.5,height:1}}];
+ const result=await render(d,path.join(root,'output'));const raw=path.join(root,'out.rgb');await runProcess(ffmpeg(),['-v','error','-y','-i',result.path,'-frames:v','1','-f','rawvideo','-pix_fmt','rgb24',raw]);const bytes=await fs.readFile(raw);const pixel=(x:number,y:number)=>bytes[(y*128+x)*3];assert(pixel(10,48)<=3);assert(pixel(117,48)<=3);assert(pixel(36,48)>25);assert(pixel(90,48)>pixel(36,48)+45);assert(pixel(64,2)>50,'crop fills height while retaining side bars');
+ }finally{await fs.rm(root,{recursive:true,force:true});}
+});

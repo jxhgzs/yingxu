@@ -1,3 +1,5 @@
+import {quickCutCommand} from '../../../packages/core/src/timeline-tools.ts';
+import {evaluateAnimation} from '../../../packages/core/src/animation.ts';
 import {ref, shallowRef, computed} from 'vue';
 import {EditorAPI, explainError} from './api.ts';
 import type {ProjectState, ProjectSummary, JobView} from './api.ts';
@@ -17,7 +19,7 @@ export function timecode(seconds: number, fps = 30) {
 }
 export function createEditorController(options: EditorOptions = {}) {
   const api = new EditorAPI(options.apiBase), state = shallowRef<ProjectState | null>(null), assets = shallowRef<Asset[]>([]), projects = shallowRef<ProjectSummary[]>([]);
-  const inspectorTab=ref('picture');
+  const inspectorTab=ref('picture'),toolDialogOpen=ref(false),mediaJob=shallowRef<JobView|null>(null);
   const selectedId = ref<string | null>(null), playhead = ref(0), playing = ref(false), scrubbing = ref(false), error = ref(''), busy = ref(false), loading = ref(true);
   const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), realtimePreviewAvailable=ref(false), playbackReady=ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
   let disposed = false, loadEpoch = 0, pollTimer: ReturnType<typeof setTimeout> | undefined, previewTimer: ReturnType<typeof setTimeout> | undefined;
@@ -144,6 +146,42 @@ export function createEditorController(options: EditorOptions = {}) {
     const head=atFrame(playhead.value,doc.value.fps),existing=keyframeAtFrame(clip,property,head,doc.value.fps),time=existing?.time||sourceTimeAt(clip,head);
     return {type:'keyframe.set',clipId:clip.id,property,point:{id:existing?.id||crypto.randomUUID(),time,value,interpolation:interpolation||existing?.interpolation||'linear'}};
   }
+  async function quickCut(side:'left'|'right') {
+    if(!doc.value||!selected.value||busy.value||readOnly.value)return;
+    playing.value=false;const command=quickCutCommand(doc.value,selected.value.clip.id,atFrame(playhead.value,doc.value.fps),side);
+    const id=selected.value.clip.id;await edit(command);if(side==='left')seek(toNumber(selected.value?.clip.target.start||rational(0)));selectedId.value=id;
+  }
+  async function addMarker(){
+    if(!doc.value||busy.value||readOnly.value)return;
+    const head=atFrame(playhead.value,doc.value.fps),item=selected.value,inside=item&&compare(head,item.clip.target.start)>=0&&compare(head,add(item.clip.target.start,item.clip.target.duration))<0;
+    if(inside&&item.track.locked)return;
+    const owner=inside?item.clip:doc.value,time=inside?sourceTimeAt(item.clip,head):head;
+    if(owner.markers?.some(m=>compare(m.time,time)===0))return;
+    await edit({type:'marker.set',...(inside?{clipId:item.clip.id}:{}),marker:{id:crypto.randomUUID(),time,title:'标记 '+String((owner.markers?.length||0)+1).padStart(2,'0'),color:'#00c1cd'}});
+  }
+  async function mirror(){if(!selected.value)return;await edit({type:'clip.update',clipId:selected.value.clip.id,changes:{transform:{...defaultTransform(),...selected.value.clip.transform,flipX:!selected.value.clip.transform?.flipX}}});}
+  async function rotate(){
+    if(!selected.value||!doc.value)return;const clip=selected.value.clip,animation=clip.animations?.find(a=>a.property==='rotation'),value=animation?evaluateAnimation(animation,sourceTimeAt(clip,atFrame(playhead.value,doc.value.fps))):(clip.transform?.rotation||0),next=(value+90)%360;
+    await edit(animation?keyframeCommand('rotation',next):{type:'clip.update',clipId:clip.id,changes:{transform:{...defaultTransform(),...clip.transform,rotation:next}}});
+  }
+  async function mediaOperation(kind:'freeze'|'reverse'){
+    if(!state.value||!selected.value||busy.value||readOnly.value)return;
+    const id=state.value.id,revision=state.value.revision,clipId=selected.value.clip.id,at=atFrame(playhead.value,doc.value!.fps);playing.value=false;pending++;busy.value=true;
+    try{
+      const job=await api.post<JobView>(`/api/projects/${id}/jobs`,{kind,revision,requestId:crypto.randomUUID(),clipId,...(kind==='freeze'?{at}:{})});mediaJob.value=job;
+      while(!disposed){
+        const next=await api.get<JobView>(`/api/jobs/${job.id}`);mediaJob.value=next;
+        if(!['queued','running','cancelling'].includes(next.status)){
+          if(next.status==='completed'&&isCurrent(id)){
+            const project=await api.get<ProjectState>(`/api/projects/${id}`);if(isCurrent(id)){adopt(project);selectedId.value=next.appliedClipId||clipId;schedulePreview();await refreshLists();}
+          }else if(!['cancelled'].includes(next.status))throw Error(next.error||'MEDIA_OPERATION_FAILED');
+          break;
+        }
+        await new Promise(resolve=>setTimeout(resolve,300));
+      }
+    }finally{mediaJob.value=null;pending--;if(!disposed)busy.value=pending>0;}
+  }
+  async function cancelMediaOperation(){if(mediaJob.value)mediaJob.value=await api.post<JobView>(`/api/jobs/${mediaJob.value.id}/cancel`);}
   async function remove(ripple = false) {if (selected.value) await edit({type: 'clip.remove', clipId: selected.value.clip.id, ripple});}
   async function duplicate() {
     if (!selected.value || !doc.value) return;
@@ -183,7 +221,7 @@ export function createEditorController(options: EditorOptions = {}) {
   }
   function dispose() {disposed = true; playbackReady.value=false; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
   async function flush() {await queue;}
-  return {api, state, doc, assets, projects, inspectorTab, selectedId, selected, playhead, playing, scrubbing, error, busy, loading, jobs, preview, previewPending, realtimePreviewAvailable, playbackReady, zoom, snap, trimFollowing, total, readOnly,
-    initialize, loadProject, edit, guard, report, schedulePreview, setRealtimePreviewAvailable, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, togglePlayback, stepFrames, flush, dispose};
+  return {api, state, doc, assets, projects, inspectorTab, toolDialogOpen, mediaJob, selectedId, selected, playhead, playing, scrubbing, error, busy, loading, jobs, preview, previewPending, realtimePreviewAvailable, playbackReady, zoom, snap, trimFollowing, total, readOnly,
+    initialize, loadProject, edit, guard, report, schedulePreview, setRealtimePreviewAvailable, addAsset, addText, upload, split,keyframeCommand, remove, quickCut, addMarker, mirror, rotate, mediaOperation, cancelMediaOperation, duplicate, createProject, demo, open, importFile, exportVideo, seek, togglePlayback, stepFrames, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;

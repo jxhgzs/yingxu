@@ -1,3 +1,5 @@
+import {cropPixels} from '../../../../packages/core/src/crop.ts';
+import type {Crop} from '../../../../packages/core/src/crop.ts';
 import {CURVE_PCM_MAX_BYTES} from './curve-sound.ts';
 import {resolveVideoColorSpace} from '../../../../packages/core/src/color-space.ts';
 import {renderGraph} from '../../../../packages/media/src/graph.ts';
@@ -19,7 +21,7 @@ export type PreviewPlan=RenderGraph&{media:Layer[];previewTransitions:PreviewTra
 export type PlannedVisual=Layer&{sourceTime:Rational;transform:Transform;textRasterMode?:'neutral'|'frame';transition?:{id:string;kind:Transition['kind'];progress:number;incoming:PlannedVisual;edgePolicy?:SpatialEdgePolicy;edgeReconstruction?:SpatialReconstruction}};
 export type PlannedFrame={time:Rational;frame:number;layers:PlannedVisual[];audio:Layer[];media:Layer[]};
 export type PlanOptions={diagnostics?:Diagnostic[];maxConcurrentMedia?:number;texturesAvailable?:boolean;curveAudioAvailable?:boolean};
-const knownClipKeys=new Set(['id','materialId','source','target','speed','editableTiming','transform','volume','muted','text','animations','textAnimations','speedCurve','audioFade','colorAdjustments','vignette']);
+const knownClipKeys=new Set(['id','materialId','source','target','speed','editableTiming','transform','volume','muted','text','animations','textAnimations','speedCurve','audioFade','colorAdjustments','vignette','crop','markers']);
 const knownTransitionKeys=new Set(['id','trackId','outgoingClipId','incomingClipId','kind','alignment','overlap','duration']);
 function edge(time:Rational,fps:Rational):number{const v=mul(time,fps),n=BigInt(v.numerator),d=BigInt(v.denominator);return Number((n+d-1n)/d);}
 export function transitionWeights(kind:Transition['kind'],progress:number):[number,number,number]{
@@ -95,12 +97,12 @@ export function previewFrame(plan:PreviewPlan,time:Rational):PlannedFrame{
  return {time:at,frame,layers,audio:plan.audio.filter(active),media:plan.media.filter(l=>inRange(plan.decodeRanges.get(l.clip.id)!))};
 }
 /** Interleaved position(x,y) and top-origin UV(u,v), two triangles, screen clockwise rotation. */
-export function layerVertices(asset:Pick<Asset,'width'|'height'>,t:Transform,canvas:{width:number;height:number}):Float32Array{
- const fit=Math.min(canvas.width/asset.width!,canvas.height/asset.height!),even=(v:number)=>Math.max(2,Math.round(v/2)*2);
- const w=even(asset.width!*fit*t.scale),h=even(asset.height!*fit*t.scale),angle=t.rotation*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle);
+export function layerVertices(asset:Pick<Asset,'width'|'height'>,t:Transform,canvas:{width:number;height:number},crop?:Crop):Float32Array{
+ const window=cropPixels(asset,crop),fit=Math.min(canvas.width/window.width,canvas.height/window.height),even=(v:number)=>Math.max(2,Math.round(v/2)*2);
+ const w=even(window.width*fit*t.scale),h=even(window.height*fit*t.scale),angle=t.rotation*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle);
  const out:number[]=[];for(const [u,v] of [[0,0],[1,0],[0,1],[0,1],[1,0],[1,1]]){
   const x=(u-.5)*w,y=(v-.5)*h,px=canvas.width/2+t.x+c*x-s*y,py=canvas.height/2+t.y+s*x+c*y;
-  out.push(2*px/canvas.width-1,1-2*py/canvas.height,t.flipX?1-u:u,t.flipY?1-v:v);
+  out.push(2*px/canvas.width-1,1-2*py/canvas.height,(window.x+(t.flipX?1-u:u)*window.width)/asset.width!,(window.y+(t.flipY?1-v:v)*window.height)/asset.height!);
  }return new Float32Array(out);
 }
 /** Hold a proved source-edge frame without repeatedly restarting an ended decoder. */
