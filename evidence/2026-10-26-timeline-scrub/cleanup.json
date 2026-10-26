@@ -1,0 +1,8 @@
+{
+  "ownQaPortsStopped": {
+    "8872": 61,
+    "8873": 61
+  },
+  "nativeScreenshotTimeouts": 1,
+  "nativeWindowDragClaimed": false
+}

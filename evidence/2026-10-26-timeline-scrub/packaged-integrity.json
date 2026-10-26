@@ -1,0 +1,30 @@
+{
+  "version": "0.10.1",
+  "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261026181604/映序剪辑.app",
+  "sourceCommit": "0c66063afebeeaf79299262357690a1c9b348f3c",
+  "backendHash": "9dd0e48d248842e26ab8a41f2a17e31bee8656f3f31cbbe9fd7b20e56b83c204",
+  "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+  "runtime": "Electron 44.6.0",
+  "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+  "signing": "local ad-hoc; not a notarized installer",
+  "origin": "http://127.0.0.1:63428",
+  "runtimeVersion": "0.10.1",
+  "bundles": [
+    {
+      "name": "editor-j_rpL78B.js",
+      "sha256": "dbb18bfef3dd2549361cc861155e33f910aa51e72874da7fa79a7dd1009973b8",
+      "bytes": 127
+    },
+    {
+      "name": "host-DYIPlV2p.js",
+      "sha256": "7c192d8e9507adf9452556e08b83f6013e6f4a0beab4188b3d0804fddaee0c0c",
+      "bytes": 1709704
+    },
+    {
+      "name": "lifecycle-O5EfGRTG.js",
+      "sha256": "c2c2ca43db45e9e28f5d14643800ab774202f2f1d2cc04f77ff085d5f2df3f2f",
+      "bytes": 3075
+    }
+  ],
+  "codesignExit": 0
+}

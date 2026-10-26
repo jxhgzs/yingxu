@@ -1,0 +1,72 @@
+[
+  {
+    "file": "ui-trace-first.json",
+    "errors": [],
+    "gestures": [
+      {
+        "durationMs": 149.4,
+        "pointerMoves": 8,
+        "framesWhileHeld": [
+          11,
+          28,
+          44,
+          60,
+          77
+        ],
+        "finalFrame": 143,
+        "releaseToExactMs": 61.1
+      },
+      {
+        "durationMs": 127.2,
+        "pointerMoves": 8,
+        "framesWhileHeld": [
+          143,
+          127,
+          95,
+          64
+        ],
+        "finalFrame": 17,
+        "releaseToExactMs": 42.6
+      },
+      {
+        "durationMs": 11.2,
+        "pointerMoves": 0,
+        "framesWhileHeld": [],
+        "finalFrame": 90,
+        "releaseToExactMs": 37.5
+      },
+      {
+        "durationMs": 148.1,
+        "pointerMoves": 8,
+        "framesWhileHeld": [
+          90,
+          85,
+          80,
+          70
+        ],
+        "finalFrame": 50,
+        "releaseToExactMs": 32.2
+      }
+    ]
+  },
+  {
+    "file": "ui-trace.json",
+    "errors": [],
+    "gestures": [
+      {
+        "durationMs": 159.2,
+        "pointerMoves": 8,
+        "framesWhileHeld": [
+          11,
+          27,
+          42,
+          58,
+          74,
+          89
+        ],
+        "finalFrame": 136,
+        "releaseToExactMs": 61.9
+      }
+    ]
+  }
+]

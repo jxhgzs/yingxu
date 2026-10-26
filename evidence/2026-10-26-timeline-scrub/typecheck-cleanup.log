@@ -1,0 +1,4 @@
+
+> @yingxu/editor@0.10.1 typecheck
+> vue-tsc --noEmit
+

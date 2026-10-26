@@ -1,0 +1,69 @@
+Browser tab: 2, Title: "编辑器挂载验证", URL: "http://127.0.0.1:63428/lifecycle-test.html".
+0 AXWebArea 编辑器挂载验证, URL: 127.0.0.1:63428/lifecycle-test.html
+	1 heading 编辑器生命周期验证, Value: 2
+		2 text 编辑器生命周期验证
+	3 button 运行20次挂载与卸载, ID: run
+	8 text 通过
+{
+  "cycles": 20,
+  "domChildren": 0,
+  "lateChanges": 0,
+  "requestsAfterDispose": 0,
+  "disposedOpenRejected": 20
+}
+	5 button 验证GPU丢失与恢复, ID: run-gpu
+	9 text 通过
+{
+  "states": [
+    "loading",
+    "ready",
+    "paused",
+    "loading",
+    "ready",
+    "context-lost",
+    "paused",
+    "loading",
+    "ready",
+    "paused",
+    "loading",
+    "ready"
+  ],
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "contextLosses": 1,
+  "restoredState": "ready",
+  "restoredFrame": 15,
+  "autoPlayed": false,
+  "before": [
+    {
+      "x": 640,
+      "y": 360,
+      "rgba": [
+        0,
+        195,
+        255,
+        255
+      ]
+    }
+  ],
+  "after": [
+    {
+      "x": 640,
+      "y": 360,
+      "rgba": [
+        0,
+        195,
+        255,
+        255
+      ]
+    }
+  ]
+}
+	7 image gpu-canvas
+
+The focused UI element is 0 AXWebArea 编辑器挂载验证, URL: 127.0.0.1:63428/lifecycle-test.html

@@ -20,19 +20,22 @@
 
 Files: 新apps/editor/src/preview/latest-seek.ts、test/latest-seek.test.ts；改Preview.vue。
 
-- [ ] 独立Promise屏障测试：首次1保持pending，2/3请求合为3；记录执行[1,3]。reset期间结果不发布；dispose不执行后续；失败不锁队列。
-- [ ] 实现request/reset/dispose与队列；播放/文档/模式切换清理。
+- [x] 独立Promise屏障测试：首次1保持pending，2/3请求合为3；记录执行[1,3]。reset期间结果不发布；dispose不执行后续；失败不锁队列。
+- [x] 实现request/reset/dispose与队列；播放/文档/模式切换清理。
 
 ### Task 2: Pointer and prefetch
 
 Files: Timeline.vue、controller.ts、style.css、preview/index.ts、gpu-preview-runtime.test.ts。
 
-- [ ] 时间尺及播放头handle用主指针capture，move每rAF合并，up flush最后坐标；cancel/失去capture/卸载清理。
-- [ ] seek(time,{prefetch:false})仅跳过额外window预热，目标帧精确准备不变；加真实runtime回归。
-- [ ] 等待提示延迟120ms，连续拖动期间不覆盖全幅旧帧。
+- [x] 时间尺及播放头handle用主指针capture，move每rAF合并，up flush最后坐标；cancel/失去capture/卸载清理。
+- [x] seek(time,{prefetch:false})仅跳过额外window预热，目标帧精确准备不变；加真实runtime回归。
+- [x] 等待提示延迟120ms，连续拖动期间不覆盖全幅旧帧。
 
 ### Task 3: Desktop validation
 
-- [ ] 专项、全量、9基线、typecheck/build通过。
-- [ ] 版本0.10.1运行时提交后打包，正常关闭旧App再打开新包；实际时间尺前后拖、点击、越界松手、播放头handle和片段选择/裁切互不干扰。
-- [ ] 独立UI探针记录pointer期间多次画面帧变化、最终frame及串行队列，无工程变更；签名/HTTP bundle核验，保留截图和明确限制。
+- [x] 专项、全量、9基线、typecheck/build通过。
+- [x] 版本0.10.1运行时提交后打包，正常关闭旧App再打开新包；实际时间尺前后拖、点击、越界松手、播放头handle和片段选择/裁切互不干扰。
+- [x] 独立UI探针记录pointer期间多次画面帧变化、最终frame及串行队列，无工程变更；签名/HTTP bundle核验，保留截图和明确限制。
+
+
+实际原生窗口AX/恢复和相同最终bundle的浏览器指针验证分开记录。桌面截图一次超时，没有虚构原生拖动截图；详见最终QA。

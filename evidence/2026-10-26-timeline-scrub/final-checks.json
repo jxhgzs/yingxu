@@ -1,0 +1,24 @@
+{
+  "sourceCommit": "0c66063afebeeaf79299262357690a1c9b348f3c",
+  "finalAllTests": {
+    "passed": 342,
+    "failed": 0
+  },
+  "qaRevision": 0,
+  "qaHistoryEntries": 0,
+  "qaClipCount": 2,
+  "sameCompiledJavaScriptForBrowserAndApp": [
+    {
+      "file": "editor-j_rpL78B.js",
+      "sha256": "dbb18bfef3dd2549361cc861155e33f910aa51e72874da7fa79a7dd1009973b8"
+    },
+    {
+      "file": "host-DYIPlV2p.js",
+      "sha256": "7c192d8e9507adf9452556e08b83f6013e6f4a0beab4188b3d0804fddaee0c0c"
+    },
+    {
+      "file": "lifecycle-O5EfGRTG.js",
+      "sha256": "c2c2ca43db45e9e28f5d14643800ab774202f2f1d2cc04f77ff085d5f2df3f2f"
+    }
+  ]
+}
