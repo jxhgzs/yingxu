@@ -1,0 +1,69 @@
+{
+  "renderer": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "vendor": "Google Inc. (Apple)",
+    "softwareRenderer": false,
+    "maxTextureSize": 16384,
+    "timerAvailable": true
+  },
+  "restored": true,
+  "cases": [
+    {
+      "round": 0,
+      "rotation": 0,
+      "flipX": false,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 0,
+      "rotation": 0,
+      "flipX": true,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 0,
+      "rotation": 90,
+      "flipX": false,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 0,
+      "rotation": 90,
+      "flipX": true,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 1,
+      "rotation": 0,
+      "flipX": false,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 1,
+      "rotation": 0,
+      "flipX": true,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 1,
+      "rotation": 90,
+      "flipX": false,
+      "maxError": 0,
+      "meanError": 0
+    },
+    {
+      "round": 1,
+      "rotation": 90,
+      "flipX": true,
+      "maxError": 0,
+      "meanError": 0
+    }
+  ],
+  "pass": true
+}

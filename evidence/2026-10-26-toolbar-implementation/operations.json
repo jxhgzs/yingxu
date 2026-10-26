@@ -1,0 +1,1052 @@
+[
+  {
+    "label": "ui-left",
+    "revision": 1,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "1",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "2",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": []
+  },
+  {
+    "label": "ui-right",
+    "revision": 3,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "1",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": []
+  },
+  {
+    "label": "ui-transforms-markers",
+    "revision": 8,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "ac23e501-3100-4e16-b5da-6a9fc0982f84",
+                "time": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "title": "一秒切点 ",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "label": "ui-crop",
+    "revision": 9,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "ac23e501-3100-4e16-b5da-6a9fc0982f84",
+                "time": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "title": "一秒切点 ",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "label": "ui-freeze",
+    "revision": 10,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "1",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "ec3202b5-0120-4602-874d-86f79b49068d",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "1",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "4",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "2",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "ac23e501-3100-4e16-b5da-6a9fc0982f84",
+                "time": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "title": "一秒切点 ",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "6",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          },
+          {
+            "id": "a79b41eb-27b4-4dba-b260-ec6076127e0d",
+            "materialId": "a_07ac960fbd692027b00cbe85",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "1",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "d4672828-9bab-4c90-8223-658f3dfd96a9",
+        "kind": "freeze",
+        "status": "completed",
+        "derivedAssetId": "a_07ac960fbd692027b00cbe85",
+        "appliedClipId": "a79b41eb-27b4-4dba-b260-ec6076127e0d",
+        "appliedRevision": 10
+      },
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "label": "ui-reverse",
+    "revision": 12,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_98c5c4859cf0d192d4764c88",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "ac23e501-3100-4e16-b5da-6a9fc0982f84",
+                "time": {
+                  "numerator": "2",
+                  "denominator": "1"
+                },
+                "title": "一秒切点 ",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "9c05a81e-d417-4428-b5fb-8c2b625f8fdb",
+        "kind": "reverse",
+        "status": "completed",
+        "derivedAssetId": "a_98c5c4859cf0d192d4764c88",
+        "appliedClipId": "video-0",
+        "appliedRevision": 12
+      },
+      {
+        "id": "d4672828-9bab-4c90-8223-658f3dfd96a9",
+        "kind": "freeze",
+        "status": "completed",
+        "derivedAssetId": "a_07ac960fbd692027b00cbe85",
+        "appliedClipId": "a79b41eb-27b4-4dba-b260-ec6076127e0d",
+        "appliedRevision": 10
+      },
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "label": "ui-cancel",
+    "revision": 12,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_98c5c4859cf0d192d4764c88",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "ac23e501-3100-4e16-b5da-6a9fc0982f84",
+                "time": {
+                  "numerator": "2",
+                  "denominator": "1"
+                },
+                "title": "一秒切点 ",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "8ce6e379-daab-4222-ac5f-a4bf50667f01",
+        "kind": "reverse",
+        "status": "cancelled",
+        "error": "JOB_CANCELLED"
+      },
+      {
+        "id": "9c05a81e-d417-4428-b5fb-8c2b625f8fdb",
+        "kind": "reverse",
+        "status": "completed",
+        "derivedAssetId": "a_98c5c4859cf0d192d4764c88",
+        "appliedClipId": "video-0",
+        "appliedRevision": 12
+      },
+      {
+        "id": "d4672828-9bab-4c90-8223-658f3dfd96a9",
+        "kind": "freeze",
+        "status": "completed",
+        "derivedAssetId": "a_07ac960fbd692027b00cbe85",
+        "appliedClipId": "a79b41eb-27b4-4dba-b260-ec6076127e0d",
+        "appliedRevision": 10
+      },
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "label": "ui-final",
+    "revision": 15,
+    "tracks": [
+      {
+        "id": "video-main",
+        "kind": "video",
+        "name": "主轨道",
+        "clips": [
+          {
+            "id": "video-0",
+            "materialId": "a_98c5c4859cf0d192d4764c88",
+            "source": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "0",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true,
+            "markers": [
+              {
+                "id": "00b93d0e-264b-410f-995c-3876e412e37f",
+                "time": {
+                  "numerator": "0",
+                  "denominator": "1"
+                },
+                "title": "标记 01",
+                "color": "#00c1cd"
+              }
+            ],
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 90,
+              "opacity": 1,
+              "flipX": true,
+              "flipY": false
+            },
+            "crop": {
+              "x": 0.28125,
+              "y": 0.06944444444444445,
+              "width": 0.45625,
+              "height": 0.8111111111111111
+            }
+          },
+          {
+            "id": "video-1",
+            "materialId": "a_42a77dedc3feba3300fd5d9a",
+            "source": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "target": {
+              "start": {
+                "numerator": "3",
+                "denominator": "1"
+              },
+              "duration": {
+                "numerator": "3",
+                "denominator": "1"
+              }
+            },
+            "speed": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "editableTiming": true
+          }
+        ]
+      },
+      {
+        "id": "audio-main",
+        "kind": "audio",
+        "name": "音频",
+        "clips": []
+      },
+      {
+        "id": "text-main",
+        "kind": "text",
+        "name": "文字",
+        "clips": []
+      }
+    ],
+    "jobs": [
+      {
+        "id": "ae798683-7a27-4b45-9419-dbd43fb68a90",
+        "kind": "export",
+        "status": "completed"
+      },
+      {
+        "id": "8ce6e379-daab-4222-ac5f-a4bf50667f01",
+        "kind": "reverse",
+        "status": "cancelled",
+        "error": "JOB_CANCELLED"
+      },
+      {
+        "id": "9c05a81e-d417-4428-b5fb-8c2b625f8fdb",
+        "kind": "reverse",
+        "status": "completed",
+        "derivedAssetId": "a_98c5c4859cf0d192d4764c88",
+        "appliedClipId": "video-0",
+        "appliedRevision": 12
+      },
+      {
+        "id": "d4672828-9bab-4c90-8223-658f3dfd96a9",
+        "kind": "freeze",
+        "status": "completed",
+        "derivedAssetId": "a_07ac960fbd692027b00cbe85",
+        "appliedClipId": "a79b41eb-27b4-4dba-b260-ec6076127e0d",
+        "appliedRevision": 10
+      },
+      {
+        "id": "e6f95e18-bb34-4de4-8e93-6daed7ff9efa",
+        "kind": "preview",
+        "status": "completed"
+      },
+      {
+        "id": "4fbc1dd2-ac68-4116-8f9b-9da0859fb63c",
+        "kind": "preview",
+        "status": "completed"
+      }
+    ]
+  }
+]

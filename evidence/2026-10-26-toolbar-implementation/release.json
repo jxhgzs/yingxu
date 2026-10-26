@@ -1,0 +1,41 @@
+{
+  "build": {
+    "version": "0.11.0",
+    "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261026202041/映序剪辑.app",
+    "sourceCommit": "a8b1188a2d0ceac1aa5b9fc7665315b4e35ee67f",
+    "backendHash": "fd63bf340a97f7a3bcf229c47f44b79e0fea23f5cc54517cca8219e3d096b617",
+    "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+    "runtime": "Electron 44.6.0",
+    "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+    "signing": "local ad-hoc; not a notarized installer"
+  },
+  "userProjectPreserved": {
+    "revision": 27,
+    "sha256": "9cafedf51bc1caf72fef125e1b1e85e2344441cc5eee88d0766b05b47ff3d0f0",
+    "clips": 3
+  },
+  "httpOrigin": "http://127.0.0.1:63952",
+  "bundleMatches": [
+    {
+      "file": "dist/index.html",
+      "sha256": "444593fe99faf877cbea596506a9edf1f3cddb65ec043f92dc4503b33c1b88c7"
+    },
+    {
+      "file": "dist-desktop/service/server.mjs",
+      "sha256": "fd63bf340a97f7a3bcf229c47f44b79e0fea23f5cc54517cca8219e3d096b617"
+    },
+    {
+      "file": "dist/assets/editor-921c0LsE.js",
+      "sha256": "d625528ae10eea3a3a16c41fae7519313c8d4e8d7fe7bee21d6b9b8b2c49a3c6"
+    },
+    {
+      "file": "dist/assets/host-CvWhEGlG.js",
+      "sha256": "db1847e675e4c4946c4703f53ebe230d9deed8a36fcd439eee11758941d214d8"
+    },
+    {
+      "file": "dist/assets/host-CgvfLRXN.css",
+      "sha256": "8d0170e0c11deccde06dd171816b1607f78f76f60069305468fc9dc3b40447f9"
+    }
+  ],
+  "signatureVerified": true
+}
