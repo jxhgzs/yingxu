@@ -1,0 +1,48 @@
+
+> @yingxu/editor@0.11.2 package:mac
+> npm run build:desktop && node scripts/package-desktop.ts
+
+
+> @yingxu/editor@0.11.2 build:desktop
+> npm run build && vite build --config apps/desktop/service.config.ts
+
+
+> @yingxu/editor@0.11.2 build
+> vue-tsc --noEmit && vite build --config apps/editor/vite.config.ts
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 3226 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                        0.47 kB │ gzip:   0.34 kB
+dist/lifecycle-test.html               0.82 kB │ gzip:   0.51 kB
+dist/assets/host-CgvfLRXN.css         28.33 kB │ gzip:   6.26 kB
+dist/assets/editor-Dkf-wBj4.js         0.12 kB │ gzip:   0.14 kB
+dist/assets/lifecycle-CTphZIQB.js      3.07 kB │ gzip:   1.48 kB
+dist/assets/host-DP1w4qGU.js       1,750.53 kB │ gzip: 538.77 kB
+
+✓ built in 454ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+vite v8.3.4 building ssr environment for production...
+transforming...
+✓ 65 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-desktop/service/server.mjs  285.17 kB │ gzip: 77.18 kB
+
+✓ built in 28ms
+{
+  "version": "0.11.2",
+  "appPath": "/Users/tal/Work/Next/天天学/如果历史是一群喵 视频/项目调研/映序剪辑内核/artifacts/desktop/20261026211102/映序剪辑.app",
+  "sourceCommit": "1dd472be61284da6b5f4af325c30088d1eb6a02f",
+  "backendHash": "f8fd7c4b40049a0f652915a8c669d9abb270c593ef8fc95e10696c1dffd7a9e3",
+  "fixtureHash": "b25555a7244261d8cf103c27b4c10e73d7468671cfbcbaf9036c86d2fdc6f6b0",
+  "runtime": "Electron 44.6.0",
+  "nativeMediaDependency": "/opt/homebrew/bin/ffmpeg + ffprobe + rubberband (curve audio)",
+  "signing": "local ad-hoc; not a notarized installer"
+}
