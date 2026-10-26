@@ -17,7 +17,8 @@ const showWaiting=ref(false);let waitingTimer:ReturnType<typeof setTimeout>|unde
 const rate=computed(()=>props.c.doc.value?toNumber(props.c.doc.value.fps):30);
 const realtime=computed(()=>mode.value==='auto'&&!!manifest.value?.support.supported&&!['fallback','context-lost','disposed'].includes(manifest.value.state));
 const renderedReady=computed(()=>!!props.c.preview.value?.result&&props.c.preview.value.documentRevision===props.c.state.value?.revision&&!props.c.previewPending.value);
-const ready=computed(()=>realtime.value?['ready','playing','paused','buffering'].includes(manifest.value!.state):renderedReady.value);
+const ready=computed(()=>realtime.value?['loading','ready','playing','paused','buffering'].includes(manifest.value!.state):renderedReady.value);
+watch(ready,value=>{props.c.playbackReady.value=value;},{immediate:true,flush:'sync'});
 const source=computed(()=>props.c.preview.value?.result?props.c.api.url(props.c.preview.value.result.url):'');
 const waiting=computed(()=>realtime.value?['loading','buffering'].includes(manifest.value!.state):props.c.previewPending.value);
 const backendLabel=computed(()=>realtime.value&&manifest.value?.previewQuality==='exact-frames'?'精确预览':realtime.value?(manifest.value?.renderer.softwareRenderer?'WebGL 实时':'GPU 实时'):'后台预览');
@@ -71,23 +72,23 @@ watch(realtime,value=>{if(value)player.value?.pause();else engine?.pause();});
 watch(waiting,value=>{clearTimeout(waitingTimer);showWaiting.value=false;if(value)waitingTimer=setTimeout(()=>{showWaiting.value=true;},120);},{immediate:true});
 function loaded(){seekPlayer(props.c.playhead.value);}
 function update(){if(player.value&&props.c.playing.value&&!realtime.value)props.c.playhead.value=player.value.currentTime;}
-function step(delta:number){props.c.playing.value=false;props.c.seek(props.c.playhead.value+delta/rate.value);}
+function step(delta:number){props.c.stepFrames(delta);}
 async function sampleColors(){props.c.playing.value=false;if(engine&&realtime.value&&canvas.value)try{const {width,height}=canvas.value;const points=[[.5,.5],[.25,.25],[.75,.25],[.25,.75],[.75,.75]].map(([x,y])=>({x:Math.floor(width*x),y:Math.floor(height*y)}));colorDiagnostic.value=await engine.diagnoseColor(points,true);}catch(e){props.c.report(e);}}
 function retry(){seeks.reset();props.c.playing.value=false;if(mode.value==='rendered'){props.c.schedulePreview();return;}engine?.dispose();engine=undefined;manifest.value=undefined;gpuError.value='';void updateDocument();}
 onMounted(()=>{void updateDocument();});
-onBeforeUnmount(()=>{disposed=true;epoch++;seeks.dispose();clearTimeout(waitingTimer);engine?.dispose({releaseContext:true});props.c.setRealtimePreviewAvailable(false);if(player.value){player.value.pause();player.value.removeAttribute('src');player.value.load();}});
+onBeforeUnmount(()=>{disposed=true;props.c.playbackReady.value=false;epoch++;seeks.dispose();clearTimeout(waitingTimer);engine?.dispose({releaseContext:true});props.c.setRealtimePreviewAvailable(false);if(player.value){player.value.pause();player.value.removeAttribute('src');player.value.load();}});
 </script>
 <template>
   <section class="preview-panel panel">
     <header class="panel-heading"><span>播放器</span><div class="preview-controls"><button class="preview-backend" aria-label="预览性能详情" @click="details=!details">{{backendLabel}}</button><select v-model="mode" aria-label="预览方式"><option value="auto">自动实时</option><option value="rendered">后台精确预览</option></select><a-tooltip title="重新加载预览"><button class="icon-button" aria-label="重新生成预览" :disabled="c.readOnly.value||!c.total.value" @click="retry"><Icon name="reload" /></button></a-tooltip></div></header>
     <div class="preview-stage" :class="{updating:waiting}" :data-preview-backend="realtime?'webgl2':'rendered'" :data-preview-state="manifest?.state" :data-preview-renderer="manifest?.renderer.renderer" :data-preview-metrics="manifest?JSON.stringify(manifest.metrics):''" :data-preview-diagnostic="colorDiagnostic?JSON.stringify(colorDiagnostic):''">
-      <canvas v-show="realtime" ref="canvas" aria-label="实时视频画面" @click="ready&&(c.playing.value=!c.playing.value)" />
-      <video v-show="!realtime" v-if="source" ref="player" :src="source" preload="auto" playsinline @loadedmetadata="loaded" @timeupdate="update" @ended="c.playing.value=false" @click="ready&&(c.playing.value=!c.playing.value)" />
+      <canvas v-show="realtime" ref="canvas" aria-label="实时视频画面" @click="c.togglePlayback()" />
+      <video v-show="!realtime" v-if="source" ref="player" :src="source" preload="auto" playsinline @loadedmetadata="loaded" @timeupdate="update" @ended="c.playing.value=false" @click="c.togglePlayback()" />
       <div v-if="!realtime&&!source" class="preview-empty"><Icon name="video" /><span>{{c.readOnly.value?'此草稿暂不支持预览':c.total.value?'正在准备预览':'将素材添加到时间线开始剪辑'}}</span></div>
       <div v-if="showWaiting" class="preview-updating" :class="{scrubbing:c.scrubbing.value}"><a-spin size="small" /><span>{{realtime?'正在准备画面与音轨':'正在更新预览'}}</span></div>
       <div v-if="details" class="preview-performance"><strong>{{backendLabel}}</strong><span v-if="manifest&&realtime">{{manifest.renderer.renderer}}</span><span v-if="manifest&&realtime">合成 {{manifest.metrics.meanCpuMs.toFixed(2)}} ms · 定位 {{manifest.metrics.lastDecodeWaitMs.toFixed(1)}} ms · 掉帧 输出 {{manifest.metrics.droppedOutputFrames}} / 解码 {{manifest.metrics.decoderDroppedFrames}}</span><span v-if="manifest?.textPreparation&&manifest.textPreparation.status!=='idle'">文字准备 {{manifest.textPreparation.completed}}/{{manifest.textPreparation.requested}} · {{(manifest.textPreparation.elapsedMs/1000).toFixed(1)}} 秒{{manifest.textPreparation.status==='partial'?' · 部分完成':''}}</span><span v-if="!realtime">{{reason||'按当前工程修订生成后台预览。'}}</span><button v-if="realtime" class="text-link" aria-label="采样预览颜色" @click="sampleColors">颜色诊断</button><span v-if="colorDiagnostic">已记录第 {{colorDiagnostic.frame}} 帧的画布与源颜色</span></div>
       <span v-if="c.doc.value" class="preview-size">{{c.doc.value.canvas.width}} × {{c.doc.value.canvas.height}}</span>
     </div>
-    <div class="player-transport"><div class="player-time"><strong>{{timecode(c.playhead.value,rate)}}</strong><span> / {{timecode(c.total.value,rate)}}</span></div><div class="player-buttons"><button class="icon-button" aria-label="上一帧" :disabled="!ready" @click="step(-1)"><Icon name="previous" /></button><button class="play-button" :aria-label="c.playing.value?'暂停':'播放'" :disabled="!ready" @click="c.playing.value=!c.playing.value"><Icon :name="c.playing.value?'pause':'play'" /></button><button class="icon-button" aria-label="下一帧" :disabled="!ready" @click="step(1)"><Icon name="next" /></button></div><span class="preview-fit">适应 <Icon name="down" /></span></div>
+    <div class="player-transport"><div class="player-time"><strong>{{timecode(c.playhead.value,rate)}}</strong><span> / {{timecode(c.total.value,rate)}}</span></div><div class="player-buttons"><button class="icon-button" aria-label="上一帧" :disabled="!ready" @click="step(-1)"><Icon name="previous" /></button><button class="play-button" :aria-label="c.playing.value?'暂停':'播放'" :disabled="!ready" @click="c.togglePlayback()"><Icon :name="c.playing.value?'pause':'play'" /></button><button class="icon-button" aria-label="下一帧" :disabled="!ready" @click="step(1)"><Icon name="next" /></button></div><span class="preview-fit">适应 <Icon name="down" /></span></div>
   </section>
 </template>

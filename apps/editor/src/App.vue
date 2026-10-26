@@ -2,6 +2,7 @@
 import {ref, watch, onMounted, onBeforeUnmount, nextTick} from 'vue';
 import {theme} from 'ant-design-vue';
 import type {EditorController} from './controller.ts';
+import {handleShortcut,shortcutHelp,shortcutTargetOwnsKeys} from './shortcuts.ts';
 import Icon from './components/Icon.vue';
 import MediaBin from './components/MediaBin.vue';
 import Preview from './components/Preview.vue';
@@ -32,28 +33,21 @@ function menu({key}:{key:string|number}){
   else if(key==='demo')props.c.guard(props.c.demo);
 }
 function saveTitle(){if(title.value.trim()&&title.value!==props.c.doc.value?.title)props.c.guard(()=>props.c.edit({type:'project.settings',title:title.value.trim()}));}
-function focusEditor(event:PointerEvent){const target=event.target as HTMLElement;if(!target.closest('button,input,textarea,select,a,[role="combobox"],[role="slider"]'))root.value?.focus({preventScroll:true});}
+function focusEditor(event:PointerEvent){const target=event.target as HTMLElement;if(!shortcutTargetOwnsKeys(target)&&!target.closest('button'))root.value?.focus({preventScroll:true});}
 function keyboard(event:KeyboardEvent){
-  const target=event.target as HTMLElement;if(target.closest('input,textarea,select,[contenteditable="true"],[role="slider"],[role="combobox"]'))return;
-  const modifier=event.metaKey||event.ctrlKey;
-  if(modifier&&event.key.toLowerCase()==='z'){event.preventDefault();if(!props.c.busy.value)props.c.guard(()=>props.c.edit(undefined,event.shiftKey?'redo':'undo'));}
-  else if(modifier&&event.key.toLowerCase()==='b'){event.preventDefault();props.c.guard(props.c.split);}
-  else if(modifier&&event.key.toLowerCase()==='s'){event.preventDefault();}
-  else if(event.key==='Delete'||event.key==='Backspace'){event.preventDefault();props.c.guard(()=>props.c.remove(event.shiftKey));}
-  else if(event.code==='Space'&&!target.closest('button')){event.preventDefault();if(!props.c.previewPending.value&&props.c.preview.value)props.c.playing.value=!props.c.playing.value;}
-  else if(event.key==='Escape')props.c.selectedId.value=null;
+  if(handleShortcut(event,props.c,exportOpen.value||projectsOpen.value||helpOpen.value||tasksOpen.value||subtitlesOpen.value||relinkOpen.value||uploading.value))root.value?.focus({preventScroll:true});
 }
 async function openSaved(id:string){await props.c.guard(()=>props.c.loadProject(id));projectsOpen.value=false;}
 function nativeDrop(event:DragEvent){if(event.dataTransfer?.files.length){event.preventDefault();files(Array.from(event.dataTransfer.files));}}
 let detachClose:(()=>void)|undefined;
-onMounted(()=>{detachClose=window.yingxuDesktop?.onPrepareClose(async()=>{
+onMounted(()=>{if(document.activeElement===document.body)root.value?.focus({preventScroll:true});detachClose=window.yingxuDesktop?.onPrepareClose(async()=>{
   const focused=document.activeElement;if(focused instanceof HTMLElement&&root.value?.contains(focused))focused.blur();
   await nextTick();await props.c.flush();
 });});
 onBeforeUnmount(()=>detachClose?.());
 </script>
 <template>
-  <div ref="root" class="yx-editor" tabindex="0" @keydown="keyboard" @pointerdown.capture="focusEditor" @dragover.prevent @drop="nativeDrop">
+  <div ref="root" class="yx-editor" tabindex="0" @keydown.capture="keyboard" @pointerdown.capture="focusEditor" @dragover.prevent @drop="nativeDrop">
     <a-config-provider :theme="uiTheme" :get-popup-container="popupContainer" component-size="small">
       <header class="app-titlebar"><div class="app-brand"><span class="brand-mark"><i></i><i></i><i></i></span><strong>映序</strong><a-dropdown><button class="project-menu">文件 <Icon name="down" /></button><template #overlay><a-menu @click="menu"><a-menu-item key="new">新建工程</a-menu-item><a-menu-item key="projects">打开最近工程</a-menu-item><a-menu-item key="open">打开工程文件…</a-menu-item><a-menu-item key="draft">导入剪映草稿…</a-menu-item><a-menu-item key="subtitles" :disabled="c.readOnly.value">导入字幕…</a-menu-item><a-menu-item key="relink" :disabled="c.readOnly.value">重新链接素材…</a-menu-item><a-menu-divider /><a-menu-item key="demo">使用练习素材</a-menu-item></a-menu></template></a-dropdown><span class="save-indicator"><Icon :name="c.busy.value?'cloud':'saved'" />{{c.busy.value?'正在保存':'已自动保存'}}</span></div>
         <a-input v-model:value="title" class="project-title-input" aria-label="工程名称" :bordered="false" :disabled="c.readOnly.value" @blur="saveTitle" @press-enter="($event:any)=>$event.target.blur()" />
@@ -70,7 +64,7 @@ onBeforeUnmount(()=>detachClose?.());
       <SubtitleImportDialog :c="c" v-model:open="subtitlesOpen" />
       <RelinkDialog :c="c" v-model:open="relinkOpen" />
       <a-modal v-model:open="projectsOpen" title="最近工程" :footer="null" :get-container="false"><div class="project-list"><button v-for="project in c.projects.value" :key="project.id" @click="openSaved(project.id)"><Icon name="file" /><span><strong>{{project.title}}</strong><small>{{new Date(project.updatedAt).toLocaleString('zh-CN')}}</small></span><Icon name="folder" /></button><p v-if="!c.projects.value.length" class="quiet">还没有工程</p></div></a-modal>
-      <a-modal v-model:open="helpOpen" title="快捷键" :footer="null" :get-container="false"><dl class="shortcut-list"><dt>播放 / 暂停</dt><dd><kbd>Space</kbd></dd><dt>分割所选片段</dt><dd><kbd>⌘ / Ctrl B</kbd></dd><dt>撤销</dt><dd><kbd>⌘ / Ctrl Z</kbd></dd><dt>重做</dt><dd><kbd>⇧ ⌘ / Ctrl Z</kbd></dd><dt>删除片段</dt><dd><kbd>Delete</kbd></dd><dt>涟漪删除</dt><dd><kbd>⇧ Delete</kbd></dd><dt>取消选择</dt><dd><kbd>Esc</kbd></dd></dl><p class="quiet">输入文字时不会触发剪辑快捷键</p></a-modal>
+      <a-modal v-model:open="helpOpen" title="快捷键" :footer="null" :get-container="false"><dl class="shortcut-list"><template v-for="[label,keys] in shortcutHelp" :key="label"><dt>{{label}}</dt><dd><kbd>{{keys}}</kbd></dd></template></dl><p class="quiet">输入文字、使用控件或打开弹窗时，快捷键交由当前控件处理。工程持续自动保存。</p></a-modal>
       <a-modal v-model:open="tasksOpen" title="导出任务" :footer="null" :get-container="false"><div class="task-list"><article v-for="job in c.jobs.value.filter(j=>j.kind==='export')" :key="job.id"><div><strong>{{{queued:'等待导出',running:'正在导出',completed:'导出完成',failed:'导出失败',cancelled:'已取消',cancelling:'正在取消',interrupted:'已中断'}[job.status]}}</strong><small>{{new Date(job.createdAt).toLocaleString('zh-CN')}}</small></div><a-progress v-if="['queued','running'].includes(job.status)" :percent="Math.round(job.progress*100)" size="small" /><a v-if="job.result" :href="c.api.url(job.result.downloadUrl)">下载成果</a><a-button v-if="['running','queued'].includes(job.status)" @click="c.guard(()=>c.api.post('/api/jobs/'+job.id+'/cancel'))">取消任务</a-button><p v-if="job.error" class="export-error">{{job.error.slice(0,200)}}</p></article><p v-if="!c.jobs.value.some(j=>j.kind==='export')" class="quiet">还没有导出任务</p></div></a-modal>
     </a-config-provider>
   </div>

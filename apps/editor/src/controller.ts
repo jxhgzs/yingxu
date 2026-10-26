@@ -19,7 +19,7 @@ export function createEditorController(options: EditorOptions = {}) {
   const api = new EditorAPI(options.apiBase), state = shallowRef<ProjectState | null>(null), assets = shallowRef<Asset[]>([]), projects = shallowRef<ProjectSummary[]>([]);
   const inspectorTab=ref('picture');
   const selectedId = ref<string | null>(null), playhead = ref(0), playing = ref(false), scrubbing = ref(false), error = ref(''), busy = ref(false), loading = ref(true);
-  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), realtimePreviewAvailable=ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
+  const jobs = shallowRef<JobView[]>([]), preview = shallowRef<JobView | null>(null), previewPending = ref(false), realtimePreviewAvailable=ref(false), playbackReady=ref(false), zoom = ref(88), snap = ref(true), trimFollowing = ref(true);
   let disposed = false, loadEpoch = 0, pollTimer: ReturnType<typeof setTimeout> | undefined, previewTimer: ReturnType<typeof setTimeout> | undefined;
   let activePreview: string | null = null, queue: Promise<unknown> = Promise.resolve(), pending = 0;
   const doc = computed(() => state.value?.document);
@@ -169,9 +169,21 @@ export function createEditorController(options: EditorOptions = {}) {
     jobs.value = [job, ...jobs.value]; return job;
   }
   function seek(time: number) {playhead.value = Math.min(Math.max(0,doc.value?toNumber(atFrame(time,doc.value.fps)):time),total.value);}
-  function dispose() {disposed = true; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
+  function togglePlayback() {
+    if(playing.value){playing.value=false;return;}
+    if(disposed||loading.value||scrubbing.value||!playbackReady.value||!total.value)return;
+    if(playhead.value>=total.value)seek(0);
+    playing.value=true;
+  }
+  function stepFrames(delta:number) {
+    if(disposed||loading.value||!doc.value)return;
+    playing.value=false;
+    const frame=BigInt(nearestFrame(decimal(playhead.value.toFixed(9)),doc.value.fps).numerator)+BigInt(delta);
+    seek(toNumber(frameTime(frame<0n?0n:frame,doc.value.fps)));
+  }
+  function dispose() {disposed = true; playbackReady.value=false; clearTimeout(pollTimer); clearTimeout(previewTimer); api.dispose(); playing.value = false;}
   async function flush() {await queue;}
-  return {api, state, doc, assets, projects, inspectorTab, selectedId, selected, playhead, playing, scrubbing, error, busy, loading, jobs, preview, previewPending, realtimePreviewAvailable, zoom, snap, trimFollowing, total, readOnly,
-    initialize, loadProject, edit, guard, report, schedulePreview, setRealtimePreviewAvailable, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, flush, dispose};
+  return {api, state, doc, assets, projects, inspectorTab, selectedId, selected, playhead, playing, scrubbing, error, busy, loading, jobs, preview, previewPending, realtimePreviewAvailable, playbackReady, zoom, snap, trimFollowing, total, readOnly,
+    initialize, loadProject, edit, guard, report, schedulePreview, setRealtimePreviewAvailable, addAsset, addText, upload, split,keyframeCommand, remove, duplicate, createProject, demo, open, importFile, exportVideo, seek, togglePlayback, stepFrames, flush, dispose};
 }
 export type EditorController = ReturnType<typeof createEditorController>;
