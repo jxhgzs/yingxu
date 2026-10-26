@@ -4,6 +4,7 @@ import type {EditorController} from '../controller.ts';
 import {timecode} from '../controller.ts';
 import {toNumber} from '../../../../packages/core/src/time.ts';
 import {GpuPreview} from '../preview/index.ts';
+import {LatestSeek} from '../preview/latest-seek.ts';
 import type {PreviewManifest} from '../preview/index.ts';
 import type {PreviewColorDiagnostic} from '../preview/diagnostics.ts';
 import Icon from './Icon.vue';
@@ -11,6 +12,8 @@ const props=defineProps<{c:EditorController}>();
 const player=ref<HTMLVideoElement>(),canvas=ref<HTMLCanvasElement>(),manifest=shallowRef<PreviewManifest>(),gpuError=ref(''),mode=ref<'auto'|'rendered'>('auto'),details=ref(false);
 const colorDiagnostic=shallowRef<PreviewColorDiagnostic>();
 let engine:GpuPreview|undefined,epoch=0,disposed=false,engineTime=false;
+const seeks=new LatestSeek<number,PreviewManifest>(value=>engine!.seek(value,{prefetch:false}),accept,error=>props.c.report(error));
+const showWaiting=ref(false);let waitingTimer:ReturnType<typeof setTimeout>|undefined;
 const rate=computed(()=>props.c.doc.value?toNumber(props.c.doc.value.fps):30);
 const realtime=computed(()=>mode.value==='auto'&&!!manifest.value?.support.supported&&!['fallback','context-lost','disposed'].includes(manifest.value.state));
 const renderedReady=computed(()=>!!props.c.preview.value?.result&&props.c.preview.value.documentRevision===props.c.state.value?.revision&&!props.c.previewPending.value);
@@ -44,6 +47,7 @@ function createEngine(){
   catch(e){gpuError.value='实时预览不可用：'+(e as Error).message;props.c.setRealtimePreviewAvailable(false);}
 }
 async function updateDocument(){
+  seeks.reset();
   const current=++epoch,document=props.c.doc.value;
   if(mode.value!=='auto'||!document){engine?.pause();props.c.setRealtimePreviewAvailable(false);return;}
   if(!engine)createEngine();if(!engine)return;
@@ -54,22 +58,24 @@ function seekPlayer(value:number){if(player.value)player.value.currentTime=Math.
 watch(()=>props.c.doc.value,()=>{void updateDocument();});
 watch(mode,()=>{props.c.playing.value=false;void updateDocument();});
 watch(()=>props.c.playing.value,async playing=>{
+  seeks.reset();
   if(realtime.value&&engine){if(playing)await engine.play(props.c.playhead.value);else engine.pause();return;}
   if(!player.value)return;if(playing&&renderedReady.value){try{await player.value.play();}catch{props.c.playing.value=false;}}else player.value.pause();
 });
 watch(()=>props.c.playhead.value,value=>{
   if(engineTime)return;
-  if(realtime.value&&engine){if(!props.c.playing.value)void engine.seek(value).then(accept);return;}
+  if(realtime.value&&engine){if(!props.c.playing.value)seeks.request(value);return;}
   const tolerance=props.c.playing.value?.08:.000001;if(player.value&&Math.abs(player.value.currentTime-value)>tolerance)seekPlayer(value);
 });
 watch(realtime,value=>{if(value)player.value?.pause();else engine?.pause();});
+watch(waiting,value=>{clearTimeout(waitingTimer);showWaiting.value=false;if(value)waitingTimer=setTimeout(()=>{showWaiting.value=true;},120);},{immediate:true});
 function loaded(){seekPlayer(props.c.playhead.value);}
 function update(){if(player.value&&props.c.playing.value&&!realtime.value)props.c.playhead.value=player.value.currentTime;}
 function step(delta:number){props.c.playing.value=false;props.c.seek(props.c.playhead.value+delta/rate.value);}
 async function sampleColors(){props.c.playing.value=false;if(engine&&realtime.value&&canvas.value)try{const {width,height}=canvas.value;const points=[[.5,.5],[.25,.25],[.75,.25],[.25,.75],[.75,.75]].map(([x,y])=>({x:Math.floor(width*x),y:Math.floor(height*y)}));colorDiagnostic.value=await engine.diagnoseColor(points,true);}catch(e){props.c.report(e);}}
-function retry(){props.c.playing.value=false;if(mode.value==='rendered'){props.c.schedulePreview();return;}engine?.dispose();engine=undefined;manifest.value=undefined;gpuError.value='';void updateDocument();}
+function retry(){seeks.reset();props.c.playing.value=false;if(mode.value==='rendered'){props.c.schedulePreview();return;}engine?.dispose();engine=undefined;manifest.value=undefined;gpuError.value='';void updateDocument();}
 onMounted(()=>{void updateDocument();});
-onBeforeUnmount(()=>{disposed=true;epoch++;engine?.dispose({releaseContext:true});props.c.setRealtimePreviewAvailable(false);if(player.value){player.value.pause();player.value.removeAttribute('src');player.value.load();}});
+onBeforeUnmount(()=>{disposed=true;epoch++;seeks.dispose();clearTimeout(waitingTimer);engine?.dispose({releaseContext:true});props.c.setRealtimePreviewAvailable(false);if(player.value){player.value.pause();player.value.removeAttribute('src');player.value.load();}});
 </script>
 <template>
   <section class="preview-panel panel">
@@ -78,7 +84,7 @@ onBeforeUnmount(()=>{disposed=true;epoch++;engine?.dispose({releaseContext:true}
       <canvas v-show="realtime" ref="canvas" aria-label="实时视频画面" @click="ready&&(c.playing.value=!c.playing.value)" />
       <video v-show="!realtime" v-if="source" ref="player" :src="source" preload="auto" playsinline @loadedmetadata="loaded" @timeupdate="update" @ended="c.playing.value=false" @click="ready&&(c.playing.value=!c.playing.value)" />
       <div v-if="!realtime&&!source" class="preview-empty"><Icon name="video" /><span>{{c.readOnly.value?'此草稿暂不支持预览':c.total.value?'正在准备预览':'将素材添加到时间线开始剪辑'}}</span></div>
-      <div v-if="waiting" class="preview-updating"><a-spin size="small" /><span>{{realtime?'正在准备画面与音轨':'正在更新预览'}}</span></div>
+      <div v-if="showWaiting" class="preview-updating" :class="{scrubbing:c.scrubbing.value}"><a-spin size="small" /><span>{{realtime?'正在准备画面与音轨':'正在更新预览'}}</span></div>
       <div v-if="details" class="preview-performance"><strong>{{backendLabel}}</strong><span v-if="manifest&&realtime">{{manifest.renderer.renderer}}</span><span v-if="manifest&&realtime">合成 {{manifest.metrics.meanCpuMs.toFixed(2)}} ms · 定位 {{manifest.metrics.lastDecodeWaitMs.toFixed(1)}} ms · 掉帧 输出 {{manifest.metrics.droppedOutputFrames}} / 解码 {{manifest.metrics.decoderDroppedFrames}}</span><span v-if="manifest?.textPreparation&&manifest.textPreparation.status!=='idle'">文字准备 {{manifest.textPreparation.completed}}/{{manifest.textPreparation.requested}} · {{(manifest.textPreparation.elapsedMs/1000).toFixed(1)}} 秒{{manifest.textPreparation.status==='partial'?' · 部分完成':''}}</span><span v-if="!realtime">{{reason||'按当前工程修订生成后台预览。'}}</span><button v-if="realtime" class="text-link" aria-label="采样预览颜色" @click="sampleColors">颜色诊断</button><span v-if="colorDiagnostic">已记录第 {{colorDiagnostic.frame}} 帧的画布与源颜色</span></div>
       <span v-if="c.doc.value" class="preview-size">{{c.doc.value.canvas.width}} × {{c.doc.value.canvas.height}}</span>
     </div>

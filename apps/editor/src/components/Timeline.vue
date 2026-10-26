@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed, nextTick} from 'vue';
+import {ref, computed, nextTick, watch, onBeforeUnmount} from 'vue';
 import type {EditorController} from '../controller.ts';
 import type {Clip, Track} from '../../../../packages/core/src/document.ts';
 import {atFrame, timecode} from '../controller.ts';
@@ -11,6 +11,7 @@ import {transitionWindow} from '../../../../packages/core/src/transitions.ts';
 import {transitionPresentation} from '../transition-presentation.ts';
 const props = defineProps<{c: EditorController}>();
 const scroller = ref<HTMLElement>(), scrollLeft = ref(0), viewport = ref(1400);
+let scrubPointer:number|undefined,scrubTarget:HTMLElement|undefined,scrubFrame:number|undefined,scrubX:number|undefined;
 const drag = ref<{id: string; mode: 'move'|'left'|'right'; originX: number; delta: number; trackId: string; destination: string; original: Clip} | null>(null);
 const timelineDuration = computed(() => Math.max(18, props.c.total.value + 6));
 const width = computed(() => Math.max(viewport.value, 144 + timelineDuration.value * props.c.zoom.value));
@@ -31,11 +32,26 @@ function keyframes(clip:Clip){
   }
   return [...points.values()].sort((a,b)=>a.time-b.time);
 }
-function seek(event: PointerEvent) {
-  if(!scroller.value)return;
-  const x=event.clientX-scroller.value.getBoundingClientRect().left+scroller.value.scrollLeft-144;
+function seekX(clientX:number) {
+  if(!scroller.value||!props.c.doc.value)return;
+  const x=clientX-scroller.value.getBoundingClientRect().left+scroller.value.scrollLeft-144;
   props.c.playing.value=false;props.c.seek(toNumber(atFrame(x/props.c.zoom.value,props.c.doc.value!.fps)));
 }
+function flushScrub(){if(scrubFrame!==undefined)cancelAnimationFrame(scrubFrame);scrubFrame=undefined;if(scrubX!==undefined){const x=scrubX;scrubX=undefined;seekX(x);}}
+function beginScrub(event:PointerEvent){
+  if(event.button!==0||event.isPrimary===false||scrubPointer!==undefined||!scroller.value||!props.c.doc.value||event.clientX<scroller.value.getBoundingClientRect().left+144)return;
+  event.preventDefault();scrubPointer=event.pointerId;scrubTarget=event.currentTarget as HTMLElement;scrubTarget.setPointerCapture(event.pointerId);
+  props.c.scrubbing.value=true;seekX(event.clientX);
+}
+function moveScrub(event:PointerEvent){if(event.pointerId!==scrubPointer)return;scrubX=event.clientX;if(scrubFrame===undefined)scrubFrame=requestAnimationFrame(()=>{scrubFrame=undefined;flushScrub();});}
+function cancelScrub(){
+  flushScrub();const target=scrubTarget,id=scrubPointer;scrubPointer=undefined;scrubTarget=undefined;props.c.scrubbing.value=false;
+  if(id!==undefined&&target?.hasPointerCapture(id))target.releasePointerCapture(id);
+}
+function finishScrub(event:PointerEvent){if(event.pointerId!==scrubPointer)return;scrubX=event.clientX;cancelScrub();}
+function lostScrub(event:PointerEvent){if(event.pointerId===scrubPointer)cancelScrub();}
+watch(()=>props.c.state.value?.id,cancelScrub);
+onBeforeUnmount(cancelScrub);
 function begin(event: PointerEvent, clip: Clip, track: Track, mode: 'move'|'left'|'right') {
   props.c.selectedId.value=clip.id;
   if(event.button!==0||track.locked||props.c.readOnly.value||props.c.busy.value||clip.speedCurve&&clip.animations?.length&&mode!=='move')return;
@@ -94,10 +110,10 @@ async function selectTransition(clipId:string){
       <a-dropdown><a-button size="small" class="add-track" :disabled="c.readOnly.value||c.busy.value"><Icon name="plus" />轨道<Icon name="down" /></a-button><template #overlay><a-menu @click="({key}:any)=>addTrack(key)"><a-menu-item key="video">视频轨道</a-menu-item><a-menu-item key="audio">音频轨道</a-menu-item><a-menu-item key="text">文字轨道</a-menu-item></a-menu></template></a-dropdown>
       <div class="timeline-tools-right"><a-tooltip title="吸附到片段边缘与播放头"><button class="icon-button" :class="{active:c.snap.value}" aria-label="时间线吸附" :aria-pressed="c.snap.value" @click="c.snap.value=!c.snap.value"><Icon name="link" /></button></a-tooltip><Icon name="zoomOut" /><a-slider :value="c.zoom.value" :min="32" :max="200" :tooltip-open="false" @change="(v:any)=>c.zoom.value=Number(v)" /><Icon name="zoomIn" /></div>
     </div>
-    <div ref="scroller" class="timeline-scroll" @scroll="onScroll">
+    <div ref="scroller" class="timeline-scroll" :data-scrubbing="c.scrubbing.value" @scroll="onScroll" @pointermove="moveScrub" @pointerup="finishScrub" @pointercancel="lostScrub" @lostpointercapture="lostScrub">
       <div class="timeline-canvas" :style="{width:width+'px',minHeight:'100%'}">
-        <div class="time-ruler" @pointerdown="seek"><span class="ruler-origin">{{c.doc.value ? toNumber(c.doc.value.fps).toFixed(2).replace('.00','') : '30'}} fps</span><span v-for="tick in ticks" :key="tick" class="ruler-tick" :style="{left:144+tick*c.zoom.value+'px'}"><i></i>{{timecode(tick,rate).slice(3,8)}}</span></div>
-        <div v-for="track in rows" :key="track.id" :data-track-id="track.id" class="track-row" :class="['track-'+track.kind,{locked:track.locked}]" @dragover.prevent @drop.prevent="drop($event,track)" @pointerdown.self="seek">
+        <div class="time-ruler" @pointerdown="beginScrub"><span class="ruler-origin">{{c.doc.value ? toNumber(c.doc.value.fps).toFixed(2).replace('.00','') : '30'}} fps</span><span v-for="tick in ticks" :key="tick" class="ruler-tick" :style="{left:144+tick*c.zoom.value+'px'}"><i></i>{{timecode(tick,rate).slice(3,8)}}</span></div>
+        <div v-for="track in rows" :key="track.id" :data-track-id="track.id" class="track-row" :class="['track-'+track.kind,{locked:track.locked}]" @dragover.prevent @drop.prevent="drop($event,track)" @pointerdown.self="beginScrub">
           <header class="track-header"><div><Icon :name="track.kind" /><span>{{track.name||track.kind}}</span></div><div class="track-switches">
             <button class="mini-icon" :aria-label="(track.locked?'解锁':'锁定')+(track.name||track.kind)" @click="c.guard(()=>c.edit({type:'track.update',trackId:track.id,changes:{locked:!track.locked}}))"><Icon :name="track.locked?'lock':'unlock'" /></button>
             <button v-if="track.kind!=='audio'" class="mini-icon" :class="{off:track.hidden}" :aria-label="(track.hidden?'显示':'隐藏')+(track.name||track.kind)" @click="c.guard(()=>c.edit({type:'track.update',trackId:track.id,changes:{hidden:!track.hidden}}))"><Icon :name="track.hidden?'hidden':'eye'" /></button>
@@ -111,7 +127,7 @@ async function selectTransition(clipId:string){
           <button v-for="transition in (c.doc.value?.transitions||[]).filter(t=>t.trackId===track.id)" :key="transition.id" class="timeline-transition" :aria-label="transitionPresentation[transition.kind].name+'转场 '+toNumber(transition.duration).toFixed(3)+' 秒'" :style="{left:144+toNumber(transitionWindow(transition,track.clips.find(x=>x.id===transition.outgoingClipId)!).start)*c.zoom.value+'px',width:Math.max(16,toNumber(transition.duration)*c.zoom.value)+'px'}" @click.stop="selectTransition(transition.outgoingClipId)">{{transitionPresentation[transition.kind].icon}}</button>
           <span v-if="!track.clips.length" class="empty-track-hint">{{track.kind==='text'?'添加文字':track.kind==='audio'?'拖入音频素材':'拖入视频或图片'}}</span>
         </div>
-        <div class="playhead" :style="{left:144+c.playhead.value*c.zoom.value+'px'}"><span></span></div>
+        <div class="playhead" :style="{left:144+c.playhead.value*c.zoom.value+'px'}"><button class="playhead-handle" aria-label="拖动播放头" @pointerdown.stop="beginScrub"></button></div>
       </div>
     </div>
     <footer class="timeline-footer"><span>{{c.doc.value?.tracks.reduce((n,t)=>n+t.clips.length,0)||0}} 个片段</span><span>{{c.selected.value?'已选中 '+(c.selected.value.asset.name||'文字'):'点击选择片段 · 拖动调整位置'}}</span><span>{{c.state.value?.document.canvas.width}} × {{c.state.value?.document.canvas.height}}</span></footer>

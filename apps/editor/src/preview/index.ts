@@ -85,14 +85,14 @@ export class GpuPreview {
   const plan=this.plan!,seconds=typeof time==='number'?time:toNumber(time),last=frameTime(plan.frameCount-1,plan.document.fps);
   const at=seconds>=plan.duration?last:outputTime(time,plan.document.fps);return previewFrame(plan,at);
  }
- async seek(time:number|Rational):Promise<PreviewManifest>{
+ async seek(time:number|Rational,options:{prefetch?:boolean}={}):Promise<PreviewManifest>{
   this.ensure();this.stopTransport();if(!this.plan||!this.support.supported)return this.manifest;
   const op=this.beginOperation(),raw=typeof time==='number'?time:toNumber(time);this.position=Math.max(0,Math.min(Number.isFinite(raw)?raw:0,this.plan.duration));
   const frame=this.displayFrame(this.position);this.setState('loading');
   try{await this.prepare(frame,true,false,op.signal);if(!this.current(op.epoch))return this.manifest;
    // Let the browser finish the paused decoded frame before uploading it as a texture.
    await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(!this.current(op.epoch))return this.manifest;
-   this.paint(frame,false);this.setState('ready');void this.warmTextFrames().catch(()=>{});return this.manifest;
+   this.paint(frame,false);this.setState('ready');if(options.prefetch!==false)void this.warmTextFrames(op.signal).catch(()=>{});return this.manifest;
   }catch(e){if(!aborted(e)&&this.current(op.epoch))this.fail(e);return this.manifest;}
  }
  /** Call from the actual transport-button gesture so audio resume is authorized by browser policy. */

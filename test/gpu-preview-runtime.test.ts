@@ -140,6 +140,20 @@ test('registered decoder waits for seek and cancels load/frame callbacks on disp
  }finally{Object.assign(globalThis,saved);}
 });
 
+test('interactive seek prepares its exact foreground text without starting sequential window requests',async()=>{
+ class ImageFake extends EventTarget {naturalWidth=320;naturalHeight=180;set src(value:string){if(value)queueMicrotask(()=>this.dispatchEvent(new Event('load')));}async decode(){}removeAttribute(){}remove(){}}
+ const saved={Image:globalThis.Image,HTMLVideoElement:globalThis.HTMLVideoElement,requestAnimationFrame:globalThis.requestAnimationFrame,cancelAnimationFrame:globalThis.cancelAnimationFrame};
+ Object.assign(globalThis,{Image:ImageFake,HTMLVideoElement:class {},requestAnimationFrame:(fn:FrameRequestCallback)=>{queueMicrotask(()=>fn(0));return 1;},cancelAnimationFrame:()=>{}});
+ const calls:number[]=[],{canvas}=glFixture();let preview:GpuPreview|undefined;
+ try{const d=emptyDocument();d.canvas={width:320,height:180};d.assets=[{id:'txt',kind:'text',path:'',duration:rational(6)}];
+  d.tracks[2].clips=[{...clip,id:'caption',materialId:'txt',source:{start:rational(0),duration:rational(6)},target:{start:rational(0),duration:rational(6)},text:{content:'中文',font:'Arial',size:24,color:'#ffffff'},textAnimations:[{phase:'loop',kind:'bounce',duration:rational(1)}]}];
+  preview=new GpuPreview(canvas,{mediaUrl:()=>'',textTexture:async(clipId,context)=>{calls.push(context.frame!);return {clipId,revision:context.revision,mode:context.mode,frame:context.frame,width:320,height:180,url:'http://127.0.0.1/text-renders/'+String(context.frame).padStart(64,'0')+'.png'};}});
+  await preview.setDocument(d,{textContext:{projectId:'scrub',revision:1}});await preview.prepareTextFrames();const initial=calls.length;
+  await preview.seek(5,{prefetch:false});await new Promise(resolve=>setImmediate(resolve));assert.deepEqual(calls.slice(initial),[150]);assert.equal(preview.manifest.metrics.lastPresentedFrame,150);assert.equal(preview.manifest.state,'ready');
+  await preview.seek(5,{prefetch:false});assert.equal(calls.length,initial+1,'the same destination must reuse its texture');assert((preview.manifest.textCache?.textures??0)<=32);assert.equal(preview.manifest.audioState,'uninitialized');
+ }finally{preview?.dispose();Object.assign(globalThis,saved);}
+});
+
 test('static text texture keeps asset identity, uploads once and does not apply its baked transform/opacity twice',()=>{
  const saved=globalThis.HTMLVideoElement;Object.assign(globalThis,{HTMLVideoElement:class {}});
  const asset:Asset={id:'text-asset',kind:'text',path:'',duration:rational(20)},layer:PlannedVisual={clip:{...clip,id:'text-clip',materialId:asset.id},asset,sourceTime:rational(0),transform:{...defaultTransform(),x:70,y:-10,scale:.5,rotation:25,opacity:.4}};
