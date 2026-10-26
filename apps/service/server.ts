@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {randomBytes, randomUUID} from 'node:crypto';
 import {Store} from './store.ts';
+import {MediaTools} from './media-tools.ts';
 import {Jobs} from './jobs.ts';
 import {TextRasters} from './text-raster.ts';
 import {CurveAudioRenders} from './curve-audio.ts';
@@ -21,6 +22,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   const version=JSON.parse(await fs.readFile(path.join(repo,'package.json'),'utf8')).version;
   const store = new Store(options.root || process.env.YINGXU_EDITOR_DATA || path.join(repo, '.local'));
   await store.initialize(); const jobs = new Jobs(store); await jobs.initialize();
+  const mediaTools=new MediaTools(store);
   const textRasters=new TextRasters(store,{engine:jobs.engine});
   const curveAudio=new CurveAudioRenders(store,{engine:jobs.engine});
   const token = randomBytes(24).toString('hex');
@@ -94,6 +96,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
           await handle.close(); return respond(await registerFile(temp, name), 201);
         } finally {await handle.close().catch(() => {}); await fs.rm(temp, {force: true});}
       }
+      if ((match = /^\/api\/projects\/([a-f0-9-]+)\/media-tools$/.exec(route)) && request.method === 'GET') return respond(await mediaTools.inspect(match[1],url.searchParams.get('assetId')||''));
       if ((match = /^\/api\/projects\/([a-f0-9-]+)$/.exec(route)) && request.method === 'GET') return respond({...store.state(match[1]), jobs: jobs.list(match[1])});
       if ((match = /^\/api\/projects\/([a-f0-9-]+)\/curve-audio$/.exec(route)) && request.method === 'POST') {
         const input=await body(request),controller=new AbortController();
@@ -182,7 +185,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   await new Promise<void>((resolve, reject) => {server.once('error', reject); server.listen(options.port ?? Number(process.env.PORT || 8815), '127.0.0.1', resolve);});
   let closing: Promise<void> | undefined;
   const close = () => closing ||= (async () => {
-    await textRasters.shutdown();await curveAudio.shutdown();
+    await mediaTools.shutdown();await textRasters.shutdown();await curveAudio.shutdown();
     await jobs.shutdown();
     const closed = new Promise<void>(resolve=>server.close(()=>resolve()));
     server.closeAllConnections(); await closed;

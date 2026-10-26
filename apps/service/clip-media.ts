@@ -1,16 +1,11 @@
 import fs from 'node:fs/promises';import path from 'node:path';import {randomUUID} from 'node:crypto';
-import {Store} from './store.ts';import {check,validRational} from '../../packages/core/src/document.ts';import type {Document} from '../../packages/core/src/document.ts';
+import {Store} from './store.ts';import type {Document} from '../../packages/core/src/document.ts';
 import {selectedClip,freezeCommand,reverseReplacement} from '../../packages/core/src/timeline-tools.ts';
-import {sourceTimeAt} from '../../packages/core/src/animation.ts';import {add,compare,ZERO} from '../../packages/core/src/time.ts';import type {Rational} from '../../packages/core/src/time.ts';
-import {assertNoClipTransitions} from '../../packages/core/src/transitions.ts';import {freezeMedia,reverseMedia} from '../../packages/media/src/clip-media.ts';import {probeAsset} from '../../packages/media/src/probe.ts';
+import {sourceTimeAt} from '../../packages/core/src/animation.ts';import type {Rational} from '../../packages/core/src/time.ts';
+import {freezeMedia,reverseMedia} from '../../packages/media/src/clip-media.ts';import {probeAsset} from '../../packages/media/src/probe.ts';
 export type MediaOperation={clipId:string;at?:Rational};
-export function validateMediaOperation(document:Document,kind:'freeze'|'reverse',operation:MediaOperation){
- check(typeof operation.clipId==='string'&&operation.clipId.length>0,'INVALID_CLIP_ID');if(kind==='freeze')validRational(operation.at,'freeze.at');
- const {track,clip,asset}=selectedClip(document,operation.clipId);check(!track.locked,'TRACK_LOCKED');check(clip.editableTiming,'TIMING_NOT_INTERPRETED');check((asset.kind||'video')==='video'&&asset.verifiedDisplayTransform!=='unsupported','MEDIA_OPERATION_UNSUPPORTED');assertNoClipTransitions(document,clip.id);
- if(kind==='freeze'){check(operation.at&&compare(operation.at,clip.target.start)>=0&&compare(operation.at,add(clip.target.start,clip.target.duration))<0,'FREEZE_OUTSIDE_CLIP');check(!clip.textAnimations?.length,'TEXT_ANIMATION_TIMING_EDIT_UNVERIFIED');}
- else check(compare(sourceTimeAt(clip,add(clip.target.start,clip.target.duration)),add(clip.source.start,clip.source.duration))<=0,'REVERSE_CURVE_RANGE_UNSUPPORTED');
- return {track,clip,asset};
-}
+export {validateMediaTool as validateMediaOperation} from '../../packages/core/src/tool-availability.ts';
+import {validateMediaTool as validateMediaOperation} from '../../packages/core/src/tool-availability.ts';
 export async function prepareMediaOperation(store:Store,document:Document,kind:'freeze'|'reverse',operation:MediaOperation,directory:string,options:{signal?:AbortSignal;onProgress?:(n:number)=>void}={}){
  const {clip,asset}=validateMediaOperation(document,kind,operation),file=kind==='freeze'?await freezeMedia(asset,sourceTimeAt(clip,operation.at!),directory,options):await reverseMedia(asset,clip.source.start,clip.source.duration,directory,options);
  const derived=await probeAsset(file,(asset.name||'视频')+(kind==='freeze'?' · 定格.png':' · 倒放.mp4'));

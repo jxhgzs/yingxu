@@ -28,7 +28,9 @@ export class EditorAPI {
 export function explainError(error: unknown): string {
   const raw = error instanceof Error ? error.message : String(error), code = raw.split(':')[0];
   const translations: Record<string, string> = {
-    MEDIA_OPERATION_FRAME_TIMING:'当前素材的帧时间不规则，暂不支持这项操作。可先导出为恒定帧率视频后再导入。',INVALID_CROP:'裁剪范围无效，请调整到原图范围内。',INVALID_MARKER:'标记内容或时间无效。',MARKER_NOT_FOUND:'标记已被删除，请刷新后重试。',FREEZE_OUTSIDE_CLIP:'请将播放头移到所选视频片段内。',MEDIA_OPERATION_UNSUPPORTED:'此素材暂不支持这项操作。',REVERSE_MEDIA_UNSUPPORTED:'此视频缺少倒放所需的帧率或尺寸信息。',REVERSE_MEDIA_LIMIT:'当前视频长度或帧率超出倒放处理范围。',REVERSE_FRAME_TOO_LARGE:'单帧尺寸超出倒放处理预算。',REVERSE_CURVE_RANGE_UNSUPPORTED:'此曲线超出片段的源区间，请先调整曲线或源范围。',
+    TOOL_LOADING:'正在打开工程',TOOL_BUSY:'正在处理操作',TOOL_READ_ONLY:'此工程只读',TOOL_NO_PROJECT:'请先打开工程',TOOL_SELECT_CLIP:'请先选择片段',TOOL_SELECT_VISUAL:'请选择视频或图片',TOOL_MARKER_EXISTS:'当前位置已有标记',TOOL_CROP_SIZE:'此素材尺寸不支持画面裁剪',TOOL_ANIMATED_ROTATION_OUTSIDE:'请将播放头移到所选片段内，再添加旋转关键帧',MEDIA_TOOL_CHECKING:'正在检查素材，请稍候',MEDIA_TOOL_BUSY:'素材检查繁忙，请稍后重新选择片段',MEDIA_SOURCE_MISSING:'源素材文件不存在，请重新关联',MEDIA_SOURCE_UNREADABLE:'源素材无法读取，请检查文件后重新选择片段',MEDIA_HASH_CHANGED:'源素材已改变，请重新关联',INVALID_COMMAND_BATCH:'本次操作涉及的片段过多，请分段处理',INVALID_MARKER:'标记数量或时间超出支持范围',
+
+    MEDIA_OPERATION_FRAME_TIMING:'当前素材的帧时间不规则，暂不支持这项操作。可先导出为恒定帧率视频后再导入。',INVALID_CROP:'裁剪范围无效，请调整到原图范围内。',MARKER_NOT_FOUND:'标记已被删除，请刷新后重试。',FREEZE_OUTSIDE_CLIP:'请将播放头移到所选视频片段内。',MEDIA_OPERATION_UNSUPPORTED:'此素材暂不支持这项操作。',REVERSE_MEDIA_UNSUPPORTED:'此视频缺少倒放所需的帧率或尺寸信息。',REVERSE_MEDIA_LIMIT:'当前视频长度或帧率超出倒放处理范围。',REVERSE_FRAME_TOO_LARGE:'单帧尺寸超出倒放处理预算。',REVERSE_CURVE_RANGE_UNSUPPORTED:'此曲线超出片段的源区间，请先调整曲线或源范围。',
     UNSUPPORTED_VIDEO_COLOR_SPACE:'此素材的色彩格式暂不支持，请先转换为标准动态范围视频。',
     INVALID_COLOR_ADJUSTMENTS:'调节参数超出了有效范围。',
     COLOR_ADJUSTMENTS_MEDIA_UNSUPPORTED:'此素材类型暂不支持调节。',
