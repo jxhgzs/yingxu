@@ -1,0 +1,12 @@
+The following is a diff from the previous accessibility tree for Window: "映序 · 视频剪辑" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 208
+~						206 文本 00:00:00:10
+~							181 按钮 在播放头添加或更新关键帧
+~						207 container
++							208 按钮 Increase Value
++								209 图像 up
++							210 按钮 Decrease Value
++								211 图像 down
++							212 步进器 (settable, float) Description: 关键帧当前值, Value: 100
+~						194 按钮 添 加
+The focused UI element is 4 container 媒体 音频 文本 转场 调节 搜索素材名称 导入 全部 4 实时视频画面 1280 × 720 00:00:00:00 / 00:00:08:00 上一帧 暂停 下一帧 适应 撤销 重做 分割 删除片段 复制片段 轨道 时间线吸附 88 30 fps 00:00 00:01 00:02 00:03 00:04 00:05 00:06

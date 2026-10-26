@@ -1,0 +1,217 @@
+The following is a diff from the previous accessibility tree for Window: "映序 · 视频剪辑" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 5-57, 59-64, 81-145, 154-155, 157-186, 193-212
+~				4 container
++					154 文本 映序
++					155 按钮 文件
++					156 文本 已自动保存
++					157 文本栏 (settable) Description: 工程名称, Value: 0.10 REA 文字组合 · 退出重开验收
++					158 按钮 快捷键
++					159 按钮 导出任务
++					160 link Description: 下载工程, Value: 127.0.0.1:52647/api/projects/2744eae0-48e6-4634-8ab3-68b0e8c0ddf8/download
++					161 按钮 导出
++						162 文本 导出
++					163 按钮 媒体
++					164 按钮 音频
++					165 按钮 文本
++					166 按钮 转场
++					167 按钮 调节
++					168 container
++						169 按钮 本地
++						170 text 导入 素材库
++					171 文本栏 (settable) 搜索素材名称
++					172 按钮 导入
++						173 文本 导入
++					174 文本 全部 4
++					175 container
++						176 图像 动态测试素材.mp4
++						177 文本 00:06
++						178 按钮 添加 动态测试素材.mp4 到时间线
++						179 text 动态测试素材.mp4 640 × 360
++					180 container
++						181 图像 color-patches.mp4
++						182 文本 00:02
++						183 按钮 添加 color-patches.mp4 到时间线
++						184 text color-patches.mp4 1280 × 720
++					185 container
++						186 图像 curve-numbered-hd.mp4
++						187 文本 00:06
++						188 按钮 添加 curve-numbered-hd.mp4 到时间线
++						189 text curve-numbered-hd.mp4 1280 × 720
++					190 container
++						191 图像 audible-curve-probe.mp4
++						192 文本 00:06
++						193 按钮 添加 audible-curve-probe.mp4 到时间线
++						194 text audible-curve-probe.mp4 1280 × 720
++					195 container
++						196 文本 播放器
++						197 按钮 预览性能详情
++						198 弹出式按钮 Description: 预览方式, Value: 自动实时
++							199 (selected) 自动实时
++						200 按钮 重新生成预览
++					201 container
++						202 图像 实时视频画面
++						203 文本 1280 × 720
++					204 container
++						205 text 00:00:00:00  / 00:00:08:00
++					206 按钮 上一帧
++					207 按钮 播放
++					208 按钮 下一帧
++					209 文本 适应 
++					210 按钮 画面
++					211 按钮 文本
++					212 按钮 动画
++					213 按钮 变速
++					214 container
++						215 文本 正文
++						216 文本输入区 (settable) Description: 文字内容, Value: 打字 跳动 缩小组合
++						217 文本 字体
++						218 container 字体
++							219 container
++								220 组合框
++								221 文本 思源黑体 Medium
++						222 文本 字号
++						223 container
++							224 按钮 Increase Value
++								225 图像 up
++							226 按钮 Decrease Value
++								227 图像 down
++						228 步进器 (settable, float) Description: 字号, Value: 60
++						229 container 文字颜色
++							230 颜色池 Description: 文字颜色, Value: rgb 1.00000 1.00000 1.00000 1
++							231 文本 #ffffff
++						232 文本 关键帧
++						233 按钮 上一个关键帧
++						234 按钮 在播放头添加或更新关键帧
++						235 按钮 下一个关键帧
++						236 container 关键帧属性
++							237 container
++								238 组合框
++								239 文本 缩放
++						240 container
++							241 按钮 Increase Value
++								242 图像 up
++							243 按钮 Decrease Value
++								244 图像 down
++						245 步进器 (settable, float) Description: 关键帧当前值, Value: 100
++						246 文本 %
++						247 按钮 添 加
++						248 文本 缩放尚未添加关键帧
++						249 文本 显示时间
++						250 文本 开始
++						251 步进器 (disabled) Description: 文字开始秒, Value: 0, Secondary Actions: Increment, Decrement
++						252 text 秒 持续
++						253 步进器 (disabled) Description: 文字时长秒, Value: 2, Secondary Actions: Increment, Decrement
++						254 文本 秒
++						255 按钮 (disabled) 应 用
++						256 文本 请先移除文字动画，再修改显示时间。
++					257 按钮 撤销
++					258 按钮 (disabled) 重做
++					259 按钮 分割
++					260 按钮 删除片段
++					261 按钮 复制片段
++					262 按钮 轨道
++						263 文本 轨道
++					264 切换按钮 Description: 时间线吸附, Value: 1
++					265 container
++						266 滑块 Value: 88, Secondary Actions: Increment, Decrement
++					267 container
++						268 文本 30 fps
++						269 文本 00:00
++						270 文本 00:01
++						271 文本 00:02
++						272 文本 00:03
++						273 文本 00:04
++						274 文本 00:05
++						275 文本 00:06
++						276 文本 00:07
++						277 文本 00:08
++						278 文本 00:09
++						279 文本 00:10
++						280 文本 00:11
++						281 文本 00:12
++						282 文本 00:13
++						283 文本 00:14
++						284 文本 00:15
++						285 文本 00:16
++						286 文本 00:17
++						287 文本 00:18
++						288 container
++							289 文本 视频轨道
++							290 按钮 锁定视频轨道
++							291 按钮 隐藏视频轨道
++						292 按钮 片段 color-patches.mp4
++							293 文本 color-patches.mp4
++							294 container 裁切左边缘 color-patches.mp4
++							295 container 裁切右边缘 color-patches.mp4
++						296 container
++							297 文本 文字
++							298 按钮 锁定文字
++							299 按钮 隐藏文字
++						300 按钮 片段 打字 跳动 缩小组合
++							301 文本 打字 跳动 缩小组合
++							302 container 裁切左边缘 打字 跳动 缩小组合
++							303 container 裁切右边缘 打字 跳动 缩小组合
++						304 container
++							305 文本 音频
++							306 按钮 锁定音频
++							307 按钮 静音音频
++						308 文本 拖入音频素材
++						309 container
++							310 文本 主轨道
++							311 按钮 锁定主轨道
++							312 按钮 隐藏主轨道
++						313 按钮 片段 color-patches.mp4
++							314 文本 color-patches.mp4
++							315 container 裁切左边缘 color-patches.mp4
++							316 container 裁切右边缘 color-patches.mp4
++						317 按钮 片段 动态测试素材.mp4
++							318 文本 动态测试素材.mp4
++							319 container 裁切左边缘 动态测试素材.mp4
++							320 container 裁切右边缘 动态测试素材.mp4
++						321 按钮 拖动播放头
++					322 container
++						323 text 4 个片段 已选中 文字 1280 × 720
++					324 container 快捷键
++						325 container
++							326 container
++								327 按钮 Close
++									328 图像 close
++								329 文本 快捷键
++								330 定义列表
++									331 container 播放 / 暂停
++										332 文本 播放 / 暂停
++									333 文本 Space
++									334 container 上一帧 / 下一帧
++										335 文本 上一帧 / 下一帧
++									336 文本 ← / →
++									337 container 后退 / 前进 10 帧
++										338 文本 后退 / 前进 10 帧
++									339 文本 Shift + ← / →
++									340 container 跳到开头 / 结尾
++										341 文本 跳到开头 / 结尾
++									342 文本 Home / End
++									343 container 分割所选片段
++										344 文本 分割所选片段
++									345 文本 ⌘ / Ctrl + B
++									346 container 复制到本轨末尾
++										347 文本 复制到本轨末尾
++									348 文本 ⌘ / Ctrl + D
++									349 container 撤销
++										350 文本 撤销
++									351 文本 ⌘ / Ctrl + Z
++									352 container 重做
++										353 文本 重做
++									354 文本 Shift + ⌘ / Ctrl + Z · Ctrl + Y
++									355 container 完成自动保存
++										356 文本 完成自动保存
++									357 文本 ⌘ / Ctrl + S
++									358 container 删除片段
++										359 文本 删除片段
++									360 文本 Delete / Backspace
++									361 container 涟漪删除
++										362 文本 涟漪删除
++									363 文本 Shift + Delete / Backspace
++									364 container 取消选择
++										365 文本 取消选择
++									366 文本 Esc
++								367 文本 输入文字、使用控件或打开弹窗时，快捷键交由当前控件处理。工程持续自动保存。

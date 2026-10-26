@@ -1,0 +1,49 @@
+
+> @yingxu/editor@0.10.2 replay
+> node scripts/replay-baseline.ts
+
+{
+  "baselineVersion": "5.9.0",
+  "checks": [
+    {
+      "name": "baseline-hashes",
+      "passed": true
+    },
+    {
+      "name": "empty-draft",
+      "passed": true
+    },
+    {
+      "name": "single-six-seconds",
+      "passed": true
+    },
+    {
+      "name": "split-at-three",
+      "passed": true
+    },
+    {
+      "name": "second-clip-two-times",
+      "passed": true
+    },
+    {
+      "name": "undo-equals-split",
+      "passed": true
+    },
+    {
+      "name": "redo-equals-speed",
+      "passed": true
+    },
+    {
+      "name": "keyframes-source-clock-preserved",
+      "passed": true
+    },
+    {
+      "name": "input-files-unchanged",
+      "passed": true
+    }
+  ],
+  "diagnostics": [],
+  "limitations": [
+    "Timing semantics only; no visual, audio, curve-speed, keyframe rendering or performance parity claim."
+  ]
+}

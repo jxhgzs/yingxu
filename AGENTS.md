@@ -128,3 +128,8 @@
 
 - 连续定位使用一个在途解码加一个可替换的最新目标，允许完成帧持续呈现；每个pointermove都abort会饥饿，松手才debounce又没有实时反馈。UI seek仅准备目标帧，顺序窗口预热保留给播放；测量pointer按住期间实际ready帧与松手到最终准确帧。
 - 时间尺与播放头用pointer capture，move按rAF合并，up刷新最后坐标；cancel/失去capture清理。切工程和卸载必须丢弃未刷新的旧坐标，不能把它flush到新工程。保留低延迟旧画面，等待提示延迟且拖动不覆盖整幅预览。
+
+## 2026-10-26 快捷键与焦点
+
+- 播放就绪须跟随实际GPU/后台预览状态，不能用后台作业存在与否判断GPU是否能播放。按钮和快捷键共用transport动作；在有效GPU计划准备期间允许开始，暂停始终可用。
+- 片段本身是button；根capture处理剪辑快捷键后聚焦根，防止定位时按钮禁用使焦点落到body。Space的重复keydown也须preventDefault，避免keyup默认click；输入/IME/菜单/弹窗交还控件，不挂window全局监听。实际连续Home→方向键与按钮焦点Space必须验证。

@@ -1,0 +1,63 @@
+The following is a diff from the previous accessibility tree for Window: "映序 · 视频剪辑" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 58, 65-80
+~				4 container 媒体 音频 文本 转场 调节 搜索素材名称 导入 全部 4 实时视频画面 1280 × 720 00:00:00:00 / 00:00:08:00 上一帧 暂停 下一帧 适应 撤销 重做 分割 删除片段 复制片段 轨道 时间线吸附 88 30 fps 00:00 00:01 00:02 00:03 00:04 00:05 00:06
++							154 文本 导出
++							155 文本 导入
++						156 文本 00:00:00:08
+~						61 按钮 暂停
++						157 按钮 画面
++						158 按钮 文本
++						159 按钮 动画
++						160 按钮 变速
++						161 文本 正文
++						162 文本输入区 (settable) Description: 文字内容, Value: 打字 跳动 缩小组合
++						163 文本 字体
++						164 container 字体
++							165 container
++								166 组合框
++								167 文本 思源黑体 Medium
++						168 文本 字号
++						169 container
++							170 按钮 Increase Value
++								171 图像 up
++							172 按钮 Decrease Value
++								173 图像 down
++							174 步进器 (settable, float) Description: 字号, Value: 60
++						175 container 文字颜色
++							176 颜色池 Description: 文字颜色, Value: rgb 1.00000 1.00000 1.00000 1
++							177 文本 #ffffff
++						178 container
++							179 文本 关键帧
++							180 按钮 上一个关键帧
++							181 按钮 在播放头添加或更新关键帧
++							182 按钮 下一个关键帧
++						183 container 关键帧属性
++							184 container
++								185 组合框
++								186 文本 缩放
++						187 container
++							188 按钮 Increase Value
++								189 图像 up
++							190 按钮 Decrease Value
++								191 图像 down
++							192 步进器 (settable, float) Description: 关键帧当前值, Value: 100
++						193 文本 %
++						194 按钮 添 加
++						195 文本 缩放尚未添加关键帧
++						196 文本 显示时间
++						197 文本 开始
++						198 步进器 (disabled) Description: 文字开始秒, Value: 0, Secondary Actions: Increment, Decrement
++						199 文本 秒
++						200 文本 持续
++						201 步进器 (disabled) Description: 文字时长秒, Value: 2, Secondary Actions: Increment, Decrement
++						202 文本 秒
++						203 按钮 (disabled) 应 用
++						204 文本 请先移除文字动画，再修改显示时间。
+~						84 按钮 分割
+~						85 按钮 删除片段
+~						86 按钮 复制片段
++							205 文本 轨道
+~						88 切换按钮 Description: 时间线吸附, Value: 1
+~						89 滑块 Value: 88, Secondary Actions: Increment, Decrement
+~						145 text 4 个片段 已选中 文字 1280 × 720
+The focused UI element is 4 container 媒体 音频 文本 转场 调节 搜索素材名称 导入 全部 4 实时视频画面 1280 × 720 00:00:00:00 / 00:00:08:00 上一帧 暂停 下一帧 适应 撤销 重做 分割 删除片段 复制片段 轨道 时间线吸附 88 30 fps 00:00 00:01 00:02 00:03 00:04 00:05 00:06

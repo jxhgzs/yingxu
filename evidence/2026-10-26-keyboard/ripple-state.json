@@ -1,0 +1,65 @@
+{
+  "revision": 8,
+  "tracks": [
+    {
+      "kind": "video",
+      "clips": [
+        {
+          "id": "5d6f1903-5088-4694-850f-098f15ca4f4a",
+          "source": {
+            "start": {
+              "numerator": "1",
+              "denominator": "1"
+            },
+            "duration": {
+              "numerator": "5",
+              "denominator": "1"
+            }
+          },
+          "target": {
+            "start": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "duration": {
+              "numerator": "5",
+              "denominator": "1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "audio",
+      "clips": []
+    },
+    {
+      "kind": "text",
+      "clips": [
+        {
+          "id": "caption",
+          "source": {
+            "start": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "duration": {
+              "numerator": "6",
+              "denominator": "1"
+            }
+          },
+          "target": {
+            "start": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "duration": {
+              "numerator": "6",
+              "denominator": "1"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
