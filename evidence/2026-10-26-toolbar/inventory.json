@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-26",
+  "target": {
+    "version": "5.9.0",
+    "build": "1",
+    "bundle": "com.lemon.lvpro"
+  },
+  "editorVersion": "0.10.2",
+  "scope": "用户红框内的时间线工具组，普通视频选中状态",
+  "orderedItems": [
+    {
+      "id": "split",
+      "description": "分割",
+      "editorStatus": "已有功能；图标和启用条件未对齐",
+      "evidence": "prior-native-and-ui"
+    },
+    {
+      "id": "cut-left",
+      "description": "裁掉播放头左侧",
+      "editorStatus": "缺少快捷工具及与目标一致的联动规则",
+      "evidence": "native-click+draft-timing"
+    },
+    {
+      "id": "cut-right",
+      "description": "裁掉播放头右侧",
+      "editorStatus": "缺少快捷工具及与目标一致的联动规则",
+      "evidence": "native-click+draft-timing"
+    },
+    {
+      "id": "delete",
+      "description": "删除",
+      "editorStatus": "已有功能；布局与状态待对齐",
+      "evidence": "native-context-menu+editor-source"
+    },
+    {
+      "id": "mark",
+      "description": "标记",
+      "editorStatus": "缺少标记数据与入口",
+      "evidence": "native-click+materials.time_marks"
+    },
+    {
+      "id": "freeze",
+      "description": "定格",
+      "editorStatus": "缺少",
+      "evidence": "native-basic-edit-menu"
+    },
+    {
+      "id": "reverse",
+      "description": "倒放",
+      "editorStatus": "缺少",
+      "evidence": "native-basic-edit-menu"
+    },
+    {
+      "id": "mirror",
+      "description": "镜像",
+      "editorStatus": "属性面板有水平翻转；工具栏缺少",
+      "evidence": "native-basic-edit-menu+editor-source"
+    },
+    {
+      "id": "rotate",
+      "description": "旋转",
+      "editorStatus": "属性面板有角度输入；工具栏缺少",
+      "evidence": "native-basic-edit-menu+editor-source"
+    },
+    {
+      "id": "crop",
+      "description": "裁剪比例",
+      "editorStatus": "缺少画面裁剪比例工具；已有片段时间裁切语义不同",
+      "evidence": "native-basic-edit-menu+editor-source"
+    }
+  ],
+  "markEvidence": [
+    {
+      "id": "5BD94DE5-AE0A-4A1C-83D7-C659B92C0605",
+      "mark_items": [
+        {
+          "color": "#00c1cd",
+          "id": "3B17F714-BAED-48C3-A194-740997E423A4",
+          "time_range": {
+            "duration": 0,
+            "start": 0
+          },
+          "title": "标记 01"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "左/右裁切使用功能描述，不宣称已经读取原生悬停提示逐字文案。",
+    "基本编辑菜单列出定格、倒放、镜像、旋转、裁剪比例；本次缺失媒体导致这些按钮禁用，未实测其媒体输出。",
+    "左右裁切仅本次30fps/1倍速/主轨磁吸开启样本，不能外推曲线、多选、联动全部配置。",
+    "本轮只完成核对，不改产品源码或用户正在编辑的工程。"
+  ]
+}

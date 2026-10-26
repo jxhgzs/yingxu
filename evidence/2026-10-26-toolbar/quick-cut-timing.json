@@ -1,0 +1,594 @@
+{
+  "left": {
+    "before": [
+      {
+        "id": "86401C50-65ED-4715-A48A-2F7362E76D10",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "13B7A905-020D-4118-B64B-03453982174D",
+            "source": {
+              "duration": 3000000,
+              "start": 0
+            },
+            "target": {
+              "duration": 3000000,
+              "start": 0
+            }
+          },
+          {
+            "id": "B71C0B09-4F73-42F1-B889-5767BE0F3825",
+            "source": {
+              "duration": 1666666,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 1666666,
+              "start": 3000000
+            }
+          },
+          {
+            "id": "D74DE0CF-98E5-4A7C-B2A9-51AC48DBCBF8",
+            "source": {
+              "duration": 1333334,
+              "start": 4666666
+            },
+            "target": {
+              "duration": 1333334,
+              "start": 4666666
+            }
+          },
+          {
+            "id": "A14F1275-EC63-4E8F-9F6E-73FE1E8D0363",
+            "source": {
+              "duration": 1000000,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 500000,
+              "start": 6000000
+            }
+          },
+          {
+            "id": "46A41043-6CFC-4BA1-973C-F85E1C64124B",
+            "source": {
+              "duration": 2000000,
+              "start": 4000000
+            },
+            "target": {
+              "duration": 1000000,
+              "start": 6500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "5058AE7B-5F37-4C1B-9BF2-E6A7729EF667",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "F28A3C89-AA15-43BA-8D63-1FEE9946435F",
+            "source": {
+              "duration": 1100000,
+              "start": 0
+            },
+            "target": {
+              "duration": 900000,
+              "start": 7500000
+            }
+          },
+          {
+            "id": "40ADBBDC-208D-4525-8F4C-3B32A62241B7",
+            "source": {
+              "duration": 1900000,
+              "start": 1100000
+            },
+            "target": {
+              "duration": 1066666,
+              "start": 8400000
+            }
+          }
+        ]
+      },
+      {
+        "id": "393AB1E8-E0CE-4133-A432-12B61D68EFBE",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "C96ED358-1ADE-4D64-97D2-6CE984869D4E",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 500000
+            }
+          },
+          {
+            "id": "F7BE8476-19FB-4192-8BA5-6EB90EACF2AB",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 1500000
+            }
+          },
+          {
+            "id": "57A8CDDF-FE82-48A0-AC4A-569B72CAFF47",
+            "source": null,
+            "target": {
+              "duration": 1500000,
+              "start": 2500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "EE0D4734-C862-421D-9810-C0BEAC0606A6",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "5FFD1A96-28FA-4D4A-BE9B-B48D6858CDEC",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 3000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "525A3382-51C1-47D4-B384-A21EB9495FE9",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "7BB0728A-EC03-4DB5-8A4A-D425109E7A63",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 4500000
+            }
+          }
+        ]
+      }
+    ],
+    "after": [
+      {
+        "id": "86401C50-65ED-4715-A48A-2F7362E76D10",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "13B7A905-020D-4118-B64B-03453982174D",
+            "source": {
+              "duration": 2000000,
+              "start": 1000000
+            },
+            "target": {
+              "duration": 2000000,
+              "start": 0
+            }
+          },
+          {
+            "id": "B71C0B09-4F73-42F1-B889-5767BE0F3825",
+            "source": {
+              "duration": 1666666,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 1666666,
+              "start": 2000000
+            }
+          },
+          {
+            "id": "D74DE0CF-98E5-4A7C-B2A9-51AC48DBCBF8",
+            "source": {
+              "duration": 1333334,
+              "start": 4666666
+            },
+            "target": {
+              "duration": 1333334,
+              "start": 3666666
+            }
+          },
+          {
+            "id": "A14F1275-EC63-4E8F-9F6E-73FE1E8D0363",
+            "source": {
+              "duration": 1000000,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 500000,
+              "start": 5000000
+            }
+          },
+          {
+            "id": "46A41043-6CFC-4BA1-973C-F85E1C64124B",
+            "source": {
+              "duration": 2000000,
+              "start": 4000000
+            },
+            "target": {
+              "duration": 1000000,
+              "start": 5500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "5058AE7B-5F37-4C1B-9BF2-E6A7729EF667",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "F28A3C89-AA15-43BA-8D63-1FEE9946435F",
+            "source": {
+              "duration": 1100000,
+              "start": 0
+            },
+            "target": {
+              "duration": 900000,
+              "start": 7500000
+            }
+          },
+          {
+            "id": "40ADBBDC-208D-4525-8F4C-3B32A62241B7",
+            "source": {
+              "duration": 1900000,
+              "start": 1100000
+            },
+            "target": {
+              "duration": 1066666,
+              "start": 8400000
+            }
+          }
+        ]
+      },
+      {
+        "id": "393AB1E8-E0CE-4133-A432-12B61D68EFBE",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "F7BE8476-19FB-4192-8BA5-6EB90EACF2AB",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 500000
+            }
+          },
+          {
+            "id": "57A8CDDF-FE82-48A0-AC4A-569B72CAFF47",
+            "source": null,
+            "target": {
+              "duration": 1500000,
+              "start": 1500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "EE0D4734-C862-421D-9810-C0BEAC0606A6",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "C96ED358-1ADE-4D64-97D2-6CE984869D4E",
+            "source": null,
+            "target": {
+              "duration": 500000,
+              "start": 0
+            }
+          },
+          {
+            "id": "5FFD1A96-28FA-4D4A-BE9B-B48D6858CDEC",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 2000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "525A3382-51C1-47D4-B384-A21EB9495FE9",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "7BB0728A-EC03-4DB5-8A4A-D425109E7A63",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 3500000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "right": {
+    "before": [
+      {
+        "id": "86401C50-65ED-4715-A48A-2F7362E76D10",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "13B7A905-020D-4118-B64B-03453982174D",
+            "source": {
+              "duration": 3000000,
+              "start": 0
+            },
+            "target": {
+              "duration": 3000000,
+              "start": 0
+            }
+          },
+          {
+            "id": "B71C0B09-4F73-42F1-B889-5767BE0F3825",
+            "source": {
+              "duration": 1666666,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 1666666,
+              "start": 3000000
+            }
+          },
+          {
+            "id": "D74DE0CF-98E5-4A7C-B2A9-51AC48DBCBF8",
+            "source": {
+              "duration": 1333334,
+              "start": 4666666
+            },
+            "target": {
+              "duration": 1333334,
+              "start": 4666666
+            }
+          },
+          {
+            "id": "A14F1275-EC63-4E8F-9F6E-73FE1E8D0363",
+            "source": {
+              "duration": 1000000,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 500000,
+              "start": 6000000
+            }
+          },
+          {
+            "id": "46A41043-6CFC-4BA1-973C-F85E1C64124B",
+            "source": {
+              "duration": 2000000,
+              "start": 4000000
+            },
+            "target": {
+              "duration": 1000000,
+              "start": 6500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "5058AE7B-5F37-4C1B-9BF2-E6A7729EF667",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "F28A3C89-AA15-43BA-8D63-1FEE9946435F",
+            "source": {
+              "duration": 1100000,
+              "start": 0
+            },
+            "target": {
+              "duration": 900000,
+              "start": 7500000
+            }
+          },
+          {
+            "id": "40ADBBDC-208D-4525-8F4C-3B32A62241B7",
+            "source": {
+              "duration": 1900000,
+              "start": 1100000
+            },
+            "target": {
+              "duration": 1066666,
+              "start": 8400000
+            }
+          }
+        ]
+      },
+      {
+        "id": "393AB1E8-E0CE-4133-A432-12B61D68EFBE",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "C96ED358-1ADE-4D64-97D2-6CE984869D4E",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 500000
+            }
+          },
+          {
+            "id": "F7BE8476-19FB-4192-8BA5-6EB90EACF2AB",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 1500000
+            }
+          },
+          {
+            "id": "57A8CDDF-FE82-48A0-AC4A-569B72CAFF47",
+            "source": null,
+            "target": {
+              "duration": 1500000,
+              "start": 2500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "EE0D4734-C862-421D-9810-C0BEAC0606A6",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "5FFD1A96-28FA-4D4A-BE9B-B48D6858CDEC",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 3000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "525A3382-51C1-47D4-B384-A21EB9495FE9",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "7BB0728A-EC03-4DB5-8A4A-D425109E7A63",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 4500000
+            }
+          }
+        ]
+      }
+    ],
+    "after": [
+      {
+        "id": "86401C50-65ED-4715-A48A-2F7362E76D10",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "13B7A905-020D-4118-B64B-03453982174D",
+            "source": {
+              "duration": 1000000,
+              "start": 0
+            },
+            "target": {
+              "duration": 1000000,
+              "start": 0
+            }
+          },
+          {
+            "id": "B71C0B09-4F73-42F1-B889-5767BE0F3825",
+            "source": {
+              "duration": 1666666,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 1666666,
+              "start": 1000000
+            }
+          },
+          {
+            "id": "D74DE0CF-98E5-4A7C-B2A9-51AC48DBCBF8",
+            "source": {
+              "duration": 1333334,
+              "start": 4666666
+            },
+            "target": {
+              "duration": 1333334,
+              "start": 2666666
+            }
+          },
+          {
+            "id": "A14F1275-EC63-4E8F-9F6E-73FE1E8D0363",
+            "source": {
+              "duration": 1000000,
+              "start": 3000000
+            },
+            "target": {
+              "duration": 500000,
+              "start": 4000000
+            }
+          },
+          {
+            "id": "46A41043-6CFC-4BA1-973C-F85E1C64124B",
+            "source": {
+              "duration": 2000000,
+              "start": 4000000
+            },
+            "target": {
+              "duration": 1000000,
+              "start": 4500000
+            }
+          }
+        ]
+      },
+      {
+        "id": "5058AE7B-5F37-4C1B-9BF2-E6A7729EF667",
+        "kind": "video",
+        "segments": [
+          {
+            "id": "F28A3C89-AA15-43BA-8D63-1FEE9946435F",
+            "source": {
+              "duration": 1100000,
+              "start": 0
+            },
+            "target": {
+              "duration": 900000,
+              "start": 7500000
+            }
+          },
+          {
+            "id": "40ADBBDC-208D-4525-8F4C-3B32A62241B7",
+            "source": {
+              "duration": 1900000,
+              "start": 1100000
+            },
+            "target": {
+              "duration": 1066666,
+              "start": 8400000
+            }
+          }
+        ]
+      },
+      {
+        "id": "393AB1E8-E0CE-4133-A432-12B61D68EFBE",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "C96ED358-1ADE-4D64-97D2-6CE984869D4E",
+            "source": null,
+            "target": {
+              "duration": 500000,
+              "start": 500000
+            }
+          },
+          {
+            "id": "57A8CDDF-FE82-48A0-AC4A-569B72CAFF47",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "EE0D4734-C862-421D-9810-C0BEAC0606A6",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "5FFD1A96-28FA-4D4A-BE9B-B48D6858CDEC",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "525A3382-51C1-47D4-B384-A21EB9495FE9",
+        "kind": "text",
+        "segments": [
+          {
+            "id": "7BB0728A-EC03-4DB5-8A4A-D425109E7A63",
+            "source": null,
+            "target": {
+              "duration": 1000000,
+              "start": 2500000
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
