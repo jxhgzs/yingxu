@@ -1,5 +1,5 @@
 /** Local-only cache validation. No original resources enter source control. */
-import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';
+import fs from 'node:fs/promises';import path from 'node:path';
 import {startServer} from '../apps/service/server.ts';import {rational as r} from '../packages/core/src/time.ts';import {emptyDocument,defaultTransform} from '../packages/core/src/document.ts';import {ffmpeg,probe} from '../packages/media/src/probe.ts';import {runProcess} from '../packages/media/src/process.ts';import {render} from '../packages/media/src/render.ts';
 import assert from 'node:assert/strict';
 const root=path.resolve('artifacts/qa/effect-adapter-v12'),instance=await startServer({root:path.join(root,'service'),port:0});

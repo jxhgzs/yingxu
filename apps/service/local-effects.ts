@@ -13,11 +13,12 @@ type Candidate={entry:LocalEffect;directory:string;files?:Record<string,string>}
 /** Closed adapters for reviewed local resources. No Lua, downloaded code or
  * client paths are executed. Unknown resources are inventory only. */
 export class LocalEffects {
+ private closing=false;private controller=new AbortController();
  private candidates=new Map<string,Candidate>();private scanning?:Promise<LocalEffectCatalog>;private importing?:Promise<unknown>;
  private root:string;private register:(file:string,name:string)=>Promise<Asset>;private roots:string[];
  constructor(root:string,register:(file:string,name:string)=>Promise<Asset>,roots=[path.join(os.homedir(),'Movies/JianyingPro/User Data/Cache/effect'),path.join(os.homedir(),'Movies/JianyingPro/User Data/Cache/artistEffect')]){this.root=root;this.register=register;this.roots=roots;}
  async scan():Promise<LocalEffectCatalog>{
-  if(this.scanning)return this.scanning;
+  check(!this.closing,'SERVICE_CLOSING');if(this.scanning)return this.scanning;
   this.scanning=this.doScan();try{return await this.scanning;}finally{this.scanning=undefined;}
  }
  private async doScan():Promise<LocalEffectCatalog>{
@@ -55,11 +56,12 @@ export class LocalEffects {
   try{for(const [relative,sha] of Object.entries(files))if(createHash('sha256').update(await this.read(directory,relative)).digest('hex')!==sha)return false;return Object.keys(files).length>0;}catch{return false;}
  }
  async import(key:unknown){
-  check(typeof key==='string'&&/^[a-f0-9]{64}$/.test(key),'LOCAL_EFFECT_NOT_FOUND');
+  check(!this.closing,'SERVICE_CLOSING');check(typeof key==='string'&&/^[a-f0-9]{64}$/.test(key),'LOCAL_EFFECT_NOT_FOUND');
   // One import at a time bounds local media work and avoids duplicate registrations.
   check(!this.importing,'LOCAL_EFFECT_BUSY');const task=this.doImport(key);this.importing=task;
   try{return await task;}finally{this.importing=undefined;}
  }
+ async shutdown(){this.closing=true;this.controller.abort();await this.importing?.catch(()=>{});await this.scanning?.catch(()=>{});}
  private async doImport(key:string){
   await this.scan();const candidate=this.candidates.get(key);check(candidate,'LOCAL_EFFECT_NOT_FOUND');
   const {entry,directory,files}=candidate;check(entry.available&&files&&await this.verify(directory,files),'LOCAL_EFFECT_UNAVAILABLE');
@@ -77,9 +79,9 @@ export class LocalEffects {
    else{
     check(entry.category==='sequence','LOCAL_EFFECT_UNAVAILABLE');
     file=path.join(temporary,'sequence.mov');name=entry.name+'.mov';
-    await runProcess(ffmpeg(),['-v','error','-nostdin','-y','-threads','1','-framerate','25','-start_number','0','-i','GESticker_FullScreenSticker/generalEffect/resource1/texture/a%d.png','-frames:v','96','-vf','scale=1280:720:flags=bilinear,setparams=color_trc=iec61966-2-1:color_primaries=bt709:colorspace=0:range=full','-c:v','png','-pix_fmt','rgba','-color_trc','iec61966-2-1','-color_primaries','bt709','-colorspace','0','-color_range','pc','sequence.mov'],{cwd:temporary,timeout:60000});
+    await runProcess(ffmpeg(),['-v','error','-nostdin','-y','-threads','1','-framerate','25','-start_number','0','-i','GESticker_FullScreenSticker/generalEffect/resource1/texture/a%d.png','-frames:v','96','-vf','scale=1280:720:flags=bilinear,setparams=color_trc=iec61966-2-1:color_primaries=bt709:colorspace=0:range=full','-c:v','png','-pix_fmt','rgba','-color_trc','iec61966-2-1','-color_primaries','bt709','-colorspace','0','-color_range','pc','sequence.mov'],{cwd:temporary,timeout:60000,signal:this.controller.signal});
    }
-   const asset=await this.register(file,name),receipt={adapter:'local-effects-v1',resourceId:entry.resourceId,paid:entry.paid,sourceFiles:files,assetId:asset.id,sha256:await fileHash(file),createdAt:new Date().toISOString(),verification:entry.reason};
+   check(!this.closing,'SERVICE_CLOSING');const asset=await this.register(file,name),receipt={adapter:'local-effects-v1',resourceId:entry.resourceId,paid:entry.paid,sourceFiles:files,assetId:asset.id,sha256:await fileHash(file),createdAt:new Date().toISOString(),verification:entry.reason};
    const receipts=path.join(this.root,'effect-imports');await fs.mkdir(receipts,{recursive:true});
    const record=path.join(receipts,asset.id+'.json'),temp=record+'.'+randomUUID()+'.tmp';await fs.writeFile(temp,JSON.stringify(receipt,null,2),{mode:0o600});await fs.rename(temp,record);
    return {entry,asset};

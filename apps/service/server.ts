@@ -189,7 +189,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
   await new Promise<void>((resolve, reject) => {server.once('error', reject); server.listen(options.port ?? Number(process.env.PORT || 8815), '127.0.0.1', resolve);});
   let closing: Promise<void> | undefined;
   const close = () => closing ||= (async () => {
-    await mediaTools.shutdown();await textRasters.shutdown();await curveAudio.shutdown();
+    await localEffects.shutdown();await mediaTools.shutdown();await textRasters.shutdown();await curveAudio.shutdown();
     await jobs.shutdown();
     const closed = new Promise<void>(resolve=>server.close(()=>resolve()));
     server.closeAllConnections(); await closed;
