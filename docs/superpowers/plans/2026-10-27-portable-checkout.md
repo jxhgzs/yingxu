@@ -42,6 +42,6 @@
 
 **Files:** docs/qa/2026-10-27-portable-checkout.md。
 
-- [ ] 提交实现后，在系统临时目录 `git clone --no-hardlinks`，确认没有相邻调研目录，执行 `npm ci`、`npm run doctor`、`npm run test:portable`、`npm run package:mac`。
-- [ ] 用新包服务与独立数据目录检查演示、素材206、文字栅格、曲线音频及实际导出；核随包字体和素材 SHA、签名。
+- [x] 提交实现后，在系统临时目录 `git clone --no-hardlinks`，确认没有相邻调研目录，执行 `npm ci`、`npm run doctor`、`npm run test:portable`、`npm run package:mac`。
+- [x] 用新包服务与独立数据目录检查演示、素材206、文字栅格、曲线音频及实际导出；核随包字体和素材 SHA、签名。
 - [ ] 记录真实结果、更新完成项，扫描提交内容的凭据，再 push origin main 并核对远端提交。

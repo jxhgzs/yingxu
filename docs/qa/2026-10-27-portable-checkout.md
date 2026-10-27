@@ -13,14 +13,26 @@
 
 Node.js 24.18.0、FFmpeg/FFprobe 7.1.1、Rubber Band 4.0.0、macOS arm64。
 
-- 首轮可移植回归16项通过；随后保留原媒体状态回归并单列路径测试（最终结果见下方）。
+- 完整研发测试370项通过，保留全部既有测试；新工具路径与 doctor 回归通过。
 - 类型检查和前端/桌面服务构建通过。
 - 去掉 PATH 中 Homebrew 后，doctor --package 通过，验证标准路径回退；显式三个工具均配置不存在路径时返回非零并提示安装。
 - 已查看自主生成素材首帧，只有测试图和计时，没有私人资料。
 
 ## 独立检出验证
 
-待完成独立检出、依赖安装、打包和打包服务验收后，记录真实提交、输出哈希与结果。
+在系统临时目录重新 `git clone --no-hardlinks`（提交 `7e772b040e9006e511cdee46384231dce1909996`），新目录没有相邻研究资料，也没有旧 node_modules。只保留 Node24 与系统工具在 PATH，媒体工具通过标准 Homebrew 位置查找。
+
+1. `npm ci` 自动执行项目安装钩子，下载并安装 Electron 44.9.3；依赖审计0漏洞。首次安装含网络下载约2分钟，未复制旧 node_modules。
+2. `npm run test:portable`：17/17通过，无跳过，不需要原生研究基线。
+3. `npm run package:mac`：自动环境检查、类型检查、前端构建、服务构建和开发包签名全部通过。`codesign --verify --deep --strict` 通过。
+4. 独立数据目录执行 `npm start`：预检通过，HTTP bootstrap 返回0.12.1与空工程列表，随后只停止本次测试服务。
+5. 直接加载新包内 `dist-desktop/service/server.mjs`，包内不存在源码 `packages/`：练习项目创建成功、媒体HTTP206成功；随包中文字体生成320×180透明PNG；真实R3曲线音频输出44100Hz/88200采样；含文字与曲线的2秒MP4实际导出60帧，下载HTTP206成功。
+6. 真实 Vite 开发服务器代理同一包内服务，`/text-renders`、`/curve-audio` 均返回实际资源HTTP206。
+7. 浏览器实际加载包内前端、播放曲线视频与中文文字，到达2秒末帧，GPU预览画面正常。截图、脚本、原始结果保存在 ignored `artifacts/portable-validation/`。本轮界面验证是浏览器连接包内服务，未重启用户正在使用的桌面实例。
+
+构建记录：0.12.1，Electron44.9.3，后端SHA256 `bac7260eb0f3c21b9b4137fa764ad130bd37b6a6ed4e7c9dae4eaeba58bcc40e`；随包素材SHA与仓库一致，随包字体和许可证存在。
+
+独立克隆首轮暴露 Electron SDK 安装后缺少桌面运行时：项目现显式 `postinstall → desktop:install → install-electron`，缺失时 doctor 提示恢复命令，并核对 SDK 与 dist 版本。还按 [Electron 官方安全公告](https://github.com/electron/electron/security/advisories/GHSA-jr5w-w6x2-84p9) 将44.6.0升级到同主版本44.9.3；当前 npm audit 为0漏洞。新增提交使用 Gitleaks 8.30.1 扫描，未发现泄露。
 
 ## 边界
 
