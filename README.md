@@ -28,11 +28,13 @@
 
 基础剪辑无需安装剪映。剪映缓存只用于可选的本地资源适配，原生对照研究资料也不是浏览器版启动的前置条件。
 
-macOS 使用 Homebrew 安装媒体工具：
+源码运行和使用 `.app` 的电脑都需要安装媒体工具；每台电脑首次安装一次即可，已安装且通过检查时可跳过。macOS 使用 Homebrew 安装：
 
 ```sh
 brew install ffmpeg rubberband
 ```
+
+`ffmpeg` 安装包同时提供 **FFmpeg 和 FFprobe**，无需另装 FFprobe；`rubberband` 用于曲线变速时保持音调。媒体工具由系统安装，程序会自动查找常用安装路径。
 
 如果使用 nvm 管理 Node.js：
 
@@ -58,7 +60,8 @@ rubberband --version
 git clone https://github.com/jxhgzs/yingxu.git
 cd yingxu
 
-# 2. 安装依赖
+# 2. 安装依赖（媒体工具每台电脑只需安装一次）
+brew install ffmpeg rubberband
 npm ci  # 自动下载与锁定版本一致的 Electron 桌面运行时
 npm run doctor
 
@@ -125,7 +128,9 @@ npm run package:mac
 
 干净克隆后安装上述标准依赖并执行 `npm ci`，即可直接运行此命令，无需复制作者机器上的资料。前端、服务、练习素材、字体及其许可证会一同放入 `.app`。
 
-当前生成的是采用本地临时签名的开发包，尚未完成公证和完整分发验证。**FFmpeg / FFprobe / Rubber Band 不包含在 `.app` 内**；使用包的电脑也需安装 `brew install ffmpeg rubberband`。本次解决源码与打包对私人资料的依赖，不承诺无媒体工具安装的独立分发。
+**给同事使用 `.app` 时**：同事先执行 `brew install ffmpeg rubberband`，再打开应用即可；只使用 `.app` 无需安装 Node.js、npm 或下载源码。FFmpeg / FFprobe / Rubber Band 由系统安装，不包含在 `.app` 内。
+
+当前生成的是采用本地临时签名的开发包，尚未完成公证和完整分发验证。
 
 ## 配置与数据目录
 
