@@ -9,3 +9,22 @@ artifacts/
 evidence/**/*.mov
 evidence/**/*.mp4
 !evidence/2026-10-19-color-patches/source.mp4
+
+# Local credentials and machine-specific authentication
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+.pypirc
+.netrc
+credentials.json
+credentials-*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_ed25519
