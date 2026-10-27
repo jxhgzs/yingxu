@@ -12,6 +12,7 @@ import {add,sub,compare,micros,mul,rational,toNumber,ZERO} from '../../core/src/
 import type {Rational} from '../../core/src/time.ts';
 import {ffmpeg,ffprobe} from './probe.ts';
 import {runProcess} from './process.ts';
+import {rubberband} from './tools.ts';
 
 export type CurveAudioMap={sampleRate:number;sourceSamples:number;targetSamples:number;coverage:Rational;points:{sourceSample:number;targetSample:number}[]};
 export type CurveAudioOptions={sampleRate:number;signal?:AbortSignal;onProgress?:(progress:number)=>void;engine?:{binary:string;sha256:string}};
@@ -99,7 +100,7 @@ export async function renderCurveAudio(asset:Asset,clip:CurveClip,directory:stri
  await runProcess(ffmpeg(),['-hide_banner','-loglevel','warning','-nostdin','-y','-i',asset.path,'-map','0:a:0','-af',`atrim=start=${toNumber(clip.source.start).toFixed(9)}:duration=${toNumber(map.coverage).toFixed(9)},asetpts=PTS-STARTPTS`,'-ar',String(options.sampleRate),'-ac','2','-c:a','pcm_f32le',source],{signal:options.signal,timeout:1800000});
  const actualSource=await wavSamples(source,options.sampleRate,options.signal);check(Math.abs(actualSource-map.sourceSamples)<=1,'CURVE_AUDIO_SOURCE_LENGTH');
  await finiteAudio(source,work,options.signal);options.onProgress?.(.25);
- const binary=options.engine?.binary||process.env.YINGXU_RUBBERBAND||'/opt/homebrew/bin/rubberband';
+ const binary=options.engine?.binary||rubberband();
  const args=['-q','-3','--window-short','--timemap',mapFile,'-D',toNumber(clip.target.duration).toFixed(9),source,partial];
  const binaryHash=options.engine?.sha256??await fs.readFile(binary).then(data=>createHash('sha256').update(data).digest('hex')).catch(()=>undefined);
  await fs.writeFile(path.join(work,'engine.json'),JSON.stringify({binary,sha256:binaryHash,args,ffmpeg:ffmpeg(),sampleRate:options.sampleRate,clipId:clip.id},null,2));

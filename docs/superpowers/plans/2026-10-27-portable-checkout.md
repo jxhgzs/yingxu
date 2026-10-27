@@ -18,13 +18,13 @@
 
 ### Task 1: 可移植素材与媒体路径
 
-**Files:** 新增 packages/media/src/tools.ts、test/media-tools.test.ts、fixtures/README.md、fixtures/timeline-probe.mp4、scripts/generate-demo.ts；修改 probe.ts、两处 curve-audio.ts、server.ts、package-desktop.ts、vite.config.ts。
+**Files:** 新增 packages/media/src/tools.ts、test/media-tool-paths.test.ts、fixtures/README.md、fixtures/timeline-probe.mp4、scripts/generate-demo.ts；修改 probe.ts、两处 curve-audio.ts、server.ts、package-desktop.ts、vite.config.ts。
 
 **Interfaces:** `findMediaTool(name, {env?, fallbackDirectories?})` 返回可执行绝对路径或 undefined；`mediaTool(name)` 优先保留显式配置，缺失时返回命令名供执行层报告错误。ffmpeg/ffprobe 调用签名不变，新增 rubberband getter。
 
-- [ ] 编写 PATH、Finder、显式覆盖错误、空 PATH、空格路径与非执行文件回归；运行 `node --test test/media-tools.test.ts` 确认失败。
-- [ ] 实现查找及调用替换，`node scripts/generate-demo.ts` 用 testsrc2+sine 生成 640×360/30fps/6秒素材并记录来源；删除私有目录回退。
-- [ ] 补齐 `/text-renders` 与 `/curve-audio` 代理，执行路径、HTTP、曲线引擎缓存回归。
+- [x] 编写 PATH、Finder、显式覆盖错误、空 PATH、空格路径与非执行文件回归；运行 `node --test test/media-tool-paths.test.ts` 确认失败。
+- [x] 实现查找及调用替换，`node scripts/generate-demo.ts` 用 testsrc2+sine 生成 640×360/30fps/6秒素材并记录来源；删除私有目录回退。
+- [x] 补齐 `/text-renders` 与 `/curve-audio` 代理，执行路径、HTTP、曲线引擎缓存回归。
 
 ### Task 2: 环境检查与说明
 
@@ -32,9 +32,9 @@
 
 **Interfaces:** doctor 默认检查运行环境，`--package` 再检查 macOS/Electron；失败返回非零且列明修复方式。npm prestart/predesktop/prepackage:mac 复用同一检查。
 
-- [ ] 用隔离环境子进程验证缺失工具检查失败且不泄露环境内容。
-- [ ] 实现工具版本、subtitles/zscale、编码器、字体与 demo 检查；加 `doctor`、`test:portable`、素材生成脚本及 npm 生命周期钩子。
-- [ ] README 更新无需私人资料的启动/打包、标准依赖安装与可选原生基线范围；`npm run typecheck`、`npm run test:portable`、`npm run build:desktop` 通过。
+- [x] 用隔离环境子进程验证缺失工具检查失败且不泄露环境内容。
+- [x] 实现工具版本、subtitles/zscale、编码器、字体与 demo 检查；加 `doctor`、`test:portable`、素材生成脚本及 npm 生命周期钩子。
+- [x] README 更新无需私人资料的启动/打包、标准依赖安装与可选原生基线范围；`npm run typecheck`、`npm run test:portable`、`npm run build:desktop` 通过。
 
 ### Task 3: 独立检出交付
 

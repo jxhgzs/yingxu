@@ -57,8 +57,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
         return respond(await store.create(doc), 201);
       }
       if (route === '/api/demo' && request.method === 'POST') {
-        let fixture = path.join(repo,'fixtures/timeline-probe.mp4');
-        try {await fs.access(fixture);} catch {fixture=path.resolve(repo, '../剪映5.9.0复刻分析_20261018/fixtures/timeline-probe.mp4');}
+        const fixture = path.join(repo,'fixtures/timeline-probe.mp4');
         const asset = await registerFile(fixture, '动态测试素材.mp4'), doc = emptyDocument(); doc.title = '剪辑练习';
         doc.canvas = {width: 1280, height: 720}; doc.assets.push(asset);
         doc.tracks[0].clips.push({id: randomUUID(), materialId: asset.id, source: {start: rational(0), duration: rational(6)},

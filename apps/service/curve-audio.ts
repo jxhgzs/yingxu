@@ -5,6 +5,7 @@ import {Store,contentHash,atomicJSON} from './store.ts';
 import {renderGraph} from '../../packages/media/src/graph.ts';
 import {inspectPreviewCurveAudio,renderPreviewCurveAudio,CURVE_AUDIO_RATE,CURVE_AUDIO_MAX_BYTES} from '../../packages/media/src/preview-curve-audio.ts';
 import {fileHash} from '../../packages/media/src/probe.ts';
+import {rubberband} from '../../packages/media/src/tools.ts';
 import {check} from '../../packages/core/src/document.ts';
 import {toNumber} from '../../packages/core/src/time.ts';
 import {curveSourceDelta} from '../../packages/core/src/curve-speed.ts';
@@ -15,7 +16,7 @@ const cancelled=()=>new DOMException('Aborted','AbortError');
 export class CurveAudioRenders{
  private queue:Promise<unknown>=Promise.resolve();private closing=false;private controllers=new Set<AbortController>();private pending=0;
  private store:Store;private options:{engine:string};private binary:string;private identity?:Promise<{binary:string;sha256:string}>;private binaryStat?:{size:number;mtimeMs:number;ctimeMs:number};
- constructor(store:Store,options:{engine:string}){this.store=store;this.options=options;this.binary=process.env.YINGXU_RUBBERBAND||'/opt/homebrew/bin/rubberband';}
+ constructor(store:Store,options:{engine:string}){this.store=store;this.options=options;this.binary=rubberband();}
  private directory(){return path.join(this.store.root,'curve-audio');}
  private async engine(){const identity=await (this.identity??=(async()=>{let sha256:string;try{const stat=await fs.stat(this.binary);this.binaryStat={size:stat.size,mtimeMs:stat.mtimeMs,ctimeMs:stat.ctimeMs};sha256=await fileHash(this.binary);}catch{throw Error('CURVE_AUDIO_ENGINE_UNAVAILABLE');}return {binary:this.binary,sha256};})());const stat=await fs.stat(this.binary);check(stat.size===this.binaryStat!.size&&stat.mtimeMs===this.binaryStat!.mtimeMs&&stat.ctimeMs===this.binaryStat!.ctimeMs,'CURVE_AUDIO_ENGINE_CHANGED');return identity;}
  async file(key:string){return (await this.cached(key)).file;}

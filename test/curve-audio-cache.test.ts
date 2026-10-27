@@ -10,6 +10,7 @@ import {rational,div} from '../packages/core/src/time.ts';
 import {curveDuration} from '../packages/core/src/curve-speed.ts';
 import {probeAsset,ffmpeg} from '../packages/media/src/probe.ts';
 import {runProcess} from '../packages/media/src/process.ts';
+import {rubberband} from '../packages/media/src/tools.ts';
 import {inspectPreviewCurveAudio} from '../packages/media/src/preview-curve-audio.ts';
 async function fixture(root:string){
  const store=new Store(root);await store.initialize();const file=path.join(root,'media','tone.wav');await runProcess(ffmpeg(),['-v','error','-f','lavfi','-i','sine=frequency=440:sample_rate=44100:duration=3','-c:a','pcm_f32le',file]);
@@ -68,7 +69,7 @@ test('disk cache evicts old entries at 32 items and refuses symlink or metadata 
 });
 test('Rubberband identity is frozen per service instance and a replaced executable cannot reuse an old key',{timeout:60000},async()=>{
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'curve-cache-engine-')),previous=process.env.YINGXU_RUBBERBAND;let cache:CurveAudioRenders|undefined;
- try{const {store,state}=await fixture(root),binary=path.join(root,'engine-wrapper'),script=`#!${process.execPath}\nconst {spawnSync}=require('node:child_process');const child=spawnSync('/opt/homebrew/bin/rubberband',process.argv.slice(2),{stdio:'inherit'});process.exit(child.status??1);\n`;await fs.writeFile(binary,script,{mode:0o700});process.env.YINGXU_RUBBERBAND=binary;cache=new CurveAudioRenders(store,{engine:'frozen'});
+ try{const {store,state}=await fixture(root),binary=path.join(root,'engine-wrapper'),script=`#!${process.execPath}\nconst {spawnSync}=require('node:child_process');const child=spawnSync(${JSON.stringify(rubberband())},process.argv.slice(2),{stdio:'inherit'});process.exit(child.status??1);\n`;await fs.writeFile(binary,script,{mode:0o700});process.env.YINGXU_RUBBERBAND=binary;cache=new CurveAudioRenders(store,{engine:'frozen'});
   const first=await cache.request(state.id,{revision:0,clipId:'curve'}),file=await cache.file(first.key),before=(await fs.stat(file)).mtimeMs;assert.equal((await cache.request(state.id,{revision:0,clipId:'curve'})).key,first.key);assert.equal((await fs.stat(file)).mtimeMs,before);
   await fs.writeFile(binary,script+'// replaced executable\n');await assert.rejects(cache.request(state.id,{revision:0,clipId:'curve'}),/CURVE_AUDIO_ENGINE_CHANGED/);
  }finally{if(previous===undefined)delete process.env.YINGXU_RUBBERBAND;else process.env.YINGXU_RUBBERBAND=previous;await cache?.shutdown();await fs.rm(root,{recursive:true,force:true});}

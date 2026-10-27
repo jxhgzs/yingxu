@@ -1,0 +1,9 @@
+{
+  "file": "timeline-probe.mp4",
+  "sha256": "857b7fbfa3cd907585d7d5ec1e375fae417b518f5c103fcb98eddd6edc9972c3",
+  "source": "FFmpeg lavfi testsrc2 + sine",
+  "width": 640,
+  "height": 360,
+  "fps": 30,
+  "duration": 6
+}

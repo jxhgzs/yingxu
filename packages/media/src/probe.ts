@@ -6,9 +6,10 @@ import {probeDisplayTransform} from '../../core/src/source-display.ts';
 import {validVideoPixelFormat} from '../../core/src/video-pixels.ts';
 import {decimal, rational} from '../../core/src/time.ts';
 import type {Asset} from '../../core/src/document.ts';
+import {mediaTool} from './tools.ts';
 
-export const ffmpeg = () => process.env.YINGXU_FFMPEG || '/opt/homebrew/bin/ffmpeg';
-export const ffprobe = () => process.env.YINGXU_FFPROBE || '/opt/homebrew/bin/ffprobe';
+export const ffmpeg = () => mediaTool('ffmpeg');
+export const ffprobe = () => mediaTool('ffprobe');
 export async function fileHash(file: string): Promise<string> {
   const h = createHash('sha256'); for await (const chunk of fs.createReadStream(file)) h.update(chunk); return h.digest('hex');
 }
