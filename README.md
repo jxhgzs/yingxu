@@ -209,3 +209,13 @@ npm run replay -- --baseline-root /path/to/baseline
 ## 许可证
 
 项目许可证见 [LICENSE](LICENSE)。随附思源黑体的来源和独立许可证见 [NOTICE](assets/fonts/source-han-sans-1.000/NOTICE.txt) 与 [Apache 2.0许可证](assets/fonts/source-han-sans-1.000/LICENSE.txt)。
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=jxhgzs%2Fyingxu&amp;type=date&amp;legend=top-left">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=jxhgzs/yingxu&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=jxhgzs/yingxu&amp;type=date&amp;legend=top-left" />
+    <img alt="映序 Star History" src="https://api.star-history.com/chart?repos=jxhgzs/yingxu&amp;type=date&amp;legend=top-left" width="800" />
+  </picture>
+</a>
