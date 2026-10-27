@@ -53,6 +53,7 @@ export function createPreviewPlan(document:Document,options:PlanOptions={}):{sup
    if(!options.curveAudioAvailable)reason('CURVE_AUDIO_REQUIRES_OFFLINE_RENDER','曲线音轨服务尚未连接，需要后台预览。',clip.id);
    else if(Math.ceil(toNumber(clip.target.duration)*44100)*8>CURVE_PCM_MAX_BYTES)reason('GPU_CURVE_AUDIO_SIZE_LIMIT','此曲线音轨超出实时缓存限制，需要后台预览。',clip.id);
   }
+  if(asset.kind==='video'&&asset.pixelFormat==='rgba'&&asset.path.toLowerCase().endsWith('.mov'))reason('LOSSLESS_ALPHA_SEQUENCE_OFFLINE','此透明无损序列使用后台预览。',clip.id);
   if(Object.keys(clip).some(k=>!knownClipKeys.has(k)))reason('UNKNOWN_CLIP_EFFECT','片段含实时预览尚未识别的属性。',clip.id);
   if(asset.kind==='text'){
    if(clip.speedCurve)reason('TEXT_ANIMATION_REQUIRES_OFFLINE_RENDER','文字曲线需要后台预览。',clip.id);

@@ -57,7 +57,7 @@ export async function prepareGlyphLayout(layer:Layer,canvas:{width:number;height
     }
     check(text.content[i]===' '||text.content[i]==='\n'||mass>0&&x1>=0,'TEXT_GLYPH_LAYOUT_SHAPING_UNVERIFIED');
     if(mass){sx0=Math.max(0,sx0-1);sy0=Math.max(0,sy0-1);sx1=Math.min(canvas.width-1,sx1+1);sy1=Math.min(canvas.height-1,sy1+1);metrics.push({x0:sx0,y0:sy0,x1:sx1,y1:sy1,mass,mx,my});for(let y=sy0;y<=sy1;y++)for(let x=sx0;x<=sx1;x++)coverage[y*canvas.width+x]++;}
-    anchors.push(x1<0?null:{x:(x0+x1)/2,y:(y0+y1)/2});
+    anchors.push(x1<0?null:{x:(x0+x1)/2,y:(y0+y1)/2,height:y1-y0+1});
    }
   }finally{await file.close();}
   completed.set(key,anchors);while(completed.size>64)completed.delete(completed.keys().next().value!);return structuredClone(anchors);
@@ -67,6 +67,6 @@ export async function prepareGlyphLayout(layer:Layer,canvas:{width:number;height
 /** Scalar preview, batched preview and export all enter through this authority. */
 export async function renderCaptionScript(layers:Layer[],canvas:{width:number;height:number},fps:Rational,directory:string,signal?:AbortSignal):Promise<{script:string;fonts:boolean}>{
  const fonts=await prepareFonts(layers.flatMap(l=>l.clip.text?[l.clip.text.font]:[]),directory),glyphLayouts:GlyphLayouts=new Map();
- for(const layer of layers)if(layer.clip.textAnimations?.some(a=>a.kind==='sway'))glyphLayouts.set(layer.clip.id,await prepareGlyphLayout(layer,canvas,directory,signal));
+ for(const layer of layers)if(layer.clip.textAnimations?.some(a=>a.kind==='sway'||a.kind==='alternate-scale'))glyphLayouts.set(layer.clip.id,await prepareGlyphLayout(layer,canvas,directory,signal));
  return {script:captionScript(layers,canvas,fps,{glyphLayouts}),fonts};
 }

@@ -3,9 +3,9 @@ import type {Rational} from '../../core/src/time.ts';
 import {add,sub,div,mul,rational} from '../../core/src/time.ts';
 import {check} from '../../core/src/document.ts';
 import {animatedValue} from './animation.ts';
-import {textAnimationState,textAnimationGlyphState,textAnimationVisibleCount,textAnimationLetterOpacities,textAnimationOffsetY} from '../../core/src/text-animation.ts';
+import {textAnimationState,textAnimationGlyphState,textAnimationVisibleCount,textAnimationLetterOpacities,textAnimationOffsetY,textAnimationGlyphScales} from '../../core/src/text-animation.ts';
 
-export type GlyphAnchor={x:number;y:number}|null;
+export type GlyphAnchor={x:number;y:number;height?:number}|null;
 export type GlyphLayouts=Map<string,GlyphAnchor[]>;
 
 /** Align to the visible output frame first, then floor its ASS centisecond edge. */
@@ -38,7 +38,7 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
   }).filter(e=>e.first.frame<e.last.frame);
   if(!entries.length)return '';
   const lineCount=(text:string,lineHeight?:number)=>lineHeight===undefined?1:text.split('\n').length;
-  const eventCount=entries.reduce((sum,e)=>sum+(e.animated?e.last.frame-e.first.frame:1)*(e.clip.textAnimations?.some(a=>a.kind==='sway')?e.clip.text!.content.length:lineCount(e.clip.text!.content,e.clip.text!.lineHeight)),0);
+  const eventCount=entries.reduce((sum,e)=>sum+(e.animated?e.last.frame-e.first.frame:1)*(e.clip.textAnimations?.some(a=>a.kind==='sway'||a.kind==='alternate-scale')?e.clip.text!.content.length:lineCount(e.clip.text!.content,e.clip.text!.lineHeight)),0);
   check(eventCount<=100000,'TEXT_RENDER_EVENT_LIMIT');
   const styles:string[]=[],events:string[]=[];
   for(const {clip,layer,first,last,animated} of entries){
@@ -67,16 +67,20 @@ export function captionScript(layers:Layer[],canvas:{width:number;height:number}
         }
         const letterOpacity=textAnimationLetterOpacities(clip.textAnimations,style.content,elapsed);
         if(letterOpacity)displayed=Array.from(line,(char,i)=>`{\\alpha&H${Math.round((1-opacity*letterOpacity[prefix+i])*255).toString(16).padStart(2,'0')}&}${assText(char)}`).join('');
-        if(textAnimationGlyphState(clip.textAnimations,elapsed,clip.target.duration).sway){
+        const glyphScales=textAnimationGlyphScales(clip.textAnimations,elapsed,clip.target.duration,fps,clip.target.start);
+        if(glyphScales||textAnimationGlyphState(clip.textAnimations,elapsed,clip.target.duration).sway){
           const anchors=options.glyphLayouts?.get(clip.id);check(!!anchors,'TEXT_GLYPH_LAYOUT_REQUIRED');
           const rotation=value('rotation'),angle=rotation*Math.PI/180,[px,py]=position(value('x'),value('y'),scale,rotation).split(',').map(Number);
           for(let local=0;local<line.length;local++){
             const anchor=anchors![prefix+local];if(!anchor)continue;
             const dx=(anchor.x-canvas.width/2)*scale,dy=(anchor.y-canvas.height/2-lineOffset)*scale;
-            const ax=px+Math.cos(angle)*dx-Math.sin(angle)*dy,ay=py+Math.sin(angle)*dx+Math.cos(angle)*dy;
-            const glyphRotation=(prefix+local)%2===0?-5:5;
+            const glyphScale=glyphScales?.[(prefix+local)%2]??1;
+            // Measured visible glyph height approximates the native character rect.
+            const gy=dy-(glyphScale-1)*(anchor.height??style.size)*.3*scale;
+            const ax=px+Math.cos(angle)*dx-Math.sin(angle)*gy,ay=py+Math.sin(angle)*dx+Math.cos(angle)*gy;
+            const glyphRotation=glyphScales?0:(prefix+local)%2===0?-5:5;
             // Keep full original line advances; only this character contributes pixels.
-            events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${ax-dx},${ay-dy})\\org(${ax},${ay})\\fscx${scale*100}\\fscy${scale*100}\\frz${-rotation+glyphRotation}}${visibleGlyph(line,local,alpha)}`);
+            events.push(`Dialogue: ${layer},${edge.ass},${end.ass},${name},,0,0,0,,{\\pos(${ax-dx*glyphScale},${ay-dy*glyphScale})\\org(${ax},${ay})\\fscx${scale*glyphScale*100}\\fscy${scale*glyphScale*100}\\frz${-rotation+glyphRotation}}${visibleGlyph(line,local,alpha)}`);
           }
           continue;
         }

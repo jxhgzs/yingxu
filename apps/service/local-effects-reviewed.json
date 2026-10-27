@@ -1,0 +1,259 @@
+{
+  "1644304": {
+    "name": "渐显",
+    "category": "text",
+    "animation": {
+      "phase": "in",
+      "kind": "fade"
+    },
+    "files": {
+      "Appear.lua": "ef2d2d102315061748756dad60645f1f64fb4b23796ca01f1f200874605c23aa",
+      "config.json": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644600": {
+    "name": "渐隐",
+    "category": "text",
+    "animation": {
+      "phase": "out",
+      "kind": "fade"
+    },
+    "files": {
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "Disappear.lua": "eece8b2217d5ae2fe2cba6a4f3f75d81b54e01aa7b621436f64dfe38e9d20ce9"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644275": {
+    "name": "打字机 I",
+    "category": "text",
+    "animation": {
+      "phase": "in",
+      "kind": "typewriter"
+    },
+    "files": {
+      "PrinterOne.lua": "17fa3dcec8efd6ebcc421d5fc14d9e4385832fddbf6b69e62ec70215cfaabaae",
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644276": {
+    "name": "打字机 II",
+    "category": "text",
+    "animation": {
+      "phase": "in",
+      "kind": "typewriter-soft"
+    },
+    "files": {
+      "PrinterOne.lua": "242b24a796fbbd168fa41c18c4a7b79d6557b7b061eef21410525d933b5d61b0",
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644264": {
+    "name": "放大",
+    "category": "text",
+    "animation": {
+      "phase": "in",
+      "kind": "zoom-in"
+    },
+    "files": {
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "EnlargeIn.lua": "80149ff4709cf73fdab2c44891698a7438a005357423042b104f40e8d3cb8c6a"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644602": {
+    "name": "缩小",
+    "category": "text",
+    "animation": {
+      "phase": "out",
+      "kind": "zoom-out"
+    },
+    "files": {
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "ShrinkOut.lua": "042d7b015cd9f0c720b8597c2177aacb6a5d078fa11e799eaaa0755f0d99daa7"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644514": {
+    "name": "闪烁",
+    "category": "text",
+    "animation": {
+      "phase": "loop",
+      "kind": "flash"
+    },
+    "files": {
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "Spark.lua": "769740a2e5b0b81316dc844efbcfc35dcc4f9b3e4971f3acedf0db8339a044d1"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644520": {
+    "name": "晃动",
+    "category": "text",
+    "animation": {
+      "phase": "loop",
+      "kind": "sway"
+    },
+    "files": {
+      "config.json": "9eed4b8899f24886e2fa9f369a1d8290bad0aa7cf85e95118f6cb557b9704a98",
+      "TextWave.lua": "62f4be004cd3d206227b3926b25ab0aa1d48bf73ee2f8842799e9ea222379444"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "1644525": {
+    "name": "轻微跳动",
+    "category": "text",
+    "animation": {
+      "phase": "loop",
+      "kind": "bounce"
+    },
+    "files": {
+      "config.json": "51d0d9e2ce256e19782e15778f7cefadbdfa2b79e69eed8eec372b3805586718",
+      "shangxiaweiyi.lua": "91627ff17c63d4fb522e463fe22a87793115c1d2b492dfa7789fe82431bace20"
+    },
+    "reason": "已接入文字动画，沿用现有预览与导出"
+  },
+  "12453543": {
+    "name": "放大缩小",
+    "category": "text",
+    "animation": {
+      "phase": "loop",
+      "kind": "alternate-scale"
+    },
+    "files": {
+      "LuaRTTI.MarkGen.lua": "abc34a16ba9189d5d2026e44a0f42259c48c79a349c90e6e1686c57ab66c150e",
+      "config.json": "df40a817b281ae7abc6db79ef030b5b97d0661d5aa8c16407bf9c70b4fbbb0fa",
+      "lua/TextAnim.lua": "ec48144f5d77215ebfc6c366385c7157e392b0ad302218f4652cf62ef8a11b80",
+      "lua/ImageBusinessSlider.lua": "64585f0b380e0a2b4e00e30664dab06ad04ac7efdd02aa29531f4770f1445116",
+      "lua/src/AE.lua": "51c3e1289d2ad5550ab76ae408f7a6e61c66ccd7b6826aabfeaaad4fd7c512ce",
+      "lua/src/TextEntry.lua": "62f66691636910a9e713fd98f37113e97d6afbaea99bf6b6bba5a346381a2da1",
+      "lua/src/TextMain.lua": "70133af337b88a830ab743b4d803d24dde98385abd857fa18db8249155961f2b",
+      "lua/src/common/AEAdapter.lua": "94af13d46dc874ab11fbdbc89f96a0977b4106edabfbabfc604f9872716438b5",
+      "lua/src/common/Utils.lua": "5400f60545df78185df84e14fddc27e0d7b7a5b7d50e72f8798bad9c2476504a",
+      "lua/src/info_sticker/Helper.lua": "97096bdeca97bc83783c1ab05b8f16e561407f77e34f8c63303a3b1cc6e460d8",
+      "lua/src/info_sticker/Patch0.lua": "7fcfa04b61c91a47f7d52b8e0303046db708979eb66bb22aa07dc5f4ed2aaad8"
+    },
+    "reason": "实验适配：逐字曲线可用，尚无原生付费导出对照"
+  },
+  "462512": {
+    "name": "黑幕开启（462512）",
+    "category": "sequence",
+    "files": {
+      "config.json": "5d82da886211ae5154adc37e12175350a2ed0ad61f65fb4d47627e9d1f7c46ef",
+      "GESticker_FullScreenSticker/content.json": "752f1325e267e3868df3d568afb2768a10ccae269a9ebc25e056d98017749641",
+      "GESticker_FullScreenSticker/generalEffect/generalEffect.json": "c65455cdce34274c40607416881e53dd91d91a6b08649b73b5b9b6aa5336b594",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a31.png": "601d37b4f563bc35da5b1b06fdb9da1c82364e5474fb655152de02e6205352e3",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a25.png": "3bdb279e6d1c7e909bb964daa7578294462ce385dbadc61c596ae84e741b2a6d",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a0.png": "49b959ab03aa3b6e89db602babd96f9281aae6129ee5004d1ccf438e75ec9062",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a19.png": "43a827d824a097a0919ece77622991313406fff61cbc1611cd76bad230ebaf8f",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a18.png": "3892366d5433131af4238feb3456318b6819ec6c5bce3edbeb8f0643d2af3f7a",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a1.png": "01061d1153102fa0b9542a09eeda8e8e3a2df6e1b4a713a8e7c704d747cb160f",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a24.png": "73547ac960da6349719ff9ae979a74c5000ba3d6740d4a2dd3b60806e74ab126",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a30.png": "8c347a34422d3ce22667dbed794ef4e70d4bf8245af0b646c304cb7e0a2e98cd",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a26.png": "1605765a095cb858141e01bb48c0a30760d2372e360f8d0955dc81570afda8b8",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a32.png": "f7a8b6ddfb6ef5a9e39f40ea3dcdc0225840d6d0640a979d9f302d5888e14370",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a3.png": "28673eac43e90f855876a44a4d6e831d106c0008f0c644c5a9bd7d77151796fe",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a2.png": "ee42cab72778cfbf5ecd4bdaf4c68cdb050a99494b8084d635ccb8c6b58f2f3f",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a33.png": "284d0ad65f0a496e5ad106b9130cbcf60cb04b5ed82e26b1b0aab1f9684c8516",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a27.png": "2e56fb867e2f73f17f8ad13de8acde773ecf79bb43167a39ed6b446728cd79bf",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a6.png": "11508a182b550e0ce68b74202bb0564c7e3aefeac86a7a118fc685f343248a4c",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a23.png": "9035ed95bda000822ce6dd4bcf5a01fb157f5e1e826416733ec660af5fbdd6c9",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a37.png": "3f9304abb0cdd9f089e6797b9289ad098488daa3cb4aafcd091a079a27de5082",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a36.png": "339ee5e4f380ad7765ae85b5be4c36a66bb2c08b265877a2559f87be6c57a52b",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a22.png": "014e004ee92578a487c5809c32d92524c559efd90cbce04dcc6bafec43a50ca3",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a7.png": "c2d72de57b41a305b08564a0cf6cd35fc6941f6eea7b2272354484571d65bc83",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a5.png": "6be452cabfab0e5da5a6744b1f892c8cd2dc68645a8f9b4f5c21ba6c0d736326",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a34.png": "a2a16f72de2b68d6f64828146872c87afc464f94e01396e32d4a0489112706a3",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a20.png": "c73bc588cae1a2d611edde7a903822f07b3b56b89c9a73e5139d1dae1dbdd436",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a21.png": "350bf5b6332776b75ed24af70711c82b29fe5d45eb27eada2ab7a0931ddfcf1a",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a35.png": "9c50614f69fd24f191cff520794461df432e63a99e1b8f9ee31fbab01a25949a",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a4.png": "983a2604f955bef5f13005b90e58cada900a5f06b8325de05ea0e4b533be95f4",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a91.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a85.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a52.png": "b7de7618ada22babd6447e8952a4f066261d3fb4cd5a7fca5b2e54013497f32e",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a46.png": "063ceaaac9ad1e02683cbb9dc14588d0ae158606ae0ede17a484b46793000d5f",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a47.png": "012da8fb87e922123d31dd0b3c25aae55077ce9ac6bd1ee95a098a042d300800",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a53.png": "678da268a70977fc9871f513a89854fbda75af0c68d4e75822085897d5d94a63",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a84.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a90.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a86.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a92.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a45.png": "afa7279d57643b0c3a0cdb54bda941996aa8dd3353c78175c8cdc16b0400cefc",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a51.png": "9f15221a1e8939d0b11211d9d0e5f3790871f9a67143796de5dc860001f713b3",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a79.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a78.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a50.png": "98fbacf156f2c49cad0d97a0063362b659be214061c5f30d67263712aab05028",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a44.png": "7534977eb1e811f96eec3f7d17ddcaa42d5fbf03f7df8e278cb61af2ffa70bc8",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a93.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a87.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a83.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a68.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a40.png": "1a34e18e057c11044e67dd59f8d7d2898d710fc64dd5a25da88883ebb32fa3c6",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a54.png": "3be6c79dd911186b37e37a8a6df1d9a78de0e05f4d601b961ab2ddc268ba8738",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a55.png": "9bd73d4a2716650bbe95ae686fabbf089d0b4777073eb721fb9e22389266a7af",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a41.png": "c742391783abe19df88312fc901f8360e6811691e4a5d3bf6c8c65e0390a088b",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a69.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a82.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a94.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a80.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a57.png": "22ca77df3b0b5b3b1eb9ceffa620340a213e2d41e59f89dc219e7e137673e261",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a43.png": "6ec8a30a7f8eca24afeec692cea3ac0ebbd184ae42285674555fbde054e4f2ed",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a42.png": "bc3f4accb9e630f598e1777b31d3650ee371c3d4f39f3b66a87810632ca3f238",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a56.png": "b179275d30a0f6377ee0477fed1758c3787e360fc8e7b2ae67033dfce7818384",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a81.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a95.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a73.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a67.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a66.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a72.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a64.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a70.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a58.png": "37639b502d10d42e7c2a73bb379b6cfd1ec9240f4e5072cf8960f03f4bfa2e8a",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a59.png": "6f0b956a054fe19fcba38b54504b3dc336d62bf05fbe846b6a215f4ce125c083",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a71.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a65.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a49.png": "8f85b51543ac45548819b59904d942a01a6490bd1958a2b4a08187ec5cb9b79f",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a61.png": "60d36ea587b4ffe80e148e45c1c95fbd8e315184c179f2a15de9cd339a3972de",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a75.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a74.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a60.png": "60d36ea587b4ffe80e148e45c1c95fbd8e315184c179f2a15de9cd339a3972de",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a48.png": "6693d06290e00139ff9bfd256260b9242fa72a778c994dd3ddfb9c3c99159b64",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a89.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a76.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a62.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a63.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a77.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a88.png": "736edb87c72b6ddd2e2a0b953e668321e573007f6540cbb357c910fb908cda92",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a10.png": "4166faa29c814a40a40cf88971e72437f185296e1e0dc8d2823caf2ea25c5041",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a9.png": "d5479ee77aca4b95971f476495083a703b58d4ccb24571a66bdfba0ccf797224",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a38.png": "7831c85e512f78ec81f01382c7ee8ae8fc411333897cb9caf5f8c703093aa9a1",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a39.png": "7dd9b7c4fa75b202738ba4085885b60a9bced13a4ab2f6cdd3eee4e51e411af1",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a8.png": "46301c6fb670e48391c627c060ea4398cc4563cf2e07fa1e59eb519a21fe5f91",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a11.png": "c4f6a924a35cba78403518b9411d3788915ec011f5e6cdfdad163257315458ae",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a13.png": "5b700f0e276439b7b5be6a25c0d3220b6952b1165b3ec2795f4cb0972423c6e9",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a12.png": "5271dbb20ecb92419b30d499305e4795bf654abbfe9d657a0883021fa81bbf18",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a16.png": "074ed5a8442730c34c4d837b5c553696dfc422377bf4e07a26d30009e7e8cd29",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a17.png": "c44be82180592d607dd9d4297b8244c66cc384869234439c04ad2b58c2afa9e7",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a29.png": "145e3aa66618b15e67e2c0bd66038e4d5b9a8ee9b748d5fab7fc56b1d64ea861",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a15.png": "4ab22deac2228bf6909d2e9bc746ac6d2c078b1265030ccd347a09031e131497",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a14.png": "37a3b89e2cb68120719a7171aade648f35901f60bf2ed640eccca69f450f0287",
+      "GESticker_FullScreenSticker/generalEffect/resource1/texture/a28.png": "4987880927f6d335cbcd9e999a2d0ebf47a7d765d51300dee85791af87961a41",
+      "GESticker_FullScreenSticker/generalEffect/resource1/shader/FullScreenSticker.vert": "eaf495d1de3a920ca4f87e5bfe868a822d1ac05ae9f8d10651d60a382ecdd1b7",
+      "GESticker_FullScreenSticker/generalEffect/resource1/shader/FullScreenSticker.frag": "2294f265c5c3b9e91d7150dfe83f0bec02c29b71b1b955ce0278119a518e9594"
+    },
+    "reason": "96帧 / 25fps · 16:9，保留透明度；使用后台预览，原生时序未核准"
+  },
+  "7349466995789729075": {
+    "name": "绿色手绘线条贴纸（7349466995789729075）",
+    "category": "sticker",
+    "files": {
+      "config.json": "feb7ab0df661239e01d36b1be1ce7c39c5bc037b0b949efe554c7daf065aa5a1",
+      "heycanInfo.json": "a0c0732dc5ae9c85a45a74bbdbc816c722b2a72d25910801d72c2a80be9f928a",
+      "singleImage.png": "f4eedb7aaf0c89b8883ce8da98e2c30e4c93681844ec8e4c081ecc7072ffeb71"
+    },
+    "reason": "原始PNG贴纸，可调整位置、大小、透明度并导出"
+  }
+}

@@ -10,7 +10,7 @@
 import {add,compare,div,mul,rational,sub,toNumber,ZERO} from './time.ts';
 import type {Rational} from './time.ts';
 
-export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'typewriter-soft'|'flash'|'zoom-in'|'zoom-out'|'sway'|'bounce';duration:Rational};
+export type TextAnimation={phase:'in'|'out'|'loop';kind:'fade'|'typewriter'|'typewriter-soft'|'flash'|'zoom-in'|'zoom-out'|'sway'|'bounce'|'alternate-scale';duration:Rational};
 
 function time(value:unknown):asserts value is Rational{
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('INVALID_TEXT_ANIMATION_DURATION');
@@ -32,7 +32,7 @@ export function validateTextAnimations(value:unknown,clipDuration:Rational):asse
     const v=item as Record<string,unknown>;
     if(Object.keys(v).some(key=>!['phase','kind','duration'].includes(key)))throw Error('UNSUPPORTED_TEXT_ANIMATION_FIELD');
     if(v.phase!=='in'&&v.phase!=='out'&&v.phase!=='loop')throw Error('TEXT_ANIMATION_PHASE_UNVERIFIED');
-    const kinds=v.phase==='loop'?['flash','sway','bounce']:v.phase==='out'?['fade','zoom-out']:['fade','typewriter','typewriter-soft','zoom-in'];
+    const kinds=v.phase==='loop'?['flash','sway','bounce','alternate-scale']:v.phase==='out'?['fade','zoom-out']:['fade','typewriter','typewriter-soft','zoom-in'];
     if(!kinds.includes(String(v.kind)))throw Error('TEXT_ANIMATION_KIND_UNVERIFIED');
     if(phases.has(v.phase))throw Error('DUPLICATE_TEXT_ANIMATION_PHASE');
     phases.add(v.phase);time(v.duration);
@@ -64,7 +64,7 @@ export function textAnimationOpacity(animations:readonly TextAnimation[]|undefin
       const p=progress(sub(targetElapsed,sub(targetDuration,exit.duration)),exit.duration);
       return exit.kind==='zoom-out'?1-p*p:(1-p)*(1-p);
     }
-    if(loop.kind==='sway'||loop.kind==='bounce')return 1;
+    if(loop.kind==='sway'||loop.kind==='bounce'||loop.kind==='alternate-scale')return 1;
     const elapsed=sub(targetElapsed,entrance?.duration??ZERO);
     const cycles=div(elapsed,loop.duration);
     const denominator=BigInt(cycles.denominator);
@@ -159,4 +159,27 @@ export function textAnimationOffsetY(animations:readonly TextAnimation[]|undefin
  if(n===0n)return entrance ? .0025 : 0;
  const six=n*6n,level=six<=d?0:six<=2n*d?1:six<=3n*d?2:six<=4n*d?3:six<=5n*d?2:1;
  return level*.0025;
+}
+
+/** 12453543: alternating AE scale tracks. Independent numeric reconstruction;
+ * native encoded-pixel and combination parity remain unverified (local adapter).
+ */
+export function textAnimationGlyphScales(animations:readonly TextAnimation[]|undefined,elapsed:Rational,duration:Rational,fps:Rational,start:Rational=ZERO):[number,number]|undefined{
+ const loop=animations?.find(a=>a.phase==='loop'&&a.kind==='alternate-scale');if(!loop)return;
+ const entrance=animations?.find(a=>a.phase==='in'),exit=animations?.find(a=>a.phase==='out');
+ let sample=elapsed;
+ // Product composition: retain last loop pose under the exit's alpha/geometry.
+ if(exit&&compare(sample,sub(duration,exit.duration))>=0){
+  const edge=mul(add(start,sub(duration,exit.duration)),fps),n=BigInt(edge.numerator),d=BigInt(edge.denominator);
+  sample=sub(div(rational((n+d-1n)/d-1n),fps),start);
+ }
+ if(compare(sample,ZERO)<0||entrance&&compare(sample,entrance.duration)<=0)return;
+ const cycle=div(sub(sample,entrance?.duration??ZERO),loop.duration),d=BigInt(cycle.denominator),n=((BigInt(cycle.numerator)%d)+d)%d,t=toNumber(rational(n,d))*1.375;
+ const times=[0,.1875,.3125,.8125,1.0625,1.375],values=[1,1.4,1.4,.6,.6,1];
+ const controls=[[.03125000000062,1.066666666668,.05625,1.4],[.22916666625,1.4,.27083333375,1.4],[.6625,1.4,.4625,.6],[.8958333325,.6,.9791666675,.6],[1.28125,.6,1.32291666666562,.933333333332]];
+ let segment=0;while(segment<4&&t>times[segment+1])segment++;
+ const [cx1,cy1,cx2,cy2]=controls[segment],cubic=(a:number,b:number,c:number,d:number,u:number)=>a*(1-u)**3+3*b*(1-u)**2*u+3*c*(1-u)*u*u+d*u**3;
+ let low=0,high=1;for(let i=0;i<48;i++){const mid=(low+high)/2;if(cubic(times[segment],cx1,cx2,times[segment+1],mid)>t)high=mid;else low=mid;}
+ const odd=t===0?1:values[segment]===values[segment+1]?values[segment]:cubic(values[segment],cy1,cy2,values[segment+1],(low+high)/2);
+ return [odd,2-odd];
 }

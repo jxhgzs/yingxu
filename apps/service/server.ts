@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {randomBytes, randomUUID} from 'node:crypto';
 import {Store} from './store.ts';
+import {LocalEffects} from './local-effects.ts';
 import {MediaTools} from './media-tools.ts';
 import {Jobs} from './jobs.ts';
 import {TextRasters} from './text-raster.ts';
@@ -18,7 +19,7 @@ import {rational} from '../../packages/core/src/time.ts';
 
 const repo = fileURLToPath(new URL('../../', import.meta.url));
 const mime: Record<string, string> = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json'};
-export async function startServer(options: {root?: string; port?: number; dist?: string} = {}) {
+export async function startServer(options: {root?: string; port?: number; dist?: string; effectRoots?:string[]} = {}) {
   const version=JSON.parse(await fs.readFile(path.join(repo,'package.json'),'utf8')).version;
   const store = new Store(options.root || process.env.YINGXU_EDITOR_DATA || path.join(repo, '.local'));
   await store.initialize(); const jobs = new Jobs(store); await jobs.initialize();
@@ -34,6 +35,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
     if (!store.assets.has(asset.id)) {await fs.copyFile(file, destination); asset.path = destination;}
     return await store.addAsset(asset,{...(frameTiming?{verifiedFrameTiming:frameTiming}:{})});
   }
+  const localEffects=new LocalEffects(store.root,registerFile,options.effectRoots);
   const server = http.createServer(async (request, response) => {
     try {
       const url = new URL(request.url || '/', 'http://127.0.0.1'); const route = url.pathname;
@@ -47,7 +49,7 @@ export async function startServer(options: {root?: string; port?: number; dist?:
       const respond = (v: unknown, status = 200) => json(response, status, v);
       let match: RegExpExecArray | null;
       if (route === '/api/bootstrap' && request.method === 'GET') return respond({token, version, engine:jobs.engine, projects: store.list(), assets: [...store.assets.values()],
-        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'text-animation', 'gpu-text-animation', 'temperature-tint', 'gpu-silent-curve', 'gpu-curve-audio', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
+        capabilities: ['video', 'audio', 'image', 'text', 'split', 'trim', 'speed', 'curve-speed', 'curve-audio', 'audio-fade', 'subtitle-import', 'asset-relink', 'known-draft-keyframes', 'transform', 'color-adjustments', 'transitions', 'webgl2-preview', 'gpu-static-text', 'text-animation', 'local-effect-library', 'gpu-text-animation', 'temperature-tint', 'gpu-silent-curve', 'gpu-curve-audio', 'multitrack', 'history', 'preview', 'export', 'source-clock-keyframes', 'export-settings', 'mp4', 'mov', 'gif', 'mp3', 'wav', 'm4a', 'hevc'],
         limitations: ['不支持未解析的剪映特效与关键帧渲染', 'GPU支持已验证的基础调节、转场与文字动画；精确文字使用有界缓存，冷准备需等待；曲线声音需先准备音轨，超缓存限制或未知样式回退后台预览；零余量转场只支持逐帧验证的30fps恒速素材，空间转场另有限定画布与输出条件']});
       if (route === '/api/projects' && request.method === 'GET') return respond(store.list());
       if (route === '/api/projects' && request.method === 'POST') {
@@ -85,6 +87,8 @@ export async function startServer(options: {root?: string; port?: number; dist?:
         imported.document.title = typeof input.name === 'string' ? input.name : '导入的剪映草稿';
         return respond(await store.create(imported.document, {diagnostics: imported.diagnostics, provenance: imported.provenance}), 201);
       }
+      if(route==='/api/local-effects'&&request.method==='GET')return respond(await localEffects.scan());
+      if(route==='/api/local-effects/import'&&request.method==='POST'){const input=await body(request);return respond(await localEffects.import(input.key));}
       if (route === '/api/assets' && request.method === 'GET') return respond([...store.assets.values()]);
       if (route === '/api/assets' && request.method === 'POST') {
         const rawName = request.headers['x-filename']; check(typeof rawName === 'string', 'FILENAME_REQUIRED');

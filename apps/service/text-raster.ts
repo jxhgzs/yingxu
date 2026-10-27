@@ -9,7 +9,7 @@ import type {Layer,RenderGraph} from '../../packages/media/src/graph.ts';
 import {rasterText} from '../../packages/media/src/text-raster.ts';
 import {check,defaultTransform} from '../../packages/core/src/document.ts';
 import {sourceTimeAt,evaluateAnimation} from '../../packages/core/src/animation.ts';
-import {textAnimationState,textAnimationVisibleCount,textAnimationGlyphState,textAnimationLetterOpacities,textAnimationOffsetY} from '../../packages/core/src/text-animation.ts';
+import {textAnimationState,textAnimationVisibleCount,textAnimationGlyphState,textAnimationLetterOpacities,textAnimationOffsetY,textAnimationGlyphScales} from '../../packages/core/src/text-animation.ts';
 import {add,sub,compare,div,rational} from '../../packages/core/src/time.ts';
 
 export function systemFontEnvironmentIdentity(){return {platform:os.platform(),release:os.release(),version:os.version(),arch:os.arch()};}
@@ -51,7 +51,8 @@ export class TextRasters{
    transform.opacity=1-Math.round((1-baseOpacity)*255)/255;
    const typewriter=layer.clip.textAnimations?.find(a=>a.kind==='typewriter'),visibleCount=typewriter?textAnimationVisibleCount(typewriter,layer.clip.text!.content,sub(at,layer.clip.target.start)):undefined;
    const glyphState=layer.clip.textAnimations?.some(a=>a.kind==='sway')?textAnimationGlyphState(layer.clip.textAnimations,sub(at,layer.clip.target.start),layer.clip.target.duration):undefined;
-   renderIdentity={mode:body.mode,text:layer.clip.text,transform,visibleCount,glyphState,...(letterAlphas?{letterAlphas}:{}),animated:!!layer.clip.animations?.some(a=>a.property!=='volume')||!!layer.clip.textAnimations?.length};
+   const glyphScales=textAnimationGlyphScales(layer.clip.textAnimations,sub(at,layer.clip.target.start),layer.clip.target.duration,graph.document.fps,layer.clip.target.start);
+   renderIdentity={mode:body.mode,text:layer.clip.text,transform,visibleCount,glyphState,...(glyphScales?{glyphScales}:{}),...(letterAlphas?{letterAlphas}:{}),animated:!!layer.clip.animations?.some(a=>a.property!=='volume')||!!layer.clip.textAnimations?.length};
   }
   const key=contentHash({version:body.mode?'libass-animation-rgba-v1':'libass-static-rgba-v1',engine:this.options.engine,fontEnvironment:this.fontEnvironment,canvas:graph.document.canvas,renderIdentity});
   const result:TextTexture={key,url:`/text-renders/${key}.png`,clipId:body.clipId,revision:body.revision,...graph.document.canvas,...(body.mode?{mode:body.mode}:{}),...(body.mode==='frame'?{frame:body.frame}:{})};
