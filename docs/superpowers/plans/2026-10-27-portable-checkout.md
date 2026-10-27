@@ -36,6 +36,8 @@
 - [x] 实现工具版本、subtitles/zscale、编码器、字体与 demo 检查；加 `doctor`、`test:portable`、素材生成脚本及 npm 生命周期钩子。
 - [x] README 更新无需私人资料的启动/打包、标准依赖安装与可选原生基线范围；`npm run typecheck`、`npm run test:portable`、`npm run build:desktop` 通过。
 
+独立检出发现并追加：Electron npm SDK 不再自带自动安装钩子；显式 postinstall 调用 install-electron，提供 desktop:install 恢复入口，环境检查核对 SDK 与运行时版本。依赖审计发现 Electron 44.6.0 的证书撤销修复缺失，升级同主版本 44.9.3，并从实际安装包读取构建运行时版本。
+
 ### Task 3: 独立检出交付
 
 **Files:** docs/qa/2026-10-27-portable-checkout.md。

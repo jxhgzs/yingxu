@@ -21,7 +21,9 @@
     "predesktop": "npm run doctor",
     "prepackage:mac": "node scripts/doctor.ts --package",
     "fixtures:generate": "node scripts/generate-demo.ts",
-    "test:portable": "node --test --test-concurrency=2 test/media-tools.test.ts test/media-tool-paths.test.ts test/doctor.test.ts test/service.test.ts test/curve-audio-cache.test.ts test/curve-audio-http.test.ts test/text-raster-http.test.ts test/engine-cache.test.ts"
+    "test:portable": "node --test --test-concurrency=2 test/media-tools.test.ts test/media-tool-paths.test.ts test/doctor.test.ts test/service.test.ts test/curve-audio-cache.test.ts test/curve-audio-http.test.ts test/text-raster-http.test.ts test/engine-cache.test.ts",
+    "desktop:install": "install-electron",
+    "postinstall": "npm run desktop:install"
   },
   "dependencies": {
     "@ant-design/icons-vue": "7.0.1",
@@ -31,7 +33,7 @@
   "devDependencies": {
     "@types/node": "24.19.2",
     "@vitejs/plugin-vue": "6.0.10",
-    "electron": "44.6.0",
+    "electron": "44.9.3",
     "typescript": "5.9.3",
     "vite": "8.3.4",
     "vue-tsc": "3.3.13"

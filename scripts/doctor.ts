@@ -48,7 +48,14 @@ if(process.argv.includes('--package')){
   for(const binary of ['/bin/cp','/usr/bin/plutil','/usr/bin/codesign','/usr/bin/git'])await fs.access(binary,fs.constants.X_OK);
   return process.arch;
  });
- await check('Electron',async()=>{await fs.access(path.join(root,'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron'),fs.constants.X_OK);return 'npm ci installed Electron.app';});
+ await check('Electron',async()=>{
+  try{
+   const directory=path.join(root,'node_modules/electron'),sdk=JSON.parse(await fs.readFile(path.join(directory,'package.json'),'utf8'));
+   const version=(await fs.readFile(path.join(directory,'dist/version'),'utf8')).trim().replace(/^v/,'');
+   await fs.access(path.join(directory,'dist/Electron.app/Contents/MacOS/Electron'),fs.constants.X_OK);
+   if(version!==sdk.version)throw Error('ELECTRON_VERSION_MISMATCH');return `Electron ${version}`;
+  }catch{throw Error('桌面运行时缺失或版本不符，请运行 npm run desktop:install（需要访问 Electron 官方下载服务）');}
+ });
 }
 if(failures){console.error(`环境检查未通过（${failures}项）。macOS 安装媒体工具：brew install ffmpeg rubberband；然后重新运行 npm run doctor。`);process.exitCode=1;}
 else console.log('环境检查通过。');

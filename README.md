@@ -59,7 +59,7 @@ git clone https://github.com/jxhgzs/yingxu.git
 cd yingxu
 
 # 2. 安装依赖
-npm ci
+npm ci  # 自动下载与锁定版本一致的 Electron 桌面运行时
 npm run doctor
 
 # 3. 构建前端并启动本地服务
@@ -113,7 +113,7 @@ npm run build:desktop
 npm run desktop
 ```
 
-这会构建前端和媒体服务，再通过 Electron 打开桌面窗口。桌面服务自动选择本地端口，仍需本机已安装 FFmpeg / FFprobe 和所需的 Rubber Band。
+这会构建前端和媒体服务，再通过 Electron 打开桌面窗口。`npm ci` 的安装钩子会下载 Electron 运行时；首次安装需要访问 npm 与 Electron 官方下载服务。若之前跳过安装脚本或下载中断，运行 `npm run desktop:install` 后重试。桌面服务自动选择本地端口，仍需本机已安装 FFmpeg / FFprobe 和所需的 Rubber Band。
 
 ### 生成 macOS 开发包
 
